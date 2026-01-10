@@ -1,0 +1,196 @@
+---
+title: 'Connect WhatsApp'
+description: 'Link your WhatsApp account to Eazybe'
+---
+
+## Overview
+
+Eazybe works with WhatsApp Web to provide CRM integration and team monitoring. This guide covers how to connect your WhatsApp account.
+
+## Connection Methods
+
+<CardGroup cols={2}>
+  <Card title="QR Code Scan" icon="qrcode">
+    Standard method using WhatsApp Web QR code. Works with Personal and Business WhatsApp.
+  </Card>
+  <Card title="Cloud Connection" icon="cloud">
+    Connect via Eazybe Cloud for backup when your laptop is offline.
+  </Card>
+</CardGroup>
+
+## Method 1: Standard QR Code Connection
+
+<Steps>
+  <Step title="Open WhatsApp Web">
+    Navigate to [web.whatsapp.com](https://web.whatsapp.com) in Chrome.
+    
+    You'll see a QR code on the screen.
+  </Step>
+  
+  <Step title="Open WhatsApp on Your Phone">
+    **For Android:**
+    - Open WhatsApp
+    - Tap the three dots menu (⋮)
+    - Select **Linked Devices**
+    
+    **For iPhone:**
+    - Open WhatsApp
+    - Go to **Settings**
+    - Tap **Linked Devices**
+  </Step>
+  
+  <Step title="Scan the QR Code">
+    - Tap **Link a Device**
+    - Point your phone camera at the QR code on your computer screen
+    - Wait for the connection to establish
+  </Step>
+  
+  <Step title="Verify Eazybe Activation">
+    Once WhatsApp Web loads:
+    - The Eazybe sidebar should appear on the right
+    - You'll see your chats with the CRM integration icons
+    
+    <Frame>
+      <img src="/images/eazybe-sidebar.png" alt="Eazybe sidebar" />
+    </Frame>
+  </Step>
+</Steps>
+
+## Method 2: Cloud Connection
+
+Cloud connection enables chat backup even when your laptop is offline.
+
+<Steps>
+  <Step title="Access Cloud Settings">
+    In the Eazybe workspace, go to **Settings** → **Cloud Integration**.
+  </Step>
+  
+  <Step title="Enable Cloud Backup">
+    Toggle on **Cloud WhatsApp Connection**.
+  </Step>
+  
+  <Step title="Scan Cloud QR Code">
+    A new QR code will appear. Scan this with your WhatsApp app just like the standard method.
+  </Step>
+  
+  <Step title="Confirm Connection">
+    Your WhatsApp is now connected to Eazybe Cloud. Chats will sync even when your browser is closed.
+  </Step>
+</Steps>
+
+<Info>
+  Cloud connection is available on paid plans. It allows CRM sync to continue even when you're not actively using WhatsApp Web.
+</Info>
+
+## Connecting Multiple Numbers
+
+If you manage multiple WhatsApp numbers:
+
+1. Each WhatsApp number requires its own Chrome profile or browser session
+2. You can connect multiple numbers to the same Eazybe organization
+3. Each number appears separately in the Revenue Inbox
+
+<Warning>
+  WhatsApp only allows one web session per number. Opening WhatsApp Web on another device will disconnect the previous session.
+</Warning>
+
+## Connection Status Indicators
+
+| Indicator | Meaning |
+|-----------|---------|
+| 🟢 Green | Connected and syncing |
+| 🟡 Yellow | Connection unstable |
+| 🔴 Red | Disconnected |
+| ⚪ Gray | Never connected |
+
+## Keeping Your Connection Active
+
+WhatsApp Web requires your phone to maintain an internet connection. To keep your connection stable:
+
+<AccordionGroup>
+  <Accordion title="Keep Phone Connected">
+    Ensure your phone has a stable WiFi or mobile data connection at all times.
+  </Accordion>
+  
+  <Accordion title="Disable Battery Optimization">
+    On Android, disable battery optimization for WhatsApp to prevent it from sleeping.
+    
+    Settings → Apps → WhatsApp → Battery → Don't optimize
+  </Accordion>
+  
+  <Accordion title="Enable Background App Refresh">
+    On iPhone, enable background refresh for WhatsApp.
+    
+    Settings → General → Background App Refresh → WhatsApp → On
+  </Accordion>
+  
+  <Accordion title="Avoid Logging Out">
+    Don't log out of WhatsApp Web unless necessary. Simply closing the browser tab doesn't log you out.
+  </Accordion>
+</AccordionGroup>
+
+## Troubleshooting Connection Issues
+
+<AccordionGroup>
+  <Accordion title="QR Code Not Loading">
+    - Refresh the WhatsApp Web page
+    - Clear browser cache
+    - Disable ad blockers temporarily
+    - Try incognito mode
+  </Accordion>
+  
+  <Accordion title="Phone Not Scanning QR Code">
+    - Clean your phone's camera lens
+    - Increase screen brightness
+    - Move closer to the screen
+    - Ensure QR code is fully visible
+  </Accordion>
+  
+  <Accordion title="Connection Keeps Dropping">
+    - Check your phone's internet connection
+    - Restart WhatsApp on your phone
+    - Log out and log back in to WhatsApp Web
+    - Update WhatsApp to the latest version
+  </Accordion>
+  
+  <Accordion title="'Phone Not Connected' Message">
+    - Ensure your phone is online
+    - Open WhatsApp on your phone to reestablish connection
+    - Check if WhatsApp is updated
+    - Restart your phone
+  </Accordion>
+</AccordionGroup>
+
+## Security Notes
+
+<Warning>
+  **Security Best Practices:**
+  - Only use WhatsApp Web on trusted devices
+  - Log out when using shared computers
+  - Regularly check Linked Devices in WhatsApp settings
+  - Remove any unrecognized devices
+</Warning>
+
+To view and manage linked devices:
+1. Open WhatsApp on your phone
+2. Go to **Linked Devices**
+3. Tap any device to log it out
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card
+    title="Connect Your CRM"
+    icon="plug"
+    href="/integrations/overview"
+  >
+    Set up your CRM integration
+  </Card>
+  <Card
+    title="WhatsApp Account Types"
+    icon="whatsapp"
+    href="/getting-started/whatsapp-types"
+  >
+    Learn about Personal vs Business vs API
+  </Card>
+</CardGroup>

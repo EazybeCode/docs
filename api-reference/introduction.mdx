@@ -1,33 +1,79 @@
 ---
-title: 'Introduction'
-description: 'Example section for showcasing API endpoints'
+title: 'API Reference'
+description: 'Integrate Eazybe programmatically'
 ---
 
-<Note>
-  If you're not looking to build API reference documentation, you can delete
-  this section by removing the api-reference folder.
-</Note>
+## Overview
 
-## Welcome
+The Eazybe API allows you to programmatically interact with your WhatsApp messaging and CRM data.
 
-There are two ways to build API documentation: [OpenAPI](https://mintlify.com/docs/api-playground/openapi/setup) and [MDX components](https://mintlify.com/docs/api-playground/mdx/configuration). For the starter kit, we are using the following OpenAPI specification.
+<Warning>
+  API access requires an Enterprise plan or API add-on.
+</Warning>
 
-<Card
-  title="Plant Store Endpoints"
-  icon="leaf"
-  href="https://github.com/mintlify/starter/blob/main/api-reference/openapi.json"
->
-  View the OpenAPI specification file
-</Card>
+## Base URL
+
+```
+https://api.eazybe.com/v1
+```
 
 ## Authentication
 
-All API endpoints are authenticated using Bearer tokens and picked up from the specification file.
+All API requests require authentication via API key:
+
+```bash
+curl -H "Authorization: Bearer YOUR_API_KEY" \
+  https://api.eazybe.com/v1/contacts
+```
+
+### Getting Your API Key
+
+1. Go to Eazybe Workspace → Settings → API
+2. Click "Generate API Key"
+3. Copy and store securely
+
+## Rate Limits
+
+| Plan | Requests/minute |
+|------|-----------------|
+| Starter | 60 |
+| Professional | 300 |
+| Enterprise | 1000 |
+
+## Response Format
+
+All responses are JSON:
 
 ```json
-"security": [
-  {
-    "bearerAuth": []
+{
+  "success": true,
+  "data": { ... },
+  "meta": {
+    "page": 1,
+    "total": 100
   }
-]
+}
 ```
+
+## Error Handling
+
+```json
+{
+  "success": false,
+  "error": {
+    "code": "INVALID_PHONE",
+    "message": "Phone number format is invalid"
+  }
+}
+```
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="Messages" icon="message" href="/api-reference/endpoints/messages">
+    Send and receive messages
+  </Card>
+  <Card title="Contacts" icon="users" href="/api-reference/endpoints/contacts">
+    Manage contacts
+  </Card>
+</CardGroup>

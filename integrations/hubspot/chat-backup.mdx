@@ -1,0 +1,98 @@
+---
+title: 'Chat Backup'
+description: 'Automatically log WhatsApp conversations to HubSpot timeline'
+sidebarTitle: 'Chat Backup'
+---
+
+## Overview
+
+Chat backup automatically logs all WhatsApp conversations to HubSpot contact timelines, ensuring complete visibility into customer interactions.
+
+## What Gets Backed Up
+
+| Content Type | Backed Up | Notes |
+|--------------|-----------|-------|
+| Text messages | ✅ | Both sent and received |
+| Images | ✅ | Saved as attachments |
+| Documents | ✅ | PDF, DOC, XLS, etc. |
+| Voice messages | ✅ | Audio file attachments |
+| Videos | ⚠️ | Only small files (<16MB) |
+| Stickers | ❌ | Not supported |
+| Location shares | ❌ | Not supported |
+
+## Where to Find Backups
+
+In HubSpot, backed-up conversations appear in:
+
+1. **Contact Timeline** - Under "WhatsApp" activity type
+2. **Activity Feed** - Filterable by "WhatsApp" 
+3. **Engagement Reports** - Included in activity metrics
+
+## Backup Frequency
+
+Default sync occurs every **5 minutes**. Configurable options:
+
+| Frequency | Best For |
+|-----------|----------|
+| 3 minutes | High-volume teams needing near real-time |
+| 5 minutes | Most teams (recommended) |
+| 10 minutes | Large teams to reduce API calls |
+
+## Configuration
+
+### Enable Chat Backup
+
+1. Go to **Settings** → **HubSpot** → **Chat Backup**
+2. Toggle **Enable backup** to On
+3. Select sync frequency
+4. Configure attachment settings
+5. Save changes
+
+### Attachment Settings
+
+| Setting | Description |
+|---------|-------------|
+| Backup attachments | Include images/documents in sync |
+| Max file size | Limit for individual files (default 16MB) |
+| File types | Select which types to include |
+
+## Viewing Backups in HubSpot
+
+<Steps>
+  <Step title="Open Contact">
+    Navigate to the contact in HubSpot.
+  </Step>
+  <Step title="View Timeline">
+    Scroll to the activity timeline.
+  </Step>
+  <Step title="Filter by WhatsApp">
+    Use the filter to show only WhatsApp activities.
+  </Step>
+</Steps>
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="Messages not appearing in timeline">
+    - Check if backup is enabled in settings
+    - Verify the contact is linked to HubSpot
+    - Wait for the next sync cycle (up to 5 minutes)
+    - Check last sync time in Eazybe workspace
+  </Accordion>
+  <Accordion title="Attachments not syncing">
+    - Verify attachment backup is enabled
+    - Check if file size exceeds limit
+    - Ensure file type is supported
+  </Accordion>
+</AccordionGroup>
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="Mini-CRM View" icon="sidebar" href="/integrations/hubspot/mini-crm/overview">
+    Manage HubSpot from WhatsApp
+  </Card>
+  <Card title="Workflows" icon="diagram-project" href="/integrations/hubspot/workflows">
+    Automate with HubSpot workflows
+  </Card>
+</CardGroup>
