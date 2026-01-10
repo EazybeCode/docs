@@ -167,3 +167,163 @@
           {
             "group": "HubSpot",
             "pages": [
+              "integrations/hubspot/overview",
+              "integrations/hubspot/prerequisites",
+              "integrations/hubspot/setup",
+              "integrations/hubspot/contact-sync",
+              "integrations/hubspot/chat-backup",
+              "integrations/hubspot/mini-crm/overview",
+              "integrations/hubspot/mini-crm/contacts",
+              "integrations/hubspot/mini-crm/deals",
+              "integrations/hubspot/mini-crm/tasks-notes",
+              "integrations/hubspot/mini-crm/tickets",
+              "integrations/hubspot/mini-crm/call-logs",
+              "integrations/hubspot/workflows",
+              "integrations/hubspot/dynamic-labels",
+              "integrations/hubspot/admin-management",
+              "integrations/hubspot/troubleshooting",
+              "integrations/hubspot/faq"
+            ]
+          },
+          {
+            "group": "Zoho CRM",
+            "pages": [
+              "integrations/zoho/overview",
+              "integrations/zoho/prerequisites",
+              "integrations/zoho/setup",
+              "integrations/zoho/contact-sync",
+              "integrations/zoho/chat-backup",
+              "integrations/zoho/mini-crm/overview",
+              "integrations/zoho/mini-crm/contacts",
+              "integrations/zoho/mini-crm/leads",
+              "integrations/zoho/mini-crm/deals",
+              "integrations/zoho/workflows",
+              "integrations/zoho/admin-management",
+              "integrations/zoho/troubleshooting",
+              "integrations/zoho/faq"
+            ]
+          },
+          {
+            "group": "Salesforce",
+            "pages": [
+              "integrations/salesforce/overview",
+              "integrations/salesforce/prerequisites",
+              "integrations/salesforce/setup",
+              "integrations/salesforce/contact-sync",
+              "integrations/salesforce/chat-backup",
+              "integrations/salesforce/mini-crm/overview",
+              "integrations/salesforce/mini-crm/contacts",
+              "integrations/salesforce/mini-crm/leads",
+              "integrations/salesforce/mini-crm/opportunities",
+              "integrations/salesforce/admin-management",
+              "integrations/salesforce/troubleshooting",
+              "integrations/salesforce/faq"
+            ]
+          },
+          {
+            "group": "Pipedrive",
+            "pages": [
+              "integrations/pipedrive/overview",
+              "integrations/pipedrive/setup",
+              "integrations/pipedrive/contact-sync",
+              "integrations/pipedrive/chat-backup",
+              "integrations/pipedrive/mini-crm",
+              "integrations/pipedrive/troubleshooting"
+            ]
+          },
+          {
+            "group": "LeadSquared",
+            "pages": [
+              "integrations/leadsquared/overview",
+              "integrations/leadsquared/prerequisites",
+              "integrations/leadsquared/setup",
+              "integrations/leadsquared/contact-sync",
+              "integrations/leadsquared/chat-backup",
+              "integrations/leadsquared/mini-crm",
+              "integrations/leadsquared/admin-management",
+              "integrations/leadsquared/troubleshooting",
+              "integrations/leadsquared/faq"
+            ]
+          },
+          {
+            "group": "Bitrix24",
+            "pages": [
+              "integrations/bitrix/overview",
+              "integrations/bitrix/setup",
+              "integrations/bitrix/contact-sync",
+              "integrations/bitrix/chat-backup",
+              "integrations/bitrix/mini-crm",
+              "integrations/bitrix/troubleshooting"
+            ]
+          },
+          {
+            "group": "Google Sheets",
+            "pages": [
+              "integrations/google-sheets/overview",
+              "integrations/google-sheets/setup",
+              "integrations/google-sheets/sync-contacts",
+              "integrations/google-sheets/chat-backup",
+              "integrations/google-sheets/troubleshooting"
+            ]
+          },
+          {
+            "group": "Freshdesk",
+            "pages": [
+              "integrations/freshdesk/overview",
+              "integrations/freshdesk/setup",
+              "integrations/freshdesk/tickets",
+              "integrations/freshdesk/troubleshooting"
+            ]
+          },
+          {
+            "group": "Webhooks & Custom",
+            "pages": [
+              "integrations/webhooks/overview",
+              "integrations/webhooks/setup",
+              "integrations/webhooks/events",
+              "integrations/webhooks/security"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "API Reference",
+        "groups": [
+          {
+            "group": "Overview",
+            "pages": [
+              "api-reference/introduction",
+              "api-reference/authentication"
+            ]
+          },
+          {
+            "group": "Endpoints",
+            "pages": [
+              "api-reference/endpoints/messages",
+              "api-reference/endpoints/contacts",
+              "api-reference/endpoints/conversations",
+              "api-reference/endpoints/templates",
+              "api-reference/endpoints/broadcasts"
+            ]
+          },
+          {
+            "group": "Webhooks",
+            "pages": [
+              "api-reference/webhooks/overview",
+              "api-reference/webhooks/events",
+              "api-reference/webhooks/payload-reference"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "footerSocials": {
+    "linkedin": "https://linkedin.com/company/eazybe",
+    "twitter": "https://twitter.com/eazybe"
+  },
+  "feedback": {
+    "thumbsRating": true,
+    "suggestEdit": true
+  }
+}
