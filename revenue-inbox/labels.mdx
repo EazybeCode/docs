@@ -1,12 +1,229 @@
 ---
 title: 'Labels'
-description: 'Revenue Inbox labels documentation'
+description: 'Organize WhatsApp contacts with labels and sub-labels'
 ---
 
 ## Overview
 
-This page covers labels functionality in Revenue Inbox.
+Labels help you categorize and organize your WhatsApp contacts. Use them to segment leads, track deal stages, or group contacts by any criteria you choose.
 
-<Info>
-  Content coming soon. Check back for detailed documentation.
-</Info>
+## Labels vs Funnels
+
+| Feature | Labels | Funnels |
+|---------|--------|---------|
+| Purpose | Categorization | Stage tracking |
+| Structure | Can have sub-labels | Has sequential stages |
+| Contact limit | Multiple labels per contact | One stage at a time |
+| Best for | Tags, categories | Sales pipelines |
+
+## Creating a Label
+
+<Steps>
+  <Step title="Open Label Manager">
+    Click the **Labels** icon in the Eazybe top bar, or go to the Labels section in your workspace.
+  </Step>
+  
+  <Step title="Click Create">
+    Click **+ Create Label** or **Add Label/Funnel**.
+  </Step>
+  
+  <Step title="Choose Type">
+    Select **Label** (not Funnel).
+  </Step>
+  
+  <Step title="Enter Details">
+    - **Name**: Label name (e.g., "Hot Leads")
+    - **Color**: Choose a color for visual identification
+    - **Description** (optional): What this label represents
+  </Step>
+  
+  <Step title="Set Visibility">
+    - **Personal**: Only you can see and use this label
+    - **Shared**: Entire organization can see and use
+    - **Shared with Team**: Only specific teams can access
+  </Step>
+  
+  <Step title="Add Sub-Labels (Optional)">
+    Click **+ Add Sub-Label** to create nested categories:
+    - Hot Leads → Contacted, Qualified, Demo Scheduled
+  </Step>
+  
+  <Step title="Save">
+    Click **Create** to save your label.
+  </Step>
+</Steps>
+
+## Adding Contacts to Labels
+
+### From WhatsApp Chat
+
+1. Open a WhatsApp conversation
+2. Click the **Label** icon in the Eazybe sidebar
+3. Select one or more labels to apply
+4. Click **Save**
+
+### From Label Manager
+
+1. Open the Label in your workspace
+2. Click **Add Contacts**
+3. Search and select contacts
+4. Click **Save**
+
+### Bulk Labeling
+
+1. In Revenue Inbox, select multiple conversations
+2. Click **Add Label** from the bulk actions menu
+3. Choose the label to apply
+4. Confirm
+
+## Managing Labels
+
+### Editing a Label
+
+1. Open Label Manager
+2. Find the label to edit
+3. Click **Edit** (pencil icon)
+4. Modify name, color, or sub-labels
+5. Click **Save**
+
+### Deleting a Label
+
+1. Open Label Manager
+2. Find the label to delete
+3. Click **Delete** (trash icon)
+4. Confirm deletion
+
+<Warning>
+  Deleting a label removes it from all contacts. The contacts themselves are not deleted.
+</Warning>
+
+### Moving Contacts Between Labels
+
+1. Open the contact's chat
+2. Click the Label icon
+3. Uncheck the current label
+4. Check the new label
+5. Save
+
+## Sub-Labels
+
+Organize labels hierarchically:
+
+```
+🏷️ Leads
+  └── New
+  └── Contacted
+  └── Qualified
+  └── Lost
+
+🏷️ Customers
+  └── Active
+  └── Churned
+  └── VIP
+```
+
+### Creating Sub-Labels
+
+1. Edit an existing label (or create new)
+2. Click **+ Add Sub-Label**
+3. Enter sub-label name
+4. Repeat for additional sub-labels
+5. Save
+
+## Syncing with CRM
+
+Labels can sync with your CRM properties:
+
+### HubSpot
+- Labels sync as Contact Tags or Custom Properties
+- Sub-labels can map to lifecycle stages
+
+### Zoho
+- Labels sync as Tags on Contacts/Leads
+
+### Dynamic Labels
+See [Dynamic Labels](/revenue-inbox/dynamic-labels) for automatic labeling based on CRM properties.
+
+## Filtering by Label
+
+### In WhatsApp (Extension)
+1. Click the Labels dropdown in the top bar
+2. Select a label to filter
+3. Only contacts with that label are shown
+
+### In Revenue Inbox
+1. Use the **Labels** filter in the sidebar
+2. Select one or more labels
+3. Conversations are filtered accordingly
+
+## Label Colors
+
+Use colors strategically:
+
+| Color | Suggested Use |
+|-------|---------------|
+| 🔴 Red | Urgent, Hot leads |
+| 🟠 Orange | Follow-up needed |
+| 🟡 Yellow | Pending, Waiting |
+| 🟢 Green | Active, Qualified |
+| 🔵 Blue | Information, General |
+| 🟣 Purple | VIP, Special |
+| ⚫ Gray | Archive, Inactive |
+
+## Best Practices
+
+<Tip>
+  **Keep it simple**: Start with 5-10 labels. Too many labels become hard to manage and use consistently.
+</Tip>
+
+### Recommended Label Structure
+
+**By Lead Status:**
+- New Lead
+- Contacted
+- Qualified
+- Proposal Sent
+- Closed Won
+- Closed Lost
+
+**By Source:**
+- Website
+- Referral
+- Social Media
+- Event
+
+**By Priority:**
+- Hot
+- Warm
+- Cold
+
+## FAQ
+
+<AccordionGroup>
+  <Accordion title="Can a contact have multiple labels?">
+    Yes, contacts can have any number of labels. Use Funnels if you need contacts in only one stage at a time.
+  </Accordion>
+  
+  <Accordion title="Do labels sync to WhatsApp's native labels?">
+    Eazybe labels are separate from WhatsApp Business App's native labels. They're stored in Eazybe and your connected CRM.
+  </Accordion>
+  
+  <Accordion title="Can I see label history?">
+    Label changes are logged in the contact's activity timeline if you have a CRM connected.
+  </Accordion>
+  
+  <Accordion title="What's the difference between labels and tags?">
+    In Eazybe, labels and tags are the same concept. Some CRMs call them tags.
+  </Accordion>
+</AccordionGroup>
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="Dynamic Labels" icon="wand-magic-sparkles" href="/revenue-inbox/dynamic-labels">
+    Auto-label based on CRM data
+  </Card>
+  <Card title="Funnels" icon="filter" href="/revenue-inbox/funnels">
+    Track contacts through stages
+  </Card>
+</CardGroup>

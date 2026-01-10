@@ -1,12 +1,259 @@
 ---
 title: 'Sync Issues'
-description: 'Troubleshooting - sync-issues'
+description: 'Fix WhatsApp to CRM synchronization problems'
 ---
 
 ## Overview
 
-sync-issues troubleshooting guide.
+This guide helps you troubleshoot when WhatsApp conversations aren't syncing properly to your CRM (HubSpot, Zoho, Salesforce, etc.).
 
-<Info>
-  Detailed content coming soon.
-</Info>
+## Quick Diagnosis
+
+Answer these questions to identify the issue:
+
+<AccordionGroup>
+  <Accordion title="Are ANY chats syncing?">
+    **If No**: Integration may be disconnected. [Check connection status](#verify-integration-connection).
+    
+    **If Some**: Issue is with specific contacts or labels. [Check contact matching](#contact-not-matching).
+  </Accordion>
+  
+  <Accordion title="When did sync last work?">
+    **Never worked**: Setup may be incomplete. [Verify setup](#verify-integration-connection).
+    
+    **Worked before**: Something changed. Check recent changes to permissions, labels, or settings.
+  </Accordion>
+  
+  <Accordion title="What's not syncing?">
+    **Messages only**: Chat backup issue. [Check backup settings](#chat-backup-not-working).
+    
+    **Contacts**: Contact sync issue. [Check contact matching](#contact-not-matching).
+    
+    **Attachments**: Attachment-specific issue. [Check attachment settings](#attachments-not-syncing).
+  </Accordion>
+</AccordionGroup>
+
+## Verify Integration Connection
+
+<Steps>
+  <Step title="Check Connection Status">
+    In Eazybe sidebar, click **Integrations**.
+    
+    Look for your CRM:
+    - ✅ Green = Connected
+    - 🔴 Red = Disconnected
+    - ⚪ Gray = Never connected
+  </Step>
+  
+  <Step title="Check Last Sync Time">
+    Go to Eazybe Workspace → Dashboard.
+    
+    Find "Last Chat Synced" column for your employee row. If it shows a recent time, sync is working.
+  </Step>
+  
+  <Step title="Reconnect if Needed">
+    If disconnected:
+    1. Click your CRM in Integrations
+    2. Click **Reconnect** or **Connect**
+    3. Re-authorize permissions
+  </Step>
+</Steps>
+
+## Contact Not Matching
+
+Contacts sync via **phone number**. If matching fails:
+
+### Check Phone Number Format
+
+| WhatsApp | CRM Field | Will Match? |
+|----------|-----------|-------------|
+| +1 555 123 4567 | +15551234567 | ✅ Yes |
+| +1 555 123 4567 | 5551234567 | ✅ Yes |
+| +1 555 123 4567 | 555-123-4567 | ✅ Yes |
+| +91 98765 43210 | 9876543210 | ❌ No (missing country code) |
+
+<Warning>
+  **Country codes matter!** If WhatsApp has +91 but CRM has just the local number, matching fails.
+</Warning>
+
+### Fix: Add Country Code to CRM
+
+1. Open the contact in your CRM
+2. Edit the phone number
+3. Add the full country code (e.g., +91, +1)
+4. Save
+5. Wait for next sync cycle (3-5 minutes)
+
+### Fix: Manual Linking
+
+If auto-matching fails:
+1. Open the WhatsApp chat
+2. Click your CRM icon in Eazybe
+3. Click **Link to Existing Contact**
+4. Search and select the correct contact
+5. Confirm - phone number is added to their CRM record
+
+## Chat Backup Not Working
+
+### Check CRM Permissions
+
+<Tabs>
+  <Tab title="HubSpot">
+    1. Go to HubSpot Settings → Users & Teams
+    2. Click your user → Edit permissions
+    3. Ensure these are enabled:
+       - **App Marketplace** access
+       - **Files** access
+    4. If missing, contact your Super Admin
+  </Tab>
+  <Tab title="Zoho">
+    1. Go to Zoho CRM Settings → Users
+    2. Check your profile permissions
+    3. Ensure API access and Notes permissions are enabled
+  </Tab>
+  <Tab title="Salesforce">
+    1. Check your Salesforce profile
+    2. Ensure API access is enabled
+    3. Verify Activity logging permissions
+  </Tab>
+</Tabs>
+
+### Check Activity Filter (HubSpot)
+
+1. Open any HubSpot contact page
+2. Click **Filter activity** (expand dropdown)
+3. Under **Communication**, check **WhatsApp Activity**
+4. If unchecked, WhatsApp chats won't display (but still sync)
+
+### Check Label Settings
+
+1. In Eazybe, click **Backup and Sync**
+2. Review your label settings
+3. Ensure the label isn't set to **Don't Sync**
+4. If it is, change to **Sync** or remove contact from that label
+
+## Attachments Not Syncing
+
+### Check Attachment Settings
+
+1. Go to Eazybe Settings → CRM Integration → Backup
+2. Verify **Backup attachments** is enabled
+3. Check file size limit (default 16MB, max 20MB)
+
+### File Size Limits
+
+| Attachment Type | Max Size |
+|-----------------|----------|
+| Images | 20 MB |
+| Documents | 20 MB |
+| PDFs | 20 MB |
+| Videos | 16 MB |
+| Voice Notes | 20 MB |
+
+Files exceeding the limit won't sync. Reduce file size before sending.
+
+### Supported File Types
+
+- ✅ Images (JPG, PNG, GIF, WEBP)
+- ✅ Documents (DOC, DOCX, PDF, XLS, XLSX)
+- ✅ Audio (MP3, OGG, voice notes)
+- ⚠️ Videos (limited support, large files may fail)
+- ❌ Stickers
+- ❌ Location shares
+
+## Sync Delays
+
+### Normal Sync Timing
+
+| Action | Sync Time |
+|--------|-----------|
+| New contact creation | Immediate |
+| Message backup | 3-5 minutes |
+| Property updates | 1-5 minutes |
+| Bulk changes | Up to 10 minutes |
+
+### If Sync is Slower Than Expected
+
+1. **Check your internet connection** - Unstable connection delays sync
+2. **Check WhatsApp Web status** - Must stay connected
+3. **Check Eazybe extension** - Refresh WhatsApp Web page
+4. **High volume** - Many messages may take longer to process
+
+## CRM-Specific Issues
+
+### HubSpot
+
+<AccordionGroup>
+  <Accordion title="Chats not appearing in timeline">
+    - Enable WhatsApp Activity filter (see above)
+    - Check Files permission
+    - Verify contact is linked via phone number
+  </Accordion>
+  
+  <Accordion title="Workflow not triggering WhatsApp">
+    - Requires HubSpot Professional/Enterprise
+    - Check workflow is active
+    - Verify contact owner has Eazybe connected
+    - Check Cloud connection is enabled
+  </Accordion>
+</AccordionGroup>
+
+### Zoho
+
+<AccordionGroup>
+  <Accordion title="Contacts not syncing">
+    - Check phone field name (Phone vs Mobile)
+    - Ensure contact has phone in correct field
+    - Verify Zoho API access
+  </Accordion>
+  
+  <Accordion title="Notes not appearing">
+    - Check Notes permission in Zoho profile
+    - Verify integration is connected
+  </Accordion>
+</AccordionGroup>
+
+### Salesforce
+
+<AccordionGroup>
+  <Accordion title="Activity not logging">
+    - Check API access in your profile
+    - Verify Activity object permissions
+    - Ensure Lead/Contact has phone number
+  </Accordion>
+</AccordionGroup>
+
+## Still Having Issues?
+
+<Steps>
+  <Step title="Check Last Sync Time">
+    Workspace → Dashboard → Last Chat Synced column
+  </Step>
+  
+  <Step title="Force Refresh">
+    Refresh WhatsApp Web page (`Ctrl/Cmd + R`)
+  </Step>
+  
+  <Step title="Reconnect Integration">
+    Disconnect and reconnect your CRM integration
+  </Step>
+  
+  <Step title="Contact Support">
+    If nothing works, email [support@eazybe.com](mailto:support@eazybe.com) with:
+    - Your CRM type
+    - Screenshot of integration status
+    - Last sync time
+    - Example contact that isn't syncing
+  </Step>
+</Steps>
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="Connection Issues" icon="plug" href="/troubleshooting/connection-issues">
+    WhatsApp Web connection problems
+  </Card>
+  <Card title="Extension Issues" icon="puzzle-piece" href="/troubleshooting/extension-issues">
+    Chrome extension problems
+  </Card>
+</CardGroup>

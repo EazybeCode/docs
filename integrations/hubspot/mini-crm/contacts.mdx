@@ -1,12 +1,142 @@
 ---
 title: 'Contacts'
-description: 'HubSpot Mini-CRM contacts'
+description: 'Create and manage HubSpot contacts directly from WhatsApp'
+sidebarTitle: 'Contacts'
 ---
 
 ## Overview
 
-Manage contacts from WhatsApp using the Mini-CRM sidebar.
+With Eazybe, you can create new HubSpot contacts and customize existing ones without leaving WhatsApp. This eliminates tab-switching and ensures every conversation is captured in your CRM.
 
-<Info>
-  Detailed content coming soon.
-</Info>
+## Creating a New Contact
+
+<Steps>
+  <Step title="Open the WhatsApp Chat">
+    Navigate to the WhatsApp conversation with the person you want to add to HubSpot.
+  </Step>
+  
+  <Step title="Click the HubSpot Icon">
+    In the Eazybe sidebar (right side), click the **HubSpot icon** (orange).
+    
+    ![HubSpot Icon in Sidebar](https://downloads.intercomcdn.com/i/o/p2m2ant5/1329158233/433b611278b1eca62828ac6d7cc7/16.png)
+  </Step>
+  
+  <Step title="Click Create Contact">
+    Click the **Create Contact** button in the panel.
+    
+    ![Create Contact Button](https://downloads.intercomcdn.com/i/o/p2m2ant5/1329158695/385ce8a4b13b16321ac244ac61d4/contact.png)
+  </Step>
+  
+  <Step title="Fill Contact Details">
+    - **Phone number** is automatically filled from WhatsApp (non-editable)
+    - Add **First Name**, **Last Name**, **Email**
+    - Set **Lifecycle Stage**, **Lead Status**, or other properties
+  </Step>
+  
+  <Step title="Save">
+    Click **Save** to create the contact in HubSpot.
+  </Step>
+</Steps>
+
+<Tip>
+  The phone number is auto-synced from WhatsApp and cannot be edited to ensure accurate contact matching.
+</Tip>
+
+## Editing an Existing Contact
+
+<Steps>
+  <Step title="Open the Chat">
+    Navigate to the WhatsApp chat of an existing HubSpot contact.
+  </Step>
+  
+  <Step title="Access Contact Card">
+    Click the HubSpot icon. The contact's profile will load automatically.
+  </Step>
+  
+  <Step title="Click Edit">
+    Click the **Edit** button on the contact card.
+    
+    ![Edit Contact](https://downloads.intercomcdn.com/i/o/p2m2ant5/1329160376/cdc30dbf72056bb528ba7a8c5633/4.png)
+  </Step>
+  
+  <Step title="Modify Properties">
+    In the popup, you can:
+    - Edit any contact property
+    - Rearrange the order of displayed properties
+    - Mark properties as required or optional
+  </Step>
+  
+  <Step title="Apply and Save">
+    Click **Apply** to update the contact card layout, then **Save** to finalize changes.
+  </Step>
+</Steps>
+
+## Customizing Contact Card View
+
+You can customize which HubSpot properties appear in the Mini-CRM contact card:
+
+1. Click **Edit** on any contact
+2. Select/deselect properties to show
+3. Drag to reorder properties
+4. Click **Apply** to save the layout
+
+This layout persists across all contacts, giving you quick access to the fields that matter most.
+
+## Linking Unmatched Contacts
+
+If a WhatsApp contact isn't automatically matched to HubSpot:
+
+<Steps>
+  <Step title="Click Link Contact">
+    In the HubSpot panel, click **Link to Existing Contact**.
+  </Step>
+  
+  <Step title="Search">
+    Search by name, email, or phone number.
+  </Step>
+  
+  <Step title="Select and Confirm">
+    Select the correct contact and confirm. The WhatsApp number will be added to their HubSpot record.
+  </Step>
+</Steps>
+
+## Contact Properties Available
+
+| Property | View | Edit | Create |
+|----------|------|------|--------|
+| First Name | ✅ | ✅ | ✅ |
+| Last Name | ✅ | ✅ | ✅ |
+| Email | ✅ | ✅ | ✅ |
+| Phone | ✅ | ❌ | Auto |
+| Company | ✅ | ✅ | ✅ |
+| Lifecycle Stage | ✅ | ✅ | ✅ |
+| Lead Status | ✅ | ✅ | ✅ |
+| Owner | ✅ | ✅ | ✅ |
+| Custom Properties | ✅ | ✅ | ✅ |
+
+## FAQ
+
+<AccordionGroup>
+  <Accordion title="Why can't I edit the phone number?">
+    Phone numbers are locked to prevent accidental changes that would break the WhatsApp-HubSpot link. The number comes directly from WhatsApp.
+  </Accordion>
+  
+  <Accordion title="Can I create contacts in bulk?">
+    The Mini-CRM is designed for individual contact creation during conversations. For bulk imports, use HubSpot's native import feature.
+  </Accordion>
+  
+  <Accordion title="What happens if a contact already exists?">
+    Eazybe automatically matches contacts by phone number. If a match is found, the existing contact is displayed instead of the create option.
+  </Accordion>
+</AccordionGroup>
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="Manage Deals" icon="handshake" href="/integrations/hubspot/mini-crm/deals">
+    Create deals for your contacts
+  </Card>
+  <Card title="Add Tasks" icon="list-check" href="/integrations/hubspot/mini-crm/tasks-notes">
+    Set follow-up reminders
+  </Card>
+</CardGroup>

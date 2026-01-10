@@ -1,12 +1,196 @@
 ---
 title: 'Team Management'
-description: 'Settings - team-management'
+description: 'Invite team members and manage your organization'
 ---
 
 ## Overview
 
-team-management account settings.
+Add employees to your Eazybe organization to enable team collaboration, shared resources, and centralized monitoring through the Revenue Inbox.
 
-<Info>
-  Detailed content coming soon.
-</Info>
+## Inviting Team Members
+
+<Steps>
+  <Step title="Open Organization Settings">
+    Click the **Organization** button in the Eazybe sidebar, or go directly to [workspace.eazybe.com/organization](https://workspace.eazybe.com/organization).
+  </Step>
+  
+  <Step title="Navigate to Employees">
+    Click **Employees** in the left sidebar.
+  </Step>
+  
+  <Step title="Add Employees">
+    Click **+ Add Employees** button.
+  </Step>
+  
+  <Step title="Enter Details">
+    For each employee, provide:
+    - **Name** (required)
+    - **Email** (required)
+    - **WhatsApp Number** (required)
+    - **Team** (optional)
+    - **Role** (optional)
+  </Step>
+  
+  <Step title="Send Invites">
+    Click **Send Invites** to email invitations to all added employees.
+  </Step>
+</Steps>
+
+## What Happens After Invite
+
+1. **Employee receives email** with invitation link
+2. **Employee installs** Eazybe Chrome extension
+3. **Employee connects** WhatsApp Web
+4. **Employee joins** your organization using the invite code
+5. **Chats start syncing** to Revenue Inbox
+
+## Employee Onboarding
+
+Share these steps with new team members:
+
+<Steps>
+  <Step title="Accept Invite">
+    Click the link in the invitation email.
+  </Step>
+  
+  <Step title="Install Extension">
+    Download Eazybe from Chrome Web Store if not already installed.
+  </Step>
+  
+  <Step title="Open WhatsApp Web">
+    Go to web.whatsapp.com and scan QR code.
+  </Step>
+  
+  <Step title="Enter Organization Code">
+    In Eazybe, click **Join Organization** and enter the code from the invite.
+  </Step>
+  
+  <Step title="Start Using">
+    Access shared Quick Replies, Labels, and connect to CRM.
+  </Step>
+</Steps>
+
+## Managing Employees
+
+### Viewing Employee Status
+
+In the Dashboard, view each employee's:
+- **Last Activity**: When they last used Eazybe
+- **Last Chat Synced**: When their chats last synced
+- **CRM Integration**: Which CRM they've connected
+
+### Editing Employee Details
+
+1. Go to **Employees** section
+2. Click the employee's name
+3. Click **Edit**
+4. Update details
+5. Save
+
+### Removing Employees
+
+1. Go to **Employees** section
+2. Find the employee
+3. Click **Remove** or **Delete**
+4. Confirm removal
+
+<Warning>
+  Removing an employee stops their chat sync immediately. Previously synced data remains in your CRM.
+</Warning>
+
+## Teams
+
+Organize employees into teams for better management:
+
+### Creating a Team
+
+1. Go to **Teams** in settings
+2. Click **+ Create Team**
+3. Enter team name (e.g., "Sales", "Support")
+4. Add team members
+5. Save
+
+### Team Benefits
+
+- **Shared Resources**: Quick Replies and Labels can be team-specific
+- **Filtered Views**: View Revenue Inbox by team
+- **Analytics**: See team-level performance metrics
+- **Permissions**: Set different access levels per team
+
+## What Team Members Can Access
+
+| Feature | Employee | Manager | Admin |
+|---------|----------|---------|-------|
+| Own WhatsApp chats | ✅ | ✅ | ✅ |
+| Shared Quick Replies | ✅ | ✅ | ✅ |
+| Shared Labels | ✅ | ✅ | ✅ |
+| Team members' chats | ❌ | ✅ | ✅ |
+| All organization chats | ❌ | ❌ | ✅ |
+| Analytics (own) | ✅ | ✅ | ✅ |
+| Analytics (team) | ❌ | ✅ | ✅ |
+| Analytics (all) | ❌ | ❌ | ✅ |
+| Manage employees | ❌ | ❌ | ✅ |
+| Billing | ❌ | ❌ | ✅ |
+
+## Increasing Seats
+
+Need more employee seats?
+
+### From Workspace
+1. Go to **Accounts** → **Billing**
+2. Click **Add Seats** or **Upgrade Plan**
+3. Select the number of additional seats
+4. Complete payment
+
+### From Extension
+1. Click the **Upgrade Plan** button in Eazybe
+2. Follow the prompts to add seats
+
+## Data & Privacy
+
+### Where is Employee Data Stored?
+
+- **Chat backups**: Stored in Admin's Google Drive (not Eazybe servers)
+- **CRM sync**: Stored in your connected CRM
+- **No data on Eazybe servers**: We don't store message content
+
+### Employee Privacy
+
+- Employees know their chats are monitored (transparent policy)
+- Admin can see chats synced to Revenue Inbox
+- Personal WhatsApp conversations can be excluded via label settings
+
+## FAQ
+
+<AccordionGroup>
+  <Accordion title="What details are required to add an employee?">
+    Name, Email, and WhatsApp Number are mandatory. Additional details like team and role are optional.
+  </Accordion>
+  
+  <Accordion title="Can employees access each other's chats?">
+    No, regular employees can only see their own chats. Managers can see their team's chats. Admins can see all chats.
+  </Accordion>
+  
+  <Accordion title="How do I verify invites were sent?">
+    Check the employee status in the dashboard. You'll see "Invite Sent" until they accept and join.
+  </Accordion>
+  
+  <Accordion title="What happens when an employee leaves the company?">
+    Remove them from the organization. Their previously synced chats remain in your CRM for record-keeping.
+  </Accordion>
+  
+  <Accordion title="Can employees disconnect their CRM?">
+    Employees can disconnect their personal CRM integration. Admins can enforce CRM connection policies.
+  </Accordion>
+</AccordionGroup>
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="Roles & Permissions" icon="user-shield" href="/settings/roles-permissions">
+    Configure access levels
+  </Card>
+  <Card title="Revenue Inbox" icon="inbox" href="/revenue-inbox/overview">
+    Monitor team conversations
+  </Card>
+</CardGroup>

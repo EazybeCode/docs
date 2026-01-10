@@ -1,12 +1,184 @@
 ---
 title: 'Scheduled Messages'
-description: 'Productivity - scheduled-messages'
+description: 'Schedule WhatsApp messages to send at specific times'
 ---
 
 ## Overview
 
-scheduled-messages productivity feature.
+Schedule messages to be sent automatically at a specific date and time. Perfect for follow-ups, reminders, and time-zone-optimized outreach.
 
-<Info>
-  Detailed content coming soon.
-</Info>
+## Scheduling a Message
+
+<Steps>
+  <Step title="Open the Chat">
+    Navigate to the WhatsApp conversation where you want to schedule a message.
+  </Step>
+  
+  <Step title="Click Schedule">
+    Click the **Schedule** icon (clock) in the Eazybe toolbar above the message input.
+  </Step>
+  
+  <Step title="Compose Your Message">
+    Type your message in the text field. You can also:
+    - Select from Quick Replies
+    - Add an attachment (max 20MB, one file)
+    - Record a voice note
+  </Step>
+  
+  <Step title="Set Date and Time">
+    - Select the **date** from the calendar
+    - Choose the **time** for delivery
+    - Timezone is based on your system settings
+  </Step>
+  
+  <Step title="Optional: Save to Quick Replies">
+    Check the box to save this message as a Quick Reply for future use.
+  </Step>
+  
+  <Step title="Schedule">
+    Click **Schedule** to confirm. The message will be sent automatically at the specified time.
+  </Step>
+</Steps>
+
+## Recurring Messages
+
+Send the same message on a regular schedule:
+
+<Steps>
+  <Step title="Create Scheduled Message">
+    Follow steps 1-4 above.
+  </Step>
+  
+  <Step title="Enable Recurring">
+    Toggle on **Set as Recurring Message**.
+  </Step>
+  
+  <Step title="Set Frequency">
+    Choose how often to send:
+    - Daily
+    - Weekly (select days)
+    - Monthly (select date)
+  </Step>
+  
+  <Step title="Set End Date (Optional)">
+    Choose when to stop recurring messages, or leave open-ended.
+  </Step>
+</Steps>
+
+<Tip>
+  Recurring messages are great for weekly check-ins, monthly reminders, or daily team updates.
+</Tip>
+
+## Managing Scheduled Messages
+
+### Viewing Scheduled Messages
+
+1. Click the **Schedule** icon in the Eazybe sidebar
+2. View all pending scheduled messages
+3. Filter by contact or date
+
+### Editing a Scheduled Message
+
+1. Find the message in the scheduled list
+2. Click **Edit**
+3. Modify the message, time, or date
+4. Click **Save**
+
+### Sending Immediately
+
+Changed your mind? Send a scheduled message right now:
+
+1. Find the message in the scheduled list
+2. Click **Send Now**
+3. Message is sent immediately and removed from schedule
+
+### Canceling a Scheduled Message
+
+1. Find the message in the scheduled list
+2. Click **Delete** or **Cancel**
+3. Confirm cancellation
+
+## Attachment Limits
+
+| Type | Supported | Limit |
+|------|-----------|-------|
+| Images | ✅ | 20 MB |
+| Documents | ✅ | 20 MB |
+| PDFs | ✅ | 20 MB |
+| Videos | ✅ | 20 MB |
+| Voice Notes | ✅ | 20 MB |
+| Files per message | - | 1 |
+
+## Requirements
+
+For scheduled messages to send successfully:
+
+<Check>Eazybe extension must be installed</Check>
+<Check>Chrome browser must be running (can be minimized)</Check>
+<Check>WhatsApp Web must be connected</Check>
+<Check>Computer must be on and connected to internet</Check>
+
+<Warning>
+  If your computer is off or WhatsApp Web is disconnected at the scheduled time, the message will attempt to send when connection is restored.
+</Warning>
+
+### Cloud Scheduling (Premium)
+
+With Cloud integration enabled, scheduled messages send even when:
+- Your laptop is closed
+- Chrome is not running
+- You're offline
+
+[Learn about Cloud integration →](/waba/overview)
+
+## Use Cases
+
+### Sales Follow-ups
+Schedule a follow-up 3 days after sending a proposal:
+> "Hi [Name], just checking in on the proposal I sent. Do you have any questions?"
+
+### Timezone Optimization
+Schedule messages to arrive during the recipient's business hours:
+- Schedule at 9 AM recipient's time
+- Avoid sending during their night
+
+### Reminder Sequences
+Set up a series of reminders:
+- Day 1: Initial outreach
+- Day 3: Follow-up
+- Day 7: Final reminder
+
+### Event Reminders
+Schedule reminders before meetings:
+> "Reminder: We have a call scheduled for tomorrow at 2 PM. Looking forward to speaking with you!"
+
+## FAQ
+
+<AccordionGroup>
+  <Accordion title="What happens if WhatsApp is disconnected at send time?">
+    The message queues and attempts to send when WhatsApp Web reconnects. With Cloud enabled, messages send regardless of your connection status.
+  </Accordion>
+  
+  <Accordion title="Can I schedule messages to multiple contacts?">
+    Scheduled messages are per-conversation. For bulk scheduling, consider WABA Broadcasting.
+  </Accordion>
+  
+  <Accordion title="Is there a limit to scheduled messages?">
+    No hard limit, but we recommend keeping the queue manageable for best performance.
+  </Accordion>
+  
+  <Accordion title="Can I add Quick Reply to scheduled message?">
+    Yes, you can select from your Quick Replies when composing a scheduled message.
+  </Accordion>
+</AccordionGroup>
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="Quick Replies" icon="bolt" href="/productivity/quick-replies">
+    Create reusable message templates
+  </Card>
+  <Card title="Broadcasting" icon="tower-broadcast" href="/waba/broadcasting/overview">
+    Send to multiple contacts at once
+  </Card>
+</CardGroup>

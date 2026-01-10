@@ -11,189 +11,208 @@ Before connecting HubSpot, ensure you have:
 <Check>Eazybe Chrome extension installed and active</Check>
 <Check>WhatsApp connected to Eazybe</Check>
 <Check>HubSpot account (Free, Starter, Professional, or Enterprise)</Check>
-<Check>Admin or Super Admin access in HubSpot (for first-time setup)</Check>
+<Check>Admin or Super Admin access in HubSpot (for initial setup)</Check>
 
 <Warning>
-  The first user connecting HubSpot must have Admin access to authorize the integration. After setup, other users can connect with regular access.
+  The first user connecting HubSpot must have **Admin access** to authorize the integration. After setup, other team members can connect with regular access.
 </Warning>
 
-## Step 1: Access Integration Settings
+## Step 1: Open Integration Settings
 
 <Steps>
   <Step title="Open WhatsApp Web">
     Go to [web.whatsapp.com](https://web.whatsapp.com) with the Eazybe extension active.
   </Step>
   
-  <Step title="Open Eazybe Settings">
-    Click the **⚙️ Settings** icon in the Eazybe sidebar.
-  </Step>
-  
-  <Step title="Navigate to Integrations">
-    Select **Integrations** from the settings menu.
+  <Step title="Click Integrations">
+    In the Eazybe sidebar, click the **Integrations** button.
     
-    You'll see a list of available CRM integrations.
+    ![Integrations Button](https://downloads.intercomcdn.com/i/o/p2m2ant5/1329158233/433b611278b1eca62828ac6d7cc7/16.png)
   </Step>
 </Steps>
 
 ## Step 2: Connect HubSpot
 
 <Steps>
-  <Step title="Select HubSpot">
-    Find **HubSpot CRM** in the integrations list and click **Connect**.
+  <Step title="Click Connect to HubSpot">
+    Find HubSpot in the integrations list and click **Connect to HubSpot**.
+    
+    This opens a new window for HubSpot authorization.
   </Step>
   
-  <Step title="Authorize in HubSpot">
-    A popup window will open asking you to log in to HubSpot.
+  <Step title="Select HubSpot Account">
+    If you have multiple HubSpot accounts, choose the one you want to integrate.
+  </Step>
+  
+  <Step title="Accept Permissions">
+    Review the permissions Eazybe is requesting and click **Accept**.
     
-    1. Enter your HubSpot credentials
-    2. Select the HubSpot portal you want to connect
-    3. Review the permissions Eazybe is requesting
-    4. Click **Connect app**
+    These permissions allow Eazybe to:
+    - View and sync WhatsApp chats to HubSpot
+    - Create and update contacts
+    - Access deals, tasks, and tickets
+    - Log activities to contact timelines
   </Step>
   
   <Step title="Confirm Connection">
-    After authorization, you'll be redirected back to Eazybe.
-    
-    You should see:
-    - ✅ Green checkmark next to HubSpot
-    - HubSpot icon now visible in WhatsApp chats
-    - "Connected to [Your Portal Name]" message
+    You'll be redirected back to WhatsApp. Look for:
+    - ✅ Green checkmark next to HubSpot in integrations
+    - HubSpot icon now visible in chat sidebars
   </Step>
 </Steps>
 
-## Permissions Required
+## Step 3: Verify Required Permissions
 
-Eazybe requests these HubSpot permissions:
+Ensure your HubSpot user has these permissions enabled:
 
-| Permission | Purpose |
-|------------|---------|
-| **Contacts** | Read/write contacts, sync phone numbers |
-| **Companies** | Associate contacts with companies |
-| **Deals** | Create and update deals from WhatsApp |
-| **Tickets** | Create support tickets from WhatsApp |
-| **Tasks** | Create and manage tasks |
-| **Notes** | Add notes to contact timeline |
-| **Timeline Events** | Log WhatsApp activity |
-| **Workflows** | Enable workflow actions (Professional+) |
+<Steps>
+  <Step title="Check Your Permissions">
+    In HubSpot, go to **Settings** → **Users & Teams** → Your profile.
+  </Step>
+  
+  <Step title="Verify App Marketplace Access">
+    Your Super Admin must grant you **App Marketplace** permission.
+  </Step>
+  
+  <Step title="Verify File Access">
+    Ensure you have **Files** permission for attachment backup.
+  </Step>
+</Steps>
 
 <Info>
-  All permissions are used for legitimate CRM functions. Eazybe does not access data beyond what's needed for the integration.
+  **Super Admins** automatically have all required permissions. If you're not a Super Admin, ask your HubSpot admin to grant these permissions.
 </Info>
 
-## Step 3: Configure Sync Settings
-
-After connecting, configure how data syncs between WhatsApp and HubSpot.
-
-### Contact Sync Options
-
-Navigate to **Settings** → **HubSpot** → **Contact Sync**
-
-| Setting | Options | Recommended |
-|---------|---------|-------------|
-| Auto-create contacts | On / Off | On |
-| Sync direction | One-way / Bidirectional | Bidirectional |
-| Match by | Phone / Email / Both | Phone |
-| Default lifecycle stage | Lead / MQL / Subscriber | Lead |
-
-### Chat Backup Options
-
-Navigate to **Settings** → **HubSpot** → **Chat Backup**
-
-| Setting | Options | Recommended |
-|---------|---------|-------------|
-| Enable backup | On / Off | On |
-| Sync frequency | 3 min / 5 min / 10 min | 5 min |
-| Backup attachments | On / Off | On |
-| Attachment types | Images / Documents / All | All |
-
-## Step 4: Verify Installation
-
-Confirm everything is working:
+## Step 4: Configure Chat Backup
 
 <Steps>
-  <Step title="Check Sidebar Icon">
-    Open any WhatsApp chat. You should see the HubSpot icon (orange) in the Eazybe sidebar.
+  <Step title="Open HubSpot Contact">
+    Open any HubSpot contact page (use Eazybe's **View Contact on HubSpot** button or navigate directly).
   </Step>
   
-  <Step title="Test Contact Matching">
-    Open a chat with someone who exists in HubSpot (same phone number).
-    
-    Click the HubSpot icon—their HubSpot profile should load.
+  <Step title="Enable WhatsApp Activity Filter">
+    On the contact page:
+    1. Click **Filter activity** (expand if collapsed)
+    2. Find **Communication** section
+    3. Check the box for **WhatsApp Activity**
   </Step>
   
-  <Step title="Test Chat Backup">
+  <Step title="Verify Sync">
     Send a test message to a HubSpot contact.
     
-    Wait 5 minutes, then check the contact's timeline in HubSpot.
-    
-    You should see the WhatsApp message logged.
-  </Step>
-  
-  <Step title="Test Contact Creation">
-    Open a chat with someone NOT in HubSpot.
-    
-    Click **Create Contact** in the Eazybe sidebar.
-    
-    Verify the contact appears in HubSpot.
+    Wait 3-5 minutes, then check their HubSpot timeline for the synced message.
   </Step>
 </Steps>
 
-## Inviting Team Members
+## Step 5: Configure Label Sync (Optional)
 
-After the initial admin setup, team members can connect:
+Control which conversations get backed up:
 
 <Steps>
-  <Step title="Admin Invites to Eazybe">
-    Go to Eazybe Workspace → Team → Invite Members
-    
-    Enter email addresses and send invitations.
+  <Step title="Open Backup Settings">
+    In Eazybe sidebar, click **Backup and Sync**.
   </Step>
   
-  <Step title="Team Member Installs Extension">
+  <Step title="Select Labels to Sync">
+    Choose which labels should sync to HubSpot:
+    - **Sync**: Conversations with this label backup to HubSpot
+    - **Don't Sync**: Conversations excluded from backup
+  </Step>
+  
+  <Step title="Save">
+    Click **Save** to apply settings.
+  </Step>
+</Steps>
+
+<Tip>
+  Create a "Personal" label and set it to **Don't Sync** to exclude personal conversations from HubSpot backup.
+</Tip>
+
+## Invite Team Members
+
+After initial admin setup, team members can connect:
+
+<Steps>
+  <Step title="Team Member Installs Eazybe">
     Each team member installs the Eazybe Chrome extension.
   </Step>
   
+  <Step title="Team Member Connects WhatsApp">
+    They connect their WhatsApp to Eazybe.
+  </Step>
+  
   <Step title="Team Member Connects HubSpot">
-    Each member follows the same connection steps. They'll be connected to the same portal as the admin.
+    They follow the same steps above:
+    1. Click Integrations → Connect to HubSpot
+    2. Select the same HubSpot portal
+    3. Accept permissions
+    
+    Regular user access is sufficient after admin setup.
   </Step>
 </Steps>
 
-## Troubleshooting Setup
+## Verification Checklist
+
+After setup, verify everything is working:
+
+| Check | How to Verify |
+|-------|---------------|
+| HubSpot icon in sidebar | Open any WhatsApp chat |
+| Contact matching | Open chat with existing HubSpot contact |
+| Chat backup | Check HubSpot timeline after sending message |
+| Contact creation | Create contact from WhatsApp, verify in HubSpot |
+| Attachment sync | Send image, check if it appears in HubSpot |
+
+## Troubleshooting
 
 <AccordionGroup>
   <Accordion title="Authorization popup doesn't appear">
-    - Disable popup blockers for the Eazybe domain
-    - Try in an incognito window
-    - Clear browser cache and cookies
+    - Check popup blocker settings
+    - Allow popups from eazybe.com
+    - Try incognito mode
+    - Clear browser cookies
   </Accordion>
   
   <Accordion title="'Insufficient permissions' error">
-    - Ensure you have HubSpot Admin access
+    - Verify you have Admin/Super Admin access
+    - Ask Super Admin to grant App Marketplace permission
     - Check that your HubSpot seat includes API access
   </Accordion>
   
-  <Accordion title="Wrong portal connected">
+  <Accordion title="Connected to wrong HubSpot portal">
     1. Go to Settings → Integrations → HubSpot
     2. Click **Disconnect**
     3. Reconnect and select the correct portal
   </Accordion>
+  
+  <Accordion title="Chats not syncing to HubSpot">
+    - Check WhatsApp Activity filter is enabled in HubSpot
+    - Verify contact has valid phone number in HubSpot
+    - Check label sync settings (not set to "Don't Sync")
+    - Wait 3-5 minutes for sync cycle
+    - Check last sync time in Eazybe workspace
+  </Accordion>
+  
+  <Accordion title="Attachments not appearing">
+    - Verify Files permission in HubSpot
+    - Check file size (max 20MB)
+    - Ensure attachment backup is enabled in settings
+  </Accordion>
 </AccordionGroup>
 
-## Next Steps
+## What's Next?
 
 <CardGroup cols={2}>
-  <Card
-    title="Contact Sync"
-    icon="users"
-    href="/integrations/hubspot/contact-sync"
-  >
-    Learn how contacts match and sync
+  <Card title="Contact Sync" icon="users" href="/integrations/hubspot/contact-sync">
+    Learn how contacts match between systems
   </Card>
-  <Card
-    title="Mini-CRM View"
-    icon="sidebar"
-    href="/integrations/hubspot/mini-crm/overview"
-  >
-    Use HubSpot inside WhatsApp
+  <Card title="Mini-CRM View" icon="sidebar" href="/integrations/hubspot/mini-crm/overview">
+    Use HubSpot features inside WhatsApp
+  </Card>
+  <Card title="Workflows" icon="diagram-project" href="/integrations/hubspot/workflows">
+    Automate WhatsApp from HubSpot
+  </Card>
+  <Card title="Troubleshooting" icon="wrench" href="/integrations/hubspot/troubleshooting">
+    Fix common issues
   </Card>
 </CardGroup>
