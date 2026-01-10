@@ -9,11 +9,8 @@
   "favicon": "/favicon.svg",
   "colors": {
     "primary": "#25D366",
-    "light": "#25D366",
-    "dark": "#128C7E",
-    "anchors": {
-      "from": "#25D366",
-      "to": "#128C7E"
+  "light": "#25D366",
+  "dark": "#128C7E"
     }
   },
   "topbarLinks": [
@@ -416,7 +413,4 @@
   "seo": {
     "indexHiddenPages": false
   },
-  "integrations": {
-    "intercom": "your-intercom-app-id"
-  }
 }
