@@ -12,6 +12,15 @@
     "light": "#25D366",
     "dark": "#128C7E"
   },
+  "i18n": {
+    "defaultLocale": "en",
+    "locales": [
+      { "locale": "en", "name": "English" },
+      { "locale": "es", "name": "Español" },
+      { "locale": "pt", "name": "Português" },
+      { "locale": "tr", "name": "Türkçe" }
+    ]
+  },
   "topbarLinks": [
     {
       "name": "Support",
