@@ -222,6 +222,19 @@
             ]
           },
           {
+            "group": "Playbooks",
+            "icon": "book-open",
+            "pages": [
+              "integrations/playbooks/overview",
+              "integrations/playbooks/lead-capture",
+              "integrations/playbooks/chat-backup",
+              "integrations/playbooks/sales-followup",
+              "integrations/playbooks/team-tracking",
+              "integrations/playbooks/broadcast-campaigns",
+              "integrations/playbooks/lead-recovery"
+            ]
+          },
+          {
             "group": "HubSpot",
             "icon": "hubspot",
             "pages": [

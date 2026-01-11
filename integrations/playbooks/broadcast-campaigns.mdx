@@ -1,0 +1,295 @@
+---
+title: 'Broadcast Campaigns'
+description: 'Send targeted WhatsApp campaigns to CRM contact lists'
+---
+
+## Overview
+
+Send personalized WhatsApp campaigns to thousands of contacts using your CRM lists. This playbook covers everything from list creation to campaign analytics.
+
+<Info>
+**Setup Time**: 30 minutes  
+**Difficulty**: Medium  
+**Requires**: WhatsApp Business API (WABA)
+</Info>
+
+## The Problem
+
+Email campaigns have 20% open rates. Your messages get lost in spam. Meanwhile, WhatsApp has:
+- 98% open rate
+- 45-60% response rate
+- Messages read within minutes
+
+But sending bulk WhatsApp manually is impossible.
+
+## The Solution
+
+Broadcast campaigns sent directly from your CRM:
+
+<Frame>
+  <img src="/images/playbooks/broadcast-flow.gif" alt="Broadcast campaign flow" />
+</Frame>
+
+## Prerequisites
+
+<Warning>
+**WhatsApp Business API Required**
+
+Broadcasting requires:
+1. WABA connected to Eazybe
+2. Approved message templates
+3. Contacts must have opted in
+</Warning>
+
+## Step-by-Step Setup
+
+### Part 1: Prepare Your List
+
+<Tabs>
+  <Tab title="From HubSpot">
+    <Steps>
+      <Step title="Create a List">
+        Go to **Contacts** → **Lists** → **Create list**
+        
+        Filter by:
+        - Lead status
+        - Last activity date
+        - Deal stage
+        - Custom properties
+      </Step>
+      
+      <Step title="Verify Phone Numbers">
+        Ensure contacts have valid phone numbers in E.164 format (+919876543210)
+      </Step>
+      
+      <Step title="Export or Sync">
+        Eazybe can read HubSpot lists directly, or export CSV
+      </Step>
+    </Steps>
+  </Tab>
+  
+  <Tab title="From Zoho">
+    <Steps>
+      <Step title="Create a View">
+        Go to module → **Create View** → Set filters
+      </Step>
+      
+      <Step title="Export Contacts">
+        Export filtered contacts as CSV
+      </Step>
+      
+      <Step title="Import to Eazybe">
+        Upload CSV in **Broadcasting** → **Import Contacts**
+      </Step>
+    </Steps>
+  </Tab>
+  
+  <Tab title="From CSV">
+    <Steps>
+      <Step title="Prepare CSV">
+        Required columns:
+        - `phone` (with country code)
+        - `name` (for personalization)
+        - Any custom variables
+        
+        ```csv
+        phone,name,company
+        +919876543210,Rahul,Acme Corp
+        +919876543211,Priya,Tech Inc
+        ```
+      </Step>
+      
+      <Step title="Upload">
+        Go to **Broadcasting** → **Import** → Upload CSV
+      </Step>
+    </Steps>
+  </Tab>
+</Tabs>
+
+### Part 2: Create Message Template
+
+<Steps>
+  <Step title="Go to Templates">
+    Navigate to **WABA** → **Message Templates**
+  </Step>
+  
+  <Step title="Choose Template Type">
+    | Type | Use For | Example |
+    |------|---------|---------|
+    | **Marketing** | Promotions, announcements | "🎉 Special offer for you!" |
+    | **Utility** | Order updates, reminders | "Your appointment is tomorrow" |
+  </Step>
+  
+  <Step title="Write Template">
+    <Frame>
+      <img src="/images/playbooks/template-editor.png" alt="Template editor" />
+    </Frame>
+    
+    Include:
+    - Personalization variables
+    - Clear call-to-action
+    - Opt-out option
+    
+    **Example:**
+    ```
+    Hi {{1}}! 👋
+    
+    We're launching something exciting at {{2}} and wanted you to be first to know.
+    
+    🚀 [Your offer/announcement here]
+    
+    Reply "YES" to learn more or "STOP" to opt out.
+    ```
+  </Step>
+  
+  <Step title="Add Media (Optional)">
+    Templates can include:
+    - Header image
+    - Document attachment
+    - Video (< 16MB)
+    
+    <Frame>
+      <img src="/images/playbooks/template-media.png" alt="Template with media" />
+    </Frame>
+  </Step>
+  
+  <Step title="Submit for Approval">
+    Meta reviews templates in 24-48 hours
+  </Step>
+</Steps>
+
+### Part 3: Launch Campaign
+
+<Steps>
+  <Step title="Create Campaign">
+    Go to **Broadcasting** → **New Campaign**
+    
+    <Frame>
+      <img src="/images/playbooks/create-campaign.png" alt="Create campaign" />
+    </Frame>
+  </Step>
+  
+  <Step title="Select Audience">
+    Choose:
+    - CRM list
+    - Uploaded CSV
+    - Label/segment
+  </Step>
+  
+  <Step title="Select Template">
+    Pick approved template and map variables:
+    
+    | Variable | Maps To |
+    |----------|---------|
+    | {{1}} | Contact Name |
+    | {{2}} | Company Name |
+  </Step>
+  
+  <Step title="Schedule or Send">
+    - **Send Now** - Immediate delivery
+    - **Schedule** - Pick date/time
+    - **Drip** - Stagger over hours/days
+    
+    <Frame>
+      <img src="/images/playbooks/schedule-campaign.png" alt="Schedule campaign" />
+    </Frame>
+  </Step>
+  
+  <Step title="Review & Launch">
+    Preview messages, verify count, launch!
+  </Step>
+</Steps>
+
+## Video Walkthrough
+
+<Frame>
+  <iframe 
+    src="https://www.loom.com/embed/your-video-id" 
+    width="100%" 
+    height="400" 
+    frameborder="0" 
+    allowfullscreen>
+  </iframe>
+</Frame>
+
+## Campaign Analytics
+
+Track performance in real-time:
+
+<Frame>
+  <img src="/images/playbooks/campaign-analytics.png" alt="Campaign analytics dashboard" />
+</Frame>
+
+| Metric | What It Means | Target |
+|--------|---------------|--------|
+| **Delivered** | Messages reached WhatsApp | > 95% |
+| **Read** | Recipient opened message | > 80% |
+| **Replied** | Recipient responded | > 20% |
+| **Failed** | Delivery failed | < 5% |
+
+## Best Practices
+
+<AccordionGroup>
+  <Accordion title="Warm up new numbers">
+    New WABA numbers have sending limits. Start with 250/day, then scale up over 2 weeks.
+  </Accordion>
+  
+  <Accordion title="Segment your audience">
+    Don't blast everyone. Send relevant messages to targeted segments for better response rates.
+  </Accordion>
+  
+  <Accordion title="Time your campaigns">
+    Best times: 10am-12pm and 3pm-5pm local time. Avoid weekends for B2B.
+  </Accordion>
+  
+  <Accordion title="Include opt-out">
+    Always include "Reply STOP to opt out" to comply with WhatsApp policies.
+  </Accordion>
+  
+  <Accordion title="Test before sending">
+    Send test message to yourself and team before launching to full list.
+  </Accordion>
+</AccordionGroup>
+
+## Handling Responses
+
+Broadcasts generate replies. Be prepared:
+
+1. **Assign team members** to handle incoming responses
+2. **Use Quick Replies** for common questions
+3. **Set up AI suggestions** to help reps respond faster
+4. **Track response times** to ensure quick follow-up
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="Low delivery rate?">
+    - Invalid phone numbers in list
+    - Contacts haven't opted in
+    - Number blocked by recipients
+    - WABA quality rating dropped
+  </Accordion>
+  
+  <Accordion title="Template rejected?">
+    Common reasons:
+    - Promotional content in utility template
+    - Missing opt-out option
+    - Variable placeholders incorrect
+    - Violates WhatsApp commerce policy
+  </Accordion>
+  
+  <Accordion title="Sending limit reached?">
+    New numbers have limits. Wait 24 hours or request limit increase from Meta.
+  </Accordion>
+</AccordionGroup>
+
+## What's Next?
+
+<CardGroup cols={2}>
+  <Card title="Lead Recovery" icon="rotate-left" href="/integrations/playbooks/lead-recovery">
+    Re-engage cold leads
+  </Card>
+  <Card title="Sales Follow-up" icon="clock" href="/integrations/playbooks/sales-followup">
+    Automate individual follow-ups
+  </Card>
+</CardGroup>

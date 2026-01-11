@@ -1,0 +1,179 @@
+---
+title: 'Chat Backup to CRM'
+description: 'Log every WhatsApp message to your CRM timeline automatically'
+---
+
+## Overview
+
+Never lose a customer conversation again. This playbook shows you how to automatically backup every WhatsApp message to your CRM contact timeline.
+
+<Info>
+**Setup Time**: 5 minutes  
+**Difficulty**: Easy  
+**Works With**: HubSpot, Zoho, Salesforce, Pipedrive, Google Sheets
+</Info>
+
+## The Problem
+
+85-90% of sales conversations happen on WhatsApp, but:
+- Messages live only on the rep's phone
+- When reps leave, conversations disappear
+- Managers have zero visibility
+- Handoffs between reps lose context
+
+<Frame>
+  <img src="/images/playbooks/chat-backup-problem.png" alt="Lost WhatsApp conversations" />
+</Frame>
+
+## The Solution
+
+Every WhatsApp message automatically appears in your CRM:
+
+<Frame>
+  <img src="/images/playbooks/chat-backup-hubspot.gif" alt="WhatsApp messages in HubSpot timeline" />
+</Frame>
+
+## Step-by-Step Setup
+
+<Steps>
+  <Step title="Enable Chat Backup">
+    Go to **Settings** → **CRM Integration** → Enable **Chat Backup**
+    
+    <Frame>
+      <img src="/images/playbooks/enable-chat-backup.png" alt="Enable chat backup toggle" />
+    </Frame>
+  </Step>
+  
+  <Step title="Choose Backup Destination">
+    Select where messages should be logged:
+    
+    | Option | Best For |
+    |--------|----------|
+    | **Contact Timeline** | See full conversation history |
+    | **Notes** | Quick reference |
+    | **Custom Activity** | Advanced reporting |
+    
+    <Frame>
+      <img src="/images/playbooks/backup-destination.png" alt="Backup destination options" />
+    </Frame>
+  </Step>
+  
+  <Step title="Configure Sync Frequency">
+    Choose how often to sync:
+    - **Real-time** - Messages sync instantly (recommended)
+    - **Every 5 minutes** - Batch sync
+    - **Manual** - Sync on demand
+  </Step>
+  
+  <Step title="Select What to Backup">
+    Choose which content to include:
+    - ✅ Text messages
+    - ✅ Images & attachments
+    - ✅ Voice notes (as links)
+    - ✅ Documents
+    - ⬜ Stickers & GIFs (optional)
+  </Step>
+</Steps>
+
+## Video Walkthrough
+
+<Frame>
+  <iframe 
+    src="https://www.loom.com/embed/your-video-id" 
+    width="100%" 
+    height="400" 
+    frameborder="0" 
+    allowfullscreen>
+  </iframe>
+</Frame>
+
+## What It Looks Like
+
+### In HubSpot
+
+<Frame>
+  <img src="/images/playbooks/hubspot-timeline.png" alt="WhatsApp messages in HubSpot contact timeline" />
+</Frame>
+
+### In Zoho CRM
+
+<Frame>
+  <img src="/images/playbooks/zoho-timeline.png" alt="WhatsApp messages in Zoho contact timeline" />
+</Frame>
+
+### In Google Sheets
+
+<Frame>
+  <img src="/images/playbooks/sheets-backup.png" alt="WhatsApp messages backed up to Google Sheets" />
+</Frame>
+
+## Use Cases
+
+<CardGroup cols={2}>
+  <Card title="Sales Handoffs" icon="people-arrows">
+    New rep sees full conversation history instantly
+  </Card>
+  <Card title="Manager Oversight" icon="eye">
+    Review conversations without accessing rep's phone
+  </Card>
+  <Card title="Compliance" icon="shield-check">
+    Maintain records for audit purposes
+  </Card>
+  <Card title="Training" icon="graduation-cap">
+    Use real conversations for sales coaching
+  </Card>
+</CardGroup>
+
+## Best Practices
+
+<AccordionGroup>
+  <Accordion title="Enable for all team members">
+    Ensure every sales rep has chat backup enabled. Go to **Settings** → **Team** to verify.
+  </Accordion>
+  
+  <Accordion title="Use real-time sync">
+    Real-time sync ensures no messages are lost if a rep disconnects or changes devices.
+  </Accordion>
+  
+  <Accordion title="Include attachments">
+    Images and documents often contain important information (quotes, contracts, product photos).
+  </Accordion>
+</AccordionGroup>
+
+## Privacy Considerations
+
+<Warning>
+Chat backup captures all messages including personal chats if using a personal WhatsApp number. Consider:
+- Using WhatsApp Business accounts
+- Informing team members about backup
+- Enabling Privacy Blur for sensitive content
+</Warning>
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="Messages not appearing in CRM?">
+    1. Check sync status in Eazybe sidebar
+    2. Verify CRM connection is active
+    3. Ensure contact exists in CRM (enable auto-create)
+  </Accordion>
+  
+  <Accordion title="Attachments not syncing?">
+    Some CRM plans have attachment limits. Check your CRM's file storage quota.
+  </Accordion>
+  
+  <Accordion title="Delayed sync?">
+    Switch to real-time sync if using batch mode. Check internet connection.
+  </Accordion>
+</AccordionGroup>
+
+## What's Next?
+
+<CardGroup cols={2}>
+  <Card title="Sales Follow-up" icon="clock" href="/integrations/playbooks/sales-followup">
+    Automate follow-up messages from CRM
+  </Card>
+  <Card title="Team Tracking" icon="chart-line" href="/integrations/playbooks/team-tracking">
+    Monitor team performance
+  </Card>
+</CardGroup>

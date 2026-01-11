@@ -1,0 +1,237 @@
+---
+title: 'Team Performance Tracking'
+description: 'Monitor response times, conversation metrics, and sales rep activity'
+---
+
+## Overview
+
+Get visibility into your sales team's WhatsApp performance. This playbook shows you how to track response times, conversation volume, and rep activity.
+
+<Info>
+**Setup Time**: 15 minutes  
+**Difficulty**: Easy  
+**Works With**: All CRMs + Standalone
+</Info>
+
+## The Problem
+
+Managers have no visibility into WhatsApp:
+- Who's responding? Who's ignoring leads?
+- How fast are reps replying?
+- Which reps close more deals via WhatsApp?
+- Where are conversations getting stuck?
+
+<Frame>
+  <img src="/images/playbooks/no-visibility.png" alt="No visibility into team WhatsApp" />
+</Frame>
+
+## The Solution
+
+Real-time dashboards showing team WhatsApp performance:
+
+<Frame>
+  <img src="/images/playbooks/team-dashboard.gif" alt="Team performance dashboard" />
+</Frame>
+
+## Step-by-Step Setup
+
+<Steps>
+  <Step title="Ensure Team is Connected">
+    Go to **Settings** → **Team** and verify all reps show "Connected" status.
+    
+    <Frame>
+      <img src="/images/playbooks/team-connected.png" alt="Team connection status" />
+    </Frame>
+  </Step>
+  
+  <Step title="Enable Analytics">
+    Go to **Settings** → **Analytics** → Enable tracking:
+    - ✅ Response times
+    - ✅ Message volume
+    - ✅ Conversation states
+    - ✅ Label distribution
+  </Step>
+  
+  <Step title="Access Dashboard">
+    Go to **Analytics** → **Team Performance**
+    
+    <Frame>
+      <img src="/images/playbooks/analytics-dashboard.png" alt="Analytics dashboard" />
+    </Frame>
+  </Step>
+  
+  <Step title="Configure Alerts (Optional)">
+    Set up alerts for:
+    - Response time exceeds threshold
+    - Unreplied chats pile up
+    - Rep goes offline
+  </Step>
+</Steps>
+
+## Key Metrics to Track
+
+### Response Time
+
+<Frame>
+  <img src="/images/playbooks/response-time-chart.png" alt="Response time chart" />
+</Frame>
+
+| Metric | Target | Why It Matters |
+|--------|--------|----------------|
+| **First Response** | < 5 min | Leads expect instant replies |
+| **Average Response** | < 15 min | Keeps conversations moving |
+| **Business Hours** | < 2 min | Prioritize during work time |
+
+### Conversation Volume
+
+<Frame>
+  <img src="/images/playbooks/volume-chart.png" alt="Conversation volume chart" />
+</Frame>
+
+| Metric | What It Shows |
+|--------|---------------|
+| **New Conversations** | Inbound lead flow |
+| **Active Conversations** | Current workload |
+| **Closed Conversations** | Resolution rate |
+
+### Rep Leaderboard
+
+<Frame>
+  <img src="/images/playbooks/leaderboard.png" alt="Rep leaderboard" />
+</Frame>
+
+Track per rep:
+- Total conversations handled
+- Average response time
+- Conversations closed
+- Customer satisfaction (if enabled)
+
+## Video Walkthrough
+
+<Frame>
+  <iframe 
+    src="https://www.loom.com/embed/your-video-id" 
+    width="100%" 
+    height="400" 
+    frameborder="0" 
+    allowfullscreen>
+  </iframe>
+</Frame>
+
+## Setting Up Alerts
+
+### Unreplied Chat Alert
+
+Get notified when chats go unreplied:
+
+<Steps>
+  <Step title="Go to AI Agents">
+    Navigate to **AI Agents** → **Unreplied Chats Agent**
+  </Step>
+  
+  <Step title="Configure Alert">
+    - Set threshold (e.g., 30 minutes)
+    - Choose recipients (managers)
+    - Set frequency (hourly digest or real-time)
+  </Step>
+  
+  <Step title="Enable">
+    Toggle ON and save
+  </Step>
+</Steps>
+
+### Slow Response Alert
+
+<Steps>
+  <Step title="Set Response Target">
+    Go to **Settings** → **Performance** → Set target response time
+  </Step>
+  
+  <Step title="Enable Notifications">
+    Toggle "Alert when response time exceeds target"
+  </Step>
+</Steps>
+
+## Using Data for Coaching
+
+### Identify Improvement Areas
+
+| Observation | Action |
+|-------------|--------|
+| Rep A has slow response times | Review workload, provide time management training |
+| Rep B has low close rate | Review conversation quality, sales training |
+| Peak volume at 2pm | Ensure coverage during peak times |
+
+### Weekly Review Template
+
+Use this template for weekly team reviews:
+
+```markdown
+## WhatsApp Performance Review - Week of [DATE]
+
+### Team Summary
+- Total conversations: X
+- Average response time: X min
+- Conversations closed: X%
+
+### Top Performers
+1. [Rep Name] - X conversations, X min avg response
+2. [Rep Name] - X conversations, X min avg response
+
+### Areas for Improvement
+- [Issue identified]
+- [Action plan]
+
+### Goals for Next Week
+- Reduce avg response time to X min
+- Close X% of open conversations
+```
+
+## Best Practices
+
+<AccordionGroup>
+  <Accordion title="Set realistic targets">
+    Start with achievable goals (e.g., < 15 min response) and tighten over time.
+  </Accordion>
+  
+  <Accordion title="Focus on trends, not snapshots">
+    One bad day doesn't mean a rep is underperforming. Look at weekly/monthly trends.
+  </Accordion>
+  
+  <Accordion title="Use data for coaching, not punishment">
+    Frame metrics as improvement opportunities, not gotcha moments.
+  </Accordion>
+  
+  <Accordion title="Consider context">
+    A rep handling complex enterprise deals will have different metrics than one handling quick support queries.
+  </Accordion>
+</AccordionGroup>
+
+## Exporting Reports
+
+### Scheduled Reports
+
+Set up automatic weekly/monthly reports:
+
+1. Go to **Analytics** → **Reports**
+2. Click **+ Schedule Report**
+3. Choose metrics, frequency, recipients
+4. Reports delivered via email as PDF
+
+### Manual Export
+
+Export data anytime:
+- **CSV** - For spreadsheet analysis
+- **PDF** - For presentations
+- **API** - For custom dashboards
+
+## What's Next?
+
+<CardGroup cols={2}>
+  <Card title="Chat Backup" icon="cloud-arrow-up" href="/integrations/playbooks/chat-backup">
+    Ensure all conversations are logged
+  </Card>
+  <Card title="AI Unreplied Agent" icon="robot" href="/ai-agents/unreplied-chats-agent">
+    Automate unreplied chat alerts
+  </Card>
+</CardGroup>
