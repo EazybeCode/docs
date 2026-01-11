@@ -1,96 +1,98 @@
 ---
-title: "Using Dynamic WhatsApp Etiquetas Synced with HubSpot CRM"
-description: ""
+title: "Dynamic Labels"
+description: "Sync WhatsApp labels with HubSpot contact properties automatically"
 ---
 
-Dynamic WhatsApp Etiquetas allow you to automatically organize your WhatsApp contacts based on real-time HubSpot CRM data. Once set up, these labels are created and updated automatically, giving your team immediate visibility into key customer segments directly within WhatsApp—without any manual effort.
+## Dynamic Labels
 
-This feature ensures that your WhatsApp communication stays aligned with the most current customer information in HubSpot.
+Automatically sync Eazybe labels with HubSpot contact properties for seamless lead management.
 
-## **About Etiquetas Dinámicas**
+### What Are Dynamic Labels?
 
-Etiquetas Dinámicas are WhatsApp labels generated and maintained based on rules you define using HubSpot properties. When a contact in HubSpot matches the criteria you specify, they are automatically added to the corresponding WhatsApp label. If a contact no longer meets the criteria, they are removed.
+Dynamic Labels create a two-way sync between:
+- **Eazybe Labels** (applied to WhatsApp chats)
+- **HubSpot Properties** (stored on contact records)
 
-This ensures all labels remain accurate and up to date.
+When you label a chat in WhatsApp, the HubSpot contact property updates automatically—and vice versa.
 
-## **Creating a Dynamic Label**
+### Setting Up Dynamic Labels
 
-Follow the steps below to create a new Dynamic WhatsApp Label:
+<Steps>
+  <Step title="Go to Settings">
+    Open Eazybe → **Settings** → **HubSpot** → **Dynamic Labels**
+  </Step>
+  
+  <Step title="Select HubSpot Property">
+    Choose which HubSpot contact property to sync with labels.
+    
+    Common choices:
+    - Lead Status
+    - Lifecycle Stage
+    - Custom dropdown property
+  </Step>
+  
+  <Step title="Map Labels to Values">
+    Map each Eazybe label to a HubSpot property value:
+    
+    | Eazybe Label | HubSpot Value |
+    |--------------|---------------|
+    | Hot Lead | Qualified |
+    | Warm Lead | In Progress |
+    | Cold Lead | Unqualified |
+    | Customer | Customer |
+  </Step>
+  
+  <Step title="Choose Sync Direction">
+    - **One-way (Eazybe → HubSpot)**: Labels update HubSpot only
+    - **Two-way**: Changes sync both directions
+  </Step>
+  
+  <Step title="Enable Sync">
+    Toggle **Enable Dynamic Labels** and save.
+  </Step>
+</Steps>
 
-## **1. Provide a Label Name**
+### Use Cases
 
-Enter a clear, descriptive name for the label.
-Examples:
+<CardGroup cols={2}>
+  <Card title="Lead Qualification" icon="star">
+    Label leads as Hot/Warm/Cold and see it in HubSpot instantly
+  </Card>
+  <Card title="Pipeline Stages" icon="diagram-project">
+    Move contacts through stages by applying labels
+  </Card>
+  <Card title="Team Assignment" icon="users">
+    Assign chats to teams with labels that sync to HubSpot owner
+  </Card>
+  <Card title="Follow-up Status" icon="clock">
+    Track follow-up status with synced labels
+  </Card>
+</CardGroup>
 
-<Frame>
-  <img src="/images/1838705229.png" alt="" />
-</Frame>
+### Best Practices
 
-- **New Prospectos**
-- **VIP Customers**
-- **High-Value Prospects**
+1. **Use consistent naming** - Match label names to HubSpot values
+2. **Limit label count** - Too many labels cause confusion
+3. **Train your team** - Ensure everyone understands the mapping
+4. **Review regularly** - Audit labels monthly for accuracy
 
-## **2. Select a HubSpot Module and Property**
+<Warning>
+Changing HubSpot property type (e.g., from dropdown to text) will break the sync. Recreate the mapping after property changes.
+</Warning>
 
-Choose the HubSpot module you want to use (e.g., **Contactos**) and select a property within that module.
+### Troubleshooting
 
-<Frame>
-  <img src="/images/1838705870.png" alt="" />
-</Frame>
-
-<Frame>
-  <img src="/images/1838706322.png" alt="" />
-</Frame>
-
-Examples include:
-
-- **Lifecycle Stage**
-- **Deal Stage**
-- **Region**
-- **Lead Status**
-
-## **3. Set the Condition**
-
-Define how the selected property should be evaluated. Available conditions include:
-
-<Frame>
-  <img src="/images/1838706776.png" alt="" />
-</Frame>
-
-- **is equal to**
-- **is not equal to**
-- **contains**
-- **does not contain**
-
-## **4. Enter a Value**
-
-Specify the value that the property must match.
-For example, if you selected *Lifecycle Stage*, you may enter:
-
-<Frame>
-  <img src="/images/1838707034.png" alt="" />
-</Frame>
-
-- **Customer**
-- **Marketing Qualified Lead**
-- **Lead**
-
-## **5. Save the Label**
-
-After saving:
-
-- A new label is automatically created in your WhatsApp account.
-
-<Frame>
-  <img src="/images/1838708666.png" alt="" />
-</Frame>
-
-- All contacts that meet the defined criteria are added to the label.
-- The label continues to update automatically as data changes in HubSpot.
-
-## **Benefits of Etiquetas Dinámicas**
-
-- **Automated Organization:** Eliminates the need to manually manage WhatsApp labels.
-- **Real-Time Sync:** Etiquetas update automatically as HubSpot records change.
-- **Improved Message Targeting:** Ensures your team always communicates with the correct customer segments.
-- **Increased Efficiency:** Reduces time spent searching and sorting through contacts.
+<AccordionGroup>
+  <Accordion title="Labels not syncing">
+    1. Check Dynamic Labels is enabled
+    2. Verify property mapping is correct
+    3. Ensure contact is linked to HubSpot
+    4. Check HubSpot permissions
+  </Accordion>
+  
+  <Accordion title="Wrong values appearing">
+    1. Review label-to-value mapping
+    2. Check for duplicate labels
+    3. Verify HubSpot property options match
+  </Accordion>
+</AccordionGroup>
