@@ -1,38 +1,56 @@
 ---
 title: 'Installation'
-description: 'Set up Eazybe for your team'
+description: 'Install and set up Eazybe for your team'
 ---
 
 ## Overview
 
-Eazybe works as a web application that enhances WhatsApp Web with CRM integration, team collaboration, and AI features.
+Eazybe uses a Chrome extension that enhances WhatsApp Web with CRM integration, team collaboration, and AI features. The extension works alongside WhatsApp Web without changing how you use WhatsApp.
 
 ## System Requirements
 
-| Requirement | Minimum |
+| Requirement | Details |
 |-------------|---------|
-| Browser | Chrome, Edge, or Brave (latest version) |
-| Internet | Stable connection |
-| WhatsApp | Business or Personal account |
-| Google Account | Required for chat backup |
+| **Browser** | Chrome, Edge, or Brave (latest version) |
+| **WhatsApp** | Business or Personal account |
+| **Google Account** | Required for chat backup |
+| **Internet** | Stable connection required |
 
-## Installation Steps
+## Installing the Chrome Extension
 
 <Steps>
+  <Step title="Open Chrome Web Store">
+    Visit [Eazybe on Chrome Web Store](https://chromewebstore.google.com/detail/eazybe)
+  </Step>
+  <Step title="Add to Chrome">
+    Click **Add to Chrome** → **Add extension**
+  </Step>
+  <Step title="Pin Extension (Optional)">
+    Click the puzzle icon → Pin Eazybe for easy access
+  </Step>
+</Steps>
+
+<Info>
+**Using Edge or Brave?** You can install Chrome extensions directly from the Chrome Web Store on these browsers too.
+</Info>
+
+## First-Time Setup
+
+<Steps>
+  <Step title="Open WhatsApp Web">
+    Go to [web.whatsapp.com](https://web.whatsapp.com)
+  </Step>
+  <Step title="Scan QR Code">
+    Use your phone to scan the QR code
+  </Step>
+  <Step title="Eazybe Loads">
+    The Eazybe sidebar will appear automatically
+  </Step>
   <Step title="Create Account">
-    Visit [eazybe.com](https://eazybe.com) and sign up
-  </Step>
-  <Step title="Set Up Workspace">
-    Create your company workspace
-  </Step>
-  <Step title="Install Browser App">
-    Add Eazybe to your browser from [eazybe.com/install](https://eazybe.com/install)
-  </Step>
-  <Step title="Connect WhatsApp">
-    Open WhatsApp Web and scan QR code
+    Click **Sign Up** and create your workspace
   </Step>
   <Step title="Connect Google Drive">
-    Authorize Google Drive for chat backup
+    Authorize for automatic chat backup
   </Step>
 </Steps>
 
@@ -40,34 +58,66 @@ Eazybe works as a web application that enhances WhatsApp Web with CRM integratio
 
 After setup, you should see:
 
-- ✅ Eazybe sidebar in WhatsApp Web
-- ✅ "Connected" status indicator
-- ✅ Your conversations loading
+| What to Look For | Where |
+|------------------|-------|
+| ✅ Eazybe sidebar | Right side of WhatsApp Web |
+| ✅ Labels panel | Above chat list |
+| ✅ Quick replies | In message composer |
+| ✅ CRM panel | Click any contact → sidebar |
 
-## Inviting Team Members
+## Team Installation
 
-1. Go to **Settings** → **Team**
-2. Click **+ Invite**
-3. Enter team member's email
-4. They'll receive setup instructions
+For team members to join your workspace:
+
+1. **Admin shares invite link** or sends email invite
+2. **Team member installs extension** from Chrome Web Store
+3. **Team member opens WhatsApp Web** and clicks the invite link
+4. **Team member connects their WhatsApp** by scanning QR code
+
+<Warning>
+Each team member must install the extension on their own browser and connect their own WhatsApp account.
+</Warning>
+
+## Updating the Extension
+
+Chrome updates extensions automatically. To manually update:
+
+1. Go to `chrome://extensions`
+2. Enable **Developer mode** (top right)
+3. Click **Update**
+
+## Uninstalling
+
+To remove Eazybe:
+
+1. Go to `chrome://extensions`
+2. Find Eazybe
+3. Click **Remove**
+
+<Note>
+Uninstalling doesn't delete your data. Chat backups remain in Google Drive and your CRM.
+</Note>
 
 ## Troubleshooting
 
 <AccordionGroup>
-  <Accordion title="Eazybe not appearing?">
-    1. Refresh WhatsApp Web
-    2. Clear browser cache
-    3. Re-install from eazybe.com/install
+  <Accordion title="Extension not appearing?">
+    1. Refresh WhatsApp Web (Ctrl+Shift+R)
+    2. Check extension is enabled at `chrome://extensions`
+    3. Try disabling other extensions temporarily
   </Accordion>
-  <Accordion title="Connection issues?">
-    1. Check internet connection
-    2. Make sure WhatsApp phone is online
-    3. Re-scan QR code if needed
+  <Accordion title="Sidebar not loading?">
+    1. Clear browser cache
+    2. Log out and back into WhatsApp Web
+    3. Reinstall the extension
+  </Accordion>
+  <Accordion title="Works on one browser but not another?">
+    Extensions are browser-specific. Install on each browser you use.
   </Accordion>
 </AccordionGroup>
 
 ## Next Steps
 
 <Card title="Connect Your CRM" icon="plug" href="/integrations/overview">
-  Set up HubSpot, Salesforce, or other CRM
+  Set up HubSpot, Salesforce, or other CRM integration
 </Card>

@@ -42,9 +42,9 @@
   ],
   "anchors": [
     {
-      "name": "Get Eazybe",
-      "icon": "rocket",
-      "url": "https://eazybe.com/signup"
+      "name": "Install Extension",
+      "icon": "chrome",
+      "url": "https://chromewebstore.google.com/detail/eazybe"
     },
     {
       "name": "Community",
@@ -204,7 +204,7 @@
               "troubleshooting/common-issues",
               "troubleshooting/sync-issues",
               "troubleshooting/connection-issues",
-              "troubleshooting/platform-issues",
+              "troubleshooting/extension-issues",
               "troubleshooting/faq"
             ]
           }
