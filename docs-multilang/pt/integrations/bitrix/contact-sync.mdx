@@ -1,20 +1,25 @@
 ---
-title: "Linking WhatsApp and Bitrix Contatos"
-description: ""
+title: "Contact Sync"
+description: "Sync WhatsApp contacts with Bitrix24"
 ---
 
-WhatsApp and Bitrix contacts are linked automatically through the unique phone number added in Bitrix "phone number" or "mobile" field. Moreover you can also create a new contact directly from WhatsApp using Eazybe/ Link an existing contact to a phone number in WhatsApp using Eazybe.
+## Contact Sync
 
-Moreover, once linked, the **Contact card** of the respective contact will appear in the EazyBe's mini-crm view. Both **1:1** chats and **group** chats associated with the contact will be backed up in Bitrix. The chats backed up will be visible in the Contact's page of the Bitrix Contact **.**
+### How It Works
 
-The chats are logged in the following way in the Contatos page:
+1. Open a WhatsApp chat
+2. Eazybe searches Bitrix24 by phone number
+3. Matched contact data appears in sidebar
+4. Create new contacts if not found
 
-<Frame>
-  <img src="/images/1204583314.png" alt="" />
-</Frame>
+### Settings
 
-When you create a new Bitrix contact via the **EazyBe WhatsApp extension**, the contact will be **automatically linked** to Bitrix. Once linked, your WhatsApp chats with that contact will be **backed up to Bitrix every 3 minutes**, ensuring real-time sync and data accuracy. Additionally, the **last sync time** for that contact will be updated in the EazyBe workspace, providing you with an up-to-date view of your conversation backup status.
+| Setting | Description |
+|---------|-------------|
+| Auto-match | Link by phone number |
+| Auto-create | Create new contacts |
+| Update existing | Keep data synced |
 
-We hope this article has helped you better understand how EazyBe works! If you have any questions or need further assistance, feel free to reach out to us at **[hey@eazybe.com](https://app.intercom.com/)**. We're happy to help!
-
-​
+<Warning>
+Include country codes in phone numbers for best matching.
+</Warning>

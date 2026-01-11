@@ -1,18 +1,25 @@
 ---
-title: "Vinculando contatos do WhatsApp e do Bitrix"
-description: ""
+title: "Contact Sync"
+description: "Sync WhatsApp contacts with Bitrix24"
 ---
 
-**Os contatos do WhatsApp e Bitrix são vinculados automaticamente** através do número de telefone único adicionado no campo "número de telefone" ou "celular" no Bitrix. Além disso, você também pode **criar um novo contato diretamente do WhatsApp** usando o EazyBe ou **vincular um contato existente** a um número de telefone no WhatsApp usando o EazyBe.
+## Contact Sync
 
-Uma vez vinculados, o cartão de contato do respectivo contato aparecerá na visualização mini-CRM do EazyBe. Tanto os chats 1:1 quanto os chats em grupo associados ao contato serão armazenados no backup do Bitrix. Os chats armazenados aparecerão na página de contatos do Bitrix.
+### How It Works
 
-Os chats são registrados da seguinte maneira na página de contatos:
+1. Open a WhatsApp chat
+2. Eazybe searches Bitrix24 by phone number
+3. Matched contact data appears in sidebar
+4. Create new contacts if not found
 
-<Frame>
-<img src="/images/1220696404.png" alt="" />
-</Frame>
+### Settings
 
-Quando você cria um novo contato do **Bitrix via extensão WhatsApp EazyBe**, o contato será automaticamente vinculado ao Bitrix. Após a vinculação, seus chats do WhatsApp com aquele contato serão armazenados no **backup do Bitrix** a cada **3 minutos**, garantindo sincronização em tempo real e precisão de dados. Além disso, o horário da última sincronização para aquele contato será atualizado no workspace do EazyBe, fornecendo uma visão atualizada do status de backup de suas conversas.
+| Setting | Description |
+|---------|-------------|
+| Auto-match | Link by phone number |
+| Auto-create | Create new contacts |
+| Update existing | Keep data synced |
 
-Esperamos que este artigo tenha ajudado você a entender melhor como o EazyBe funciona! Se você tiver alguma dúvida ou precisar de mais assistência, sinta-se à vontade para entrar em contato conosco pelo e-mail [hey@eazybe.com](mailto:hey@eazybe.com). Teremos prazer em ajudar!
+<Warning>
+Include country codes in phone numbers for best matching.
+</Warning>

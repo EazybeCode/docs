@@ -1,30 +1,30 @@
 ---
-title: "Vinculación de contactos de WhatsApp y HubSpot"
-description: ""
+title: "Contact Sync"
+description: "Sync WhatsApp contacts with HubSpot"
 ---
 
-Los **contactos de WhatsApp y HubSpot** se vinculan automáticamente a través del número de teléfono único agregado en los campos de **"número de teléfono"** o **"móvil"** de HubSpot. Además, también puedes crear un nuevo **contacto** directamente desde **WhatsApp** usando **EazyBe** o vincular un **contacto existente** a un número de teléfono en **WhatsApp** con **EazyBe**.
+## Contact Sync
 
-Una vez vinculados, la **tarjeta de contacto** del respectivo contacto aparecerá en la vista mini-CRM de **EazyBe**. Tanto los **chats 1:1** como los **chats de grupo** asociados con el contacto se respaldarán en **HubSpot**.
+### How It Works
 
-Los **chats 1:1** se registran de la siguiente manera:
-
-<Frame>
-<img src="/images/1185719632.png" alt="" />
-</Frame>
-
-En el caso de registrar un **chat de grupo**, los chats de los respectivos contactos individuales que participan en el grupo serán visibles en la página de contacto de **HubSpot** del grupo. El grupo en sí tendrá un número de teléfono único, que puede ser más largo que un número de teléfono típico. Este número distinto se utiliza para identificar y registrar las conversaciones grupales dentro de **HubSpot**, asegurando que los chats se almacenen correctamente y se asocien con el registro de contacto del grupo.
+1. Open a WhatsApp chat
+2. Eazybe searches HubSpot by phone number
+3. Matched contact data appears in sidebar
+4. Create new contacts if not found
 
 <Frame>
-<img src="/images/1185719635.png" alt="" />
+  <img src="/images/hubspot/create-contact.png" alt="Create contact form" />
 </Frame>
 
-Cuando creas un nuevo contacto en **HubSpot** a través de la extensión de **WhatsApp de EazyBe**, el contacto se vinculará automáticamente a **HubSpot**. Una vez vinculado, tus chats de **WhatsApp** con ese contacto se respaldarán en **HubSpot** cada 3 minutos, asegurando una sincronización en tiempo real y precisión de datos. Además, el último tiempo de sincronización de ese contacto se actualizará en el espacio de trabajo de **EazyBe**, brindándote una vista actualizada del estado de respaldo de tus conversaciones.
 
-<Frame>
-<img src="/images/1185719633.png" alt="" />
-</Frame>
+### Settings
 
-Después de integrar **HubSpot** con la extensión de **WhatsApp de EazyBe**, los contactos que crees en **HubSpot** también serán visibles dentro de la extensión de **WhatsApp**. Esta integración fluida te permite ver y gestionar tus **contactos de HubSpot** directamente a través de la interfaz de **WhatsApp**, asegurando que toda tu información de contacto importante sea fácilmente accesible y esté sincronizada.
+| Setting | Description |
+|---------|-------------|
+| Auto-match | Link by phone number |
+| Auto-create | Create new contacts |
+| Update existing | Keep data synced |
 
-¡Esperamos que este artículo te haya ayudado a comprender mejor cómo funciona **EazyBe**! Si tienes alguna pregunta o necesitas más asistencia, no dudes en contactarnos a **[hey@eazybe.com](https://app.intercom.com/)**. ¡Estamos encantados de ayudarte!
+<Warning>
+Include country codes in phone numbers for best matching.
+</Warning>

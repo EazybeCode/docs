@@ -1,23 +1,28 @@
 ---
-title: "Troubleshooting: Fix WhatsApp Syncing issue with Salesforce"
-description: ""
+title: "Troubleshooting"
+description: "Fix Salesforce integration issues"
 ---
 
-Your WhatsApp conversations aren't syncing with Salesforce? You're moving your conversations forward, but the backup isn't getting stored on Salesforce. Worried about losing your chats? Don't worry! This troubleshooting guide will help you check that everything is set up correctly for syncing.
+## Troubleshooting
 
-### Check Your Account
+### Connection Issues
 
-- **Account Type**: Ensure you have either a **Salesforce Developer Account** or **Salesforce Professional Edition**. The integration does not support trial or Starter accounts.
-- **Subscription Status**: Verify that your accounts(both Salesforce and EazyBe) are active.
+<AccordionGroup>
+  <Accordion title="Can't connect">
+    - Check Salesforce login status
+    - Verify admin permissions
+    - Clear browser cache
+    - Reconnect integration
+  </Accordion>
+</AccordionGroup>
 
-## Grant Access
+### Sync Issues
 
-EazyBe asks for specific permissions when integrating with Salesforce. Ensure that these permissions are granted, as they are crucial for storing WhatsApp conversations via the EazyBe WhatsApp Extension. Make sure you accept the necessary permissions whenever prompted as it will enable smooth syncing of **WhatsApp Chats in Salesforce**.
-
-<Frame>
-<img src="/images/1196810395.png" alt="" />
-</Frame>
-
-We hope this article has helped you better understand how EazyBe works! If you have any questions or need further assistance, feel free to reach out to us at **[hey@eazybe.com](https://app.intercom.com/)**. We're happy to help!
-
-​
+<AccordionGroup>
+  <Accordion title="Contacts not syncing">
+    - Check phone number format
+    - Verify contact exists in Salesforce
+    - Check sync settings
+    - Manual refresh
+  </Accordion>
+</AccordionGroup>

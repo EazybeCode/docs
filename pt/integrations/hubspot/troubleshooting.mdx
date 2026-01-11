@@ -1,64 +1,28 @@
 ---
-title: "Solução de problemas: Corrigir problema de sincronização do WhatsApp com o HubSpot"
-description: ""
+title: "Troubleshooting"
+description: "Fix HubSpot integration issues"
 ---
 
-Seus conversas do WhatsApp não estão sincronizando com o HubSpot? Você está avançando nas conversas, mas o backup não está sendo armazenado no HubSpot. Preocupado em perder suas conversas? Não se preocupe! Este guia de solução de problemas ajudará você a verificar se tudo está configurado corretamente para a sincronização.​
+## Troubleshooting
 
-##
-Conceder Acesso
+### Connection Issues
 
-O **EazyBe** solicita permissões específicas ao integrar com o HubSpot. Certifique-se de que essas permissões foram concedidas, pois são cruciais para armazenar as conversas do WhatsApp através da Extensão EazyBe WhatsApp. Verifique se o super-admin forneceu acesso às permissões de **Arquivo** e **App Marketplace**. Se não, entre em contato com seu super-admin para conceder essas permissões.
+<AccordionGroup>
+  <Accordion title="Can't connect">
+    - Check HubSpot login status
+    - Verify admin permissions
+    - Clear browser cache
+    - Reconnect integration
+  </Accordion>
+</AccordionGroup>
 
-## Atividade do WhatsApp habilitada no HubSpot
+### Sync Issues
 
-- Abra qualquer página de contato do HubSpot, usando o botão **"Ver Contato no HubSpot"** do EazyBe ou navegando para a página de contatos do HubSpot.
-- Na página do HubSpot, clique e expanda **Filtrar Atividade**.
-- Certifique-se de que a caixa ao lado de **Atividade do WhatsApp** na seção **Comunicação** esteja marcada. Se estiver desmarcada, as conversas do WhatsApp não aparecerão, pois são armazenadas nesta seção.
-
-<Frame>
-<img src="/images/1185532604.png" alt="" />
-</Frame>
-
-## Permissões do HubSpot
-
-- Clique no ícone de **Configurações** no HubSpot.
-
-<Frame>
-<img src="/images/1182407641.png" alt="" />
-</Frame>
-- Sob **Gerenciamento de Conta**, clique em **Usuários e Equipes**.
-
-<Frame>
-<img src="/images/1182409870.png" alt="" />
-</Frame>
-- Clique em **Editar permissões** ao lado do nome de usuário para o qual você deseja habilitar as permissões.
-
-<Frame>
-<img src="/images/1182411479.png" alt="" />
-</Frame>
-- Se você não tiver as permissões necessárias, entre em contato com seu **super-admin** para conceder o acesso requerido e peça para que ele te dê as permissões para **App Marketplace** e **arquivos**.
-
-<Frame>
-<img src="/images/1182439947.png" alt="" />
-</Frame>
-
-**Nota***:* Um super-admin tem acesso a todas as permissões.
-
-## Permissões de Sincronização de Rótulos
-
-Se você criou um rótulo e adicionou contatos a ele, mas as conversas não estão sendo salvas, siga estas etapas:
-
-- Clique no botão **Backup e Sincronização** na barra lateral direita.
-
-<Frame>
-<img src="/images/1185538724.png" alt="" />
-</Frame>
-- Verifique as configurações do rótulo para garantir que ele esteja definido para **Sincronizar** e não para **Não Sincronizar**. Se estiver definido como **Não Sincronizar**, as conversas para contatos dentro desse rótulo não serão salvas.
-- Se você deseja que as conversas sejam sincronizadas, clique no botão **Sincronizar**. Alternativamente, você pode remover certos contatos do rótulo e criar um novo rótulo para os contatos que deseja sincronizar.
-
-<Frame>
-<img src="/images/1185302765.png" alt="" />
-</Frame>
-
-Esperamos que este artigo tenha ajudado você a entender melhor como o EazyBe funciona! Se tiver alguma dúvida ou precisar de mais assistência, sinta-se à vontade para nos contatar em **[hey@eazybe.com](https://app.intercom.com/)**. Estamos felizes em ajudar!
+<AccordionGroup>
+  <Accordion title="Contacts not syncing">
+    - Check phone number format
+    - Verify contact exists in HubSpot
+    - Check sync settings
+    - Manual refresh
+  </Accordion>
+</AccordionGroup>

@@ -1,69 +1,15 @@
 ---
-title: "Como usar os fluxos de trabalho do Zoho para enviar mensagens no WhatsApp"
-description: ""
+title: "Workflows"
+description: "Zoho CRM workflow integration"
 ---
 
-Con la integración de Eazybe, puedes automatizar mensajes de WhatsApp directamente a través de los flujos de trabajo de Zoho. Aquí te mostramos cómo configurarlo paso a paso:
-​
+## Zoho CRM Workflows
 
-Instalar el enlace
+Trigger Zoho CRM automations from WhatsApp events.
 
-[https://crm.zoho.com/market/installPrivatePlugin.do?portalName=rajatverma&nameSpace=zohotrigger&versionIndex=4520363000000150001](https://crm.zoho.com/market/installPrivatePlugin.do?portalName=rajatverma&nameSpace=zohotrigger&versionIndex=4520363000000150001)
+### Available Triggers
 
-## Paso 1: Configura un flujo de trabajo en Zoho
-
-- Ve a Zoho CRM y navega a Configuración en la esquina superior derecha.
-
-<Frame>
-<img src="/images/1291001886.jpg" alt="" />
-</Frame>
-- En Automatización, haz clic en Reglas de flujo de trabajo.
-
-<Frame>
-<img src="/images/1291002018.jpg" alt="" />
-</Frame>
-- Haz clic en Crear regla y selecciona el módulo (Contactos, Tratos, etc.) para el que deseas crear un flujo de trabajo.
-
-<Frame>
-<img src="/images/1290779158.png" alt="" />
-</Frame>
-- Nombra tu flujo de trabajo y define cuándo debe ejecutarse la regla (al crear, editar o en un momento específico).
-
-<Frame>
-<img src="/images/1291002676.jpg" alt="" />
-</Frame>
-
-## Paso 2: Agrega un disparador
-
-- Configura los criterios del disparador:
-Por ejemplo: Activa cuando se actualice la etapa de un contacto o cuando un trato pase a una etapa específica.
-Elige tu condición deseada (por ejemplo, "Etapa del contacto = Nuevo cliente potencial" o "Etapa del trato = Negociación").
-
-<Frame>
-<img src="/images/1291003153.jpg" alt="" />
-</Frame>
-- Haz clic en Guardar para finalizar el disparador.
-
-## Paso 3: Agrega la acción de WhatsApp de EazyBe
-
-- En la sección Acción, haz clic en Agregar nueva acción.
-
-<Frame>
-<img src="/images/1291003379.jpg" alt="" />
-</Frame>
-- Select **messageonWhatsApp**.
-
-- Selecciona **messageonWhatsApp**.
-Teléfono del remitente: Número de WhatsApp conectado a EazyBe.
-Mensaje: Agrega tu mensaje personalizado de WhatsApp y utiliza campos dinámicos de Zoho para personalizarlo (por ejemplo, $First_Name).
-
-<Frame>
-<img src="/images/1291003649.jpg" alt="" />
-</Frame>
-
-## Paso 4: Revisa y activa el flujo de trabajo
-
-- Revisa la configuración del flujo de trabajo para asegurarte de que todos los disparadores y acciones estén configurados correctamente.
-- Haz clic en Guardar y activa el flujo de trabajo.
-
-Esta configuración garantiza que pueda enviar mensajes de WhatsApp personalizados y oportunos a través de los flujos de trabajo de Zoho, lo que facilita el seguimiento y la interacción. ✨
+- New message received
+- Contact created
+- Label applied
+- Deal created

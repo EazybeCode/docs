@@ -1,32 +1,25 @@
 ---
-title: "Vinculación de contactos de WhatsApp y Salesforce"
-description: ""
+title: "Contact Sync"
+description: "Sync WhatsApp contacts with Salesforce"
 ---
 
-Los contactos de WhatsApp y Salesforce se vinculan automáticamente a través del número de teléfono único agregado en el campo "número de teléfono" o "móvil" de Salesforce. Además, también puede crear un nuevo contacto directamente desde WhatsApp usando Eazybe/ Vincular un contacto existente a un número de teléfono en WhatsApp usando Eazybe.
+## Contact Sync
 
-Además, una vez vinculado, la **tarjeta de contacto** del contacto respectivo aparecerá en la vista mini-crm de EazyBe. Tanto los chats **1:1** como los chats **grupales** asociados con el contacto se respaldarán en Salesforce. Los chats (incluidos los archivos adjuntos) respaldados serán visibles en la **sección Notas y archivos** adjuntos en Salesforce y **WhatsApp Chats por objeto de Actividad de EazyBe** para Contactos y, en el caso de los Clientes potenciales, se respaldan en WhatsApp Chats por Objetos de Actividad.
+### How It Works
 
-Los Chats 1:1 se registran de la siguiente manera en la página Contactos:
+1. Open a WhatsApp chat
+2. Eazybe searches Salesforce by phone number
+3. Matched contact data appears in sidebar
+4. Create new contacts if not found
 
-<Frame>
-<img src="/images/1224333491.png" alt="" />
-</Frame>
+### Settings
 
-<Frame>
-<img src="/images/1224333488.png" alt="" />
-</Frame>
+| Setting | Description |
+|---------|-------------|
+| Auto-match | Link by phone number |
+| Auto-create | Create new contacts |
+| Update existing | Keep data synced |
 
-Los Chats 1:1 se registran de la siguiente manera en la página Clientes potenciales de Salesforce:
-
-<Frame>
-<img src="/images/1224333489.png" alt="" />
-</Frame>
-
-En el caso de los chats grupales, se respaldarán de manera similar.
-
-Cuando crea un nuevo contacto de Salesforce a través de la **extensión de WhatsApp de EazyBe**, el contacto se **vinculará automáticamente** a Salesforce. Una vez vinculado, sus chats de WhatsApp con ese contacto se **respaldarán en Salesforce cada 3 minutos**, lo que garantiza la **sincronización en tiemp**o real y la precisión de los datos. Además, la última hora de sincronización de ese contacto se actualizará en el espacio de trabajo de EazyBe, lo que le proporcionará una vista actualizada del estado de respaldo de su conversación.
-
-¡Esperamos que este artículo te haya ayudado a comprender mejor cómo funciona **EazyBe**! Si tienes alguna pregunta o necesitas más asistencia, no dudes en contactarnos a **[hey@eazybe.com](https://app.intercom.com/)**. ¡Estamos encantados de ayudarte!
-
-​
+<Warning>
+Include country codes in phone numbers for best matching.
+</Warning>
