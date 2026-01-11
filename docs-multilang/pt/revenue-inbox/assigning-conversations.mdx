@@ -1,52 +1,90 @@
 ---
 title: "Assigning Conversations"
-description: "Assign chats to team members for accountability"
+description: "Assign ownership of WhatsApp conversations to specific team members"
 ---
 
-## Assigning Conversations
+## Why Assign Conversations?
 
-Assign conversations to specific team members to ensure accountability and workload distribution.
+Assigning conversations ensures:
+- **Clear ownership** - Someone is responsible for each customer
+- **No duplicates** - Two people don't work the same chat
+- **Accountability** - Track who handled what
+- **Better routing** - Match specialists to relevant queries
 
-### How to Assign
+## How to Assign
+
+### From Team Inbox
 
 <Steps>
-  <Step title="Open Conversation">
-    Click on the conversation in Team Inbox
+  <Step title="Open Team Inbox">
+    Navigate to **Workspace** → **Team Inbox**
   </Step>
+  
+  <Step title="Select Conversation">
+    Click on the conversation you want to assign
+  </Step>
+  
   <Step title="Click Assign">
-    Click the **Assign** button or dropdown
+    In the conversation detail panel, click the **Assign** button
   </Step>
-  <Step title="Select Team Member">
-    Choose the team member to assign
+  
+  <Step title="Choose Team Member">
+    Select from dropdown of available team members
   </Step>
+  
   <Step title="Confirm">
-    The conversation is now assigned
+    The conversation now appears in that team member's queue
   </Step>
 </Steps>
 
-### Assignment Features
+### Bulk Assignment
 
-| Feature | Description |
-|---------|-------------|
-| **Auto-Assignment** | Route new chats based on rules |
-| **Round Robin** | Distribute evenly across team |
-| **Skills-Based** | Assign based on expertise |
-| **Manual** | Admin assigns directly |
+1. Select multiple conversations (checkbox)
+2. Click **Bulk Actions** → **Assign**
+3. Choose the team member
+4. All selected chats are assigned
 
-### Filtering by Assignment
+## Auto-Assignment Rules
 
-In Team Inbox, filter conversations by:
-- **Assigned to me** - See your assignments
-- **Unassigned** - Chats needing assignment
-- **Assigned to [Name]** - Specific team member
+<Info>
+**Coming Soon:** Automatic round-robin assignment based on team capacity and specialization.
+</Info>
 
-### Assignment Notifications
+Current auto-assignment behavior:
+- Conversations are visible to all team members by default
+- First person to respond becomes the de facto owner
+- Managers can reassign as needed
 
-When assigned a conversation:
-- Email notification (if enabled)
-- In-app notification
-- Appears in "My Conversations" filter
+## Viewing Assignments
 
-<Warning>
-Only admins and managers can assign conversations to others. Agents can only see their own assigned chats.
-</Warning>
+### For Managers
+
+In Team Inbox, the **Owner** column shows who's assigned to each conversation.
+
+Filter by owner to see a specific team member's queue:
+1. Click **Filter** → **Employee**
+2. Select the team member
+3. See only their assigned conversations
+
+### For Team Members
+
+In the Chrome extension:
+- See your assigned conversations highlighted
+- Notification when new chats are assigned to you
+
+## Best Practices
+
+<CardGroup cols={2}>
+  <Card title="Assign Early" icon="bolt">
+    Don't leave conversations unassigned for long
+  </Card>
+  <Card title="Match Skills" icon="puzzle-piece">
+    Assign based on expertise (sales, support, technical)
+  </Card>
+  <Card title="Balance Load" icon="scale-balanced">
+    Distribute evenly across team members
+  </Card>
+  <Card title="Reassign When Needed" icon="shuffle">
+    Move chats if someone is overloaded or unavailable
+  </Card>
+</CardGroup>

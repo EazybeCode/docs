@@ -1,68 +1,83 @@
 ---
-title: "Funnels"
-description: "Track leads through sales pipeline stages"
+title: "Sales Funnels"
+description: "Track conversation progression through your sales pipeline"
 ---
 
-## Funnels
+## Overview
 
-Funnels help you track leads through your sales pipeline with defined stages.
+Use labels to create a visual sales funnel in the Revenue Inbox, tracking conversations from initial inquiry to closed deal.
 
-### Creating a Funnel
+## Suggested Funnel Stages
 
 <Steps>
-  <Step title="Click Add Label">
-    Click **Add Label** in the sidebar
+  <Step title="New Lead">
+    Fresh inquiry, not yet qualified
+    
+    **Label:** 🟡 New Lead
   </Step>
-  <Step title="Select Funnel">
-    Choose **Funnel** instead of Label
+  
+  <Step title="Qualified">
+    Verified need, budget, and authority
+    
+    **Label:** 🟠 Qualified
   </Step>
-  <Step title="Define Stages">
-    Add your pipeline stages in order:
-    - New Lead
-    - Contacted
-    - Qualified
-    - Proposal Sent
-    - Won/Lost
+  
+  <Step title="Proposal Sent">
+    Quote or proposal delivered
+    
+    **Label:** 🔵 Proposal
   </Step>
-  <Step title="Set Visibility">
-    Choose Personal or Shared
+  
+  <Step title="Negotiation">
+    Discussing terms, pricing, or objections
+    
+    **Label:** 🟣 Negotiating
+  </Step>
+  
+  <Step title="Closed Won">
+    Deal completed successfully
+    
+    **Label:** 🟢 Won
   </Step>
 </Steps>
 
-### Moving Contacts Through Stages
+## Funnel Metrics
 
-1. Open the conversation
-2. Click the funnel icon in sidebar
-3. Select the new stage
-4. Contact moves to that stage (and leaves previous)
+Track these KPIs per stage:
 
-### Key Difference from Labels
+| Stage | Metrics |
+|-------|---------|
+| **New Lead** | Volume, source, response time |
+| **Qualified** | Qualification rate, time in stage |
+| **Proposal** | Win rate from proposal, deal size |
+| **Negotiation** | Average discount, objection patterns |
+| **Won/Lost** | Win rate, revenue, loss reasons |
 
-<Warning>
-A contact can only be in **one funnel stage** at a time. Moving to a new stage removes them from the previous stage.
-</Warning>
+## Using Labels for Funnel
 
-### Example Sales Funnel
+1. Create labels for each stage
+2. Apply labels as conversations progress
+3. Filter Team Inbox by label to see stage-specific chats
+4. Track movement with CRM integration
 
-```
-📊 Sales Pipeline
-   1️⃣ New Lead
-   2️⃣ Contacted
-   3️⃣ Discovery Call
-   4️⃣ Proposal Sent
-   5️⃣ Negotiation
-   6️⃣ Closed Won ✅
-   7️⃣ Closed Lost ❌
-```
+## Hot Lead Detection
 
-### Viewing Funnel Analytics
+Eazybe AI automatically identifies **Hot Leads** based on:
 
-In the Team Inbox:
-1. Click on your funnel name
-2. See contacts in each stage
-3. View conversion rates between stages
-4. Identify bottlenecks in your pipeline
+- Buying intent keywords ("I want to buy", "send invoice")
+- Urgency signals ("today", "ASAP", "immediately")
+- High engagement (frequent messages, quick responses)
+- CRM data (high-value customer, repeat buyer)
 
-<Info>
-Funnels work great with [Dynamic Labels](/integrations/hubspot/dynamic-labels) to sync with your CRM pipeline stages.
-</Info>
+Hot leads are flagged with 🔥 label for immediate attention.
+
+## Follow-up Reminders
+
+Set follow-up reminders for each funnel stage:
+
+| Stage | Recommended Follow-up |
+|-------|----------------------|
+| New Lead | 1 day if no response |
+| Qualified | 2 days after qualification |
+| Proposal | 3 days after sending |
+| Negotiation | 1 day during active negotiation |

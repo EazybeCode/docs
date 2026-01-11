@@ -1,51 +1,101 @@
 ---
 title: "Conversation States"
-description: "Understanding open, resolved, and expired conversation states"
+description: "Understanding chat status and progression through the sales/support funnel"
 ---
 
-## Conversation States
+## Overview
 
-Every conversation in Revenue Inbox has a state that indicates its current status.
+Every conversation in the Revenue Inbox has a **state** that indicates its current status. Understanding these states helps you prioritize and manage your team's workload effectively.
 
-### State Types
+## Chat States
 
-| State | Icon | Description |
-|-------|------|-------------|
-| **Open** | 🟢 | Active conversation awaiting response |
-| **Resolved** | ✅ | Conversation marked as complete |
-| **Unreplied** | 🔴 | Customer message awaiting team response |
-| **Expired** | ⏰ | WABA 24-hour window closed |
+<CardGroup cols={2}>
+  <Card title="🟢 Active" icon="comments">
+    **Ongoing conversation**
+    
+    - Recent messages exchanged
+    - Within 24-hour service window (WABA)
+    - Requires active monitoring
+  </Card>
+  
+  <Card title="🟡 Unreplied" icon="clock">
+    **Awaiting response**
+    
+    - Customer sent last message
+    - Team hasn't replied yet
+    - Priority increases with time
+  </Card>
+  
+  <Card title="🔴 Critical" icon="triangle-exclamation">
+    **Urgent attention needed**
+    
+    - Escalation keywords detected
+    - Complaint or cancellation intent
+    - High-value customer at risk
+  </Card>
+  
+  <Card title="🔵 Follow-up** icon="bell">
+    **Scheduled action needed**
+    
+    - Follow-up reminder set
+    - Promised callback pending
+    - Quote or proposal due
+  </Card>
+  
+  <Card title="⚪ Resolved" icon="check">
+    **Conversation complete**
+    
+    - Issue addressed
+    - No pending action
+    - Can be archived
+  </Card>
+  
+  <Card title="🟣 Assigned" icon="user">
+    **Ownership claimed**
+    
+    - Specific team member responsible
+    - Visible in their queue
+    - Clear accountability
+  </Card>
+</CardGroup>
 
-### For Extension Users
+## State Transitions
 
-If you use the Eazybe Chrome extension only:
-- **No time limits** on replying
-- Messages sync from WhatsApp Web
-- Send any message type anytime
+```
+New Message → Unreplied → Replied → Active ↔ Follow-up → Resolved
+                 ↓
+              Critical (if escalation detected)
+```
 
-### For WABA Users
+## Filtering by State
 
-If you have a WhatsApp Business API account:
+In the Team Inbox:
 
-#### The 24-Hour Service Window
+1. Click the **Status** filter dropdown
+2. Select the state(s) you want to view
+3. See only matching conversations
 
-When a customer messages you, a 24-hour window opens:
+| Filter | Shows |
+|--------|-------|
+| **All** | Everything |
+| **Unreplied** | Waiting for team response |
+| **Critical** | High-priority escalations |
+| **Active** | Recent activity |
+| **Follow-up** | Scheduled reminders due |
 
-| Window Status | What You Can Do |
-|---------------|-----------------|
-| **Open** (within 24h) | Send any message freely |
-| **Closed** (after 24h) | Must use Message Template |
+## Best Practices
 
-![Window Open - Free messaging](/images/1589309753.png)
-
-![Window Closed - Template required](/images/1589300920.png)
-
-### Marking Conversations Resolved
-
-1. Open the conversation in Team Inbox
-2. Click **Mark Resolved** or the ✅ icon
-3. Conversation moves to Resolved filter
-
-<Info>
-Resolved conversations can be reopened when the customer sends a new message.
-</Info>
+<CardGroup cols={2}>
+  <Card title="Clear Unreplied Daily" icon="broom">
+    End each day with zero unreplied conversations
+  </Card>
+  <Card title="Critical = Immediate" icon="bolt">
+    Respond to Critical chats within 15 minutes
+  </Card>
+  <Card title="Set Follow-ups" icon="calendar-plus">
+    Always schedule next action before closing a chat
+  </Card>
+  <Card title="Assign Ownership" icon="user-plus">
+    Every conversation should have an owner
+  </Card>
+</CardGroup>

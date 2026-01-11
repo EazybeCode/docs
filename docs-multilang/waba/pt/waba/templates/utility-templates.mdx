@@ -1,0 +1,152 @@
+---
+title: "Utility Templates"
+description: "Create transactional message templates for order updates, alerts, and notifications"
+---
+
+## What Are Utility Templates?
+
+Utility templates are used for **transactional, informational messages** such as:
+- Order confirmations and updates
+- Shipping notifications
+- Appointment reminders
+- Account alerts
+- Payment receipts
+
+<Info>
+Utility templates cost **less than marketing** and have higher approval rates since they provide genuine value to recipients.
+</Info>
+
+## When to Use Utility Templates
+
+| Use Case | Example |
+|----------|---------|
+| **Order Confirmation** | "Your order #12345 has been placed" |
+| **Shipping Update** | "Your package is out for delivery" |
+| **Appointment Reminder** | "Reminder: Your appointment is tomorrow at 3 PM" |
+| **Payment Confirmation** | "We've received your payment of ₹999" |
+| **Account Alert** | "Your subscription renews in 3 days" |
+
+## Example Templates
+
+### Order Confirmation
+
+```
+✅ Order Confirmed!
+
+Hi {{1}},
+
+Thank you for your order!
+
+Order #: {{2}}
+Items: {{3}}
+Total: {{4}}
+
+We'll notify you when it ships.
+```
+
+**Buttons:**
+- [View Order] → https://store.com/orders/{{2}}
+
+---
+
+### Shipping Notification
+
+```
+📦 Your order is on the way!
+
+Hi {{1}},
+
+Great news! Order #{{2}} has been shipped.
+
+Courier: {{3}}
+Tracking #: {{4}}
+Expected delivery: {{5}}
+
+Track your package below 👇
+```
+
+**Buttons:**
+- [Track Package] → {{6}}
+
+---
+
+### Appointment Reminder
+
+```
+📅 Appointment Reminder
+
+Hi {{1}},
+
+This is a reminder for your upcoming appointment:
+
+📍 {{2}}
+🗓️ {{3}}
+⏰ {{4}}
+
+Please arrive 10 minutes early.
+```
+
+**Buttons:**
+- [Reschedule] → https://calendar.com/reschedule
+- [Get Directions] → {{5}}
+
+---
+
+### Payment Receipt
+
+```
+💳 Payment Received
+
+Hi {{1}},
+
+We've received your payment of {{2}}.
+
+Transaction ID: {{3}}
+Date: {{4}}
+Payment Method: {{5}}
+
+Thank you for your business!
+```
+
+**Buttons:**
+- [View Receipt] → https://billing.com/receipt/{{3}}
+
+## Free Utility Messages
+
+<Tip>
+**Save Money:** Utility templates sent **within the 24-hour service window** (after a customer messages you) are **FREE**!
+</Tip>
+
+| Scenario | Cost |
+|----------|------|
+| Customer messages you, you reply with utility template within 24 hours | **Free** |
+| You send utility template without prior conversation | **Charged** |
+| Customer messages, 24 hours pass, you send utility template | **Charged** |
+
+## Best Practices
+
+<CardGroup cols={2}>
+  <Card title="Be Informative" icon="info">
+    Focus on providing useful information, not selling
+  </Card>
+  <Card title="Include Key Details" icon="list">
+    Order numbers, dates, amounts – everything the customer needs
+  </Card>
+  <Card title="Use Action Buttons" icon="hand-pointer">
+    Add tracking links, view order buttons
+  </Card>
+  <Card title="Avoid Promotion" icon="ban">
+    Don't add sales messages – that makes it Marketing
+  </Card>
+</CardGroup>
+
+## Category Mismatch Warning
+
+<Warning>
+If your "utility" template contains promotional content like:
+- "Check out our new products!"
+- "Get 20% off your next order"
+- "Limited time offer!"
+
+It will be **rejected** and you'll need to resubmit as **Marketing**.
+</Warning>

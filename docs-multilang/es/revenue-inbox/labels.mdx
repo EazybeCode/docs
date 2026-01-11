@@ -1,78 +1,130 @@
 ---
-title: "Labels"
-description: "Organize conversations with custom labels and sub-labels"
+title: "Labels & Categorization"
+description: "Organize conversations with WhatsApp Business labels and Eazybe custom labels"
 ---
 
-## Labels
+<Frame>
+  <img src="/images/1113048889.png" alt="Labels Management" />
+</Frame>
 
-Labels help you categorize and organize WhatsApp conversations for better tracking and filtering.
+## Overview
 
-### Creating Labels
+Labels help you categorize and organize WhatsApp conversations for better workflow management. Eazybe supports both:
+
+- **WhatsApp Business Labels** - Native labels from WA Business app
+- **Eazybe Custom Labels** - Additional labels created in the extension
+
+## Creating Labels
 
 <Steps>
-  <Step title="Click Add Label">
-    Click the **Add Label** button in the sidebar
+  <Step title="Open Settings">
+    In WhatsApp Web with Eazybe extension, click **Settings** in the sidebar
     
-    ![Add Label Button](/images/1113048889.png)
+    <Frame>
+      <img src="/images/1113048889.png" alt="Step 1" />
+    </Frame>
   </Step>
   
-  <Step title="Choose Label Type">
-    Select **Label** (for categorization) or **Funnel** (for stages)
+  <Step title="Enable Business Labels">
+    Find **Show/Create Business Labels** and enable it
     
-    ![Label Type Selection](/images/1113049106.png)
+    <Frame>
+      <img src="/images/1113049106.png" alt="Step 2" />
+    </Frame>
   </Step>
   
-  <Step title="Set Visibility">
-    Choose visibility:
-    - **Personal** - Only visible to you
-    - **Shared** - Visible to your team/organization
+  <Step title="Create New Label">
+    Click the **+ Add Label** button
     
-    ![Visibility Options](/images/1113049302.png)
+    <Frame>
+      <img src="/images/1113049302.png" alt="Step 3" />
+    </Frame>
   </Step>
   
-  <Step title="Add Sub-Labels">
-    Create sub-labels for more granular organization
+  <Step title="Name Your Label">
+    Enter a label name and choose a color
     
-    ![Sub-Labels](/images/1113049518.png)
+    <Frame>
+      <img src="/images/1113049518.png" alt="Step 4" />
+    </Frame>
   </Step>
   
-  <Step title="Assign Contacts">
-    Select contacts to add to this label
+  <Step title="Save">
+    Click **Save** to create the label
     
-    ![Assign Contacts](/images/1113049922.png)
+    <Frame>
+      <img src="/images/1113049922.png" alt="Step 5" />
+    </Frame>
   </Step>
 </Steps>
 
-### Labels vs Funnels
+## Applying Labels to Chats
 
-| Feature | Labels | Funnels |
-|---------|--------|---------|
-| Purpose | Categorization | Pipeline stages |
-| Sub-items | Sub-labels | Stages |
-| Contact position | Can be in multiple | One stage at a time |
-| Use case | Hot Lead, VIP, Issue | New → Qualified → Won |
+1. Open any WhatsApp chat
+2. Click the **Label Icon** in the Eazybe toolbar
+3. Select one or more labels to apply
+4. Labels appear next to the chat in your list
 
-### Example Label Structure
+## Suggested Label Structure
 
-```
-🏷️ Lead Status
-   ├── 🔥 Hot Lead
-   ├── 🌡️ Warm Lead
-   └── ❄️ Cold Lead
+### By Sales Stage
 
-🏷️ Customer Type
-   ├── 💎 VIP
-   ├── 🔄 Returning
-   └── 🆕 New
-```
+| Label | Color | Use For |
+|-------|-------|---------|
+| 🟡 **New Lead** | Yellow | Fresh inquiries |
+| 🟠 **Qualified** | Orange | Verified, ready to pitch |
+| 🔵 **Proposal Sent** | Blue | Awaiting decision |
+| 🟢 **Won** | Green | Closed deals |
+| 🔴 **Lost** | Red | Dead deals |
 
-### Applying Labels to Chats
+### By Priority
 
-1. Open a conversation in WhatsApp Web
-2. Click the **Label** icon in the Eazybe sidebar
-3. Select the label to apply
-4. The chat will now appear under that label in Team Inbox
+| Label | Color | Use For |
+|-------|-------|---------|
+| 🔴 **Hot Lead** | Red | High buying intent |
+| 🟠 **Warm** | Orange | Interested, nurturing |
+| ⚪ **Cold** | Gray | Low priority |
+| 🟣 **VIP** | Purple | High-value customers |
 
-<Info>
-Labels sync with your CRM when [Dynamic Labels](/integrations/hubspot/dynamic-labels) is enabled.
-</Info>
+### By Action Needed
+
+| Label | Color | Use For |
+|-------|-------|---------|
+| 🔵 **Follow-up** | Blue | Needs outreach |
+| 🟡 **Waiting Response** | Yellow | Ball in customer's court |
+| 🟢 **Resolved** | Green | Issue closed |
+| 🔴 **Escalation** | Red | Needs manager attention |
+
+## Using Labels with Backup
+
+Labels control what gets synced to Team Inbox:
+
+<CardGroup cols={2}>
+  <Card title="Sync Label" icon="sync">
+    Chats with this label backup to Team Inbox and CRM
+  </Card>
+  <Card title="Don't Sync Label" icon="ban">
+    Chats excluded from backup (personal conversations)
+  </Card>
+</CardGroup>
+
+## Label Visibility
+
+| Visibility | Who Can See |
+|------------|-------------|
+| **Personal** | Only you |
+| **Shared** | Everyone in your organization |
+| **Team** | Only specific teams |
+
+## Filtering by Label
+
+In the Team Inbox, use the label filter to quickly find conversations:
+
+1. Open **Team Inbox**
+2. Click the **Filter** dropdown
+3. Select one or more labels
+4. View only matching conversations
+
+<Tip>
+Combine label filters with the **Unreplied** filter to find, for example, all "Hot Leads" that haven't been responded to.
+</Tip>

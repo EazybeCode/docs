@@ -1,0 +1,98 @@
+---
+title: "Dynamic Labels"
+description: "Sync WhatsApp labels with HubSpot contact properties automatically"
+---
+
+## Dynamic Labels
+
+Automatically sync Eazybe labels with HubSpot contact properties for seamless lead management.
+
+### What Are Dynamic Labels?
+
+Dynamic Labels create a two-way sync between:
+- **Eazybe Labels** (applied to WhatsApp chats)
+- **HubSpot Properties** (stored on contact records)
+
+When you label a chat in WhatsApp, the HubSpot contact property updates automatically—and vice versa.
+
+### Setting Up Dynamic Labels
+
+<Steps>
+  <Step title="Go to Settings">
+    Open Eazybe → **Settings** → **HubSpot** → **Dynamic Labels**
+  </Step>
+  
+  <Step title="Select HubSpot Property">
+    Choose which HubSpot contact property to sync with labels.
+    
+    Common choices:
+    - Lead Status
+    - Lifecycle Stage
+    - Custom dropdown property
+  </Step>
+  
+  <Step title="Map Labels to Values">
+    Map each Eazybe label to a HubSpot property value:
+    
+    | Eazybe Label | HubSpot Value |
+    |--------------|---------------|
+    | Hot Lead | Qualified |
+    | Warm Lead | In Progress |
+    | Cold Lead | Unqualified |
+    | Customer | Customer |
+  </Step>
+  
+  <Step title="Choose Sync Direction">
+    - **One-way (Eazybe → HubSpot)**: Labels update HubSpot only
+    - **Two-way**: Changes sync both directions
+  </Step>
+  
+  <Step title="Enable Sync">
+    Toggle **Enable Dynamic Labels** and save.
+  </Step>
+</Steps>
+
+### Use Cases
+
+<CardGroup cols={2}>
+  <Card title="Lead Qualification" icon="star">
+    Label leads as Hot/Warm/Cold and see it in HubSpot instantly
+  </Card>
+  <Card title="Pipeline Stages" icon="diagram-project">
+    Move contacts through stages by applying labels
+  </Card>
+  <Card title="Team Assignment" icon="users">
+    Assign chats to teams with labels that sync to HubSpot owner
+  </Card>
+  <Card title="Follow-up Status" icon="clock">
+    Track follow-up status with synced labels
+  </Card>
+</CardGroup>
+
+### Best Practices
+
+1. **Use consistent naming** - Match label names to HubSpot values
+2. **Limit label count** - Too many labels cause confusion
+3. **Train your team** - Ensure everyone understands the mapping
+4. **Review regularly** - Audit labels monthly for accuracy
+
+<Warning>
+Changing HubSpot property type (e.g., from dropdown to text) will break the sync. Recreate the mapping after property changes.
+</Warning>
+
+### Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="Labels not syncing">
+    1. Check Dynamic Labels is enabled
+    2. Verify property mapping is correct
+    3. Ensure contact is linked to HubSpot
+    4. Check HubSpot permissions
+  </Accordion>
+  
+  <Accordion title="Wrong values appearing">
+    1. Review label-to-value mapping
+    2. Check for duplicate labels
+    3. Verify HubSpot property options match
+  </Accordion>
+</AccordionGroup>

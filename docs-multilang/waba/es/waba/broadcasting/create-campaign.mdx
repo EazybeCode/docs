@@ -1,0 +1,144 @@
+---
+title: "Create Broadcast Campaign"
+description: "Step-by-step guide to send your first WhatsApp broadcast"
+---
+
+## Send Your First Broadcast
+
+<Tabs>
+  <Tab title="From Workspace">
+    <Steps>
+      <Step title="Navigate to Broadcasts">
+        Go to **Workspace** → **Broadcasts** → **Create Broadcast**
+        
+        <Frame>
+          <img src="/images/1589454418.png" alt="Broadcast menu" />
+        </Frame>
+      </Step>
+      
+      <Step title="Name Your Campaign">
+        Give your broadcast a clear, internal name:
+        - ✅ "January_Sale_2026"
+        - ✅ "Order_Update_Batch_5"
+        - ❌ "test" or "broadcast1"
+        
+        <Frame>
+          <img src="/images/1589455306.png" alt="Name broadcast" />
+        </Frame>
+      </Step>
+      
+      <Step title="Select Template">
+        Choose an **Approved** template from the dropdown.
+        
+        <Warning>
+        Only approved templates appear here. If you don't see your template, check its status in Templates section.
+        </Warning>
+      </Step>
+      
+      <Step title="Upload Contacts">
+        **Option A: CSV Upload**
+        
+        Click **Upload CSV** and select your file.
+        
+        <Frame>
+          <img src="/images/1589463099.png" alt="Upload CSV" />
+        </Frame>
+        
+        Required CSV format:
+        ```csv
+        Phone,Name,OrderID
+        919876543210,John,ORD001
+        919876543211,Jane,ORD002
+        ```
+        
+        <Info>
+        Phone numbers must be in **international format** without + sign (e.g., 919876543210 for India)
+        </Info>
+        
+        **Option B: Select from Labels**
+        
+        If contacts are already labeled in your inbox, select the label(s) to include.
+      </Step>
+      
+      <Step title="Select Recipients">
+        Review imported contacts and select which ones to include:
+        
+        <Frame>
+          <img src="/images/1589464921.png" alt="Select contacts" />
+        </Frame>
+        
+        - ✅ Select All
+        - ✅ Individual selection
+        - ❌ Exclude invalid numbers
+      </Step>
+      
+      <Step title="Fill Variables">
+        If your template has variables (`{{1}}`, `{{2}}`), map them to CSV columns or enter values:
+        
+        | Variable | Value |
+        |----------|-------|
+        | {{1}} | Name column |
+        | {{2}} | OrderID column |
+      </Step>
+      
+      <Step title="Preview & Send">
+        Review the preview, then click **Send Broadcast**
+        
+        <Frame>
+          <img src="/images/1589467988.png" alt="Send broadcast" />
+        </Frame>
+      </Step>
+    </Steps>
+  </Tab>
+  
+  <Tab title="From Extension">
+    <Steps>
+      <Step title="Open Broadcast Panel">
+        In WhatsApp Web with Eazybe extension:
+        
+        Click **WABA** → **Broadcasts** → **New Broadcast**
+        
+        <Frame>
+          <img src="/images/1589492369.png" alt="Extension broadcast" />
+        </Frame>
+      </Step>
+      
+      <Step title="Select Label">
+        Choose a label containing your target contacts:
+        
+        <Frame>
+          <img src="/images/1589475395.png" alt="Select label" />
+        </Frame>
+        
+        <Warning>
+        Ensure only individual contacts are labeled, not groups.
+        </Warning>
+      </Step>
+      
+      <Step title="Choose Template & Send">
+        Select your approved template, preview, and click **Send**
+        
+        <Frame>
+          <img src="/images/1589487173.png" alt="Send from extension" />
+        </Frame>
+      </Step>
+    </Steps>
+  </Tab>
+</Tabs>
+
+## After Sending
+
+Your broadcast enters the queue and messages are sent progressively. Track status in **Broadcasts** dashboard:
+
+| Status | Meaning |
+|--------|---------|
+| **Queued** | Waiting to send |
+| **Sending** | In progress |
+| **Sent** | Delivered to WhatsApp |
+| **Delivered** | Reached recipient's phone |
+| **Read** | Recipient opened message |
+| **Failed** | Delivery failed (invalid number, etc.) |
+
+<Card title="View Analytics" icon="chart-line" href="/waba/broadcasting/analytics">
+  Track campaign performance and engagement
+</Card>

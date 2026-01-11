@@ -1,79 +1,144 @@
 ---
 title: "Backup & Sync"
-description: "Sync WhatsApp chats to Team Inbox and CRM"
+description: "Configure WhatsApp chat backup from Chrome Extension and WABA to the Team Inbox"
 ---
 
-## Backup & Sync
+<Frame>
+  <img src="/images/1112599393.png" alt="Backup and Sync" />
+</Frame>
 
-Eazybe automatically backs up WhatsApp conversations to your Team Inbox and connected CRM.
+## Overview
 
-### Extension Backup
+Eazybe offers two methods to sync WhatsApp conversations into the Revenue Inbox:
 
-For Chrome Extension users:
+<CardGroup cols={2}>
+  <Card title="Chrome Extension Backup" icon="chrome">
+    **For WhatsApp Web users**
+    
+    Team members sync selected labels from their WhatsApp Web to the Team Inbox using the Eazybe extension.
+    
+    - Selective sync by label
+    - Works with personal/business WhatsApp
+    - Requires extension to be active
+  </Card>
+  
+  <Card title="WABA API Sync" icon="whatsapp">
+    **For WhatsApp Business API users**
+    
+    Conversations from your official WABA account flow automatically into the Team Inbox.
+    
+    - Automatic sync (always on)
+    - No extension required
+    - 24/7 cloud-based backup
+  </Card>
+</CardGroup>
+
+## Chrome Extension Backup
+
+### Setting Up Backup
 
 <Steps>
+  <Step title="Open WhatsApp Web">
+    Ensure you have the Eazybe Chrome extension installed and WhatsApp Web open
+  </Step>
+  
   <Step title="Click Backup & Sync">
     In the Eazybe sidebar, click the **Backup and Sync** button
   </Step>
+  
   <Step title="Select Labels">
-    Choose which labels to sync to Team Inbox:
-    - Select specific labels, or
-    - Select "All labels"
+    Choose which labels to sync:
+    - **All Labels** - Backup everything
+    - **Specific Labels** - Only sync selected labels (e.g., "Hot Leads", "VIP Customers")
   </Step>
+  
   <Step title="Save Settings">
-    Click **Save** to apply
+    Click **Save** to start syncing
   </Step>
+  
   <Step title="View in Team Inbox">
-    Click **View chats in Team Inbox** to open the workspace
+    Click **View chats in Team Inbox** to see synced conversations
   </Step>
 </Steps>
 
-### What Gets Backed Up
+### Label-Based Sync Control
 
-| Content | Backed Up |
-|---------|-----------|
-| Text messages | ✅ Yes |
-| Images | ✅ Yes |
-| Documents | ✅ Yes |
-| Voice notes | ✅ Yes |
-| Contact cards | ✅ Yes |
-| Location | ✅ Yes |
+You can control sync at the label level:
 
-### CRM Backup
+| Setting | Behavior |
+|---------|----------|
+| **Sync** | Chats with this label are backed up to Team Inbox |
+| **Don't Sync** | Chats with this label are excluded from backup |
 
-Chats are also backed up to your connected CRM:
+<Tip>
+Create a label called "No Backup" and add it to personal chats you don't want synced to the team inbox.
+</Tip>
 
-| CRM | Backup Location |
-|-----|-----------------|
-| HubSpot | Contact Activity Timeline |
-| Zoho | Notes / Activity |
-| Salesforce | Activity History |
-| LeadSquared | Activity History |
-| Bitrix24 | Timeline |
-
-### Cloud Backup
-
-For 24/7 backup even when laptop is closed:
-
-1. Subscribe to **Teams Plan**
-2. Go to Workspace → Organization
-3. Click **Start Connection** for Cloud
-4. Scan QR code with WhatsApp mobile app
-5. Cloud icon turns green when connected
+### Where Is Data Stored?
 
 <Info>
-Cloud backup syncs chats every 3 minutes, even when your laptop is closed.
+**Privacy First:** Eazybe does not store chat data on its servers. All backup data is stored in your organization admin's **Google Drive**, ensuring you maintain full control of your data.
 </Info>
 
-### Sync Settings by Label
+## WABA API Sync
 
-Control which chats sync to CRM:
+For WhatsApp Business API users, sync is **automatic**:
 
-1. Click **Backup and Sync** in sidebar
-2. Click on your CRM (e.g., HubSpot)
-3. For labels you don't want synced, click **Don't Sync**
-4. To re-enable, click **Sync**
+<Steps>
+  <Step title="Connect WABA">
+    Complete WABA setup via [Connect WABA](/waba/connect-waba)
+  </Step>
+  
+  <Step title="Automatic Sync">
+    All incoming and outgoing messages automatically appear in Team Inbox
+  </Step>
+  
+  <Step title="No Extension Needed">
+    WABA sync works 24/7 without requiring WhatsApp Web or laptop
+  </Step>
+</Steps>
 
-<Warning>
-Initial sync includes last 3 days of chat history. Future messages sync every 3 minutes.
-</Warning>
+### WABA vs Extension Backup
+
+| Feature | Chrome Extension | WABA API |
+|---------|-----------------|----------|
+| **Requires laptop open** | Yes | No |
+| **24/7 sync** | Only when active | Yes |
+| **Selective by label** | Yes | All conversations |
+| **Works with personal WA** | Yes | No (Business only) |
+| **Best for** | Small teams, QR users | Growing teams, API users |
+
+## CRM Integration Sync
+
+If you've connected a CRM (HubSpot, Zoho, etc.), chats also sync to your CRM:
+
+- **Contacts** - Chat history attached to CRM contact
+- **Deals** - Conversations linked to active deals
+- **Companies** - Chats visible at company level
+
+### Check Sync Status
+
+Admins can verify sync status for all team members:
+
+1. Go to **Workspace** → **Dashboard**
+2. View the **Last Chat Synced** column
+3. Identify any team members with stale sync times
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="Chats not syncing">
+    - Ensure WhatsApp Web is open with extension active
+    - Check that the label is set to "Sync" not "Don't Sync"
+    - Verify internet connection is stable
+    - Try clicking "Backup & Sync" again
+  </Accordion>
+  
+  <Accordion title="Missing old chats">
+    Extension backup only syncs **new messages** after setup. For historical chats, use the initial backup feature.
+  </Accordion>
+  
+  <Accordion title="Sync taking too long">
+    Large chat volumes may take time. Leave WhatsApp Web open and let it complete.
+  </Accordion>
+</AccordionGroup>

@@ -1,55 +1,87 @@
 ---
-title: "Dynamic Labels"
-description: "AI-powered automatic labeling based on conversation content"
+title: "Dynamic Labels from CRM"
+description: "Auto-sync labels between WhatsApp and your CRM (HubSpot, Zoho, etc.)"
 ---
 
-## Dynamic Labels
+## Overview
 
-Dynamic Labels automatically categorize conversations based on content and CRM data.
+Dynamic Labels automatically sync categorization between Eazybe and your connected CRM, ensuring consistent organization across both platforms.
 
-### How It Works
-
-The AI analyzes:
-- Message content and keywords
-- Customer value from CRM
-- Conversation sentiment
-- Historical interactions
-
-### Automatic Categories
-
-| Label | Trigger |
-|-------|---------|
-| 🔥 **Hot Lead** | High-intent keywords like "buy", "price", "ready" |
-| ⚠️ **Escalation** | Complaints, "manager", "cancel" |
-| 💰 **High Value** | CRM shows high deal value |
-| 🆕 **New Contact** | First-time conversation |
-| 🔄 **Follow-up Needed** | Promised callback, no response |
-
-### Setting Up Dynamic Labels
+## How It Works
 
 <Steps>
-  <Step title="Enable AI Labels">
-    Go to Settings → Labels → Enable Dynamic Labels
+  <Step title="CRM Integration Active">
+    Connect your CRM (HubSpot, Zoho, Salesforce, etc.) to Eazybe
   </Step>
-  <Step title="Configure Rules">
-    Set keywords and conditions for each label
+  
+  <Step title="Field Mapping">
+    Map CRM fields to Eazybe labels (e.g., Lifecycle Stage → Label)
   </Step>
-  <Step title="Connect CRM">
-    Link CRM for customer value data
+  
+  <Step title="Automatic Sync">
+    When CRM field changes, WhatsApp label updates automatically
   </Step>
-  <Step title="Test">
-    Send test messages to verify labeling
+  
+  <Step title="Bi-directional">
+    Changes in Eazybe also sync back to CRM
   </Step>
 </Steps>
 
-### CRM Sync
+## Supported CRM Fields
 
-Dynamic Labels can sync with CRM properties:
-- Label applied → CRM field updated
-- CRM field changed → Label updated
+### HubSpot
 
-See [HubSpot Dynamic Labels](/integrations/hubspot/dynamic-labels) for setup.
+| HubSpot Field | Eazybe Label |
+|---------------|--------------|
+| Lifecycle Stage | Lead, Customer, etc. |
+| Lead Status | New, Open, In Progress |
+| Deal Stage | Proposal, Negotiation, Won |
+| Contact Owner | Assigned team member |
 
-<Info>
-Custom keyword rules for Dynamic Labels are coming soon as an advanced feature.
-</Info>
+### Zoho CRM
+
+| Zoho Field | Eazybe Label |
+|------------|--------------|
+| Lead Status | Various stages |
+| Lead Source | Where they came from |
+| Lead Owner | Assigned rep |
+
+## Setting Up Dynamic Labels
+
+1. Go to **Settings** → **Integrations** → **Your CRM**
+2. Navigate to **Label Sync** settings
+3. Enable **Dynamic Labels**
+4. Configure field mappings
+5. Save and test
+
+## Use Cases
+
+<CardGroup cols={2}>
+  <Card title="Sales Pipeline" icon="funnel-dollar">
+    Automatically label chats based on deal stage
+  </Card>
+  <Card title="Lead Scoring" icon="star">
+    High-value leads get VIP label automatically
+  </Card>
+  <Card title="Assignment" icon="user">
+    When owner changes in CRM, chat assignment updates
+  </Card>
+  <Card title="Segmentation" icon="layer-group">
+    Industry or company size syncs as labels
+  </Card>
+</CardGroup>
+
+## Example: HubSpot Lifecycle Sync
+
+When a contact's HubSpot Lifecycle Stage changes:
+
+| Lifecycle Stage | Auto-Applied Label |
+|-----------------|-------------------|
+| Subscriber | 🔵 New Lead |
+| Lead | 🟡 Qualified |
+| MQL | 🟠 Marketing Qualified |
+| SQL | 🔴 Hot Lead |
+| Opportunity | 🟣 Proposal |
+| Customer | 🟢 Customer |
+
+This ensures your WhatsApp conversations always reflect the customer's current status in your sales process.

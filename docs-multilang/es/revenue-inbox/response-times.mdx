@@ -1,58 +1,86 @@
 ---
-title: "Response Times"
-description: "Track and improve team response times"
+title: "Response Times & SLA"
+description: "Track and optimize team response times to WhatsApp messages"
 ---
 
-## Response Times
+## Why Response Time Matters
 
-Monitor how quickly your team responds to customer messages.
+Fast response times lead to:
+- **Higher conversion rates** - Leads go cold quickly
+- **Better customer satisfaction** - Customers expect quick replies
+- **Competitive advantage** - Beat competitors to the response
+- **Trust building** - Shows you value their time
 
-### Why Response Time Matters
+## Response Time Metrics
 
-| Response Time | Customer Impact |
-|---------------|-----------------|
-| < 5 minutes | Excellent - high satisfaction |
-| 5-30 minutes | Good - acceptable for most |
-| 30-60 minutes | Fair - may lose urgent leads |
-| > 1 hour | Poor - risk of lost sales |
+| Metric | Definition | Target |
+|--------|------------|--------|
+| **First Response Time** | Time from customer message to first reply | < 5 minutes (ideal) |
+| **Average Response Time** | Mean time across all replies | < 30 minutes |
+| **SLA Compliance** | % of chats responded within target | > 90% |
+| **Resolution Time** | Time from first message to issue resolved | < 24 hours |
 
-### Tracking Response Times
-
-In Team Inbox Dashboard:
-1. View **Average Response Time** metric
-2. See breakdown by team member
-3. Filter by date range
-4. Identify slow response patterns
-
-### Setting Response Time Goals
+## Viewing Response Analytics
 
 <Steps>
-  <Step title="Define SLAs">
-    Set target response times:
-    - Critical chats: < 5 minutes
-    - Normal chats: < 30 minutes
+  <Step title="Open Analytics">
+    Go to **Workspace** → **Analytics**
   </Step>
-  <Step title="Enable Alerts">
-    Get notified when SLAs are breached
+  
+  <Step title="Select Time Period">
+    Choose date range (today, this week, this month)
   </Step>
-  <Step title="Review Weekly">
-    Analyze trends and coach team
+  
+  <Step title="View Team Metrics">
+    See average response times for entire team
+  </Step>
+  
+  <Step title="Drill Down">
+    Click on individual team members to see their performance
   </Step>
 </Steps>
 
-### Improving Response Times
+## Setting SLA Targets
+
+Define response time expectations for your team:
+
+### By Priority
+
+| Priority | Target Response Time |
+|----------|---------------------|
+| 🔴 **Critical** | < 15 minutes |
+| 🟡 **High** | < 1 hour |
+| 🟢 **Normal** | < 4 hours |
+| ⚪ **Low** | < 24 hours |
+
+### By Channel
+
+| Source | Target |
+|--------|--------|
+| **WABA (API)** | < 30 minutes (24-hour window pressure) |
+| **Extension Chats** | < 2 hours |
+
+## Improving Response Times
 
 <CardGroup cols={2}>
-  <Card title="Quick Replies" icon="bolt">
-    Use saved templates for common responses
+  <Card title="Quick Replies" icon="reply">
+    Create templates for common responses
   </Card>
-  <Card title="Auto-Assignment" icon="robot">
-    Route chats to available agents
+  <Card title="Notifications" icon="bell">
+    Enable desktop/mobile alerts for new messages
   </Card>
-  <Card title="Priority Filters" icon="filter">
-    Focus on critical chats first
+  <Card title="Team Capacity" icon="users">
+    Ensure adequate staffing during peak hours
   </Card>
-  <Card title="Mobile Notifications" icon="bell">
-    Enable push notifications
+  <Card title="Prioritization" icon="sort">
+    Use AI priority labels to tackle urgent chats first
   </Card>
 </CardGroup>
+
+## Automated Alerts
+
+Set up alerts when response times exceed thresholds:
+
+- Admin receives WhatsApp notification every 3 hours with unreplied summary
+- Escalation to manager if chat unreplied > 2 hours
+- Dashboard warning for SLA breaches

@@ -1,0 +1,91 @@
+---
+title: "Broadcast Analytics"
+description: "Track and measure your WhatsApp broadcast campaign performance"
+---
+
+<Frame>
+  <img src="/images/1112602937.png" alt="Analytics Dashboard" />
+</Frame>
+
+## Campaign Metrics
+
+Track these key metrics for every broadcast:
+
+| Metric | Description |
+|--------|-------------|
+| **Sent** | Messages submitted to WhatsApp |
+| **Delivered** | Messages reached recipient's phone |
+| **Read** | Messages opened by recipient |
+| **Failed** | Delivery failures (invalid numbers, etc.) |
+| **Replied** | Recipients who responded |
+
+## Performance Calculations
+
+```
+Delivery Rate = (Delivered / Sent) × 100
+Read Rate = (Read / Delivered) × 100
+Response Rate = (Replied / Delivered) × 100
+```
+
+### Benchmarks
+
+| Metric | Good | Great | Excellent |
+|--------|------|-------|-----------|
+| Delivery Rate | >90% | >95% | >98% |
+| Read Rate | >50% | >70% | >85% |
+| Response Rate | >5% | >15% | >25% |
+
+## Viewing Analytics
+
+### Campaign Level
+
+1. Go to **Workspace** → **Broadcasts**
+2. Click on a campaign name
+3. View detailed metrics and recipient breakdown
+
+### Message Level
+
+For each recipient, see:
+- Sent timestamp
+- Delivered timestamp
+- Read timestamp (if available)
+- Error message (if failed)
+
+## Common Failure Reasons
+
+| Error | Cause | Solution |
+|-------|-------|----------|
+| **Invalid number** | Format incorrect or not on WhatsApp | Clean contact list |
+| **User blocked** | Recipient blocked your number | Remove from list |
+| **Template paused** | Quality issues with template | Use different template |
+| **Insufficient balance** | Wallet empty | Add funds |
+| **Rate limit** | Too many messages too fast | Spread over time |
+
+## Export Reports
+
+Download campaign data for further analysis:
+
+1. Open campaign details
+2. Click **Export** → **CSV**
+3. Includes all metrics per recipient
+
+## Improving Performance
+
+<CardGroup cols={2}>
+  <Card title="Clean Lists" icon="broom">
+    Remove invalid numbers before sending
+  </Card>
+  <Card title="Optimize Timing" icon="clock">
+    Send during business hours for higher read rates
+  </Card>
+  <Card title="Personalize" icon="user">
+    Use recipient names and relevant variables
+  </Card>
+  <Card title="Clear CTAs" icon="hand-pointer">
+    Include obvious call-to-action buttons
+  </Card>
+</CardGroup>
+
+<Card title="Best Practices" icon="star" href="/waba/broadcasting/best-practices">
+  Learn more tips to improve campaign performance
+</Card>

@@ -1,46 +1,118 @@
 ---
-title: "Dashboard"
-description: "Overview dashboard with key metrics and insights"
+title: "Team Monitoring Dashboard"
+description: "Real-time visibility into your team's WhatsApp conversations, response times, and performance"
 ---
 
-## Dashboard
+<Frame>
+  <img src="/images/1112598009.png" alt="Team Dashboard" />
+</Frame>
 
-The Revenue Inbox Dashboard provides a quick overview of your team's WhatsApp performance.
+## Overview
 
-### Key Metrics
+The Team Monitoring Dashboard gives managers complete visibility into their team's WhatsApp activity without needing access to individual phones. Track response times, identify bottlenecks, and ensure no customer conversation falls through the cracks.
 
-| Metric | Description |
+## Dashboard Metrics
+
+### Employee Overview
+
+| Column | Description |
 |--------|-------------|
-| **Total Conversations** | All chats in the selected period |
-| **Unreplied Chats** | Awaiting team response |
-| **Critical Chats** | AI-flagged urgent conversations |
-| **Avg Response Time** | Time to first reply |
-| **Resolution Rate** | % of chats resolved |
-
-### Dashboard Sections
-
-<CardGroup cols={2}>
-  <Card title="Conversation Volume" icon="chart-bar">
-    Daily/weekly/monthly chat volume trends
-  </Card>
-  <Card title="Team Performance" icon="users">
-    Response times and resolution rates by team member
-  </Card>
-  <Card title="Priority Breakdown" icon="exclamation-triangle">
-    Critical vs non-critical chat distribution
-  </Card>
-  <Card title="Label Distribution" icon="tags">
-    Conversations by label/funnel
-  </Card>
-</CardGroup>
+| **Name** | Team member name |
+| **Last Activity** | When they were last active on WhatsApp Web |
+| **Last Chat Synced** | When their most recent chat was backed up |
+| **Total Chats** | Number of conversations in backup |
+| **Unreplied** | Count of chats waiting for response |
+| **CRM Status** | Integration connection status |
 
 ### Accessing the Dashboard
 
-1. Go to Eazybe Workspace
-2. Click **Dashboard** in the left sidebar
-3. Select date range for analysis
-4. View metrics and charts
+<Steps>
+  <Step title="Open Workspace">
+    Log into **Eazybe Workspace** with admin credentials
+  </Step>
+  
+  <Step title="Navigate to Dashboard">
+    Click **Dashboard** in the left sidebar
+  </Step>
+  
+  <Step title="View Team Data">
+    See all team members with their activity status, sync times, and integrations
+  </Step>
+  
+  <Step title="Drill Down">
+    Click on any employee to view their individual conversations and performance
+  </Step>
+</Steps>
 
-<Info>
-Export dashboard data to CSV for reporting. Click **Export** in the top right.
-</Info>
+## Analytics Tab
+
+The Analytics tab provides detailed message analytics for your entire team or individual employees:
+
+<CardGroup cols={3}>
+  <Card title="Messages Sent" icon="paper-plane">
+    Total outbound messages by team/individual
+  </Card>
+  <Card title="Messages Received" icon="inbox">
+    Total inbound customer messages
+  </Card>
+  <Card title="Response Rate" icon="reply">
+    Percentage of messages replied to
+  </Card>
+</CardGroup>
+
+### Time-Based Analytics
+
+| Metric | What It Shows |
+|--------|---------------|
+| **Daily Volume** | Messages sent/received per day |
+| **Peak Hours** | Busiest times for customer messages |
+| **Response Time** | Average time to first reply |
+| **Resolution Time** | Average time to conversation completion |
+
+## Team Inbox View
+
+From the Dashboard, click **Team Inbox** to see actual conversations:
+
+<Frame>
+  <img src="/images/1714150184.png" alt="Team Inbox" />
+</Frame>
+
+### Filtering Options
+
+- **All Employees** or select specific team member
+- **All Teams** or filter by team/department
+- **Unreplied** vs **All Conversations**
+- **Critical** priority filter
+
+## Monitoring Best Practices
+
+<AccordionGroup>
+  <Accordion title="Daily Check-ins" icon="sun">
+    Review the Dashboard each morning to:
+    - Check overnight unreplied chats
+    - Identify any sync issues
+    - Spot team members with high unreplied counts
+  </Accordion>
+  
+  <Accordion title="Weekly Reviews" icon="calendar-week">
+    Analyze weekly trends:
+    - Compare response times across team
+    - Identify top performers
+    - Find coaching opportunities
+  </Accordion>
+  
+  <Accordion title="Real-time Alerts" icon="bell">
+    Set up notifications for:
+    - Critical unreplied chats
+    - Sync failures
+    - SLA breaches
+  </Accordion>
+</AccordionGroup>
+
+## Permissions
+
+| Role | Dashboard Access | View Chats | View All Teams |
+|------|-----------------|------------|----------------|
+| **Admin** | ✅ Full | ✅ All | ✅ Yes |
+| **Manager** | ✅ Full | ✅ Their team | ✅ Their team |
+| **Employee** | ❌ Limited | ✅ Own only | ❌ No |

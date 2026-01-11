@@ -1,66 +1,120 @@
 ---
-title: "Overview"
-description: "Centralized team inbox for managing WhatsApp conversations"
+title: "Revenue Inbox"
+description: "AI-powered team inbox to monitor conversations, detect hot leads, and ensure no customer falls through the cracks"
+icon: "inbox"
 ---
 
-## Revenue Inbox
+<Frame>
+  <img src="/images/1714150184.png" alt="Revenue Inbox Dashboard" />
+</Frame>
 
-The Revenue Inbox (Team Inbox) is your centralized hub for managing all WhatsApp conversations across your sales and support team.
+## What is Revenue Inbox?
 
-### What is Revenue Inbox?
-
-Revenue Inbox lets you:
-- **Monitor all team conversations** in one place
-- **Identify unreplied and critical chats** using AI-powered detection
-- **Track response times** and team performance
-- **Assign conversations** to team members
-- **Filter by labels, funnels, and priority**
-
-### Accessing Revenue Inbox
-
-<Steps>
-  <Step title="Open Eazybe Workspace">
-    Go to [workspace.eazybe.com](https://workspace.eazybe.com) or click the Organization button in the extension
-  </Step>
-  <Step title="Click Team Inbox">
-    Select **Team Inbox** from the left sidebar
-  </Step>
-  <Step title="View Conversations">
-    See all synced WhatsApp conversations from your team
-  </Step>
-</Steps>
-
-### Key Features
+The **Revenue Inbox** is Eazybe's centralized command center where managers and team leads can monitor all WhatsApp conversations across their entire team. It uses AI to automatically detect:
 
 <CardGroup cols={2}>
-  <Card title="Unreplied Detection" icon="clock">
-    AI automatically identifies chats awaiting response and prioritizes them by urgency
+  <Card title="🔥 Hot Leads" icon="fire">
+    Conversations showing buying signals, urgency, or high-value opportunities
   </Card>
-  <Card title="Hot Lead & Escalation Detection" icon="fire">
-    Detect critical conversations with keywords like "urgent", "cancel", "refund" and high-value customers
+  <Card title="⚠️ Escalations" icon="triangle-exclamation">
+    Unhappy customers, complaints, refund requests, or cancellation intent
   </Card>
-  <Card title="Labels & Funnels" icon="tags">
-    Organize conversations with custom labels and track leads through sales funnels
+  <Card title="⏰ Unreplied Chats" icon="clock">
+    Conversations waiting for a response beyond your SLA threshold
   </Card>
-  <Card title="Team Assignment" icon="users">
-    Assign conversations to specific team members for accountability
-  </Card>
-  <Card title="Response Time Tracking" icon="stopwatch">
-    Monitor how quickly your team responds to customers
-  </Card>
-  <Card title="Performance Analytics" icon="chart-line">
-    Track team performance with detailed metrics
+  <Card title="📋 Follow-up Needed" icon="bell">
+    Chats requiring action based on scheduled reminders or context
   </Card>
 </CardGroup>
 
-### Who Can Access?
+## Key Benefits
 
-| Role | Access Level |
-|------|--------------|
-| Admin | Full access to all team conversations |
-| Manager | Access to team members' conversations |
-| Agent | Access to own conversations only |
+| For Managers | For Sales Teams |
+|--------------|-----------------|
+| Monitor team performance in real-time | Never miss a hot lead |
+| Catch escalations before they become problems | Prioritize high-value conversations |
+| Ensure SLA compliance | Reduce response time with AI prioritization |
+| View all conversations without accessing individual phones | Get notified about critical chats |
 
-<Info>
-Conversations are synced from WhatsApp to Revenue Inbox based on your [Backup & Sync](/revenue-inbox/backup-sync) settings.
-</Info>
+## How It Works
+
+<Steps>
+  <Step title="Sync Conversations">
+    Team members sync their WhatsApp chats via the Chrome extension or WABA connection
+  </Step>
+  <Step title="AI Analysis">
+    Eazybe's AI scans every message for buying signals, complaints, urgency keywords, and more
+  </Step>
+  <Step title="Auto-Labeling">
+    Conversations are automatically tagged as **Critical**, **Hot Lead**, **Follow-up Needed**, etc.
+  </Step>
+  <Step title="Manager Visibility">
+    All tagged conversations appear in the Revenue Inbox with priority filters
+  </Step>
+  <Step title="Action & Alerts">
+    Managers get WhatsApp notifications every 3 hours with unreplied chat summaries
+  </Step>
+</Steps>
+
+## Data Sources
+
+Revenue Inbox pulls conversations from two sources:
+
+<CardGroup cols={2}>
+  <Card title="Chrome Extension Backup" icon="chrome" href="/revenue-inbox/backup-sync">
+    Team members sync labeled chats from WhatsApp Web to the Team Inbox via the Eazybe extension
+  </Card>
+  <Card title="WABA API" icon="whatsapp" href="/waba/overview">
+    Official WhatsApp Business API conversations flow directly into the inbox
+  </Card>
+</CardGroup>
+
+## AI Detection Features
+
+<AccordionGroup>
+  <Accordion title="Hot Lead Detection" icon="fire">
+    The AI identifies buying signals like:
+    - "I want to buy"
+    - "What's the price?"
+    - "Can I pay today?"
+    - "Send me the invoice"
+    - High-value customer from CRM data
+  </Accordion>
+  
+  <Accordion title="Escalation Detection" icon="triangle-exclamation">
+    Flags conversations containing:
+    - "Cancel my order"
+    - "I want a refund"
+    - "This is unacceptable"
+    - "Let me speak to a manager"
+    - Negative sentiment indicators
+  </Accordion>
+  
+  <Accordion title="Unreplied Detection" icon="clock">
+    Monitors conversations where:
+    - Customer sent last message
+    - No team reply within SLA threshold
+    - Priority increases over time
+  </Accordion>
+  
+  <Accordion title="Follow-up Detection" icon="bell">
+    Tracks conversations needing action:
+    - Scheduled follow-up reminders
+    - Promised callbacks
+    - Pending quotes or proposals
+  </Accordion>
+</AccordionGroup>
+
+## Quick Access
+
+<CardGroup cols={3}>
+  <Card title="View Unreplied" icon="inbox" href="/revenue-inbox/unreplied-chats">
+    See all waiting conversations
+  </Card>
+  <Card title="Team Monitoring" icon="users" href="/revenue-inbox/dashboard">
+    Track team performance
+  </Card>
+  <Card title="Setup Backup" icon="sync" href="/revenue-inbox/backup-sync">
+    Configure chat syncing
+  </Card>
+</CardGroup>
