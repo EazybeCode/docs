@@ -1,0 +1,34 @@
+---
+title: 'Zoho CRM Workflows'
+description: 'Send WhatsApp messages from Zoho CRM workflows'
+---
+
+## Prerequisites
+
+- Zoho CRM Professional or Enterprise
+- WABA connected to Eazybe
+- Zoho integration active
+- Approved message templates
+
+## Setup Guide
+
+<Steps>
+  <Step title="Go to Zoho Workflows">
+    In Zoho CRM, navigate to **Setup** → **Automation** → **Workflow Rules**
+  </Step>
+  <Step title="Create Rule">
+    Click **Create Rule** → Select module (Leads, Contacts, Deals)
+  </Step>
+  <Step title="Set Trigger">
+    Define when the rule executes
+  </Step>
+  <Step title="Add Webhook Action">
+    Click **Instant Actions** → **Webhook**
+  </Step>
+  <Step title="Configure Webhook">
+    URL: `https://api.eazybe.com/webhook/zoho/workflow`
+  </Step>
+  <Step title="Save and Activate">
+    Save the workflow and activate it
+  </Step>
+</Steps>

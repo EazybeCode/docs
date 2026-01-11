@@ -24,6 +24,10 @@
   },
   "tabs": [
     {
+      "name": "AI Agents",
+      "url": "ai-agents"
+    },
+    {
       "name": "CRM Integrations",
       "url": "integrations"
     },
@@ -150,41 +154,6 @@
             ]
           },
           {
-            "group": "Automation & AI",
-            "icon": "wand-magic-sparkles",
-            "pages": [
-              "automation/overview",
-              {
-                "group": "AI Features",
-                "pages": [
-                  "automation/ai/reply-suggestions",
-                  "automation/ai/unreplied-chats-agent",
-                  "automation/ai/conversation-insights"
-                ]
-              },
-              {
-                "group": "Workflows",
-                "pages": [
-                  "automation/workflows/overview",
-                  "automation/workflows/hubspot-workflows",
-                  "automation/workflows/zoho-workflows",
-                  "automation/workflows/triggers-actions"
-                ]
-              },
-              {
-                "group": "Agents & Chatbots",
-                "pages": [
-                  "automation/agents/overview",
-                  "automation/agents/creating-chatbot",
-                  "automation/agents/flow-builder",
-                  "automation/agents/variables",
-                  "automation/agents/human-handoff",
-                  "automation/agents/analytics"
-                ]
-              }
-            ]
-          },
-          {
             "group": "Productivity Tools",
             "icon": "bolt",
             "pages": [
@@ -237,6 +206,49 @@
               "troubleshooting/connection-issues",
               "troubleshooting/extension-issues",
               "troubleshooting/faq"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "AI Agents",
+        "groups": [
+          {
+            "group": "Overview",
+            "icon": "robot",
+            "pages": [
+              "ai-agents/overview"
+            ]
+          },
+          {
+            "group": "AI Features",
+            "icon": "brain",
+            "pages": [
+              "ai-agents/reply-suggestions",
+              "ai-agents/unreplied-chats-agent",
+              "ai-agents/conversation-insights"
+            ]
+          },
+          {
+            "group": "Workflows",
+            "icon": "diagram-project",
+            "pages": [
+              "ai-agents/workflows/overview",
+              "ai-agents/workflows/hubspot-workflows",
+              "ai-agents/workflows/zoho-workflows",
+              "ai-agents/workflows/triggers-actions"
+            ]
+          },
+          {
+            "group": "Chatbots",
+            "icon": "message-bot",
+            "pages": [
+              "ai-agents/chatbots/overview",
+              "ai-agents/chatbots/creating-chatbot",
+              "ai-agents/chatbots/flow-builder",
+              "ai-agents/chatbots/variables",
+              "ai-agents/chatbots/human-handoff",
+              "ai-agents/chatbots/analytics"
             ]
           }
         ]

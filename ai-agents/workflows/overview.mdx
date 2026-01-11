@@ -1,7 +1,6 @@
 ---
 title: 'Workflows'
 description: 'Automate WhatsApp messages from CRM triggers'
-icon: 'diagram-project'
 ---
 
 ## Overview
@@ -9,13 +8,6 @@ icon: 'diagram-project'
 Workflows allow you to automatically send WhatsApp messages when events occur in your CRM.
 
 ## How It Works
-
-```mermaid
-graph LR
-    A[CRM Event] --> B[Workflow Trigger]
-    B --> C[Eazybe]
-    C --> D[WhatsApp Message]
-```
 
 **Example**: When a deal moves to "Proposal Sent" in HubSpot, automatically send a WhatsApp message to the contact.
 
@@ -30,10 +22,10 @@ graph LR
 
 ## Prerequisites
 
-<Check>WABA connected to Eazybe</Check>
-<Check>CRM integration active</Check>
-<Check>Approved message templates</Check>
-<Check>CRM workflow/automation access</Check>
+- WABA connected to Eazybe
+- CRM integration active
+- Approved message templates
+- CRM workflow/automation access
 
 ## Common Use Cases
 
@@ -43,33 +35,14 @@ graph LR
 | **Follow-up** | Deal stage change | Status update |
 | **Reminder** | Task due date | Appointment reminder |
 | **Win/Loss** | Deal won/lost | Thank you / feedback request |
-| **Nurture** | Time-based | Re-engagement message |
-
-## Best Practices
-
-<Tip>
-  Always use approved WABA templates for workflow messages - personal messages from workflows will fail.
-</Tip>
-
-### Do's ✅
-- Test workflows with your own contact first
-- Use merge fields for personalization
-- Set up error notifications
-- Monitor delivery rates
-
-### Don'ts ❌
-- Send too frequently (spam risk)
-- Use non-approved templates
-- Forget to map variables correctly
-- Ignore delivery failures
 
 ## Next Steps
 
 <CardGroup cols={2}>
-  <Card title="HubSpot Workflows" icon="hubspot" href="/automation/workflows/hubspot-workflows">
+  <Card title="HubSpot Workflows" href="/ai-agents/workflows/hubspot-workflows">
     Set up HubSpot automation
   </Card>
-  <Card title="Zoho Workflows" icon="z" href="/automation/workflows/zoho-workflows">
+  <Card title="Zoho Workflows" href="/ai-agents/workflows/zoho-workflows">
     Set up Zoho automation
   </Card>
 </CardGroup>
