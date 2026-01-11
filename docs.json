@@ -438,9 +438,7 @@
             "group": "Changelog",
             "icon": "clock-rotate-left",
             "pages": [
-              "changelog/overview",
-              "changelog/2025",
-              "changelog/2024"
+              "changelog/overview"
             ]
           }
         ]
