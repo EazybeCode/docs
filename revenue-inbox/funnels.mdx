@@ -1,9 +1,68 @@
 ---
 title: "Funnels"
-
-description: "Track sales funnels"
+description: "Track leads through sales pipeline stages"
 ---
 
 ## Funnels
 
-Track conversations through sales stages.
+Funnels help you track leads through your sales pipeline with defined stages.
+
+### Creating a Funnel
+
+<Steps>
+  <Step title="Click Add Label">
+    Click **Add Label** in the sidebar
+  </Step>
+  <Step title="Select Funnel">
+    Choose **Funnel** instead of Label
+  </Step>
+  <Step title="Define Stages">
+    Add your pipeline stages in order:
+    - New Lead
+    - Contacted
+    - Qualified
+    - Proposal Sent
+    - Won/Lost
+  </Step>
+  <Step title="Set Visibility">
+    Choose Personal or Shared
+  </Step>
+</Steps>
+
+### Moving Contacts Through Stages
+
+1. Open the conversation
+2. Click the funnel icon in sidebar
+3. Select the new stage
+4. Contact moves to that stage (and leaves previous)
+
+### Key Difference from Labels
+
+<Warning>
+A contact can only be in **one funnel stage** at a time. Moving to a new stage removes them from the previous stage.
+</Warning>
+
+### Example Sales Funnel
+
+```
+📊 Sales Pipeline
+   1️⃣ New Lead
+   2️⃣ Contacted
+   3️⃣ Discovery Call
+   4️⃣ Proposal Sent
+   5️⃣ Negotiation
+   6️⃣ Closed Won ✅
+   7️⃣ Closed Lost ❌
+```
+
+### Viewing Funnel Analytics
+
+In the Team Inbox:
+1. Click on your funnel name
+2. See contacts in each stage
+3. View conversion rates between stages
+4. Identify bottlenecks in your pipeline
+
+<Info>
+Funnels work great with [Dynamic Labels](/integrations/hubspot/dynamic-labels) to sync with your CRM pipeline stages.
+</Info>

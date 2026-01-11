@@ -1,97 +1,130 @@
 ---
-title: "Pricing"
-description: "WhatsApp Business API pricing - Broadcast rates effective January 1, 2026"
+title: "WABA Pricing"
+description: "Eazybe WhatsApp Business API pricing - Broadcast rates effective January 1, 2026"
+icon: "credit-card"
 ---
 
-## WhatsApp API Pricing
+<Frame>
+  <img src="/images/1112603250.png" alt="Pricing Overview" />
+</Frame>
 
-WhatsApp charges per conversation based on message category and destination country.
+## How Pricing Works
 
-### Conversation Categories
-
-| Category | Description | Cost |
-|----------|-------------|------|
-| **Marketing** | Promotions, offers, announcements | Higher |
-| **Utility** | Order updates, alerts, confirmations | Medium |
-| **Authentication** | OTP, verification codes | Lower |
-| **Service** | Customer support responses | Free (first 1000/month) |
+WhatsApp API messages are charged **per message delivered** based on:
+- **Message category** (Marketing, Utility, Authentication)
+- **Recipient's country** (based on phone number country code)
 
 <Info>
-Eazybe adds no markup to Meta's WhatsApp pricing. You pay exactly what Meta charges.
+**Starter Credits:** Every new business connecting WABA receives **₹100 or $1 free** credits to get started!
 </Info>
 
-### Popular Countries - USD Rates
+## Message Categories
 
-| Country | Marketing | Utility |
-|---------|-----------|---------|
-| 🇮🇳 India | $0.0129 | $0.0015 |
-| 🇺🇸 United States | $0.0275 | $0.0044 |
-| 🇬🇧 United Kingdom | $0.0582 | $0.0242 |
-| 🇧🇷 Brazil | $0.0688 | $0.0088 |
-| 🇩🇪 Germany | $0.1502 | $0.0605 |
-| 🇮🇩 Indonesia | $0.0452 | $0.0220 |
-| 🇲🇽 Mexico | $0.0480 | $0.0110 |
-| 🇳🇬 Nigeria | $0.0568 | $0.0074 |
-| 🇿🇦 South Africa | $0.0417 | $0.0084 |
-| 🇦🇪 UAE | $0.0422 | $0.0173 |
-| 🇸🇦 Saudi Arabia | $0.0501 | $0.0127 |
-| 🇹🇷 Turkey | $0.0120 | $0.0058 |
-| 🇪🇬 Egypt | $0.0708 | $0.0057 |
-| 🇵🇰 Pakistan | $0.0520 | $0.0059 |
-| 🇨🇴 Colombia | $0.0138 | $0.0002 |
+<CardGroup cols={3}>
+  <Card title="Marketing" icon="bullhorn">
+    **Promotional messages**
+    
+    - Product announcements
+    - Offers & discounts
+    - Re-engagement campaigns
+    
+    💰 **Highest cost**
+  </Card>
+  
+  <Card title="Utility" icon="bell">
+    **Transactional updates**
+    
+    - Order confirmations
+    - Shipping updates
+    - Appointment reminders
+    
+    💰 **Medium cost**
+    
+    ✅ **FREE** within 24-hour window
+  </Card>
+  
+  <Card title="Authentication" icon="lock">
+    **Verification codes**
+    
+    - OTPs
+    - Login verification
+    - Account recovery
+    
+    💰 **Lower cost**
+  </Card>
+</CardGroup>
 
-### Popular Countries - INR Rates
+## India Pricing (INR)
 
-| Country | Marketing (₹) | Utility (₹) |
-|---------|---------------|-------------|
-| 🇮🇳 India | ₹0.95 | ₹0.13 |
-| 🇺🇸 United States | ₹2.01 | ₹0.32 |
-| 🇬🇧 United Kingdom | ₹4.26 | ₹1.77 |
-| 🇧🇷 Brazil | ₹5.04 | ₹0.64 |
-| 🇩🇪 Germany | ₹11.01 | ₹4.44 |
-| 🇮🇩 Indonesia | ₹3.31 | ₹1.61 |
-| 🇲🇽 Mexico | ₹3.51 | ₹0.81 |
-| 🇳🇬 Nigeria | ₹4.16 | ₹0.54 |
-| 🇿🇦 South Africa | ₹3.06 | ₹0.61 |
-| 🇦🇪 UAE | ₹3.10 | ₹1.27 |
-| 🇸🇦 Saudi Arabia | ₹3.66 | ₹0.93 |
-| 🇹🇷 Turkey | ₹0.88 | ₹0.43 |
-| 🇪🇬 Egypt | ₹5.19 | ₹0.42 |
-| 🇵🇰 Pakistan | ₹3.82 | ₹0.44 |
-| 🇨🇴 Colombia | ₹1.01 | ₹0.02 |
+Most Eazybe customers are in India. Here are the current rates:
 
-### Regional Pricing Tiers
+| Message Type | Rate per Message |
+|--------------|------------------|
+| **Marketing** | ₹1.09 |
+| **Utility** | ₹0.145 |
+| **Authentication** | ₹0.145 |
+| **Service** (customer-initiated, within 24hr) | **FREE** |
+
+<Tip>
+**Example Cost Calculation:**
+
+- 2,000 Marketing messages × ₹1.09 = ₹2,180
+- 1,500 Utility messages (outside window) × ₹0.145 = ₹217.50
+- 800 Authentication messages × ₹0.145 = ₹116
+
+**Total:** ₹2,513.50/month
+</Tip>
+
+## International Pricing (USD)
+
+### Popular Countries
+
+| Country | Marketing | Utility | Authentication |
+|---------|-----------|---------|----------------|
+| 🇮🇳 India | $0.0129 | $0.0017 | $0.0017 |
+| 🇺🇸 United States | $0.0275 | $0.0044 | $0.0044 |
+| 🇬🇧 United Kingdom | $0.0582 | $0.0242 | $0.0140 |
+| 🇧🇷 Brazil | $0.0688 | $0.0088 | $0.0048 |
+| 🇩🇪 Germany | $0.1502 | $0.0605 | $0.0605 |
+| 🇮🇩 Indonesia | $0.0452 | $0.0220 | $0.0220 |
+| 🇲🇽 Mexico | $0.0480 | $0.0110 | $0.0070 |
+| 🇳🇬 Nigeria | $0.0568 | $0.0074 | $0.0074 |
+| 🇿🇦 South Africa | $0.0417 | $0.0084 | $0.0084 |
+| 🇦🇪 UAE | $0.0422 | $0.0173 | $0.0173 |
+| 🇸🇦 Saudi Arabia | $0.0501 | $0.0127 | $0.0127 |
+| 🇹🇷 Turkey | $0.0120 | $0.0058 | $0.0040 |
+| 🇪🇬 Egypt | $0.0708 | $0.0057 | $0.0057 |
+| 🇵🇰 Pakistan | $0.0520 | $0.0059 | $0.0059 |
+
+## Regional Pricing
 
 <AccordionGroup>
-  <Accordion title="Europe (High)">
+  <Accordion title="Asia Pacific" icon="earth-asia">
+    | Country | Marketing | Utility |
+    |---------|-----------|---------|
+    | India | $0.0129 | $0.0017 |
+    | Indonesia | $0.0452 | $0.0220 |
+    | Malaysia | $0.0946 | $0.0154 |
+    | Philippines | $0.0805 | $0.0173 |
+    | Thailand | $0.0805 | $0.0173 |
+    | Vietnam | $0.0805 | $0.0173 |
+    | Singapore | $0.0946 | $0.0154 |
+    | Japan | $0.1087 | $0.0440 |
+  </Accordion>
+  
+  <Accordion title="Europe" icon="earth-europe">
     | Country | Marketing | Utility |
     |---------|-----------|---------|
     | Germany | $0.1502 | $0.0605 |
-    | Netherlands | $0.1757 | $0.0550 |
     | France | $0.0945 | $0.0330 |
+    | United Kingdom | $0.0582 | $0.0242 |
     | Italy | $0.0760 | $0.0330 |
     | Spain | $0.0677 | $0.0220 |
+    | Netherlands | $0.1757 | $0.0550 |
+    | Poland | $0.0518 | $0.0220 |
   </Accordion>
   
-  <Accordion title="North America">
-    | Country | Marketing | Utility |
-    |---------|-----------|---------|
-    | United States | $0.0275 | $0.0044 |
-    | Canada | $0.0275 | $0.0044 |
-    | Mexico | $0.0480 | $0.0110 |
-  </Accordion>
-  
-  <Accordion title="Latin America">
-    | Country | Marketing | Utility |
-    |---------|-----------|---------|
-    | Brazil | $0.0688 | $0.0088 |
-    | Argentina | $0.0680 | $0.0374 |
-    | Colombia | $0.0138 | $0.0002 |
-    | Chile | $0.0978 | $0.0220 |
-    | Peru | $0.0773 | $0.0220 |
-  </Accordion>
-  
-  <Accordion title="Middle East">
+  <Accordion title="Middle East" icon="earth-africa">
     | Country | Marketing | Utility |
     |---------|-----------|---------|
     | UAE | $0.0422 | $0.0173 |
@@ -99,20 +132,22 @@ Eazybe adds no markup to Meta's WhatsApp pricing. You pay exactly what Meta char
     | Israel | $0.0388 | $0.0058 |
     | Qatar | $0.0375 | $0.0173 |
     | Kuwait | $0.0375 | $0.0173 |
+    | Bahrain | $0.0375 | $0.0173 |
   </Accordion>
   
-  <Accordion title="Asia Pacific">
+  <Accordion title="Americas" icon="earth-americas">
     | Country | Marketing | Utility |
     |---------|-----------|---------|
-    | India | $0.0129 | $0.0015 |
-    | Indonesia | $0.0452 | $0.0220 |
-    | Malaysia | $0.0946 | $0.0154 |
-    | Philippines | $0.0805 | $0.0173 |
-    | Thailand | $0.0805 | $0.0173 |
-    | Vietnam | $0.0805 | $0.0173 |
+    | United States | $0.0275 | $0.0044 |
+    | Canada | $0.0275 | $0.0044 |
+    | Mexico | $0.0480 | $0.0110 |
+    | Brazil | $0.0688 | $0.0088 |
+    | Argentina | $0.0680 | $0.0374 |
+    | Colombia | $0.0138 | $0.0002 |
+    | Chile | $0.0978 | $0.0220 |
   </Accordion>
   
-  <Accordion title="Africa">
+  <Accordion title="Africa" icon="earth-africa">
     | Country | Marketing | Utility |
     |---------|-----------|---------|
     | Nigeria | $0.0568 | $0.0074 |
@@ -120,40 +155,75 @@ Eazybe adds no markup to Meta's WhatsApp pricing. You pay exactly what Meta char
     | Egypt | $0.0708 | $0.0057 |
     | Kenya | $0.0248 | $0.0067 |
     | Ghana | $0.0248 | $0.0067 |
+    | Morocco | $0.0708 | $0.0057 |
   </Accordion>
 </AccordionGroup>
 
-### Billing & Wallet
+## Free Messages
 
-<Steps>
-  <Step title="Add Funds">
-    Go to **Settings** → **Wallet** → **Add Funds**
-  </Step>
-  <Step title="Set Auto-Recharge">
-    Enable auto-recharge to avoid service interruption
-  </Step>
-  <Step title="Monitor Usage">
-    Track spending in the **Billing** dashboard
-  </Step>
-</Steps>
+Not all messages cost money! These are **FREE**:
 
-### Cost Optimization Tips
+| Scenario | Cost |
+|----------|------|
+| Customer messages you first | **Free** |
+| You reply within 24 hours (any message type) | **Free** |
+| Utility template within active service window | **Free** |
+
+<Info>
+**24-Hour Service Window:** When a customer messages you, a 24-hour window opens. During this time, all your replies (including utility templates) are free. The window resets with each new customer message.
+</Info>
+
+## Cost Optimization Tips
 
 <CardGroup cols={2}>
-  <Card title="Use Utility Templates" icon="receipt">
-    Utility messages cost less than marketing
+  <Card title="Respond Quickly" icon="clock">
+    Reply within 24 hours to keep utility messages free
   </Card>
-  <Card title="Target Right Countries" icon="globe">
-    India & Turkey have lowest rates
+  
+  <Card title="Use Utility Templates" icon="tags">
+    Transactional messages cost 85%+ less than marketing
   </Card>
-  <Card title="Batch Messages" icon="layer-group">
-    Send during off-peak hours
-  </Card>
+  
   <Card title="Clean Your Lists" icon="broom">
-    Remove invalid numbers to avoid failed charges
+    Remove invalid numbers to avoid failed message charges
+  </Card>
+  
+  <Card title="Target Wisely" icon="crosshairs">
+    India & Turkey have the lowest rates
   </Card>
 </CardGroup>
 
-<Info>
-Rates effective **January 1, 2026**. For complete rate list, see [Broadcast Rate List](/waba/rate-list).
-</Info>
+## Billing & Wallet
+
+### Add Funds
+
+<Steps>
+  <Step title="Open Wallet">
+    Go to **Settings** → **Wallet** → **Add Funds**
+  </Step>
+  <Step title="Enter Amount">
+    Minimum: ₹500 / $10
+  </Step>
+  <Step title="Pay">
+    Via Credit Card, UPI, Net Banking, or PayPal
+  </Step>
+</Steps>
+
+### Auto-Recharge
+
+Never run out mid-campaign:
+
+1. Enable **Auto-Recharge** in Wallet settings
+2. Set threshold (e.g., recharge when below ₹200)
+3. Set amount (e.g., add ₹1000)
+4. Save payment method
+
+## Invoice & Tax
+
+- GST (18%) applicable for Indian businesses
+- Invoices generated monthly
+- Download from **Settings** → **Billing** → **Invoices**
+
+<Card title="Manage Wallet" icon="wallet" href="/waba/wallet">
+  Add funds and view transaction history
+</Card>

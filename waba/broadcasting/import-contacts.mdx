@@ -1,8 +1,119 @@
 ---
 title: "Import Contacts"
-description: "Add broadcast recipients"
+description: "Upload and manage contact lists for WhatsApp broadcasts"
 ---
 
-## Import Contacts
+## CSV Format Requirements
 
-Add recipients via CSV, CRM list, or labels.
+Your CSV file must include:
+
+| Column | Required | Format | Example |
+|--------|----------|--------|---------|
+| **Phone** | ✅ Yes | International format, no + | 919876543210 |
+| **Name** | Recommended | Text | John Smith |
+| **Custom fields** | Optional | Text | ORD12345 |
+
+### Example CSV
+
+```csv
+Phone,Name,OrderID,City
+919876543210,John Smith,ORD001,Mumbai
+919876543211,Jane Doe,ORD002,Delhi
+447700900123,Bob Wilson,ORD003,London
+```
+
+## Phone Number Formats
+
+<Warning>
+Invalid formats cause delivery failures!
+</Warning>
+
+| Format | Valid? | Example |
+|--------|--------|---------|
+| International (no +) | ✅ | 919876543210 |
+| International (with +) | ❌ | +919876543210 |
+| Local format | ❌ | 9876543210 |
+| With spaces | ❌ | 91 9876 543210 |
+| With dashes | ❌ | 91-9876-543210 |
+
+### Country Code Examples
+
+| Country | Format |
+|---------|--------|
+| India | 91XXXXXXXXXX |
+| USA/Canada | 1XXXXXXXXXX |
+| UK | 44XXXXXXXXXX |
+| UAE | 971XXXXXXXXX |
+| Brazil | 55XXXXXXXXXXX |
+
+## Upload Methods
+
+<Tabs>
+  <Tab title="CSV Upload">
+    1. Prepare your CSV file
+    2. Go to **Broadcasts** → **Create Broadcast**
+    3. Click **Upload CSV**
+    4. Select your file
+    5. Map columns to variables
+  </Tab>
+  
+  <Tab title="From Labels">
+    If contacts are already in your Eazybe inbox with labels:
+    
+    1. Go to **Broadcasts** → **Create Broadcast**
+    2. Select **Choose from Labels**
+    3. Pick the label(s) containing target contacts
+    4. Review and confirm selection
+  </Tab>
+  
+  <Tab title="From CRM">
+    If integrated with HubSpot, Zoho, etc.:
+    
+    1. Create a contact list/segment in your CRM
+    2. Export as CSV with phone numbers
+    3. Upload to Eazybe Broadcasts
+    
+    <Tip>
+    Future: Direct CRM list selection coming soon!
+    </Tip>
+  </Tab>
+</Tabs>
+
+## Variable Mapping
+
+When your template has variables like `{{1}}`, `{{2}}`, map them to CSV columns:
+
+| Template Variable | CSV Column |
+|-------------------|------------|
+| {{1}} | Name |
+| {{2}} | OrderID |
+| {{3}} | City |
+
+## Cleaning Your List
+
+Before uploading, remove:
+- ❌ Duplicate numbers
+- ❌ Invalid formats
+- ❌ Unsubscribed contacts
+- ❌ Numbers not on WhatsApp
+
+<Tip>
+Clean lists = better delivery rates + lower costs (no failed messages)
+</Tip>
+
+## Opt-In Requirements
+
+<Warning>
+Only message contacts who have **explicitly opted in** to receive WhatsApp messages from your business.
+</Warning>
+
+Valid opt-in methods:
+- Website form with WhatsApp consent checkbox
+- SMS opt-in confirmation
+- In-app permission request
+- Physical form signature
+
+Invalid (can get you blocked):
+- Purchased contact lists
+- Scraped numbers
+- Contacts who haven't consented

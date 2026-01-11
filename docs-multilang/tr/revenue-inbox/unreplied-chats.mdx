@@ -1,8 +1,82 @@
 ---
 title: "Unreplied Chats"
-description: "Conversations awaiting response"
+description: "AI-powered detection of unreplied and follow-up needed conversations"
 ---
 
-## Unreplied Chats
+## Unreplied Chats Detection
 
-Track conversations waiting for replies.
+Eazybe's AI Agent automatically scans your team's WhatsApp conversations to identify unreplied chats and prioritize them by urgency.
+
+### How It Works
+
+The AI agent analyzes every conversation and applies priority labels:
+
+| Priority | Label | Indicators |
+|----------|-------|------------|
+| **Critical** | 🔴 Red | Keywords like "urgent", "cancel", "refund", "complaint", high-value customers |
+| **Non-Critical** | Standard | Regular inquiries without urgency signals |
+
+### Step 1: Open Team Inbox
+
+1. Log in to the Eazybe workspace
+2. Navigate to **Team Inbox** from the sidebar
+3. Click on **Unreplied** filter
+
+![Unreplied Inbox Filter](/images/1714150184.png)
+
+### Step 2: Identify Critical Chats
+
+Critical chats display a **red label** indicating high priority:
+
+- Complaints and escalations
+- Billing and payment issues
+- Order cancellations
+- High-value customer alerts
+
+![Critical Priority Label](/images/1714152616.png)
+
+### Step 3: Filter Your View
+
+Use built-in filters to focus your workload:
+
+- **All chats** - View everything
+- **Only critical** - Focus on urgent issues
+- **Only non-critical** - Handle routine inquiries
+
+![Filter Controls](/images/1714154471.png)
+
+### AI Detection Keywords
+
+The AI looks for urgency indicators like:
+
+<CardGroup cols={3}>
+  <Card title="Complaints">
+    - urgent
+    - immediately
+    - escalate
+    - manager
+  </Card>
+  <Card title="Cancellation">
+    - cancel
+    - refund
+    - return
+    - money back
+  </Card>
+  <Card title="Issues">
+    - not working
+    - problem
+    - broken
+    - failed
+  </Card>
+</CardGroup>
+
+### Admin Notifications
+
+Administrators receive automated WhatsApp summaries every 3 hours with:
+- Count of unreplied chats
+- Critical vs non-critical breakdown
+- Team member assignments
+
+<Warning>
+Critical chats left unreplied for more than 4 hours trigger escalation alerts to admins.
+</Warning>

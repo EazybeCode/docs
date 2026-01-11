@@ -1,8 +1,117 @@
 ---
-title: "Wallet"
-description: "Manage API credits"
+title: "Wallet & Billing"
+description: "Manage your Eazybe wallet balance for WhatsApp API messaging"
 ---
 
-## Wallet
+<Frame>
+  <img src="/images/1112599780.png" alt="Eazybe Wallet" />
+</Frame>
 
-Manage your WhatsApp API credits.
+## How Billing Works
+
+WhatsApp API messages are charged per message delivered. Eazybe uses a **prepaid wallet system**:
+
+1. Add funds to your Eazybe wallet
+2. Send messages (broadcasts, templates)
+3. Charges deduct automatically from your balance
+4. Get notifications when balance is low
+
+<Info>
+**Starter Credits:** Every new business connecting WABA receives **₹100 or $1 free** credits to get started!
+</Info>
+
+## Managing Your Wallet
+
+### Check Balance
+
+Navigate to **Workspace** → **Settings** → **Wallet** to view:
+- Current balance
+- Recent transactions
+- Usage history
+
+### Add Funds
+
+<Steps>
+  <Step title="Open Wallet">
+    Go to **Settings** → **Wallet** → **Add Funds**
+  </Step>
+  
+  <Step title="Enter Amount">
+    Minimum: ₹500 / $10
+    
+    Choose from preset amounts or enter a custom value
+  </Step>
+  
+  <Step title="Complete Payment">
+    Pay via:
+    - Credit/Debit Card
+    - UPI (India)
+    - Net Banking
+    - PayPal (International)
+  </Step>
+  
+  <Step title="Confirmation">
+    Funds reflect instantly in your wallet balance
+  </Step>
+</Steps>
+
+### Auto-Recharge
+
+Never run out of credits mid-campaign:
+
+<Steps>
+  <Step title="Enable Auto-Recharge">
+    **Wallet** → **Settings** → **Enable Auto-Recharge**
+  </Step>
+  
+  <Step title="Set Threshold">
+    Choose when to trigger recharge (e.g., when balance falls below ₹200)
+  </Step>
+  
+  <Step title="Set Amount">
+    Choose how much to auto-add (e.g., ₹1000)
+  </Step>
+  
+  <Step title="Save Payment Method">
+    Add a card or UPI for automatic billing
+  </Step>
+</Steps>
+
+## Understanding Charges
+
+| Message Type | When Charged | Rate |
+|--------------|--------------|------|
+| **Marketing** | Always (broadcast/promotional) | Higher |
+| **Utility** | Outside 24-hour window | Medium |
+| **Authentication** | OTPs, verification | Lower |
+| **Service** | Within 24-hour window | Free |
+
+<Tip>
+**Save Money:** Respond to customer messages within 24 hours to send utility updates for free!
+</Tip>
+
+## Transaction History
+
+View detailed logs of all wallet activity:
+
+| Column | Description |
+|--------|-------------|
+| Date | Transaction timestamp |
+| Type | Credit (add funds) or Debit (message sent) |
+| Amount | ₹/$ value |
+| Balance | Remaining wallet balance |
+| Details | Campaign name, recipient count |
+
+Export history as CSV for accounting purposes.
+
+## Low Balance Alerts
+
+Get notified before running out of credits:
+
+- **Email alerts** when balance drops below threshold
+- **In-app warnings** when creating campaigns
+- **Failed delivery** notifications if wallet is empty
+
+<Card title="View Pricing" icon="credit-card" href="/waba/pricing">
+  See message rates by country and category
+</Card>

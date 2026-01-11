@@ -1,8 +1,118 @@
 ---
-title: "Approval Process"
-description: "Template approval"
+title: "Template Approval"
+description: "How Meta reviews and approves WhatsApp message templates"
 ---
 
-## Approval Process
+## Approval Timeline
 
-All templates require Meta approval (24-48 hours).
+| Stage | Duration |
+|-------|----------|
+| Submission | Instant |
+| Meta Review | 24-48 hours (typical) |
+| Complex Reviews | Up to 7 days |
+
+<Info>
+Most templates are approved within **24 hours**. Marketing templates may take longer due to stricter review.
+</Info>
+
+## What Meta Reviews
+
+<AccordionGroup>
+  <Accordion title="Content Guidelines" icon="check">
+    Templates must NOT contain:
+    - Spam or deceptive content
+    - Threats, harassment, or hate speech
+    - Adult content or nudity
+    - Illegal products/services
+    - Alcohol, tobacco, or gambling (restricted)
+    - Weapons or dangerous materials
+    - Political content (in some regions)
+  </Accordion>
+  
+  <Accordion title="Category Accuracy" icon="tag">
+    Meta verifies your selected category matches the content:
+    
+    - **Marketing** → Promotional, sales-focused
+    - **Utility** → Transactional, informational
+    - **Authentication** → Verification codes only
+    
+    Mismatched categories get rejected.
+  </Accordion>
+  
+  <Accordion title="Variable Usage" icon="code">
+    Variables must be:
+    - Sequential (`{{1}}`, `{{2}}`, `{{3}}`)
+    - Provided with sample values
+    - Used appropriately (not for spam)
+  </Accordion>
+  
+  <Accordion title="Language & Grammar" icon="language">
+    Templates should be:
+    - Grammatically correct
+    - In the declared language
+    - Clear and understandable
+  </Accordion>
+</AccordionGroup>
+
+## Common Rejection Reasons
+
+| Reason | How to Fix |
+|--------|------------|
+| **Incorrect category** | Marketing content in Utility template → Change category |
+| **Missing variable samples** | Provide example values for all `{{n}}` placeholders |
+| **Prohibited content** | Remove references to restricted products |
+| **Too promotional for Utility** | Move promotional content to Marketing category |
+| **Spelling/grammar errors** | Proofread and correct mistakes |
+| **Unclear purpose** | Rewrite to clearly state the message intent |
+| **URL in body text** | Move URLs to buttons instead |
+
+## Handling Rejections
+
+<Steps>
+  <Step title="Review Reason">
+    Check the rejection reason in **Templates** → **Rejected** tab
+  </Step>
+  
+  <Step title="Edit Template">
+    Make necessary corrections based on feedback
+  </Step>
+  
+  <Step title="Resubmit">
+    Submit the updated template for review
+  </Step>
+</Steps>
+
+<Warning>
+Repeated rejections for policy violations may affect your account's template quality rating.
+</Warning>
+
+## Template Quality Rating
+
+Meta assigns quality ratings based on:
+- User feedback (blocks, reports)
+- Message delivery success
+- Engagement rates
+
+| Rating | Status |
+|--------|--------|
+| **High** | Template performing well |
+| **Medium** | Minor issues, monitor closely |
+| **Low** | At risk of being paused |
+| **Paused** | Temporarily disabled |
+
+## Tips for Faster Approval
+
+<CardGroup cols={2}>
+  <Card title="Be Specific" icon="crosshairs">
+    Clearly state the message purpose
+  </Card>
+  <Card title="Avoid URL in Body" icon="link-slash">
+    Use buttons for links instead
+  </Card>
+  <Card title="Correct Category" icon="tags">
+    Match category to actual content
+  </Card>
+  <Card title="Complete Samples" icon="file-check">
+    Provide realistic sample values
+  </Card>
+</CardGroup>

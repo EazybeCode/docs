@@ -1,8 +1,55 @@
 ---
 title: "Dynamic Labels"
-description: "Auto-sync labels with CRM"
+description: "AI-powered automatic labeling based on conversation content"
 ---
 
 ## Dynamic Labels
 
-Sync labels with CRM properties automatically.
+Dynamic Labels automatically categorize conversations based on content and CRM data.
+
+### How It Works
+
+The AI analyzes:
+- Message content and keywords
+- Customer value from CRM
+- Conversation sentiment
+- Historical interactions
+
+### Automatic Categories
+
+| Label | Trigger |
+|-------|---------|
+| 🔥 **Hot Lead** | High-intent keywords like "buy", "price", "ready" |
+| ⚠️ **Escalation** | Complaints, "manager", "cancel" |
+| 💰 **High Value** | CRM shows high deal value |
+| 🆕 **New Contact** | First-time conversation |
+| 🔄 **Follow-up Needed** | Promised callback, no response |
+
+### Setting Up Dynamic Labels
+
+<Steps>
+  <Step title="Enable AI Labels">
+    Go to Settings → Labels → Enable Dynamic Labels
+  </Step>
+  <Step title="Configure Rules">
+    Set keywords and conditions for each label
+  </Step>
+  <Step title="Connect CRM">
+    Link CRM for customer value data
+  </Step>
+  <Step title="Test">
+    Send test messages to verify labeling
+  </Step>
+</Steps>
+
+### CRM Sync
+
+Dynamic Labels can sync with CRM properties:
+- Label applied → CRM field updated
+- CRM field changed → Label updated
+
+See [HubSpot Dynamic Labels](/integrations/hubspot/dynamic-labels) for setup.
+
+<Info>
+Custom keyword rules for Dynamic Labels are coming soon as an advanced feature.
+</Info>
