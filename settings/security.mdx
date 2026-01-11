@@ -1,12 +1,80 @@
 ---
-title: 'Security'
-description: 'Settings - security'
+title: 'Security Settings'
+description: 'Secure your Eazybe account'
 ---
 
-## Overview
+## Account Security
 
-security account settings.
+### Two-Factor Authentication (2FA)
 
-<Info>
-  Detailed content coming soon.
-</Info>
+Add extra security to your account:
+
+1. Go to **Settings** → **Security**
+2. Click **Enable 2FA**
+3. Scan QR code with authenticator app
+4. Enter verification code
+5. Save backup codes
+
+### Password Requirements
+
+- Minimum 8 characters
+- At least one uppercase letter
+- At least one number
+- At least one special character
+
+### Session Management
+
+View and manage active sessions:
+
+1. Go to **Settings** → **Security** → **Sessions**
+2. See all active sessions
+3. Click **End** to log out specific session
+4. Click **End All** to log out everywhere
+
+## Team Security
+
+### IP Restrictions
+
+Limit access by IP address (Enterprise):
+
+1. Go to **Settings** → **Security** → **IP Allowlist**
+2. Add allowed IP addresses or ranges
+3. Enable restriction
+
+### Single Sign-On (SSO)
+
+Enterprise feature:
+- Connect your identity provider
+- SAML 2.0 support
+- Automatic provisioning
+
+## Data Security
+
+### Encryption
+
+- All data encrypted in transit (TLS 1.3)
+- Data at rest encrypted (AES-256)
+- API calls require authentication
+
+### Audit Logs
+
+Track important actions (Admin):
+
+1. Go to **Settings** → **Security** → **Audit Log**
+2. View login attempts
+3. See settings changes
+4. Export logs
+
+## Best Practices
+
+<Tip>
+  Enable 2FA for all admin accounts to prevent unauthorized access.
+</Tip>
+
+### Security Checklist
+
+<Check>Enable 2FA for all admins</Check>
+<Check>Use strong, unique passwords</Check>
+<Check>Review active sessions regularly</Check>
+<Check>Audit team access quarterly</Check>
+<Check>Remove inactive users</Check>

@@ -1,6 +1,6 @@
 {
   "$schema": "https://mintlify.com/docs.json",
-  "theme": "mint",
+  "theme": "venus",
   "name": "Eazybe",
   "logo": {
     "dark": "/logo/dark.svg",
@@ -10,7 +10,11 @@
   "colors": {
     "primary": "#25D366",
     "light": "#25D366",
-    "dark": "#128C7E"
+    "dark": "#128C7E",
+    "anchors": {
+      "from": "#25D366",
+      "to": "#128C7E"
+    }
   },
   "topbarLinks": [
     {
@@ -22,11 +26,26 @@
     "name": "Get Started",
     "url": "https://eazybe.com"
   },
+  "tabs": [
+    {
+      "name": "CRM Integrations",
+      "url": "integrations"
+    },
+    {
+      "name": "API Reference",
+      "url": "api-reference"
+    }
+  ],
   "anchors": [
     {
       "name": "Chrome Extension",
       "icon": "chrome",
       "url": "https://chromewebstore.google.com/detail/eazybe"
+    },
+    {
+      "name": "Community",
+      "icon": "discord",
+      "url": "https://eazybe.com/community"
     },
     {
       "name": "Blog",
@@ -44,12 +63,22 @@
             "pages": [
               "introduction",
               "quickstart",
-              "getting-started/chrome-extension",
-              "getting-started/system-requirements",
-              "getting-started/connect-whatsapp",
-              "getting-started/whatsapp-types",
-              "getting-started/personal-vs-business-vs-api",
-              "getting-started/coexistence-mode"
+              {
+                "group": "Installation",
+                "pages": [
+                  "getting-started/chrome-extension",
+                  "getting-started/system-requirements",
+                  "getting-started/connect-whatsapp"
+                ]
+              },
+              {
+                "group": "WhatsApp Account Types",
+                "pages": [
+                  "getting-started/whatsapp-types",
+                  "getting-started/personal-vs-business-vs-api",
+                  "getting-started/coexistence-mode"
+                ]
+              }
             ]
           },
           {
@@ -57,17 +86,32 @@
             "pages": [
               "revenue-inbox/overview",
               "revenue-inbox/dashboard",
-              "revenue-inbox/viewing-conversations",
-              "revenue-inbox/conversation-states",
-              "revenue-inbox/assigning-conversations",
-              "revenue-inbox/internal-notes",
-              "revenue-inbox/saved-replies",
-              "revenue-inbox/labels",
-              "revenue-inbox/dynamic-labels",
-              "revenue-inbox/funnels",
-              "revenue-inbox/response-times",
-              "revenue-inbox/unreplied-chats",
-              "revenue-inbox/performance-metrics"
+              {
+                "group": "Conversation Management",
+                "pages": [
+                  "revenue-inbox/viewing-conversations",
+                  "revenue-inbox/conversation-states",
+                  "revenue-inbox/assigning-conversations",
+                  "revenue-inbox/internal-notes",
+                  "revenue-inbox/saved-replies"
+                ]
+              },
+              {
+                "group": "Labels & Funnels",
+                "pages": [
+                  "revenue-inbox/labels",
+                  "revenue-inbox/dynamic-labels",
+                  "revenue-inbox/funnels"
+                ]
+              },
+              {
+                "group": "Team Productivity",
+                "pages": [
+                  "revenue-inbox/response-times",
+                  "revenue-inbox/unreplied-chats",
+                  "revenue-inbox/performance-metrics"
+                ]
+              }
             ]
           },
           {
@@ -76,17 +120,27 @@
               "waba/overview",
               "waba/getting-started",
               "waba/connect-waba",
-              "waba/templates/overview",
-              "waba/templates/creating-templates",
-              "waba/templates/utility-templates",
-              "waba/templates/marketing-templates",
-              "waba/templates/approval-process",
-              "waba/broadcasting/overview",
-              "waba/broadcasting/create-campaign",
-              "waba/broadcasting/import-contacts",
-              "waba/broadcasting/scheduling",
-              "waba/broadcasting/analytics",
-              "waba/broadcasting/best-practices",
+              {
+                "group": "Message Templates",
+                "pages": [
+                  "waba/templates/overview",
+                  "waba/templates/creating-templates",
+                  "waba/templates/utility-templates",
+                  "waba/templates/marketing-templates",
+                  "waba/templates/approval-process"
+                ]
+              },
+              {
+                "group": "Broadcasting",
+                "pages": [
+                  "waba/broadcasting/overview",
+                  "waba/broadcasting/create-campaign",
+                  "waba/broadcasting/import-contacts",
+                  "waba/broadcasting/scheduling",
+                  "waba/broadcasting/analytics",
+                  "waba/broadcasting/best-practices"
+                ]
+              },
               "waba/coexistence",
               "waba/wallet",
               "waba/faq"
@@ -96,19 +150,34 @@
             "group": "Automation & AI",
             "pages": [
               "automation/overview",
-              "automation/workflows/overview",
-              "automation/workflows/hubspot-workflows",
-              "automation/workflows/zoho-workflows",
-              "automation/workflows/triggers-actions",
-              "automation/ai/reply-suggestions",
-              "automation/ai/unreplied-chats-agent",
-              "automation/ai/conversation-insights",
-              "automation/agents/overview",
-              "automation/agents/creating-chatbot",
-              "automation/agents/flow-builder",
-              "automation/agents/variables",
-              "automation/agents/human-handoff",
-              "automation/agents/analytics"
+              {
+                "group": "AI Features",
+                "pages": [
+                  "automation/ai/reply-suggestions",
+                  "automation/ai/unreplied-chats-agent",
+                  "automation/ai/conversation-insights"
+                ]
+              },
+              {
+                "group": "Workflows",
+                "pages": [
+                  "automation/workflows/overview",
+                  "automation/workflows/hubspot-workflows",
+                  "automation/workflows/zoho-workflows",
+                  "automation/workflows/triggers-actions"
+                ]
+              },
+              {
+                "group": "Agents & Chatbots",
+                "pages": [
+                  "automation/agents/overview",
+                  "automation/agents/creating-chatbot",
+                  "automation/agents/flow-builder",
+                  "automation/agents/variables",
+                  "automation/agents/human-handoff",
+                  "automation/agents/analytics"
+                ]
+              }
             ]
           },
           {
@@ -143,6 +212,15 @@
             ]
           },
           {
+            "group": "Privacy & Compliance",
+            "pages": [
+              "privacy/overview",
+              "privacy/gdpr",
+              "privacy/data-storage",
+              "privacy/employee-monitoring"
+            ]
+          },
+          {
             "group": "Troubleshooting",
             "pages": [
               "troubleshooting/common-issues",
@@ -172,12 +250,17 @@
               "integrations/hubspot/setup",
               "integrations/hubspot/contact-sync",
               "integrations/hubspot/chat-backup",
-              "integrations/hubspot/mini-crm/overview",
-              "integrations/hubspot/mini-crm/contacts",
-              "integrations/hubspot/mini-crm/deals",
-              "integrations/hubspot/mini-crm/tasks-notes",
-              "integrations/hubspot/mini-crm/tickets",
-              "integrations/hubspot/mini-crm/call-logs",
+              {
+                "group": "Mini-CRM View",
+                "pages": [
+                  "integrations/hubspot/mini-crm/overview",
+                  "integrations/hubspot/mini-crm/contacts",
+                  "integrations/hubspot/mini-crm/deals",
+                  "integrations/hubspot/mini-crm/tasks-notes",
+                  "integrations/hubspot/mini-crm/tickets",
+                  "integrations/hubspot/mini-crm/call-logs"
+                ]
+              },
               "integrations/hubspot/workflows",
               "integrations/hubspot/dynamic-labels",
               "integrations/hubspot/admin-management",
@@ -193,10 +276,15 @@
               "integrations/zoho/setup",
               "integrations/zoho/contact-sync",
               "integrations/zoho/chat-backup",
-              "integrations/zoho/mini-crm/overview",
-              "integrations/zoho/mini-crm/contacts",
-              "integrations/zoho/mini-crm/leads",
-              "integrations/zoho/mini-crm/deals",
+              {
+                "group": "Mini-CRM View",
+                "pages": [
+                  "integrations/zoho/mini-crm/overview",
+                  "integrations/zoho/mini-crm/contacts",
+                  "integrations/zoho/mini-crm/leads",
+                  "integrations/zoho/mini-crm/deals"
+                ]
+              },
               "integrations/zoho/workflows",
               "integrations/zoho/admin-management",
               "integrations/zoho/troubleshooting",
@@ -211,10 +299,15 @@
               "integrations/salesforce/setup",
               "integrations/salesforce/contact-sync",
               "integrations/salesforce/chat-backup",
-              "integrations/salesforce/mini-crm/overview",
-              "integrations/salesforce/mini-crm/contacts",
-              "integrations/salesforce/mini-crm/leads",
-              "integrations/salesforce/mini-crm/opportunities",
+              {
+                "group": "Mini-CRM View",
+                "pages": [
+                  "integrations/salesforce/mini-crm/overview",
+                  "integrations/salesforce/mini-crm/contacts",
+                  "integrations/salesforce/mini-crm/leads",
+                  "integrations/salesforce/mini-crm/opportunities"
+                ]
+              },
               "integrations/salesforce/admin-management",
               "integrations/salesforce/troubleshooting",
               "integrations/salesforce/faq"
@@ -325,5 +418,11 @@
   "feedback": {
     "thumbsRating": true,
     "suggestEdit": true
+  },
+  "search": {
+    "prompt": "Search documentation..."
+  },
+  "seo": {
+    "indexHiddenPages": false
   }
 }

@@ -1,12 +1,86 @@
 ---
-title: 'Roles Permissions'
-description: 'Settings - roles-permissions'
+title: 'Roles & Permissions'
+description: 'Configure access levels for team members'
 ---
 
-## Overview
+## Default Roles
 
-roles-permissions account settings.
+### Employee
 
-<Info>
-  Detailed content coming soon.
-</Info>
+Basic access for individual contributors:
+- ✅ View own conversations
+- ✅ Send messages
+- ✅ Use quick replies
+- ✅ Apply labels to own chats
+- ❌ View team conversations
+- ❌ Access analytics
+- ❌ Manage settings
+
+### Manager
+
+Team oversight access:
+- ✅ Everything Employee can do
+- ✅ View team conversations
+- ✅ Access team analytics
+- ✅ Assign conversations
+- ✅ Manage team labels
+- ❌ Manage organization settings
+- ❌ Billing access
+
+### Admin
+
+Full administrative access:
+- ✅ Everything Manager can do
+- ✅ View all conversations
+- ✅ Organization settings
+- ✅ Team management
+- ✅ Billing & subscription
+- ✅ Integration settings
+- ✅ API access
+
+## Permission Details
+
+### Conversation Access
+
+| Permission | Employee | Manager | Admin |
+|------------|----------|---------|-------|
+| Own conversations | ✅ | ✅ | ✅ |
+| Team conversations | ❌ | ✅ | ✅ |
+| All conversations | ❌ | ❌ | ✅ |
+| Assign conversations | ❌ | ✅ | ✅ |
+
+### Feature Access
+
+| Permission | Employee | Manager | Admin |
+|------------|----------|---------|-------|
+| Quick replies | ✅ | ✅ | ✅ |
+| Scheduled messages | ✅ | ✅ | ✅ |
+| Labels (own) | ✅ | ✅ | ✅ |
+| Labels (manage) | ❌ | ✅ | ✅ |
+| Analytics (own) | ✅ | ✅ | ✅ |
+| Analytics (team) | ❌ | ✅ | ✅ |
+
+### Settings Access
+
+| Permission | Employee | Manager | Admin |
+|------------|----------|---------|-------|
+| Personal settings | ✅ | ✅ | ✅ |
+| Team settings | ❌ | Limited | ✅ |
+| Integration settings | ❌ | ❌ | ✅ |
+| Billing | ❌ | ❌ | ✅ |
+
+## Custom Roles
+
+<Note>
+  Custom roles coming soon. Currently limited to default roles.
+</Note>
+
+## Changing Roles
+
+Only Admins can change user roles:
+
+1. Go to **Settings** → **Team**
+2. Find the user
+3. Click their current role
+4. Select new role
+5. Confirm change

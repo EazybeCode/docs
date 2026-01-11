@@ -1,12 +1,77 @@
 ---
-title: 'Variables'
-description: 'Agents & Chatbots - variables'
+title: 'Variables & Data'
+description: 'Using dynamic data in chatbot flows'
 ---
 
 ## Overview
 
-variables for chatbot automation.
+Variables allow your chatbot to collect, store, and use customer information throughout the conversation.
 
-<Note>
-  **Coming Soon:** Agents and Chatbots are currently in development.
-</Note>
+## Built-in Variables
+
+| Variable | Description | Example |
+|----------|-------------|---------|
+| `{{contact.name}}` | Contact's name | John Smith |
+| `{{contact.phone}}` | Phone number | +919876543210 |
+| `{{contact.email}}` | Email address | john@example.com |
+| `{{last_message}}` | Customer's last message | "I need help" |
+| `{{current_time}}` | Current timestamp | 2:30 PM |
+| `{{current_date}}` | Today's date | Jan 11, 2026 |
+
+## CRM Variables
+
+If CRM is connected:
+
+| Variable | Description |
+|----------|-------------|
+| `{{crm.company}}` | Company name |
+| `{{crm.deal_stage}}` | Current deal stage |
+| `{{crm.owner}}` | Assigned sales rep |
+| `{{crm.last_activity}}` | Last CRM activity |
+
+## Custom Variables
+
+Create your own variables to store conversation data:
+
+<Steps>
+  <Step title="Add Question Node">
+    Use a Question node to collect info
+  </Step>
+  <Step title="Name Variable">
+    Set variable name (e.g., `budget`, `needs`)
+  </Step>
+  <Step title="Use Later">
+    Reference with `{{budget}}` in messages
+  </Step>
+</Steps>
+
+## Example Usage
+
+### Personalized Greeting
+
+```
+Hi {{contact.name}}! Welcome back.
+
+Last time we spoke about {{crm.deal_stage}}.
+How can I help today?
+```
+
+### Lead Qualification
+
+```
+Thanks! You mentioned your budget is {{budget}}.
+
+Based on that, I'd recommend our {{recommended_plan}} plan.
+Would you like me to connect you with {{crm.owner}}?
+```
+
+## Variable Validation
+
+Ensure collected data is valid:
+
+| Type | Validation | Example |
+|------|------------|---------|
+| Email | Must contain @ | user@domain.com |
+| Phone | Numbers only | +919876543210 |
+| Number | Numeric values | 50000 |
+| Text | Any text | "Enterprise needs" |

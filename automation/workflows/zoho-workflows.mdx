@@ -1,12 +1,90 @@
 ---
-title: 'Zoho Workflows'
-description: 'Workflow automation - zoho-workflows'
+title: 'Zoho CRM Workflows'
+description: 'Send WhatsApp messages from Zoho CRM workflows'
 ---
 
-## Overview
+## Prerequisites
 
-zoho-workflows documentation.
+<Check>Zoho CRM Professional or Enterprise</Check>
+<Check>WABA connected to Eazybe</Check>
+<Check>Zoho integration active</Check>
+<Check>Approved message templates</Check>
 
-<Info>
-  Detailed content coming soon.
-</Info>
+## Setup Guide
+
+<Steps>
+  <Step title="Go to Zoho Workflows">
+    In Zoho CRM, navigate to **Setup** → **Automation** → **Workflow Rules**
+  </Step>
+  <Step title="Create Rule">
+    Click **Create Rule** → Select module (Leads, Contacts, Deals)
+  </Step>
+  <Step title="Set Trigger">
+    Define when the rule executes:
+    - On create
+    - On edit
+    - Field update
+    - Date/time based
+  </Step>
+  <Step title="Add Webhook Action">
+    Click **Instant Actions** → **Webhook**
+  </Step>
+  <Step title="Configure Webhook">
+    - URL: `https://api.eazybe.com/webhook/zoho/workflow`
+    - Method: POST
+    - Add authentication header
+    - Map fields
+  </Step>
+  <Step title="Select Template">
+    In payload, specify:
+    - Template ID
+    - Variable mappings
+    - Recipient phone field
+  </Step>
+  <Step title="Save and Activate">
+    Save the workflow and activate it
+  </Step>
+</Steps>
+
+## Webhook Payload Format
+
+```json
+{
+  "template_id": "your_template_id",
+  "phone": "${Leads.Phone}",
+  "variables": {
+    "1": "${Leads.First Name}",
+    "2": "${Leads.Company}",
+    "3": "${Leads.Lead Source}"
+  }
+}
+```
+
+## Example Workflows
+
+### New Lead Assignment
+
+**Trigger**: Lead created
+
+**Action**: Send welcome message
+
+### Deal Won Notification
+
+**Trigger**: Stage = "Closed Won"
+
+**Action**: Send thank you message
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="Webhook failing">
+    - Check API endpoint URL
+    - Verify authentication header
+    - Test with Zoho's webhook test
+  </Accordion>
+  <Accordion title="Messages not delivered">
+    - Confirm phone field has country code
+    - Check template approval status
+    - Verify Eazybe wallet balance
+  </Accordion>
+</AccordionGroup>

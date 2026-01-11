@@ -1,12 +1,86 @@
 ---
 title: 'Message Templates'
-description: 'Productivity - message-templates'
+description: 'Create and manage reusable message templates'
 ---
 
 ## Overview
 
-message-templates productivity feature.
+Message Templates are reusable message formats that can include variables, formatting, and attachments.
 
-<Info>
-  Detailed content coming soon.
-</Info>
+<Note>
+  **Different from WABA Templates**: These are Eazybe quick templates, not Meta-approved WABA templates. For WABA templates, see [WABA Templates](/waba/templates/overview).
+</Note>
+
+## Template Types
+
+| Type | Use Case | Variables |
+|------|----------|-----------|
+| **Text** | Simple messages | ✅ Yes |
+| **Media** | Images, docs | ✅ Yes |
+| **Interactive** | With buttons (WABA only) | ✅ Yes |
+
+## Creating Templates
+
+<Steps>
+  <Step title="Open Templates">
+    Go to **Productivity** → **Templates**
+  </Step>
+  <Step title="Click Create">
+    Click **+ New Template**
+  </Step>
+  <Step title="Enter Content">
+    Write your template with variables
+  </Step>
+  <Step title="Add Media">
+    Attach images or documents if needed
+  </Step>
+  <Step title="Save">
+    Give it a name and save
+  </Step>
+</Steps>
+
+## Using Variables
+
+Personalize templates with dynamic data:
+
+```
+Hi {{first_name}},
+
+Thanks for reaching out about {{topic}}!
+
+Here's what you need to know:
+{{custom_response}}
+
+Best,
+{{agent_name}}
+```
+
+### Available Variables
+
+| Variable | Source |
+|----------|--------|
+| `{{first_name}}` | Contact's name |
+| `{{company}}` | Company name |
+| `{{agent_name}}` | Your name |
+| `{{date}}` | Current date |
+| `{{crm_field}}` | CRM property |
+
+## Formatting
+
+Templates support WhatsApp formatting:
+
+| Format | Syntax | Result |
+|--------|--------|--------|
+| **Bold** | `*text*` | **text** |
+| *Italic* | `_text_` | *text* |
+| ~~Strike~~ | `~text~` | ~~text~~ |
+| `Code` | `` `text` `` | `text` |
+
+## Template Categories
+
+Organize templates by category:
+
+- **Sales**: Outreach, follow-ups, proposals
+- **Support**: FAQs, troubleshooting, updates
+- **Marketing**: Promotions, newsletters
+- **Internal**: Team updates, reminders

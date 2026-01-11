@@ -1,12 +1,77 @@
 ---
-title: 'Triggers Actions'
-description: 'Workflow automation - triggers-actions'
+title: 'Triggers & Actions'
+description: 'Available workflow triggers and actions'
 ---
 
-## Overview
+## Triggers
 
-triggers-actions documentation.
+What can start a WhatsApp workflow:
 
-<Info>
-  Detailed content coming soon.
-</Info>
+### Contact/Lead Triggers
+
+| Trigger | Description |
+|---------|-------------|
+| **Created** | New contact/lead added |
+| **Updated** | Any field changed |
+| **Property Change** | Specific field changed |
+| **List Membership** | Added to list/segment |
+| **Form Submission** | Filled out a form |
+
+### Deal Triggers
+
+| Trigger | Description |
+|---------|-------------|
+| **Stage Change** | Deal moves to new stage |
+| **Created** | New deal created |
+| **Won/Lost** | Deal outcome set |
+| **Amount Change** | Deal value updated |
+
+### Time-Based Triggers
+
+| Trigger | Description |
+|---------|-------------|
+| **Date Property** | Based on date field |
+| **Delay** | After previous action |
+| **Schedule** | Specific time/day |
+
+## Actions
+
+What WhatsApp actions you can take:
+
+| Action | Description | Requires |
+|--------|-------------|----------|
+| **Send Template** | Send approved template | WABA |
+| **Send Quick Reply** | Send saved reply | Any WhatsApp |
+| **Apply Label** | Add label to contact | Extension |
+| **Create Task** | Create follow-up task | CRM |
+
+## Variable Mappings
+
+Pass CRM data to WhatsApp messages:
+
+### HubSpot Variables
+
+| CRM Field | Template Variable |
+|-----------|-------------------|
+| First name | `{{contact.firstname}}` |
+| Company | `{{contact.company}}` |
+| Deal name | `{{deal.dealname}}` |
+| Deal amount | `{{deal.amount}}` |
+
+### Zoho Variables
+
+| CRM Field | Template Variable |
+|-----------|-------------------|
+| First Name | `${Leads.First Name}` |
+| Company | `${Leads.Company}` |
+| Deal Name | `${Deals.Deal Name}` |
+| Amount | `${Deals.Amount}` |
+
+## Conditions
+
+Add logic to workflows:
+
+- **If/Then**: Branch based on field value
+- **Delay**: Wait before next action
+- **Go to action**: Jump to specific step
+- **End**: Stop workflow

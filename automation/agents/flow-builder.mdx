@@ -1,12 +1,92 @@
 ---
 title: 'Flow Builder'
-description: 'Agents & Chatbots - flow-builder'
+description: 'Visual tool for designing chatbot conversations'
 ---
 
 ## Overview
 
-flow-builder for chatbot automation.
+The Flow Builder is a drag-and-drop interface for creating chatbot conversation flows without coding.
 
-<Note>
-  **Coming Soon:** Agents and Chatbots are currently in development.
-</Note>
+## Interface Components
+
+### Canvas
+The main workspace where you build flows:
+- Drag nodes from the sidebar
+- Connect nodes with arrows
+- Zoom in/out to navigate
+
+### Node Types
+
+| Node | Icon | Purpose |
+|------|------|---------|
+| **Trigger** | ⚡ | Starts the flow |
+| **Message** | 💬 | Send text message |
+| **Question** | ❓ | Ask and wait for response |
+| **Buttons** | 🔘 | Present clickable options |
+| **Condition** | 🔀 | Branch based on logic |
+| **Action** | ⚙️ | Perform system action |
+| **Handoff** | 👤 | Transfer to human |
+| **End** | 🔚 | End conversation |
+
+## Building a Flow
+
+<Steps>
+  <Step title="Add Trigger">
+    Every flow starts with a trigger node
+  </Step>
+  <Step title="Add Messages">
+    Drag message nodes to send responses
+  </Step>
+  <Step title="Add Logic">
+    Use conditions to branch conversation
+  </Step>
+  <Step title="Connect Nodes">
+    Draw lines between nodes to create paths
+  </Step>
+  <Step title="Add Handoff">
+    Include human handoff for complex queries
+  </Step>
+</Steps>
+
+## Node Details
+
+### Message Node
+- **Text**: Message content (supports variables)
+- **Media**: Attach image, document, or video
+- **Delay**: Optional pause before sending
+
+### Question Node
+- **Question text**: What to ask
+- **Variable**: Store response in variable
+- **Validation**: Ensure response format
+
+### Button Node
+- **Button text**: Label for each option
+- **Max buttons**: Up to 3 buttons
+- **Each button**: Connects to different path
+
+### Condition Node
+- **If**: Variable equals/contains value
+- **Then**: Follow this path
+- **Else**: Follow alternative path
+
+## Variables
+
+Store and use data throughout the flow:
+
+| Variable | Example | Usage |
+|----------|---------|-------|
+| `{{name}}` | John | Customer's name |
+| `{{phone}}` | +1234567890 | Phone number |
+| `{{last_message}}` | "Help" | Their last message |
+| `{{custom_field}}` | Any value | Your custom data |
+
+## Testing
+
+Before activating:
+
+1. Click **Preview** button
+2. Simulate conversation as customer
+3. Test all possible paths
+4. Verify handoff works
+5. Check message timing

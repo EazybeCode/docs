@@ -1,12 +1,107 @@
 ---
-title: 'Hubspot Workflows'
-description: 'Workflow automation - hubspot-workflows'
+title: 'HubSpot Workflows'
+description: 'Send WhatsApp messages from HubSpot workflows'
 ---
 
-## Overview
+## Prerequisites
 
-hubspot-workflows documentation.
+<Check>HubSpot Professional or Enterprise</Check>
+<Check>WABA connected to Eazybe</Check>
+<Check>HubSpot integration active</Check>
+<Check>Approved message templates</Check>
 
-<Info>
-  Detailed content coming soon.
-</Info>
+## Setup Guide
+
+<Steps>
+  <Step title="Go to HubSpot Workflows">
+    In HubSpot, navigate to **Automation** → **Workflows**
+  </Step>
+  <Step title="Create Workflow">
+    Click **Create workflow** → Choose **Contact-based**, **Deal-based**, or **Company-based**
+  </Step>
+  <Step title="Set Trigger">
+    Define when the workflow runs:
+    - Contact property changed
+    - Deal stage changed
+    - Form submitted
+    - List membership
+  </Step>
+  <Step title="Add Eazybe Action">
+    Click **+** → Scroll to **Eazybe** section → Select **Send WhatsApp Message**
+  </Step>
+  <Step title="Configure Message">
+    - Select approved template
+    - Map variables to HubSpot properties
+    - Set from number (your WABA)
+  </Step>
+  <Step title="Enable Re-enrollment">
+    Turn ON if workflow should run multiple times per contact
+  </Step>
+  <Step title="Review and Publish">
+    Review settings → Click **Review and publish**
+  </Step>
+</Steps>
+
+## Variable Mapping
+
+Map HubSpot properties to template variables:
+
+| Template Variable | HubSpot Property |
+|-------------------|------------------|
+| `{{1}}` | Contact: First name |
+| `{{2}}` | Deal: Deal name |
+| `{{3}}` | Deal: Amount |
+| `{{4}}` | Custom property |
+
+## Example Workflows
+
+### New Lead Welcome
+
+**Trigger**: Contact created with source = "Website"
+
+**Action**: Send welcome message template
+
+```
+Hi {{1}},
+
+Thanks for your interest in Eazybe! 
+
+I'm {{2}}, and I'll be helping you get started.
+
+When's a good time to chat?
+```
+
+### Deal Stage Update
+
+**Trigger**: Deal stage = "Proposal Sent"
+
+**Action**: Send proposal notification
+
+```
+Hi {{1}},
+
+I just sent over the proposal for {{2}}.
+
+Please review and let me know if you have questions!
+```
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="Action not appearing in HubSpot">
+    - Verify Eazybe HubSpot integration is connected
+    - Check you have workflow permissions
+    - Refresh the workflow editor
+  </Accordion>
+  <Accordion title="Messages not sending">
+    - Confirm WABA is connected
+    - Check template is approved
+    - Verify phone number format in HubSpot
+    - Check Eazybe wallet balance
+  </Accordion>
+  <Accordion title="Wrong variable values">
+    - Double-check property mapping
+    - Ensure properties have values
+    - Test with a known contact
+  </Accordion>
+</AccordionGroup>

@@ -1,167 +1,128 @@
 ---
 title: 'Quick Replies'
-description: 'Save and reuse common message templates for faster responses'
+description: 'Save and reuse message templates instantly'
+icon: 'bolt'
 ---
 
 ## Overview
 
-Quick Replies let you save frequently used messages and send them with one click. Perfect for greetings, FAQs, pricing information, and follow-ups.
+Quick Replies are pre-saved message templates that let you respond to common queries instantly with a single click or shortcut.
 
-## Creating a Quick Reply
+## Creating Quick Replies
 
 <Steps>
   <Step title="Open Quick Replies">
-    Click the **Quick Replies** icon in the Eazybe sidebar (lightning bolt icon).
+    Click the **Quick Replies** icon in the Eazybe sidebar
   </Step>
-  
   <Step title="Click Create">
-    Click the **+ Create Quick Reply** button.
+    Click **+ Create Quick Reply**
   </Step>
-  
   <Step title="Enter Details">
-    - **Title**: Name for easy identification (e.g., "Welcome Message")
-    - **Message**: The actual text to send
-    - **Shortcut** (optional): Type `/shortcut` to trigger
+    - **Title**: Searchable name (e.g., "Pricing Info")
+    - **Shortcut**: Quick trigger (e.g., `/price`)
+    - **Message**: The response text
+    - **Attachments**: Optional files
   </Step>
-  
   <Step title="Set Visibility">
-    Choose who can see this Quick Reply:
-    - **Personal**: Only visible to you
-    - **Shared**: Visible to entire organization
-    - **Shared with Team**: Visible to specific teams only
+    - **Personal**: Only you can see
+    - **Shared**: Team can use
   </Step>
-  
-  <Step title="Add Extras (Optional)">
-    - **Attachment**: Add a file (max 20MB)
-    - **Voice Note**: Record an audio message
-    - **AI Rephrase**: Use AI to improve the message
-  </Step>
-  
   <Step title="Save">
-    Click **Create** to save your Quick Reply.
+    Click **Save Quick Reply**
   </Step>
 </Steps>
 
 ## Using Quick Replies
 
-### Method 1: Click to Send
-1. Open any WhatsApp chat
-2. Click the **Quick Replies** icon
-3. Find your reply and click to insert
+### Method 1: Click to Insert
+
+1. Open Quick Replies panel
+2. Search or browse
+3. Click to insert into message field
 4. Edit if needed, then send
 
-### Method 2: Shortcut Command
-1. In the chat input, type `/` followed by your shortcut
-2. Example: `/welcome` inserts your welcome message
-3. Edit if needed, then send
+### Method 2: Shortcut
+
+1. Type `/` in message field
+2. Type shortcut (e.g., `/price`)
+3. Press Enter to insert
+4. Send
 
 ### Method 3: Search
-1. Open Quick Replies panel
-2. Use the search bar to find by title or content
-3. Click to insert
 
-## Organizing Quick Replies
+1. Type `/` followed by search term
+2. Results filter in real-time
+3. Select with arrow keys
+4. Press Enter
 
-### Categories
-Group related Quick Replies into categories:
-- Sales (pricing, proposals, follow-ups)
-- Support (troubleshooting, FAQs)
-- Onboarding (welcome, next steps)
-- Closing (thank you, feedback requests)
-
-### Best Practices
+## Best Practices
 
 <Tip>
-  **Naming Convention**: Use prefixes like `sales-`, `support-`, `onboard-` to keep replies organized and easy to search.
+  Use descriptive shortcuts that are easy to remember: `/greeting`, `/pricing`, `/hours`
 </Tip>
 
-## Adding Attachments
+### Organizing Quick Replies
 
-Quick Replies can include files:
+| Category | Example Shortcuts |
+|----------|-------------------|
+| Greetings | `/hi`, `/welcome`, `/thanks` |
+| Sales | `/pricing`, `/demo`, `/proposal` |
+| Support | `/hours`, `/refund`, `/shipping` |
+| Follow-up | `/followup`, `/checkin`, `/reminder` |
 
-| File Type | Supported | Max Size |
-|-----------|-----------|----------|
-| Images | ✅ | 20 MB |
-| PDFs | ✅ | 20 MB |
-| Documents | ✅ | 20 MB |
-| Videos | ✅ | 20 MB |
-| Voice Notes | ✅ | 20 MB |
+## Variables in Quick Replies
 
-<Warning>
-  Only **one file** can be attached per Quick Reply.
-</Warning>
+Use placeholders for personalization:
 
-## AI-Powered Rephrasing
+| Variable | Replaced With |
+|----------|---------------|
+| `{{name}}` | Contact's name |
+| `{{company}}` | Company name |
+| `{{date}}` | Current date |
 
-Improve your messages with AI:
+**Example Template**:
+```
+Hi {{name}},
 
-1. Write your base message
-2. Click **Rephrase with AI**
-3. Choose from suggested variations:
-   - More professional
-   - More friendly
-   - More concise
-   - Different tone
+Thanks for your interest in Eazybe!
+
+Here's our pricing: [link]
+
+Let me know if you have questions!
+```
 
 ## Sharing Quick Replies
 
-### Organization-Wide
-Set visibility to **Shared** to make replies available to your entire team. Great for:
-- Standard company responses
-- Pricing information
-- Policy explanations
+### Make Reply Shared
 
-### Team-Specific
-Set visibility to **Shared with Team** for department-specific replies:
-- Sales team only
-- Support team only
-- Managers only
+1. Edit quick reply
+2. Change visibility to **Shared**
+3. Save
 
-## Managing Quick Replies
+### Team Access
 
-### Editing
-1. Open Quick Replies panel
-2. Find the reply to edit
-3. Click the **Edit** (pencil) icon
-4. Make changes and save
+- Shared replies visible to all team members
+- Admins can manage all shared replies
+- Members can only edit their own
 
-### Deleting
-1. Open Quick Replies panel
-2. Find the reply to delete
-3. Click the **Delete** (trash) icon
-4. Confirm deletion
+## Attachments
 
-<Warning>
-  Deleting a shared Quick Reply removes it for all team members.
-</Warning>
+Add files to quick replies:
+
+- **Images**: PNG, JPG (max 5MB)
+- **Documents**: PDF, DOC (max 20MB)
+- **Videos**: MP4 (max 16MB)
 
 ## FAQ
 
 <AccordionGroup>
-  <Accordion title="Is there a limit to how many Quick Replies I can create?">
-    No, you can create unlimited Quick Replies.
+  <Accordion title="How many quick replies can I create?">
+    Unlimited quick replies on all plans.
   </Accordion>
-  
-  <Accordion title="Can I use variables in Quick Replies?">
-    Currently, Quick Replies are static text. For personalized messages with variables, use WABA Message Templates.
+  <Accordion title="Can I organize into folders?">
+    Not yet - use naming conventions like "Sales - Pricing", "Support - Refund"
   </Accordion>
-  
-  <Accordion title="Do Quick Replies work with WABA?">
-    Quick Replies work with regular WhatsApp. For WABA (API) messaging, you need approved Message Templates.
-  </Accordion>
-  
-  <Accordion title="Can I import Quick Replies from another system?">
-    Currently, Quick Replies must be created manually. We're working on import functionality.
+  <Accordion title="Can I import quick replies?">
+    CSV import coming soon. Currently manual creation only.
   </Accordion>
 </AccordionGroup>
-
-## Next Steps
-
-<CardGroup cols={2}>
-  <Card title="Scheduled Messages" icon="clock" href="/productivity/scheduled-messages">
-    Send messages at specific times
-  </Card>
-  <Card title="Message Templates" icon="file-lines" href="/waba/templates/overview">
-    Create WABA templates for automation
-  </Card>
-</CardGroup>

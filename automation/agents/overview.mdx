@@ -1,12 +1,101 @@
 ---
-title: 'Overview'
-description: 'Agents & Chatbots - overview'
+title: 'Agents & Chatbots'
+description: 'Automate conversations with AI-powered chatbots'
+icon: 'robot'
 ---
 
 ## Overview
 
-overview for chatbot automation.
+Eazybe Agents are AI-powered chatbots that can automatically respond to common customer queries, qualify leads, and route conversations to the right team members.
 
 <Note>
-  **Coming Soon:** Agents and Chatbots are currently in development.
+  Agents work with WABA (WhatsApp Business API) connections for automated responses.
 </Note>
+
+## Key Capabilities
+
+<CardGroup cols={2}>
+  <Card title="Auto-Response" icon="reply">
+    Instantly respond to common questions
+  </Card>
+  <Card title="Lead Qualification" icon="filter">
+    Ask qualifying questions before handoff
+  </Card>
+  <Card title="24/7 Availability" icon="clock">
+    Respond outside business hours
+  </Card>
+  <Card title="Smart Routing" icon="route">
+    Direct conversations to right team members
+  </Card>
+</CardGroup>
+
+## Use Cases
+
+| Use Case | Description | Example |
+|----------|-------------|---------|
+| **FAQ Bot** | Answer common questions | "What are your business hours?" |
+| **Lead Qualifier** | Collect info before sales call | "What's your budget range?" |
+| **Appointment Booking** | Schedule meetings | "When would you like to meet?" |
+| **Order Status** | Check order information | "Where's my order #12345?" |
+| **Support Triage** | Route to right department | "Is this about billing or technical?" |
+
+## Getting Started
+
+<Steps>
+  <Step title="Ensure WABA Connected">
+    Agents require WhatsApp Business API connection
+  </Step>
+  <Step title="Create Agent">
+    Go to **Automation** → **Agents** → **Create New**
+  </Step>
+  <Step title="Build Flow">
+    Use the visual flow builder to design conversation
+  </Step>
+  <Step title="Test">
+    Test with your own phone before going live
+  </Step>
+  <Step title="Deploy">
+    Activate agent for incoming conversations
+  </Step>
+</Steps>
+
+## Agent Components
+
+### Triggers
+What starts the chatbot:
+- New conversation
+- Specific keywords
+- Outside business hours
+- Label applied
+
+### Actions
+What the bot can do:
+- Send message
+- Ask question
+- Apply label
+- Create CRM record
+- Handoff to human
+
+### Conditions
+Logic for routing:
+- If/then branching
+- Keyword matching
+- Time-based rules
+
+## Best Practices
+
+<Tip>
+  Start simple with FAQ responses, then add complexity as you learn what customers ask.
+</Tip>
+
+### Do's ✅
+- Set clear expectations ("I'm an automated assistant")
+- Provide easy human handoff option
+- Keep responses concise
+- Test thoroughly before launch
+
+### Don'ts ❌
+- Pretend to be human
+- Create endless loops
+- Ignore edge cases
+- Forget handoff option
