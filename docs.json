@@ -66,7 +66,6 @@
               "quickstart",
               {
                 "group": "Installation",
-                "icon": "download",
                 "pages": [
                   "getting-started/chrome-extension",
                   "getting-started/system-requirements",
@@ -75,7 +74,6 @@
               },
               {
                 "group": "WhatsApp Account Types",
-                "icon": "mobile",
                 "pages": [
                   "getting-started/whatsapp-types",
                   "getting-started/personal-vs-business-vs-api",
@@ -92,7 +90,6 @@
               "revenue-inbox/dashboard",
               {
                 "group": "Conversation Management",
-                "icon": "comments",
                 "pages": [
                   "revenue-inbox/viewing-conversations",
                   "revenue-inbox/conversation-states",
@@ -103,7 +100,6 @@
               },
               {
                 "group": "Labels & Funnels",
-                "icon": "tags",
                 "pages": [
                   "revenue-inbox/labels",
                   "revenue-inbox/dynamic-labels",
@@ -112,7 +108,6 @@
               },
               {
                 "group": "Team Productivity",
-                "icon": "users",
                 "pages": [
                   "revenue-inbox/response-times",
                   "revenue-inbox/unreplied-chats",
@@ -130,7 +125,6 @@
               "waba/connect-waba",
               {
                 "group": "Message Templates",
-                "icon": "file-lines",
                 "pages": [
                   "waba/templates/overview",
                   "waba/templates/creating-templates",
@@ -141,7 +135,6 @@
               },
               {
                 "group": "Broadcasting",
-                "icon": "tower-broadcast",
                 "pages": [
                   "waba/broadcasting/overview",
                   "waba/broadcasting/create-campaign",
@@ -163,7 +156,6 @@
               "automation/overview",
               {
                 "group": "AI Features",
-                "icon": "brain",
                 "pages": [
                   "automation/ai/reply-suggestions",
                   "automation/ai/unreplied-chats-agent",
@@ -172,7 +164,6 @@
               },
               {
                 "group": "Workflows",
-                "icon": "diagram-project",
                 "pages": [
                   "automation/workflows/overview",
                   "automation/workflows/hubspot-workflows",
@@ -182,7 +173,6 @@
               },
               {
                 "group": "Agents & Chatbots",
-                "icon": "robot",
                 "pages": [
                   "automation/agents/overview",
                   "automation/agents/creating-chatbot",
@@ -273,7 +263,6 @@
               "integrations/hubspot/chat-backup",
               {
                 "group": "Mini-CRM View",
-                "icon": "table-columns",
                 "pages": [
                   "integrations/hubspot/mini-crm/overview",
                   "integrations/hubspot/mini-crm/contacts",
@@ -301,7 +290,6 @@
               "integrations/zoho/chat-backup",
               {
                 "group": "Mini-CRM View",
-                "icon": "table-columns",
                 "pages": [
                   "integrations/zoho/mini-crm/overview",
                   "integrations/zoho/mini-crm/contacts",
@@ -326,7 +314,6 @@
               "integrations/salesforce/chat-backup",
               {
                 "group": "Mini-CRM View",
-                "icon": "table-columns",
                 "pages": [
                   "integrations/salesforce/mini-crm/overview",
                   "integrations/salesforce/mini-crm/contacts",
@@ -341,7 +328,7 @@
           },
           {
             "group": "Pipedrive",
-            "icon": "p",
+            "icon": "filter",
             "pages": [
               "integrations/pipedrive/overview",
               "integrations/pipedrive/setup",
@@ -353,7 +340,7 @@
           },
           {
             "group": "LeadSquared",
-            "icon": "l",
+            "icon": "square",
             "pages": [
               "integrations/leadsquared/overview",
               "integrations/leadsquared/prerequisites",
@@ -368,7 +355,7 @@
           },
           {
             "group": "Bitrix24",
-            "icon": "b",
+            "icon": "cube",
             "pages": [
               "integrations/bitrix/overview",
               "integrations/bitrix/setup",
@@ -401,7 +388,7 @@
           },
           {
             "group": "Webhooks & Custom",
-            "icon": "webhook",
+            "icon": "code",
             "pages": [
               "integrations/webhooks/overview",
               "integrations/webhooks/setup",
@@ -416,7 +403,7 @@
         "groups": [
           {
             "group": "Overview",
-            "icon": "code",
+            "icon": "book",
             "pages": [
               "api-reference/introduction",
               "api-reference/authentication"
