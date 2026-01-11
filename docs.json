@@ -30,6 +30,10 @@
     {
       "name": "API Reference",
       "url": "api-reference"
+    },
+    {
+      "name": "Changelog",
+      "url": "changelog"
     }
   ],
   "anchors": [
@@ -56,11 +60,13 @@
         "groups": [
           {
             "group": "Getting Started",
+            "icon": "rocket",
             "pages": [
               "introduction",
               "quickstart",
               {
                 "group": "Installation",
+                "icon": "download",
                 "pages": [
                   "getting-started/chrome-extension",
                   "getting-started/system-requirements",
@@ -69,6 +75,7 @@
               },
               {
                 "group": "WhatsApp Account Types",
+                "icon": "mobile",
                 "pages": [
                   "getting-started/whatsapp-types",
                   "getting-started/personal-vs-business-vs-api",
@@ -79,11 +86,13 @@
           },
           {
             "group": "Revenue Inbox",
+            "icon": "inbox",
             "pages": [
               "revenue-inbox/overview",
               "revenue-inbox/dashboard",
               {
                 "group": "Conversation Management",
+                "icon": "comments",
                 "pages": [
                   "revenue-inbox/viewing-conversations",
                   "revenue-inbox/conversation-states",
@@ -94,6 +103,7 @@
               },
               {
                 "group": "Labels & Funnels",
+                "icon": "tags",
                 "pages": [
                   "revenue-inbox/labels",
                   "revenue-inbox/dynamic-labels",
@@ -102,6 +112,7 @@
               },
               {
                 "group": "Team Productivity",
+                "icon": "users",
                 "pages": [
                   "revenue-inbox/response-times",
                   "revenue-inbox/unreplied-chats",
@@ -112,12 +123,14 @@
           },
           {
             "group": "WhatsApp Business API",
+            "icon": "whatsapp",
             "pages": [
               "waba/overview",
               "waba/getting-started",
               "waba/connect-waba",
               {
                 "group": "Message Templates",
+                "icon": "file-lines",
                 "pages": [
                   "waba/templates/overview",
                   "waba/templates/creating-templates",
@@ -128,6 +141,7 @@
               },
               {
                 "group": "Broadcasting",
+                "icon": "tower-broadcast",
                 "pages": [
                   "waba/broadcasting/overview",
                   "waba/broadcasting/create-campaign",
@@ -144,10 +158,12 @@
           },
           {
             "group": "Automation & AI",
+            "icon": "wand-magic-sparkles",
             "pages": [
               "automation/overview",
               {
                 "group": "AI Features",
+                "icon": "brain",
                 "pages": [
                   "automation/ai/reply-suggestions",
                   "automation/ai/unreplied-chats-agent",
@@ -156,6 +172,7 @@
               },
               {
                 "group": "Workflows",
+                "icon": "diagram-project",
                 "pages": [
                   "automation/workflows/overview",
                   "automation/workflows/hubspot-workflows",
@@ -165,6 +182,7 @@
               },
               {
                 "group": "Agents & Chatbots",
+                "icon": "robot",
                 "pages": [
                   "automation/agents/overview",
                   "automation/agents/creating-chatbot",
@@ -178,6 +196,7 @@
           },
           {
             "group": "Productivity Tools",
+            "icon": "bolt",
             "pages": [
               "productivity/quick-replies",
               "productivity/scheduled-messages",
@@ -188,6 +207,7 @@
           },
           {
             "group": "Analytics & Reports",
+            "icon": "chart-line",
             "pages": [
               "analytics/dashboard",
               "analytics/team-performance",
@@ -198,6 +218,7 @@
           },
           {
             "group": "Account & Settings",
+            "icon": "gear",
             "pages": [
               "settings/workspace",
               "settings/team-management",
@@ -209,6 +230,7 @@
           },
           {
             "group": "Privacy & Compliance",
+            "icon": "shield-check",
             "pages": [
               "privacy/overview",
               "privacy/gdpr",
@@ -218,6 +240,7 @@
           },
           {
             "group": "Troubleshooting",
+            "icon": "screwdriver-wrench",
             "pages": [
               "troubleshooting/common-issues",
               "troubleshooting/sync-issues",
@@ -233,6 +256,7 @@
         "groups": [
           {
             "group": "Overview",
+            "icon": "plug",
             "pages": [
               "integrations/overview",
               "integrations/choosing-crm"
@@ -240,6 +264,7 @@
           },
           {
             "group": "HubSpot",
+            "icon": "hubspot",
             "pages": [
               "integrations/hubspot/overview",
               "integrations/hubspot/prerequisites",
@@ -248,6 +273,7 @@
               "integrations/hubspot/chat-backup",
               {
                 "group": "Mini-CRM View",
+                "icon": "table-columns",
                 "pages": [
                   "integrations/hubspot/mini-crm/overview",
                   "integrations/hubspot/mini-crm/contacts",
@@ -266,6 +292,7 @@
           },
           {
             "group": "Zoho CRM",
+            "icon": "z",
             "pages": [
               "integrations/zoho/overview",
               "integrations/zoho/prerequisites",
@@ -274,6 +301,7 @@
               "integrations/zoho/chat-backup",
               {
                 "group": "Mini-CRM View",
+                "icon": "table-columns",
                 "pages": [
                   "integrations/zoho/mini-crm/overview",
                   "integrations/zoho/mini-crm/contacts",
@@ -289,6 +317,7 @@
           },
           {
             "group": "Salesforce",
+            "icon": "salesforce",
             "pages": [
               "integrations/salesforce/overview",
               "integrations/salesforce/prerequisites",
@@ -297,6 +326,7 @@
               "integrations/salesforce/chat-backup",
               {
                 "group": "Mini-CRM View",
+                "icon": "table-columns",
                 "pages": [
                   "integrations/salesforce/mini-crm/overview",
                   "integrations/salesforce/mini-crm/contacts",
@@ -311,6 +341,7 @@
           },
           {
             "group": "Pipedrive",
+            "icon": "p",
             "pages": [
               "integrations/pipedrive/overview",
               "integrations/pipedrive/setup",
@@ -322,6 +353,7 @@
           },
           {
             "group": "LeadSquared",
+            "icon": "l",
             "pages": [
               "integrations/leadsquared/overview",
               "integrations/leadsquared/prerequisites",
@@ -336,6 +368,7 @@
           },
           {
             "group": "Bitrix24",
+            "icon": "b",
             "pages": [
               "integrations/bitrix/overview",
               "integrations/bitrix/setup",
@@ -347,6 +380,7 @@
           },
           {
             "group": "Google Sheets",
+            "icon": "table",
             "pages": [
               "integrations/google-sheets/overview",
               "integrations/google-sheets/setup",
@@ -357,6 +391,7 @@
           },
           {
             "group": "Freshdesk",
+            "icon": "headset",
             "pages": [
               "integrations/freshdesk/overview",
               "integrations/freshdesk/setup",
@@ -366,6 +401,7 @@
           },
           {
             "group": "Webhooks & Custom",
+            "icon": "webhook",
             "pages": [
               "integrations/webhooks/overview",
               "integrations/webhooks/setup",
@@ -380,6 +416,7 @@
         "groups": [
           {
             "group": "Overview",
+            "icon": "code",
             "pages": [
               "api-reference/introduction",
               "api-reference/authentication"
@@ -387,6 +424,7 @@
           },
           {
             "group": "Endpoints",
+            "icon": "server",
             "pages": [
               "api-reference/endpoints/messages",
               "api-reference/endpoints/contacts",
@@ -397,10 +435,25 @@
           },
           {
             "group": "Webhooks",
+            "icon": "bolt",
             "pages": [
               "api-reference/webhooks/overview",
               "api-reference/webhooks/events",
               "api-reference/webhooks/payload-reference"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Changelog",
+        "groups": [
+          {
+            "group": "Changelog",
+            "icon": "clock-rotate-left",
+            "pages": [
+              "changelog/overview",
+              "changelog/2025",
+              "changelog/2024"
             ]
           }
         ]
