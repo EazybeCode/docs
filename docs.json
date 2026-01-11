@@ -222,19 +222,6 @@
             ]
           },
           {
-            "group": "Playbooks",
-            "icon": "book-open",
-            "pages": [
-              "integrations/playbooks/overview",
-              "integrations/playbooks/lead-capture",
-              "integrations/playbooks/chat-backup",
-              "integrations/playbooks/sales-followup",
-              "integrations/playbooks/team-tracking",
-              "integrations/playbooks/broadcast-campaigns",
-              "integrations/playbooks/lead-recovery"
-            ]
-          },
-          {
             "group": "HubSpot",
             "icon": "hubspot",
             "pages": [
@@ -252,6 +239,19 @@
                   "integrations/hubspot/mini-crm/tasks-notes",
                   "integrations/hubspot/mini-crm/tickets",
                   "integrations/hubspot/mini-crm/call-logs"
+                ]
+              },
+              {
+                "group": "Playbooks",
+                "icon": "book-open",
+                "pages": [
+                  "integrations/hubspot/playbooks/overview",
+                  "integrations/hubspot/playbooks/lead-capture",
+                  "integrations/hubspot/playbooks/chat-backup",
+                  "integrations/hubspot/playbooks/workflow-automation",
+                  "integrations/hubspot/playbooks/deal-alerts",
+                  "integrations/hubspot/playbooks/team-performance",
+                  "integrations/hubspot/playbooks/broadcast-lists"
                 ]
               },
               "integrations/hubspot/workflows",

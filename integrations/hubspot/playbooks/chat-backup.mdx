@@ -1,0 +1,210 @@
+---
+title: 'Chat Backup to HubSpot'
+description: 'Log every WhatsApp message to HubSpot contact timeline'
+---
+
+<Info>
+**Setup Time**: 5 minutes | **Difficulty**: Easy | **HubSpot Plan**: Free+
+</Info>
+
+## The Problem
+
+Conversations happen on WhatsApp, but HubSpot shows nothing:
+- Sales managers have zero visibility
+- When reps leave, conversations disappear
+- Handoffs between reps lose context
+- No audit trail for compliance
+
+<Frame caption="HubSpot timeline missing WhatsApp conversations">
+  <img src="/images/hubspot/chat-backup-problem.png" alt="Empty HubSpot timeline" />
+</Frame>
+
+## The Solution
+
+Every WhatsApp message automatically appears in the HubSpot contact timeline.
+
+<Frame caption="WhatsApp messages in HubSpot timeline">
+  <img src="/images/hubspot/chat-backup-solution.gif" alt="WhatsApp messages syncing to HubSpot" />
+</Frame>
+
+## Step-by-Step Setup
+
+<Steps>
+  <Step title="Open Integration Settings">
+    In Eazybe, go to **Settings** → **Integrations** → **HubSpot**
+    
+    <Frame>
+      <img src="/images/hubspot/integration-settings.png" alt="HubSpot integration settings" />
+    </Frame>
+  </Step>
+  
+  <Step title="Enable Chat Backup">
+    Toggle **Backup chats to HubSpot** to ON
+    
+    <Frame>
+      <img src="/images/hubspot/enable-chat-backup.png" alt="Enable chat backup toggle" />
+    </Frame>
+  </Step>
+  
+  <Step title="Choose Activity Type">
+    Select how messages appear in HubSpot:
+    
+    | Option | Appears As | Best For |
+    |--------|------------|----------|
+    | **Notes** | Note on timeline | Quick reference |
+    | **Activity** | WhatsApp activity | Full visibility |
+    | **Email** | Email activity | Unified communication view |
+    
+    <Frame>
+      <img src="/images/hubspot/activity-type.png" alt="Activity type selection" />
+    </Frame>
+    
+    **Recommended**: Activity (shows as distinct WhatsApp icon)
+  </Step>
+  
+  <Step title="Configure Sync Options">
+    Choose what to backup:
+    
+    - ✅ Text messages
+    - ✅ Images (as attachments)
+    - ✅ Documents (as links)
+    - ✅ Voice notes (as links)
+    - ⬜ Stickers (optional)
+    
+    <Frame>
+      <img src="/images/hubspot/sync-options.png" alt="Sync options" />
+    </Frame>
+  </Step>
+  
+  <Step title="Set Sync Frequency">
+    Choose sync timing:
+    
+    - **Real-time** (recommended) - Messages sync instantly
+    - **Every 5 minutes** - Batch sync
+    - **Hourly** - Less frequent sync
+  </Step>
+</Steps>
+
+## Video Walkthrough
+
+<Frame>
+  <iframe 
+    src="https://www.loom.com/embed/your-hubspot-chat-backup-video" 
+    width="100%" 
+    height="400" 
+    frameborder="0" 
+    allowfullscreen>
+  </iframe>
+</Frame>
+
+## What It Looks Like in HubSpot
+
+### Contact Timeline View
+
+<Frame caption="WhatsApp conversation on HubSpot contact timeline">
+  <img src="/images/hubspot/timeline-view.png" alt="HubSpot timeline with WhatsApp messages" />
+</Frame>
+
+### Activity Details
+
+Click on any message to see full details:
+
+<Frame caption="WhatsApp message details in HubSpot">
+  <img src="/images/hubspot/message-details.png" alt="WhatsApp message details" />
+</Frame>
+
+### With Attachments
+
+Images and documents appear as clickable attachments:
+
+<Frame caption="WhatsApp attachments in HubSpot">
+  <img src="/images/hubspot/attachments-hubspot.png" alt="WhatsApp attachments in HubSpot" />
+</Frame>
+
+## Use Cases
+
+<CardGroup cols={2}>
+  <Card title="Sales Handoffs" icon="people-arrows">
+    New rep sees full conversation history before taking over
+  </Card>
+  <Card title="Manager Oversight" icon="eye">
+    Review conversations without accessing rep's WhatsApp
+  </Card>
+  <Card title="Deal Context" icon="handshake">
+    Reference past conversations when working deals
+  </Card>
+  <Card title="Compliance" icon="shield-check">
+    Maintain audit trail for regulated industries
+  </Card>
+</CardGroup>
+
+## HubSpot Reporting
+
+With chat backup enabled, you can create HubSpot reports on WhatsApp activity:
+
+<Frame caption="HubSpot report on WhatsApp activity">
+  <img src="/images/hubspot/whatsapp-report.png" alt="HubSpot WhatsApp activity report" />
+</Frame>
+
+### Example Reports:
+- WhatsApp messages per rep
+- Response times by contact owner
+- Contacts engaged via WhatsApp this month
+
+## Best Practices
+
+<AccordionGroup>
+  <Accordion title="Use real-time sync">
+    Real-time ensures no messages are lost if someone disconnects or switches devices.
+  </Accordion>
+  
+  <Accordion title="Enable for entire team">
+    Go to **Settings** → **Team** to verify all reps have chat backup enabled.
+  </Accordion>
+  
+  <Accordion title="Combine with contact sync">
+    Enable auto-create contacts so messages always have a contact to attach to.
+  </Accordion>
+  
+  <Accordion title="Review sync status">
+    Check the sync indicator in Eazybe sidebar to ensure backup is running.
+  </Accordion>
+</AccordionGroup>
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="Messages not appearing in HubSpot?">
+    1. Check sync status indicator in Eazybe sidebar
+    2. Verify HubSpot connection is active
+    3. Ensure contact exists in HubSpot (or enable auto-create)
+    4. Check HubSpot activity permissions
+  </Accordion>
+  
+  <Accordion title="Images not syncing?">
+    - Verify "Images" is checked in sync options
+    - Check HubSpot file storage isn't full
+    - Large files (>10MB) may fail - check file size
+  </Accordion>
+  
+  <Accordion title="Sync is delayed?">
+    - Switch from batch to real-time sync
+    - Check internet connection stability
+    - Verify WhatsApp Web is staying connected
+  </Accordion>
+  
+  <Accordion title="Messages going to wrong contact?">
+    Phone number mismatch. Ensure HubSpot contacts use E.164 format (+919876543210).
+  </Accordion>
+</AccordionGroup>
+
+## What's Next?
+
+<CardGroup cols={2}>
+  <Card title="Workflow Automation" icon="gear" href="/integrations/hubspot/playbooks/workflow-automation">
+    Trigger WhatsApp from HubSpot workflows
+  </Card>
+  <Card title="Team Performance" icon="chart-line" href="/integrations/hubspot/playbooks/team-performance">
+    Track WhatsApp metrics
+  </Card>
+</CardGroup>

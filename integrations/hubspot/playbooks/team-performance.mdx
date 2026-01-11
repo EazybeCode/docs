@@ -1,0 +1,172 @@
+---
+title: 'Team Performance Tracking'
+description: 'Monitor WhatsApp response times and activity in HubSpot'
+---
+
+<Info>
+**Setup Time**: 15 minutes | **Difficulty**: Easy | **HubSpot Plan**: Free+ (Reports need Professional+)
+</Info>
+
+## The Problem
+
+Sales managers can't see:
+- Who's responding to WhatsApp messages?
+- How fast are reps replying?
+- Which reps handle the most conversations?
+- Are leads being followed up?
+
+## The Solution
+
+Track WhatsApp performance metrics alongside HubSpot data.
+
+<Frame caption="Team performance dashboard">
+  <img src="/images/hubspot/team-performance-dashboard.png" alt="Team WhatsApp performance" />
+</Frame>
+
+## What You Can Track
+
+| Metric | Where to See It |
+|--------|-----------------|
+| Response times | Eazybe Analytics + HubSpot reports |
+| Messages per rep | Eazybe Analytics |
+| Conversations handled | Eazybe Analytics |
+| WhatsApp activity on contacts | HubSpot timeline |
+| WhatsApp by deal stage | HubSpot reports (with activities) |
+
+## Step-by-Step Setup
+
+### In Eazybe
+
+<Steps>
+  <Step title="Access Analytics">
+    Go to **Eazybe Dashboard** → **Analytics** → **Team Performance**
+    
+    <Frame>
+      <img src="/images/hubspot/eazybe-analytics.png" alt="Eazybe analytics" />
+    </Frame>
+  </Step>
+  
+  <Step title="View Key Metrics">
+    Dashboard shows:
+    - **Response Time**: Average first response time
+    - **Volume**: Messages sent/received per rep
+    - **Active Conversations**: Currently open threads
+    - **Unreplied**: Chats awaiting response
+    
+    <Frame>
+      <img src="/images/hubspot/metrics-overview.png" alt="Key metrics" />
+    </Frame>
+  </Step>
+  
+  <Step title="Filter by Team Member">
+    Select individual reps to see their performance
+    
+    <Frame>
+      <img src="/images/hubspot/filter-by-rep.png" alt="Filter by rep" />
+    </Frame>
+  </Step>
+</Steps>
+
+### In HubSpot (Professional+)
+
+<Steps>
+  <Step title="Create Custom Report">
+    Go to **Reports** → **Create report** → **Custom report**
+    
+    <Frame>
+      <img src="/images/hubspot/create-report.png" alt="Create HubSpot report" />
+    </Frame>
+  </Step>
+  
+  <Step title="Select Data Source">
+    Choose **Contacts** with **Activities**
+    
+    Filter activities by type = "WhatsApp" (if using activity type logging)
+  </Step>
+  
+  <Step title="Build Report">
+    Example: WhatsApp activity by contact owner
+    
+    - **X-axis**: Contact owner
+    - **Y-axis**: Count of WhatsApp activities
+    - **Filter**: Activity date in last 30 days
+    
+    <Frame>
+      <img src="/images/hubspot/whatsapp-report-hubspot.png" alt="HubSpot WhatsApp report" />
+    </Frame>
+  </Step>
+  
+  <Step title="Add to Dashboard">
+    Save report and add to your sales dashboard
+  </Step>
+</Steps>
+
+## Video Walkthrough
+
+<Frame>
+  <iframe 
+    src="https://www.loom.com/embed/your-team-performance-video" 
+    width="100%" 
+    height="400" 
+    frameborder="0" 
+    allowfullscreen>
+  </iframe>
+</Frame>
+
+## Setting Performance Targets
+
+| Metric | Suggested Target | Why |
+|--------|------------------|-----|
+| First Response | < 5 minutes | Speed = conversions |
+| Average Response | < 15 minutes | Keep conversations flowing |
+| Daily Conversations | 20-40 per rep | Balanced workload |
+| Unreplied (EOD) | 0 | No leads left hanging |
+
+## Weekly Review Template
+
+```markdown
+## WhatsApp Performance Review - Week of {{date}}
+
+### Team Summary
+- Total conversations: X
+- Average response time: X min
+- Unreplied at week end: X
+
+### By Rep
+| Rep | Conversations | Avg Response | Unreplied |
+|-----|---------------|--------------|-----------|
+| {{rep1}} | X | X min | X |
+| {{rep2}} | X | X min | X |
+
+### Action Items
+- [ ] Coach {{rep}} on response time
+- [ ] Redistribute workload if unbalanced
+- [ ] Review unreplied conversations
+```
+
+## Best Practices
+
+<AccordionGroup>
+  <Accordion title="Review weekly, not daily">
+    Daily fluctuations are normal. Focus on weekly trends.
+  </Accordion>
+  
+  <Accordion title="Context matters">
+    A rep handling complex enterprise deals will have different metrics than one doing quick support.
+  </Accordion>
+  
+  <Accordion title="Use for coaching, not punishment">
+    Metrics identify improvement opportunities, not gotcha moments.
+  </Accordion>
+</AccordionGroup>
+
+## What's Next?
+
+<CardGroup cols={2}>
+  <Card title="Broadcast from Lists" icon="tower-broadcast" href="/integrations/hubspot/playbooks/broadcast-lists">
+    Send campaigns to HubSpot lists
+  </Card>
+  <Card title="Lead Capture" icon="user-plus" href="/integrations/hubspot/playbooks/lead-capture">
+    Auto-create contacts
+  </Card>
+</CardGroup>

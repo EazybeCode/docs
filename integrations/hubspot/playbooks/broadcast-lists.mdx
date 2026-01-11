@@ -1,0 +1,258 @@
+---
+title: 'Broadcast from HubSpot Lists'
+description: 'Send WhatsApp campaigns to HubSpot contact lists'
+---
+
+<Info>
+**Setup Time**: 30 minutes | **Difficulty**: Medium | **HubSpot Plan**: Starter+ (for lists)  
+**Requires**: WhatsApp Business API (WABA)
+</Info>
+
+## The Problem
+
+You have segmented lists in HubSpot:
+- Leads from last month
+- Customers in specific region
+- Contacts who attended webinar
+
+But no easy way to reach them on WhatsApp at scale.
+
+## The Solution
+
+Send targeted WhatsApp campaigns directly from HubSpot lists.
+
+<Frame caption="Broadcast to HubSpot list">
+  <img src="/images/hubspot/broadcast-hubspot-list.gif" alt="Broadcast from HubSpot list" />
+</Frame>
+
+## Step-by-Step Setup
+
+### Part 1: Prepare Your HubSpot List
+
+<Steps>
+  <Step title="Create or Select List">
+    Go to **Contacts** → **Lists** → **Create list** (or select existing)
+    
+    <Frame>
+      <img src="/images/hubspot/create-list.png" alt="Create HubSpot list" />
+    </Frame>
+  </Step>
+  
+  <Step title="Set List Criteria">
+    Example: Re-engagement campaign
+    
+    ```
+    Last activity date is more than 30 days ago
+    AND Lifecycle stage is any of: Lead, MQL
+    AND Phone number is known
+    AND WhatsApp opt-in is Yes (if you track this)
+    ```
+    
+    <Frame>
+      <img src="/images/hubspot/list-criteria.png" alt="List filter criteria" />
+    </Frame>
+  </Step>
+  
+  <Step title="Verify Phone Numbers">
+    Check that contacts have valid phone numbers:
+    - Include country code
+    - E.164 format preferred (+919876543210)
+    
+    **Pro tip**: Add filter `Phone number contains +` to catch formatted numbers
+  </Step>
+  
+  <Step title="Note List Size">
+    Check contact count. Keep in mind:
+    - New WABA numbers have daily limits (start ~250/day)
+    - Established numbers can send 1,000+ per day
+  </Step>
+</Steps>
+
+### Part 2: Create Approved Template
+
+<Steps>
+  <Step title="Design Campaign Template">
+    In Eazybe, create template for your campaign:
+    
+    **Example: Re-engagement**
+    ```
+    Hi {{1}}! 👋
+    
+    It's been a while since we connected. We've added some exciting new features at {{2}} that I think you'd find valuable.
+    
+    Would you be open to a quick 10-minute call to catch up?
+    
+    Reply YES and I'll send over some times, or STOP to opt out.
+    ```
+    
+    <Frame>
+      <img src="/images/hubspot/campaign-template.png" alt="Campaign message template" />
+    </Frame>
+  </Step>
+  
+  <Step title="Submit and Wait for Approval">
+    Marketing templates take 24-48 hours for Meta review.
+    
+    <Frame>
+      <img src="/images/hubspot/template-approved.png" alt="Approved template" />
+    </Frame>
+  </Step>
+</Steps>
+
+### Part 3: Send Broadcast
+
+<Tabs>
+  <Tab title="Method 1: Direct from Eazybe">
+    <Steps>
+      <Step title="Go to Broadcasting">
+        In Eazybe, navigate to **Broadcasting** → **New Campaign**
+      </Step>
+      
+      <Step title="Select HubSpot List">
+        Choose **Import from HubSpot** → Select your list
+        
+        <Frame>
+          <img src="/images/hubspot/import-hubspot-list.png" alt="Import HubSpot list" />
+        </Frame>
+      </Step>
+      
+      <Step title="Map Variables">
+        Connect template variables to HubSpot properties:
+        
+        | Variable | HubSpot Property |
+        |----------|------------------|
+        | {{1}} | First name |
+        | {{2}} | Company name |
+        
+        <Frame>
+          <img src="/images/hubspot/variable-mapping-broadcast.png" alt="Variable mapping" />
+        </Frame>
+      </Step>
+      
+      <Step title="Schedule or Send">
+        - **Send Now**: Immediate delivery
+        - **Schedule**: Pick date/time
+        - **Drip**: Spread over hours/days (recommended for large lists)
+        
+        <Frame>
+          <img src="/images/hubspot/schedule-broadcast.png" alt="Schedule broadcast" />
+        </Frame>
+      </Step>
+      
+      <Step title="Launch">
+        Review count, preview sample message, click **Send**
+      </Step>
+    </Steps>
+  </Tab>
+  
+  <Tab title="Method 2: HubSpot Workflow">
+    <Steps>
+      <Step title="Create Contact Workflow">
+        **Automation** → **Workflows** → **Contact-based**
+      </Step>
+      
+      <Step title="Enroll from List">
+        Trigger: **Contact is member of list** → Select your list
+        
+        <Frame>
+          <img src="/images/hubspot/workflow-list-trigger.png" alt="List enrollment trigger" />
+        </Frame>
+      </Step>
+      
+      <Step title="Add Eazybe Action">
+        Add **Eazybe: Send WhatsApp** action with your template
+      </Step>
+      
+      <Step title="Activate">
+        Turn on workflow. All list members will receive message.
+        
+        **Note**: New contacts added to list will also receive message (if list is active).
+      </Step>
+    </Steps>
+  </Tab>
+</Tabs>
+
+## Video Walkthrough
+
+<Frame>
+  <iframe 
+    src="https://www.loom.com/embed/your-broadcast-video" 
+    width="100%" 
+    height="400" 
+    frameborder="0" 
+    allowfullscreen>
+  </iframe>
+</Frame>
+
+## Campaign Analytics
+
+Track performance in Eazybe:
+
+<Frame caption="Broadcast campaign analytics">
+  <img src="/images/hubspot/campaign-analytics.png" alt="Campaign analytics" />
+</Frame>
+
+| Metric | Target | Notes |
+|--------|--------|-------|
+| Delivered | > 95% | Failed = invalid numbers |
+| Read | > 80% | WhatsApp has high open rates |
+| Replied | > 15% | Depends on offer/message |
+| Opted Out | < 2% | High = message not relevant |
+
+## Best Practices
+
+<AccordionGroup>
+  <Accordion title="Start small">
+    Test with 50-100 contacts first. Check delivery and response before scaling.
+  </Accordion>
+  
+  <Accordion title="Segment thoughtfully">
+    Generic blasts perform worse. The more targeted your list, the better results.
+  </Accordion>
+  
+  <Accordion title="Time it right">
+    Best times: 10am-12pm and 3pm-5pm local time. Avoid weekends for B2B.
+  </Accordion>
+  
+  <Accordion title="Prepare for responses">
+    Broadcasts generate replies. Have team ready to handle incoming messages.
+  </Accordion>
+  
+  <Accordion title="Include opt-out">
+    Always include "Reply STOP to opt out" for compliance.
+  </Accordion>
+</AccordionGroup>
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="Low delivery rate?">
+    - Invalid phone numbers in list
+    - Numbers not on WhatsApp
+    - WABA quality rating dropped
+    - Daily limit reached
+  </Accordion>
+  
+  <Accordion title="Can't import HubSpot list?">
+    - Check Eazybe-HubSpot connection
+    - Verify you have list read permissions in HubSpot
+    - Try reconnecting HubSpot integration
+  </Accordion>
+  
+  <Accordion title="Variables showing blank?">
+    Some contacts missing the property. Either:
+    - Clean list to only include contacts with required properties
+    - Use default/fallback values in template
+  </Accordion>
+</AccordionGroup>
+
+## What's Next?
+
+<CardGroup cols={2}>
+  <Card title="Workflow Automation" icon="gear" href="/integrations/hubspot/playbooks/workflow-automation">
+    Automate individual follow-ups
+  </Card>
+  <Card title="Team Performance" icon="chart-line" href="/integrations/hubspot/playbooks/team-performance">
+    Track campaign response handling
+  </Card>
+</CardGroup>

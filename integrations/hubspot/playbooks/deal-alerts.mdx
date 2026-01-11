@@ -1,0 +1,183 @@
+---
+title: 'Deal Stage Alerts'
+description: 'Get WhatsApp notifications when deals move through pipeline'
+---
+
+<Info>
+**Setup Time**: 15 minutes | **Difficulty**: Medium | **HubSpot Plan**: Professional+  
+**Requires**: WABA (for external alerts) or works without for internal notifications
+</Info>
+
+## The Problem
+
+Deals move through your pipeline, but:
+- Customers don't know their status
+- Reps forget to update clients
+- Manual status updates are inconsistent
+
+## The Solution
+
+Automatic WhatsApp notifications when deals change stage.
+
+<Frame caption="Automatic deal stage notification">
+  <img src="/images/hubspot/deal-alert-example.gif" alt="Deal stage WhatsApp alert" />
+</Frame>
+
+## Use Cases
+
+| Deal Stage Change | WhatsApp Alert |
+|-------------------|----------------|
+| New → Qualified | "Thanks for your interest! A rep will reach out shortly." |
+| Qualified → Demo Scheduled | "Your demo is confirmed for {{date}}" |
+| Demo → Proposal | "Proposal sent! Let me know if you have questions." |
+| Proposal → Negotiation | "Thanks for your feedback. Let's discuss the details." |
+| Negotiation → Won | "Welcome aboard! 🎉 Here's what happens next..." |
+| Any → Lost | "Sorry we couldn't work together this time. Door's always open!" |
+
+## Step-by-Step Setup
+
+<Steps>
+  <Step title="Create Templates for Each Stage">
+    Create approved templates for each notification:
+    
+    **Template: `deal_qualified`**
+    ```
+    Hi {{1}}! Thanks for your interest in {{2}}. 
+    
+    {{3}} from our team will reach out within 24 hours to learn more about your needs.
+    
+    In the meantime, any questions?
+    ```
+    
+    <Frame>
+      <img src="/images/hubspot/deal-templates.png" alt="Deal stage templates" />
+    </Frame>
+  </Step>
+  
+  <Step title="Create Deal-Based Workflow">
+    In HubSpot: **Automation** → **Workflows** → **Create** → **Deal-based**
+    
+    <Frame>
+      <img src="/images/hubspot/deal-workflow.png" alt="Deal-based workflow" />
+    </Frame>
+  </Step>
+  
+  <Step title="Set Stage Change Trigger">
+    Enrollment trigger:
+    ```
+    When: Deal stage is any of [Qualified]
+    AND: Deal stage was updated in the last 1 day
+    ```
+    
+    <Frame>
+      <img src="/images/hubspot/stage-trigger.png" alt="Stage change trigger" />
+    </Frame>
+  </Step>
+  
+  <Step title="Get Associated Contact">
+    Add action: **Get associated contact**
+    
+    This pulls the contact linked to the deal so we can message them.
+    
+    <Frame>
+      <img src="/images/hubspot/associated-contact.png" alt="Get associated contact" />
+    </Frame>
+  </Step>
+  
+  <Step title="Add Eazybe WhatsApp Action">
+    Add **Eazybe: Send WhatsApp** action
+    
+    Map variables from both Deal and Contact:
+    
+    | Variable | Source |
+    |----------|--------|
+    | {{1}} | Contact: First name |
+    | {{2}} | Deal: Deal name |
+    | {{3}} | Deal: Owner name |
+    
+    <Frame>
+      <img src="/images/hubspot/deal-alert-action.png" alt="Configure deal alert" />
+    </Frame>
+  </Step>
+  
+  <Step title="Repeat for Other Stages">
+    Create separate workflows for each stage change you want to notify on.
+    
+    Or use branching within one workflow:
+    
+    ```
+    If deal stage = Qualified → Send qualified template
+    If deal stage = Proposal → Send proposal template
+    If deal stage = Won → Send won template
+    ```
+  </Step>
+</Steps>
+
+## Video Walkthrough
+
+<Frame>
+  <iframe 
+    src="https://www.loom.com/embed/your-deal-alerts-video" 
+    width="100%" 
+    height="400" 
+    frameborder="0" 
+    allowfullscreen>
+  </iframe>
+</Frame>
+
+## Internal Alerts (No WABA Needed)
+
+Want to notify your **team** instead of customers? Use internal WhatsApp alerts:
+
+<Steps>
+  <Step title="Use Task Creation Instead">
+    Instead of Eazybe action, create a HubSpot task:
+    
+    - **Task title**: "Send WhatsApp update to {{contact.name}}"
+    - **Assigned to**: Deal owner
+    - **Due**: Immediately
+  </Step>
+  
+  <Step title="Rep Gets Task Notification">
+    Rep receives task notification and sends WhatsApp manually using Eazybe quick replies.
+  </Step>
+</Steps>
+
+## Best Practices
+
+<AccordionGroup>
+  <Accordion title="Don't notify on every stage">
+    Pick the stages that matter most to customers. Too many messages = annoyed customers.
+  </Accordion>
+  
+  <Accordion title="Personalize by deal type">
+    Different products/services might need different messaging. Use HubSpot branching.
+  </Accordion>
+  
+  <Accordion title="Include next steps">
+    Don't just say "your deal moved." Tell them what happens next.
+  </Accordion>
+</AccordionGroup>
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="Message going to wrong contact?">
+    Deal might have multiple associated contacts. Add filter to get primary contact only.
+  </Accordion>
+  
+  <Accordion title="No contact associated?">
+    Some deals don't have contacts linked. Add a branch to check before sending.
+  </Accordion>
+</AccordionGroup>
+
+## What's Next?
+
+<CardGroup cols={2}>
+  <Card title="Broadcast from Lists" icon="tower-broadcast" href="/integrations/hubspot/playbooks/broadcast-lists">
+    Send campaigns to segments
+  </Card>
+  <Card title="Team Performance" icon="chart-line" href="/integrations/hubspot/playbooks/team-performance">
+    Track WhatsApp metrics
+  </Card>
+</CardGroup>
