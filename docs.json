@@ -250,7 +250,7 @@
           },
           {
             "group": "Zoho CRM",
-            "icon": "z",
+            "icon": "circle-nodes",
             "pages": [
               "integrations/zoho/overview",
               "integrations/zoho/prerequisites",
@@ -297,7 +297,7 @@
           },
           {
             "group": "Pipedrive",
-            "icon": "filter",
+            "icon": "pipe-section",
             "pages": [
               "integrations/pipedrive/overview",
               "integrations/pipedrive/setup",
@@ -309,7 +309,7 @@
           },
           {
             "group": "LeadSquared",
-            "icon": "square",
+            "icon": "bullseye",
             "pages": [
               "integrations/leadsquared/overview",
               "integrations/leadsquared/prerequisites",
@@ -324,7 +324,7 @@
           },
           {
             "group": "Bitrix24",
-            "icon": "cube",
+            "icon": "cubes",
             "pages": [
               "integrations/bitrix/overview",
               "integrations/bitrix/setup",
