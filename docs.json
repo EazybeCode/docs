@@ -125,7 +125,6 @@
             "icon": "whatsapp",
             "pages": [
               "waba/overview",
-              "waba/pricing",
               "waba/getting-started",
               "waba/connect-waba",
               {
@@ -151,6 +150,7 @@
               },
               "waba/coexistence",
               "waba/wallet",
+              "waba/pricing",
               "waba/faq"
             ]
           },
