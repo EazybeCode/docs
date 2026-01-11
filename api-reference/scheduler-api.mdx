@@ -1,0 +1,130 @@
+---
+title: "Scheduler API"
+description: ""
+---
+
+#### Overview:
+The **Schedule Message** function allows authenticated users within your organization to schedule messages. This API checks the user's organization membership, ensures that all required message details are provided, and handles permission issues before scheduling a message.
+
+
+**Note: **Please use this API responsibly. Avoid using it for spam or bulk messaging, as it could result in your number being banned.
+
+
+#### **Path URL:**
+[https://web.postman.co/workspace/Eazybe-Public-APIs~9f8ae130-1191-49f9-a9e7-8addbad6bfcb/collection/26731071-0058a95d-2bc0-411c-920f-5e0d9991b1eb?action=share&source=copy-link&creator=26731071](https://web.postman.co/workspace/Eazybe-Public-APIs~9f8ae130-1191-49f9-a9e7-8addbad6bfcb/collection/26731071-0058a95d-2bc0-411c-920f-5e0d9991b1eb?action=share&source=copy-link&creator=26731071)
+
+
+#### API Usage:
+
+#### Endpoint:
+POST https://api.eazybe.com/v2/scheduler/public-scheduler
+#### Payload Structure:
+
+#### Field
+
+#### Description
+from
+
+Sender’s email address (user must be part of the organization).
+
+to
+
+Receiver's phone number (in international format).
+
+message
+
+The text content of the message to be sent.
+
+name
+
+The receiver’s name (for notification purposes).
+
+time
+
+Scheduled time to send the message.
+
+
+#### Example Payload:
+{ 
+"from": "hello@eazybe.com", 
+"to": "919876543210", 
+"message": "Hello World", 
+"name": "Vats", 
+"time": "2024-03-01T17:25:00.000Z" 
+}
+#### Sample Request Code (Node.js with Axios):
+const axios = require('axios');
+let data = JSON.stringify({
+  "from": "hello@eazybe.com",
+  "to": "919876543210",
+  "message": "Hello World",
+  "name": "Vats",
+  "time": "2024-03-01T17:25:00.000Z"
+});
+
+let config = {
+  method: 'post',
+  maxBodyLength: Infinity,
+  url: '',
+  headers: { 
+    'Content-Type': 'application/json', 
+    'Authorization': 'Organization Auth Token'
+  },
+  data : data
+};
+
+axios.request(config)
+.then((response) => {
+  console.log(JSON.stringify(response.data));
+})
+.catch((error) => {
+  console.log(error);
+});
+#### How to get Organization's Auth Token?
+You can obtain your Organization's Auth Token from the [EazyBe Workspace](https://workspace.eazybe.com/) by following these steps:
+
+
+1. The organization's admin must log in to the EazyBe Workspace using their credentials.
+
+2. On the Organization page, the Organization's Auth Token will be displayed.
+
+
+<Frame>
+  <img src="/images/1294609565.png" alt="" />
+</Frame>
+
+
+3. The admin can copy the Organization's Auth Token and paste it into the API request.
+
+
+#### Response:
+Status
+
+Description
+
+**Success**
+
+Indicates the message has been successfully scheduled.
+
+**Failure**
+
+Possible errors include invalid email, missing fields, or permission issues.
+
+
+<Frame>
+  <img src="/images/1294609565.png" alt="" />
+</Frame>
+
+
+#### Hygiene Practices:
+
+- Ensure that the from email is a valid email address that belongs to the organization.
+
+
+- Avoid using this API for mass messaging or spam to prevent your number from being banned.
+
+
+- Ensure that you have a valid Organization's Auth token.
+
+
+We hope this article has helped you better understand how EazyBe works! If you have any questions or need further assistance, feel free to reach out to us at **[hey@eazybe.com](https://app.intercom.com/)**. We're happy to help!

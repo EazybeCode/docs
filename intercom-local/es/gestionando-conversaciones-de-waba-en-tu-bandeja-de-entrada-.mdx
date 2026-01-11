@@ -1,0 +1,95 @@
+---
+title: "Gestionando Conversaciones de WABA en tu Bandeja de Entrada de Equipo"
+description: "Este artículo te guía sobre cómo ver los mensajes entrantes y salientes entre tu WABA y los clientes finales."
+---
+
+La Bandeja de Entrada de Equipo es tu centro colaborativo para todas las conversaciones de clientes en tu número de WABA.
+
+**1. Entendiendo tu Configuración de Mensajería** Primero, es importante identificar qué configuración de Eazybe estás utilizando, ya que esto determina las características y reglas que se te aplican.
+
+- **Usuario Solo de Extensión:** Usas la extensión de Eazybe para Chrome para sincronizar las conversaciones de tu aplicación estándar o WhatsApp Business desde tu teléfono a la Bandeja de Entrada de Equipo. No has conectado una cuenta de WABA.
+- **Usuario Solo de WABA:** Usas la Bandeja de Entrada de Equipo de Eazybe como la interfaz principal para tu número oficial de la API de WhatsApp Business. No utilizas la extensión de Chrome para este número.
+- **Usuario de Extensión + WABA:** Usas tanto la extensión de Chrome (para un número) como tienes un número de WABA separado conectado a Eazybe. Este podría ser el mismo número para ambos (Coexistencia si es un número de WhatsApp Business) o dos números diferentes.
+
+**2. Para Usuarios Solo de Extensión** Si eres un usuario Solo de Extensión, tu experiencia en la Bandeja de Entrada de Equipo no cambia.
+
+- **Sincronización:** Tus conversaciones se sincronizan directamente desde tu sesión de WhatsApp Web.
+- **Mensajería:** Puedes enviar y recibir cualquier tipo de mensaje (texto, multimedia, etc.) en cualquier momento sin restricciones, tal como lo harías en tu teléfono.
+
+**3. Conceptos Clave para la Mensajería Impulsada por WABA** Si tienes un número de WABA conectado, tus capacidades de mensajería se rigen por las políticas de WhatsApp. Aquí están los conceptos fundamentales que necesitas entender.
+
+**La Ventana de Servicio al Cliente de 24 Horas** 
+
+Para fomentar respuestas oportunas, WhatsApp impone una "Ventana de Servicio al Cliente de 24 Horas."
+
+- **Qué es:** Cuando un cliente te envía un mensaje, se abre una ventana de 24 horas. Dentro de esta ventana, puedes responder con mensajes de formato libre (cualquier texto o multimedia).
+- **Ventana ABIERTA:** La Bandeja de Entrada de Equipo mostrará el tiempo restante en la ventana de servicio (p. ej., "15h 30m"). Puedes chatear libremente.
+- **Ventana CERRADA:** Una vez que han pasado 24 horas desde el último mensaje del cliente, la ventana se cierra. La Bandeja de Entrada de Equipo mostrará "Este chat está resuelto y ha expirado." Ya no puedes enviar mensajes de formato libre. Solo puedes enviar un mensaje de plantilla cuando la ventana está cerrada.
+
+**El Compositor de Mensajes Dinámico** 
+
+El área de entrada de mensajes en tu Bandeja de Entrada de Equipo se adaptará automáticamente según el estado de la ventana de 24 horas.
+
+- **Ventana ABIERTA:** Verás un compositor de mensajes estándar, de formato libre, donde puedes escribir cualquier mensaje.
+
+  
+
+- **Ventana CERRADA:** El compositor de formato libre será reemplazado por un botón de **Enviar Plantilla**. DEBES usar una Plantilla de Mensaje preaprobada para reiniciar la conversación.
+
+  
+
+**Envío de Plantillas de Mensajes** 
+
+Cuando la ventana de servicio está cerrada o para iniciar una nueva conversación, debes usar una Plantilla de Mensaje.
+
+- Haz clic en el botón **Enviar Plantilla**.
+- Aparecerá una ventana emergente que te permitirá seleccionar de tu lista de plantillas aprobadas. Puedes buscar la plantilla que necesites.
+- Cada plantilla mostrará su nombre, categoría (p. ej., Utilidad, Marketing) e idioma.
+- Selecciona la plantilla deseada para enviarla.
+
+**4. Cómo Funciona la Mensajería para tu Configuración Específica**
+
+**Escenario A: Usuario Solo de WABA**
+
+- **Para iniciar una nueva conversación:** Debes comenzar enviando una Plantilla de Mensaje. Desde tu Bandeja de Entrada de Equipo, abre un nuevo chat, elige tu contacto y se te pedirá que selecciones una plantilla.
+- **Para responder a un cliente:**
+Si la ventana de servicio de 24 horas está abierta, puedes escribir y enviar mensajes de formato libre.
+- Si la ventana de servicio de 24 horas está cerrada, debes usar el botón **Enviar Plantilla** para enviar una Plantilla de Mensaje.
+
+**Escenario B: Usuario Dual (Extensión + WABA)** Esta configuración requiere una separación y conciencia claras del canal que estás utilizando.
+
+**1. Usando Números DIFERENTES para la Extensión y WABA** Este es el modelo de coexistencia dual más sencillo.
+
+- **Separación Clara:** La Bandeja de Entrada de Equipo separará las conversaciones según el número seleccionado en el menú desplegable de filtro, indicando si pertenecen a tu número sincronizado por la extensión o a tu número de WABA.
+
+  
+
+- **Reglas Contextuales:**
+
+Cuando estás en un chat de tu número sincronizado por la extensión, puedes enviar mensajes libremente en cualquier momento.
+- Cuando estás en un chat de tu número de WABA, se aplican todas las reglas de WABA (ventana de 24 horas, plantillas).
+
+- **Iniciar Nuevos Chats (número de WABA):** Al iniciar una nueva conversación, se te pedirá que **Elijas Contacto** y selecciones desde qué número quieres enviar el mensaje.
+
+  
+
+  
+
+  
+
+  
+
+**2. Usando el MISMO Número para la Extensión y WABA** Esta potente configuración unifica tus canales de comunicación.
+
+**Vista Unificada:** Las conversaciones del mismo contacto se fusionan en un solo hilo, ya sea que el mensaje provenga de la API o se haya sincronizado desde la aplicación de tu teléfono.
+- **WABA es el Predeterminado:** Para garantizar el cumplimiento y aprovechar las funciones de la API, cualquier mensaje que envíes desde la Bandeja de Entrada de Equipo utilizará por defecto el canal WABA (Cloud API).
+- **Se Aplican las Reglas de WABA:** Debido a que el canal WABA es el predeterminado, el compositor de mensajes seguirá las reglas de WABA (formato libre en la ventana abierta, plantillas requeridas cuando está cerrada).
+
+**5. Estados y Errores de Mensajes de WABA** 
+
+La Bandeja de Entrada de Equipo mostrará los estados de los mensajes al igual que WhatsApp:
+
+- **Enviado:** Un tick gris.
+- **Entregado:** Dos ticks grises.
+- **Leído:** Dos ticks azules.
+- **Fallido:** Un signo de exclamación rojo.

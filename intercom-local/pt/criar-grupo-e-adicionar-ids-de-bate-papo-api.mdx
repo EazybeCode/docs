@@ -1,0 +1,188 @@
+---
+title: "Criar grupo e adicionar IDs de bate-papo API"
+description: ""
+---
+
+#### API de Criação ou Atualização de Grupo
+Esta API permite que os usuários criem um grupo e adicionem IDs de chats a ele. Se o grupo já existir, os IDs de chat serão adicionados. Se o grupo não existir, a API poderá criá-lo, se a flag de `criação` estiver definida como verdadeira.
+
+---
+
+#### Endpoint:
+**`POST http://api.eazybe.com/v2/cloud/group`**
+
+---
+
+#### Autenticação:
+
+- **Tipo**: Bearer Token
+- Requer um cabeçalho de `Autorização` com um token de autenticação válido da Organização.
+
+---
+
+#### Como obter o Token de Autenticação da Organização?
+Você pode obter o Token de Autenticação da Organização a partir do [Workspace do EazyBe](https://workspace.eazybe.com/) seguindo estes passos:
+
+1. O administrador da organização deve fazer login no Workspace do EazyBe usando suas credenciais.
+
+2. Na página da Organização, o Token de Autenticação da Organização será exibido, com apenas os últimos 4 dígitos visíveis (o restante será ocultado).
+
+3. O administrador pode copiar o Token de Autenticação da Organização e colá-lo na solicitação da API.
+
+---
+
+#### Método da Solicitação:
+**`POST`**
+
+---
+
+#### Cabeçalhos:
+**Nome do Cabeçalho**
+
+**Tipo**
+
+**Obrigatório**
+
+**Descrição**
+
+**Content-Type**
+
+String
+
+Sim
+
+Especifica o tipo de conteúdo como JSON.
+
+**Authorization**
+
+String
+
+Sim
+
+Token de Autenticação da Organização.
+
+---
+
+#### Parâmetros do Corpo da Solicitação:
+**Parâmetro**
+
+**Tipo**
+
+**Obrigatório**
+
+**Descrição**
+
+**groupName**
+
+String
+
+Sim
+
+O nome do grupo a ser criado ou atualizado.
+
+**contacts**
+
+Array de Strings
+
+Sim
+
+Lista de contatos a serem adicionados ao grupo.
+
+**create**
+
+Boolean
+
+Não
+
+Se deve criar o grupo, caso ele não exista. Padrão: false.
+
+---
+
+#### Exemplo de Solicitação:
+
+### `POST http://api.eazybe.com/v2/cloud/group`
+`Cabeçalhos: 
+{ 
+"Content-Type": "application/json; charset=UTF-8", 
+"Authorization": "Bearer {token-de-autenticacao-da-sua-organizacao}" 
+}
+
+Corpo: 
+{ 
+"groupName": "Clientes VIP", 
+"contacts": ["919911223344", "919922334455"], 
+"create": true 
+}`
+---
+
+#### Respostas:
+**Resposta de Sucesso (Grupo criado ou IDs de chats adicionados):**
+
+`{ 
+"status": true, 
+"message": "Grupo criado e IDs de chat adicionados com sucesso." 
+}`**Campo**
+
+**Tipo**
+
+**Descrição**
+
+**status**
+
+Boolean
+
+true indica que a operação foi bem-sucedida.
+
+**message**
+
+String
+
+Descreve o sucesso da operação.
+
+---
+
+#### Respostas de Erro:
+
+- **400 Bad Request: Dados Inválidos**
+
+Ocorre quando algum campo obrigatório está ausente ou os tipos de dados estão incorretos.
+
+`{ 
+"status": false, 
+"message": "Dados inválidos fornecidos." 
+}`
+- **404 Not Found: Grupo Não Encontrado**
+
+Ocorre quando o grupo não é encontrado e a flag de criação está definida como false.
+
+`{ 
+"status": false, 
+"message": "Grupo não encontrado" 
+}`
+- **500 Internal Server Error: Falha na Criação do Grupo**
+
+Ocorre se houver um problema durante a criação do grupo ou ao adicionar IDs de chat.
+
+`{ 
+"status": false, 
+"message": "Falha ao criar o grupo e adicionar IDs de chat." 
+}`
+- **403 Forbidden: Sessão na Nuvem Inativa**
+
+Ocorre quando a sessão na nuvem não está ativa ou funcionando corretamente.
+
+`{ 
+"status": false, 
+"message": "A sessão na nuvem não está ativa ou funcionando." 
+}`
+---
+
+#### Práticas de Higiene:
+
+- Certifique-se de que o cabeçalho de `Autorização `contenha um Token de Autenticação válido da Organização.
+- Verifique se os contatos são válidos.
+
+---
+Esperamos que este artigo tenha ajudado você a entender melhor como o EazyBe funciona! Se tiver alguma dúvida ou precisar de mais assistência, entre em contato conosco pelo e-mail [hey@eazybe.com](https://app.intercom.com/). Estamos felizes em ajudar!
+
+---

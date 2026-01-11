@@ -1,0 +1,185 @@
+---
+title: "API para crear grupos y agregar identificadores de chat"
+description: ""
+---
+
+#### API para Crear o Actualizar Grupo
+Esta API permite a los usuarios crear un grupo y agregar ID de chat al mismo. Si el grupo ya existe, los ID de chat se agregarán. Si el grupo no existe, la API puede crearlo si la opción **create** está configurada como **true**.
+
+---
+
+#### Endpoint:
+**`POST`**` [http://api.eazybe.com/v2/cloud/group](http://api.eazybe.com/v2/cloud/group)`
+
+---
+
+#### Autenticación:
+
+- **Tipo:** Token Bearer
+- Requiere un encabezado de Autorización con un token de autenticación válido de la organización para autenticar la solicitud.
+
+---
+
+#### ¿Cómo obtener el Token de Autenticación de la Organización?
+Puedes obtener el Token de Autenticación de la Organización desde el Espacio de [Trabajo de EazyBe](https://workspace.eazybe.com/) siguiendo estos pasos:
+
+- El administrador de la organización debe iniciar sesión en el Espacio de Trabajo de EazyBe con sus credenciales.
+- En la página de la Organización, se mostrará el Token de Autenticación de la Organización, con solo los últimos 4 dígitos visibles (el resto estará oculto).
+- El administrador puede copiar el Token de Autenticación de la Organización y pegarlo en la solicitud de la API.
+
+---
+
+#### Método de Solicitud:
+**`POST`**
+
+---
+
+#### Encabezados:
+**Nombre del Encabezado**
+
+**Tipo**
+
+**Requerido**
+
+**Descripción**
+
+**Content-Type**
+
+String
+
+Sí
+
+Especifica el tipo de contenido como JSON.
+
+**Authorization**
+
+String
+
+Sí
+
+Token de Autenticación de la Organización.
+
+---
+
+#### Parámetros del Cuerpo de la Solicitud:
+**Parámetro**
+
+**Tipo**
+
+**Requerido**
+
+**Descripción**
+
+**groupName**
+
+String
+
+Sí
+
+El nombre del grupo que deseas crear o actualizar.
+
+**contacts**
+
+Array de Strings
+
+Sí
+
+Lista de contactos que se agregarán al grupo.
+
+**create**
+
+Boolean
+
+No
+
+Si debe crear el grupo si no existe. Por defecto es false.
+
+---
+
+#### Ejemplo de Solicitud:
+**`POST`**` [http://api.eazybe.com/v2/cloud/group](http://api.eazybe.com/v2/cloud/group)`
+
+`Encabezados: 
+{ 
+  "Content-Type": "application/json; charset=UTF-8", 
+  "Authorization": "Bearer {token-de-autenticación-de-tu-organización}" 
+}
+Cuerpo:
+{
+  "groupName": "Clientes VIP", 
+  "contacts": ["919911223344", "919922334455"], 
+  "create": true 
+}`
+---
+
+#### Respuestas:
+**Respuesta de Éxito (Grupo creado o ID de chat agregados):**
+
+`{ 
+  "status": true, 
+  "message": "Grupo creado y ID de chat agregados exitosamente." 
+}`**Campo**
+
+**Tipo**
+
+**Descripción**
+
+**status**
+
+Boolean
+
+true indica que la operación fue exitosa.
+
+**message**
+
+String
+
+Describe el éxito de la operación.
+
+---
+
+#### Respuestas de Error:
+
+- **400 Bad Request: Datos Inválidos**
+
+Ocurre cuando falta algún campo requerido o los tipos de datos son incorrectos.
+
+`{ 
+  "status": false, 
+  "message": "Datos proporcionados inválidos." 
+}`
+- **404 Not Found: Grupo No Encontrado**
+
+Ocurre cuando el grupo no se encuentra y la opción **create** está configurada como **false**.
+
+`{ 
+  "status": false, 
+  "message": "Grupo no encontrado." 
+}`
+- **500 Internal Server Error: Error al Crear el Grupo**
+
+Ocurre si hay un problema durante la creación del grupo o al agregar los ID de chat.
+
+`{ 
+  "status": false, 
+  "message": "No se pudo crear el grupo y agregar los ID de chat." 
+}`
+- **403 Forbidden: Sesión en la Nube Inactiva**
+
+Ocurre cuando la sesión en la nube no está activa o no funciona correctamente.
+
+`{ 
+  "status": false, 
+  "message": "La sesión en la nube no está activa o no funciona." 
+}`
+---
+
+### Prácticas de Higiene:
+
+- Asegúrate de que el encabezado de `Autorización` contenga un Token de Autenticación válido de la Organización.
+- Asegúrate de que los contactos sean válidos.
+
+---
+¡Esperamos que este artículo te haya ayudado a entender mejor cómo funciona EazyBe! Si tienes alguna pregunta o necesitas más asistencia, no dudes en contactarnos en hey@eazybe.com. ¡Estamos encantados de ayudarte!
+
+---

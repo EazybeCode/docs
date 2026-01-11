@@ -1,0 +1,187 @@
+---
+title: "Create group and add chat IDs API"
+description: ""
+---
+
+#### Create or Update Group API
+This API enables users to create a group and add chat IDs to it. If the group already exists, the chat IDs will be added. If the group doesn't exist, the API can create it if the create flag is set to true.
+
+**Path URL:**
+
+[https://web.postman.co/workspace/Eazybe-Public-APIs~9f8ae130-1191-49f9-a9e7-8addbad6bfcb/collection/26731071-0058a95d-2bc0-411c-920f-5e0d9991b1eb?action=share&source=copy-link&creator=26731071](https://web.postman.co/workspace/Eazybe-Public-APIs~9f8ae130-1191-49f9-a9e7-8addbad6bfcb/collection/26731071-0058a95d-2bc0-411c-920f-5e0d9991b1eb?action=share&source=copy-link&creator=26731071)
+
+
+#### Endpoint:
+**POST http://api.eazybe.com/v2/cloud/group**
+
+
+#### Authentication:
+
+- **Type**: Bearer Token
+
+
+- Requires an Authorization header with a valid Organization's Auth token for authentication.
+
+
+#### How to get Organization's Auth Token?
+You can obtain your Organization's Auth Token from the [EazyBe Workspace](https://workspace.eazybe.com/) by following these steps:
+
+
+1. The organization's admin must log in to the EazyBe Workspace using their credentials.
+
+2. On the Organization page, the Organization's Auth Token will be displayed, with only the last 4 digits visible(the rest will be hidden).
+
+3. The admin can copy the Organization's Auth Token and paste it into the API request.
+
+
+#### Request Method:
+**POST**
+
+
+#### Headers:
+**Header Name**
+
+**Type**
+
+**Required**
+
+**Description**
+
+**Content-Type**
+
+String
+
+Yes
+
+Specifies the content type as JSON.
+
+**Authorization**
+
+String
+
+Yes
+
+Organization Auth token for authentication.
+
+
+#### Request Body Parameters:
+**Parameter**
+
+**Type**
+
+**Required**
+
+**Description**
+
+**groupName**
+
+String
+
+Yes
+
+The name of the group to create or update.
+
+**contacts**
+
+Array of Strings
+
+Yes
+
+Array of contacts to be added to the group.
+
+**create**
+
+Boolean
+
+No
+
+Whether to create the group if it doesn’t exist. Defaults to false.
+
+
+#### Example Request:
+
+#### POST http://api.eazybe.com/v2/cloud/group
+Headers: 
+{ 
+  "Content-Type": "application/json; charset=UTF-8", 
+  "Authorization": "Bearer {your-organization's-auth-token-here}" 
+}
+ 
+Body: 
+{ 
+  "groupName": "VIP Customers", 
+  "contacts": ["919911223344", "919922334455"], 
+  "create": true 
+}
+#### Responses:
+**Success Response (Group created or chat IDs added):**
+
+{ 
+  "status": true, 
+  "message": "Group created and chat IDs added successfully." 
+}**Field**
+
+**Type**
+
+**Description**
+
+**status**
+
+Boolean
+
+true indicates the operation was successful.
+
+**message**
+
+String
+
+Describes the success of the operation.
+
+
+#### Error Responses:
+
+- **400 Bad Request: Invalid Data**
+
+
+Occurs when any required field is missing or the data types are incorrect.
+
+{ 
+  "status": false, 
+  "message": "Invalid data provided." 
+}
+- **404 Not Found: Group Not Found**
+
+
+Occurs when the group is not found and the create flag is set to false.
+
+{ 
+  "status": false, 
+  "message": "Group not found" 
+}
+- **500 Internal Server Error: Failed to Create Group**
+
+
+Occurs if there's an issue during group creation or adding chat IDs.
+
+{ 
+  "status": false, 
+  "message": "Failed to create group and add chat IDs." 
+}
+- **403 Forbidden: Cloud Session Inactive**
+
+
+Occurs when the cloud session is not active or functioning properly.
+
+{ 
+  "status": false, 
+  "message": "Cloud session is not active or working." 
+}
+#### Hygiene Practices:
+
+- Ensure that the Authorization header contains a valid Organization's Auth Token.
+
+
+- Make sure the contacts are valid.
+
+
+We hope this article has helped you better understand how EazyBe works! If you have any questions or need further assistance, feel free to reach out to us at **[hey@eazybe.com](https://app.intercom.com/)**. We're happy to help!

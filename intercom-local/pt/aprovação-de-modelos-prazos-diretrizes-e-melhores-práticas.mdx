@@ -1,0 +1,78 @@
+---
+title: "Aprovação de Modelos : Prazos, Diretrizes e Melhores Práticas"
+description: ""
+---
+
+**Prazos de Aprovação**
+
+A Meta utiliza uma combinação de processos automatizados por IA e revisão humana. Embora as diretrizes oficiais indiquem que as aprovações podem levar até 24 horas, a maioria dos modelos é processada muito mais rapidamente.
+
+Cenário
+
+Tempo Estimado
+
+Contexto
+
+Aprovação Padrão
+
+1 - 5 Minutos
+
+A maioria dos modelos bem estruturados é aprovada quase instantaneamente pelos sistemas automatizados da Meta.
+
+Complexo / Marcado
+
+1 - 24 Horas
+
+Se a IA detectar conteúdo ambíguo ou possíveis violações de política, o modelo será encaminhado para revisão humana.
+
+Reenvio
+
+Até 24 Horas
+
+Recorrer de um modelo rejeitado ou alterar a categoria geralmente requer verificação manual.
+
+**Dica Pro:** Planeje suas campanhas com pelo menos 24 horas de antecedência para lidar com possíveis atrasos na revisão.
+
+**Visão Geral das Categorias de Modelos**
+Certifique-se de selecionar a categoria correta para evitar rejeição ou penalidades de “má categorização”.
+
+### **1. Modelos de Utilidade**
+**Propósito:** Facilitar uma transação ou atualização específica e previamente acordada.
+
+**Casos de Uso:** Confirmações de pedido, atualizações de envio, alertas de saldo, lembretes de compromisso.
+
+**Restrição:** Não deve conter venda adicional, mensagens vagas de apresentação ou linguagem promocional.
+
+**Expectativa de Aprovação:** Geralmente mais rápida (minutos) se as variáveis estiverem claras (ex.: #{{1}} para ID do pedido).
+
+### **2. Modelos de Marketing**
+**Propósito:** Promover produtos, serviços ou reconhecimento de marca.
+
+**Casos de Uso:** Ofertas com desconto, newsletters, recuperação de carrinho abandonado, mensagens de boas-vindas.
+
+**Restrição:** Conteúdo flexível, mas rigorosamente monitorado por linguagem “spam” ou violações de política.
+
+**Expectativa de Aprovação:** Sujeito a revisão mais rigorosa referente ao consentimento do usuário e qualidade do conteúdo.
+
+## **Restrições e Requisitos para Aprovação Bem-Sucedida**
+Para garantir que seus modelos sejam aprovados sem demora, siga estas restrições da Meta:
+
+### **Conteúdo e Formatação**
+
+- **Parâmetros de Variáveis:** Sempre forneça exemplos para suas variáveis (ex.: #{{1}} = "João"). A Meta rejeita modelos com variáveis pouco claras.
+- **Gramática e Ortografia:** Modelos com erros ortográficos ou gramaticais são automaticamente rejeitados por “baixa qualidade”.
+- **Encurtadores de Link:** Não use encurtadores genéricos (como bit.ly) no corpo do texto; eles ocultam o URL de destino e acionam alertas de segurança. Use o recurso específico de “Botão” para links.
+
+### **Conformidade com a Política**
+
+- **Nada de Categorias Misturadas:** Não misture Utilidade e Marketing. Exemplo:
+*“Seu pedido #123 foi confirmado. Confira nossas novas coleções!”* — Isso será rejeitado como modelo de Utilidade.
+- **Conteúdo Restrito:** Evite solicitar identificadores sensíveis (número de cartão de crédito, documentos completos) ou usar linguagem ameaçadora (ex.: “Pague agora ou tomaremos medidas legais”).
+- **Consistência de Categoria:** Se o sistema da Meta detectar que seu modelo “Utilidade” é na verdade “Marketing”, eles atualizarão a categoria automaticamente. Você tem 60 dias para recorrer se discordar.
+
+## **Entendendo os Status dos Modelos**
+
+- **Pendente:** O modelo está atualmente em análise pela Meta. Não edite enquanto estiver nesse estado.
+- **Aprovado:** O modelo foi aprovado e está pronto para envio.
+- **Rejeitado:** O modelo falhou na revisão. Verifique o “Motivo” informado no painel (ex.: “Conteúdo promocional em Utilidade”).
+- **Pausado:** O modelo foi marcado como de baixa qualidade (altas taxas de bloqueio pelos usuários). Você não pode enviá-lo até que a pontuação de qualidade melhore.

@@ -1,0 +1,99 @@
+---
+title: "API del programador"
+description: ""
+---
+
+#### Resumen:
+La función de Programar Mensaje permite a los usuarios autenticados dentro de tu organización programar mensajes. Esta API verifica la membresía del usuario en la organización, asegura que se proporcionen todos los detalles requeridos del mensaje y maneja los problemas de permisos antes de programar un mensaje.
+
+**Nota:** Por favor, usa esta API de manera responsable. Evita utilizarla para spam o mensajes masivos, ya que podría resultar en la prohibición de tu número.
+
+---
+
+#### Uso de la API:
+
+#### Endpoint:
+`POST /schedule-message`
+#### Estructura del Payload:
+CampoDescripción`from`
+
+Dirección de correo electrónico del remitente (el usuario debe ser parte de la organización).
+
+`to`
+
+Número de teléfono del receptor (en formato internacional).
+
+`message`
+
+El contenido del mensaje que se enviará.
+
+`name`
+
+El nombre del receptor (para propósitos de notificación).
+
+`time`
+
+Hora programada para enviar el mensaje.
+
+#### Ejemplo de Payload:
+`{ 
+"from": "hello@eazybe.com", 
+"to": "919876543210", 
+"message": "Hello World", 
+"name": "Vats", 
+"time": "2024-03-01T17:25:00.000Z" 
+}`
+#### Código de Solicitud de Ejemplo (Node.js con Axios):
+
+```
+const axios = require('axios');
+let data = JSON.stringify({
+"from": "hello@eazybe.com",
+"to": "919876543210",
+"message": "Hello World",
+"name": "Vats",
+"time": "2024-03-01T17:25:00.000Z"
+});
+
+let config = {
+method: 'post',
+maxBodyLength: Infinity,
+url: '',
+headers: { 
+'Content-Type': 'application/json', 
+'Authorization': 'Organization Auth token'
+},
+data : data
+};
+
+axios.request(config)
+.then((response) => {
+console.log(JSON.stringify(response.data));
+})
+.catch((error) => {
+console.log(error);
+});
+```
+
+---
+
+#### Respuesta:
+EstadoDescripción**Éxito**
+
+Indica que el mensaje ha sido programado exitosamente.
+
+**Fallo**
+
+Los posibles errores incluyen correo electrónico no válido, campos faltantes o problemas de permisos.
+
+---
+
+#### Mejores Prácticas:
+
+- Asegúrate de que el correo electrónico de remitente sea válido y pertenezca a la organización.
+- Evita usar esta API para mensajes masivos o spam para prevenir la prohibición de tu número.
+
+---
+¡Esperamos que este artículo te haya ayudado a comprender mejor cómo funciona **EazyBe**! Si tienes alguna pregunta o necesitas más asistencia, no dudes en contactarnos a **[hey@eazybe.com](https://app.intercom.com/)**. ¡Estamos encantados de ayudarte!
+
+---

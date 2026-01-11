@@ -1,0 +1,107 @@
+---
+title: "API do Agendador"
+description: ""
+---
+
+#### Visão Geral:
+A função de **Agendar Mensagem** permite que usuários autenticados dentro da sua organização agendem mensagens. Esta API verifica a associação do usuário à organização, garante que todos os detalhes necessários da mensagem sejam fornecidos e lida com problemas de permissão antes de agendar uma mensagem.
+
+**Nota:** Use esta API de forma responsável. Evite usá-la para spam ou envio em massa de mensagens, pois isso pode resultar no banimento do seu número.
+
+### 
+
+---
+
+#### Uso da API:
+
+#### Endpoint:
+`POST /schedule-message`
+#### Estrutura do Payload:
+CampoDescrição`from`
+
+Endereço de e-mail do remetente (usuário deve fazer parte da organização).
+
+`to`
+
+Número de telefone do destinatário (no formato internacional).
+
+`message`
+
+Conteúdo da mensagem a ser enviada.
+
+`name`
+
+Nome do destinatário (para fins de notificação).
+
+`time`
+
+Hora agendada para enviar a mensagem.
+
+#### Exemplo de Payload**:**
+`{ 
+"from": "hello@eazybe.com", 
+"to": "919876543210", 
+"message": "Hello World", 
+"name": "Vats", 
+"time": "2024-03-01T17:25:00.000Z" 
+}`
+#### Exemplo de Código de Requisição (Node.js com Axios):
+
+```
+const axios = require('axios');
+let data = JSON.stringify({
+"from": "hello@eazybe.com",
+"to": "919876543210",
+"message": "Hello World",
+"name": "Vats",
+"time": "2024-03-01T17:25:00.000Z"
+});
+
+let config = {
+method: 'post',
+maxBodyLength: Infinity,
+url: '',
+headers: { 
+'Content-Type': 'application/json', 
+'Authorization': 'Organization Auth Token'
+},
+data : data
+};
+
+axios.request(config)
+.then((response) => {
+console.log(JSON.stringify(response.data));
+})
+.catch((error) => {
+console.log(error);
+});
+```
+
+---
+
+### Resposta:
+Status
+
+Descrição
+
+**Success**
+
+Indica que a mensagem foi agendada com sucesso.
+
+**Failure**
+
+Possíveis erros incluem e-mail inválido, campos ausentes ou problemas de permissão.
+
+---
+
+#### Melhores Práticas:
+
+- Certifique-se de que o e-mail de **from** é um endereço de e-mail válido que pertence à organização.
+- Evite usar esta API para envio em massa de mensagens ou spam para evitar que seu número seja banido.
+
+---
+Esperamos que este artigo tenha ajudado você a entender melhor como o EazyBe funciona! Se tiver alguma dúvida ou precisar de mais assistência, sinta-se à vontade para nos contatar em **[hey@eazybe.com](https://app.intercom.com/)**. Estamos felizes em ajudar!
+
+---
+
+​

@@ -1,0 +1,120 @@
+---
+title: "Agregar identificadores de chat a la API de etiquetas comerciales"
+description: ""
+---
+
+#### Descripción general:
+Esta API te permite agregar chats específicos a etiquetas comerciales. Verifica si la sesión en la nube está activa, recupera las etiquetas comerciales disponibles y asocia los chats especificados con una etiqueta dada.
+
+
+#### Endpoint:
+**POST** [http://api.eazybe.com/v2/cloud/business-label](http://api.eazybe.com/v2/cloud/business-label)
+
+
+#### Autenticación:
+
+- **Tipo:** Token Bearer
+
+
+- La API requiere un encabezado de Autorización con un token de autenticación válido de la organización para autenticar la solicitud.
+
+
+#### ¿Cómo obtener el Token de Autenticación de la Organización?
+Puedes obtener el Token de Autenticación de la Organización desde el [Espacio de Trabajo](https://workspace.eazybe.com/) de EazyBe siguiendo estos pasos:
+
+
+- El administrador de la organización debe iniciar sesión en el Espacio de Trabajo de EazyBe con sus credenciales.
+
+
+- En la página de la Organización, se mostrará el Token de Autenticación de la Organización, con solo los últimos 4 dígitos visibles (el resto estará oculto).
+
+
+- El administrador puede copiar el Token de Autenticación de la Organización y pegarlo en la solicitud de la API.
+
+
+#### Método de Solicitud:
+POST
+
+
+#### Encabezados:
+**Clave**
+
+**Valor**
+
+**Descripción**
+
+**Content-Type**
+
+application/json; charset=UTF-8
+
+Especifica que el formato del cuerpo de la solicitud es JSON.
+
+**Authorization**
+
+Bearer {token}
+
+Requerido. Se utiliza para autenticar la solicitud. El Token Bearer será el Token de Autenticación de la Organización específico de la organización.
+
+
+#### Parámetros del Cuerpo de la Solicitud:
+**Parámetro**
+
+**Tipo**
+
+**Requerido**
+
+**Descripción**
+
+**labelName**
+
+string
+
+Sí
+
+Nombre de la etiqueta comercial que deseas crear.
+
+**contacts**
+
+Array de strings
+
+Sí
+
+Lista de contactos que se asociarán con la etiqueta.
+
+
+#### Ejemplo de Solicitud:
+{ 
+  "labelName": "Clientes Prioritarios", 
+  "contacts": [
+    "911234567891", 
+    "911234567892", 
+    "911234567893" 
+  ] 
+}
+#### Respuestas:
+**200 OK:**
+
+Indica que la etiqueta se creó con éxito y los chats se asociaron con ella.
+
+
+**Ejemplo de Respuesta Exitosa:**
+
+{ 
+  "status": true, 
+  "data": 
+  { 
+    "message": "Contactos agregados exitosamente." 
+  } 
+}
+#### Hygiene Practices:
+
+- Asegúrate de que el encabezado de Autorización contenga un Token de Autenticación válido de la Organización.
+
+
+- Asegúrate de que los contactos sean válidos.
+
+
+Esperamos que este artículo te haya ayudado a entender mejor cómo funciona EazyBe. Si tienes alguna pregunta o necesitas más ayuda, no dudes en escribirnos a [hey@eazybe.com](mailto:hey@eazybe.com). ¡Estaremos encantados de ayudarte!
+
+
+​

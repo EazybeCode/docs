@@ -1,0 +1,161 @@
+---
+title: "Troubleshooting WhatsApp Coexistence Signup: Common issues and fixes​"
+description: "Solución de Problemas del Registro de Coexistencia de WhatsApp: Problemas Comunes y Soluciones"
+---
+
+### **Descripción General**
+La Coexistencia de WhatsApp permite que una empresa use la aplicación WhatsApp Business y la API de WhatsApp Business con el mismo número de teléfono, de modo que los equipos puedan administrar conversaciones tanto en la aplicación como en la API sin cambiar de número. Como esta es una capacidad relativamente nueva de Meta, es común encontrar problemas de incorporación durante el proceso de registro integrado y la configuración inicial. Esta guía describe los problemas más frecuentes, por qué ocurren y cómo solucionarlos según las recomendaciones actuales de Meta y los principales proveedores.
+
+### **Instrucciones**
+Si estás enfrentando errores al habilitar la Coexistencia mediante el registro integrado, esta guía es para ti. Usa las secciones a continuación para identificar rápidamente el problema, comprender la causa raíz y seguir la resolución paso a paso.
+
+### **1. Número de teléfono no elegible**
+**Lo que puedes ver:** “Tu número de teléfono no es elegible para conectarse a la Plataforma WhatsApp Business. Se necesita más actividad en la aplicación WhatsApp Business para determinar la elegibilidad.”
+​
+
+  
+
+### **Por qué ocurre esto**
+
+- Meta requiere que el número tenga uso real y consistente en la aplicación durante al menos 7 días antes de permitir Coexistencia.
+- Números nuevos o con poca actividad suelen considerarse no elegibles.
+- Números previamente vinculados a una cuenta WhatsApp Business API (WABA) pueden afectar la elegibilidad hasta cumplir el periodo de espera.
+
+### **Cómo solucionarlo**
+
+- **Usa el número activamente:** Intercambia conversaciones reales por al menos 7 días; muchos proveedores recomiendan 30–60 días.
+- **Evita volver a registrar:** No borres y registres nuevamente el número repetidamente.
+- **Elimina WABA anterior:** Si el número fue usado con un API previo, elimina la configuración, vuelve a registrar el número en la aplicación y mantenlo activo 1–2 meses antes de intentar Coexistencia.
+
+### **2. País o región no soportado**
+**Lo que puedes ver:** Un error indicando que el código de país no es compatible.
+
+  
+
+### **Por qué ocurre esto**
+
+- Meta ha restringido la Coexistencia en ciertas regiones por motivos regulatorios o de servicio.
+- Países como Nigeria y Sudáfrica a menudo no son compatibles.
+
+### **Cómo solucionarlo**
+
+- **Usa un número de país soportado:** Como India, Brasil, México, Indonesia, EE. UU., Hong Kong o Singapur.
+- **Monitorea actualizaciones:** Revisa la documentación oficial y anuncios de tu proveedor.
+- **Opciones temporales:** Usa solo el WhatsApp Business App o canales alternativos hasta que tu región sea soportada.
+
+### **3. Número usado previamente con WhatsApp Business API**
+**Lo que puedes ver:** Un error indicando que el número ya está registrado en una cuenta existente.
+
+​
+
+  
+
+​
+
+### **Por qué ocurre esto**
+
+- Meta requiere un periodo de espera cuando un número ha sido usado con WABA.
+- Intentar conectarlo demasiado pronto genera errores de elegibilidad.
+
+### **Cómo solucionarlo**
+
+- **Elimina la WABA anterior:** Desde tu proveedor o Business Manager.
+- **Vuelve a registrar en la aplicación:** Úsalo activamente por 1–2 meses.
+- **No tengas prisa:** Evita reconectar inmediatamente para no generar fallos repetidos.
+
+### **4. Retrasos o fallas en la sincronización de chats**
+**Lo que puedes ver:** Retrasos de horas o sincronizaciones incompletas.
+
+### **Por qué ocurre esto**
+
+- Historias de chat o listas de contactos grandes aumentan el tiempo.
+- Conexión inestable o la app cerrada interrumpe la sincronización.
+
+### **Cómo solucionarlo**
+
+- **Deja el teléfono desbloqueado con la app abierta.**
+- **Usa una conexión estable.**
+- **Ten paciencia:** Puede tardar 4–6 horas o más.
+- **Reintenta si está bloqueado:** Escanea nuevamente el QR con versión 2.24.17 o superior.
+
+### **5. Código QR no aparece o no se puede escanear**
+**Lo que puedes ver:** El QR no se carga o no puede escanearse.
+
+### **Por qué ocurre esto**
+
+- Aplicación desactualizada.
+- Flujo de pasos incorrecto.
+- Problemas temporales de cámara o Meta.
+
+### **Cómo solucionarlo**
+
+- **Actualiza a versión 2.24.17 o posterior.**
+- **Sigue la ruta correcta:** Configuración > WhatsApp > Registrarse con Facebook.
+- **Verifica cámara e iluminación.**
+- **Intenta más tarde.**
+- **Reinstala solo como último recurso.**
+
+### **6. Problemas al vincular Página de Facebook**
+**Lo que puedes ver:** Errores al intentar vincular la cuenta con una Página.
+
+### **Por qué ocurre esto**
+
+- No hay Página o cuenta Meta Business configurada.
+- Falta de permisos de administrador.
+- Restricciones de región o cuenta.
+
+### **Cómo solucionarlo**
+
+- **Crea o vincula una Página:** Desde Herramientas para empresas en la app.
+- **Confirma permisos de administrador.**
+- **Completa la configuración de Meta Business Account.**
+
+### **7. No se puede desactivar la Coexistencia**
+**Lo que puedes ver:** Sin opción clara para deshabilitar.
+
+### **Por qué ocurre esto**
+
+- La Coexistencia se administra desde la aplicación y no desde la API.
+
+### **Cómo solucionarlo**
+
+- **Desconecta desde la app:** Configuración > Cuenta > Plataforma Business.
+- **Evita desinstalar.**
+- **Contacta soporte si la opción no aparece.**
+
+### **8. Dispositivos complementarios no compatibles**
+**Lo que puedes ver:** Algunos mensajes no aparecen en la API.
+
+### **Por qué ocurre esto**
+
+- Solo WhatsApp Web y aplicaciones oficiales están soportadas.
+- Mensajes de dispositivos no soportados no se sincronizan.
+
+### **Cómo solucionarlo**
+
+- **Vincula dispositivos compatibles.**
+- **Observa advertencias de la plataforma.**
+- **Revisa actualizaciones de producto.**
+
+### **9. Nombre comercial bloqueado tras onboarding**
+**Lo que puedes ver:** No es posible modificar el nombre de la empresa.
+
+### **Por qué ocurre esto**
+
+- Meta exige una identidad única y consistente.
+
+### **Cómo solucionarlo**
+
+- **Confirma el nombre antes del onboarding.**
+- **Solicita el cambio a soporte si es necesario.**
+
+### **Lista de verificación rápida**
+
+- Versión del app: **2.24.17 o superior**.
+- Proveedor confiable: **Eazybe u otro oficial**.
+- Número con mínimo **7 días de uso real**.
+- WABA previa eliminada y respeto de **1–2 meses de espera**.
+- Backup de chats importante.
+
+### **Conclusión**
+La Coexistencia de WhatsApp es una forma poderosa de mantener tu flujo actual del WhatsApp Business App mientras escalas automatización y acceso del equipo mediante la Cloud API en el mismo número. Con la preparación adecuada y las soluciones descritas, la mayoría de los problemas de onboarding se pueden resolver rápidamente; si persisten, contacta al soporte de tu proveedor de WhatsApp.

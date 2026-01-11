@@ -1,0 +1,124 @@
+---
+title: "Add Chat Ids to Business Label API"
+description: ""
+---
+
+#### Overview:
+This API allows you to add specific chats to business labels. It verifies if the cloud session is active, retrieves available business labels, and associates the specified chats with a given label.
+
+---
+**Path URL:**
+
+[https://web.postman.co/workspace/Eazybe-Public-APIs~9f8ae130-1191-49f9-a9e7-8addbad6bfcb/collection/26731071-0058a95d-2bc0-411c-920f-5e0d9991b1eb?action=share&source=copy-link&creator=26731071](https://web.postman.co/workspace/Eazybe-Public-APIs~9f8ae130-1191-49f9-a9e7-8addbad6bfcb/collection/26731071-0058a95d-2bc0-411c-920f-5e0d9991b1eb?action=share&source=copy-link&creator=26731071)
+
+---
+
+#### Endpoint:
+**`POST http://api.eazybe.com/v2/cloud/business-label`**
+
+---
+
+#### Authentication:
+
+- **Type**: Bearer Token
+- The API requires an `Authorization` header with a valid Organization Auth token to authenticate the request.
+
+---
+
+#### How to get an Organization's Auth Token?
+To obtain your organization's Auth Token from the [EazyBe Workspace](https://workspace.eazybe.com/),follow these steps:
+
+- The organization's admin should log in to the EazyBe Workspace using their credentials.
+- The Auth Token will be password-protected and can be found on the Organization page.
+- Each organization will have its own unique Auth Token.
+
+---
+
+#### Request Method:
+**`POST`**
+
+---
+
+#### Headers:
+**Key**
+
+**Value**
+
+**Description**
+
+**Content-Type**
+
+application/json; charset=UTF-8
+
+Specifies that the request body format is JSON.
+
+**Authorization**
+
+Bearer {token}
+
+**Required**. Used to authenticate the request. The Bearer Token will be the Organization Auth Token specific to an organization.
+
+---
+
+#### Request Body Parameters:
+**Parameter**
+
+**Type**
+
+**Required**
+
+**Description**
+
+**labelName**
+
+string
+
+Yes
+
+Name of the business label you want to create.
+
+**contacts**
+
+Array of strings
+
+Yes
+
+List of contacts to be associated with the label.
+
+---
+
+#### Example Request:
+`{ 
+  "labelName": "Priority Clients", 
+  "contacts": [ 
+    "911234567891", 
+    "911234567892", 
+    "911234567893" 
+  ] 
+}`
+---
+
+#### Responses:
+200 OK:Indicates the label was successfully created and the chats were associated with it.
+
+**Example Success Response**:
+
+`{ 
+  "status": true, 
+  "data": { 
+    "message": "Contacts added successfully." 
+  } 
+}`
+---
+
+#### Hygiene Practices:
+
+- Ensure that the `Authorization` header contains a valid Organization's Auth token.
+- Make sure the `contacts` are valid.
+
+---
+We hope this article has helped you better understand how EazyBe works! If you have any questions or need further assistance, feel free to reach out to us at **[hey@eazybe.com](https://app.intercom.com/)**. We're happy to help!
+
+---
+
+​

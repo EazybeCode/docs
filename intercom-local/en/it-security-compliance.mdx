@@ -1,0 +1,238 @@
+---
+title: "IT & Security Compliance"
+description: "This guide helps IT and security teams evaluate Eazybe to speed up trial approvals."
+---
+
+### Overview
+**Eazybe** is a Chrome extension that enhances WhatsApp Web with productivity and CRM integration features - ideal for sales, support, and customer engagement teams. It overlays functionalities such as:
+
+- CRM mini-views inside WhatsApp Web
+- Shared team inboxes
+- Contact labels, follow-ups, tasks
+- Data sync to users’ Google Drive or CRMs
+
+---
+
+### Data Privacy & Security Compliance
+
+### GDPR-Ready
+Eazybe is **GDPR compliant**. A third-party audit conducted via **Sprinto** confirms:
+
+- Appointed **Privacy Officer & EU Representative**
+- Published **Privacy Policy** and **Data Protection Policy**
+- Annual **Vendor Risk Assessments**
+- Defined **Records of Processing Activities (ROPA)**
+- Regular **Data Protection Impact Assessments (DPIAs)**
+- Secure processing of personal data, including encryption and access control
+
+In line with **GDPR** and global data privacy standards, Eazybe fully supports:
+
+- **Data Access Requests**: Any user can request a copy of their data processed by Eazybe.
+- **Data Deletion Requests**: You can ask for partial or complete deletion of your data from our systems.
+
+To initiate a request:
+
+- Email us at [hey@eazybe.com](mailto:hey@eazybe.com)
+- Or use the WhatsApp support icon in the Eazybe Chrome Extension
+
+Note: Since Eazybe does not store messages or contacts, most data deletion pertains to connected metadata (e.g., integrations, labels, logs).
+
+See our [Privacy Policy](https://eazybe.com/privacy)
+
+See our [Terms of Service](https://eazybe.com/terms-of-service)
+
+See our [Master Service Agreement](https://www.notion.so/Customer-Onboarding-Docs-1f438630d55a80888a1ac54fd1d3ae0c?pvs=21)
+
+See our [GDPR Report](https://drive.google.com/file/d/1ylJ2Sa_feCCiheLmCv9aKXr6ZbmTHB2H/view?usp=sharing)
+
+---
+
+### Data Handling & Storage
+Feature
+
+Details
+
+**Message Storage**
+
+Eazybe **does not store messages**. All chats remain within WhatsApp.
+
+**CRM Integration Data**
+
+Displayed via APIs; **no CRM credentials stored**. OAuth where possible.
+
+**Backups**
+
+Stored in the user’s **Google Drive** (user/workspace-owned).
+
+**Attachment Handling**
+
+Media (e.g., PDFs, images) stored in Google Drive if backup is enabled.
+
+**No Server-Side Storage**
+
+All sensitive data is client-side or within user’s cloud (Drive/CRM).
+
+---
+
+### Encryption & Infrastructure
+
+- **Data in Transit**: Encrypted with TLS/HTTPS
+- **Data at Rest**: Backed-up data is encrypted using Google Drive’s built-in encryption
+- **Access Controls**: Strict role-based access internally
+- **Endpoint Security**: Only authorized devices can access infrastructure
+- **Production Firewalls**: Deny-by-default rules active
+
+---
+
+### Chat Backup Defaults (Team Inbox)
+When Team Inbox is enabled, **all WhatsApp chats are backed up by default** to your connected Google Drive.
+
+**But you’re in control:**
+
+- Use the **"Don’t Sync" label** to exclude specific contacts.
+- Admins can manage sync rules org-wide - including what gets backed up and what doesn’t.
+
+[Learn how to stop sync for specific contacts →](https://help.eazybe.com/en/articles/9863119-can-i-stop-sync-for-some-particular-contacts)
+
+---
+
+### Cloud WhatsApp Connectivity (Optional)
+Eazybe offers a cloud-based session feature that enables scheduled or automated WhatsApp messaging - even when the user’s browser is closed.
+
+**Notes:**
+
+- No WhatsApp data is stored on Eazybe servers
+- Cloud sessions are authenticated via WhatsApp’s official **QR code-based login**
+- Sessions can be **disconnected anytime** from the extension
+
+Setup Guide → [Connecting Cloud WhatsApp](https://help.eazybe.com/en/articles/9921777-how-to-connect-eazybe-cloud-whatsapp)
+
+Disconnect → [How to revoke Cloud access](https://help.eazybe.com/en/articles/9925430-how-to-disconnect-eazybe-cloud-whatsapp)
+
+---
+
+### Required Permissions
+To function securely and effectively, Eazybe needs:
+
+Permission Type
+
+Purpose
+
+Chrome Tab Access
+
+Overlay CRM/label UI inside WhatsApp Web
+
+CRM Access (OAuth/API)
+
+Show mini-CRM view, create contacts/tasks in CRM
+
+Google Drive Access
+
+Optional, for storing backed-up messages/media (Team Inbox only)
+
+All integrations use industry-standard scopes and secure token handling.
+
+---
+
+### IT Setup Requirements
+For a smooth installation and evaluation of Eazybe, your IT team should ensure the following environment and access settings are in place:
+
+Requirement
+
+Details
+
+**Google Chrome Browser**
+
+Eazybe is a Chrome Extension and works only on Chrome
+
+**WhatsApp Web Access**
+
+The user must be logged into WhatsApp Web in the same Chrome profile
+
+**Chrome Extension Permissions**
+
+Allow access to WhatsApp Web tabs for UI overlay and functionality
+
+**CRM Access (Optional)**
+
+API key or OAuth permissions to connect and sync with HubSpot, Zoho, Salesforce, etc.
+
+**Google Drive Access (Optional)**
+
+For backup and Team Inbox – Drive access must be granted by the user or Workspace admin
+
+**Firewall/Network Access**
+
+Allow HTTPS traffic to `web.eazybe.com`, `api.eazybe.com`, and CRM endpoints
+
+**Trial Account (Optional)**
+
+Use a test WhatsApp number or CRM sandbox account for safe evaluation
+
+Eazybe does not require software installation on user machines - just a lightweight Chrome extension install with specific tab-level permissions.
+
+---
+
+### Integration Options
+Eazybe supports secure integration with:
+
+- HubSpot, Zoho, Salesforce, LeadSquared, Freshdesk, Bitrix24
+- Google Sheets
+- Team Inbox (Google Drive-based backup)
+- Custom CRMs via Webhooks or embedded URLs
+
+We are listed as an **authorized app** in their respective marketplaces:
+
+Platform
+
+App Listing Link
+
+**HubSpot**
+
+[Eazybe on HubSpot Marketplace](https://ecosystem.hubspot.com/marketplace/apps/eazybe-powering-whatsapp-web-1331564)
+
+**Zoho CRM**
+
+[Eazybe on Zoho Marketplace](https://marketplace.zoho.com/app/crm/eazybe-whatsapp-for-zoho-crm)
+
+**Bitrix24**
+
+[Eazybe on Bitrix24 Marketplace](https://www.bitrix24.in/apps/app/eazybetest.eazybe/)
+
+**Google Sheets**
+
+Supported via secure API connection (manual setup)
+
+**Team Inbox**
+
+Uses **Google Drive** for secure storage of backed-up WhatsApp chats (requires user authorization)
+
+**Custom CRMs**
+
+Supported via **Webhooks** or **Click-to-WhatsApp** embedded URLs ([Docs →](https://help.eazybe.com/en/collections/10570128-apis-webhooks))
+
+---
+
+### How to Trial Safely
+If your company is unsure, we recommend:
+
+- Using a **temporary WhatsApp number** for testing
+- Limiting initial access to test accounts in your CRM.
+- Reviewing extension activity via **Chrome extension controls.**
+
+---
+
+### Cancellation/Offboarding
+All trial access can be revoked on request. Users can:
+
+- Uninstall the extension at any time
+- Disconnect CRM and/or Google Sheets integrations from their respective account dashboards
+- Request deletion of synced data from our team (if any)
+
+---
+
+### Need Help?
+Eazybe can assist IT teams during setup and evaluation. Reach us at:
+
+- **Email**: [hey@eazybe.com](mailto:hey@eazybe.com)
+- **WhatsApp Support**: Click the WhatsApp icon in the extension to chat directly

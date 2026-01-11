@@ -1,0 +1,143 @@
+---
+title: "Active Users API"
+description: ""
+---
+
+### **Overview:**
+The **Last Active Users** API allows you to fetch a list of users who have recently been active within your organization. This public API helps track user engagement, monitor team activity, and maintain operational visibility.
+
+It requires an **Organization Bearer Token** for authentication, ensuring only authorized organizations can access user activity data.
+
+
+### **Path URL:**
+https://api.eazybe.com/v2/users/public/last-active
+### **API Usage:**
+**Endpoint:**
+GET [https://api.eazybe.com/v2/users/public/last-active](https://api.eazybe.com/v2/users/public/last-active)
+
+
+### **Headers:**
+Header
+
+Description
+
+Example
+
+Authorization
+
+Bearer token used for authentication. Must be a valid Organization Auth Token.
+
+Bearer YOUR-BEARER-TOKEN
+
+
+### **Example cURL Request:**
+curl --location 'https://api.eazybe.com/v2/users/public/last-active' \
+--header 'Authorization: Bearer YOUR-BEARER-TOKEN'
+### **Sample Request Code (Node.js with Axios):**
+const axios = require('axios');
+let config = {
+  method: 'get',
+  maxBodyLength: Infinity,
+  url: 'https://api.eazybe.com/v2/users/public/last-active',
+  headers: { 
+    'Authorization': 'Bearer YOUR-BEARER-TOKEN'  }
+};
+
+axios.request(config)
+.then((response) => {
+  console.log(JSON.stringify(response.data, null, 2));
+})
+.catch((error) => {
+  console.error(error);
+});
+### **Example Response:**
+{"statusCode": 200,"status": "success","message": "Users fetched successfully","data": [{"id": 101001,"name": "John Doe","email": "john.doe@company.com","phone": "919812345678","last_active": "2025-10-10T04:28:16.000Z"},{"id": 101002,"name": "Jane Smith","email": "jane.smith@company.com","phone": "14155552671","last_active": "2025-10-10T07:32:16.000Z"},{"id": 101003,"name": "Robert Brown","email": "robert.brown@company.com","phone": "5511987654321","last_active": "2025-08-30T19:37:57.000Z"},{"id": 101004,"name": "Emily Davis","email": "emily.davis@company.com","phone": "442079460123","last_active": "2025-10-10T07:22:46.000Z"},{"id": 101005,"name": "Michael Johnson","email": "michael.johnson@company.com","phone": "16135551212","last_active": "2025-10-10T03:22:36.000Z"},{"id": 101006,"name": "Sarah Wilson","email": "sarah.wilson@company.com","phone": "8135556789","last_active": "2025-10-10T07:22:26.000Z"},{"id": 101007,"name": "David Thompson","email": "david.thompson@company.com","phone": "33123456789","last_active": "2025-10-10T07:22:25.000Z"}] }
+### **Response Fields:**
+Field
+
+Type
+
+Description
+
+id
+
+number
+
+Unique identifier of the user.
+
+name
+
+string
+
+Full name of the user.
+
+email
+
+string
+
+Registered email address of the user.
+
+phone
+
+string
+
+User’s phone number (in international format).
+
+last_active
+
+string (ISO Date)
+
+Timestamp of when the user was last active.
+
+
+### **How to get Organization's Auth Token?**
+You can obtain your Organization's Auth Token from the [EazyBe Workspace](https://workspace.eazybe.com/) by following these steps:
+
+
+1. The organization's admin must log in to the EazyBe Workspace using their credentials.
+
+2. On the Organization page, the Organization's Auth Token will be displayed.
+
+
+<Frame>
+  <img src="/images/1771414527.png" alt="" />
+</Frame>
+
+
+3. The admin can copy the Organization's Auth Token and paste it into the API request.
+
+
+### **Response:**
+Status
+
+Description
+
+**Success**
+
+Indicates the message has been successfully scheduled.
+
+**Failure**
+
+Possible errors include invalid email, missing fields, or permission issues.
+
+
+<Frame>
+  <img src="/images/1771414529.png" alt="" />
+</Frame>
+
+
+### **Hygiene Practices:**
+
+- Always use a **valid Organization Auth Token**.
+
+
+- Do not share or expose your token publicly.
+
+
+- Avoid frequent polling; use caching or periodic updates to reduce server load.
+
+
+- Keep your organization credentials secure at all times.
+
+
+We hope this article has helped you better understand how EazyBe works! If you have any questions or need further assistance, feel free to reach out to us at **[hey@eazybe.com](https://app.intercom.com/)**. We're happy to help!

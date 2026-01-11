@@ -1,0 +1,232 @@
+---
+title: "Conformidade de TI e Segurança"
+description: "Este guia ajuda as equipes de TI e segurança a avaliar o Eazybe para acelerar as aprovações de testes (trials)."
+---
+
+### **Visão Geral**
+O Eazybe é uma extensão do Chrome que aprimora o WhatsApp Web com recursos de produtividade e integração com CRM - ideal para equipes de vendas, suporte e engajamento do cliente. Ele adiciona uma camada de funcionalidades como:
+
+- Mini-visualizações de CRM dentro do WhatsApp Web
+- Caixas de entrada de equipe compartilhadas
+- Etiquetas de contato, follow-ups, tarefas
+- Sincronização de dados com o Google Drive ou CRMs dos usuários
+
+---
+
+### **Conformidade com Privacidade e Segurança de Dados**
+**Pronto para o GDPR**
+
+O Eazybe está em **conformidade com o GDPR**. Uma auditoria de terceiros conduzida via **Sprinto** confirma:
+
+- Nomeação de **Diretor de Privacidade e Representante da UE**
+- Publicação da **Política de Privacidade** e **Política de Proteção de Dados**
+- **Avaliações Anuais de Risco de Fornecedores**
+- Definição de **Registros de Atividades de Processamento (ROPA)**
+- **Avaliações de Impacto sobre a Proteção de Dados (DPIAs)** regulares
+- Processamento seguro de dados pessoais, incluindo criptografia e controle de acesso
+
+Em linha com o **GDPR** и padrões globais de privacidade de dados, o Eazybe suporta totalmente:
+
+- **Solicitações de Acesso a Dados:** Qualquer usuário pode solicitar uma cópia de seus dados processados pelo Eazybe.
+- **Solicitações de Exclusão de Dados:** Você pode pedir a exclusão parcial ou completa de seus dados de nossos sistemas.
+
+Para iniciar uma solicitação:
+
+- Envie um e-mail para **[hey@eazybe.com](mailto:hey@eazybe.com)**
+- Ou use o ícone de suporte do WhatsApp na Extensão Eazybe para Chrome
+
+**Nota:** Como o Eazybe não armazena mensagens ou contatos, a maior parte da exclusão de dados refere-se a metadados conectados (ex: integrações, etiquetas, logs).
+
+- Veja nossa **Política de Privacidade**
+- Veja nossos **Termos de Serviço**
+- Veja nosso **Contrato Principal de Serviços (Master Service Agreement)**
+- Veja nosso **Relatório GDPR**
+
+---
+
+### **Manuseio e Armazenamento de Dados**
+Recurso
+
+Detalhes
+
+**Armazenamento de Mensagens**
+
+O Eazybe **não armazena mensagens**. Todas as conversas permanecem dentro do WhatsApp.
+
+**Dados de Integração de CRM**
+
+Exibidos via APIs; **nenhuma credencial de CRM é armazenada**. OAuth sempre que possível.
+
+**Backups**
+
+Armazenados no **Google Drive do usuário** (de propriedade do usuário/espaço de trabalho).
+
+**Manuseio de Anexos**
+
+Mídia (ex: PDFs, imagens) armazenada no Google Drive se o backup estiver ativado.
+
+**Sem Armazenamento no Servidor**
+
+Todos os dados sensíveis ficam no lado do cliente ou na nuvem do usuário (Drive/CRM).
+
+---
+
+### **Criptografia e Infraestrutura**
+
+- **Dados em Trânsito:** Criptografados com TLS/HTTPS
+- **Dados em Repouso:** Dados de backup são criptografados usando a criptografia integrada do Google Drive
+- **Controles de Acesso:** Controle de acesso interno rigoroso baseado em função
+- **Segurança de Endpoint:** Apenas dispositivos autorizados podem acessar a infraestrutura
+- **Firewalls de Produção:** Regras de negação por padrão ativas
+
+---
+
+### **Padrões de Backup de Conversas (Caixa de Entrada de Equipe)**
+Quando a Caixa de Entrada de Equipe está ativada, **todas as conversas do WhatsApp são salvas por padrão** no seu Google Drive conectado.
+
+Mas você está no controle:
+
+- Use a etiqueta **"Não Sincronizar"** para excluir contatos específicos.
+- Admins podem gerenciar regras de sincronização para toda a organização - incluindo o que é salvo e o que não é.
+
+[Aprenda como parar a sincronização para contatos específicos →](https://www.google.com/search?q=https://help.eazybe.com/pt-BR/articles/10196238-como-instalar-e-conectar-o-eazybe-com-a-sua-conta-do-hubspot&authuser=1)
+
+---
+
+### **Conectividade do WhatsApp na Nuvem (Opcional)**
+O Eazybe oferece um recurso de sessão baseada na nuvem que permite o envio de mensagens agendadas ou automatizadas no WhatsApp - mesmo quando o navegador do usuário está fechado.
+
+**Notas:**
+
+- Nenhum dado do WhatsApp é armazenado nos servidores do Eazybe
+- As sessões na nuvem são autenticadas via login oficial do WhatsApp baseado em **código QR**
+- As sessões podem ser **desconectadas a qualquer momento** a partir da extensão
+
+**Guia de Configuração →** [Conectando o WhatsApp na Nuvem](https://www.google.com/search?q=https://help.eazybe.com/pt-BR/articles/9643286-join-organization&authuser=1) **Desconectar →** [Como revogar o acesso à Nuvem](https://www.google.com/search?q=https://help.eazybe.com/pt-BR/articles/9643286-join-organization&authuser=1)
+
+---
+
+### **Permissões Necessárias**
+Para funcionar de forma segura e eficaz, o Eazybe precisa de:
+
+Tipo de Permissão
+
+Finalidade
+
+**Acesso à Aba do Chrome**
+
+Sobrepor a interface de CRM/etiqueta dentro do WhatsApp Web.
+
+**Acesso ao CRM (OAuth/API)**
+
+Mostrar a mini-visualização do CRM, criar contatos/tarefas no CRM.
+
+**Acesso ao Google Drive**
+
+Opcional, para armazenar mensagens/mídia de backup (apenas Caixa de Entrada de Equipe).
+
+Todas as integrações usam escopos padrão da indústria e manuseio seguro de tokens.
+
+---
+
+### **Requisitos de Configuração de TI**
+Para uma instalação e avaliação tranquilas do Eazybe, sua equipe de TI deve garantir que as seguintes configurações de ambiente e acesso estejam em vigor:
+
+Requisito
+
+Detalhes
+
+**Navegador Google Chrome**
+
+O Eazybe é uma Extensão do Chrome e funciona apenas no Chrome.
+
+**Acesso ao WhatsApp Web**
+
+O usuário deve estar logado no WhatsApp Web no mesmo perfil do Chrome.
+
+**Permissões da Extensão**
+
+Permitir acesso às abas do WhatsApp Web para sobreposição da interface e funcionalidade.
+
+**Acesso ao CRM (Opcional)**
+
+Chave de API ou permissões OAuth para conectar e sincronizar com HubSpot, Zoho, Salesforce, etc.
+
+**Acesso ao Google Drive (Opcional)**
+
+Para backup e Caixa de Entrada de Equipe – o acesso ao Drive deve ser concedido pelo usuário ou admin do Workspace.
+
+**Acesso de Firewall/Rede**
+
+Permitir tráfego HTTPS para **web.eazybe.com**, **api.eazybe.com** e endpoints de CRM.
+
+**Conta de Teste (Opcional)**
+
+Use um número de WhatsApp de teste ou uma conta sandbox do CRM para avaliação segura.
+
+O Eazybe não requer instalação de software nas máquinas dos usuários - apenas uma leve instalação de extensão do Chrome com permissões específicas a nível de aba.
+
+---
+
+### **Opções de Integração**
+O Eazybe suporta integração segura com:
+
+- HubSpot, Zoho, Salesforce, LeadSquared, Freshdesk, Bitrix24
+- Google Sheets
+- Caixa de Entrada de Equipe (backup baseado no Google Drive)
+- CRMs personalizados via Webhooks ou URLs incorporadas
+
+Somos listados como um **aplicativo autorizado** em seus respectivos marketplaces:
+
+Plataforma
+
+Link da Listagem do App
+
+**HubSpot**
+
+[Eazybe no HubSpot Marketplace](https://www.google.com/search?q=https://ecosystem.hubspot.com/marketplace/apps/sales/sales-enablement/eazybe-1662483)
+
+**Zoho CRM**
+
+[Eazybe no Zoho Marketplace](https://www.google.com/search?q=https://marketplace.zoho.com/app/crm/eazybe-for-whatsapp)
+
+**Bitrix24**
+
+[Eazybe no Bitrix24 Marketplace](https://www.google.com/search?q=https://www.bitrix24.com/apps/%3Fapp%3Deazybe.eazybe)
+
+**Google Sheets**
+
+Suportado via conexão API segura (configuração manual).
+
+**Caixa de Entrada de Equipe**
+
+Usa o **Google Drive** para armazenamento seguro de conversas do WhatsApp em backup (requer autorização do usuário).
+
+**CRMs Personalizados**
+
+Suportado via **Webhooks** ou **Clique-para-WhatsApp** URLs incorporadas ([Docs →](https://www.google.com/search?q=https://help.eazybe.com/pt-BR/collections/6959828-usando-a-integracao-com-o-hubspot))
+
+---
+
+### **Como Testar com Segurança**
+Se sua empresa está em dúvida, recomendamos:
+
+- Usar um **número de WhatsApp temporário** para testes.
+- Limitar o acesso inicial a **contas de teste** no seu CRM.
+- Revisar a atividade da extensão através dos **controles de extensão do Chrome**.
+
+---
+
+### **Cancelamento/Desligamento (Offboarding)**
+Todo o acesso de teste pode ser revogado mediante solicitação. Usuários podem:
+
+- **Desinstalar a extensão** a qualquer momento.
+- **Desconectar as integrações** de CRM e/ou Google Sheets a partir dos painéis de suas respectivas contas.
+- **Solicitar a exclusão de dados sincronizados** da nossa equipe (se houver).
+
+---
+
+### **Precisa de Ajuda?**
+O Eazybe pode ajudar as equipes de TI durante a configuração e avaliação. Contate-nos em:
+
+**Email:** **[hey@eazybe.com](mailto:hey@eazybe.com)** **Suporte via WhatsApp:** Clique no ícone do WhatsApp na extensão para conversar diretamente.
