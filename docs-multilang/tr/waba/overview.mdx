@@ -1,108 +1,89 @@
 ---
-title: "WhatsApp Business API"
-description: "Connect your official WhatsApp Business Account to unlock broadcasts, automation, and team collaboration"
-icon: "whatsapp"
+title: "WhatsApp Business API (WABA)"
+description: "Official WhatsApp Business Platform integration for scalable messaging, broadcasts, and automation"
 ---
-
-<Frame>
-  <img src="/images/1112598009.png" alt="WABA Dashboard" />
-</Frame>
 
 ## What is WhatsApp Business API?
 
-The **WhatsApp Business API** (also known as WABA) is Meta's official solution for medium and large businesses to communicate with customers at scale. Unlike the regular WhatsApp Business App, the API enables:
+The **WhatsApp Business Platform (WABA)** is Meta's official API for businesses to communicate with customers at scale. Unlike the standard WhatsApp Business App or QR-code connection, WABA provides:
 
 <CardGroup cols={2}>
   <Card title="Broadcast Campaigns" icon="bullhorn">
-    Send promotional messages to thousands of opted-in contacts simultaneously
+    Send bulk messages to thousands of customers using approved templates
+  </Card>
+  <Card title="24/7 Availability" icon="clock">
+    Messages flow through Meta's servers - no need to keep WhatsApp Web open
   </Card>
   <Card title="Team Collaboration" icon="users">
-    Multiple team members can respond to customer messages from a shared inbox
+    Multiple team members can respond from a single business number
   </Card>
-  <Card title="CRM Integration" icon="plug">
-    Sync conversations with HubSpot, Zoho, Salesforce, and more
-  </Card>
-  <Card title="Automation" icon="robot">
-    Set up auto-replies, chatbots, and workflow triggers
+  <Card title="Automation Ready" icon="robot">
+    Connect to CRMs, chatbots, and workflows via API
   </Card>
 </CardGroup>
 
 ## WABA vs Chrome Extension
 
-| Feature | Chrome Extension | WABA |
-|---------|-----------------|------|
-| **Connection** | QR code scan | Official Meta API |
-| **Broadcasts** | Limited | Unlimited (with templates) |
-| **24/7 Uptime** | Requires laptop open | Cloud-based, always on |
-| **Team Access** | Via shared inbox | Direct multi-user access |
-| **Message Templates** | Not required | Required for outbound |
-| **Best For** | Individuals, small teams | Growing businesses, enterprises |
-
-<Info>
-**Starter Credits:** Every new business connecting WABA receives **₹100 or $1 free** credits to get started!
-</Info>
+| Feature | Chrome Extension (QR) | WABA (API) |
+|---------|----------------------|------------|
+| **Connection** | Scan QR code | Meta Embedded Signup |
+| **Requires laptop** | Yes (WhatsApp Web open) | No (cloud-based) |
+| **Broadcast messages** | Limited | Unlimited with templates |
+| **Multiple users** | One at a time | Team access |
+| **24/7 availability** | Only when online | Always available |
+| **Best for** | Individual users | Growing teams |
 
 ## Key Capabilities
 
-### 1. Template Messages
+### Message Templates
+Pre-approved message formats for outbound communication outside the 24-hour window. Categories include:
+- **Marketing** - Promotions, offers, newsletters
+- **Utility** - Order updates, shipping notifications, reminders
+- **Authentication** - OTPs, verification codes
 
-Pre-approved message formats for reaching customers outside the 24-hour window:
+### Broadcast Campaigns
+Send personalized messages to thousands of contacts:
+- Upload CSV with phone numbers
+- Select from approved templates
+- Track delivery, read rates, and responses
+- Free starter credits for new accounts
 
-- **Marketing:** Promotions, offers, announcements
-- **Utility:** Order updates, shipping notifications, appointment reminders
-- **Authentication:** OTPs, verification codes
-
-### 2. 24-Hour Messaging Window
-
-<Frame>
-  <img src="/images/1589309753.png" alt="24-hour messaging window" />
-</Frame>
-
-When a customer messages you, a **24-hour service window** opens where you can send any message (including free-form text) without template restrictions. After 24 hours, you must use an approved template to re-engage.
-
-### 3. Coexistence Mode
-
-Keep using your **WhatsApp Business App** on your phone while also connecting to the API. Messages sync between both platforms in real-time.
-
-<Card title="Learn More: Coexistence" icon="link" href="/waba/coexistence">
-  Use your existing WhatsApp Business number with the API without losing chat history
-</Card>
+### Coexistence Mode
+Keep using your WhatsApp Business App while also connecting to the API:
+- Same number on both App and API
+- Sync up to 6 months of chat history
+- No data loss during migration
 
 ## Getting Started
 
 <Steps>
-  <Step title="Prerequisites">
-    - Meta Business Account (create during setup if needed)
-    - Phone number that can receive OTP
-    - Admin access to Facebook Business Manager
+  <Step title="Check Prerequisites">
+    You need a Meta Business Account and a phone number for OTP verification
   </Step>
-  <Step title="Connect Your Account">
-    Go to Eazybe Workspace → **Settings** → **Connect WABA** and follow the embedded signup flow
+  <Step title="Connect WABA">
+    Complete the embedded signup flow to link your number to Eazybe
   </Step>
   <Step title="Create Templates">
-    Design and submit message templates for Meta approval (typically 24-48 hours)
+    Design and submit message templates for Meta approval
   </Step>
   <Step title="Fund Your Wallet">
-    Add credits to your Eazybe wallet to start sending broadcast messages
+    Add credits to send broadcast messages (free starter credits included!)
   </Step>
-  <Step title="Launch Campaigns">
-    Upload contacts, select a template, and send your first broadcast!
+  <Step title="Send Broadcasts">
+    Launch your first campaign to reach customers at scale
   </Step>
 </Steps>
 
-## Next Steps
+## Quick Links
 
-<CardGroup cols={2}>
+<CardGroup cols={3}>
   <Card title="Connect WABA" icon="plug" href="/waba/connect-waba">
-    Step-by-step connection guide
+    Setup guide
   </Card>
-  <Card title="Create Templates" icon="file-lines" href="/waba/templates/creating-templates">
-    Design message templates
+  <Card title="Coexistence" icon="arrows-rotate" href="/waba/coexistence">
+    Keep your existing number
   </Card>
-  <Card title="Send Broadcasts" icon="paper-plane" href="/waba/broadcasting/create-campaign">
-    Launch your first campaign
-  </Card>
-  <Card title="Pricing" icon="credit-card" href="/waba/pricing">
-    View message rates by country
+  <Card title="Pricing" icon="dollar-sign" href="/waba/pricing">
+    Message rates
   </Card>
 </CardGroup>

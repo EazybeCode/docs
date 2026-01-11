@@ -1,117 +1,87 @@
 ---
 title: "Wallet & Billing"
-description: "Manage your Eazybe wallet balance for WhatsApp API messaging"
+description: "Manage your Eazybe wallet balance for WABA messaging"
 ---
-
-<Frame>
-  <img src="/images/1112599780.png" alt="Eazybe Wallet" />
-</Frame>
 
 ## How Billing Works
 
-WhatsApp API messages are charged per message delivered. Eazybe uses a **prepaid wallet system**:
+Eazybe uses a **prepaid wallet system** for WABA messaging:
 
 1. Add funds to your Eazybe wallet
-2. Send messages (broadcasts, templates)
-3. Charges deduct automatically from your balance
-4. Get notifications when balance is low
+2. Send broadcasts using approved templates
+3. Message costs are deducted from your balance
+4. Top up when balance runs low
 
 <Info>
-**Starter Credits:** Every new business connecting WABA receives **₹100 or $1 free** credits to get started!
+**Starter Credits:** Every new business connecting WABA for the first time receives **$1 USD** or **₹100 INR** free credits to get started!
 </Info>
+
+## Message Costs
+
+Costs vary by:
+- **Template category** (Marketing, Utility, Authentication)
+- **Recipient's country**
+- **Message direction** (outbound templates cost, service messages are free)
+
+See [Pricing](/waba/pricing) for detailed rates by country.
 
 ## Managing Your Wallet
 
 ### Check Balance
 
-Navigate to **Workspace** → **Settings** → **Wallet** to view:
-- Current balance
-- Recent transactions
-- Usage history
+1. Go to **Workspace** → **Billing**
+2. View current balance in USD or INR
 
 ### Add Funds
 
 <Steps>
-  <Step title="Open Wallet">
-    Go to **Settings** → **Wallet** → **Add Funds**
+  <Step title="Navigate to Billing">
+    Go to **Workspace** → **Billing** → **Add Funds**
   </Step>
-  
   <Step title="Enter Amount">
-    Minimum: ₹500 / $10
-    
-    Choose from preset amounts or enter a custom value
+    Choose a preset amount or enter custom value
   </Step>
-  
   <Step title="Complete Payment">
-    Pay via:
-    - Credit/Debit Card
-    - UPI (India)
-    - Net Banking
-    - PayPal (International)
+    Pay via credit card, UPI, or bank transfer
   </Step>
-  
-  <Step title="Confirmation">
-    Funds reflect instantly in your wallet balance
+  <Step title="Funds Added">
+    Balance updates immediately after successful payment
   </Step>
 </Steps>
 
 ### Auto-Recharge
 
-Never run out of credits mid-campaign:
-
-<Steps>
-  <Step title="Enable Auto-Recharge">
-    **Wallet** → **Settings** → **Enable Auto-Recharge**
-  </Step>
-  
-  <Step title="Set Threshold">
-    Choose when to trigger recharge (e.g., when balance falls below ₹200)
-  </Step>
-  
-  <Step title="Set Amount">
-    Choose how much to auto-add (e.g., ₹1000)
-  </Step>
-  
-  <Step title="Save Payment Method">
-    Add a card or UPI for automatic billing
-  </Step>
-</Steps>
-
-## Understanding Charges
-
-| Message Type | When Charged | Rate |
-|--------------|--------------|------|
-| **Marketing** | Always (broadcast/promotional) | Higher |
-| **Utility** | Outside 24-hour window | Medium |
-| **Authentication** | OTPs, verification | Lower |
-| **Service** | Within 24-hour window | Free |
-
-<Tip>
-**Save Money:** Respond to customer messages within 24 hours to send utility updates for free!
-</Tip>
+Set up automatic top-ups to never run out:
+1. Go to **Billing** → **Auto-Recharge**
+2. Set minimum balance threshold
+3. Set recharge amount
+4. Enable auto-recharge
 
 ## Transaction History
 
-View detailed logs of all wallet activity:
+View all wallet activity:
+- Recharges
+- Message deductions
+- Refunds (if applicable)
 
-| Column | Description |
-|--------|-------------|
-| Date | Transaction timestamp |
-| Type | Credit (add funds) or Debit (message sent) |
-| Amount | ₹/$ value |
-| Balance | Remaining wallet balance |
-| Details | Campaign name, recipient count |
-
-Export history as CSV for accounting purposes.
+Go to **Billing** → **Transaction History** to see detailed logs.
 
 ## Low Balance Alerts
 
-Get notified before running out of credits:
+Receive notifications when your balance falls below a threshold:
+1. Go to **Settings** → **Notifications**
+2. Enable **Low Balance Alert**
+3. Set your threshold amount
 
-- **Email alerts** when balance drops below threshold
-- **In-app warnings** when creating campaigns
-- **Failed delivery** notifications if wallet is empty
+## Understanding Charges
 
-<Card title="View Pricing" icon="credit-card" href="/waba/pricing">
-  See message rates by country and category
-</Card>
+| Type | When Charged | Cost |
+|------|--------------|------|
+| **Marketing Template** | When broadcast sent | Varies by country |
+| **Utility Template** | When broadcast sent | Lower than marketing |
+| **Authentication Template** | When OTP sent | Lowest rate |
+| **Service Message** | Within 24hr window | FREE |
+
+<Tip>
+**Save Money:** Use Utility templates for transactional messages - they're significantly cheaper than Marketing templates and often have the same impact.
+</Tip>

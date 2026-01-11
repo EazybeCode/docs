@@ -1,146 +1,95 @@
 ---
 title: "Message Templates"
-description: "Understanding WhatsApp message templates for business communication"
+description: "Create and manage WhatsApp message templates for broadcast campaigns"
 ---
-
-<Frame>
-  <img src="/images/1112602309.png" alt="Message Templates" />
-</Frame>
 
 ## What Are Message Templates?
 
-**Message templates** are pre-approved message formats required by WhatsApp for:
-
-- Starting conversations with customers (outside 24-hour window)
-- Sending promotional/marketing messages
-- Broadcasts to multiple recipients
-
-Templates ensure businesses send high-quality, non-spammy messages to users.
+Message templates are pre-approved message formats required for sending outbound messages to customers outside the 24-hour conversation window. Every broadcast message must use an approved template.
 
 ## Template Categories
 
 <CardGroup cols={3}>
   <Card title="Marketing" icon="bullhorn">
-    **Promotional messages**
+    **Use for:** Promotions, offers, newsletters, product announcements
     
-    - Product announcements
-    - Limited-time offers
-    - Re-engagement campaigns
-    - Newsletter content
+    **Cost:** Higher rate
     
-    💰 Higher cost per message
+    **Example:** "Hi {{1}}! 🎉 Flash sale: 30% off all items this weekend only!"
   </Card>
   
   <Card title="Utility" icon="bell">
-    **Transactional updates**
+    **Use for:** Order updates, shipping notifications, appointment reminders
     
-    - Order confirmations
-    - Shipping notifications
-    - Appointment reminders
-    - Account alerts
+    **Cost:** Lower rate
     
-    💰 Medium cost
+    **Example:** "Your order #{{1}} has shipped! Track it here: {{2}}"
   </Card>
   
-  <Card title="Authentication" icon="lock">
-    **Verification messages**
+  <Card title="Authentication" icon="key">
+    **Use for:** OTPs, verification codes, login confirmations
     
-    - One-time passwords (OTP)
-    - Login verification
-    - Account recovery codes
+    **Cost:** Lowest rate
     
-    💰 Lower cost
+    **Example:** "Your verification code is {{1}}. Valid for 10 minutes."
   </Card>
 </CardGroup>
 
 ## Template Components
 
-Every template can include:
-
 | Component | Description | Required |
 |-----------|-------------|----------|
-| **Header** | Image, video, document, or text | Optional |
+| **Header** | Text, image, video, or document | Optional |
 | **Body** | Main message content with variables | Required |
-| **Footer** | Small text (e.g., "Reply STOP to unsubscribe") | Optional |
-| **Buttons** | Call-to-action or quick reply buttons | Optional |
+| **Footer** | Small text at bottom | Optional |
+| **Buttons** | Call-to-action or quick reply | Optional |
 
-### Variables
+## Variables
 
-Use placeholders for personalization:
+Use `{{1}}`, `{{2}}`, etc. to insert dynamic content:
 
 ```
-Hello {{1}}, your order #{{2}} has been shipped!
-Track it here: {{3}}
+Hi {{1}},
+
+Your order #{{2}} has been confirmed!
+Expected delivery: {{3}}
+
+Thank you for shopping with us!
 ```
-
-Variables are replaced with actual values when sending:
-- `{{1}}` → Customer name
-- `{{2}}` → Order number
-- `{{3}}` → Tracking URL
-
-## Template Lifecycle
-
-<Steps>
-  <Step title="Create">
-    Design your template in Eazybe Workspace
-  </Step>
-  
-  <Step title="Submit">
-    Template is sent to Meta for review
-  </Step>
-  
-  <Step title="Review">
-    Meta reviews (typically 24-48 hours)
-  </Step>
-  
-  <Step title="Approved / Rejected">
-    If approved: Ready to use
-    
-    If rejected: Edit and resubmit
-  </Step>
-  
-  <Step title="Use">
-    Select template when creating broadcasts
-  </Step>
-</Steps>
 
 ## Template Status
 
 | Status | Meaning |
 |--------|---------|
-| **Pending** | Under Meta review |
-| **Approved** | Ready to use |
-| **Rejected** | Failed review (see reason, edit, resubmit) |
-| **Paused** | Temporarily disabled (quality issues) |
-| **Disabled** | Permanently blocked |
+| 🟡 **Pending** | Submitted, awaiting Meta review |
+| 🟢 **Approved** | Ready to use in broadcasts |
+| 🔴 **Rejected** | Did not pass review (see reason) |
+| ⚪ **Paused** | Temporarily disabled due to quality |
 
 ## Best Practices
 
 <CardGroup cols={2}>
-  <Card title="Be Clear & Concise" icon="text">
-    State the purpose upfront. Avoid long, confusing messages.
+  <Card title="Be Clear & Specific" icon="bullseye">
+    Clearly state the purpose. Vague templates get rejected.
   </Card>
-  
   <Card title="Provide Value" icon="gift">
     Every message should benefit the recipient.
   </Card>
-  
-  <Card title="Include Opt-Out" icon="door-open">
-    Add "Reply STOP to unsubscribe" in footer for marketing.
+  <Card title="Match Category" icon="tags">
+    Don't use Marketing category for transactional messages.
   </Card>
-  
   <Card title="Test Variables" icon="vial">
-    Ensure all placeholders work correctly before launch.
+    Ensure variables make sense in context.
   </Card>
 </CardGroup>
 
-## Next Steps
+## Quick Links
 
 <CardGroup cols={2}>
-  <Card title="Create Templates" icon="plus" href="/waba/templates/creating-templates">
-    Step-by-step template creation guide
+  <Card title="Create Template" icon="plus" href="/waba/templates/creating-templates">
+    Step-by-step guide
   </Card>
   <Card title="Approval Process" icon="check" href="/waba/templates/approval-process">
-    How Meta reviews your templates
+    What Meta reviews
   </Card>
 </CardGroup>

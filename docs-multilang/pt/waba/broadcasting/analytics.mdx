@@ -1,91 +1,73 @@
 ---
 title: "Broadcast Analytics"
-description: "Track and measure your WhatsApp broadcast campaign performance"
+description: "Track campaign performance with delivery, read, and response metrics"
 ---
-
-<Frame>
-  <img src="/images/1112602937.png" alt="Analytics Dashboard" />
-</Frame>
 
 ## Campaign Metrics
 
-Track these key metrics for every broadcast:
+After sending a broadcast, track these key metrics:
 
-| Metric | Description |
-|--------|-------------|
-| **Sent** | Messages submitted to WhatsApp |
-| **Delivered** | Messages reached recipient's phone |
-| **Read** | Messages opened by recipient |
-| **Failed** | Delivery failures (invalid numbers, etc.) |
-| **Replied** | Recipients who responded |
-
-## Performance Calculations
-
-```
-Delivery Rate = (Delivered / Sent) × 100
-Read Rate = (Read / Delivered) × 100
-Response Rate = (Replied / Delivered) × 100
-```
-
-### Benchmarks
-
-| Metric | Good | Great | Excellent |
-|--------|------|-------|-----------|
-| Delivery Rate | >90% | >95% | >98% |
-| Read Rate | >50% | >70% | >85% |
-| Response Rate | >5% | >15% | >25% |
+| Metric | Description | How Calculated |
+|--------|-------------|----------------|
+| **Sent** | Messages submitted to WhatsApp | Total contacts attempted |
+| **Delivered** | Messages reached recipient's phone | ✓✓ double check mark |
+| **Read** | Messages opened by recipient | Blue ✓✓ marks |
+| **Failed** | Messages that couldn't be delivered | Sent - Delivered |
+| **Response Rate** | Recipients who replied | Replies ÷ Delivered |
 
 ## Viewing Analytics
 
 ### Campaign Level
 
-1. Go to **Workspace** → **Broadcasts**
-2. Click on a campaign name
-3. View detailed metrics and recipient breakdown
+1. Go to **Broadcasts** in the menu
+2. Find your campaign in the list
+3. Click to view detailed metrics
 
 ### Message Level
 
-For each recipient, see:
-- Sent timestamp
-- Delivered timestamp
-- Read timestamp (if available)
-- Error message (if failed)
+Click on individual contacts to see:
+- Delivery timestamp
+- Read timestamp
+- Any replies received
+
+## Performance Benchmarks
+
+| Metric | Good | Excellent |
+|--------|------|-----------|
+| **Delivery Rate** | > 90% | > 98% |
+| **Read Rate** | > 50% | > 70% |
+| **Response Rate** | > 5% | > 15% |
 
 ## Common Failure Reasons
 
-| Error | Cause | Solution |
-|-------|-------|----------|
-| **Invalid number** | Format incorrect or not on WhatsApp | Clean contact list |
-| **User blocked** | Recipient blocked your number | Remove from list |
-| **Template paused** | Quality issues with template | Use different template |
-| **Insufficient balance** | Wallet empty | Add funds |
-| **Rate limit** | Too many messages too fast | Spread over time |
-
-## Export Reports
-
-Download campaign data for further analysis:
-
-1. Open campaign details
-2. Click **Export** → **CSV**
-3. Includes all metrics per recipient
+| Reason | Solution |
+|--------|----------|
+| **Invalid number** | Verify phone format (include country code) |
+| **Not on WhatsApp** | Remove non-WhatsApp numbers from list |
+| **Blocked** | Respect opt-out requests |
+| **Rate limited** | Reduce sending speed |
+| **Template rejected** | Use an approved template |
 
 ## Improving Performance
 
 <CardGroup cols={2}>
-  <Card title="Clean Lists" icon="broom">
-    Remove invalid numbers before sending
+  <Card title="Clean Your List" icon="broom">
+    Remove invalid numbers and opt-outs before sending
+  </Card>
+  <Card title="Segment Audience" icon="filter">
+    Send relevant content to targeted groups
   </Card>
   <Card title="Optimize Timing" icon="clock">
-    Send during business hours for higher read rates
+    Send during business hours in recipient's timezone
   </Card>
-  <Card title="Personalize" icon="user">
-    Use recipient names and relevant variables
-  </Card>
-  <Card title="Clear CTAs" icon="hand-pointer">
-    Include obvious call-to-action buttons
+  <Card title="A/B Test" icon="vials">
+    Try different templates to find what works
   </Card>
 </CardGroup>
 
-<Card title="Best Practices" icon="star" href="/waba/broadcasting/best-practices">
-  Learn more tips to improve campaign performance
-</Card>
+## Exporting Reports
+
+1. Open the campaign analytics
+2. Click **Export** 
+3. Choose CSV or PDF format
+4. Download for offline analysis

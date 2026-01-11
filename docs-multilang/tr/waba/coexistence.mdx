@@ -1,150 +1,123 @@
 ---
 title: "Coexistence Mode"
-description: "Use your existing WhatsApp Business App number with the Cloud API simultaneously"
+description: "Connect your WhatsApp Business App number to the Cloud API without losing data"
 ---
-
-<Frame>
-  <img src="/images/1112599393.png" alt="Coexistence Mode" />
-</Frame>
 
 ## What is Coexistence?
 
-**Coexistence** is a Meta-provided feature that allows you to connect your active **WhatsApp Business App** phone number to the **WhatsApp Cloud API** without:
-
+**WhatsApp Coexistence** is a Meta-provided solution that allows you to connect your active WhatsApp Business App phone number to the Cloud API without:
 - Losing your chat history
-- Re-registering the number
-- Losing your verified badge
-- Abandoning your existing workflow
+- Losing your contacts
+- Re-registering your number
 
-Messages sync in real-time between both platforms, so your team can use the API while you continue using the mobile app.
+This is the **safest method** to migrate to WABA while keeping your existing data.
 
 ## Benefits
 
 <CardGroup cols={2}>
-  <Card title="Keep Your Number" icon="phone">
-    No need to get a new number or inform customers of a change
+  <Card title="Same Number" icon="hashtag">
+    Use the same phone number across both the WhatsApp Business App and API
   </Card>
-  <Card title="Sync Chat History" icon="clock-rotate-left">
-    Import up to 6 months of conversations during setup
+  <Card title="Real-Time Sync" icon="arrows-rotate">
+    Messages sent/received through the app appear in the API inbox and vice versa
   </Card>
-  <Card title="Dual Access" icon="mobile-screen">
-    Continue using WhatsApp Business App on your phone
+  <Card title="Human + Automation" icon="robot">
+    Use the mobile app for 1-to-1 chats, API for broadcasts and workflows
   </Card>
-  <Card title="Scale Gradually" icon="chart-line">
-    Add API features (broadcasts, automation) without disrupting operations
+  <Card title="Preserve History" icon="clock-rotate-left">
+    Sync up to 6 months of chat history and 2 weeks of media
   </Card>
 </CardGroup>
 
 ## Prerequisites
 
-Before enabling Coexistence:
-
 <Steps>
-  <Step title="Update WhatsApp Business App">
-    Ensure your app is version **2.24.17 or higher**
-    
-    Check: Settings → Help → App Info
+  <Step title="WhatsApp Business App">
+    Your number must be registered on the **WhatsApp Business App** (not personal WhatsApp)
   </Step>
-  
-  <Step title="Verify Meta Business Account">
-    Complete business verification in Meta Business Manager for best results
+  <Step title="App Version 2.24.17+">
+    Update your WhatsApp Business App to the latest version
   </Step>
-  
-  <Step title="Active Number Usage">
-    Your number should have at least **7 days** of real WhatsApp Business activity
-    
-    <Tip>
-    For smoothest approval, maintain active usage for 30-60 days before connecting
-    </Tip>
+  <Step title="Active Usage">
+    The number should have regular activity for at least 7 days (30-60 days recommended)
   </Step>
-  
-  <Step title="Clear Previous WABA">
-    If your number was previously connected to another API provider:
-    - Disconnect from that provider
-    - Wait **1-2 months** cooldown
-    - Re-register in WhatsApp Business App
+  <Step title="No Previous WABA">
+    If previously connected to another API provider, wait 1-2 months after disconnecting
+  </Step>
+  <Step title="Facebook Admin Access">
+    You need admin access to a Facebook Business Page
   </Step>
 </Steps>
 
-## How to Enable Coexistence
+## Setup Guide
 
 <Steps>
-  <Step title="Start Connection">
-    In Eazybe Workspace, go to **Settings** → **WABA** → **Add Number**
-    
-    Select **"Connect existing WhatsApp Business number"**
+  <Step title="Start Embedded Signup">
+    Begin the WABA connection process in Eazybe Workspace
   </Step>
   
-  <Step title="Enter Your Number">
-    Input your WhatsApp Business App number with country code (e.g., +91XXXXXXXXXX)
+  <Step title="Choose Existing Number">
+    Select "Connect your existing WhatsApp business number"
+    
+    <Frame>
+      <img src="/images/1908044314-image.png" alt="Enter Number" />
+    </Frame>
   </Step>
   
-  <Step title="Scan QR Code or Enter Code">
-    On your phone, you'll receive a message from **Facebook Business**:
+  <Step title="Scan QR Code">
+    A QR code appears on screen. Open WhatsApp Business App → you'll receive a message from Facebook → tap **Scan QR Code**
     
-    **Option 1:** Tap "Scan QR Code" and scan the code on screen
-    
-    **Option 2:** Enter the 8-digit code shown on your computer into the app
+    <Frame>
+      <img src="/images/1908049708-image.png" alt="Scan QR" />
+    </Frame>
   </Step>
   
-  <Step title="Import Chat History">
-    Meta will prompt you to import conversations. Select:
-    - **All chats** (up to 6 months)
-    - **Specific chats**
-    - **Skip import**
+  <Step title="Choose Chat Import">
+    Select what to import:
+    - Up to 6 months of 1:1 chats
+    - Up to 2 weeks of media
+    - All contacts (automatic)
     
-    <Warning>
-    Keep WhatsApp Business App open during import for best results. Group chats are not imported.
-    </Warning>
+    <Frame>
+      <img src="/images/1908050113-image.png" alt="Import Options" />
+    </Frame>
   </Step>
   
-  <Step title="Confirm Connection">
-    Review your business details and click **Confirm**. Your status will show **"Connected via Coexistence"**
+  <Step title="Complete Setup">
+    Wait for the connection to complete, then click **Finish**
+    
+    <Frame>
+      <img src="/images/1908055256-image.png" alt="Finish" />
+    </Frame>
   </Step>
 </Steps>
 
-## How It Works After Setup
-
-<Frame>
-  <img src="/images/1589309753.png" alt="Message flow in coexistence" />
-</Frame>
-
-| Action | What Happens |
-|--------|--------------|
-| Customer messages you | Appears in both WhatsApp Business App AND Eazybe Team Inbox |
-| You reply from App | Message syncs to API inbox |
-| You reply from Eazybe | Message syncs to mobile app |
-| Send broadcast | Goes through API only (requires templates) |
-| Receive call | Only on WhatsApp Business App |
-
-## Disconnecting Coexistence
-
-If you need to disable Coexistence:
-
-1. Open **WhatsApp Business App** on your phone
-2. Go to: **Settings** → **Business Tools** → **WhatsApp Business Platform**
-3. Tap **Disconnect**
+## Important Notes
 
 <Warning>
-After disconnecting, you must wait **1-2 months** before reconnecting the same number to any WABA provider.
+**Countries Not Supported:** Nigeria and South Africa currently have restrictions for Coexistence. Check Meta's latest documentation.
 </Warning>
 
-## FAQs
+<Info>
+**Keep App Open:** During the initial sync, keep your WhatsApp Business App open to ensure chat history imports correctly.
+</Info>
+
+## FAQ
 
 <AccordionGroup>
-  <Accordion title="Can I use Coexistence with a personal WhatsApp number?">
-    No. Only **WhatsApp Business App** numbers are supported. Personal WhatsApp numbers cannot be connected to the API.
+  <Accordion title="Can I still use the WhatsApp Business App?">
+    Yes! You can continue using the app normally for manual conversations while Eazybe handles broadcasts and automation.
   </Accordion>
   
-  <Accordion title="Will I lose any data when enabling Coexistence?">
-    No. Your chat history, contacts, and media remain intact. You can also import up to 6 months of history into the API platform.
+  <Accordion title="Will I lose my chat history?">
+    No. The setup syncs your chat history and contacts. Nothing is deleted from your WhatsApp Business App.
   </Accordion>
   
-  <Accordion title="Is Coexistence free?">
-    Yes, the Coexistence feature itself has no additional cost. However, standard message charges (for broadcasts/templates) and your Eazybe subscription still apply.
+  <Accordion title="What if I want to disconnect?">
+    You can disconnect at any time. Note that reconnecting the same number may require a 1-2 month cooldown period.
   </Accordion>
   
-  <Accordion title="What if my number was previously used with another API provider?">
-    You must fully disconnect from the previous provider and wait 1-2 months before connecting via Eazybe. Attempting to connect too soon will result in eligibility errors.
+  <Accordion title="My number was previously on another API provider">
+    Delete the old WABA configuration, re-register in the Business App, and use it actively for 1-2 months before trying Coexistence again.
   </Accordion>
 </AccordionGroup>

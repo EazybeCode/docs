@@ -3,135 +3,116 @@ title: "Connect Your WABA"
 description: "Step-by-step guide to connect your WhatsApp Business Account to Eazybe"
 ---
 
-<Frame>
-  <img src="/images/1112598819.png" alt="WABA Connection Flow" />
-</Frame>
+## Prerequisites
 
-## Connection Methods
+Before connecting, ensure you have:
 
-Choose your preferred method based on how you want to connect:
-
-<Tabs>
-  <Tab title="From Workspace">
-    ### Connect via Eazybe Workspace
-    
-    <Steps>
-      <Step title="Open WABA Settings">
-        Log into your **Eazybe Workspace** and navigate to:
-        
-        **Settings** → **WhatsApp Business API** → **Add Number**
-      </Step>
-      
-      <Step title="Start Embedded Signup">
-        Click **"Connect with Facebook"** to begin Meta's embedded signup flow.
-        
-        <Warning>
-        This popup is managed by Facebook. Eazybe does not see or store your Facebook login credentials.
-        </Warning>
-      </Step>
-      
-      <Step title="Select or Create Business Account">
-        Choose an existing Meta Business Account or create a new one. Fill in all required business details:
-        - Business name
-        - Address
-        - Website
-        - Business category
-      </Step>
-      
-      <Step title="Choose Connection Type">
-        Select one of the following:
-        
-        - **Connect existing WhatsApp Business number** (Coexistence)
-        - **Start with a new number**
-      </Step>
-      
-      <Step title="Verify Your Number">
-        Enter your phone number with country code. You'll receive a verification code via:
-        - SMS message, or
-        - Voice call
-        
-        Enter the OTP to verify ownership.
-      </Step>
-      
-      <Step title="Import Chat History (Coexistence Only)">
-        If connecting an existing number:
-        
-        1. Open WhatsApp Business App on your phone
-        2. You'll receive a message from "Facebook Business"
-        3. Tap **"Scan QR Code"** or enter the access code shown
-        4. Keep the app open to sync up to 6 months of chat history
-      </Step>
-      
-      <Step title="Complete Setup">
-        Review and confirm your business details, then click **"Finish"**.
-        
-        Your account status will show as **Connected** ✅
-      </Step>
-    </Steps>
-  </Tab>
+<AccordionGroup>
+  <Accordion title="Meta Business Account" icon="meta">
+    Your business must be set up on Meta's Business Manager. You can create one during the setup process if you don't have one.
+  </Accordion>
   
-  <Tab title="From Extension">
-    ### Connect via Chrome Extension
-    
-    <Steps>
-      <Step title="Open Extension Settings">
-        Click the **Eazybe icon** in WhatsApp Web, then navigate to:
-        
-        **Settings** → **WABA** → **Connect Account**
-      </Step>
-      
-      <Step title="Follow Embedded Signup">
-        The same Meta embedded signup flow will open. Complete all steps as described in the Workspace method.
-      </Step>
-      
-      <Step title="Verify Connection">
-        Once connected, you'll see a green **WABA** badge in your extension indicating successful connection.
-      </Step>
-    </Steps>
-  </Tab>
-</Tabs>
-
-## After Connection
-
-Once your WABA is connected:
-
-<CardGroup cols={2}>
-  <Card title="Create Templates" icon="file-plus">
-    Design and submit message templates for Meta approval before sending broadcasts.
-    
-    [Create Templates →](/waba/templates/creating-templates)
-  </Card>
+  <Accordion title="Phone Number" icon="phone">
+    A phone number that can receive OTP for verification. This can be:
+    - A new number
+    - Your existing WhatsApp Business number (Coexistence mode)
+  </Accordion>
   
-  <Card title="Fund Your Wallet" icon="wallet">
-    Add credits to send paid messages. Every new account gets ₹100/$1 free credits!
+  <Accordion title="Facebook Page Admin Access" icon="facebook">
+    You must have admin access to a Facebook Business Page connected to your Meta Business Account.
+  </Accordion>
+</AccordionGroup>
+
+## Connection Steps
+
+<Steps>
+  <Step title="Login to Eazybe Workspace">
+    Enter your email and verify with the OTP sent to your inbox
     
-    [Manage Wallet →](/waba/wallet)
-  </Card>
-</CardGroup>
+    <Frame>
+      <img src="/images/1908028628-image.png" alt="Login" />
+    </Frame>
+  </Step>
+  
+  <Step title="Click Add Number">
+    From the Get Started page, click **Add Number** to begin embedded signup
+    
+    <Frame>
+      <img src="/images/1908032104-image.png" alt="Add Number" />
+    </Frame>
+  </Step>
+  
+  <Step title="Login with Facebook">
+    Continue with your Facebook account that has admin access
+    
+    <Frame>
+      <img src="/images/1908034817-image.png" alt="Facebook Login" />
+    </Frame>
+  </Step>
+  
+  <Step title="Grant Permissions">
+    Click **Continue** to grant Eazybe the required permissions
+    
+    <Frame>
+      <img src="/images/1908035914-image.png" alt="Permissions" />
+    </Frame>
+  </Step>
+  
+  <Step title="Fill Business Details">
+    Enter your business information as requested
+    
+    <Frame>
+      <img src="/images/1908036666-image.png" alt="Business Details" />
+    </Frame>
+  </Step>
+  
+  <Step title="Select Business Portfolio">
+    Choose an existing portfolio or create a new one
+    
+    <Frame>
+      <img src="/images/1908037094-image.png" alt="Business Portfolio" />
+    </Frame>
+  </Step>
+  
+  <Step title="Enter Phone Number">
+    Choose your country code and enter your number
+    
+    <Frame>
+      <img src="/images/1908044314-image.png" alt="Phone Number" />
+    </Frame>
+  </Step>
+  
+  <Step title="Complete Verification">
+    For existing numbers, scan the QR code from your WhatsApp Business App. For new numbers, enter the OTP received.
+  </Step>
+  
+  <Step title="Finish Setup">
+    Click **Finish** to complete the connection
+    
+    <Frame>
+      <img src="/images/1908055256-image.png" alt="Finish" />
+    </Frame>
+  </Step>
+</Steps>
 
 ## Troubleshooting
 
 <AccordionGroup>
-  <Accordion title="Number not eligible for connection">
-    This usually means:
-    - The number lacks sufficient activity (use it actively for 7-30 days)
-    - It was recently disconnected from another provider (wait 1-2 months)
-    - It's a personal WhatsApp number (must be Business App)
+  <Accordion title="Integration Failed">
+    Common causes:
+    - Old WhatsApp version (need 2.24.17+)
+    - Number inactivity
+    - Meta restrictions on the number
+    - No Facebook Page admin access
+    
+    **Solution:** Use a number with active WhatsApp Business usage and no policy violations.
   </Accordion>
   
-  <Accordion title="Can't find 'Connect to Business Platform' message">
-    Ensure your WhatsApp Business App is version **2.24.17 or higher**. Update from your app store if needed.
+  <Accordion title="Number Not Eligible">
+    Your number may need more activity before connecting. Use it actively on WhatsApp Business App for 7-30 days.
   </Accordion>
   
-  <Accordion title="Chat history not syncing">
-    Keep your WhatsApp Business App open during the sync process. Ensure stable internet connection on both phone and computer.
-  </Accordion>
-  
-  <Accordion title="Country not supported">
-    Some regions have restrictions. Contact support@eazybe.com for alternatives.
+  <Accordion title="Country Not Supported">
+    Some countries (e.g., Nigeria, South Africa) may have restrictions. Check Meta's latest supported regions.
   </Accordion>
 </AccordionGroup>
-
-<Card title="Need Help?" icon="headset" href="mailto:support@eazybe.com">
-  Contact our support team for connection assistance
-</Card>
