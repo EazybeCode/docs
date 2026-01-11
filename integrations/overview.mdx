@@ -1,17 +1,19 @@
 ---
 title: 'CRM Integrations'
-description: 'Connect WhatsApp with your favorite CRM'
+description: 'Connect Eazybe with your favorite CRM'
 ---
 
-## Supported CRMs
+## Overview
 
-Eazybe integrates with major CRM platforms to sync your WhatsApp conversations automatically.
+Eazybe integrates with popular CRMs to sync contacts, backup conversations, and automate workflows. Choose your CRM below to get started.
+
+## Supported CRMs
 
 <CardGroup cols={3}>
   <Card title="HubSpot" icon="hubspot" href="/integrations/hubspot/overview">
     Full integration with contacts, deals, workflows
   </Card>
-  <Card title="Zoho CRM" icon="z" href="/integrations/zoho/overview">
+  <Card title="Zoho CRM" icon="circle-nodes" href="/integrations/zoho/overview">
     Sync contacts, leads, and conversations
   </Card>
   <Card title="Salesforce" icon="salesforce" href="/integrations/salesforce/overview">
@@ -20,69 +22,65 @@ Eazybe integrates with major CRM platforms to sync your WhatsApp conversations a
   <Card title="Pipedrive" icon="pipe-section" href="/integrations/pipedrive/overview">
     Pipeline-focused CRM sync
   </Card>
-  <Card title="LeadSquared" icon="square" href="/integrations/leadsquared/overview">
+  <Card title="LeadSquared" icon="bullseye" href="/integrations/leadsquared/overview">
     Sales automation integration
   </Card>
-  <Card title="Bitrix24" icon="b" href="/integrations/bitrix/overview">
+  <Card title="Bitrix24" icon="cubes" href="/integrations/bitrix/overview">
     All-in-one business platform
   </Card>
   <Card title="Google Sheets" icon="table" href="/integrations/google-sheets/overview">
-    Simple spreadsheet sync
+    Spreadsheet-based contact management
   </Card>
   <Card title="Freshdesk" icon="headset" href="/integrations/freshdesk/overview">
     Support ticket integration
   </Card>
+  <Card title="Webhooks" icon="code" href="/integrations/webhooks/overview">
+    Custom integrations via API
+  </Card>
 </CardGroup>
 
-## What Gets Synced
+## Integration Features
 
-| Data Type | Direction | Description |
-|-----------|-----------|-------------|
-| Contacts | ↔️ Bidirectional | Create and link contacts |
-| Conversations | → To CRM | Chat backup to timeline |
-| Properties | ↔️ Bidirectional | Edit contact fields |
-| Deals | ← From CRM | View deal info in WhatsApp |
-| Tasks | → To CRM | Create follow-ups |
-| Labels | ↔️ Bidirectional | Sync tags/labels |
+| Feature | HubSpot | Zoho | Salesforce | Pipedrive | LeadSquared |
+|---------|---------|------|------------|-----------|-------------|
+| Contact Sync | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Chat Backup | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Mini-CRM View | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Workflows | ✅ | ✅ | 🔜 | 🔜 | 🔜 |
+| Dynamic Labels | ✅ | ✅ | 🔜 | ❌ | ❌ |
 
-## Choosing Your Integration
+## How It Works
 
-<Tabs>
-  <Tab title="Sales Teams">
-    **Recommended: HubSpot, Salesforce, Pipedrive**
-    
-    - Full deal pipeline visibility
-    - Workflow automation
-    - Activity logging
-  </Tab>
-  <Tab title="Small Business">
-    **Recommended: Google Sheets, Zoho**
-    
-    - Simple setup
-    - Low/no cost
-    - Essential features
-  </Tab>
-  <Tab title="Support Teams">
-    **Recommended: Freshdesk, HubSpot Service Hub**
-    
-    - Ticket creation
-    - Customer history
-    - SLA tracking
-  </Tab>
-</Tabs>
+<Steps>
+  <Step title="Connect CRM">
+    One-click OAuth connection to your CRM
+  </Step>
+  <Step title="Map Fields">
+    Configure which fields sync between systems
+  </Step>
+  <Step title="Enable Features">
+    Turn on chat backup, contact sync, and workflows
+  </Step>
+  <Step title="Start Using">
+    See CRM data in WhatsApp, sync conversations automatically
+  </Step>
+</Steps>
 
-## Integration Features by CRM
+## Key Capabilities
 
-| Feature | HubSpot | Zoho | Salesforce | Pipedrive |
-|---------|---------|------|------------|-----------|
-| Contact sync | ✅ | ✅ | ✅ | ✅ |
-| Chat backup | ✅ | ✅ | ✅ | ✅ |
-| Mini-CRM view | ✅ | ✅ | ✅ | ✅ |
-| Deals | ✅ | ✅ | ✅ | ✅ |
-| Tasks | ✅ | ✅ | ✅ | ✅ |
-| Workflows | ✅ | ✅ | ⚠️ | ❌ |
-| Dynamic labels | ✅ | ❌ | ❌ | ❌ |
+### Contact Sync
+Automatically match WhatsApp contacts with CRM records using phone number matching.
 
-## Next Steps
+### Chat Backup
+Every WhatsApp conversation is backed up to your CRM timeline for full visibility.
 
-Select your CRM from the list above to view the detailed setup guide.
+### Mini-CRM View
+Access and edit CRM data (contacts, deals, tasks) directly from WhatsApp without switching apps.
+
+### Workflows
+Trigger WhatsApp messages automatically when CRM events occur (deal stage change, new lead, etc.)
+
+## Need Help?
+
+- **Setup Guides**: Click on your CRM above for detailed instructions
+- **Support**: [support@eazybe.com](mailto:support@eazybe.com)
