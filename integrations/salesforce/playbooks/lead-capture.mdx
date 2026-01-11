@@ -1,0 +1,55 @@
+---
+title: 'Lead Capture to Salesforce'
+description: 'Automatically create Salesforce leads from WhatsApp'
+---
+
+<Info>
+**Setup Time**: 10 minutes | **Difficulty**: Easy | **Salesforce Edition**: All
+</Info>
+
+## The Problem
+
+WhatsApp leads don't make it into Salesforce pipeline.
+
+## The Solution
+
+Eazybe automatically creates Salesforce leads when new WhatsApp conversations start.
+
+<Frame caption="Automatic lead creation in Salesforce">
+  <img src="/images/salesforce/lead-capture-solution.gif" alt="Auto-create Salesforce lead" />
+</Frame>
+
+## Step-by-Step Setup
+
+<Steps>
+  <Step title="Open Eazybe Settings">
+    Click **Eazybe icon** → **Settings** → **CRM Integration**
+  </Step>
+  
+  <Step title="Enable Auto-Create">
+    Toggle **Auto-create records in Salesforce** to ON
+    
+    <Frame>
+      <img src="/images/salesforce/auto-create-toggle.png" alt="Auto-create toggle" />
+    </Frame>
+  </Step>
+  
+  <Step title="Configure Field Mapping">
+    | WhatsApp | Salesforce Field |
+    |----------|------------------|
+    | Phone Number | Mobile Phone |
+    | Profile Name | First Name |
+    | - | Lead Source = "WhatsApp" |
+    | - | Lead Owner = Rep who received message |
+    
+    <Frame>
+      <img src="/images/salesforce/field-mapping.png" alt="Field mapping" />
+    </Frame>
+  </Step>
+</Steps>
+
+## What It Looks Like in Salesforce
+
+<Frame caption="New lead in Salesforce from WhatsApp">
+  <img src="/images/salesforce/new-lead-created.png" alt="Salesforce lead" />
+</Frame>

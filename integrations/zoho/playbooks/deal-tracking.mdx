@@ -1,0 +1,71 @@
+---
+title: 'Deal Tracking Alerts'
+description: 'WhatsApp notifications when Zoho deals change stage'
+---
+
+<Info>
+**Setup Time**: 15 minutes | **Difficulty**: Medium | **Zoho Edition**: Professional+
+</Info>
+
+## The Problem
+
+Customers don't know their deal status unless reps manually update them.
+
+## The Solution
+
+Automatic WhatsApp notifications when deals move through your pipeline.
+
+<Frame caption="Deal stage WhatsApp notification">
+  <img src="/images/zoho/deal-alert.gif" alt="Deal stage alert" />
+</Frame>
+
+## Step-by-Step Setup
+
+<Steps>
+  <Step title="Create Templates for Each Stage">
+    Create approved templates for key stages:
+    
+    **Qualified:**
+    ```
+    Hi {{1}}, great news! Your inquiry has been qualified. 
+    {{2}} will reach out to schedule a demo.
+    ```
+    
+    **Proposal Sent:**
+    ```
+    Hi {{1}}, I've just sent over the proposal for {{2}}. 
+    Let me know if you have any questions!
+    ```
+  </Step>
+  
+  <Step title="Create Workflow Rule">
+    **Setup** → **Automation** → **Workflow Rules** → **+ Create Rule**
+    
+    Module: Deals
+    Trigger: On field update → Stage
+  </Step>
+  
+  <Step title="Add Condition">
+    When Stage equals "Proposal Sent"
+    
+    <Frame>
+      <img src="/images/zoho/stage-condition.png" alt="Stage condition" />
+    </Frame>
+  </Step>
+  
+  <Step title="Add WhatsApp Action">
+    Configure webhook to send WhatsApp via Eazybe
+  </Step>
+</Steps>
+
+## Best Practices
+
+<AccordionGroup>
+  <Accordion title="Don't notify on every stage">
+    Pick 3-4 key stages that matter most to customers.
+  </Accordion>
+  
+  <Accordion title="Include next steps">
+    Tell customers what happens next, not just that something changed.
+  </Accordion>
+</AccordionGroup>

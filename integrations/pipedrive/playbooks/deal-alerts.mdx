@@ -1,0 +1,39 @@
+---
+title: 'Deal Stage Alerts'
+description: 'WhatsApp notifications when Pipedrive deals move'
+---
+
+<Info>
+**Setup Time**: 15 minutes | **Difficulty**: Medium | **Pipedrive Plan**: Professional+  
+**Requires**: WABA
+</Info>
+
+## The Solution
+
+Automatic WhatsApp when deals change stage.
+
+## Setup
+
+<Steps>
+  <Step title="Create Templates">
+    Create approved templates for each stage notification
+  </Step>
+  
+  <Step title="Configure Pipedrive Automation">
+    **Settings** → **Automation** → **Create automation**
+    
+    Trigger: Deal stage changed
+    
+    <Frame>
+      <img src="/images/pipedrive/automation-trigger.png" alt="Automation trigger" />
+    </Frame>
+  </Step>
+  
+  <Step title="Add Webhook Action">
+    Add webhook action pointing to Eazybe endpoint
+    
+    <Frame>
+      <img src="/images/pipedrive/webhook-action.png" alt="Webhook action" />
+    </Frame>
+  </Step>
+</Steps>

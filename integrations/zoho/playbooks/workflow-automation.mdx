@@ -1,0 +1,108 @@
+---
+title: 'Zoho Workflow Automation'
+description: 'Trigger WhatsApp messages from Zoho workflow rules'
+---
+
+<Info>
+**Setup Time**: 20 minutes | **Difficulty**: Medium | **Zoho Edition**: Professional+  
+**Requires**: WhatsApp Business API (WABA)
+</Info>
+
+## The Problem
+
+Manual follow-ups are inconsistent and time-consuming.
+
+## The Solution
+
+Zoho workflow rules automatically trigger WhatsApp messages.
+
+<Frame caption="Zoho workflow triggering WhatsApp">
+  <img src="/images/zoho/workflow-automation.gif" alt="Zoho workflow WhatsApp" />
+</Frame>
+
+## Step-by-Step Setup
+
+### Part 1: Create Message Template
+
+<Steps>
+  <Step title="Create Template in Eazybe">
+    Navigate to **WABA** → **Message Templates** → **+ New Template**
+    
+    ```
+    Hi {{1}}, thanks for your interest in {{2}}! 
+    Our team will reach out within 24 hours.
+    ```
+  </Step>
+  
+  <Step title="Submit for Approval">
+    Wait 24-48 hours for Meta approval
+  </Step>
+</Steps>
+
+### Part 2: Create Zoho Workflow Rule
+
+<Steps>
+  <Step title="Go to Workflow Rules">
+    In Zoho: **Setup** → **Automation** → **Workflow Rules**
+    
+    <Frame>
+      <img src="/images/zoho/workflow-rules.png" alt="Zoho workflow rules" />
+    </Frame>
+  </Step>
+  
+  <Step title="Create New Rule">
+    Click **+ Create Rule** → Select module (Leads, Contacts, Deals)
+    
+    <Frame>
+      <img src="/images/zoho/create-rule.png" alt="Create workflow rule" />
+    </Frame>
+  </Step>
+  
+  <Step title="Set Trigger">
+    Choose when to trigger:
+    - On record create
+    - On record edit
+    - On field update
+    - Date/time based
+    
+    <Frame>
+      <img src="/images/zoho/workflow-trigger.png" alt="Workflow trigger" />
+    </Frame>
+  </Step>
+  
+  <Step title="Add Webhook Action">
+    **Instant Actions** → **Webhook** → Configure Eazybe endpoint
+    
+    <Frame>
+      <img src="/images/zoho/webhook-action.png" alt="Webhook configuration" />
+    </Frame>
+  </Step>
+  
+  <Step title="Activate Rule">
+    Save and activate the workflow rule
+  </Step>
+</Steps>
+
+## Common Workflow Examples
+
+### New Lead Follow-up
+```
+Trigger: Lead created
+Action: Send WhatsApp welcome message
+```
+
+### Deal Stage Change
+```
+Trigger: Stage changed to "Proposal Sent"
+Action: Send WhatsApp with proposal details
+```
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="Workflow not triggering?">
+    1. Check rule is active
+    2. Verify trigger conditions are met
+    3. Check webhook URL is correct
+  </Accordion>
+</AccordionGroup>

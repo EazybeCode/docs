@@ -241,9 +241,13 @@
                   "integrations/hubspot/mini-crm/call-logs"
                 ]
               },
+              "integrations/hubspot/workflows",
+              "integrations/hubspot/dynamic-labels",
+              "integrations/hubspot/admin-management",
+              "integrations/hubspot/troubleshooting",
+              "integrations/hubspot/faq",
               {
                 "group": "Playbooks",
-                "icon": "book-open",
                 "pages": [
                   "integrations/hubspot/playbooks/overview",
                   "integrations/hubspot/playbooks/lead-capture",
@@ -253,12 +257,7 @@
                   "integrations/hubspot/playbooks/team-performance",
                   "integrations/hubspot/playbooks/broadcast-lists"
                 ]
-              },
-              "integrations/hubspot/workflows",
-              "integrations/hubspot/dynamic-labels",
-              "integrations/hubspot/admin-management",
-              "integrations/hubspot/troubleshooting",
-              "integrations/hubspot/faq"
+              }
             ]
           },
           {
@@ -282,7 +281,17 @@
               "integrations/zoho/workflows",
               "integrations/zoho/admin-management",
               "integrations/zoho/troubleshooting",
-              "integrations/zoho/faq"
+              "integrations/zoho/faq",
+              {
+                "group": "Playbooks",
+                "pages": [
+                  "integrations/zoho/playbooks/overview",
+                  "integrations/zoho/playbooks/lead-capture",
+                  "integrations/zoho/playbooks/chat-backup",
+                  "integrations/zoho/playbooks/workflow-automation",
+                  "integrations/zoho/playbooks/deal-tracking"
+                ]
+              }
             ]
           },
           {
@@ -305,7 +314,17 @@
               },
               "integrations/salesforce/admin-management",
               "integrations/salesforce/troubleshooting",
-              "integrations/salesforce/faq"
+              "integrations/salesforce/faq",
+              {
+                "group": "Playbooks",
+                "pages": [
+                  "integrations/salesforce/playbooks/overview",
+                  "integrations/salesforce/playbooks/lead-capture",
+                  "integrations/salesforce/playbooks/chat-backup",
+                  "integrations/salesforce/playbooks/flow-automation",
+                  "integrations/salesforce/playbooks/opportunity-alerts"
+                ]
+              }
             ]
           },
           {
@@ -317,7 +336,16 @@
               "integrations/pipedrive/contact-sync",
               "integrations/pipedrive/chat-backup",
               "integrations/pipedrive/mini-crm",
-              "integrations/pipedrive/troubleshooting"
+              "integrations/pipedrive/troubleshooting",
+              {
+                "group": "Playbooks",
+                "pages": [
+                  "integrations/pipedrive/playbooks/overview",
+                  "integrations/pipedrive/playbooks/contact-capture",
+                  "integrations/pipedrive/playbooks/chat-backup",
+                  "integrations/pipedrive/playbooks/deal-alerts"
+                ]
+              }
             ]
           },
           {
@@ -332,7 +360,16 @@
               "integrations/leadsquared/mini-crm",
               "integrations/leadsquared/admin-management",
               "integrations/leadsquared/troubleshooting",
-              "integrations/leadsquared/faq"
+              "integrations/leadsquared/faq",
+              {
+                "group": "Playbooks",
+                "pages": [
+                  "integrations/leadsquared/playbooks/overview",
+                  "integrations/leadsquared/playbooks/lead-capture",
+                  "integrations/leadsquared/playbooks/chat-backup",
+                  "integrations/leadsquared/playbooks/automation-rules"
+                ]
+              }
             ]
           },
           {
@@ -344,7 +381,15 @@
               "integrations/bitrix/contact-sync",
               "integrations/bitrix/chat-backup",
               "integrations/bitrix/mini-crm",
-              "integrations/bitrix/troubleshooting"
+              "integrations/bitrix/troubleshooting",
+              {
+                "group": "Playbooks",
+                "pages": [
+                  "integrations/bitrix/playbooks/overview",
+                  "integrations/bitrix/playbooks/contact-capture",
+                  "integrations/bitrix/playbooks/chat-backup"
+                ]
+              }
             ]
           },
           {

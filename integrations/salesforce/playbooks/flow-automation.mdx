@@ -1,0 +1,81 @@
+---
+title: 'Salesforce Flow Automation'
+description: 'Trigger WhatsApp messages from Salesforce Flows'
+---
+
+<Info>
+**Setup Time**: 25 minutes | **Difficulty**: Medium | **Salesforce Edition**: Enterprise+  
+**Requires**: WhatsApp Business API (WABA)
+</Info>
+
+## The Problem
+
+Manual follow-ups don't scale.
+
+## The Solution
+
+Salesforce Flows automatically trigger WhatsApp messages.
+
+<Frame caption="Salesforce Flow sending WhatsApp">
+  <img src="/images/salesforce/flow-automation.gif" alt="Flow automation" />
+</Frame>
+
+## Step-by-Step Setup
+
+### Part 1: Create Message Template
+
+Create and get template approved in Eazybe WABA section.
+
+### Part 2: Create Salesforce Flow
+
+<Steps>
+  <Step title="Go to Flow Builder">
+    **Setup** → **Process Automation** → **Flows** → **New Flow**
+    
+    <Frame>
+      <img src="/images/salesforce/flow-builder.png" alt="Flow Builder" />
+    </Frame>
+  </Step>
+  
+  <Step title="Choose Flow Type">
+    Select **Record-Triggered Flow** for automatic triggers
+  </Step>
+  
+  <Step title="Configure Trigger">
+    - Object: Lead, Contact, or Opportunity
+    - Trigger: When record is created/updated
+    - Condition: Your criteria
+    
+    <Frame>
+      <img src="/images/salesforce/flow-trigger.png" alt="Flow trigger" />
+    </Frame>
+  </Step>
+  
+  <Step title="Add HTTP Callout Action">
+    Add action to call Eazybe webhook endpoint
+    
+    <Frame>
+      <img src="/images/salesforce/http-callout.png" alt="HTTP callout" />
+    </Frame>
+  </Step>
+  
+  <Step title="Activate Flow">
+    Save and activate the flow
+  </Step>
+</Steps>
+
+## Common Flow Examples
+
+### New Lead Welcome
+```
+Trigger: Lead created
+Condition: Lead Source = "Website"
+Action: Send WhatsApp welcome message
+```
+
+### Opportunity Stage Change
+```
+Trigger: Opportunity updated
+Condition: Stage changed to "Proposal"
+Action: Send WhatsApp with proposal link
+```

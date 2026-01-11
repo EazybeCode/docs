@@ -1,0 +1,51 @@
+---
+title: 'Chat Backup to Salesforce'
+description: 'Log WhatsApp messages to Salesforce activity history'
+---
+
+<Info>
+**Setup Time**: 5 minutes | **Difficulty**: Easy | **Salesforce Edition**: All
+</Info>
+
+## The Problem
+
+WhatsApp conversations aren't visible in Salesforce.
+
+## The Solution
+
+Every WhatsApp message appears in Salesforce activity timeline.
+
+<Frame caption="WhatsApp in Salesforce activity">
+  <img src="/images/salesforce/chat-backup-solution.gif" alt="WhatsApp in Salesforce" />
+</Frame>
+
+## Step-by-Step Setup
+
+<Steps>
+  <Step title="Enable Chat Backup">
+    Go to **Settings** → **Integrations** → **Salesforce** → Enable **Chat Backup**
+    
+    <Frame>
+      <img src="/images/salesforce/enable-chat-backup.png" alt="Enable backup" />
+    </Frame>
+  </Step>
+  
+  <Step title="Choose Activity Type">
+    Select how messages appear:
+    - **Task** - As completed tasks
+    - **Event** - As logged events
+    - **Custom Activity** - As WhatsApp activity (if configured)
+  </Step>
+  
+  <Step title="Configure Sync">
+    - ✅ Text messages
+    - ✅ Attachments
+    - ✅ Real-time sync
+  </Step>
+</Steps>
+
+## What It Looks Like
+
+<Frame caption="WhatsApp on Salesforce lead timeline">
+  <img src="/images/salesforce/timeline-view.png" alt="Salesforce timeline" />
+</Frame>

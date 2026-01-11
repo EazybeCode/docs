@@ -1,0 +1,57 @@
+---
+title: 'Opportunity Alerts'
+description: 'WhatsApp notifications when Salesforce opportunities change'
+---
+
+<Info>
+**Setup Time**: 15 minutes | **Difficulty**: Medium | **Salesforce Edition**: Enterprise+
+</Info>
+
+## The Problem
+
+Customers don't know their opportunity status.
+
+## The Solution
+
+Automatic WhatsApp when opportunities move stages.
+
+<Frame caption="Opportunity stage notification">
+  <img src="/images/salesforce/opportunity-alert.gif" alt="Opportunity alert" />
+</Frame>
+
+## Step-by-Step Setup
+
+<Steps>
+  <Step title="Create Stage Templates">
+    Create templates for key stages:
+    
+    **Proposal:**
+    ```
+    Hi {{1}}, I've sent the proposal for {{2}}. 
+    Let me know if you have questions!
+    ```
+    
+    **Closed Won:**
+    ```
+    Welcome aboard {{1}}! 🎉 
+    Our team will reach out for onboarding.
+    ```
+  </Step>
+  
+  <Step title="Create Record-Triggered Flow">
+    Object: Opportunity
+    Trigger: When Stage changes
+  </Step>
+  
+  <Step title="Add Decision Element">
+    Branch by stage value to send appropriate template
+    
+    <Frame>
+      <img src="/images/salesforce/decision-element.png" alt="Decision element" />
+    </Frame>
+  </Step>
+  
+  <Step title="Add WhatsApp Action">
+    Configure HTTP callout to Eazybe for each branch
+  </Step>
+</Steps>

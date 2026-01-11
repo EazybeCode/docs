@@ -1,0 +1,34 @@
+---
+title: 'LeadSquared Automation'
+description: 'Trigger WhatsApp from LeadSquared automation rules'
+---
+
+<Info>
+**Setup Time**: 20 minutes | **Difficulty**: Medium | **Requires**: WABA
+</Info>
+
+## Setup
+
+<Steps>
+  <Step title="Create Message Template">
+    Create approved template in Eazybe WABA section
+  </Step>
+  
+  <Step title="Create Automation Rule">
+    In LeadSquared: **Automation** → **Rules** → **Create Rule**
+    
+    <Frame>
+      <img src="/images/leadsquared/automation-rule.png" alt="Automation rule" />
+    </Frame>
+  </Step>
+  
+  <Step title="Add Webhook Action">
+    Configure webhook to Eazybe endpoint
+  </Step>
+</Steps>
+
+## Common Examples
+
+- New lead → Welcome WhatsApp
+- Stage change → Status update
+- No activity 7 days → Re-engagement

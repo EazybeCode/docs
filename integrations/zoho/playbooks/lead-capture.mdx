@@ -1,0 +1,92 @@
+---
+title: 'Lead Capture to Zoho'
+description: 'Automatically create Zoho leads from WhatsApp conversations'
+---
+
+<Info>
+**Setup Time**: 10 minutes | **Difficulty**: Easy | **Zoho Edition**: Free+
+</Info>
+
+## The Problem
+
+Sales reps chat on WhatsApp but leads never make it to Zoho:
+- No pipeline visibility
+- Leads slip through cracks
+- Manual data entry wastes time
+
+<Frame caption="WhatsApp conversations not synced to Zoho">
+  <img src="/images/zoho/lead-capture-problem.png" alt="WhatsApp missing from Zoho" />
+</Frame>
+
+## The Solution
+
+Eazybe automatically creates Zoho leads/contacts when new WhatsApp conversations start.
+
+<Frame caption="Automatic lead creation in Zoho">
+  <img src="/images/zoho/lead-capture-solution.gif" alt="Auto-create Zoho lead from WhatsApp" />
+</Frame>
+
+## Step-by-Step Setup
+
+<Steps>
+  <Step title="Open Eazybe Settings">
+    Click **Eazybe icon** → **Settings** → **CRM Integration**
+    
+    <Frame>
+      <img src="/images/zoho/eazybe-settings.png" alt="Eazybe settings" />
+    </Frame>
+  </Step>
+  
+  <Step title="Enable Auto-Create">
+    Toggle **Auto-create records in Zoho** to ON
+    
+    Choose record type:
+    - **Lead** - For new prospects
+    - **Contact** - For existing relationships
+    
+    <Frame>
+      <img src="/images/zoho/auto-create-toggle.png" alt="Auto-create toggle" />
+    </Frame>
+  </Step>
+  
+  <Step title="Configure Field Mapping">
+    Map WhatsApp data to Zoho fields:
+    
+    | WhatsApp | Zoho Field |
+    |----------|------------|
+    | Phone Number | Mobile |
+    | Profile Name | First Name |
+    | - | Lead Source = "WhatsApp" |
+    | - | Lead Owner = Rep who received message |
+    
+    <Frame>
+      <img src="/images/zoho/field-mapping.png" alt="Zoho field mapping" />
+    </Frame>
+  </Step>
+</Steps>
+
+## Video Walkthrough
+
+<Frame>
+  <iframe src="https://www.loom.com/embed/your-zoho-lead-capture-video" width="100%" height="400" frameborder="0" allowfullscreen></iframe>
+</Frame>
+
+## What It Looks Like in Zoho
+
+<Frame caption="New lead created in Zoho from WhatsApp">
+  <img src="/images/zoho/new-lead-created.png" alt="Zoho lead from WhatsApp" />
+</Frame>
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="Leads not being created?">
+    1. Verify Zoho connection is active
+    2. Check you have lead create permissions
+    3. Ensure auto-create toggle is ON
+  </Accordion>
+  
+  <Accordion title="Duplicate leads appearing?">
+    Enable duplicate check in Zoho or ensure phone format is consistent (E.164).
+  </Accordion>
+</AccordionGroup>
