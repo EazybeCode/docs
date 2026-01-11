@@ -1,8 +1,82 @@
 ---
 title: "Bulk Messaging"
-description: "Send to multiple contacts"
+description: "Send personalized messages to multiple contacts at once using labels and quick replies"
 ---
 
-## Bulk Messaging
+## Overview
 
-Send messages to multiple contacts.
+Bulk Messaging (Broadcast) lets you send the same message to multiple contacts simultaneously. Unlike WhatsApp's native broadcast feature, Eazybe's bulk messaging integrates with your labels and quick replies for targeted, personalized outreach.
+
+<Warning>
+**Important:** Use this feature responsibly and in limited manner. Excessive bulk messaging may violate WhatsApp's terms of service and could result in your number being banned. Always read the disclaimer before sending.
+</Warning>
+
+## How to Send Bulk Messages
+
+<Steps>
+  <Step title="Open Broadcast">
+    Click the **Broadcast Messages** button in the Eazybe top bar
+  </Step>
+  
+  <Step title="Select Quick Reply">
+    Choose the message you want to send from your Quick Replies dropdown
+  </Step>
+  
+  <Step title="Select Label">
+    Choose which labeled contacts should receive the message
+  </Step>
+  
+  <Step title="Review & Send">
+    Click **Send Message** and confirm after reading the disclaimer
+  </Step>
+</Steps>
+
+## Targeting with Labels
+
+Labels help you segment your contacts for targeted messaging:
+
+| Label | Use Case |
+|-------|----------|
+| **Hot Leads** | Send promotional offers |
+| **New Customers** | Send onboarding messages |
+| **Pending Payment** | Send payment reminders |
+| **Support** | Send resolution updates |
+
+## Best Practices
+
+<CardGroup cols={2}>
+  <Card title="Personalize Messages" icon="user">
+    Use variables like {name} to make bulk messages feel personal
+  </Card>
+  <Card title="Limit Frequency" icon="clock">
+    Don't send bulk messages too frequently - respect your contacts' time
+  </Card>
+  <Card title="Segment Carefully" icon="filter">
+    Use labels to target the right audience with relevant content
+  </Card>
+  <Card title="Test First" icon="vial">
+    Send to a small test group before broadcasting to everyone
+  </Card>
+</CardGroup>
+
+## Extension vs WABA Broadcasting
+
+| Feature | Extension Broadcast | WABA Broadcast |
+|---------|---------------------|----------------|
+| **Volume** | Limited (use carefully) | Thousands of messages |
+| **Requires laptop** | Yes | No (cloud-based) |
+| **Templates** | Quick Replies | Meta-approved templates |
+| **Risk** | Higher (personal number) | Lower (official API) |
+| **Best for** | Small batches, existing contacts | Large-scale campaigns |
+
+<Info>
+For high-volume broadcasting without risking your personal number, consider using [WABA Broadcasting](/waba/broadcasting/overview) which uses Meta's official API.
+</Info>
+
+## Compliance Guidelines
+
+1. **Only contact people who have opted in** to receive messages from you
+2. **Provide an easy opt-out** mechanism
+3. **Don't send promotional content** to people who haven't explicitly agreed
+4. **Respect WhatsApp's anti-spam policies**
+5. **Keep records** of consent for compliance purposes

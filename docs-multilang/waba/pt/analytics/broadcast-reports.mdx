@@ -1,8 +1,88 @@
 ---
 title: "Broadcast Reports"
-description: "Campaign analytics"
+description: "Track the performance of your bulk messaging campaigns"
 ---
 
-## Broadcast Reports
+## Overview
 
-Campaign performance metrics.
+Broadcast Reports provide detailed analytics on your bulk messaging campaigns, helping you measure effectiveness and optimize future campaigns.
+
+## Campaign Metrics
+
+### Delivery Metrics
+
+| Metric | Description | Good | Excellent |
+|--------|-------------|------|-----------|
+| **Sent** | Messages submitted | - | - |
+| **Delivered** | Reached recipient | > 90% | > 98% |
+| **Failed** | Couldn't deliver | < 10% | < 2% |
+| **Read** | Opened by recipient | > 50% | > 70% |
+
+### Engagement Metrics
+
+| Metric | Description | Good | Excellent |
+|--------|-------------|------|-----------|
+| **Response Rate** | Recipients who replied | > 5% | > 15% |
+| **Click Rate** | Clicked links (if any) | > 3% | > 10% |
+| **Opt-out Rate** | Requested to stop | < 3% | < 1% |
+
+## Viewing Reports
+
+### For Extension Broadcasts
+1. Go to **Broadcasts** in the extension
+2. Click on a completed campaign
+3. View delivery and engagement stats
+
+### For WABA Broadcasts
+1. Go to **Workspace** → **Broadcasts**
+2. Select the campaign
+3. View detailed analytics including:
+   - Per-message status
+   - Response tracking
+   - Cost analysis
+
+## Campaign Comparison
+
+Compare campaigns to identify what works:
+
+| Campaign | Sent | Delivered | Read | Responses |
+|----------|------|-----------|------|-----------|
+| Holiday Promo | 500 | 485 (97%) | 342 (68%) | 45 (9%) |
+| Product Launch | 750 | 720 (96%) | 468 (62%) | 62 (8%) |
+| Follow-up Series | 300 | 294 (98%) | 235 (78%) | 67 (22%) |
+
+## Failure Analysis
+
+Common delivery failures and solutions:
+
+| Failure Reason | Cause | Solution |
+|----------------|-------|----------|
+| **Invalid Number** | Wrong format | Validate phone formats |
+| **Not on WhatsApp** | No WA account | Remove from list |
+| **Blocked** | User blocked you | Respect opt-outs |
+| **Rate Limited** | Too fast | Slow down sending |
+
+## Optimization Tips
+
+<CardGroup cols={2}>
+  <Card title="Clean Your Lists" icon="broom">
+    Remove invalid numbers and opt-outs before each campaign
+  </Card>
+  <Card title="Segment Audience" icon="filter">
+    Smaller, targeted segments outperform mass blasts
+  </Card>
+  <Card title="Test Messages" icon="vial">
+    A/B test different templates to find what resonates
+  </Card>
+  <Card title="Time It Right" icon="clock">
+    Send when recipients are most likely to engage
+  </Card>
+</CardGroup>
+
+## Exporting Data
+
+Export campaign data for further analysis:
+1. Open the campaign report
+2. Click **Export**
+3. Choose format (CSV, PDF)
+4. Download for offline analysis or reporting

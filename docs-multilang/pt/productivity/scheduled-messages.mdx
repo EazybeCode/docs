@@ -1,8 +1,131 @@
 ---
 title: "Scheduled Messages"
-description: "Schedule messages"
+description: "Plan and automate your WhatsApp messages to be sent at the perfect time"
 ---
 
-## Scheduled Messages
+## Overview
 
-Schedule messages for later delivery.
+The Message Scheduler lets you compose messages now and send them later. Perfect for follow-ups, reminders, and reaching contacts in different time zones.
+
+## How to Schedule a Message
+
+<Steps>
+  <Step title="Click Scheduler">
+    Click the **Scheduler** button in the Eazybe toolbar
+  </Step>
+  
+  <Step title="Set Date & Time">
+    Select when you want the message to be sent
+  </Step>
+  
+  <Step title="Set Recurrence (Optional)">
+    Choose to repeat the message:
+    - Daily
+    - Weekly
+    - Monthly
+    - Yearly
+  </Step>
+  
+  <Step title="Compose Message">
+    Type your message or select from Quick Replies
+    
+    You can also:
+    - Use dynamic fields from the bottom panel
+    - Add the message to Quick Replies for future use
+  </Step>
+  
+  <Step title="Schedule">
+    Click **Schedule** to confirm
+  </Step>
+</Steps>
+
+## Managing Scheduled Messages
+
+### View Scheduled Messages
+Navigate to the Scheduler panel to see all pending messages with their scheduled times.
+
+### Edit a Scheduled Message
+1. Find the message in your scheduled list
+2. Click **Edit** to modify content or timing
+3. Save your changes
+
+### Cancel a Scheduled Message
+1. Find the message in your scheduled list
+2. Click **Cancel** or **Delete**
+3. Confirm cancellation
+
+### Send Immediately
+If you change your mind and want to send a scheduled message right away, click the **Send Now** button.
+
+## Recurring Messages
+
+Set up automated recurring messages for regular touchpoints:
+
+| Frequency | Best For |
+|-----------|----------|
+| **Daily** | Daily check-ins, standup reminders |
+| **Weekly** | Weekly reports, team updates |
+| **Monthly** | Monthly reviews, payment reminders |
+| **Yearly** | Birthday wishes, anniversary messages |
+
+## Use Cases
+
+<CardGroup cols={2}>
+  <Card title="Follow-up Sequences" icon="arrows-repeat">
+    Schedule a series of follow-ups at strategic intervals after initial contact
+  </Card>
+  <Card title="Time Zone Optimization" icon="globe">
+    Send messages when recipients are most likely to be active
+  </Card>
+  <Card title="Appointment Reminders" icon="calendar-check">
+    Automatically remind customers of upcoming appointments
+  </Card>
+  <Card title="Batch Processing" icon="layer-group">
+    Compose all your messages at once, schedule throughout the day
+  </Card>
+</CardGroup>
+
+## Best Practices
+
+<Tip>
+**Optimal Sending Times:**
+- B2B: Tuesday-Thursday, 10am-12pm or 2pm-4pm
+- B2C: Evenings 6pm-9pm or weekends
+- Always consider your recipient's timezone
+</Tip>
+
+## Scheduler API
+
+For developers, Eazybe offers a Scheduler API to programmatically schedule messages:
+
+```javascript
+POST https://api.eazybe.com/v2/scheduler/public-scheduler
+
+{
+  "from": "your-email@company.com",
+  "to": "919876543210",
+  "message": "Hello World",
+  "name": "Contact Name",
+  "time": "2024-03-01T17:25:00.000Z"
+}
+```
+
+<Warning>
+Use the Scheduler API responsibly. Avoid spam or bulk messaging that could result in your number being banned by WhatsApp.
+</Warning>
+
+## FAQ
+
+<AccordionGroup>
+  <Accordion title="Do I need to keep my computer on for scheduled messages?">
+    Scheduled messages require WhatsApp Web to be connected. For 24/7 scheduling without keeping your laptop open, use Eazybe Cloud or WABA integration.
+  </Accordion>
+  
+  <Accordion title="What's the attachment limit for scheduled messages?">
+    Attachments cannot exceed 20MB, and only one file can be attached per scheduled message.
+  </Accordion>
+  
+  <Accordion title="Can I schedule messages to groups?">
+    Yes, you can schedule messages to both individual contacts and groups.
+  </Accordion>
+</AccordionGroup>
