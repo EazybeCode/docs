@@ -24,12 +24,12 @@
   },
   "tabs": [
     {
-      "name": "AI Agents",
-      "url": "ai-agents"
-    },
-    {
       "name": "CRM Integrations",
       "url": "integrations"
+    },
+    {
+      "name": "AI Agents",
+      "url": "ai-agents"
     },
     {
       "name": "API Reference",
@@ -42,9 +42,9 @@
   ],
   "anchors": [
     {
-      "name": "Chrome Extension",
-      "icon": "chrome",
-      "url": "https://chromewebstore.google.com/detail/eazybe"
+      "name": "Get Eazybe",
+      "icon": "rocket",
+      "url": "https://eazybe.com/signup"
     },
     {
       "name": "Community",
@@ -60,7 +60,7 @@
   "navigation": {
     "tabs": [
       {
-        "tab": "Documentation",
+        "tab": "Guides",
         "groups": [
           {
             "group": "Getting Started",
@@ -69,9 +69,9 @@
               "introduction",
               "quickstart",
               {
-                "group": "Installation",
+                "group": "Setup",
                 "pages": [
-                  "getting-started/chrome-extension",
+                  "getting-started/installation",
                   "getting-started/system-requirements",
                   "getting-started/connect-whatsapp"
                 ]
@@ -204,51 +204,8 @@
               "troubleshooting/common-issues",
               "troubleshooting/sync-issues",
               "troubleshooting/connection-issues",
-              "troubleshooting/extension-issues",
+              "troubleshooting/platform-issues",
               "troubleshooting/faq"
-            ]
-          }
-        ]
-      },
-      {
-        "tab": "AI Agents",
-        "groups": [
-          {
-            "group": "Overview",
-            "icon": "robot",
-            "pages": [
-              "ai-agents/overview"
-            ]
-          },
-          {
-            "group": "AI Features",
-            "icon": "brain",
-            "pages": [
-              "ai-agents/reply-suggestions",
-              "ai-agents/unreplied-chats-agent",
-              "ai-agents/conversation-insights"
-            ]
-          },
-          {
-            "group": "Workflows",
-            "icon": "diagram-project",
-            "pages": [
-              "ai-agents/workflows/overview",
-              "ai-agents/workflows/hubspot-workflows",
-              "ai-agents/workflows/zoho-workflows",
-              "ai-agents/workflows/triggers-actions"
-            ]
-          },
-          {
-            "group": "Chatbots",
-            "icon": "message-bot",
-            "pages": [
-              "ai-agents/chatbots/overview",
-              "ai-agents/chatbots/creating-chatbot",
-              "ai-agents/chatbots/flow-builder",
-              "ai-agents/chatbots/variables",
-              "ai-agents/chatbots/human-handoff",
-              "ai-agents/chatbots/analytics"
             ]
           }
         ]
@@ -406,6 +363,39 @@
               "integrations/webhooks/setup",
               "integrations/webhooks/events",
               "integrations/webhooks/security"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "AI Agents",
+        "groups": [
+          {
+            "group": "Overview",
+            "icon": "robot",
+            "pages": [
+              "ai-agents/overview"
+            ]
+          },
+          {
+            "group": "AI Features",
+            "icon": "brain",
+            "pages": [
+              "ai-agents/reply-suggestions",
+              "ai-agents/unreplied-chats-agent",
+              "ai-agents/conversation-insights"
+            ]
+          },
+          {
+            "group": "Chatbots",
+            "icon": "message-bot",
+            "pages": [
+              "ai-agents/chatbots/overview",
+              "ai-agents/chatbots/creating-chatbot",
+              "ai-agents/chatbots/flow-builder",
+              "ai-agents/chatbots/variables",
+              "ai-agents/chatbots/human-handoff",
+              "ai-agents/chatbots/analytics"
             ]
           }
         ]

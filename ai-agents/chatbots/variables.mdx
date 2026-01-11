@@ -1,0 +1,32 @@
+---
+title: 'Variables & Data'
+description: 'Using dynamic data in chatbot flows'
+---
+
+## Built-in Variables
+
+| Variable | Description | Example |
+|----------|-------------|---------|
+| `{{contact.name}}` | Contact's name | John Smith |
+| `{{contact.phone}}` | Phone number | +919876543210 |
+| `{{last_message}}` | Customer's last message | "I need help" |
+| `{{current_time}}` | Current timestamp | 2:30 PM |
+| `{{current_date}}` | Today's date | Jan 11, 2026 |
+
+## CRM Variables
+
+If CRM is connected:
+
+| Variable | Description |
+|----------|-------------|
+| `{{crm.company}}` | Company name |
+| `{{crm.deal_stage}}` | Current deal stage |
+| `{{crm.owner}}` | Assigned sales rep |
+
+## Custom Variables
+
+Create your own variables to store conversation data:
+
+1. Use a Question node to collect info
+2. Set variable name (e.g., `budget`)
+3. Reference with `{{budget}}` in messages
