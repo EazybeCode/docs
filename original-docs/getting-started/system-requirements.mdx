@@ -1,0 +1,157 @@
+---
+title: 'System Requirements'
+description: 'Technical requirements for running Eazybe'
+---
+
+## Browser Requirements
+
+Eazybe is a Chrome extension and requires Google Chrome browser.
+
+| Browser | Support Status |
+|---------|----------------|
+| Google Chrome | ✅ Fully supported (v88+) |
+| Microsoft Edge | ❌ Not supported |
+| Mozilla Firefox | ❌ Not supported |
+| Safari | ❌ Not supported |
+| Brave | ⚠️ May work, not officially supported |
+
+<Info>
+  We recommend using the latest stable version of Chrome for the best experience.
+</Info>
+
+## Operating System
+
+Eazybe works on any operating system that supports Google Chrome:
+
+- **Windows**: Windows 10 or later
+- **macOS**: macOS 10.14 (Mojave) or later
+- **Linux**: Ubuntu 18.04+, Debian 10+, Fedora 32+
+- **ChromeOS**: Supported
+
+## Hardware Requirements
+
+| Component | Minimum | Recommended |
+|-----------|---------|-------------|
+| RAM | 4 GB | 8 GB or more |
+| Processor | Dual-core 2 GHz | Quad-core 2.5 GHz+ |
+| Storage | 100 MB free | 500 MB free |
+| Display | 1280 x 720 | 1920 x 1080 or higher |
+
+## Network Requirements
+
+A stable internet connection is required for:
+
+- WhatsApp Web to function
+- Syncing data with your CRM
+- Real-time notifications
+- Cloud backup features
+
+### Firewall & Proxy Configuration
+
+If you're behind a corporate firewall, ensure these domains are accessible:
+
+```
+web.whatsapp.com
+*.eazybe.com
+api.eazybe.com
+```
+
+For CRM integrations, also allow:
+- `*.hubspot.com` (HubSpot)
+- `*.zoho.com` (Zoho)
+- `*.salesforce.com` (Salesforce)
+- `*.google.com` (Google Sheets)
+
+## WhatsApp Requirements
+
+### Supported WhatsApp Types
+
+| WhatsApp Type | Extension Support | API Support |
+|---------------|-------------------|-------------|
+| Personal WhatsApp | ✅ Yes | ❌ No |
+| WhatsApp Business App | ✅ Yes | ✅ Yes (Coexistence) |
+| WhatsApp Business API | ✅ Yes | ✅ Yes |
+
+### Phone Requirements
+
+Your phone must:
+- Have WhatsApp installed and logged in
+- Maintain an active internet connection
+- Stay powered on for WhatsApp Web to work
+
+<Warning>
+  WhatsApp Web is a mirror of your phone. If your phone loses connection, WhatsApp Web will also disconnect.
+</Warning>
+
+## CRM Requirements
+
+### HubSpot
+- Any HubSpot plan (Free, Starter, Professional, Enterprise)
+- Admin access required for initial setup
+- Workflow actions require Professional plan or higher
+
+### Zoho CRM
+- Any Zoho CRM edition
+- Admin access for integration setup
+- Workflow triggers require Professional or higher
+
+### Salesforce
+- Any Salesforce edition
+- System Administrator profile or custom profile with API access
+- Connected App permissions
+
+### Other CRMs
+- See individual integration guides for specific requirements
+
+## Browser Extensions Conflicts
+
+Disable these extensions if you experience issues:
+
+- Other WhatsApp Web enhancers
+- Ad blockers (try whitelisting web.whatsapp.com)
+- VPN extensions (may cause connection issues)
+- Privacy extensions that block scripts
+
+## Performance Optimization
+
+For best performance:
+
+<Steps>
+  <Step title="Close Unused Tabs">
+    Too many open tabs can slow down Chrome and affect Eazybe performance.
+  </Step>
+  <Step title="Clear Browser Cache">
+    Periodically clear Chrome's cache: Settings → Privacy → Clear browsing data
+  </Step>
+  <Step title="Disable Unused Extensions">
+    Each extension consumes resources. Disable extensions you don't actively use.
+  </Step>
+  <Step title="Update Chrome Regularly">
+    Enable automatic updates or manually check for updates in Chrome settings.
+  </Step>
+</Steps>
+
+## Mobile Support
+
+<Info>
+  Eazybe is a desktop Chrome extension and does not work on mobile browsers. However, you can access the Revenue Inbox dashboard from mobile devices at [workspace.eazybe.com](https://workspace.eazybe.com).
+</Info>
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card
+    title="Install Extension"
+    icon="download"
+    href="/getting-started/chrome-extension"
+  >
+    Download and install Eazybe
+  </Card>
+  <Card
+    title="Connect WhatsApp"
+    icon="whatsapp"
+    href="/getting-started/connect-whatsapp"
+  >
+    Link your WhatsApp account
+  </Card>
+</CardGroup>

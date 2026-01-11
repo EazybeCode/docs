@@ -1,0 +1,217 @@
+---
+title: "Export Data"
+description: "Download your analytics and conversation data for reporting and compliance"
+---
+
+Eazybe allows you to export analytics and conversation data for external reporting, compliance requirements, or deeper analysis in your preferred tools.
+
+## What Can Be Exported
+
+### Analytics Data
+- Message volumes by date range
+- Team performance metrics
+- Campaign/broadcast reports
+- Response time statistics
+- Conversation counts
+
+### Conversation Data
+- Chat transcripts (via CRM backup)
+- Contact lists with labels
+- Message history (via Google Sheets/Drive backup)
+
+### Team Data
+- Employee activity logs
+- Last sync times
+- CRM connection status
+- Performance rankings
+
+## Export Formats
+
+| Format | Best For | File Size |
+|--------|----------|-----------|
+| **CSV** | Spreadsheet analysis, data processing, BI tools | Small |
+| **PDF** | Reports, presentations, compliance records | Medium |
+| **Excel (.xlsx)** | Advanced analysis, pivot tables, charts | Medium |
+
+## How to Export Analytics
+
+<Steps>
+  <Step title="Open Analytics">
+    Go to **Workspace** → **Analytics**
+  </Step>
+  
+  <Step title="Set Filters">
+    Configure your date range and any team/conversation filters
+  </Step>
+  
+  <Step title="Click Export">
+    Click the **Export** button in the top-right corner
+  </Step>
+  
+  <Step title="Choose Format">
+    Select CSV, PDF, or Excel
+  </Step>
+  
+  <Step title="Download">
+    File downloads automatically to your computer
+  </Step>
+</Steps>
+
+## Exporting Team Data
+
+<Steps>
+  <Step title="Open Dashboard">
+    Go to **Workspace** → **Dashboard**
+  </Step>
+  
+  <Step title="Select Team View">
+    Ensure you're viewing the team data you want to export
+  </Step>
+  
+  <Step title="Click Export Team Data">
+    Click the export button above the team table
+  </Step>
+  
+  <Step title="Select Metrics">
+    Choose which columns/metrics to include in the export
+  </Step>
+  
+  <Step title="Download">
+    File downloads with your selected data
+  </Step>
+</Steps>
+
+## Exporting Broadcast Reports
+
+<Steps>
+  <Step title="Open Broadcasts">
+    Navigate to **Workspace** → **Broadcasts**
+  </Step>
+  
+  <Step title="Select Campaign">
+    Click on the campaign you want to export
+  </Step>
+  
+  <Step title="Click Export Report">
+    Click the export button in the campaign detail view
+  </Step>
+  
+  <Step title="Download">
+    Receives per-recipient delivery status and engagement data
+  </Step>
+</Steps>
+
+## Scheduled/Automated Exports
+
+For regular reporting needs, consider these automation options:
+
+| Method | How | Best For |
+|--------|-----|----------|
+| **CRM Sync** | Connect to HubSpot/Salesforce | Real-time data in CRM reports |
+| **Google Sheets** | Enable Sheets backup | Live data in spreadsheets |
+| **Webhook** | Configure webhooks | Custom integrations, BI tools |
+| **API** | Use Eazybe API | Programmatic data access |
+
+## Use Cases
+
+<CardGroup cols={2}>
+  <Card title="Executive Reporting" icon="presentation-screen">
+    Create weekly/monthly reports for leadership with key metrics and trends
+  </Card>
+  <Card title="Compliance Records" icon="scale-balanced">
+    Maintain audit trails for regulatory requirements (GDPR, HIPAA, etc.)
+  </Card>
+  <Card title="Advanced Analysis" icon="chart-mixed">
+    Import into BI tools (Tableau, PowerBI, Looker) for deeper insights
+  </Card>
+  <Card title="Data Backup" icon="cloud-arrow-down">
+    Archive historical data for safekeeping and long-term trend analysis
+  </Card>
+</CardGroup>
+
+## Data Included in Exports
+
+### Analytics Export Fields
+
+| Field | Description |
+|-------|-------------|
+| `date` | Date of the data point |
+| `employee_name` | Team member name |
+| `employee_email` | Team member email |
+| `messages_sent` | Outbound message count |
+| `messages_received` | Inbound message count |
+| `conversations` | Active conversation count |
+| `avg_response_time` | Average response time (seconds) |
+| `follow_ups_completed` | Follow-up messages sent |
+
+### Team Export Fields
+
+| Field | Description |
+|-------|-------------|
+| `name` | Employee name |
+| `email` | Employee email |
+| `phone` | WhatsApp number |
+| `last_active` | Last activity timestamp |
+| `last_sync` | Last chat sync time |
+| `crm_status` | CRM integration status |
+| `role` | Admin/Member |
+
+### Broadcast Export Fields
+
+| Field | Description |
+|-------|-------------|
+| `recipient_phone` | Recipient's phone number |
+| `recipient_name` | Recipient's name (if known) |
+| `status` | Sent/Delivered/Read/Failed |
+| `timestamp` | When message was sent |
+| `failure_reason` | If failed, why |
+| `response` | Whether recipient replied |
+
+## Data Privacy Considerations
+
+<Warning>
+Exported data may contain personal information. Handle exports responsibly:
+
+- **Limit access** — Only share with those who need it
+- **Store securely** — Use encryption for sensitive exports
+- **Delete when done** — Remove exports when no longer needed
+- **Anonymize** — Remove PII when possible for analysis
+- **Audit trail** — Track who exports what and when
+</Warning>
+
+### GDPR Compliance
+
+If operating in the EU or handling EU citizen data:
+- Document your lawful basis for data processing
+- Honor data subject access requests (DSARs)
+- Maintain records of processing activities
+- Implement appropriate security measures
+
+### Data Retention
+
+| Data Type | Recommended Retention | Notes |
+|-----------|----------------------|-------|
+| Analytics | 2 years | For trend analysis |
+| Broadcast reports | 1 year | Compliance records |
+| Message content | Per your policy | Via CRM/backup |
+| Team activity | 1 year | HR/performance records |
+
+## Best Practices
+
+<AccordionGroup>
+  <Accordion title="Export regularly">
+    Set a schedule (weekly/monthly) for regular exports. Consistent data collection enables better trend analysis.
+  </Accordion>
+  
+  <Accordion title="Standardize naming">
+    Use consistent file naming: `eazybe_analytics_YYYY-MM-DD.csv` for easy organization and retrieval.
+  </Accordion>
+  
+  <Accordion title="Validate data">
+    Spot-check exported data against the dashboard to ensure accuracy. Flag discrepancies immediately.
+  </Accordion>
+  
+  <Accordion title="Document your process">
+    Maintain documentation of what you export, when, and why—especially for compliance purposes.
+  </Accordion>
+</AccordionGroup>

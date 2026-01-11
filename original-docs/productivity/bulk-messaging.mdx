@@ -1,0 +1,152 @@
+---
+title: "Bulk Messaging"
+description: "Send personalized messages to multiple contacts at once using labels and quick replies"
+---
+
+Bulk Messaging (Broadcast) lets you send the same message to multiple contacts simultaneously. Unlike WhatsApp's native broadcast feature, Eazybe's bulk messaging integrates with your labels and quick replies for targeted, personalized outreach.
+
+<Warning>
+**Use Responsibly:** Excessive bulk messaging may violate WhatsApp's terms of service and could result in your number being banned. Always read the disclaimer before sending and only contact people who have opted in.
+</Warning>
+
+## How to Send Bulk Messages
+
+<Steps>
+  <Step title="Open Broadcast">
+    Click the **Broadcast Messages** button in the Eazybe top bar
+    
+    <Frame>
+      <img src="/images/Screenshot+2024-09-17+120902.png" alt="Broadcast Button" />
+    </Frame>
+  </Step>
+  
+  <Step title="Select Quick Reply">
+    Choose the message you want to send from your Quick Replies dropdown. This ensures consistent messaging.
+  </Step>
+  
+  <Step title="Select Label">
+    Choose which labeled contacts should receive the message. Only contacts with the selected label will be included.
+  </Step>
+  
+  <Step title="Review Recipients">
+    Check the count of recipients. Remove any contacts you don't want to message.
+  </Step>
+  
+  <Step title="Review & Send">
+    Click **Send Message** and carefully read the disclaimer before confirming.
+  </Step>
+</Steps>
+
+## Targeting with Labels
+
+Labels help you segment your contacts for targeted messaging:
+
+| Label Example | Use Case | Message Type |
+|---------------|----------|--------------|
+| **Hot Leads** | Ready-to-buy prospects | Special offers, demos |
+| **New Customers** | Recent purchasers | Onboarding, welcome |
+| **Pending Payment** | Awaiting payment | Reminders, payment links |
+| **VIP Clients** | High-value customers | Exclusive offers, early access |
+| **Inactive** | Haven't engaged in 30+ days | Re-engagement campaigns |
+| **Event Attendees** | Registered for event | Event reminders, updates |
+
+## Extension vs WABA Broadcasting
+
+| Feature | Extension Broadcast | WABA Broadcast |
+|---------|---------------------|----------------|
+| **Volume** | Limited (use carefully) | Thousands of messages |
+| **Requires laptop** | Yes (browser must be open) | No (cloud-based) |
+| **Message type** | Quick Replies | Meta-approved templates |
+| **Risk level** | Higher (personal number) | Lower (official API) |
+| **Cost** | Free (within plan) | Per-message pricing |
+| **Best for** | Small batches, warm contacts | Large-scale campaigns |
+
+<Info>
+For high-volume broadcasting without risking your personal number, consider using [WABA Broadcasting](/waba/broadcasting/overview) which uses Meta's official WhatsApp Business API.
+</Info>
+
+## Sending Limits & Safety
+
+### Recommended Limits
+- **New numbers:** Max 50 messages/day for first week
+- **Established numbers:** Max 200 messages/day
+- **With WABA:** Based on quality rating (up to unlimited)
+
+### Safety Tips
+1. **Start small** — Test with 10-20 contacts first
+2. **Space out messages** — Don't send all at once
+3. **Monitor responses** — Watch for blocks or reports
+4. **Use opt-in lists only** — Never message cold contacts in bulk
+
+## Compliance Checklist
+
+<Steps>
+  <Step title="Verify Consent">
+    Ensure all recipients have opted in to receive messages from your business
+  </Step>
+  
+  <Step title="Provide Opt-Out">
+    Include a way for recipients to unsubscribe (e.g., "Reply STOP to opt out")
+  </Step>
+  
+  <Step title="Keep Records">
+    Maintain consent records for compliance with data protection laws
+  </Step>
+  
+  <Step title="Respect Timing">
+    Don't send during inappropriate hours (before 8am or after 9pm local time)
+  </Step>
+  
+  <Step title="Monitor Quality">
+    Track block rates and stop if they exceed 2-3%
+  </Step>
+</Steps>
+
+## Best Practices
+
+<CardGroup cols={2}>
+  <Card title="Personalize Messages" icon="user">
+    Use variables like `{{name}}` to make bulk messages feel personal
+  </Card>
+  <Card title="Segment Carefully" icon="filter">
+    Smaller, targeted segments outperform mass blasts every time
+  </Card>
+  <Card title="Test First" icon="vial">
+    Send to a small test group (yourself + 2-3 team members) before the full list
+  </Card>
+  <Card title="Track Results" icon="chart-line">
+    Monitor delivery, read, and response rates to optimize future campaigns
+  </Card>
+</CardGroup>
+
+## What NOT to Do
+
+<Warning>
+**Avoid these practices that can get your number banned:**
+- Sending to purchased or scraped contact lists
+- Messaging people who haven't opted in
+- Sending more than 200 messages in a day
+- Ignoring block/report feedback
+- Using spammy or promotional language
+- Sending the exact same message repeatedly
+</Warning>
+
+## FAQ
+
+<AccordionGroup>
+  <Accordion title="How many messages can I send at once?">
+    While there's no hard limit in the Extension, we recommend limiting bulk messages to 50-100 per batch for new numbers, and no more than 200 per day for established numbers. For larger campaigns, use WABA.
+  </Accordion>
+  
+  <Accordion title="Will recipients see it as a broadcast?">
+    No, each message is sent as an individual chat, not a WhatsApp broadcast list. Recipients see it as a direct message from you.
+  </Accordion>
+  
+  <Accordion title="Can I include attachments in bulk messages?">
+    Yes, if your Quick Reply includes an attachment, it will be sent to all recipients. Keep file sizes under 20MB.
+  </Accordion>
+  
+  <Accordion title="What happens if someone blocks me?">
+    The message won't be delivered to that contact. Monitor your block rate—if more than 2-3% of recipients block you, pause your campaigns and review your approach.
+  </Accordion>
+</AccordionGroup>

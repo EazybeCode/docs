@@ -1,0 +1,79 @@
+---
+title: 'API Reference'
+description: 'Integrate Eazybe programmatically'
+---
+
+## Overview
+
+The Eazybe API allows you to programmatically interact with your WhatsApp messaging and CRM data.
+
+<Warning>
+  API access requires an Enterprise plan or API add-on.
+</Warning>
+
+## Base URL
+
+```
+https://api.eazybe.com/v1
+```
+
+## Authentication
+
+All API requests require authentication via API key:
+
+```bash
+curl -H "Authorization: Bearer YOUR_API_KEY" \
+  https://api.eazybe.com/v1/contacts
+```
+
+### Getting Your API Key
+
+1. Go to Eazybe Workspace → Settings → API
+2. Click "Generate API Key"
+3. Copy and store securely
+
+## Rate Limits
+
+| Plan | Requests/minute |
+|------|-----------------|
+| Starter | 60 |
+| Professional | 300 |
+| Enterprise | 1000 |
+
+## Response Format
+
+All responses are JSON:
+
+```json
+{
+  "success": true,
+  "data": { ... },
+  "meta": {
+    "page": 1,
+    "total": 100
+  }
+}
+```
+
+## Error Handling
+
+```json
+{
+  "success": false,
+  "error": {
+    "code": "INVALID_PHONE",
+    "message": "Phone number format is invalid"
+  }
+}
+```
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="Messages" icon="message" href="/api-reference/endpoints/messages">
+    Send and receive messages
+  </Card>
+  <Card title="Contacts" icon="users" href="/api-reference/endpoints/contacts">
+    Manage contacts
+  </Card>
+</CardGroup>

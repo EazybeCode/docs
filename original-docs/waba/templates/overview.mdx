@@ -1,0 +1,89 @@
+---
+title: 'Message Templates'
+description: 'Create Meta-approved message templates'
+sidebarTitle: 'Overview'
+---
+
+## What are Message Templates?
+
+Message templates are pre-approved message formats required for sending outbound messages via WhatsApp Business API. Meta reviews each template to ensure quality and compliance.
+
+## Why Templates are Required
+
+WhatsApp requires templates to:
+- Prevent spam and maintain user trust
+- Ensure businesses follow messaging guidelines
+- Enable personalization while maintaining consistency
+- Allow Meta to review content before sending
+
+## Template Categories
+
+| Category | Purpose | Approval Time |
+|----------|---------|---------------|
+| Marketing | Promotions, offers, newsletters | 24-48 hours |
+| Utility | Order updates, reminders, confirmations | Minutes to hours |
+| Authentication | OTPs, verification codes | Usually instant |
+
+## Template Components
+
+### Header (Optional)
+- Text (up to 60 characters)
+- Image
+- Video
+- Document
+
+### Body (Required)
+- Main message content
+- Supports variables: `{{1}}`, `{{2}}`, etc.
+- Up to 1024 characters
+
+### Footer (Optional)
+- Additional text
+- Up to 60 characters
+
+### Buttons (Optional)
+- Quick Reply (up to 3)
+- Call to Action (up to 2)
+  - Visit Website
+  - Call Phone Number
+
+## Creating Templates
+
+<Steps>
+  <Step title="Access Template Manager">
+    Go to Eazybe → Templates → Create New
+  </Step>
+  <Step title="Choose Category">
+    Select Marketing, Utility, or Authentication
+  </Step>
+  <Step title="Design Content">
+    Add header, body, footer, and buttons
+  </Step>
+  <Step title="Add Variables">
+    Use {{1}}, {{2}} for personalization
+  </Step>
+  <Step title="Submit for Approval">
+    Meta reviews within 24-48 hours
+  </Step>
+</Steps>
+
+## Template Status
+
+| Status | Meaning |
+|--------|---------|
+| Pending | Under Meta review |
+| Approved | Ready to use |
+| Rejected | Failed review, needs changes |
+| Paused | Temporarily disabled by Meta |
+| Disabled | Permanently rejected |
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="Create Template" icon="plus" href="/waba/templates/creating-templates">
+    Build your first template
+  </Card>
+  <Card title="Utility Templates" icon="bell" href="/waba/templates/utility-templates">
+    Transactional message examples
+  </Card>
+</CardGroup>

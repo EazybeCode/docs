@@ -1,0 +1,169 @@
+---
+title: 'HubSpot Workflows'
+description: 'Automate WhatsApp messages using HubSpot workflows'
+sidebarTitle: 'Workflows'
+---
+
+## Overview
+
+With Eazybe's HubSpot integration, you can trigger WhatsApp messages directly from HubSpot workflows. This enables powerful automation for follow-ups, notifications, and engagement sequences.
+
+<Warning>
+  Workflow automation requires HubSpot Professional or Enterprise plan and WhatsApp Business API (WABA).
+</Warning>
+
+## Prerequisites
+
+<Check>HubSpot Professional or Enterprise plan</Check>
+<Check>Eazybe connected to HubSpot</Check>
+<Check>WhatsApp Business API (WABA) enabled</Check>
+<Check>Approved message templates in Eazybe</Check>
+
+## Creating a WhatsApp Workflow
+
+<Steps>
+  <Step title="Open HubSpot Workflows">
+    In HubSpot, go to **Automation** → **Workflows**.
+    
+    Click **Create workflow** → **From scratch**.
+  </Step>
+  
+  <Step title="Choose Workflow Type">
+    Select the object type:
+    - **Contact-based** - Most common for WhatsApp
+    - **Deal-based** - Trigger on deal stage changes
+    - **Company-based** - For B2B notifications
+  </Step>
+  
+  <Step title="Set Enrollment Trigger">
+    Define when contacts enter the workflow:
+    
+    Examples:
+    - Lifecycle stage changes to "Lead"
+    - Deal moves to "Proposal Sent"
+    - Form submission completed
+    - Property updated
+  </Step>
+  
+  <Step title="Add WhatsApp Action">
+    Click **+** to add an action.
+    
+    Scroll to **Eazybe** section and select **Send WhatsApp message**.
+  </Step>
+  
+  <Step title="Configure Message">
+    | Field | Description |
+    |-------|-------------|
+    | Recipient Phone | Contact's phone property |
+    | Template | Select approved template |
+    | Variables | Map HubSpot properties to template variables |
+    | Media URL | Optional attachment link |
+  </Step>
+  
+  <Step title="Publish Workflow">
+    Click **Review and publish** to activate.
+  </Step>
+</Steps>
+
+## Common Workflow Examples
+
+### Welcome New Leads
+
+**Trigger:** Contact lifecycle stage = Lead
+
+**Action:** Send WhatsApp welcome template
+
+```
+Hi {{1}}, thanks for your interest in [Company]! 
+Our team will reach out shortly. Reply to this message 
+if you have any questions.
+```
+
+### Deal Stage Notification
+
+**Trigger:** Deal stage = Proposal Sent
+
+**Action:** Send WhatsApp with proposal details
+
+```
+Hi {{1}}, we've sent your proposal for {{2}}. 
+Please review and let us know if you have questions.
+[View Proposal]
+```
+
+### Follow-up Reminder
+
+**Trigger:** 3 days after last activity
+
+**Action:** Send WhatsApp follow-up
+
+```
+Hi {{1}}, just checking in on our conversation. 
+Would you like to schedule a call this week?
+```
+
+## Template Variables
+
+Map HubSpot properties to template placeholders:
+
+| Template Variable | HubSpot Property |
+|-------------------|------------------|
+| `{{1}}` | First Name |
+| `{{2}}` | Deal Name |
+| `{{3}}` | Company Name |
+| `{{4}}` | Custom property |
+
+## Re-enrollment Settings
+
+Enable **Re-enrollment** to trigger multiple times for the same contact:
+
+1. In workflow settings, toggle **Re-enrollment** on
+2. Set conditions for re-enrollment
+3. Define cooldown period if needed
+
+<Warning>
+  Without re-enrollment, each contact can only trigger the workflow once.
+</Warning>
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="WhatsApp action not appearing">
+    - Ensure Eazybe integration is connected
+    - Check that WABA is enabled
+    - Refresh the workflow editor
+    - Verify you have Professional/Enterprise plan
+  </Accordion>
+  
+  <Accordion title="Messages not sending">
+    - Check template is approved by Meta
+    - Verify phone number format in HubSpot
+    - Ensure Eazybe wallet has balance
+    - Check workflow execution history for errors
+  </Accordion>
+  
+  <Accordion title="Variables not populating">
+    - Confirm property names match exactly
+    - Check that contact has values for those properties
+    - Use fallback values in templates
+  </Accordion>
+</AccordionGroup>
+
+## Best Practices
+
+1. **Always use approved templates** - Meta requires template approval for API messages
+2. **Add delays between messages** - Avoid sending multiple messages too quickly
+3. **Include opt-out instructions** - Comply with messaging regulations
+4. **Test with a small segment first** - Before rolling out to all contacts
+5. **Monitor delivery rates** - Check workflow analytics for failures
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="Message Templates" icon="file-lines" href="/waba/templates/overview">
+    Create and manage templates
+  </Card>
+  <Card title="Dynamic Labels" icon="tags" href="/integrations/hubspot/dynamic-labels">
+    Sync labels with HubSpot properties
+  </Card>
+</CardGroup>

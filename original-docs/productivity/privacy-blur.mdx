@@ -1,0 +1,125 @@
+---
+title: "Privacy Blur"
+description: "Protect sensitive contact information by blurring names and profile pictures on screen"
+---
+
+Privacy Blur is a security feature that obscures contact names and profile pictures on your WhatsApp Web screen. Perfect for protecting customer data when working in public spaces or during screen sharing.
+
+<Frame>
+  <img src="/images/Screenshot+2024-09-17+110725.png" alt="Privacy Blur Settings" />
+</Frame>
+
+## Use Cases
+
+<CardGroup cols={2}>
+  <Card title="Screen Sharing" icon="display">
+    Present to clients or colleagues without revealing other customer data
+  </Card>
+  <Card title="Training Videos" icon="video">
+    Create tutorials and demos without exposing real contact information
+  </Card>
+  <Card title="Public Workspaces" icon="coffee">
+    Work from cafes, co-working spaces, or open offices securely
+  </Card>
+  <Card title="Compliance" icon="shield">
+    Meet data protection requirements (GDPR, HIPAA, SOC2)
+  </Card>
+</CardGroup>
+
+## How to Enable Privacy Blur
+
+<Steps>
+  <Step title="Open Settings">
+    Click the **Settings** button (gear icon) in the Eazybe sidebar
+  </Step>
+  
+  <Step title="Find Security Settings">
+    Scroll to the **Security Settings** section
+  </Step>
+  
+  <Step title="Enable Blur Options">
+    Toggle the options you need:
+    - **Blur Contact Name** — Obscures contact names in chats and lists
+    - **Blur Contact Image** — Obscures profile pictures
+  </Step>
+  
+  <Step title="Set Scope (Admin Only)">
+    Admins can choose who the settings apply to:
+    - **Everyone** — All organization members
+    - **Everyone except admin** — Protect data while admins retain full visibility
+  </Step>
+</Steps>
+
+## What Gets Blurred
+
+| Element | When "Blur Name" Enabled | When "Blur Image" Enabled |
+|---------|--------------------------|---------------------------|
+| **Chat list names** | ✅ Blurred | - |
+| **Chat header** | ✅ Blurred | ✅ Blurred |
+| **Profile pictures** | - | ✅ Blurred |
+| **Group member names** | ✅ Blurred | - |
+| **Group member photos** | - | ✅ Blurred |
+| **Contact info panel** | ✅ Blurred | ✅ Blurred |
+| **About/Status text** | ✅ Blurred | - |
+
+## Additional Security Settings
+
+Beyond blur, the Settings panel offers more security options:
+
+### Admin Controls
+Organization admins can:
+- Enforce blur settings across the entire team
+- Exempt certain users from blur requirements
+- Set organization-wide security defaults
+- Monitor compliance across all members
+
+### Signature Feature
+Add a professional signature to all outgoing messages:
+1. Enable **Add Signature** in settings
+2. Enter your desired signature text
+3. Click the checkmark to save
+4. Your signature appears above every message you send
+
+<Info>
+The signature feature doesn't currently support emojis. Keep your signature professional and concise.
+</Info>
+
+### Other Customization Options
+- **AI Button** — Toggle AI suggestions on/off
+- **Make Full Screen** — Expand WhatsApp to fill the entire browser
+- **Hide All Label** — Remove the "All" label from the top bar
+
+## Compliance Benefits
+
+Privacy Blur helps your organization meet data protection requirements:
+
+| Regulation | How Privacy Blur Helps |
+|------------|------------------------|
+| **GDPR** | Prevents unauthorized viewing of personal data |
+| **HIPAA** | Protects patient information during screen sharing |
+| **SOC2** | Demonstrates access controls for sensitive data |
+| **PCI-DSS** | Shields customer financial information |
+
+## FAQ
+
+<AccordionGroup>
+  <Accordion title="Can I blur specific contacts only?">
+    Currently, blur settings apply to all contacts. You cannot selectively blur individual contacts while showing others.
+  </Accordion>
+  
+  <Accordion title="Does blurring affect both individual and group chats?">
+    Yes, privacy blur applies to both individual chats and group conversations, including all participant information.
+  </Accordion>
+  
+  <Accordion title="Can team members disable blur if the admin enables it?">
+    No, when an admin enables blur for "Everyone," individual team members cannot override this setting. If set to "Everyone except admin," admins retain the ability to see unblurred data.
+  </Accordion>
+  
+  <Accordion title="Is the data actually hidden or just visually obscured?">
+    The data is visually obscured on screen. The underlying data remains accessible through normal WhatsApp functions—blur is a visual privacy feature, not a data access control.
+  </Accordion>
+  
+  <Accordion title="Does blur work during screen recording?">
+    Yes, the blur effect will appear in any screen recordings or screenshots, protecting contact information in captured media.
+  </Accordion>
+</AccordionGroup>

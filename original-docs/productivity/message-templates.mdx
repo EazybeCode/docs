@@ -1,0 +1,192 @@
+---
+title: "Message Templates"
+description: "Create reusable message templates with dynamic fields for personalized communication at scale"
+---
+
+Message templates are pre-written messages with placeholders for dynamic content. They're the foundation of efficient WhatsApp communication, enabling personalized messages at scale.
+
+## Template Types
+
+### Quick Reply Templates (Extension)
+For use with the Chrome Extension:
+- Created and stored directly in Eazybe
+- Can include attachments and voice notes
+- Shared within your organization
+- No approval required—use instantly
+
+### WABA Templates (Official API)
+For WhatsApp Business API users:
+- Must be approved by Meta before use
+- Required for outbound messaging to new contacts
+- Categories: Marketing, Utility, Authentication
+- See [WABA Templates](/waba/templates/overview) for details
+
+## Creating Effective Templates
+
+### Use Dynamic Variables
+Replace static text with variables that get personalized automatically:
+
+```
+Hi {{name}},
+
+Your order #{{order_id}} has been shipped! 🚚
+
+Expected delivery: {{delivery_date}}
+Track your package: {{tracking_link}}
+
+Questions? Reply to this message anytime.
+```
+
+### Available Variables
+
+| Variable | Description | Example Output |
+|----------|-------------|----------------|
+| `{{name}}` | Contact's first name | John |
+| `{{full_name}}` | Contact's full name | John Smith |
+| `{{company}}` | Company name | Acme Inc |
+| `{{email}}` | Contact's email | john@acme.com |
+| `{{phone}}` | Phone number | +1 555-1234 |
+| `{{date}}` | Current date | January 11, 2026 |
+| `{{time}}` | Current time | 2:30 PM |
+| `{{order_id}}` | Order reference | ORD-12345 |
+| `{{custom_field}}` | Any CRM field | Custom value |
+
+## Template Categories
+
+<CardGroup cols={3}>
+  <Card title="Sales Templates" icon="dollar-sign">
+    - Initial outreach
+    - Follow-up sequences
+    - Proposal summaries
+    - Closing messages
+    - Win-back campaigns
+  </Card>
+  <Card title="Support Templates" icon="headset">
+    - Issue acknowledgment
+    - Status updates
+    - Resolution confirmation
+    - Feedback requests
+    - FAQ responses
+  </Card>
+  <Card title="Operations Templates" icon="gears">
+    - Order confirmations
+    - Shipping updates
+    - Appointment reminders
+    - Payment requests
+    - Delivery notifications
+  </Card>
+</CardGroup>
+
+## Template Examples
+
+### Sales: Initial Outreach
+```
+Hi {{name}}! 👋
+
+I noticed {{company}} might be looking for a better way to manage WhatsApp conversations.
+
+Eazybe helps teams like yours respond 3x faster and never miss a lead.
+
+Would you be open to a quick 10-minute call this week?
+```
+
+### Sales: Follow-up
+```
+Hi {{name}},
+
+Just following up on my message from last week about improving your WhatsApp workflow.
+
+I'd love to show you how {{company}} could benefit. Do you have 15 minutes this week?
+
+No pressure either way—just let me know!
+```
+
+### Support: Issue Acknowledgment
+```
+Hi {{name}},
+
+Thanks for reaching out! I've received your message about {{issue}}.
+
+I'm looking into this now and will get back to you within 2 hours with an update.
+
+Ticket #: {{ticket_id}}
+```
+
+### Operations: Appointment Reminder
+```
+Hi {{name}},
+
+This is a friendly reminder about your appointment:
+
+📅 Date: {{date}}
+⏰ Time: {{time}}
+📍 Location: {{location}}
+
+Reply YES to confirm or let us know if you need to reschedule.
+```
+
+### Operations: Order Shipped
+```
+Great news, {{name}}! 🎉
+
+Your order #{{order_id}} has been shipped!
+
+📦 Carrier: {{carrier}}
+🔗 Track here: {{tracking_link}}
+📅 Expected delivery: {{delivery_date}}
+
+Thanks for shopping with us!
+```
+
+## Template Best Practices
+
+<AccordionGroup>
+  <Accordion title="Keep it conversational">
+    Write like a human, not a robot. Use natural language, contractions, and appropriate emojis. Avoid corporate jargon.
+  </Accordion>
+  
+  <Accordion title="Include a clear CTA">
+    Every template should have a clear next step—reply, click, call, confirm, etc. Make it obvious what you want the recipient to do.
+  </Accordion>
+  
+  <Accordion title="Respect character limits">
+    WhatsApp messages display best under 1,000 characters. For WABA templates, keep body text under 1,024 characters.
+  </Accordion>
+  
+  <Accordion title="Test before deploying">
+    Send templates to yourself or colleagues first to catch typos, broken variables, or awkward phrasing.
+  </Accordion>
+  
+  <Accordion title="Update regularly">
+    Review and refresh templates quarterly. Remove outdated ones and create new ones based on what's converting.
+  </Accordion>
+  
+  <Accordion title="A/B test variations">
+    Create 2-3 versions of important templates and track which performs better over time.
+  </Accordion>
+</AccordionGroup>
+
+## Organizing Templates
+
+Use a consistent naming convention for easy searching:
+
+| Prefix | Category | Example |
+|--------|----------|---------|
+| `SALES_` | Sales outreach | SALES_initial_outreach |
+| `SUPPORT_` | Customer support | SUPPORT_ticket_received |
+| `OPS_` | Operations | OPS_order_shipped |
+| `REMINDER_` | Reminders | REMINDER_appointment_24h |
+| `FOLLOW_` | Follow-ups | FOLLOW_day3_nurture |
+
+## Integration with CRM
+
+Templates automatically pull data from your connected CRM:
+
+- **HubSpot:** Contact properties, deal info, company data
+- **Salesforce:** Lead/contact fields, opportunity details
+- **Zoho:** Module fields, custom variables
+- **LeadSquared:** Lead properties, activity data
+
+<Info>
+Variables like `{{name}}` and `{{company}}` are automatically populated from your CRM contact records when you send the message.
+</Info>

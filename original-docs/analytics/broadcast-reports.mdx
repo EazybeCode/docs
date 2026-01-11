@@ -1,0 +1,175 @@
+---
+title: "Broadcast Reports"
+description: "Track the performance of your bulk messaging campaigns"
+---
+
+Broadcast Reports provide detailed analytics on your bulk messaging campaigns, helping you measure effectiveness and optimize future campaigns.
+
+## Campaign Metrics
+
+### Delivery Metrics
+
+| Metric | Description | Good | Excellent |
+|--------|-------------|------|-----------|
+| **Sent** | Messages submitted for delivery | - | - |
+| **Delivered** | Successfully reached recipient | > 90% | > 98% |
+| **Failed** | Couldn't be delivered | < 10% | < 2% |
+| **Read** | Opened by recipient (blue ticks) | > 50% | > 70% |
+
+### Engagement Metrics
+
+| Metric | Description | Good | Excellent |
+|--------|-------------|------|-----------|
+| **Response Rate** | Recipients who replied | > 5% | > 15% |
+| **Click Rate** | Clicked links (if tracked) | > 3% | > 10% |
+| **Opt-out Rate** | Requested to stop messages | < 3% | < 1% |
+| **Block Rate** | Recipients who blocked you | < 2% | < 0.5% |
+
+## Viewing Broadcast Reports
+
+### For Extension Broadcasts
+1. Go to **Broadcasts** in the Eazybe extension
+2. Click on a completed campaign
+3. View delivery status and engagement stats
+
+### For WABA Broadcasts
+1. Go to **Workspace** → **Broadcasts**
+2. Select the campaign from the list
+3. View detailed analytics including:
+   - Per-message delivery status
+   - Response tracking
+   - Cost analysis
+   - Failure reasons
+
+## Campaign Comparison
+
+Compare campaigns to identify what works:
+
+| Campaign | Sent | Delivered | Read | Responses | Response Rate |
+|----------|------|-----------|------|-----------|---------------|
+| Holiday Promo | 500 | 485 (97%) | 342 (68%) | 45 | 9.0% |
+| Product Launch | 750 | 720 (96%) | 468 (62%) | 62 | 8.3% |
+| Follow-up Series | 300 | 294 (98%) | 235 (78%) | 67 | 22.3% |
+| Flash Sale | 1,000 | 960 (96%) | 576 (58%) | 89 | 8.9% |
+
+<Info>
+The Follow-up Series shows the highest response rate (22.3%) despite lower volume—targeted, warm outreach typically outperforms mass campaigns.
+</Info>
+
+## Understanding Failures
+
+### Common Delivery Failures
+
+| Failure Reason | Cause | Solution |
+|----------------|-------|----------|
+| **Invalid Number** | Wrong format or fake number | Validate phone formats, clean list |
+| **Not on WhatsApp** | Number doesn't have WA | Remove from broadcast lists |
+| **Blocked** | Recipient blocked you | Respect opt-outs, improve content |
+| **Rate Limited** | Sending too fast | Slow down, spread over time |
+| **Account Restricted** | Your number flagged | Review practices, contact support |
+| **Network Error** | Temporary connectivity | Retry automatically |
+
+### Failure Rate Benchmarks
+
+| Failure Rate | Assessment | Action |
+|--------------|------------|--------|
+| < 2% | ✅ Excellent | Maintain current practices |
+| 2-5% | ✅ Good | Minor cleanup needed |
+| 5-10% | ⚠️ Concerning | Review and clean lists |
+| > 10% | 🔴 Critical | Stop campaigns, investigate |
+
+## WABA Broadcast Analytics
+
+For WhatsApp Business API broadcasts, additional metrics are available:
+
+### Cost Analysis
+
+| Metric | Description |
+|--------|-------------|
+| **Total Cost** | Amount spent on campaign |
+| **Cost per Message** | Average cost per delivered message |
+| **Cost per Response** | Cost to generate one reply |
+| **Cost per Conversion** | Cost per desired action |
+
+### Template Performance
+
+Track which templates perform best:
+
+| Template | Sent | Delivered | Read | Response |
+|----------|------|-----------|------|----------|
+| welcome_new_customer | 500 | 495 | 89% | 35% |
+| order_shipped | 1,200 | 1,188 | 95% | 8% |
+| appointment_reminder | 300 | 297 | 92% | 45% |
+| promotional_offer | 2,000 | 1,920 | 52% | 4% |
+
+## Optimization Tips
+
+<CardGroup cols={2}>
+  <Card title="Clean Your Lists" icon="broom">
+    Remove invalid numbers, opt-outs, and unengaged contacts before each campaign
+  </Card>
+  <Card title="Segment Your Audience" icon="filter">
+    Smaller, targeted segments (100-500) outperform mass blasts (1000+) every time
+  </Card>
+  <Card title="Test Before Sending" icon="vial">
+    A/B test different templates with small groups before full campaign launch
+  </Card>
+  <Card title="Time It Right" icon="clock">
+    Send when recipients are most likely to engage (check your historical data)
+  </Card>
+</CardGroup>
+
+## Exporting Reports
+
+Export campaign data for further analysis:
+
+<Steps>
+  <Step title="Open Campaign">
+    Navigate to the completed campaign report
+  </Step>
+  
+  <Step title="Click Export">
+    Click the **Export** button in the top right
+  </Step>
+  
+  <Step title="Choose Format">
+    Select your preferred format:
+    - **CSV** — For spreadsheet analysis
+    - **PDF** — For presentations and records
+    - **Excel** — For advanced data manipulation
+  </Step>
+  
+  <Step title="Download">
+    The file downloads automatically to your computer
+  </Step>
+</Steps>
+
+## Campaign Post-Mortem Template
+
+After each significant campaign, answer these questions:
+
+1. **What was the goal?** (Awareness, conversions, engagement)
+2. **Did we hit our targets?** (Compare actual vs expected metrics)
+3. **What worked well?** (High-performing segments, templates, timing)
+4. **What didn't work?** (Low engagement, high failures, negative feedback)
+5. **What will we do differently?** (Specific changes for next campaign)
+
+## Best Practices
+
+<AccordionGroup>
+  <Accordion title="Set realistic expectations">
+    A 5-15% response rate is excellent for promotional broadcasts. Don't expect email-like open rates (40%+) from WhatsApp—but do expect higher engagement quality.
+  </Accordion>
+  
+  <Accordion title="Monitor in real-time">
+    Watch delivery and block rates during the first 50-100 messages. If failures spike, pause and investigate before continuing.
+  </Accordion>
+  
+  <Accordion title="Track long-term impact">
+    Some responses come hours or days after the broadcast. Check metrics again 24-48 hours after sending for complete picture.
+  </Accordion>
+  
+  <Accordion title="Learn from opt-outs">
+    High opt-out rates signal content or frequency problems. Survey opt-outs when possible to understand why.
+  </Accordion>
+</AccordionGroup>

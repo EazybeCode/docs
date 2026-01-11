@@ -1,0 +1,277 @@
+---
+title: 'Dashboard Tour'
+description: 'Navigate the Revenue Inbox dashboard interface'
+---
+
+## Dashboard Layout
+
+The Revenue Inbox dashboard is divided into four main areas:
+
+<Frame>
+  <img src="/images/revenue-inbox-layout.png" alt="Revenue Inbox Layout" />
+</Frame>
+
+1. **Left Sidebar** - Navigation and filters
+2. **Conversation List** - All team conversations
+3. **Chat Panel** - Selected conversation details
+4. **Right Sidebar** - Contact info and CRM data
+
+## Left Sidebar
+
+### Navigation Menu
+
+| Icon | Section | Purpose |
+|------|---------|---------|
+| 📥 | Inbox | All conversations |
+| 👥 | Team | Team member list |
+| 🏷️ | Labels | Label management |
+| 📊 | Analytics | Performance reports |
+| ⚙️ | Settings | Configuration |
+
+### Quick Filters
+
+Filter conversations instantly:
+
+- **All Chats** - Every conversation across the team
+- **Unread** - Conversations with new messages
+- **Unreplied** - Awaiting response from your team
+- **My Chats** - Your own conversations only
+- **Assigned to Me** - Conversations assigned to you
+
+### Team Filter
+
+Select which team members' conversations to view:
+
+```
+☑️ All Team Members
+☐ John Smith
+☐ Sarah Johnson
+☑️ Mike Williams
+☐ Emily Brown
+```
+
+Check/uncheck names to filter the conversation list.
+
+## Conversation List
+
+The main area shows all conversations matching your filters.
+
+### Conversation Card Elements
+
+Each conversation card displays:
+
+| Element | Description |
+|---------|-------------|
+| Contact Name | WhatsApp name or CRM-linked name |
+| Last Message | Preview of most recent message |
+| Timestamp | When last message was sent/received |
+| Rep Name | Team member handling this conversation |
+| Labels | Applied labels (Hot Lead, Follow-up, etc.) |
+| Status Icon | Unread, unreplied, or normal |
+| CRM Link | Icon showing CRM connection status |
+
+### Sorting Options
+
+Sort conversations by:
+- **Most Recent** - Newest activity first
+- **Oldest First** - Oldest messages first
+- **Unreplied Duration** - Longest wait time first
+- **Contact Name** - Alphabetical
+
+### Search
+
+Use the search bar to find conversations:
+
+```
+🔍 Search contacts, messages, or phone numbers...
+```
+
+Search across:
+- Contact names
+- Phone numbers
+- Message content
+- CRM properties
+
+## Chat Panel
+
+When you select a conversation, the chat panel shows:
+
+### Message History
+
+Full conversation thread with:
+- All messages (sent and received)
+- Timestamps for each message
+- Read receipts (when available)
+- Media attachments (images, documents)
+- Rep replies highlighted
+
+### Message Actions
+
+For each message:
+- 📋 Copy text
+- ↩️ Reply (if enabled)
+- 🏷️ Add label
+- 📌 Pin important messages
+
+### Compose Area (If Enabled)
+
+If your role allows replying:
+
+```
++------------------------------------------+
+| Type a message...                    📎 📷 |
++------------------------------------------+
+                                    [Send]
+```
+
+<Warning>
+  Replying from Revenue Inbox sends messages as the assigned rep, not as yourself. Use with caution.
+</Warning>
+
+## Right Sidebar
+
+### Contact Information
+
+View and edit contact details:
+
+```
+┌─────────────────────────┐
+│  👤 John Customer       │
+│  📱 +1 555 123 4567     │
+│  📧 john@company.com    │
+│                         │
+│  [View in CRM]          │
+└─────────────────────────┘
+```
+
+### CRM Data
+
+See CRM properties at a glance:
+
+| Property | Value |
+|----------|-------|
+| Lifecycle Stage | Opportunity |
+| Deal Value | $25,000 |
+| Owner | Sarah Johnson |
+| Last Activity | 2 hours ago |
+
+### Conversation Actions
+
+Quick actions available:
+- **Assign** - Reassign to another team member
+- **Label** - Add or remove labels
+- **Follow-up** - Set reminder
+- **Export** - Download conversation
+
+### Activity Timeline
+
+Recent CRM activities:
+```
+📞 Call logged - Yesterday
+📧 Email sent - 2 days ago
+📝 Note added - 3 days ago
+💼 Deal created - 1 week ago
+```
+
+## Key Dashboard Features
+
+### AI Insights Panel
+
+View AI-detected insights:
+
+<Info>
+  **🔥 Hot Deal Detected**
+  Customer mentioned budget approval and timeline. Consider prioritizing this conversation.
+</Info>
+
+### Quick Stats Bar
+
+At-a-glance metrics:
+
+```
+| Total Chats: 1,247 | Unread: 23 | Unreplied: 8 | Avg Response: 4m |
+```
+
+### Notification Center
+
+Recent alerts and updates:
+- New unreplied conversations
+- Escalations detected
+- SLA breaches
+- Team member activity
+
+## Keyboard Shortcuts
+
+Navigate faster with shortcuts:
+
+| Shortcut | Action |
+|----------|--------|
+| `↑` / `↓` | Navigate conversations |
+| `Enter` | Open selected conversation |
+| `Esc` | Close conversation panel |
+| `/` | Focus search bar |
+| `L` | Open label menu |
+| `A` | Open assign menu |
+| `R` | Reply (if enabled) |
+
+## Customizing Your View
+
+### Column Configuration
+
+Choose which columns appear in the conversation list:
+
+1. Click the **⚙️ Columns** button
+2. Check/uncheck columns:
+   - ☑️ Contact Name
+   - ☑️ Last Message
+   - ☑️ Rep Name
+   - ☑️ Labels
+   - ☐ Phone Number
+   - ☐ CRM Status
+3. Drag to reorder
+
+### Density Settings
+
+Adjust how much information is shown:
+
+- **Comfortable** - More spacing, larger text
+- **Compact** - More conversations visible
+- **Dense** - Maximum information density
+
+### Theme
+
+Switch between light and dark modes:
+- **Light** - White background
+- **Dark** - Dark background (easier on eyes)
+- **System** - Match your OS preference
+
+## Mobile Access
+
+Access Revenue Inbox on mobile devices:
+
+1. Navigate to [workspace.eazybe.com](https://workspace.eazybe.com) on your mobile browser
+2. Log in with your credentials
+3. Use the responsive mobile interface
+
+<Info>
+  Mobile access is view-only. Full functionality requires desktop Chrome with the extension.
+</Info>
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card
+    title="View Conversations"
+    icon="comments"
+    href="/revenue-inbox/viewing-conversations"
+  >
+    Learn to filter and manage chats
+  </Card>
+  <Card
+    title="Track Performance"
+    icon="chart-line"
+    href="/revenue-inbox/performance-metrics"
+  >
+    Analyze team metrics
+  </Card>
+</CardGroup>

@@ -1,0 +1,422 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "venus",
+  "name": "Eazybe",
+  "logo": {
+    "dark": "/logo/dark.svg",
+    "light": "/logo/light.svg"
+  },
+  "favicon": "/favicon.svg",
+  "colors": {
+    "primary": "#25D366",
+    "light": "#25D366",
+    "dark": "#128C7E",
+    "anchors": {
+      "from": "#25D366",
+      "to": "#128C7E"
+    }
+  },
+  "topbarLinks": [
+    {
+      "name": "Support",
+      "url": "mailto:support@eazybe.com"
+    }
+  ],
+  "topbarCtaButton": {
+    "name": "Get Started",
+    "url": "https://eazybe.com"
+  },
+  "tabs": [
+    {
+      "name": "CRM Integrations",
+      "url": "integrations"
+    },
+    {
+      "name": "API Reference",
+      "url": "api-reference"
+    }
+  ],
+  "anchors": [
+    {
+      "name": "Chrome Extension",
+      "icon": "chrome",
+      "url": "https://chromewebstore.google.com/detail/eazybe"
+    },
+    {
+      "name": "Community",
+      "icon": "discord",
+      "url": "https://eazybe.com/community"
+    },
+    {
+      "name": "Blog",
+      "icon": "newspaper",
+      "url": "https://eazybe.com/blog"
+    }
+  ],
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Documentation",
+        "groups": [
+          {
+            "group": "Getting Started",
+            "pages": [
+              "introduction",
+              "quickstart",
+              {
+                "group": "Installation",
+                "pages": [
+                  "getting-started/chrome-extension",
+                  "getting-started/system-requirements",
+                  "getting-started/connect-whatsapp"
+                ]
+              },
+              {
+                "group": "WhatsApp Account Types",
+                "pages": [
+                  "getting-started/whatsapp-types",
+                  "getting-started/personal-vs-business-vs-api",
+                  "getting-started/coexistence-mode"
+                ]
+              }
+            ]
+          },
+          {
+            "group": "Revenue Inbox",
+            "pages": [
+              "revenue-inbox/overview",
+              "revenue-inbox/dashboard",
+              {
+                "group": "Conversation Management",
+                "pages": [
+                  "revenue-inbox/viewing-conversations",
+                  "revenue-inbox/conversation-states",
+                  "revenue-inbox/assigning-conversations",
+                  "revenue-inbox/internal-notes",
+                  "revenue-inbox/saved-replies"
+                ]
+              },
+              {
+                "group": "Labels & Funnels",
+                "pages": [
+                  "revenue-inbox/labels",
+                  "revenue-inbox/dynamic-labels",
+                  "revenue-inbox/funnels"
+                ]
+              },
+              {
+                "group": "Team Productivity",
+                "pages": [
+                  "revenue-inbox/response-times",
+                  "revenue-inbox/unreplied-chats",
+                  "revenue-inbox/performance-metrics"
+                ]
+              }
+            ]
+          },
+          {
+            "group": "WhatsApp Business API",
+            "pages": [
+              "waba/overview",
+              "waba/getting-started",
+              "waba/connect-waba",
+              {
+                "group": "Message Templates",
+                "pages": [
+                  "waba/templates/overview",
+                  "waba/templates/creating-templates",
+                  "waba/templates/utility-templates",
+                  "waba/templates/marketing-templates",
+                  "waba/templates/approval-process"
+                ]
+              },
+              {
+                "group": "Broadcasting",
+                "pages": [
+                  "waba/broadcasting/overview",
+                  "waba/broadcasting/create-campaign",
+                  "waba/broadcasting/import-contacts",
+                  "waba/broadcasting/scheduling",
+                  "waba/broadcasting/analytics",
+                  "waba/broadcasting/best-practices"
+                ]
+              },
+              "waba/coexistence",
+              "waba/wallet",
+              "waba/faq"
+            ]
+          },
+          {
+            "group": "Automation & AI",
+            "pages": [
+              "automation/overview",
+              {
+                "group": "Workflows",
+                "pages": [
+                  "automation/workflows/overview",
+                  "automation/workflows/hubspot-workflows",
+                  "automation/workflows/zoho-workflows",
+                  "automation/workflows/triggers-actions"
+                ]
+              },
+              {
+                "group": "AI Features",
+                "pages": [
+                  "automation/ai/reply-suggestions",
+                  "automation/ai/unreplied-chats-agent",
+                  "automation/ai/conversation-insights"
+                ]
+              },
+              {
+                "group": "Agents & Chatbots",
+                "pages": [
+                  "automation/agents/overview",
+                  "automation/agents/creating-chatbot",
+                  "automation/agents/flow-builder",
+                  "automation/agents/variables",
+                  "automation/agents/human-handoff",
+                  "automation/agents/analytics"
+                ]
+              }
+            ]
+          },
+          {
+            "group": "Productivity Tools",
+            "pages": [
+              "productivity/quick-replies",
+              "productivity/scheduled-messages",
+              "productivity/message-templates",
+              "productivity/bulk-messaging",
+              "productivity/privacy-blur"
+            ]
+          },
+          {
+            "group": "Analytics & Reports",
+            "pages": [
+              "analytics/dashboard",
+              "analytics/team-performance",
+              "analytics/conversation-analytics",
+              "analytics/broadcast-reports",
+              "analytics/export-data"
+            ]
+          },
+          {
+            "group": "Account & Settings",
+            "pages": [
+              "settings/workspace",
+              "settings/team-management",
+              "settings/roles-permissions",
+              "settings/billing",
+              "settings/security",
+              "settings/data-privacy"
+            ]
+          },
+          {
+            "group": "Troubleshooting",
+            "pages": [
+              "troubleshooting/common-issues",
+              "troubleshooting/sync-issues",
+              "troubleshooting/connection-issues",
+              "troubleshooting/extension-issues",
+              "troubleshooting/faq"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "CRM Integrations",
+        "groups": [
+          {
+            "group": "Overview",
+            "pages": [
+              "integrations/overview",
+              "integrations/choosing-crm"
+            ]
+          },
+          {
+            "group": "HubSpot",
+            "pages": [
+              "integrations/hubspot/overview",
+              "integrations/hubspot/prerequisites",
+              "integrations/hubspot/setup",
+              "integrations/hubspot/contact-sync",
+              "integrations/hubspot/chat-backup",
+              {
+                "group": "Mini-CRM View",
+                "pages": [
+                  "integrations/hubspot/mini-crm/overview",
+                  "integrations/hubspot/mini-crm/contacts",
+                  "integrations/hubspot/mini-crm/deals",
+                  "integrations/hubspot/mini-crm/tasks-notes",
+                  "integrations/hubspot/mini-crm/tickets",
+                  "integrations/hubspot/mini-crm/call-logs"
+                ]
+              },
+              "integrations/hubspot/workflows",
+              "integrations/hubspot/dynamic-labels",
+              "integrations/hubspot/admin-management",
+              "integrations/hubspot/troubleshooting",
+              "integrations/hubspot/faq"
+            ]
+          },
+          {
+            "group": "Zoho CRM",
+            "pages": [
+              "integrations/zoho/overview",
+              "integrations/zoho/prerequisites",
+              "integrations/zoho/setup",
+              "integrations/zoho/contact-sync",
+              "integrations/zoho/chat-backup",
+              {
+                "group": "Mini-CRM View",
+                "pages": [
+                  "integrations/zoho/mini-crm/overview",
+                  "integrations/zoho/mini-crm/contacts",
+                  "integrations/zoho/mini-crm/leads",
+                  "integrations/zoho/mini-crm/deals"
+                ]
+              },
+              "integrations/zoho/workflows",
+              "integrations/zoho/admin-management",
+              "integrations/zoho/troubleshooting",
+              "integrations/zoho/faq"
+            ]
+          },
+          {
+            "group": "Salesforce",
+            "pages": [
+              "integrations/salesforce/overview",
+              "integrations/salesforce/prerequisites",
+              "integrations/salesforce/setup",
+              "integrations/salesforce/contact-sync",
+              "integrations/salesforce/chat-backup",
+              {
+                "group": "Mini-CRM View",
+                "pages": [
+                  "integrations/salesforce/mini-crm/overview",
+                  "integrations/salesforce/mini-crm/contacts",
+                  "integrations/salesforce/mini-crm/leads",
+                  "integrations/salesforce/mini-crm/opportunities"
+                ]
+              },
+              "integrations/salesforce/admin-management",
+              "integrations/salesforce/troubleshooting",
+              "integrations/salesforce/faq"
+            ]
+          },
+          {
+            "group": "Pipedrive",
+            "pages": [
+              "integrations/pipedrive/overview",
+              "integrations/pipedrive/setup",
+              "integrations/pipedrive/contact-sync",
+              "integrations/pipedrive/chat-backup",
+              "integrations/pipedrive/mini-crm",
+              "integrations/pipedrive/troubleshooting"
+            ]
+          },
+          {
+            "group": "LeadSquared",
+            "pages": [
+              "integrations/leadsquared/overview",
+              "integrations/leadsquared/prerequisites",
+              "integrations/leadsquared/setup",
+              "integrations/leadsquared/contact-sync",
+              "integrations/leadsquared/chat-backup",
+              "integrations/leadsquared/mini-crm",
+              "integrations/leadsquared/admin-management",
+              "integrations/leadsquared/troubleshooting",
+              "integrations/leadsquared/faq"
+            ]
+          },
+          {
+            "group": "Bitrix24",
+            "pages": [
+              "integrations/bitrix/overview",
+              "integrations/bitrix/setup",
+              "integrations/bitrix/contact-sync",
+              "integrations/bitrix/chat-backup",
+              "integrations/bitrix/mini-crm",
+              "integrations/bitrix/troubleshooting"
+            ]
+          },
+          {
+            "group": "Google Sheets",
+            "pages": [
+              "integrations/google-sheets/overview",
+              "integrations/google-sheets/setup",
+              "integrations/google-sheets/sync-contacts",
+              "integrations/google-sheets/chat-backup",
+              "integrations/google-sheets/troubleshooting"
+            ]
+          },
+          {
+            "group": "Freshdesk",
+            "pages": [
+              "integrations/freshdesk/overview",
+              "integrations/freshdesk/setup",
+              "integrations/freshdesk/tickets",
+              "integrations/freshdesk/troubleshooting"
+            ]
+          },
+          {
+            "group": "Webhooks & Custom",
+            "pages": [
+              "integrations/webhooks/overview",
+              "integrations/webhooks/setup",
+              "integrations/webhooks/events",
+              "integrations/webhooks/security"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "API Reference",
+        "groups": [
+          {
+            "group": "Overview",
+            "pages": [
+              "api-reference/introduction",
+              "api-reference/authentication"
+            ]
+          },
+          {
+            "group": "Endpoints",
+            "pages": [
+              "api-reference/endpoints/messages",
+              "api-reference/endpoints/contacts",
+              "api-reference/endpoints/conversations",
+              "api-reference/endpoints/templates",
+              "api-reference/endpoints/broadcasts"
+            ]
+          },
+          {
+            "group": "Webhooks",
+            "pages": [
+              "api-reference/webhooks/overview",
+              "api-reference/webhooks/events",
+              "api-reference/webhooks/payload-reference"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "footerSocials": {
+    "linkedin": "https://linkedin.com/company/eazybe",
+    "twitter": "https://twitter.com/eazybe"
+  },
+  "feedback": {
+    "thumbsRating": true,
+    "suggestEdit": true
+  },
+  "search": {
+    "prompt": "Search documentation..."
+  },
+  "seo": {
+    "indexHiddenPages": false
+  },
+  "integrations": {
+    "intercom": "your-intercom-app-id"
+  }
+}
