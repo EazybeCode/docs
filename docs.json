@@ -126,6 +126,7 @@
                   {
                     "group": "Broadcasting",
                     "pages": [
+                      "en/guides/whats-app-business-api/broadcasting/untitled-page",
                       "waba/broadcasting/overview",
                       "waba/broadcasting/create-campaign",
                       "waba/broadcasting/import-contacts",
