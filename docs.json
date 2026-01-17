@@ -53,7 +53,7 @@
                 "pages": [
                   "introduction",
                   "onboarding-to-coexistence",
-                  "onboarding",
+                  "getting-started/onboarding",
                   "quickstart",
                   {
                     "group": "Setup",
