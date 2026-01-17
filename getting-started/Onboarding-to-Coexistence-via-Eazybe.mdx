@@ -4,7 +4,9 @@ description: "Connect your WhatsApp Business App to Cloud API without losing cha
 ---
 
 <Info>
-**What is Coexistence?** A Meta-provided solution that connects your active WhatsApp Business App phone number to the WhatsApp Cloud API — without losing chats, contacts, or requiring re-registration.
+  **What is Coexistence?** A Meta-provided solution that connects your active
+  WhatsApp Business App phone number to the WhatsApp Cloud API — without losing
+  chats, contacts, or requiring re-registration.
 </Info>
 
 ## How Coexistence Works
@@ -31,7 +33,8 @@ flowchart LR
     Use the same phone number across WhatsApp Business App and Cloud API
   </Card>
   <Card title="Real-Time Sync" icon="rotate">
-    Messages sent/received through the app appear in the API inbox and vice versa
+    Messages sent/received through the app appear in the API inbox and vice
+    versa
   </Card>
   <Card title="Preserve Everything" icon="shield-check">
     Keep your chat history, contacts, and verified badge intact
@@ -46,7 +49,8 @@ flowchart LR
 ## Prerequisites Checklist
 
 <Warning>
-Failing to meet these requirements will cause onboarding to fail. Verify each item before starting.
+  Failing to meet these requirements will cause onboarding to fail. Verify each
+  item before starting.
 </Warning>
 
 <AccordionGroup>
@@ -59,14 +63,14 @@ Failing to meet these requirements will cause onboarding to fail. Verify each it
     | **Activity Level** | Regular, genuine 1:1 conversations for at least **3–7 days** before and after setup |
   </Accordion>
 
-  <Accordion title="Meta Business Requirements" icon="meta">
-    | Requirement | Details |
-    |-------------|---------|
-    | **Facebook Business Page** | You must have an existing page |
-    | **Admin Access** | You must have admin permissions on the page |
-    | **Meta Business Account** | Active account required |
-    | **Number Eligibility** | Number must not be linked to another WhatsApp API provider |
-  </Accordion>
+{" "}
+<Accordion title="Meta Business Requirements" icon="meta">
+  | Requirement | Details | |-------------|---------| | **Facebook Business
+  Page** | You must have an existing page | | **Admin Access** | You must have
+  admin permissions on the page | | **Meta Business Account** | Active account
+  required | | **Number Eligibility** | Number must not be linked to another
+  WhatsApp API provider |
+</Accordion>
 
   <Accordion title="Regional Restrictions" icon="globe">
     <Note>
@@ -109,6 +113,7 @@ flowchart TD
     <Frame>
       <img src="/images/coex-otp.png" alt="OTP Verification" />
     </Frame>
+
   </Step>
 
   <Step title="Start Embedded Sign-Up">
@@ -117,6 +122,7 @@ flowchart TD
     <Frame>
       <img src="/images/coex-add-number.png" alt="Add Number Button" />
     </Frame>
+
   </Step>
 
   <Step title="Authenticate with Facebook">
@@ -135,6 +141,7 @@ flowchart TD
     <Frame>
       <img src="/images/coex-permissions.png" alt="Permissions Screen" />
     </Frame>
+
   </Step>
 
   <Step title="Enter Business Details">
@@ -143,6 +150,7 @@ flowchart TD
     <Frame>
       <img src="/images/coex-business-details.png" alt="Business Details Form" />
     </Frame>
+
   </Step>
 
   <Step title="Select or Create Business Portfolio">
@@ -155,6 +163,7 @@ flowchart TD
     <Warning>
     **Critical:** Always create a **NEW WABA account** for coexistence to ensure fresh usage and healthy account flow.
     </Warning>
+
   </Step>
 
   <Step title="Choose Your Onboarding Method">
@@ -173,6 +182,7 @@ flowchart TD
     - Must not be currently linked to any other partner
     - Must be a new or existing WhatsApp Business number
     - Must not be blocked by Meta
+
   </Step>
 
   <Step title="Enter Phone Number">
@@ -181,6 +191,7 @@ flowchart TD
     <Frame>
       <img src="/images/coex-phone-entry.png" alt="Phone Number Entry" />
     </Frame>
+
   </Step>
 
   <Step title="Scan QR Code">
@@ -198,6 +209,7 @@ flowchart TD
         Enter the access code displayed on screen directly into your mobile app
       </Tab>
     </Tabs>
+
   </Step>
 
   <Step title="Import Chat History (Optional)">
@@ -217,6 +229,7 @@ flowchart TD
     <Info>
     If you skip history import initially and later want to import, you must fully disconnect and reconnect. Choose wisely.
     </Info>
+
   </Step>
 
   <Step title="Complete Connection">
@@ -231,6 +244,7 @@ flowchart TD
     <Frame>
       <img src="/images/coex-complete.png" alt="Setup Complete" />
     </Frame>
+
   </Step>
 </Steps>
 
@@ -261,7 +275,6 @@ sequenceDiagram
 
 <Divider />
 
-
 ## Troubleshooting
 
 <AccordionGroup>
@@ -287,6 +300,7 @@ sequenceDiagram
         If issues persist, try a different number with active WhatsApp Business usage and no past violations
       </Step>
     </Steps>
+
   </Accordion>
 
   <Accordion title="Chat History Did Not Import" icon="clock-rotate-left">
@@ -310,6 +324,7 @@ sequenceDiagram
     <Warning>
     If you manually skipped history import during initial setup and selected the wrong option, old chats may not be recoverable. A full disconnect and reconnect is required.
     </Warning>
+
   </Accordion>
 
   <Accordion title="Number Has Meta Restrictions" icon="ban">
@@ -327,6 +342,7 @@ sequenceDiagram
     <Note>
     Meta restrictions cannot be bypassed. A clean number is required for successful Coexistence setup.
     </Note>
+
   </Accordion>
 </AccordionGroup>
 
@@ -355,7 +371,6 @@ flowchart TD
 
 <Divider />
 
-
 ## Frequently Asked Questions
 
 <AccordionGroup>
@@ -363,17 +378,23 @@ flowchart TD
     **No.** Only WhatsApp Business App numbers are supported. Personal WhatsApp numbers cannot be connected via Coexistence.
   </Accordion>
 
-  <Accordion title="Will my chats stay on my phone app?">
-    **Yes.** Nothing is deleted from your WhatsApp Business App. Your existing chats, contacts, and media remain intact on your device.
-  </Accordion>
+{" "}
+<Accordion title="Will my chats stay on my phone app?">
+  **Yes.** Nothing is deleted from your WhatsApp Business App. Your existing
+  chats, contacts, and media remain intact on your device.
+</Accordion>
 
-  <Accordion title="Can I still use the WhatsApp Business App after Coexistence?">
-    **Yes.** You continue using it normally for 1-to-1 conversations while the Cloud API handles automation, broadcasts, and workflows.
-  </Accordion>
+{" "}
+<Accordion title="Can I still use the WhatsApp Business App after Coexistence?">
+  **Yes.** You continue using it normally for 1-to-1 conversations while the
+  Cloud API handles automation, broadcasts, and workflows.
+</Accordion>
 
-  <Accordion title="What happens to my verified badge?">
-    Your verified badge (green checkmark) is preserved through the Coexistence process. No re-verification is required.
-  </Accordion>
+{" "}
+<Accordion title="What happens to my verified badge?">
+  Your verified badge (green checkmark) is preserved through the Coexistence
+  process. No re-verification is required.
+</Accordion>
 
   <Accordion title="Is there a cooldown period if I disconnect?">
     Yes. If you disconnect and want to reconnect, a cooldown period of **1–2 months** may be required before re-enabling Coexistence on the same number.
@@ -382,12 +403,12 @@ flowchart TD
 
 <Divider />
 
-
 ## Best Practices After Onboarding
 
 <CardGroup cols={3}>
   <Card title="Keep App Open" icon="mobile-screen">
-    Maintain sync by keeping your WhatsApp Business app open during initial setup
+    Maintain sync by keeping your WhatsApp Business app open during initial
+    setup
   </Card>
   <Card title="Maintain Activity" icon="comments">
     Continue genuine 1:1 conversations to keep your account healthy
@@ -398,7 +419,9 @@ flowchart TD
 </CardGroup>
 
 <Tip>
-**Pro Tip:** Use the WhatsApp Business App for personal, relationship-building conversations while leveraging Eazybe's Cloud API for scalable broadcasts, chatbots, and CRM workflows.
+  **Pro Tip:** Use the WhatsApp Business App for personal, relationship-building
+  conversations while leveraging Eazybe's Cloud API for scalable broadcasts,
+  chatbots, and CRM workflows.
 </Tip>
 
 <Divider />
@@ -406,13 +429,25 @@ flowchart TD
 ## What's Next?
 
 <CardGroup cols={2}>
-  <Card title="Set Up Broadcasts" icon="bullhorn" href="/messaging/broadcasts/creating-broadcast">
+  <Card
+    title="Set Up Broadcasts"
+    icon="bullhorn"
+    href="/messaging/broadcasts/creating-broadcast"
+  >
     Send template messages to multiple contacts at scale
   </Card>
-  <Card title="Configure Chatbots" icon="robot" href="/ai-agents/chatbots/overview">
+  <Card
+    title="Configure Chatbots"
+    icon="robot"
+    href="/ai-agents/chatbots/overview"
+  >
     Automate responses with AI-powered chatbots
   </Card>
-  <Card title="Connect Your CRM" icon="database" href="/integrations/crm/overview">
+  <Card
+    title="Connect Your CRM"
+    icon="database"
+    href="/integrations/crm/overview"
+  >
     Sync conversations with HubSpot, Zoho, or Salesforce
   </Card>
   <Card title="Team Inbox Setup" icon="users" href="/team-inbox/overview">
@@ -425,13 +460,13 @@ flowchart TD
 ## Gap Analysis & Edge Cases
 
 <Warning>
-**Not Covered in This Guide:**
-- Migrating from another API provider to Eazybe (requires disconnection from previous provider first)
-- Business verification process for Meta Business Manager
-- Template message approval workflow
-- Handling numbers that were previously banned and restored
+  **Not Covered in This Guide:** - Migrating from another API provider to Eazybe
+  (requires disconnection from previous provider first) - Business verification
+  process for Meta Business Manager - Template message approval workflow -
+  Handling numbers that were previously banned and restored
 </Warning>
 
 <Info>
-For edge cases or scenarios not covered here, contact [Eazybe Support](mailto:support@eazybe.com) or your dedicated account manager.
+  For edge cases or scenarios not covered here, contact [Eazybe
+  Support](mailto:support@eazybe.com) or your dedicated account manager.
 </Info>
