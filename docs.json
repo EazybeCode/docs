@@ -56,6 +56,7 @@
                   {
                     "group": "Setup",
                     "pages": [
+                      "getting-started/onboarding-to-coexistence-en",
                       "getting-started/installation",
                       "getting-started/system-requirements",
                       "getting-started/connect-whatsapp"
@@ -500,6 +501,7 @@
                   {
                     "group": "Configuración",
                     "pages": [
+                      "getting-started/onboarding-to-coexistence-es",
                       "es/getting-started/installation",
                       "es/getting-started/system-requirements",
                       "es/getting-started/connect-whatsapp"
@@ -729,6 +731,7 @@
                   {
                     "group": "Configuração",
                     "pages": [
+                      "getting-started/onboarding-to-coexistence-pt",
                       "pt/getting-started/installation",
                       "pt/getting-started/system-requirements",
                       "pt/getting-started/connect-whatsapp"

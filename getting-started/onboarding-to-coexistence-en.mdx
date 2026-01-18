@@ -1,0 +1,272 @@
+---
+title: "Onboarding to Coexistence via Eazybe"
+description: "Connect your WhatsApp Business App to the Cloud API without losing chats, contacts, or requiring re-registration"
+icon: "link"
+---
+
+## What is WhatsApp Coexistence?
+
+WhatsApp Coexistence is a **Meta-provided solution** that allows businesses to connect their active WhatsApp Business App phone number to the WhatsApp Cloud API — without losing chats, contacts, or requiring re-registration.
+
+<CardGroup cols={2}>
+  <Card title="Keep Your Chats" icon="message">
+    All existing conversations stay intact on your phone
+  </Card>
+  <Card title="Sync in Real-Time" icon="arrows-rotate">
+    Messages synchronize automatically between app and API
+  </Card>
+  <Card title="No Re-registration" icon="shield-check">
+    Your verified badge and number stay exactly as they are
+  </Card>
+  <Card title="Dual Access" icon="mobile-screen">
+    Continue using the WhatsApp Business App normally
+  </Card>
+</CardGroup>
+
+<Info>
+This is the **safest method** to migrate to Cloud API without losing any data. Your WhatsApp Business App continues working as usual while gaining API capabilities.
+</Info>
+
+---
+
+## Prerequisites
+
+Before starting the onboarding process, ensure you meet **all** of the following requirements:
+
+<Steps>
+  <Step title="WhatsApp Business Account">
+    You must have an existing **WhatsApp Business App** account — personal WhatsApp numbers are not supported.
+  </Step>
+  <Step title="App Version 2.24.17+">
+    Update your WhatsApp Business App to **version 2.24.17 or newer**. Check your app store for updates.
+  </Step>
+  <Step title="Clean Phone Number">
+    Your number must be free of Meta restrictions or policy violations. Numbers with previous violations will fail.
+  </Step>
+  <Step title="Facebook Business Page">
+    You need a Facebook Business Page with **Admin access** to complete the connection.
+  </Step>
+  <Step title="Meta Business Account">
+    An active Meta Business Account is required for the embedded signup flow.
+  </Step>
+  <Step title="Region Eligibility">
+    Numbers from **Nigeria** and **South Africa** are currently not supported for Coexistence.
+  </Step>
+  <Step title="No Existing API Connection">
+    Your number must **not** be linked to another WhatsApp API provider (BSP).
+  </Step>
+  <Step title="Active Usage Period">
+    Use your number actively for **3-7 days minimum** before and after the connection for best results.
+  </Step>
+</Steps>
+
+<Warning>
+If any of these prerequisites are not met, the onboarding process will fail. Double-check each requirement before proceeding.
+</Warning>
+
+---
+
+## Step-by-Step Setup Guide
+
+### Phase 1: Login to Eazybe
+
+<Steps>
+  <Step title="Access the Platform">
+    Navigate to the Eazybe dashboard and click on **Get Started** or **Add Number**.
+  </Step>
+  <Step title="Enter Your Email">
+    Provide your business email address to receive a one-time password (OTP).
+  </Step>
+  <Step title="Verify OTP">
+    Check your inbox and enter the OTP code to authenticate your session.
+  </Step>
+</Steps>
+
+### Phase 2: Add Your Number
+
+<Steps>
+  <Step title="Click Add Number">
+    From the dashboard, click the **Add Number** button to begin the embedded signup flow.
+  </Step>
+  <Step title="Authenticate with Facebook">
+    A popup will appear. Log in with your Facebook credentials that have admin access to your Business Page.
+  </Step>
+  <Step title="Grant Permissions">
+    Allow the required permissions for Eazybe to manage your WhatsApp Business account.
+  </Step>
+</Steps>
+
+<Tip>
+Use the same Facebook account that manages your Business Page. Using a different account will cause permission errors.
+</Tip>
+
+### Phase 3: Business Details
+
+<Steps>
+  <Step title="Fill Business Information">
+    Enter your business name, category, and description as they should appear on WhatsApp.
+  </Step>
+  <Step title="Create or Select Portfolio">
+    Choose an existing business portfolio or create a new one for this WhatsApp account.
+  </Step>
+</Steps>
+
+<Warning>
+**Always create a NEW WABA (WhatsApp Business Account)** when onboarding for the first time. Do not reuse an existing WABA to avoid conflicts.
+</Warning>
+
+### Phase 4: Number Selection
+
+You'll be presented with two options:
+
+<CardGroup cols={2}>
+  <Card title="Connect Existing Number" icon="phone">
+    **Recommended for Coexistence** — Use your current WhatsApp Business App number
+  </Card>
+  <Card title="New Number" icon="plus">
+    Start fresh with a completely new WhatsApp number
+  </Card>
+</CardGroup>
+
+<Note>
+For Coexistence onboarding, select **"Connect existing WhatsApp business number"** to retain all your chats and contacts.
+</Note>
+
+### Phase 5: Connect Your Number
+
+<Steps>
+  <Step title="Select Country Code">
+    Choose your country from the dropdown to set the correct dialing code.
+  </Step>
+  <Step title="Enter Phone Number">
+    Input your WhatsApp Business phone number (without the country code).
+  </Step>
+  <Step title="Click Next">
+    Proceed to the verification step.
+  </Step>
+  <Step title="Receive Verification Message">
+    A verification message will be sent to your WhatsApp Business App.
+  </Step>
+  <Step title="Scan QR Code">
+    A QR code will appear on screen. Open your WhatsApp Business App and scan it using **Settings → Linked Devices**.
+  </Step>
+</Steps>
+
+<Info>
+The QR code must be scanned **within 60 seconds**. If it expires, click to generate a new one.
+</Info>
+
+### Phase 6: Chat History Import
+
+After connecting, you can choose to import your existing data:
+
+| Data Type | Import Limit |
+|-----------|--------------|
+| Contacts | All contacts (automatic) |
+| 1:1 Chats | Up to 6 months |
+| Media Files | Up to 2 weeks |
+| Group Chats | **Not supported** |
+
+<Accordion title="Why can't group chats be imported?">
+WhatsApp's Coexistence feature only supports importing direct (1:1) conversations. Group chats remain accessible through the WhatsApp Business App but are not migrated to the Cloud API. This is a Meta limitation, not an Eazybe restriction.
+</Accordion>
+
+### Phase 7: Complete Setup
+
+<Steps>
+  <Step title="Verify Account">
+    Confirm your account details are correct in the final review screen.
+  </Step>
+  <Step title="Wait for Processing">
+    The connection may take a few moments to complete. Do not close the browser.
+  </Step>
+  <Step title="Click Finish">
+    Once processing is complete, click **Finish** to finalize your setup.
+  </Step>
+</Steps>
+
+<Tip>
+After completing setup, send a test message from both the WhatsApp Business App and the Eazybe dashboard to confirm bidirectional sync is working.
+</Tip>
+
+---
+
+## Troubleshooting
+
+<Accordion title="Integration Failed">
+**Common Causes:**
+- WhatsApp Business App version is outdated (must be 2.24.17+)
+- Phone number has been inactive for too long
+- Number has Meta policy restrictions or violations
+- Missing Facebook Business Page admin access
+
+**Solution:** Use a number with active WhatsApp Business usage and zero policy violations. Update your app to the latest version and verify your Facebook admin permissions.
+</Accordion>
+
+<Accordion title="Chat History Import Failed">
+**How to Resolve:**
+1. Open your **WhatsApp Business App**
+2. Go to **Settings → Business Tools → WhatsApp Business Platform**
+3. Tap **Disconnect**
+4. Wait 5 minutes
+5. Restart the Coexistence onboarding process from the beginning
+
+<Warning>
+Disconnecting will only remove the API connection. Your chats and contacts remain safe in the app.
+</Warning>
+</Accordion>
+
+<Accordion title="Meta Restrictions Error">
+**Symptoms:**
+- Instant failure during connection
+- QR code doesn't fully load
+- No verification message received
+
+**Solution:** This indicates your number has underlying restrictions from Meta. You'll need to use a **different phone number** with:
+- Zero policy violations
+- Legitimate, active business usage
+- No previous API connections
+</Accordion>
+
+---
+
+## Frequently Asked Questions
+
+<Accordion title="Can I use a personal WhatsApp number?">
+**No.** Only WhatsApp Business App numbers are supported for Coexistence. Personal WhatsApp numbers cannot be connected to the Cloud API.
+</Accordion>
+
+<Accordion title="Will my chats be deleted from the phone?">
+**No.** All your chats, contacts, and media remain intact on your WhatsApp Business App. Nothing is deleted during or after the Coexistence setup.
+</Accordion>
+
+<Accordion title="Can I still use the WhatsApp Business App after connecting?">
+**Yes.** You can continue using your WhatsApp Business App normally. Messages sent from either the app or the API will sync in real-time.
+</Accordion>
+
+<Accordion title="What happens to my verified badge?">
+Your verified badge (green checkmark) remains active and is preserved during the Coexistence process.
+</Accordion>
+
+---
+
+## Best Practices After Onboarding
+
+<CardGroup cols={2}>
+  <Card title="Test Thoroughly" icon="vial">
+    Send test messages from both the app and dashboard to verify sync
+  </Card>
+  <Card title="Monitor for 24 Hours" icon="clock">
+    Watch for any sync delays or issues in the first day
+  </Card>
+  <Card title="Train Your Team" icon="users">
+    Ensure all team members understand the dual-access setup
+  </Card>
+  <Card title="Set Up Automation" icon="robot">
+    Configure quick replies and chatbots in Eazybe
+  </Card>
+</CardGroup>
+
+<Info>
+Need assistance? Contact our support team at [support@eazybe.com](mailto:support@eazybe.com) or use the in-app chat.
+</Info>
