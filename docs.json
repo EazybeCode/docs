@@ -66,7 +66,8 @@
                     "pages": [
                       "getting-started/whatsapp-types",
                       "getting-started/personal-vs-business-vs-api",
-                      "getting-started/coexistence-mode"
+                      "getting-started/coexistence-mode",
+                      "en/getting-started/onboarding-to-coexistence-en"
                     ]
                   }
                 ]
@@ -510,7 +511,8 @@
                     "pages": [
                       "es/getting-started/whatsapp-types",
                       "es/getting-started/personal-vs-business-vs-api",
-                      "es/getting-started/coexistence-mode"
+                      "es/getting-started/coexistence-mode",
+                      "es/getting-started/onboarding-to-coexistence-es"
                     ]
                   }
                 ]
@@ -739,7 +741,8 @@
                     "pages": [
                       "pt/getting-started/whatsapp-types",
                       "pt/getting-started/personal-vs-business-vs-api",
-                      "pt/getting-started/coexistence-mode"
+                      "pt/getting-started/coexistence-mode",
+                      "pt/getting-started/onboarding-to-coexistence-pt"
                     ]
                   }
                 ]
@@ -968,7 +971,8 @@
                     "pages": [
                       "tr/getting-started/whatsapp-types",
                       "tr/getting-started/personal-vs-business-vs-api",
-                      "tr/getting-started/coexistence-mode"
+                      "tr/getting-started/coexistence-mode",
+                      "tr/getting-started/onboarding-to-coexistence-tr"
                     ]
                   }
                 ]
