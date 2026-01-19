@@ -56,7 +56,6 @@
                   {
                     "group": "Setup",
                     "pages": [
-                      "en/getting-started/onboarding-to-coexistence-en",
                       "getting-started/installation",
                       "getting-started/system-requirements",
                       "getting-started/connect-whatsapp"
@@ -204,10 +203,7 @@
               {
                 "group": "Overview",
                 "icon": "plug",
-                "pages": [
-                  "integrations/overview",
-                  "integrations/choosing-crm"
-                ]
+                "pages": ["integrations/overview", "integrations/choosing-crm"]
               },
               {
                 "group": "HubSpot",
@@ -419,9 +415,7 @@
               {
                 "group": "Overview",
                 "icon": "robot",
-                "pages": [
-                  "ai-agents/overview"
-                ]
+                "pages": ["ai-agents/overview"]
               },
               {
                 "group": "AI Features",
@@ -485,9 +479,7 @@
               {
                 "group": "Changelog",
                 "icon": "clock-rotate-left",
-                "pages": [
-                  "changelog/overview"
-                ]
+                "pages": ["changelog/overview"]
               }
             ]
           }
@@ -508,7 +500,6 @@
                   {
                     "group": "Configuración",
                     "pages": [
-                      "es/getting-started/onboarding-to-coexistence-es",
                       "es/getting-started/installation",
                       "es/getting-started/system-requirements",
                       "es/getting-started/connect-whatsapp"
@@ -699,16 +690,12 @@
               {
                 "group": "Google Sheets",
                 "icon": "table",
-                "pages": [
-                  "es/integrations/google-sheets/setup"
-                ]
+                "pages": ["es/integrations/google-sheets/setup"]
               },
               {
                 "group": "Freshdesk",
                 "icon": "headset",
-                "pages": [
-                  "es/integrations/freshdesk/setup"
-                ]
+                "pages": ["es/integrations/freshdesk/setup"]
               }
             ]
           },
@@ -742,7 +729,6 @@
                   {
                     "group": "Configuração",
                     "pages": [
-                      "pt/getting-started/onboarding-to-coexistence-pt",
                       "pt/getting-started/installation",
                       "pt/getting-started/system-requirements",
                       "pt/getting-started/connect-whatsapp"
@@ -933,16 +919,12 @@
               {
                 "group": "Google Sheets",
                 "icon": "table",
-                "pages": [
-                  "pt/integrations/google-sheets/setup"
-                ]
+                "pages": ["pt/integrations/google-sheets/setup"]
               },
               {
                 "group": "Freshdesk",
                 "icon": "headset",
-                "pages": [
-                  "pt/integrations/freshdesk/setup"
-                ]
+                "pages": ["pt/integrations/freshdesk/setup"]
               }
             ]
           },
@@ -1166,16 +1148,12 @@
               {
                 "group": "Google Sheets",
                 "icon": "table",
-                "pages": [
-                  "tr/integrations/google-sheets/setup"
-                ]
+                "pages": ["tr/integrations/google-sheets/setup"]
               },
               {
                 "group": "Freshdesk",
                 "icon": "headset",
-                "pages": [
-                  "tr/integrations/freshdesk/setup"
-                ]
+                "pages": ["tr/integrations/freshdesk/setup"]
               }
             ]
           },
