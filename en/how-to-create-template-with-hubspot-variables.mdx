@@ -1,0 +1,85 @@
+---
+title: "How to Create a Template with HubSpot Variables"
+description: "Learn how to create WhatsApp message templates using HubSpot contact properties as dynamic variables for personalized messaging."
+---
+
+## Overview
+
+This guide walks you through creating message templates that use HubSpot contact properties as dynamic variables. These templates enable personalized WhatsApp messages through the WhatsApp Business API integration, automatically pulling data from your HubSpot CRM.
+
+## Creating a Template with HubSpot Variables
+
+<Steps>
+  <Step title="Navigate to Create Template">
+    Go to the **Create Template** tab and select a contact from the dropdown menu.
+  </Step>
+
+  <Step title="Start Template Creation">
+    Click the **Create Template** button to begin.
+  </Step>
+
+  <Step title="Enter Template Name">
+    Enter a unique template name. Avoid special characters in the name.
+  </Step>
+
+  <Step title="Select Template Type">
+    Choose the appropriate template type from the available options (Marketing, Utility, etc.).
+  </Step>
+
+  <Step title="Choose Language">
+    Select your preferred template language from the dropdown.
+  </Step>
+
+  <Step title="Write Message Content">
+    Fill in your message content in the **Message Body** field.
+  </Step>
+
+  <Step title="Position Cursor for Variable">
+    Place your cursor at the exact position where you want to insert a HubSpot property value.
+  </Step>
+
+  <Step title="Select HubSpot Variable Option">
+    From the available dropdown menu, select **HubSpot Variable**.
+  </Step>
+
+  <Step title="Browse HubSpot Properties">
+    Click **Add Variable** to open the HubSpot properties browser.
+  </Step>
+
+  <Step title="Search for Property">
+    Use the search function to find the desired HubSpot property from the list.
+  </Step>
+
+  <Step title="Insert Variable">
+    Click on your chosen HubSpot property to insert it as a variable in your message.
+  </Step>
+
+  <Step title="Add More Variables (Optional)">
+    Repeat the previous steps to add additional HubSpot variables as needed.
+  </Step>
+
+  <Step title="Set Fallback Values">
+    Enter fallback values for each variable. These default values are used when the HubSpot property data is not available for a contact.
+  </Step>
+
+  <Step title="Submit for Approval">
+    Click **Submit for Approval** to send your template to META for review.
+  </Step>
+</Steps>
+
+## Key Constraints
+
+<Warning>
+Keep these guidelines in mind when creating templates with HubSpot variables:
+
+- **Variable placement**: Do not place variables at the very beginning or end of your message
+- **Balance content**: Maintain a good ratio between variable count and static content
+- **Unique names**: Each template name must be unique across your account
+- **Fallback behavior**: Fallback values activate when contact owner data is inaccessible from HubSpot
+</Warning>
+
+<Note>
+**Understanding Fallback Values**
+
+The fallback value is the default text that gets displayed in place of the HubSpot property value when that property is not available or empty for a specific contact. Always set meaningful fallback values to ensure your messages remain coherent.
+</Note>

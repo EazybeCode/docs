@@ -1,0 +1,85 @@
+---
+title: "Cómo Crear una Plantilla con Variables de HubSpot"
+description: "Aprende a crear plantillas de mensajes de WhatsApp utilizando propiedades de contacto de HubSpot como variables dinámicas para mensajes personalizados."
+---
+
+## Descripción General
+
+Esta guía te muestra cómo crear plantillas de mensajes que utilizan propiedades de contacto de HubSpot como variables dinámicas. Estas plantillas permiten mensajes personalizados de WhatsApp a través de la integración con WhatsApp Business API, extrayendo automáticamente datos de tu CRM de HubSpot.
+
+## Creando una Plantilla con Variables de HubSpot
+
+<Steps>
+  <Step title="Navegar a Crear Plantilla">
+    Ve a la pestaña **Crear Plantilla** y selecciona un contacto del menú desplegable.
+  </Step>
+
+  <Step title="Iniciar Creación de Plantilla">
+    Haz clic en el botón **Crear Plantilla** para comenzar.
+  </Step>
+
+  <Step title="Ingresar Nombre de Plantilla">
+    Ingresa un nombre único para la plantilla. Evita caracteres especiales en el nombre.
+  </Step>
+
+  <Step title="Seleccionar Tipo de Plantilla">
+    Elige el tipo de plantilla apropiado de las opciones disponibles (Marketing, Utilidad, etc.).
+  </Step>
+
+  <Step title="Elegir Idioma">
+    Selecciona tu idioma preferido para la plantilla del menú desplegable.
+  </Step>
+
+  <Step title="Escribir Contenido del Mensaje">
+    Completa el contenido de tu mensaje en el campo **Cuerpo del Mensaje**.
+  </Step>
+
+  <Step title="Posicionar Cursor para Variable">
+    Coloca tu cursor en la posición exacta donde deseas insertar un valor de propiedad de HubSpot.
+  </Step>
+
+  <Step title="Seleccionar Opción de Variable HubSpot">
+    Del menú desplegable disponible, selecciona **Variable de HubSpot**.
+  </Step>
+
+  <Step title="Explorar Propiedades de HubSpot">
+    Haz clic en **Agregar Variable** para abrir el explorador de propiedades de HubSpot.
+  </Step>
+
+  <Step title="Buscar Propiedad">
+    Usa la función de búsqueda para encontrar la propiedad de HubSpot deseada en la lista.
+  </Step>
+
+  <Step title="Insertar Variable">
+    Haz clic en la propiedad de HubSpot elegida para insertarla como variable en tu mensaje.
+  </Step>
+
+  <Step title="Agregar Más Variables (Opcional)">
+    Repite los pasos anteriores para agregar variables adicionales de HubSpot según sea necesario.
+  </Step>
+
+  <Step title="Establecer Valores de Respaldo">
+    Ingresa valores de respaldo para cada variable. Estos valores predeterminados se usan cuando los datos de la propiedad de HubSpot no están disponibles para un contacto.
+  </Step>
+
+  <Step title="Enviar para Aprobación">
+    Haz clic en **Enviar para Aprobación** para enviar tu plantilla a META para revisión.
+  </Step>
+</Steps>
+
+## Restricciones Clave
+
+<Warning>
+Ten en cuenta estas pautas al crear plantillas con variables de HubSpot:
+
+- **Ubicación de variables**: No coloques variables al inicio o al final de tu mensaje
+- **Equilibrar contenido**: Mantén una buena proporción entre cantidad de variables y contenido estático
+- **Nombres únicos**: Cada nombre de plantilla debe ser único en tu cuenta
+- **Comportamiento de respaldo**: Los valores de respaldo se activan cuando los datos del propietario del contacto son inaccesibles desde HubSpot
+</Warning>
+
+<Note>
+**Entendiendo los Valores de Respaldo**
+
+El valor de respaldo es el texto predeterminado que se muestra en lugar del valor de la propiedad de HubSpot cuando esa propiedad no está disponible o está vacía para un contacto específico. Siempre establece valores de respaldo significativos para asegurar que tus mensajes permanezcan coherentes.
+</Note>

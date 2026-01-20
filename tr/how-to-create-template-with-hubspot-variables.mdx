@@ -1,0 +1,85 @@
+---
+title: "HubSpot Değişkenleri ile Şablon Nasıl Oluşturulur"
+description: "Kişiselleştirilmiş mesajlar için HubSpot iletişim özelliklerini dinamik değişkenler olarak kullanarak WhatsApp mesaj şablonları oluşturmayı öğrenin."
+---
+
+## Genel Bakış
+
+Bu kılavuz, HubSpot iletişim özelliklerini dinamik değişkenler olarak kullanan mesaj şablonları oluşturma sürecinde size yol gösterir. Bu şablonlar, HubSpot CRM'inizden otomatik olarak veri çekerek WhatsApp Business API entegrasyonu aracılığıyla kişiselleştirilmiş WhatsApp mesajları göndermenizi sağlar.
+
+## HubSpot Değişkenleri ile Şablon Oluşturma
+
+<Steps>
+  <Step title="Şablon Oluştur'a Git">
+    **Şablon Oluştur** sekmesine gidin ve açılır menüden bir kişi seçin.
+  </Step>
+
+  <Step title="Şablon Oluşturmayı Başlat">
+    Başlamak için **Şablon Oluştur** düğmesine tıklayın.
+  </Step>
+
+  <Step title="Şablon Adı Girin">
+    Benzersiz bir şablon adı girin. Adda özel karakterlerden kaçının.
+  </Step>
+
+  <Step title="Şablon Türünü Seçin">
+    Mevcut seçeneklerden uygun şablon türünü seçin (Pazarlama, Yardımcı Program, vb.).
+  </Step>
+
+  <Step title="Dil Seçin">
+    Açılır menüden tercih ettiğiniz şablon dilini seçin.
+  </Step>
+
+  <Step title="Mesaj İçeriğini Yazın">
+    **Mesaj Gövdesi** alanına mesaj içeriğinizi doldurun.
+  </Step>
+
+  <Step title="Değişken için İmleci Konumlandırın">
+    İmlecinizi HubSpot özellik değeri eklemek istediğiniz tam konuma yerleştirin.
+  </Step>
+
+  <Step title="HubSpot Değişkeni Seçeneğini Seçin">
+    Mevcut açılır menüden **HubSpot Değişkeni** seçeneğini seçin.
+  </Step>
+
+  <Step title="HubSpot Özelliklerini Göz Atın">
+    HubSpot özellikleri tarayıcısını açmak için **Değişken Ekle** düğmesine tıklayın.
+  </Step>
+
+  <Step title="Özellik Arayın">
+    Listeden istediğiniz HubSpot özelliğini bulmak için arama işlevini kullanın.
+  </Step>
+
+  <Step title="Değişken Ekleyin">
+    Mesajınıza değişken olarak eklemek için seçtiğiniz HubSpot özelliğine tıklayın.
+  </Step>
+
+  <Step title="Daha Fazla Değişken Ekleyin (İsteğe Bağlı)">
+    Gerektiğinde ek HubSpot değişkenleri eklemek için önceki adımları tekrarlayın.
+  </Step>
+
+  <Step title="Yedek Değerler Belirleyin">
+    Her değişken için yedek değerler girin. Bu varsayılan değerler, bir kişi için HubSpot özellik verileri mevcut olmadığında kullanılır.
+  </Step>
+
+  <Step title="Onay için Gönder">
+    Şablonunuzu inceleme için META'ya göndermek üzere **Onay için Gönder** düğmesine tıklayın.
+  </Step>
+</Steps>
+
+## Önemli Kısıtlamalar
+
+<Warning>
+HubSpot değişkenleri ile şablon oluştururken bu yönergeleri aklınızda bulundurun:
+
+- **Değişken yerleşimi**: Mesajınızın en başına veya en sonuna değişken koymayın
+- **İçerik dengesi**: Değişken sayısı ile statik içerik arasında iyi bir oran koruyun
+- **Benzersiz adlar**: Her şablon adı hesabınızda benzersiz olmalıdır
+- **Yedek davranışı**: Yedek değerler, HubSpot'tan kişi sahibi verilerine erişilemediğinde devreye girer
+</Warning>
+
+<Note>
+**Yedek Değerleri Anlama**
+
+Yedek değer, bir HubSpot özelliği belirli bir kişi için mevcut olmadığında veya boş olduğunda gösterilen varsayılan metindir. Mesajlarınızın tutarlı kalmasını sağlamak için her zaman anlamlı yedek değerler belirleyin.
+</Note>

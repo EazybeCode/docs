@@ -1,0 +1,85 @@
+---
+title: "Como Criar um Modelo com Variáveis do HubSpot"
+description: "Aprenda a criar modelos de mensagens do WhatsApp usando propriedades de contato do HubSpot como variáveis dinâmicas para mensagens personalizadas."
+---
+
+## Visão Geral
+
+Este guia mostra como criar modelos de mensagens que usam propriedades de contato do HubSpot como variáveis dinâmicas. Esses modelos permitem mensagens personalizadas do WhatsApp através da integração com a WhatsApp Business API, extraindo automaticamente dados do seu CRM HubSpot.
+
+## Criando um Modelo com Variáveis do HubSpot
+
+<Steps>
+  <Step title="Navegar para Criar Modelo">
+    Vá para a aba **Criar Modelo** e selecione um contato no menu suspenso.
+  </Step>
+
+  <Step title="Iniciar Criação do Modelo">
+    Clique no botão **Criar Modelo** para começar.
+  </Step>
+
+  <Step title="Inserir Nome do Modelo">
+    Digite um nome único para o modelo. Evite caracteres especiais no nome.
+  </Step>
+
+  <Step title="Selecionar Tipo de Modelo">
+    Escolha o tipo de modelo apropriado das opções disponíveis (Marketing, Utilidade, etc.).
+  </Step>
+
+  <Step title="Escolher Idioma">
+    Selecione seu idioma preferido para o modelo no menu suspenso.
+  </Step>
+
+  <Step title="Escrever Conteúdo da Mensagem">
+    Preencha o conteúdo da sua mensagem no campo **Corpo da Mensagem**.
+  </Step>
+
+  <Step title="Posicionar Cursor para Variável">
+    Coloque seu cursor na posição exata onde você deseja inserir um valor de propriedade do HubSpot.
+  </Step>
+
+  <Step title="Selecionar Opção de Variável HubSpot">
+    No menu suspenso disponível, selecione **Variável do HubSpot**.
+  </Step>
+
+  <Step title="Explorar Propriedades do HubSpot">
+    Clique em **Adicionar Variável** para abrir o navegador de propriedades do HubSpot.
+  </Step>
+
+  <Step title="Buscar Propriedade">
+    Use a função de busca para encontrar a propriedade do HubSpot desejada na lista.
+  </Step>
+
+  <Step title="Inserir Variável">
+    Clique na propriedade do HubSpot escolhida para inseri-la como variável na sua mensagem.
+  </Step>
+
+  <Step title="Adicionar Mais Variáveis (Opcional)">
+    Repita os passos anteriores para adicionar variáveis adicionais do HubSpot conforme necessário.
+  </Step>
+
+  <Step title="Definir Valores de Fallback">
+    Insira valores de fallback para cada variável. Esses valores padrão são usados quando os dados da propriedade do HubSpot não estão disponíveis para um contato.
+  </Step>
+
+  <Step title="Enviar para Aprovação">
+    Clique em **Enviar para Aprovação** para enviar seu modelo ao META para revisão.
+  </Step>
+</Steps>
+
+## Restrições Importantes
+
+<Warning>
+Tenha estas diretrizes em mente ao criar modelos com variáveis do HubSpot:
+
+- **Posicionamento de variáveis**: Não coloque variáveis no início ou no final da sua mensagem
+- **Equilibrar conteúdo**: Mantenha uma boa proporção entre quantidade de variáveis e conteúdo estático
+- **Nomes únicos**: Cada nome de modelo deve ser único em sua conta
+- **Comportamento de fallback**: Os valores de fallback são ativados quando os dados do proprietário do contato estão inacessíveis no HubSpot
+</Warning>
+
+<Note>
+**Entendendo os Valores de Fallback**
+
+O valor de fallback é o texto padrão que é exibido no lugar do valor da propriedade do HubSpot quando essa propriedade não está disponível ou está vazia para um contato específico. Sempre defina valores de fallback significativos para garantir que suas mensagens permaneçam coerentes.
+</Note>
