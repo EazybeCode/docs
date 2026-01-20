@@ -1,0 +1,160 @@
+---
+title: "Directrices"
+description: "Plazos de aprobación de plantillas, directrices y mejores prácticas para plantillas de mensajes de WhatsApp Business API"
+---
+
+## Descripción General
+
+Comprender el proceso de aprobación de plantillas de Meta es esencial para campañas exitosas de WhatsApp Business API. Esta guía cubre los plazos de aprobación, requisitos de categoría y mejores prácticas para asegurar que sus plantillas sean aprobadas rápidamente.
+
+<Note>
+Meta utiliza IA automatizada combinada con revisión humana. La guía oficial indica que las aprobaciones pueden tomar hasta **24 horas**, aunque la mayoría se procesan más rápido.
+</Note>
+
+---
+
+## Plazos de Aprobación
+
+| Escenario | Tiempo Estimado | Detalles |
+|-----------|-----------------|----------|
+| **Aprobación Estándar** | 1–5 Minutos | La mayoría de las plantillas bien estructuradas se aprueban casi instantáneamente por los sistemas automatizados de Meta. |
+| **Compleja / Marcada** | 1–24 Horas | Si la IA detecta contenido ambiguo o posibles violaciones de políticas, la plantilla se envía a revisión humana. |
+| **Reenvío** | Hasta 24 Horas | Apelar una plantilla rechazada o cambio de categoría a menudo requiere verificación manual. |
+
+<Tip>
+Planifique sus campañas con al menos **24 horas de anticipación** para tener en cuenta posibles retrasos en la revisión.
+</Tip>
+
+---
+
+## Categorías de Plantillas
+
+Seleccione la categoría apropiada para evitar rechazos o penalizaciones por categorización incorrecta.
+
+<CardGroup cols={2}>
+  <Card title="Plantillas de Utilidad" icon="bell">
+    Facilitan una transacción específica acordada o actualización.
+  </Card>
+  <Card title="Plantillas de Marketing" icon="bullhorn">
+    Promocionan productos, servicios o reconocimiento de marca.
+  </Card>
+</CardGroup>
+
+### Plantillas de Utilidad
+
+<Info>
+**Propósito:** Facilitar una transacción específica acordada o actualización.
+</Info>
+
+**Casos de Uso Comunes:**
+- Confirmaciones de pedidos
+- Actualizaciones de envío
+- Alertas de saldo de cuenta
+- Recordatorios de citas
+
+**Restricciones Clave:**
+- No debe contener ventas adicionales, mensajes introductorios de "calentamiento" o lenguaje promocional
+- Las variables deben ser claras (ej., `{{1}}` para ID de pedido)
+
+**Velocidad de Aprobación:** Generalmente más rápida (minutos) cuando las variables están correctamente definidas.
+
+### Plantillas de Marketing
+
+<Info>
+**Propósito:** Promocionar productos, servicios o reconocimiento de marca.
+</Info>
+
+**Casos de Uso Comunes:**
+- Ofertas de descuento
+- Boletines informativos
+- Recuperación de carritos abandonados
+- Series de bienvenida
+
+**Restricciones Clave:**
+- Contenido flexible, pero estrictamente monitoreado por lenguaje "spam" o violaciones de políticas
+- Sujeto a revisión más estricta respecto al consentimiento del usuario y calidad del contenido
+
+---
+
+## Requisitos para Aprobación Exitosa
+
+### Contenido y Formato
+
+<Steps>
+  <Step title="Proporcionar Muestras de Variables">
+    Siempre proporcione muestras para sus variables (ej., `{{1}}` = "Juan"). Meta rechaza plantillas con variables poco claras.
+  </Step>
+  <Step title="Verificar Gramática y Ortografía">
+    Las plantillas con errores ortográficos o mala gramática se rechazan automáticamente como "baja calidad".
+  </Step>
+  <Step title="Evitar Acortadores de Enlaces">
+    No use acortadores de enlaces genéricos (como bit.ly) en el cuerpo del texto—ocultan la URL de destino y activan alertas de seguridad. Use la función de **Botón** para enlaces en su lugar.
+  </Step>
+</Steps>
+
+### Cumplimiento de Políticas
+
+<Warning>
+**No Mezclar Categorías:** Las plantillas que mezclan contenido transaccional y promocional serán rechazadas.
+</Warning>
+
+**Ejemplo de Contenido Mixto Rechazado:**
+```
+Tu pedido #123 está confirmado. ¡Descubre nuestras novedades!
+```
+Esto sería rechazado como plantilla de Utilidad porque contiene contenido promocional.
+
+**Contenido Restringido a Evitar:**
+- Solicitar identificadores sensibles (números de tarjeta de crédito, números de identificación completos)
+- Lenguaje amenazante (ej., "Pague ahora o se tomarán acciones legales")
+
+<Info>
+**Corrección Automática de Categoría:** Si el sistema de Meta detecta que su plantilla de "Utilidad" es realmente "Marketing", actualizarán automáticamente la categoría. Tiene **60 días** para apelar este cambio si no está de acuerdo.
+</Info>
+
+---
+
+## Entendiendo los Estados de Plantillas
+
+| Estado | Descripción |
+|--------|-------------|
+| **Pendiente** | La plantilla está actualmente bajo revisión por Meta. |
+| **Aprobada** | La plantilla está aprobada y lista para enviar. |
+| **Rechazada** | La plantilla no pasó la revisión. Verifique el "Motivo" proporcionado en el panel (ej., "Contenido promocional en Utilidad"). |
+| **Pausada** | La plantilla ha sido marcada por baja calidad (altas tasas de bloqueo por usuarios). No puede enviarla hasta que mejore la puntuación de calidad. |
+
+---
+
+## Lista de Verificación de Mejores Prácticas
+
+<Check>
+Use esta lista de verificación antes de enviar plantillas para aprobación:
+</Check>
+
+| Requisito | Detalles |
+|-----------|----------|
+| **Variables Claras** | Todas las variables tienen valores de muestra proporcionados |
+| **Categoría Correcta** | La plantilla coincide con el propósito de Utilidad o Marketing |
+| **Sin Acortadores de Enlaces** | Usar función de Botón para URLs |
+| **Revisión Gramatical** | Sin errores ortográficos o gramaticales |
+| **Sin Contenido Mixto** | Plantillas de Utilidad no tienen lenguaje promocional |
+| **Cumplimiento** | Sin solicitudes de datos sensibles o lenguaje amenazante |
+
+---
+
+## Recursos Relacionados
+
+<CardGroup cols={2}>
+  <Card title="Crear y Gestionar Plantillas" icon="file-plus" href="/es/waba/templates/creating-and-managing-templates">
+    Aprenda a crear y gestionar plantillas de mensajes de WhatsApp.
+  </Card>
+  <Card title="Plantillas de Utilidad" icon="bell" href="/es/waba/templates/approval-process">
+    Profundice en los requisitos de plantillas de utilidad.
+  </Card>
+  <Card title="Plantillas de Marketing" icon="bullhorn" href="/es/waba/templates/approval-process">
+    Mejores prácticas para plantillas de marketing.
+  </Card>
+  <Card title="Variables de HubSpot" icon="hubspot" href="/es/waba/templates/how-to-create-template-with-hubspot-variables">
+    Cree plantillas con integración de variables de HubSpot.
+  </Card>
+</CardGroup>

@@ -1,0 +1,160 @@
+---
+title: "Diretrizes"
+description: "Prazos de aprovação de modelos, diretrizes e melhores práticas para modelos de mensagens do WhatsApp Business API"
+---
+
+## Visão Geral
+
+Compreender o processo de aprovação de modelos da Meta é essencial para campanhas bem-sucedidas do WhatsApp Business API. Este guia abrange prazos de aprovação, requisitos de categoria e melhores práticas para garantir que seus modelos sejam aprovados rapidamente.
+
+<Note>
+A Meta utiliza IA automatizada combinada com revisão humana. A orientação oficial indica que as aprovações podem levar até **24 horas**, embora a maioria seja processada mais rapidamente.
+</Note>
+
+---
+
+## Prazos de Aprovação
+
+| Cenário | Tempo Estimado | Detalhes |
+|---------|----------------|----------|
+| **Aprovação Padrão** | 1–5 Minutos | A maioria dos modelos bem estruturados é aprovada quase instantaneamente pelos sistemas automatizados da Meta. |
+| **Complexo / Sinalizado** | 1–24 Horas | Se a IA detectar conteúdo ambíguo ou possíveis violações de políticas, o modelo é encaminhado para revisão humana. |
+| **Reenvio** | Até 24 Horas | Apelar um modelo rejeitado ou mudança de categoria frequentemente requer verificação manual. |
+
+<Tip>
+Planeje suas campanhas com pelo menos **24 horas de antecedência** para considerar possíveis atrasos na revisão.
+</Tip>
+
+---
+
+## Categorias de Modelos
+
+Selecione a categoria apropriada para evitar rejeições ou penalidades por categorização incorreta.
+
+<CardGroup cols={2}>
+  <Card title="Modelos de Utilidade" icon="bell">
+    Facilitam uma transação específica acordada ou atualização.
+  </Card>
+  <Card title="Modelos de Marketing" icon="bullhorn">
+    Promovem produtos, serviços ou reconhecimento de marca.
+  </Card>
+</CardGroup>
+
+### Modelos de Utilidade
+
+<Info>
+**Propósito:** Facilitar uma transação específica acordada ou atualização.
+</Info>
+
+**Casos de Uso Comuns:**
+- Confirmações de pedidos
+- Atualizações de envio
+- Alertas de saldo de conta
+- Lembretes de compromissos
+
+**Restrições Principais:**
+- Não deve conter vendas adicionais, mensagens introdutórias de "aquecimento" ou linguagem promocional
+- As variáveis devem ser claras (ex., `{{1}}` para ID do pedido)
+
+**Velocidade de Aprovação:** Geralmente mais rápida (minutos) quando as variáveis estão corretamente definidas.
+
+### Modelos de Marketing
+
+<Info>
+**Propósito:** Promover produtos, serviços ou reconhecimento de marca.
+</Info>
+
+**Casos de Uso Comuns:**
+- Ofertas de desconto
+- Newsletters
+- Recuperação de carrinho abandonado
+- Séries de boas-vindas
+
+**Restrições Principais:**
+- Conteúdo flexível, mas estritamente monitorado por linguagem "spam" ou violações de políticas
+- Sujeito a revisão mais rigorosa quanto ao consentimento do usuário e qualidade do conteúdo
+
+---
+
+## Requisitos para Aprovação Bem-Sucedida
+
+### Conteúdo e Formatação
+
+<Steps>
+  <Step title="Fornecer Amostras de Variáveis">
+    Sempre forneça amostras para suas variáveis (ex., `{{1}}` = "João"). A Meta rejeita modelos com variáveis pouco claras.
+  </Step>
+  <Step title="Verificar Gramática e Ortografia">
+    Modelos com erros ortográficos ou gramática ruim são automaticamente rejeitados como "baixa qualidade".
+  </Step>
+  <Step title="Evitar Encurtadores de Links">
+    Não use encurtadores de links genéricos (como bit.ly) no corpo do texto—eles ocultam a URL de destino e acionam alertas de segurança. Use o recurso de **Botão** para links em vez disso.
+  </Step>
+</Steps>
+
+### Conformidade com Políticas
+
+<Warning>
+**Não Misturar Categorias:** Modelos que misturam conteúdo transacional e promocional serão rejeitados.
+</Warning>
+
+**Exemplo de Conteúdo Misto Rejeitado:**
+```
+Seu pedido #123 foi confirmado. Confira nossas novidades!
+```
+Isso seria rejeitado como modelo de Utilidade porque contém conteúdo promocional.
+
+**Conteúdo Restrito a Evitar:**
+- Solicitar identificadores sensíveis (números de cartão de crédito, números de identificação completos)
+- Linguagem ameaçadora (ex., "Pague agora ou ações legais serão tomadas")
+
+<Info>
+**Correção Automática de Categoria:** Se o sistema da Meta detectar que seu modelo de "Utilidade" é na verdade "Marketing", eles atualizarão automaticamente a categoria. Você tem **60 dias** para apelar esta mudança se discordar.
+</Info>
+
+---
+
+## Entendendo os Status dos Modelos
+
+| Status | Descrição |
+|--------|-----------|
+| **Pendente** | O modelo está atualmente sob revisão pela Meta. |
+| **Aprovado** | O modelo está aprovado e pronto para enviar. |
+| **Rejeitado** | O modelo não passou na revisão. Verifique o "Motivo" fornecido no painel (ex., "Conteúdo promocional em Utilidade"). |
+| **Pausado** | O modelo foi sinalizado por baixa qualidade (altas taxas de bloqueio pelos usuários). Você não pode enviá-lo até que a pontuação de qualidade melhore. |
+
+---
+
+## Lista de Verificação de Melhores Práticas
+
+<Check>
+Use esta lista de verificação antes de enviar modelos para aprovação:
+</Check>
+
+| Requisito | Detalhes |
+|-----------|----------|
+| **Variáveis Claras** | Todas as variáveis têm valores de amostra fornecidos |
+| **Categoria Correta** | O modelo corresponde ao propósito de Utilidade ou Marketing |
+| **Sem Encurtadores de Links** | Usar recurso de Botão para URLs |
+| **Revisão Gramatical** | Sem erros ortográficos ou gramaticais |
+| **Sem Conteúdo Misto** | Modelos de Utilidade não têm linguagem promocional |
+| **Conformidade** | Sem solicitações de dados sensíveis ou linguagem ameaçadora |
+
+---
+
+## Recursos Relacionados
+
+<CardGroup cols={2}>
+  <Card title="Criar e Gerenciar Modelos" icon="file-plus" href="/pt/waba/templates/creating-and-managing-templates">
+    Aprenda a criar e gerenciar modelos de mensagens do WhatsApp.
+  </Card>
+  <Card title="Modelos de Utilidade" icon="bell" href="/pt/waba/templates/approval-process">
+    Aprofunde-se nos requisitos de modelos de utilidade.
+  </Card>
+  <Card title="Modelos de Marketing" icon="bullhorn" href="/pt/waba/templates/approval-process">
+    Melhores práticas para modelos de marketing.
+  </Card>
+  <Card title="Variáveis do HubSpot" icon="hubspot" href="/pt/waba/templates/how-to-create-template-with-hubspot-variables">
+    Crie modelos com integração de variáveis do HubSpot.
+  </Card>
+</CardGroup>

@@ -123,7 +123,8 @@
                       "en/waba/templates/how-to-create-template-with-hubspot-variables",
                       "waba/templates/utility-templates",
                       "waba/templates/marketing-templates",
-                      "waba/templates/approval-process"
+                      "waba/templates/approval-process",
+                      "en/waba/templates/guidelines"
                     ]
                   },
                   {
@@ -218,7 +219,7 @@
                 "icon": "hubspot",
                 "pages": [
                   "integrations/hubspot/overview",
-                  "integrations/hubspot/prerequisites",
+                  "en/integrations/hubspot/prerequisites",
                   "integrations/hubspot/setup",
                   "integrations/hubspot/contact-sync",
                   "integrations/hubspot/chat-backup",
@@ -563,7 +564,8 @@
                       "es/waba/templates/creating-templates",
                       "es/waba/templates/creating-and-managing-templates",
                       "es/waba/templates/how-to-create-template-with-hubspot-variables",
-                      "es/waba/templates/approval-process"
+                      "es/waba/templates/approval-process",
+                      "es/waba/templates/guidelines"
                     ]
                   },
                   {
@@ -801,7 +803,8 @@
                       "pt/waba/templates/creating-templates",
                       "pt/waba/templates/creating-and-managing-templates",
                       "pt/waba/templates/how-to-create-template-with-hubspot-variables",
-                      "pt/waba/templates/approval-process"
+                      "pt/waba/templates/approval-process",
+                      "pt/waba/templates/guidelines"
                     ]
                   },
                   {
@@ -1039,7 +1042,8 @@
                       "tr/waba/templates/creating-templates",
                       "tr/waba/templates/creating-and-managing-templates",
                       "tr/waba/templates/how-to-create-template-with-hubspot-variables",
-                      "tr/waba/templates/approval-process"
+                      "tr/waba/templates/approval-process",
+                      "tr/waba/templates/guidelines"
                     ]
                   },
                   {
