@@ -118,7 +118,7 @@
                     "pages": [
                       "waba/templates/overview",
                       "waba/templates/creating-templates",
-                      "en/how-to-create-template-with-hubspot-variables",
+                      "en/waba/templates/how-to-create-template-with-hubspot-variables",
                       "waba/templates/utility-templates",
                       "waba/templates/marketing-templates",
                       "waba/templates/approval-process"
@@ -554,7 +554,7 @@
                     "group": "Plantillas de Mensajes",
                     "pages": [
                       "es/waba/templates/creating-templates",
-                      "es/how-to-create-template-with-hubspot-variables",
+                      "es/waba/templates/how-to-create-template-with-hubspot-variables",
                       "es/waba/templates/approval-process"
                     ]
                   },
@@ -785,7 +785,7 @@
                     "group": "Modelos de Mensagens",
                     "pages": [
                       "pt/waba/templates/creating-templates",
-                      "pt/how-to-create-template-with-hubspot-variables",
+                      "pt/waba/templates/how-to-create-template-with-hubspot-variables",
                       "pt/waba/templates/approval-process"
                     ]
                   },
@@ -1016,7 +1016,7 @@
                     "group": "Mesaj Şablonları",
                     "pages": [
                       "tr/waba/templates/creating-templates",
-                      "tr/how-to-create-template-with-hubspot-variables",
+                      "tr/waba/templates/how-to-create-template-with-hubspot-variables",
                       "tr/waba/templates/approval-process"
                     ]
                   },
