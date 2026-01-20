@@ -1,0 +1,208 @@
+---
+title: "Gestión de Conversaciones WABA en Tu Bandeja de Equipo"
+description: "Aprende a ver y gestionar mensajes entrantes y salientes entre tu WABA y los clientes en la Bandeja de Equipo."
+---
+
+## Introducción
+
+La Bandeja de Equipo es tu centro principal para gestionar todas las conversaciones de WhatsApp. Esta guía explica cómo manejar mensajes según tu configuración y te ayuda a entender los conceptos clave de mensajería WABA.
+
+**Esta guía cubre:**
+- Comprensión de los diferentes tipos de usuarios
+- La ventana de servicio al cliente de 24 horas
+- Envío de mensajes y plantillas
+- Estados de mensajes y seguimiento
+- Gestión de conversaciones en múltiples configuraciones
+
+---
+
+## Comprendiendo Tu Configuración de Mensajería
+
+Dependiendo de tu configuración, puedes pertenecer a uno de tres tipos de usuarios:
+
+<CardGroup cols={3}>
+  <Card title="Usuario Solo Extensión" icon="puzzle-piece">
+    Usa la extensión de Chrome para sincronizar conversaciones de WhatsApp sin una cuenta WABA conectada.
+  </Card>
+  <Card title="Usuario Solo WABA" icon="whatsapp">
+    Usa la Bandeja de Equipo como interfaz principal para la API oficial de WhatsApp Business.
+  </Card>
+  <Card title="Usuario Extensión + WABA" icon="layer-group">
+    Opera ambos canales simultáneamente para máxima flexibilidad.
+  </Card>
+</CardGroup>
+
+---
+
+## Usuarios Solo Extensión
+
+Si usas solo la extensión de Chrome de Eazybe (sin WABA), tu experiencia es sencilla:
+
+- Las conversaciones se sincronizan directamente desde WhatsApp Web a la Bandeja de Equipo
+- Puedes enviar y recibir cualquier tipo de mensaje (texto, medios, etc.) en cualquier momento sin restricciones
+- No aplican requisitos de plantillas ni ventanas de mensajería
+
+<Frame>
+  <img src="/images/1589282163.png" alt="Interfaz de Usuario Solo Extensión" />
+</Frame>
+
+---
+
+## Conceptos Clave para Mensajería con WABA
+
+### La Ventana de Servicio al Cliente de 24 Horas
+
+Al usar WABA, una ventana de mensajería especial aplica a todas las conversaciones:
+
+<Steps>
+  <Step title="La Ventana Se Abre">
+    Cuando un cliente te envía un mensaje, se abre automáticamente una ventana de servicio de 24 horas.
+  </Step>
+
+  <Step title="Respuestas Libres">
+    Dentro de esta ventana, puedes enviar cualquier tipo de mensaje (texto, imágenes, documentos) sin necesidad de plantillas pre-aprobadas.
+  </Step>
+
+  <Step title="Visualización del Tiempo Restante">
+    La bandeja muestra el tiempo restante en la ventana (ej., "15h 30m").
+  </Step>
+
+  <Step title="La Ventana Se Cierra">
+    Después de 24 horas de inactividad del cliente, la ventana se cierra. Verás: "Este chat está resuelto y expirado."
+  </Step>
+
+  <Step title="Se Requieren Plantillas">
+    Una vez que la ventana se cierra, debes usar una Plantilla de Mensaje aprobada para reiniciar la conversación.
+  </Step>
+</Steps>
+
+<Frame>
+  <img src="/images/1589289300.png" alt="Visualización del Temporizador de Ventana de 24 Horas" />
+</Frame>
+
+<Warning>
+La ventana de 24 horas se reinicia cada vez que el cliente envía un nuevo mensaje. Planifica tus respuestas en consecuencia para mantenerte dentro de la ventana activa.
+</Warning>
+
+---
+
+### Compositor de Mensajes Dinámico
+
+El compositor de mensajes se adapta según el estado de tu ventana de conversación:
+
+<Tabs>
+  <Tab title="Ventana Abierta">
+    Cuando la ventana de 24 horas está activa, ves el compositor de texto estándar que permite mensajería libre.
+
+    <Frame>
+      <img src="/images/1589292361.png" alt="Compositor de Mensajes Estándar" />
+    </Frame>
+  </Tab>
+  <Tab title="Ventana Cerrada">
+    Cuando la ventana ha expirado, el compositor se reemplaza con un botón **Enviar Plantilla**.
+
+    <Frame>
+      <img src="/images/1589294503.png" alt="Botón Enviar Plantilla" />
+    </Frame>
+  </Tab>
+</Tabs>
+
+---
+
+### Envío de Plantillas de Mensajes
+
+Cuando la ventana de servicio está cerrada, sigue estos pasos para enviar una plantilla:
+
+<Steps>
+  <Step title="Clic en Enviar Plantilla">
+    Haz clic en el botón **Enviar Plantilla** que aparece en lugar del compositor de mensajes.
+  </Step>
+
+  <Step title="Seleccionar Plantilla">
+    Elige de tu lista de plantillas aprobadas. Puedes revisar el nombre de la plantilla, categoría e idioma antes de seleccionar.
+  </Step>
+
+  <Step title="Enviar Plantilla">
+    Haz clic para enviar la plantilla seleccionada. Esto reabrirá la ventana de 24 horas una vez que el cliente responda.
+  </Step>
+</Steps>
+
+<Frame>
+  <img src="/images/1589299274.png" alt="Interfaz de Selección de Plantillas" />
+</Frame>
+
+<Tip>
+Crea plantillas para escenarios comunes como recordatorios de citas, actualizaciones de pedidos y seguimientos para asegurar que siempre puedas contactar a los clientes incluso fuera de la ventana de servicio.
+</Tip>
+
+---
+
+## Escenarios de Configuración de Mensajería
+
+### Escenario A: Usuario Solo WABA
+
+Si solo usas WABA (sin extensión):
+
+- Debes iniciar todas las conversaciones usando una Plantilla de Mensaje
+- Una vez que el cliente responde, se abre la ventana de 24 horas
+- La mensajería libre está disponible dentro de la ventana
+- Se requieren plantillas nuevamente después de que la ventana expire
+
+<Frame>
+  <img src="/images/1589300920.png" alt="Interfaz de Usuario Solo WABA" />
+</Frame>
+
+---
+
+### Escenario B: Usuario Dual (Extensión + WABA)
+
+#### Números de Teléfono Diferentes
+
+Si tu extensión y WABA usan números de teléfono diferentes:
+
+- Las conversaciones se separan por filtro de número en la bandeja
+- **Número de extensión:** Mensajería sin restricciones en cualquier momento
+- **Número WABA:** Aplican reglas de plantillas y ventanas
+- Al iniciar nuevos chats, verás un selector para elegir qué número usar
+
+<Frame>
+  <img src="/images/1589309753.png" alt="Selección de Número de Usuario Dual" />
+</Frame>
+
+#### Mismo Número de Teléfono
+
+Si tanto la extensión como WABA están conectados al mismo número:
+
+- Los hilos de conversación están unificados
+- WABA (Cloud API) se convierte en el canal de envío predeterminado
+- Las reglas de mensajería WABA aplican a todos los mensajes salientes
+
+<Note>
+Al usar el mismo número para extensión y WABA, el sistema prioriza WABA para enviar mensajes y asegurar el cumplimiento de las políticas de la API de WhatsApp Business.
+</Note>
+
+---
+
+## Estados de Mensajes
+
+Rastrea el estado de entrega de tus mensajes usando estos indicadores:
+
+| Estado | Ícono | Descripción |
+|--------|-------|-------------|
+| **Enviado** | Una marca gris | El mensaje ha sido enviado desde tu dispositivo |
+| **Entregado** | Dos marcas grises | El mensaje ha sido entregado al dispositivo del destinatario |
+| **Leído** | Dos marcas azules | El destinatario ha abierto y leído el mensaje |
+| **Fallido** | Signo de exclamación rojo | El mensaje no pudo ser entregado |
+
+<Warning>
+Si ves un estado fallido, verifica que el número del destinatario sea correcto y que tenga una cuenta de WhatsApp activa. Para mensajes WABA, también verifica que tu plantilla haya sido aprobada.
+</Warning>
+
+---
+
+## Artículos Relacionados
+
+- [Comenzando con Tu Cuenta Oficial de WhatsApp Business (WABA)](/es/waba/overview)
+- [Cómo Conectar Tu Cuenta de WhatsApp Business (WABA) a Eazybe](/es/waba/connect-waba)
+- [Creación y Gestión de Plantillas de Mensajes de WhatsApp](/es/waba/templates/creating-and-managing-templates)
+- [Cómo Enviar una Campaña de Difusión de WhatsApp](/es/waba/broadcasting/how-to-send-broadcast)

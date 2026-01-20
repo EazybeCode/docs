@@ -1,0 +1,208 @@
+---
+title: "Managing WABA Conversations in Your Team Inbox"
+description: "Learn how to view and manage incoming and outgoing messages between your WABA and customers in the Team Inbox."
+---
+
+## Introduction
+
+The Team Inbox is your central hub for managing all WhatsApp conversations. This guide explains how to handle messages depending on your setup and helps you understand the key concepts of WABA messaging.
+
+**This guide covers:**
+- Understanding different user types
+- The 24-hour customer service window
+- Sending messages and templates
+- Message statuses and tracking
+- Managing conversations across multiple setups
+
+---
+
+## Understanding Your Messaging Setup
+
+Depending on your configuration, you may fall into one of three user types:
+
+<CardGroup cols={3}>
+  <Card title="Extension-Only User" icon="puzzle-piece">
+    Uses the Chrome extension to sync WhatsApp conversations without a connected WABA account.
+  </Card>
+  <Card title="WABA-Only User" icon="whatsapp">
+    Uses the Team Inbox as the primary interface for the official WhatsApp Business API.
+  </Card>
+  <Card title="Extension + WABA User" icon="layer-group">
+    Operates both channels simultaneously for maximum flexibility.
+  </Card>
+</CardGroup>
+
+---
+
+## Extension-Only Users
+
+If you're using only the Eazybe Chrome extension (without WABA), your experience is straightforward:
+
+- Conversations sync directly from WhatsApp Web to the Team Inbox
+- You can send and receive any type of message (text, media, etc.) at any time without restrictions
+- No template requirements or messaging windows apply
+
+<Frame>
+  <img src="/images/1589282163.png" alt="Extension-Only User Interface" />
+</Frame>
+
+---
+
+## Key Concepts for WABA-Powered Messaging
+
+### The 24-Hour Customer Service Window
+
+When using WABA, a special messaging window applies to all conversations:
+
+<Steps>
+  <Step title="Window Opens">
+    When a customer sends you a message, a 24-hour service window opens automatically.
+  </Step>
+
+  <Step title="Free-Form Replies">
+    Within this window, you can send any type of message (text, images, documents) without needing pre-approved templates.
+  </Step>
+
+  <Step title="Time Remaining Display">
+    The inbox shows the time remaining in the window (e.g., "15h 30m").
+  </Step>
+
+  <Step title="Window Closes">
+    After 24 hours of customer inactivity, the window closes. You'll see: "This chat is resolved and expired."
+  </Step>
+
+  <Step title="Templates Required">
+    Once the window closes, you must use an approved Message Template to re-initiate the conversation.
+  </Step>
+</Steps>
+
+<Frame>
+  <img src="/images/1589289300.png" alt="24-Hour Window Timer Display" />
+</Frame>
+
+<Warning>
+The 24-hour window resets each time the customer sends a new message. Plan your responses accordingly to stay within the active window.
+</Warning>
+
+---
+
+### Dynamic Message Composer
+
+The message composer adapts based on your conversation window status:
+
+<Tabs>
+  <Tab title="Window Open">
+    When the 24-hour window is active, you see the standard text composer allowing free-form messaging.
+
+    <Frame>
+      <img src="/images/1589292361.png" alt="Standard Message Composer" />
+    </Frame>
+  </Tab>
+  <Tab title="Window Closed">
+    When the window has expired, the composer is replaced with a **Send Template** button.
+
+    <Frame>
+      <img src="/images/1589294503.png" alt="Send Template Button" />
+    </Frame>
+  </Tab>
+</Tabs>
+
+---
+
+### Sending Message Templates
+
+When the service window is closed, follow these steps to send a template:
+
+<Steps>
+  <Step title="Click Send Template">
+    Click the **Send Template** button that appears in place of the message composer.
+  </Step>
+
+  <Step title="Select Template">
+    Choose from your list of approved templates. You can review the template name, category, and language before selecting.
+  </Step>
+
+  <Step title="Send Template">
+    Click to send the selected template. This will re-open the 24-hour window once the customer responds.
+  </Step>
+</Steps>
+
+<Frame>
+  <img src="/images/1589299274.png" alt="Template Selection Interface" />
+</Frame>
+
+<Tip>
+Create templates for common scenarios like appointment reminders, order updates, and follow-ups to ensure you can always reach customers even outside the service window.
+</Tip>
+
+---
+
+## Messaging Setup Scenarios
+
+### Scenario A: WABA-Only User
+
+If you only use WABA (no extension):
+
+- You must initiate all conversations using a Message Template
+- Once the customer responds, the 24-hour window opens
+- Free-form messaging is available within the window
+- Templates are required again after the window expires
+
+<Frame>
+  <img src="/images/1589300920.png" alt="WABA-Only User Interface" />
+</Frame>
+
+---
+
+### Scenario B: Dual User (Extension + WABA)
+
+#### Different Phone Numbers
+
+If your extension and WABA use different phone numbers:
+
+- Conversations are separated by number filter in the inbox
+- **Extension number:** Unrestricted messaging at any time
+- **WABA number:** Template and window rules apply
+- When initiating new chats, you'll see a selection prompt to choose which number to use
+
+<Frame>
+  <img src="/images/1589309753.png" alt="Dual User Number Selection" />
+</Frame>
+
+#### Same Phone Number
+
+If both extension and WABA are connected to the same number:
+
+- Conversation threads are unified
+- WABA (Cloud API) becomes the default sending channel
+- WABA messaging rules apply to all outbound messages
+
+<Note>
+When using the same number for both extension and WABA, the system prioritizes WABA for sending messages to ensure compliance with WhatsApp Business API policies.
+</Note>
+
+---
+
+## Message Statuses
+
+Track the delivery status of your messages using these indicators:
+
+| Status | Icon | Description |
+|--------|------|-------------|
+| **Sent** | One grey tick | Message has been sent from your device |
+| **Delivered** | Two grey ticks | Message has been delivered to the recipient's device |
+| **Read** | Two blue ticks | Recipient has opened and read the message |
+| **Failed** | Red exclamation mark | Message could not be delivered |
+
+<Warning>
+If you see a failed status, check that the recipient's number is correct and that they have an active WhatsApp account. For WABA messages, also verify that your template was approved.
+</Warning>
+
+---
+
+## Related Articles
+
+- [Getting Started with Your Official WhatsApp Business Account (WABA)](/en/waba/overview)
+- [How to Connect Your WhatsApp Business Account (WABA) to Eazybe](/en/waba/connect-waba)
+- [Creating and Managing WhatsApp Message Templates](/en/waba/templates/creating-and-managing-templates)
+- [How to Send a WhatsApp Broadcast Campaign](/en/waba/broadcasting/how-to-send-broadcast)

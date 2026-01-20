@@ -85,7 +85,8 @@
                       "revenue-inbox/conversation-states",
                       "revenue-inbox/assigning-conversations",
                       "revenue-inbox/internal-notes",
-                      "revenue-inbox/saved-replies"
+                      "revenue-inbox/saved-replies",
+                      "en/revenue-inbox/team-inbox"
                     ]
                   },
                   {
@@ -142,7 +143,7 @@
                   "waba/coexistence",
                   "waba/wallet",
                   "waba/pricing",
-                  "waba/faq"
+                  "en/waba/faq"
                 ]
               },
               {
@@ -534,7 +535,8 @@
                       "es/revenue-inbox/conversation-states",
                       "es/revenue-inbox/assigning-conversations",
                       "es/revenue-inbox/internal-notes",
-                      "es/revenue-inbox/saved-replies"
+                      "es/revenue-inbox/saved-replies",
+                      "es/revenue-inbox/team-inbox"
                     ]
                   },
                   {
@@ -573,7 +575,8 @@
                   },
                   "es/waba/coexistence",
                   "es/waba/wallet",
-                  "es/waba/pricing"
+                  "es/waba/pricing",
+                  "es/waba/faq"
                 ]
               },
               {
@@ -768,7 +771,8 @@
                       "pt/revenue-inbox/conversation-states",
                       "pt/revenue-inbox/assigning-conversations",
                       "pt/revenue-inbox/internal-notes",
-                      "pt/revenue-inbox/saved-replies"
+                      "pt/revenue-inbox/saved-replies",
+                      "pt/revenue-inbox/team-inbox"
                     ]
                   },
                   {
@@ -807,7 +811,8 @@
                   },
                   "pt/waba/coexistence",
                   "pt/waba/wallet",
-                  "pt/waba/pricing"
+                  "pt/waba/pricing",
+                  "pt/waba/faq"
                 ]
               },
               {
@@ -1002,7 +1007,8 @@
                       "tr/revenue-inbox/conversation-states",
                       "tr/revenue-inbox/assigning-conversations",
                       "tr/revenue-inbox/internal-notes",
-                      "tr/revenue-inbox/saved-replies"
+                      "tr/revenue-inbox/saved-replies",
+                      "tr/revenue-inbox/team-inbox"
                     ]
                   },
                   {
@@ -1041,7 +1047,8 @@
                   },
                   "tr/waba/coexistence",
                   "tr/waba/wallet",
-                  "tr/waba/pricing"
+                  "tr/waba/pricing",
+                  "tr/waba/faq"
                 ]
               },
               {

@@ -1,0 +1,208 @@
+---
+title: "Gerenciando Conversas WABA na Sua Caixa de Entrada da Equipe"
+description: "Aprenda a visualizar e gerenciar mensagens de entrada e saída entre seu WABA e os clientes na Caixa de Entrada da Equipe."
+---
+
+## Introdução
+
+A Caixa de Entrada da Equipe é seu centro principal para gerenciar todas as conversas do WhatsApp. Este guia explica como lidar com mensagens dependendo da sua configuração e ajuda você a entender os conceitos-chave de mensagens WABA.
+
+**Este guia aborda:**
+- Compreensão dos diferentes tipos de usuários
+- A janela de atendimento ao cliente de 24 horas
+- Envio de mensagens e modelos
+- Status de mensagens e rastreamento
+- Gerenciamento de conversas em múltiplas configurações
+
+---
+
+## Compreendendo Sua Configuração de Mensagens
+
+Dependendo da sua configuração, você pode se enquadrar em um de três tipos de usuários:
+
+<CardGroup cols={3}>
+  <Card title="Usuário Apenas Extensão" icon="puzzle-piece">
+    Usa a extensão do Chrome para sincronizar conversas do WhatsApp sem uma conta WABA conectada.
+  </Card>
+  <Card title="Usuário Apenas WABA" icon="whatsapp">
+    Usa a Caixa de Entrada da Equipe como interface principal para a API oficial do WhatsApp Business.
+  </Card>
+  <Card title="Usuário Extensão + WABA" icon="layer-group">
+    Opera ambos os canais simultaneamente para máxima flexibilidade.
+  </Card>
+</CardGroup>
+
+---
+
+## Usuários Apenas Extensão
+
+Se você usa apenas a extensão do Chrome Eazybe (sem WABA), sua experiência é direta:
+
+- As conversas sincronizam diretamente do WhatsApp Web para a Caixa de Entrada da Equipe
+- Você pode enviar e receber qualquer tipo de mensagem (texto, mídia, etc.) a qualquer momento sem restrições
+- Não se aplicam requisitos de modelos ou janelas de mensagens
+
+<Frame>
+  <img src="/images/1589282163.png" alt="Interface de Usuário Apenas Extensão" />
+</Frame>
+
+---
+
+## Conceitos-Chave para Mensagens com WABA
+
+### A Janela de Atendimento ao Cliente de 24 Horas
+
+Ao usar WABA, uma janela de mensagens especial se aplica a todas as conversas:
+
+<Steps>
+  <Step title="A Janela Abre">
+    Quando um cliente envia uma mensagem para você, uma janela de serviço de 24 horas abre automaticamente.
+  </Step>
+
+  <Step title="Respostas Livres">
+    Dentro desta janela, você pode enviar qualquer tipo de mensagem (texto, imagens, documentos) sem precisar de modelos pré-aprovados.
+  </Step>
+
+  <Step title="Exibição do Tempo Restante">
+    A caixa de entrada mostra o tempo restante na janela (ex., "15h 30m").
+  </Step>
+
+  <Step title="A Janela Fecha">
+    Após 24 horas de inatividade do cliente, a janela fecha. Você verá: "Este chat está resolvido e expirado."
+  </Step>
+
+  <Step title="Modelos Necessários">
+    Uma vez que a janela fecha, você deve usar um Modelo de Mensagem aprovado para reiniciar a conversa.
+  </Step>
+</Steps>
+
+<Frame>
+  <img src="/images/1589289300.png" alt="Exibição do Temporizador da Janela de 24 Horas" />
+</Frame>
+
+<Warning>
+A janela de 24 horas reinicia cada vez que o cliente envia uma nova mensagem. Planeje suas respostas adequadamente para permanecer dentro da janela ativa.
+</Warning>
+
+---
+
+### Compositor de Mensagens Dinâmico
+
+O compositor de mensagens se adapta com base no status da sua janela de conversa:
+
+<Tabs>
+  <Tab title="Janela Aberta">
+    Quando a janela de 24 horas está ativa, você vê o compositor de texto padrão permitindo mensagens livres.
+
+    <Frame>
+      <img src="/images/1589292361.png" alt="Compositor de Mensagens Padrão" />
+    </Frame>
+  </Tab>
+  <Tab title="Janela Fechada">
+    Quando a janela expirou, o compositor é substituído por um botão **Enviar Modelo**.
+
+    <Frame>
+      <img src="/images/1589294503.png" alt="Botão Enviar Modelo" />
+    </Frame>
+  </Tab>
+</Tabs>
+
+---
+
+### Enviando Modelos de Mensagens
+
+Quando a janela de serviço está fechada, siga estes passos para enviar um modelo:
+
+<Steps>
+  <Step title="Clique em Enviar Modelo">
+    Clique no botão **Enviar Modelo** que aparece no lugar do compositor de mensagens.
+  </Step>
+
+  <Step title="Selecionar Modelo">
+    Escolha da sua lista de modelos aprovados. Você pode revisar o nome do modelo, categoria e idioma antes de selecionar.
+  </Step>
+
+  <Step title="Enviar Modelo">
+    Clique para enviar o modelo selecionado. Isso reabrirá a janela de 24 horas assim que o cliente responder.
+  </Step>
+</Steps>
+
+<Frame>
+  <img src="/images/1589299274.png" alt="Interface de Seleção de Modelos" />
+</Frame>
+
+<Tip>
+Crie modelos para cenários comuns como lembretes de compromissos, atualizações de pedidos e acompanhamentos para garantir que você sempre possa alcançar clientes mesmo fora da janela de serviço.
+</Tip>
+
+---
+
+## Cenários de Configuração de Mensagens
+
+### Cenário A: Usuário Apenas WABA
+
+Se você usa apenas WABA (sem extensão):
+
+- Você deve iniciar todas as conversas usando um Modelo de Mensagem
+- Uma vez que o cliente responde, a janela de 24 horas abre
+- Mensagens livres estão disponíveis dentro da janela
+- Modelos são necessários novamente após a janela expirar
+
+<Frame>
+  <img src="/images/1589300920.png" alt="Interface de Usuário Apenas WABA" />
+</Frame>
+
+---
+
+### Cenário B: Usuário Dual (Extensão + WABA)
+
+#### Números de Telefone Diferentes
+
+Se sua extensão e WABA usam números de telefone diferentes:
+
+- As conversas são separadas por filtro de número na caixa de entrada
+- **Número da extensão:** Mensagens sem restrições a qualquer momento
+- **Número WABA:** Regras de modelos e janelas se aplicam
+- Ao iniciar novos chats, você verá um seletor para escolher qual número usar
+
+<Frame>
+  <img src="/images/1589309753.png" alt="Seleção de Número de Usuário Dual" />
+</Frame>
+
+#### Mesmo Número de Telefone
+
+Se tanto a extensão quanto o WABA estão conectados ao mesmo número:
+
+- Os threads de conversa são unificados
+- WABA (Cloud API) se torna o canal de envio padrão
+- As regras de mensagens WABA se aplicam a todas as mensagens enviadas
+
+<Note>
+Ao usar o mesmo número para extensão e WABA, o sistema prioriza WABA para enviar mensagens para garantir conformidade com as políticas da API do WhatsApp Business.
+</Note>
+
+---
+
+## Status das Mensagens
+
+Rastreie o status de entrega das suas mensagens usando estes indicadores:
+
+| Status | Ícone | Descrição |
+|--------|-------|-----------|
+| **Enviada** | Uma marca cinza | A mensagem foi enviada do seu dispositivo |
+| **Entregue** | Duas marcas cinzas | A mensagem foi entregue ao dispositivo do destinatário |
+| **Lida** | Duas marcas azuis | O destinatário abriu e leu a mensagem |
+| **Falhou** | Ponto de exclamação vermelho | A mensagem não pôde ser entregue |
+
+<Warning>
+Se você vir um status de falha, verifique se o número do destinatário está correto e se ele tem uma conta ativa do WhatsApp. Para mensagens WABA, também verifique se seu modelo foi aprovado.
+</Warning>
+
+---
+
+## Artigos Relacionados
+
+- [Começando com Sua Conta Oficial do WhatsApp Business (WABA)](/pt/waba/overview)
+- [Como Conectar Sua Conta do WhatsApp Business (WABA) ao Eazybe](/pt/waba/connect-waba)
+- [Criação e Gerenciamento de Modelos de Mensagens do WhatsApp](/pt/waba/templates/creating-and-managing-templates)
+- [Como Enviar uma Campanha de Transmissão do WhatsApp](/pt/waba/broadcasting/how-to-send-broadcast)

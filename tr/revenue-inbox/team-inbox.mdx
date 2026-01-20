@@ -1,0 +1,208 @@
+---
+title: "Ekip Gelen Kutunuzda WABA Görüşmelerini Yönetme"
+description: "WABA'nız ile müşteriler arasındaki gelen ve giden mesajları Ekip Gelen Kutusunda nasıl görüntüleyeceğinizi ve yöneteceğinizi öğrenin."
+---
+
+## Giriş
+
+Ekip Gelen Kutusu, tüm WhatsApp görüşmelerini yönetmek için merkezi merkezinizdir. Bu kılavuz, kurulumunuza göre mesajları nasıl yöneteceğinizi açıklar ve WABA mesajlaşmasının temel kavramlarını anlamanıza yardımcı olur.
+
+**Bu kılavuz şunları kapsar:**
+- Farklı kullanıcı türlerini anlama
+- 24 saatlik müşteri hizmetleri penceresi
+- Mesaj ve şablon gönderme
+- Mesaj durumları ve takip
+- Çoklu kurulumlar arasında görüşmeleri yönetme
+
+---
+
+## Mesajlaşma Kurulumunuzu Anlama
+
+Yapılandırmanıza bağlı olarak, üç kullanıcı türünden birine girebilirsiniz:
+
+<CardGroup cols={3}>
+  <Card title="Yalnızca Eklenti Kullanıcısı" icon="puzzle-piece">
+    Bağlı bir WABA hesabı olmadan WhatsApp görüşmelerini senkronize etmek için Chrome eklentisini kullanır.
+  </Card>
+  <Card title="Yalnızca WABA Kullanıcısı" icon="whatsapp">
+    Resmi WhatsApp Business API'si için birincil arayüz olarak Ekip Gelen Kutusunu kullanır.
+  </Card>
+  <Card title="Eklenti + WABA Kullanıcısı" icon="layer-group">
+    Maksimum esneklik için her iki kanalı aynı anda çalıştırır.
+  </Card>
+</CardGroup>
+
+---
+
+## Yalnızca Eklenti Kullanıcıları
+
+Sadece Eazybe Chrome eklentisini (WABA olmadan) kullanıyorsanız, deneyiminiz basittir:
+
+- Görüşmeler doğrudan WhatsApp Web'den Ekip Gelen Kutusuna senkronize olur
+- Her zaman herhangi bir kısıtlama olmadan her türlü mesajı (metin, medya vb.) gönderip alabilirsiniz
+- Şablon gereksinimleri veya mesajlaşma pencereleri geçerli değildir
+
+<Frame>
+  <img src="/images/1589282163.png" alt="Yalnızca Eklenti Kullanıcı Arayüzü" />
+</Frame>
+
+---
+
+## WABA Destekli Mesajlaşma için Temel Kavramlar
+
+### 24 Saatlik Müşteri Hizmetleri Penceresi
+
+WABA kullanırken, tüm görüşmelere özel bir mesajlaşma penceresi uygulanır:
+
+<Steps>
+  <Step title="Pencere Açılır">
+    Bir müşteri size mesaj gönderdiğinde, otomatik olarak 24 saatlik bir hizmet penceresi açılır.
+  </Step>
+
+  <Step title="Serbest Biçimli Yanıtlar">
+    Bu pencere içinde, önceden onaylanmış şablonlara ihtiyaç duymadan her türlü mesajı (metin, resim, belge) gönderebilirsiniz.
+  </Step>
+
+  <Step title="Kalan Süre Gösterimi">
+    Gelen kutusu, pencerede kalan süreyi gösterir (ör., "15s 30d").
+  </Step>
+
+  <Step title="Pencere Kapanır">
+    Müşteri 24 saat boyunca aktif olmazsa pencere kapanır. Şunu göreceksiniz: "Bu sohbet çözüldü ve süresi doldu."
+  </Step>
+
+  <Step title="Şablonlar Gerekli">
+    Pencere kapandığında, görüşmeyi yeniden başlatmak için onaylanmış bir Mesaj Şablonu kullanmanız gerekir.
+  </Step>
+</Steps>
+
+<Frame>
+  <img src="/images/1589289300.png" alt="24 Saatlik Pencere Zamanlayıcı Gösterimi" />
+</Frame>
+
+<Warning>
+24 saatlik pencere, müşteri her yeni mesaj gönderdiğinde sıfırlanır. Aktif pencere içinde kalmak için yanıtlarınızı buna göre planlayın.
+</Warning>
+
+---
+
+### Dinamik Mesaj Oluşturucu
+
+Mesaj oluşturucu, görüşme penceresi durumunuza göre uyum sağlar:
+
+<Tabs>
+  <Tab title="Pencere Açık">
+    24 saatlik pencere aktif olduğunda, serbest biçimli mesajlaşmaya izin veren standart metin oluşturucuyu görürsünüz.
+
+    <Frame>
+      <img src="/images/1589292361.png" alt="Standart Mesaj Oluşturucu" />
+    </Frame>
+  </Tab>
+  <Tab title="Pencere Kapalı">
+    Pencerenin süresi dolduğunda, oluşturucu **Şablon Gönder** düğmesiyle değiştirilir.
+
+    <Frame>
+      <img src="/images/1589294503.png" alt="Şablon Gönder Düğmesi" />
+    </Frame>
+  </Tab>
+</Tabs>
+
+---
+
+### Mesaj Şablonları Gönderme
+
+Hizmet penceresi kapalı olduğunda, şablon göndermek için bu adımları izleyin:
+
+<Steps>
+  <Step title="Şablon Gönder'e Tıklayın">
+    Mesaj oluşturucu yerine görünen **Şablon Gönder** düğmesine tıklayın.
+  </Step>
+
+  <Step title="Şablon Seçin">
+    Onaylanmış şablonlar listenizden seçim yapın. Seçmeden önce şablon adını, kategorisini ve dilini inceleyebilirsiniz.
+  </Step>
+
+  <Step title="Şablonu Gönder">
+    Seçilen şablonu göndermek için tıklayın. Müşteri yanıt verdiğinde bu, 24 saatlik pencereyi yeniden açacaktır.
+  </Step>
+</Steps>
+
+<Frame>
+  <img src="/images/1589299274.png" alt="Şablon Seçim Arayüzü" />
+</Frame>
+
+<Tip>
+Randevu hatırlatıcıları, sipariş güncellemeleri ve takipler gibi yaygın senaryolar için şablonlar oluşturarak hizmet penceresi dışında bile her zaman müşterilere ulaşabilmenizi sağlayın.
+</Tip>
+
+---
+
+## Mesajlaşma Kurulum Senaryoları
+
+### Senaryo A: Yalnızca WABA Kullanıcısı
+
+Yalnızca WABA kullanıyorsanız (eklenti yok):
+
+- Tüm görüşmeleri bir Mesaj Şablonu kullanarak başlatmalısınız
+- Müşteri yanıt verdiğinde, 24 saatlik pencere açılır
+- Pencere içinde serbest biçimli mesajlaşma kullanılabilir
+- Pencere süresi dolduktan sonra tekrar şablonlar gereklidir
+
+<Frame>
+  <img src="/images/1589300920.png" alt="Yalnızca WABA Kullanıcı Arayüzü" />
+</Frame>
+
+---
+
+### Senaryo B: Çift Kullanıcı (Eklenti + WABA)
+
+#### Farklı Telefon Numaraları
+
+Eklentiniz ve WABA'nız farklı telefon numaraları kullanıyorsa:
+
+- Görüşmeler gelen kutusunda numara filtresine göre ayrılır
+- **Eklenti numarası:** Her zaman kısıtlamasız mesajlaşma
+- **WABA numarası:** Şablon ve pencere kuralları geçerlidir
+- Yeni sohbetler başlatırken, hangi numarayı kullanacağınızı seçmek için bir seçim istemi göreceksiniz
+
+<Frame>
+  <img src="/images/1589309753.png" alt="Çift Kullanıcı Numara Seçimi" />
+</Frame>
+
+#### Aynı Telefon Numarası
+
+Hem eklenti hem de WABA aynı numaraya bağlıysa:
+
+- Görüşme konuları birleştirilir
+- WABA (Cloud API) varsayılan gönderim kanalı olur
+- WABA mesajlaşma kuralları tüm giden mesajlara uygulanır
+
+<Note>
+Hem eklenti hem de WABA için aynı numarayı kullandığınızda, sistem WhatsApp Business API politikalarına uyumu sağlamak için mesaj göndermede WABA'ya öncelik verir.
+</Note>
+
+---
+
+## Mesaj Durumları
+
+Bu göstergeler kullanarak mesajlarınızın teslim durumunu takip edin:
+
+| Durum | Simge | Açıklama |
+|-------|-------|----------|
+| **Gönderildi** | Bir gri onay | Mesaj cihazınızdan gönderildi |
+| **Teslim Edildi** | İki gri onay | Mesaj alıcının cihazına teslim edildi |
+| **Okundu** | İki mavi onay | Alıcı mesajı açıp okudu |
+| **Başarısız** | Kırmızı ünlem işareti | Mesaj teslim edilemedi |
+
+<Warning>
+Başarısız durumu görürseniz, alıcının numarasının doğru olduğunu ve aktif bir WhatsApp hesabı olduğunu kontrol edin. WABA mesajları için şablonunuzun onaylandığını da doğrulayın.
+</Warning>
+
+---
+
+## İlgili Makaleler
+
+- [Resmi WhatsApp Business Hesabınızla (WABA) Başlarken](/tr/waba/overview)
+- [WhatsApp Business Hesabınızı (WABA) Eazybe'ye Nasıl Bağlarsınız](/tr/waba/connect-waba)
+- [WhatsApp Mesaj Şablonları Oluşturma ve Yönetme](/tr/waba/templates/creating-and-managing-templates)
+- [WhatsApp Yayın Kampanyası Nasıl Gönderilir](/tr/waba/broadcasting/how-to-send-broadcast)

@@ -1,128 +1,118 @@
 ---
-title: "WABA FAQ"
-description: "Frequently asked questions about WhatsApp Business API"
+title: "WABA: Perguntas Frequentes (FAQ)"
+description: "Perguntas frequentes sobre a integração da Conta de WhatsApp Business (WABA) com o Eazybe."
 ---
 
-## General Questions
+## Introdução
+
+Esta FAQ aborda as perguntas mais comuns sobre o uso da integração da Conta de WhatsApp Business (WABA) com o Eazybe. Encontre respostas sobre faturamento, verificação, modelos e solução de problemas abaixo.
+
+---
 
 <AccordionGroup>
-  <Accordion title="What is the difference between WhatsApp Business App and WABA?">
-    **WhatsApp Business App** is the free mobile app for small businesses. **WABA** (WhatsApp Business API) is for medium-large businesses needing broadcasts, automation, and multi-user access.
-    
-    | Feature | Business App | WABA |
-    |---------|--------------|------|
-    | Cost | Free | Pay-per-message |
-    | Users | 1 | Unlimited |
-    | Broadcasts | 256 contacts | Unlimited |
-    | Automation | Basic | Advanced |
+  <Accordion title="Como funciona o faturamento? O que é a carteira Eazybe?">
+    Todas as cobranças por mensagens de modelo do WhatsApp são gerenciadas através da sua **carteira Eazybe**.
+
+    <Steps>
+      <Step title="Créditos Iniciais">
+        Ao começar, sua organização recebe **₹100 ou $1 em créditos gratuitos** do Eazybe para começar.
+      </Step>
+      <Step title="Deduções por Uso">
+        À medida que você envia mensagens de modelo, os fundos são automaticamente deduzidos do saldo da sua carteira.
+      </Step>
+      <Step title="Recarga">
+        Você pode facilmente recarregar sua carteira na seção **Faturamento** no seu painel quando seu saldo estiver baixo.
+      </Step>
+    </Steps>
+
+    <Tip>
+    Monitore o saldo da sua carteira regularmente para garantir capacidades de mensagens ininterruptas.
+    </Tip>
   </Accordion>
-  
-  <Accordion title="Do I need a new phone number for WABA?">
-    Not necessarily. With **Coexistence mode**, you can use your existing WhatsApp Business App number while also connecting to the API. Alternatively, you can register a fresh number.
+
+  <Accordion title="Posso obter o Selo Verde no meu perfil do WhatsApp?">
+    **Sim.** Usar um WABA oficial através do Eazybe torna você elegível para solicitar a verificação do Selo Verde da Meta.
+
+    <Note>
+    O processo de verificação do Selo Verde é gerenciado através do **Meta Business Manager** assim que sua conta estiver ativa e atender aos critérios de notabilidade da Meta.
+    </Note>
+
+    **Requisitos para o Selo Verde:**
+    - Conta WABA ativa
+    - Negócio verificado no Meta Business Manager
+    - Atender aos padrões de notabilidade da Meta
   </Accordion>
-  
-  <Accordion title="How long does WABA setup take?">
-    The connection process takes **5-10 minutes**. However, message templates require Meta approval which typically takes **24-48 hours**.
+
+  <Accordion title="Por que meu Modelo de Mensagem foi rejeitado?">
+    A Meta aplica políticas rigorosas para modelos de mensagens. Razões comuns de rejeição incluem:
+
+    | Razão | Descrição |
+    |-------|-----------|
+    | **Conteúdo Promocional** | Usar conteúdo promocional em categorias de modelos não comerciais |
+    | **Solicitações de Dados Sensíveis** | Pedir dados pessoais ou financeiros sensíveis |
+    | **Formatação Incorreta** | A formatação do modelo não atende às diretrizes da Meta |
+
+    <Warning>
+    Você pode criar um novo modelo atualizando o conteúdo para cumprir com as políticas da Meta e reenviá-lo para aprovação.
+    </Warning>
   </Accordion>
-  
-  <Accordion title="Is my data secure with Eazybe?">
-    Yes. Eazybe does not store your Facebook login credentials. All message data flows through Meta's official API. For Coexistence users, chat backups are stored in your admin's Google Drive.
+
+  <Accordion title="Meu upload de CSV falhou. Por quê?">
+    Falhas no upload de CSV geralmente ocorrem devido a problemas de formatação. Certifique-se de que sua lista de contatos atenda a estes requisitos:
+
+    <Steps>
+      <Step title="Formato do Arquivo">
+        O arquivo deve estar no formato `.csv`.
+      </Step>
+      <Step title="Nome da Coluna">
+        O arquivo deve conter uma coluna especificamente chamada **"Phone"**.
+      </Step>
+      <Step title="Formato do Número de Telefone">
+        Os números de telefone devem incluir o código do país, mas **sem** o sinal `+`.
+      </Step>
+    </Steps>
+
+    **Exemplo de Formato:**
+    ```
+    Phone
+    91xxxxxxxxxx
+    44xxxxxxxxxx
+    1xxxxxxxxxx
+    ```
+
+    <Warning>
+    Não inclua o símbolo `+` antes do código do país. Use `91xxxxxxxxxx` em vez de `+91xxxxxxxxxx`.
+    </Warning>
+  </Accordion>
+
+  <Accordion title="Por que minha conta de Coexistência WABA desconectou?">
+    Sua conta pode desconectar por várias razões relacionadas à segurança e conformidade com as diretrizes da Meta:
+
+    | Razão | Descrição |
+    |-------|-----------|
+    | **Troca de Dispositivo Móvel** | Sua conexão pode ser perdida ao mover sua conta do WhatsApp Business para um novo telefone |
+    | **Uso Paralelo de App e Web** | Usar o aplicativo móvel e o WhatsApp Web simultaneamente pode causar problemas de conexão |
+    | **Inatividade** | A conexão pode expirar se o aplicativo do WhatsApp Business não for aberto por mais de 14 dias |
+    | **Violações de Políticas** | Violar a Política de Negócios do WhatsApp através de spam ou ações proibidas leva à desconexão |
+    | **Troca de Tipo de App** | Mover seu número entre o aplicativo de consumidor e o Business pode cortar a conexão |
+
+    <Tip>
+    Para manter uma conexão estável, abra regularmente seu aplicativo do WhatsApp Business e evite alternar entre versões de consumidor e business.
+    </Tip>
   </Accordion>
 </AccordionGroup>
 
-## Templates & Messaging
+---
 
-<AccordionGroup>
-  <Accordion title="Why do I need message templates?">
-    WhatsApp requires pre-approved templates for:
-    - Starting conversations with customers (outside 24-hour window)
-    - Sending promotional/marketing messages
-    - Broadcasts to multiple contacts
-    
-    Templates prevent spam and ensure quality.
-  </Accordion>
-  
-  <Accordion title="How long does template approval take?">
-    Most templates are approved within **24-48 hours**. Complex templates or those flagged for review may take longer. Marketing templates have stricter review than utility templates.
-  </Accordion>
-  
-  <Accordion title="What is the 24-hour messaging window?">
-    When a customer messages you, a **24-hour service window** opens. During this window, you can send any message (not just templates) for free. After 24 hours, you need an approved template to re-engage.
-  </Accordion>
-  
-  <Accordion title="Can I send images and videos?">
-    Yes! Templates support:
-    - Images (JPEG, PNG)
-    - Videos (MP4)
-    - Documents (PDF)
-    - Location
-    - Interactive buttons
-  </Accordion>
-</AccordionGroup>
+## Precisa de Mais Ajuda?
 
-## Billing & Pricing
+Se você tiver perguntas adicionais ou precisar de mais assistência, não hesite em entrar em contato conosco em **[hey@eazybe.com](mailto:hey@eazybe.com)**. Ficaremos felizes em ajudar!
 
-<AccordionGroup>
-  <Accordion title="How does pricing work?">
-    WhatsApp charges per **message delivered** based on:
-    - Message category (Marketing, Utility, Authentication)
-    - Recipient's country
-    
-    Eazybe charges **no markup** on Meta's rates. You pay only what Meta charges.
-  </Accordion>
-  
-  <Accordion title="Do I get free messages?">
-    Yes! 
-    - **New accounts** get ₹100/$1 starter credits
-    - **Service conversations** (customer-initiated, within 24 hours) are free
-    - **Utility templates** sent within the service window are free
-  </Accordion>
-  
-  <Accordion title="What payment methods are accepted?">
-    - Credit/Debit Cards (Visa, Mastercard, Amex)
-    - UPI (India)
-    - Net Banking (India)
-    - PayPal (International)
-  </Accordion>
-</AccordionGroup>
+---
 
-## Troubleshooting
+## Artigos Relacionados
 
-<AccordionGroup>
-  <Accordion title="My number is not eligible for WABA">
-    Common reasons:
-    - Number lacks activity (use actively for 7-30 days)
-    - Recently disconnected from another provider (wait 1-2 months)
-    - Using personal WhatsApp (must be Business App)
-    - Country not supported for Coexistence
-  </Accordion>
-  
-  <Accordion title="Template was rejected">
-    Common rejection reasons:
-    - Contains prohibited content (alcohol, gambling, etc.)
-    - Too promotional for utility category
-    - Placeholder syntax errors
-    - Misleading or incomplete information
-    
-    Edit and resubmit with corrections.
-  </Accordion>
-  
-  <Accordion title="Messages not delivering">
-    Check:
-    - Wallet has sufficient balance
-    - Recipient has opted in
-    - Number is valid and on WhatsApp
-    - Template is approved and active
-  </Accordion>
-  
-  <Accordion title="Chat history not syncing (Coexistence)">
-    - Keep WhatsApp Business App open during sync
-    - Ensure stable internet on both devices
-    - Group chats don't sync (only individual chats)
-    - If skipped initially, you may need to reconnect
-  </Accordion>
-</AccordionGroup>
-
-<Card title="Still Need Help?" icon="headset" href="mailto:support@eazybe.com">
-  Contact our support team at support@eazybe.com
-</Card>
+- [Começando com Sua Conta Oficial do WhatsApp Business (WABA)](/pt/waba/overview)
+- [Como Conectar Sua Conta do WhatsApp Business (WABA) ao Eazybe](/pt/waba/connect-waba)
+- [Criação e Gerenciamento de Modelos de Mensagens do WhatsApp](/pt/waba/templates/creating-and-managing-templates)
+- [Saldo e Recarga da Carteira Eazybe](/pt/waba/wallet)
