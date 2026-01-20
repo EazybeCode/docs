@@ -1,0 +1,172 @@
+---
+title: "Criação e Gerenciamento de Modelos de Mensagens do WhatsApp (WABA)"
+description: "Aprenda a criar, enviar e gerenciar Modelos de Mensagens para enviar transmissões ou iniciar conversas com seus clientes usando WABA."
+---
+
+## Introdução
+
+Um **Modelo de Mensagem** é um formato de mensagem pré-aprovado que você pode usar para enviar notificações de saída ou iniciar conversas com seus clientes. Cada modelo requer aprovação da Meta para manter padrões de qualidade e prevenir spam.
+
+**Este guia aborda:**
+- O que são Modelos de Mensagens e por que são importantes
+- Processo de criação de modelos passo a passo
+- Opções de configuração de modelos
+- Compreensão dos status de aprovação
+- Melhores práticas para aprovação de modelos
+
+---
+
+## O que é um Modelo de Mensagem?
+
+Modelos de Mensagens são essenciais para usuários da WhatsApp Business API (WABA) que desejam:
+
+- **Iniciar conversas** com clientes fora da janela de mensagens de 24 horas
+- **Enviar transmissões** para múltiplos contatos de uma vez
+- **Automatizar notificações** como confirmações de pedidos, lembretes de compromissos ou atualizações de envio
+
+<Note>
+Todos os Modelos de Mensagens devem ser aprovados pela Meta antes de poderem ser usados. Isso garante conformidade com as políticas de mensagens do WhatsApp e ajuda a manter uma experiência de usuário de alta qualidade.
+</Note>
+
+---
+
+## Criação de Modelos Passo a Passo
+
+### Passo 1: Navegar até a Página de Modelos
+
+Acesse a seção **Modelos** no seu painel do Eazybe para visualizar e gerenciar todos os seus modelos de mensagens.
+
+<Frame>
+  <img src="/images/1589150371.png" alt="Página de Modelos no Painel do Eazybe" />
+</Frame>
+
+---
+
+### Passo 2: Criar um Novo Modelo
+
+Clique no botão **Criar Modelo** para começar a construir seu novo modelo de mensagem.
+
+<Frame>
+  <img src="/images/1589152450.png" alt="Botão Criar Modelo" />
+</Frame>
+
+---
+
+### Passo 3: Configurar os Detalhes do Modelo
+
+Preencha os campos obrigatórios para configurar seu modelo:
+
+<Steps>
+  <Step title="Nome do Modelo">
+    Digite um nome único em minúsculas usando underscores. Por exemplo: `oferta_natal_v2` ou `confirmacao_pedido_v1`.
+  </Step>
+
+  <Step title="Categoria">
+    Selecione a categoria apropriada para seu modelo:
+    - **Marketing:** Mensagens promocionais, ofertas e atualizações
+    - **Utilidade:** Mensagens transacionais como atualizações de pedidos ou lembretes de compromissos
+    - **Autenticação:** Senhas de uso único (OTP) e códigos de verificação
+  </Step>
+
+  <Step title="Idioma">
+    Escolha o idioma para seu modelo. Você pode criar múltiplas versões em diferentes idiomas.
+  </Step>
+
+  <Step title="Cabeçalho (Opcional)">
+    Adicione um cabeçalho no topo da sua mensagem. As opções incluem:
+    - Cabeçalho de texto
+    - Imagem
+    - Vídeo
+    - Documento
+  </Step>
+
+  <Step title="Corpo (Obrigatório)">
+    Escreva o conteúdo principal da sua mensagem. Este é o texto central que seus clientes verão.
+  </Step>
+
+  <Step title="Rodapé (Opcional)">
+    Adicione texto breve na parte inferior da sua mensagem, como um aviso legal ou slogan da empresa.
+  </Step>
+
+  <Step title="Botões (Opcional)">
+    Adicione até dois botões à sua mensagem:
+    - **Respostas Rápidas:** Opções de resposta predefinidas (ex., "Sim," "Não," "Saiba Mais")
+    - **Chamadas para Ação:** Links para sites ou números de telefone
+  </Step>
+</Steps>
+
+<Frame>
+  <img src="/images/1589154268.png" alt="Formulário de Configuração do Modelo" />
+</Frame>
+
+<Frame>
+  <img src="/images/1589158457.png" alt="Opções de Configuração de Botões" />
+</Frame>
+
+<Tip>
+Use variáveis como `{{1}}`, `{{2}}`, etc., no corpo do seu modelo para personalizar mensagens com nomes de clientes, números de pedidos ou outro conteúdo dinâmico.
+</Tip>
+
+---
+
+### Passo 4: Enviar para Aprovação
+
+Depois de configurar seu modelo, clique em **Enviar** para enviá-lo à Meta para revisão.
+
+<Frame>
+  <img src="/images/1589159135.png" alt="Enviar Modelo para Aprovação" />
+</Frame>
+
+<Warning>
+Revise seu modelo cuidadosamente antes de enviar. Certifique-se de que não há erros de ortografia, violações de políticas ou conteúdo enganoso que possa causar rejeição.
+</Warning>
+
+---
+
+## Compreensão dos Status dos Modelos
+
+Após o envio, seu modelo aparecerá na lista de Modelos de Mensagens com um dos seguintes status:
+
+<Frame>
+  <img src="/images/1589160140.png" alt="Lista de Status dos Modelos" />
+</Frame>
+
+<Frame>
+  <img src="/images/1589160753.png" alt="Exemplos de Status dos Modelos" />
+</Frame>
+
+### Definições de Status
+
+<AccordionGroup>
+  <Accordion title="Pendente">
+    O modelo está atualmente em revisão pela Meta. Este processo pode levar de alguns minutos até 24 horas. Nenhuma ação é necessária enquanto aguarda.
+  </Accordion>
+
+  <Accordion title="Aprovado">
+    Seu modelo foi aprovado e está pronto para usar em transmissões e conversas com clientes. Você pode começar a usá-lo imediatamente.
+  </Accordion>
+
+  <Accordion title="Rejeitado">
+    O modelo não atendeu às políticas da Meta. Você verá um motivo de rejeição explicando o problema. Revise o feedback, faça as alterações necessárias e reenvie o modelo.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Melhores Práticas para Aprovação de Modelos
+
+Para aumentar suas chances de ter modelos aprovados rapidamente:
+
+1. **Seja claro e conciso:** Evite linguagem vaga ou ambígua
+2. **Siga as políticas da Meta:** Revise as políticas de comércio e mensagens do WhatsApp antes de criar modelos
+3. **Evite linguagem promocional em modelos de Utilidade:** Mantenha modelos transacionais informativos, não focados em vendas
+4. **Use gramática correta:** Revise erros ortográficos e gramaticais
+5. **Inclua opções de exclusão:** Para modelos de marketing, forneça uma forma para os usuários cancelarem a inscrição
+
+---
+
+## Artigos Relacionados
+
+- [Como Criar Modelos com Variáveis do HubSpot](/pt/waba/templates/how-to-create-template-with-hubspot-variables)
+- [Processo de Aprovação de Modelos](/pt/waba/templates/approval-process)
+- [Criação de Campanhas de Transmissão](/pt/waba/broadcasting/create-campaign)
