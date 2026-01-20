@@ -141,6 +141,8 @@
                     ]
                   },
                   "waba/coexistence",
+                  "en/waba/signup-troubleshooting",
+                  "en/waba/broadcast-rate-list-1st-jan-2026",
                   "waba/wallet",
                   "waba/pricing",
                   "en/waba/faq"
@@ -574,6 +576,8 @@
                     ]
                   },
                   "es/waba/coexistence",
+                  "es/waba/signup-troubleshooting",
+                  "es/waba/broadcast-rate-list-1st-jan-2026",
                   "es/waba/wallet",
                   "es/waba/pricing",
                   "es/waba/faq"
@@ -810,6 +814,8 @@
                     ]
                   },
                   "pt/waba/coexistence",
+                  "pt/waba/signup-troubleshooting",
+                  "pt/waba/broadcast-rate-list-1st-jan-2026",
                   "pt/waba/wallet",
                   "pt/waba/pricing",
                   "pt/waba/faq"
@@ -1046,6 +1052,8 @@
                     ]
                   },
                   "tr/waba/coexistence",
+                  "tr/waba/signup-troubleshooting",
+                  "tr/waba/broadcast-rate-list-1st-jan-2026",
                   "tr/waba/wallet",
                   "tr/waba/pricing",
                   "tr/waba/faq"
