@@ -1,0 +1,277 @@
+---
+title: "Eazybe ile Coexistence Onboarding"
+description: "WhatsApp Business App telefon numaranızı sohbetleri, kişileri kaybetmeden veya yeniden kayıt gerektirmeden WhatsApp Cloud API'ye bağlamak için eksiksiz kılavuz."
+---
+
+## Giriş
+
+WhatsApp Coexistence, işletmelerin aktif WhatsApp Business App telefon numaralarını WhatsApp Cloud API'ye bağlamalarını sağlar — sohbetleri, kişileri kaybetmeden veya yeniden kayıt gerektirmeden.
+
+**Bu kılavuz şunları kapsar:**
+- Coexistence nedir
+- Onboarding öncesi ön koşullar
+- Adım adım kurulum süreci
+- Yaygın sorunlar ve çözümler
+- Yeni başlayanlar için SSS
+- Onboarding sonrası en iyi uygulamalar
+
+---
+
+## WhatsApp Coexistence Nedir?
+
+Coexistence (Coex), işletmelerin şunları yapmasını sağlar:
+
+- WhatsApp Business App'i Cloud API'ye bağlama
+- Business App'i normal şekilde kullanmaya devam etme
+- Mesajları ve kişileri Cloud API platformuna senkronize etme
+- Numarayı yeniden kaydetmekten kaçınma
+- Doğrulanmış rozetini koruma (varsa)
+
+**Temel Faydalar:**
+
+- Aynı telefon numarasını hem Business App hem de API'de kullanma
+- Gerçek zamanlı mesaj ve kişi senkronizasyonu
+- İnsan etkileşimini otomasyonla birleştirme
+- Sohbet geçmişini ve kişileri koruma
+- Tanıdık WhatsApp Business App arayüzüne erişimi sürdürme
+
+<Note>
+Bu, veri kaybetmeden Cloud API'ye geçiş yapmanın en güvenli yöntemidir.
+</Note>
+
+---
+
+## Ön Koşullar
+
+Onboarding sürecine başlamadan önce bu gereksinimleri karşıladığınızdan emin olun:
+
+<Steps>
+  <Step title="WhatsApp Business Hesabı Gerekli">
+    Numaranız WhatsApp Business App'te kayıtlı olmalıdır. Kişisel WhatsApp numaraları desteklenmemektedir.
+  </Step>
+
+  <Step title="WhatsApp Business App Sürüm 2.24.17 veya Üzeri">
+    Eski sürümler QR bağlantısı sırasında başarısız olacaktır. Devam etmeden önce uygulamanızı güncelleyin.
+  </Step>
+
+  <Step title="Numara Sağlığı Gereksinimleri">
+    Numaranızın şunlara sahip olması gerekir:
+    - Düzenli WhatsApp etkinliği
+    - Meta kısıtlaması yok
+    - Politika ihlali yok
+    - Coexistence bağlantısından önce ve sonra aktif ve gerçek kullanım (gerçek 1:1 konuşmalar ve en az 3–7 gün tutarlı etkinlik)
+  </Step>
+
+  <Step title="Yönetici Erişimli Facebook Business Sayfası">
+    Kurulumu tamamlamak için bir Facebook Business Sayfasına yönetici erişiminiz olmalıdır.
+  </Step>
+
+  <Step title="Meta Business Hesabı Gerekli">
+    Entegrasyon için bir Meta Business Hesabı gereklidir.
+  </Step>
+
+  <Step title="Numara Uygunluğu">
+    Numaranız şu anda başka bir WhatsApp API sağlayıcısına bağlı olmamalıdır.
+  </Step>
+</Steps>
+
+<Warning>
+Nijerya veya Güney Afrika'dan numaralar ek Meta düzenlemelerine ve kısıtlamalarına tabi olabilir.
+</Warning>
+
+---
+
+## Adım Adım Onboarding Süreci
+
+### İlk Kurulum
+
+<Steps>
+  <Step title="E-posta ile Giriş">
+    Onboarding sürecine başlamak için e-posta adresinizi girin.
+
+    ![E-posta ile Giriş](/images/1908028628.png)
+  </Step>
+
+  <Step title="OTP Girin">
+    E-postanıza gönderilen OTP kodunu girin.
+
+    ![OTP Girin](/images/1908029950.png)
+
+    OTP doğrulamasından sonra Başlangıç sayfasına yönlendirileceksiniz.
+  </Step>
+
+  <Step title="Numara Ekle'ye Tıklayın">
+    WhatsApp numaranızı bağlamaya devam etmek için **Numara Ekle** düğmesine tıklayın.
+
+    ![Numara Ekle](/images/1908032104.png)
+  </Step>
+
+  <Step title="Facebook ile Giriş">
+    Facebook hesabınızla giriş yapın. Facebook girişiniz zaten kayıtlıysa **Olarak Devam Et** seçeneğine tıklayabilirsiniz.
+
+    ![Facebook ile Giriş](/images/1908034817.png)
+  </Step>
+
+  <Step title="İzinleri Verin">
+    İzinler sayfasını inceleyin ve devam etmek için **Devam Et**'e tıklayın.
+
+    ![İzinler Sayfası](/images/1908035914.png)
+  </Step>
+
+  <Step title="İşletme Bilgilerini Doldurun">
+    Gerekli alanlara işletme bilgilerinizi girin.
+
+    ![İşletme Bilgileri](/images/1908036666.png)
+  </Step>
+
+  <Step title="İşletme Portföyü Seçin veya Oluşturun">
+    Mevcut bir işletme portföyü seçin veya yeni bir tane oluşturun.
+
+    ![İşletme Portföyü Seçin](/images/1908037094.png)
+
+    ![Yeni WABA Oluştur](/images/1908040842.png)
+  </Step>
+</Steps>
+
+<Tip>
+Coexistence kurulumu için her zaman **YENİ bir WABA hesabı** oluşturun. Bu, temiz kullanım ve sağlıklı bir bağlantı akışı sağlar.
+</Tip>
+
+---
+
+### Onboarding Yönteminizi Seçin
+
+İki seçeneğiniz var:
+1. **Mevcut WhatsApp Business numarasını bağla** — Çoğu kullanıcı için önerilir
+2. **Yeni bir WhatsApp iletişim numarasıyla başla**
+
+<Warning>
+**Kısıtlamalar:**
+- Numara şu anda başka bir ortağa bağlı olmamalıdır
+- Yeni veya mevcut bir WhatsApp Business numarası olmalıdır
+- Numara Meta tarafından engellenmiş olmamalıdır
+</Warning>
+
+---
+
+### Mevcut WhatsApp Business Numarasını Bağla
+
+<Steps>
+  <Step title="Telefon Numarasını Girin">
+    Ülke kodunuzu seçin ve telefon numaranızı girin, ardından **İleri**'ye tıklayın.
+
+    ![Telefon Numarasını Girin](/images/1908044314.png)
+  </Step>
+
+  <Step title="QR Kodunu Tarayın">
+    Numaranıza bir WhatsApp mesajı gönderilecektir. **QR Kodunu Tara**'ya tıklayın ve WhatsApp Business App'inizle görüntülenen kodu tarayın.
+
+    ![QR Kodunu Tara](/images/1908049708.png)
+  </Step>
+
+  <Step title="Sohbet Geçmişi İçe Aktarımını Seçin">
+    QR kodunu taradıktan sonra içe aktarma tercihlerinizi yapılandırın:
+
+    ![Sohbet Geçmişi İçe Aktarımı](/images/1908050113.png)
+
+    - **Kişiler:** Tüm kişiler otomatik olarak içe aktarılır
+    - **1:1 Sohbetler:** İsteğe bağlı — 6 aya kadar sohbet geçmişi içe aktarın
+    - **Medya:** İsteğe bağlı — 2 haftaya kadar medya dosyası içe aktarın
+    - **Grup Sohbetleri:** İçe aktarılmaz
+  </Step>
+
+  <Step title="Hesap Doğrulamasını Bekleyin">
+    Hesabınız doğrulanacaktır. Bu işlem biraz zaman alabilir.
+
+    ![Hesap Doğrulaması](/images/1908052548.png)
+  </Step>
+
+  <Step title="Bitir'e Tıklayın">
+    Doğrulama tamamlandığında, kurulumu tamamlamak için **Bitir**'e tıklayın.
+
+    ![Kurulumu Bitir](/images/1908055256.png)
+  </Step>
+</Steps>
+
+---
+
+## Sorun Giderme
+
+### Sorun 1: Entegrasyon Başarısız Oldu
+
+**Yaygın nedenler:**
+- Eski WhatsApp sürümü
+- Numara inaktifliği
+- Meta kısıtlamaları
+- Facebook Sayfasına yönetici erişimi yok
+
+<Tip>
+**Çözüm:** Aktif WhatsApp Business kullanımı olan ve geçmiş ihlalleri olmayan başka bir numara kullanın.
+</Tip>
+
+---
+
+### Sorun 2: Sohbet Geçmişi İçe Aktarılmadı
+
+İçe aktarma başarısız olursa, şu adımları izleyin:
+
+<Steps>
+  <Step title="WhatsApp Business App'i Açın">
+    Telefonunuzda WhatsApp Business App'i başlatın.
+  </Step>
+
+  <Step title="Ayarlar'a Gidin">
+    **Ayarlar → İş Araçları → WhatsApp Business Platformu**'na gidin.
+  </Step>
+
+  <Step title="Bağlantıyı Kesin">
+    Mevcut bağlantıyı kaldırmak için **Bağlantıyı Kes**'e dokunun.
+  </Step>
+
+  <Step title="Onboarding'i Yeniden Başlatın">
+    Coexistence onboarding sürecini baştan başlatın.
+  </Step>
+</Steps>
+
+<Warning>
+Başlangıçta geçmiş içe aktarımını manuel olarak atladıysanız, tamamen bağlantıyı kesip yeniden bağlamanız gerekir. İlk kayıt sırasında yanlış seçeneği seçtiyseniz sohbet yedeklemelerinin geri yüklenmeyebileceğini unutmayın.
+</Warning>
+
+---
+
+### Sorun 3: Numarada Meta Kısıtlamaları Var
+
+**Belirtiler:**
+- Coexistence onboarding anında başarısız oluyor
+- QR kodu tamamlanmıyor
+- "Business Platformuna Bağlan" mesajı görünmüyor
+
+<Tip>
+**Çözüm:** Politika sorunu olmayan ve sık, meşru WhatsApp Business etkinliği olan yeni bir numara kullanın.
+</Tip>
+
+---
+
+## Sıkça Sorulan Sorular
+
+<AccordionGroup>
+  <Accordion title="Kişisel WhatsApp numarası kullanabilir miyim?">
+    Hayır. Coexistence için yalnızca WhatsApp Business App numaralarına izin verilir.
+  </Accordion>
+
+  <Accordion title="Sohbetlerim telefon uygulamam da kalacak mı?">
+    Evet. WhatsApp Business App'ten hiçbir şey silinmez. Mevcut sohbetleriniz olduğu gibi kalır.
+  </Accordion>
+
+  <Accordion title="Coex'ten sonra WhatsApp Business App'i kullanmaya devam edebilir miyim?">
+    Evet. Cloud API entegrasyonundan da yararlanırken WhatsApp Business App'i normal şekilde kullanmaya devam edebilirsiniz.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## İlgili Makaleler
+
+- [Resmi WhatsApp Business Hesabınızla (WABA) Başlarken](/tr/waba/overview)
+- [WhatsApp Business Hesabınızı (WABA) Eazybe'ye Nasıl Bağlarsınız](/tr/waba/connect-waba)
+- [WABA: Sıkça Sorulan Sorular (SSS)](/tr/waba/faq)

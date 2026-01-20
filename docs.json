@@ -58,7 +58,8 @@
                     "pages": [
                       "getting-started/installation",
                       "getting-started/system-requirements",
-                      "getting-started/connect-whatsapp"
+                      "getting-started/connect-whatsapp",
+                      "en/getting-started/onboarding-to-coexistence"
                     ]
                   },
                   {
@@ -66,8 +67,7 @@
                     "pages": [
                       "getting-started/whatsapp-types",
                       "getting-started/personal-vs-business-vs-api",
-                      "getting-started/coexistence-mode",
-                      "en/getting-started/onboarding-to-coexistence-en"
+                      "getting-started/coexistence-mode"
                     ]
                   }
                 ]
@@ -504,7 +504,8 @@
                     "pages": [
                       "es/getting-started/installation",
                       "es/getting-started/system-requirements",
-                      "es/getting-started/connect-whatsapp"
+                      "es/getting-started/connect-whatsapp",
+                      "es/getting-started/onboarding-to-coexistence"
                     ]
                   },
                   {
@@ -512,8 +513,7 @@
                     "pages": [
                       "es/getting-started/whatsapp-types",
                       "es/getting-started/personal-vs-business-vs-api",
-                      "es/getting-started/coexistence-mode",
-                      "es/getting-started/onboarding-to-coexistence-es"
+                      "es/getting-started/coexistence-mode"
                     ]
                   }
                 ]
@@ -735,7 +735,8 @@
                     "pages": [
                       "pt/getting-started/installation",
                       "pt/getting-started/system-requirements",
-                      "pt/getting-started/connect-whatsapp"
+                      "pt/getting-started/connect-whatsapp",
+                      "pt/getting-started/onboarding-to-coexistence"
                     ]
                   },
                   {
@@ -743,8 +744,7 @@
                     "pages": [
                       "pt/getting-started/whatsapp-types",
                       "pt/getting-started/personal-vs-business-vs-api",
-                      "pt/getting-started/coexistence-mode",
-                      "pt/getting-started/onboarding-to-coexistence-pt"
+                      "pt/getting-started/coexistence-mode"
                     ]
                   }
                 ]
@@ -966,7 +966,8 @@
                     "pages": [
                       "tr/getting-started/installation",
                       "tr/getting-started/system-requirements",
-                      "tr/getting-started/connect-whatsapp"
+                      "tr/getting-started/connect-whatsapp",
+                      "tr/getting-started/onboarding-to-coexistence"
                     ]
                   },
                   {
@@ -974,8 +975,7 @@
                     "pages": [
                       "tr/getting-started/whatsapp-types",
                       "tr/getting-started/personal-vs-business-vs-api",
-                      "tr/getting-started/coexistence-mode",
-                      "tr/getting-started/onboarding-to-coexistence-tr"
+                      "tr/getting-started/coexistence-mode"
                     ]
                   }
                 ]
