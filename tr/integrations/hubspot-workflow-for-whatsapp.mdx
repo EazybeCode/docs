@@ -1,0 +1,222 @@
+---
+title: "WhatsApp Mesajları Göndermek için HubSpot İş Akışları Nasıl Kullanılır"
+description: "Eazybe entegrasyonunu kullanarak lead etkileşimi ve takip için HubSpot iş akışları aracılığıyla WhatsApp mesajlaşmasını nasıl otomatikleştireceğinizi öğrenin."
+---
+
+## Giriş
+
+HubSpot iş akışları, lead etkileşimi ve takip için WhatsApp mesajlaşmasını otomatikleştirmenizi sağlar. Eazybe entegrasyonu ile mesajları planlayabilir, kişiselleştirilmiş şablonlar gönderebilir ve artan verimlilik için otomatik iş akışları oluşturabilirsiniz.
+
+**Bu kılavuz şunları kapsar:**
+- HubSpot'ta iş akışı oluşturma
+- Otomasyon için tetikleyicileri yapılandırma
+- WhatsApp mesajlaşma eylemleri ekleme
+- Mesaj kişiselleştirme seçenekleri
+- İş akışınızı yayınlama ve etkinleştirme
+
+---
+
+## Ön Koşullar
+
+İş akışınızı kurmadan önce şunlara sahip olduğunuzdan emin olun:
+
+<Steps>
+  <Step title="İş Akışı Erişimli HubSpot Hesabı">
+    HubSpot'un Otomasyon özelliklerine erişiminiz olmalıdır. Bu, ücretli bir HubSpot planı gerektirebilir.
+  </Step>
+
+  <Step title="Eazybe Eklentisi Yüklü">
+    Eazybe Chrome eklentisi WhatsApp Web'de yüklü ve aktif olmalıdır.
+  </Step>
+
+  <Step title="HubSpot Eazybe'ye Bağlı">
+    HubSpot hesabınız Eazybe'ye bağlı olmalıdır. Kurulum talimatları için [HubSpot Entegrasyon Kılavuzu](/tr/integrations/hubspot-overview)'na bakın.
+  </Step>
+
+  <Step title="WhatsApp Web Aktif">
+    İş akışlarını kurarken ve test ederken WhatsApp Web Eazybe aktif durumda açık olmalıdır.
+  </Step>
+</Steps>
+
+---
+
+## Adım Adım İş Akışı Kurulumu
+
+### Adım 1: Yeni İş Akışı Oluştur
+
+<Steps>
+  <Step title="İş Akışlarına Git">
+    HubSpot'ta üst menüdeki **Otomasyon** sekmesine gidin ve açılır menüden **İş Akışları**'nı seçin.
+
+    <Frame>
+      <img src="/images/1255812257.png" alt="HubSpot Otomasyon İş Akışları" />
+    </Frame>
+  </Step>
+
+  <Step title="Yeni İş Akışı Oluştur">
+    Sağ üst köşedeki **İş akışı oluştur**'a tıklayın ve **Sıfırdan**'ı seçin.
+  </Step>
+
+  <Step title="İş Akışı Türünü Seç">
+    İhtiyaçlarınıza göre iş akışı türünü seçin:
+    - **Kişi tabanlı:** Kişi özellikleri değiştiğinde tetikle
+    - **Anlaşma tabanlı:** Anlaşma aşamaları değiştiğinde tetikle
+    - **Şirket tabanlı:** Şirket özelliklerine göre tetikle
+  </Step>
+
+  <Step title="İş Akışınızı Adlandırın">
+    İş akışınıza amacını yansıtan açıklayıcı bir isim verin.
+  </Step>
+</Steps>
+
+---
+
+### Adım 2: Tetikleyicileri Yapılandır
+
+<Steps>
+  <Step title="Tetikleyicileri Ayarla">
+    **Tetikleyicileri ayarla**'ya tıklayın ve iş akışını başlatacak koşulları seçin.
+
+    <Frame>
+      <img src="/images/1267586286.png" alt="Kişi Özellikleri Tetikleyici Yapılandırması" />
+    </Frame>
+
+    **Yaygın tetikleyici seçenekleri:**
+    - **Kişi özellikleri:** Bir kişi belirli bir yaşam döngüsü aşamasına ulaştığında tetikle
+    - **Anlaşma özellikleri:** Bir anlaşma belirli bir aşamaya geçtiğinde tetikle
+    - **Özel tetikleyiciler:** Herhangi bir özelliğe dayalı kendi kurallarınızı tanımlayın
+  </Step>
+
+  <Step title="Filtreleri Uygula">
+    Hangi kayıtların iş akışına girmesi gerektiğini daraltmak için ek filtreler ekleyin, ardından tetikleyici yapılandırmanızı kaydedin.
+
+    <Frame>
+      <img src="/images/1267587957.png" alt="Tetikleyici Filtre Ayarları" />
+    </Frame>
+  </Step>
+
+  <Step title="Yeniden Kayıt'ı Etkinleştir">
+    Kriterleri birden fazla kez karşılayan kişiler için iş akışının düzgün tetiklenmesini sağlamak için **Yeniden Kayıt**'ı açın.
+  </Step>
+</Steps>
+
+<Warning>
+Yeniden Kayıt etkinleştirilmezse, kişiler tetikleyici kriterlerini tekrar karşılasalar bile iş akışından yalnızca bir kez geçecektir.
+</Warning>
+
+---
+
+### Adım 3: WhatsApp Mesaj Eylemi Ekle
+
+<Steps>
+  <Step title="Eylem Ekle">
+    Bir eylem eklemek için tetikleyicinizin altındaki **+** simgesine tıklayın.
+
+    <Frame>
+      <img src="/images/1255804613.png" alt="İş Akışı Eylemi Ekle" />
+    </Frame>
+  </Step>
+
+  <Step title="WhatsApp Eylemini Seç">
+    Aşağı kaydırın ve **EazyBe entegrasyon** bölümü altındaki **WhatsApp mesajı gönder**'i seçin.
+  </Step>
+</Steps>
+
+---
+
+### Adım 4: Mesaj Ayarlarını Yapılandır
+
+<Steps>
+  <Step title="Alıcı Telefonunu Ayarla">
+    Alıcı olarak kişinin telefon alanını seçin. Bu, mesajın doğru WhatsApp numarasına gönderilmesini sağlar.
+
+    <Frame>
+      <img src="/images/1255806368.png" alt="WhatsApp Mesaj Yapılandırması" />
+    </Frame>
+  </Step>
+
+  <Step title="Mesajı Özelleştir">
+    Mesaj içeriğinizi yazın. Mesajı kişiselleştirmek için **kişi belirteçleri** kullanabilirsiniz:
+    - Kişi adı
+    - Şirket adı
+    - Anlaşma bilgileri
+    - Özel özellikler
+  </Step>
+
+  <Step title="Medya Ekle (İsteğe Bağlı)">
+    Gerekirse, mesajınıza belge veya dosya eklemek için bir **Medya URL'si** ekleyin.
+  </Step>
+</Steps>
+
+<Tip>
+Mesajlarınızı daha kişisel hale getirmek ve etkileşim oranlarını artırmak için `{{contact.firstname}}` gibi kişiselleştirme belirteçleri kullanın.
+</Tip>
+
+---
+
+### Adım 5: İncele ve Yayınla
+
+<Steps>
+  <Step title="İş Akışını Önizle">
+    Tüm adımların doğru yapılandırıldığından emin olmak için iş akışı yapılandırmanızı inceleyin.
+  </Step>
+
+  <Step title="İş Akışını Yayınla">
+    İş akışını etkinleştirmek için **İncele ve yayınla**'ya tıklayın.
+  </Step>
+</Steps>
+
+<Note>
+Bu kurulum, otomatik WhatsApp mesajlarını mükemmel zamanda planlamanıza olanak tanır ve lead'lerinizle tutarlı takip ve etkileşim sağlar.
+</Note>
+
+---
+
+## Önemli Hususlar
+
+### Gönderen Bilgileri
+
+Bir iş akışında WhatsApp eylemi eklerken, gönderen iş akışı oluşturucusu değil **sahibin WhatsApp'ını** yansıtacaktır. Uygun ekip üyesinin WhatsApp'ının bağlı olduğundan emin olun.
+
+### Kişi Telefon Numaraları
+
+WhatsApp ve HubSpot kişileri, HubSpot'un "telefon numarası" alanındaki benzersiz telefon numarası aracılığıyla otomatik olarak bağlanır. Kişi telefon numaralarının ülke kodlarıyla doğru şekilde biçimlendirildiğinden emin olun.
+
+### İş Akışı Zamanlaması
+
+Otomatik mesajlarınızın zamanlamasını düşünün:
+- Uygun olmayan saatlerde mesaj göndermekten kaçının
+- Birden fazla mesaj gönderiyorsanız eylemler arasında gecikmeler kullanın
+- Ölçeklendirmeden önce iş akışınızı küçük bir grupla test edin
+
+---
+
+## Sorun Giderme
+
+### Yaygın Sorunlar
+
+<AccordionGroup>
+  <Accordion title="WhatsApp eylemi iş akışında görünmüyor mu?">
+    Eazybe'nin HubSpot'a doğru şekilde bağlı olduğundan emin olun. Entegrasyonu yeniden bağlamanız veya iş akışı düzenleyicisini yenilemeniz gerekebilir.
+  </Accordion>
+
+  <Accordion title="Mesajlar gönderilmiyor mu?">
+    Şunları kontrol edin:
+    - WhatsApp Web'in Eazybe aktif durumdayken açık olduğunu
+    - Kişinin geçerli bir telefon numarasına sahip olduğunu
+    - Gerekirse yeniden kaydın etkinleştirildiğini
+    - İş akışının yayınlandığını ve aktif olduğunu
+  </Accordion>
+
+  <Accordion title="Mesajlarda yanlış gönderen mi görünüyor?">
+    Gönderen, HubSpot'taki kişi sahibinin WhatsApp'ını yansıtır. Kişi sahipliğinin HubSpot'ta doğru atandığını doğrulayın.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## İlgili Makaleler
+
+- [HubSpot Entegrasyonu ile Başlarken](/tr/integrations/hubspot-overview)
+- [HubSpot İş Akışı Sorunlarını Nasıl Giderirsiniz](/tr/integrations/hubspot-workflow-troubleshooting)
+- [HubSpot ve WhatsApp Kişilerinizi Bağlama](/tr/integrations/hubspot-contact-linking)

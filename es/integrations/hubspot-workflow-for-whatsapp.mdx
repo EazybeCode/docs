@@ -1,0 +1,222 @@
+---
+title: "Cómo Usar Flujos de Trabajo de HubSpot para Enviar Mensajes de WhatsApp"
+description: "Aprende cómo automatizar mensajes de WhatsApp a través de flujos de trabajo de HubSpot para engagement y seguimiento de leads usando la integración de Eazybe."
+---
+
+## Introducción
+
+Los flujos de trabajo de HubSpot te permiten automatizar mensajes de WhatsApp para engagement y seguimiento de leads. Con la integración de Eazybe, puedes programar mensajes, enviar plantillas personalizadas y crear flujos de trabajo automatizados para mayor eficiencia.
+
+**Esta guía cubre:**
+- Crear un flujo de trabajo en HubSpot
+- Configurar disparadores para automatización
+- Agregar acciones de mensajes de WhatsApp
+- Opciones de personalización de mensajes
+- Publicar y activar tu flujo de trabajo
+
+---
+
+## Requisitos Previos
+
+Antes de configurar tu flujo de trabajo, asegúrate de tener:
+
+<Steps>
+  <Step title="Cuenta de HubSpot con Acceso a Flujos de Trabajo">
+    Necesitas acceso a las funciones de Automatización de HubSpot. Esto puede requerir un plan de pago de HubSpot.
+  </Step>
+
+  <Step title="Extensión Eazybe Instalada">
+    La extensión de Chrome de Eazybe debe estar instalada y activa en WhatsApp Web.
+  </Step>
+
+  <Step title="HubSpot Conectado a Eazybe">
+    Tu cuenta de HubSpot debe estar conectada a Eazybe. Consulta la [Guía de Integración de HubSpot](/es/integrations/hubspot-overview) para instrucciones de configuración.
+  </Step>
+
+  <Step title="WhatsApp Web Activo">
+    WhatsApp Web debe estar abierto con Eazybe activo al configurar y probar flujos de trabajo.
+  </Step>
+</Steps>
+
+---
+
+## Configuración Paso a Paso del Flujo de Trabajo
+
+### Paso 1: Crear un Nuevo Flujo de Trabajo
+
+<Steps>
+  <Step title="Navegar a Flujos de Trabajo">
+    En HubSpot, ve a la pestaña **Automatización** en el menú superior y selecciona **Flujos de trabajo** del menú desplegable.
+
+    <Frame>
+      <img src="/images/1255812257.png" alt="Flujos de Trabajo de Automatización de HubSpot" />
+    </Frame>
+  </Step>
+
+  <Step title="Crear Nuevo Flujo de Trabajo">
+    Haz clic en **Crear flujo de trabajo** en la esquina superior derecha y elige **Desde cero**.
+  </Step>
+
+  <Step title="Seleccionar Tipo de Flujo de Trabajo">
+    Elige el tipo de flujo de trabajo según tus necesidades:
+    - **Basado en contactos:** Disparar cuando cambian las propiedades del contacto
+    - **Basado en negocios:** Disparar cuando cambian las etapas del negocio
+    - **Basado en empresas:** Disparar basado en propiedades de la empresa
+  </Step>
+
+  <Step title="Nombrar Tu Flujo de Trabajo">
+    Dale a tu flujo de trabajo un nombre descriptivo que refleje su propósito.
+  </Step>
+</Steps>
+
+---
+
+### Paso 2: Configurar Disparadores
+
+<Steps>
+  <Step title="Configurar Disparadores">
+    Haz clic en **Configurar disparadores** y elige las condiciones para iniciar el flujo de trabajo.
+
+    <Frame>
+      <img src="/images/1267586286.png" alt="Configuración de Disparador de Propiedades de Contacto" />
+    </Frame>
+
+    **Opciones comunes de disparadores:**
+    - **Propiedades de contacto:** Disparar cuando un contacto alcanza una etapa específica del ciclo de vida
+    - **Propiedades de negocio:** Disparar cuando un negocio se mueve a una etapa específica
+    - **Disparadores personalizados:** Define tus propias reglas basadas en cualquier propiedad
+  </Step>
+
+  <Step title="Aplicar Filtros">
+    Agrega filtros adicionales para reducir qué registros deben entrar al flujo de trabajo, luego guarda tu configuración de disparador.
+
+    <Frame>
+      <img src="/images/1267587957.png" alt="Configuración de Filtros de Disparador" />
+    </Frame>
+  </Step>
+
+  <Step title="Habilitar Re-inscripción">
+    Activa la **Re-inscripción** para asegurar que el flujo de trabajo se dispare correctamente para contactos que cumplan los criterios múltiples veces.
+  </Step>
+</Steps>
+
+<Warning>
+Si la Re-inscripción no está habilitada, los contactos solo pasarán por el flujo de trabajo una vez, incluso si cumplen los criterios de disparador nuevamente.
+</Warning>
+
+---
+
+### Paso 3: Agregar Acción de Mensaje de WhatsApp
+
+<Steps>
+  <Step title="Agregar Acción">
+    Haz clic en el ícono **+** debajo de tu disparador para agregar una acción.
+
+    <Frame>
+      <img src="/images/1255804613.png" alt="Agregar Acción al Flujo de Trabajo" />
+    </Frame>
+  </Step>
+
+  <Step title="Seleccionar Acción de WhatsApp">
+    Desplázate hacia abajo y selecciona **Enviar mensaje de WhatsApp** en la sección de **integración EazyBe**.
+  </Step>
+</Steps>
+
+---
+
+### Paso 4: Configurar Ajustes del Mensaje
+
+<Steps>
+  <Step title="Establecer Teléfono del Destinatario">
+    Selecciona el campo de teléfono del contacto como destinatario. Esto asegura que el mensaje se envíe al número de WhatsApp correcto.
+
+    <Frame>
+      <img src="/images/1255806368.png" alt="Configuración de Mensaje de WhatsApp" />
+    </Frame>
+  </Step>
+
+  <Step title="Personalizar Mensaje">
+    Escribe el contenido de tu mensaje. Puedes usar **tokens de contacto** para personalizar el mensaje con:
+    - Nombre del contacto
+    - Nombre de la empresa
+    - Información del negocio
+    - Propiedades personalizadas
+  </Step>
+
+  <Step title="Agregar Medios (Opcional)">
+    Si es necesario, agrega una **URL de Medios** para incluir documentos o archivos con tu mensaje.
+  </Step>
+</Steps>
+
+<Tip>
+Usa tokens de personalización como `{{contact.firstname}}` para hacer tus mensajes más personales y aumentar las tasas de engagement.
+</Tip>
+
+---
+
+### Paso 5: Revisar y Publicar
+
+<Steps>
+  <Step title="Previsualizar Flujo de Trabajo">
+    Revisa la configuración de tu flujo de trabajo para asegurar que todos los pasos estén correctamente configurados.
+  </Step>
+
+  <Step title="Publicar Flujo de Trabajo">
+    Haz clic en **Revisar y publicar** para activar el flujo de trabajo.
+  </Step>
+</Steps>
+
+<Note>
+Esta configuración te permite programar mensajes automatizados de WhatsApp en el momento perfecto, asegurando seguimientos consistentes y engagement con tus leads.
+</Note>
+
+---
+
+## Consideraciones Importantes
+
+### Información del Remitente
+
+Al agregar una acción de WhatsApp en un flujo de trabajo, el remitente reflejará el **WhatsApp del propietario**, no del creador del flujo de trabajo. Asegúrate de que el WhatsApp del miembro del equipo apropiado esté conectado.
+
+### Números de Teléfono de Contactos
+
+Los contactos de WhatsApp y HubSpot se vinculan automáticamente a través del número de teléfono único en el campo "número de teléfono" de HubSpot. Asegúrate de que los números de teléfono de los contactos estén correctamente formateados con códigos de país.
+
+### Temporización del Flujo de Trabajo
+
+Considera la temporización de tus mensajes automatizados:
+- Evita enviar mensajes en horarios inapropiados
+- Usa retrasos entre acciones si envías múltiples mensajes
+- Prueba tu flujo de trabajo con un grupo pequeño antes de escalar
+
+---
+
+## Solución de Problemas
+
+### Problemas Comunes
+
+<AccordionGroup>
+  <Accordion title="¿La acción de WhatsApp no aparece en el flujo de trabajo?">
+    Asegúrate de que Eazybe esté correctamente conectado a HubSpot. Puede que necesites reconectar la integración o actualizar el editor de flujos de trabajo.
+  </Accordion>
+
+  <Accordion title="¿Los mensajes no se envían?">
+    Verifica que:
+    - WhatsApp Web esté abierto con Eazybe activo
+    - El contacto tenga un número de teléfono válido
+    - La re-inscripción esté habilitada si es necesario
+    - El flujo de trabajo esté publicado y activo
+  </Accordion>
+
+  <Accordion title="¿Aparece el remitente incorrecto en los mensajes?">
+    El remitente refleja el WhatsApp del propietario del contacto en HubSpot. Verifica que la propiedad del contacto esté correctamente asignada en HubSpot.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Artículos Relacionados
+
+- [Comenzando con la Integración de HubSpot](/es/integrations/hubspot-overview)
+- [Cómo Solucionar Problemas de Flujos de Trabajo de HubSpot](/es/integrations/hubspot-workflow-troubleshooting)
+- [Vinculando Tus Contactos de HubSpot y WhatsApp](/es/integrations/hubspot-contact-linking)

@@ -1,0 +1,222 @@
+---
+title: "How to Use HubSpot Workflows to Send WhatsApp Messages"
+description: "Learn how to automate WhatsApp messaging through HubSpot workflows for lead engagement and follow-ups using Eazybe integration."
+---
+
+## Introduction
+
+HubSpot workflows allow you to automate WhatsApp messaging for lead engagement and follow-ups. With Eazybe's integration, you can schedule messages, send personalized templates, and create automated workflows for enhanced efficiency.
+
+**This guide covers:**
+- Creating a HubSpot workflow
+- Configuring triggers for automation
+- Adding WhatsApp messaging actions
+- Message personalization options
+- Publishing and activating your workflow
+
+---
+
+## Prerequisites
+
+Before setting up your workflow, ensure you have:
+
+<Steps>
+  <Step title="HubSpot Account with Workflow Access">
+    You need access to HubSpot's Automation features. This may require a paid HubSpot plan.
+  </Step>
+
+  <Step title="Eazybe Extension Installed">
+    The Eazybe Chrome extension must be installed and active on WhatsApp Web.
+  </Step>
+
+  <Step title="HubSpot Connected to Eazybe">
+    Your HubSpot account must be connected to Eazybe. See [HubSpot Integration Guide](/en/integrations/hubspot-overview) for setup instructions.
+  </Step>
+
+  <Step title="WhatsApp Web Active">
+    WhatsApp Web should be open with Eazybe active when setting up and testing workflows.
+  </Step>
+</Steps>
+
+---
+
+## Step-by-Step Workflow Setup
+
+### Step 1: Create a New Workflow
+
+<Steps>
+  <Step title="Navigate to Workflows">
+    In HubSpot, go to the **Automation** tab in the top menu and select **Workflows** from the dropdown.
+
+    <Frame>
+      <img src="/images/1255812257.png" alt="HubSpot Automation Workflows" />
+    </Frame>
+  </Step>
+
+  <Step title="Create New Workflow">
+    Click **Create Workflow** in the top-right corner and choose **From scratch**.
+  </Step>
+
+  <Step title="Select Workflow Type">
+    Choose the workflow type based on your needs:
+    - **Contact-based:** Trigger when contact properties change
+    - **Deal-based:** Trigger when deal stages change
+    - **Company-based:** Trigger based on company properties
+  </Step>
+
+  <Step title="Name Your Workflow">
+    Give your workflow a descriptive name that reflects its purpose.
+  </Step>
+</Steps>
+
+---
+
+### Step 2: Configure Triggers
+
+<Steps>
+  <Step title="Set Up Triggers">
+    Click **Set up triggers** and choose the conditions to initiate the workflow.
+
+    <Frame>
+      <img src="/images/1267586286.png" alt="Contact Properties Trigger Configuration" />
+    </Frame>
+
+    **Common trigger options:**
+    - **Contact properties:** Trigger when a contact reaches a specific lifecycle stage
+    - **Deal properties:** Trigger when a deal moves to a specific stage
+    - **Custom triggers:** Define your own rules based on any property
+  </Step>
+
+  <Step title="Apply Filters">
+    Add any additional filters to narrow down which records should enter the workflow, then save your trigger configuration.
+
+    <Frame>
+      <img src="/images/1267587957.png" alt="Trigger Filter Settings" />
+    </Frame>
+  </Step>
+
+  <Step title="Enable Re-enrollment">
+    Turn on **Re-enrollment** to ensure the workflow triggers properly for contacts who meet the criteria multiple times.
+  </Step>
+</Steps>
+
+<Warning>
+If Re-enrollment is not enabled, contacts will only go through the workflow once, even if they meet the trigger criteria again.
+</Warning>
+
+---
+
+### Step 3: Add WhatsApp Message Action
+
+<Steps>
+  <Step title="Add Action">
+    Click the **+** icon below your trigger to add an action.
+
+    <Frame>
+      <img src="/images/1255804613.png" alt="Add Workflow Action" />
+    </Frame>
+  </Step>
+
+  <Step title="Select WhatsApp Action">
+    Scroll down and select **Send WhatsApp message** under the **EazyBe integration** section.
+  </Step>
+</Steps>
+
+---
+
+### Step 4: Configure Message Settings
+
+<Steps>
+  <Step title="Set Recipient Phone">
+    Select the contact's phone field as the recipient. This ensures the message is sent to the correct WhatsApp number.
+
+    <Frame>
+      <img src="/images/1255806368.png" alt="WhatsApp Message Configuration" />
+    </Frame>
+  </Step>
+
+  <Step title="Customize Message">
+    Write your message content. You can use **contact tokens** to personalize the message with:
+    - Contact name
+    - Company name
+    - Deal information
+    - Custom properties
+  </Step>
+
+  <Step title="Add Media (Optional)">
+    If needed, add a **Media URL** to include documents or files with your message.
+  </Step>
+</Steps>
+
+<Tip>
+Use personalization tokens like `{{contact.firstname}}` to make your messages feel more personal and increase engagement rates.
+</Tip>
+
+---
+
+### Step 5: Review and Publish
+
+<Steps>
+  <Step title="Preview Workflow">
+    Review your workflow configuration to ensure all steps are correctly set up.
+  </Step>
+
+  <Step title="Publish Workflow">
+    Click **Review and publish** to make the workflow live.
+  </Step>
+</Steps>
+
+<Note>
+This setup allows you to schedule automated WhatsApp messages at the perfect time, ensuring consistent follow-ups and engagement with your leads.
+</Note>
+
+---
+
+## Important Considerations
+
+### Sender Information
+
+When adding a WhatsApp action in a workflow, the sender will reflect the **owner's WhatsApp**, not the workflow creator. Ensure the appropriate team member's WhatsApp is connected.
+
+### Contact Phone Numbers
+
+WhatsApp and HubSpot contacts are linked automatically through the unique phone number in HubSpot's "phone number" field. Make sure contact phone numbers are correctly formatted with country codes.
+
+### Workflow Timing
+
+Consider the timing of your automated messages:
+- Avoid sending messages at inappropriate hours
+- Use delays between actions if sending multiple messages
+- Test your workflow with a small group before scaling
+
+---
+
+## Troubleshooting
+
+### Common Issues
+
+<AccordionGroup>
+  <Accordion title="WhatsApp action not appearing in workflow?">
+    Ensure that Eazybe is properly connected to HubSpot. You may need to reconnect the integration or refresh the workflow editor.
+  </Accordion>
+
+  <Accordion title="Messages not being sent?">
+    Check that:
+    - WhatsApp Web is open with Eazybe active
+    - The contact has a valid phone number
+    - Re-enrollment is enabled if needed
+    - The workflow is published and active
+  </Accordion>
+
+  <Accordion title="Wrong sender appearing on messages?">
+    The sender reflects the HubSpot contact owner's WhatsApp. Verify that contact ownership is correctly assigned in HubSpot.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Related Articles
+
+- [Getting Started with HubSpot Integration](/en/integrations/hubspot-overview)
+- [How to Troubleshoot HubSpot Workflow Issues](/en/integrations/hubspot-workflow-troubleshooting)
+- [Linking Your HubSpot and WhatsApp Contacts](/en/integrations/hubspot-contact-linking)

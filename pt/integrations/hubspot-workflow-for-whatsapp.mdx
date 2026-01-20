@@ -1,0 +1,222 @@
+---
+title: "Como Usar Fluxos de Trabalho do HubSpot para Enviar Mensagens do WhatsApp"
+description: "Aprenda como automatizar mensagens do WhatsApp através de fluxos de trabalho do HubSpot para engajamento e acompanhamento de leads usando a integração Eazybe."
+---
+
+## Introdução
+
+Os fluxos de trabalho do HubSpot permitem automatizar mensagens do WhatsApp para engajamento e acompanhamento de leads. Com a integração do Eazybe, você pode agendar mensagens, enviar modelos personalizados e criar fluxos de trabalho automatizados para maior eficiência.
+
+**Este guia aborda:**
+- Criar um fluxo de trabalho no HubSpot
+- Configurar gatilhos para automação
+- Adicionar ações de mensagens do WhatsApp
+- Opções de personalização de mensagens
+- Publicar e ativar seu fluxo de trabalho
+
+---
+
+## Pré-requisitos
+
+Antes de configurar seu fluxo de trabalho, certifique-se de ter:
+
+<Steps>
+  <Step title="Conta HubSpot com Acesso a Fluxos de Trabalho">
+    Você precisa de acesso aos recursos de Automação do HubSpot. Isso pode exigir um plano pago do HubSpot.
+  </Step>
+
+  <Step title="Extensão Eazybe Instalada">
+    A extensão do Chrome Eazybe deve estar instalada e ativa no WhatsApp Web.
+  </Step>
+
+  <Step title="HubSpot Conectado ao Eazybe">
+    Sua conta HubSpot deve estar conectada ao Eazybe. Consulte o [Guia de Integração do HubSpot](/pt/integrations/hubspot-overview) para instruções de configuração.
+  </Step>
+
+  <Step title="WhatsApp Web Ativo">
+    O WhatsApp Web deve estar aberto com o Eazybe ativo ao configurar e testar fluxos de trabalho.
+  </Step>
+</Steps>
+
+---
+
+## Configuração Passo a Passo do Fluxo de Trabalho
+
+### Passo 1: Criar um Novo Fluxo de Trabalho
+
+<Steps>
+  <Step title="Navegar para Fluxos de Trabalho">
+    No HubSpot, vá até a aba **Automação** no menu superior e selecione **Fluxos de trabalho** no menu suspenso.
+
+    <Frame>
+      <img src="/images/1255812257.png" alt="Fluxos de Trabalho de Automação do HubSpot" />
+    </Frame>
+  </Step>
+
+  <Step title="Criar Novo Fluxo de Trabalho">
+    Clique em **Criar fluxo de trabalho** no canto superior direito e escolha **Do zero**.
+  </Step>
+
+  <Step title="Selecionar Tipo de Fluxo de Trabalho">
+    Escolha o tipo de fluxo de trabalho com base em suas necessidades:
+    - **Baseado em contatos:** Acionar quando as propriedades do contato mudam
+    - **Baseado em negócios:** Acionar quando os estágios do negócio mudam
+    - **Baseado em empresas:** Acionar com base em propriedades da empresa
+  </Step>
+
+  <Step title="Nomear Seu Fluxo de Trabalho">
+    Dê ao seu fluxo de trabalho um nome descritivo que reflita seu propósito.
+  </Step>
+</Steps>
+
+---
+
+### Passo 2: Configurar Gatilhos
+
+<Steps>
+  <Step title="Configurar Gatilhos">
+    Clique em **Configurar gatilhos** e escolha as condições para iniciar o fluxo de trabalho.
+
+    <Frame>
+      <img src="/images/1267586286.png" alt="Configuração de Gatilho de Propriedades de Contato" />
+    </Frame>
+
+    **Opções comuns de gatilhos:**
+    - **Propriedades de contato:** Acionar quando um contato atinge um estágio específico do ciclo de vida
+    - **Propriedades de negócio:** Acionar quando um negócio se move para um estágio específico
+    - **Gatilhos personalizados:** Defina suas próprias regras com base em qualquer propriedade
+  </Step>
+
+  <Step title="Aplicar Filtros">
+    Adicione filtros adicionais para restringir quais registros devem entrar no fluxo de trabalho, depois salve sua configuração de gatilho.
+
+    <Frame>
+      <img src="/images/1267587957.png" alt="Configurações de Filtro de Gatilho" />
+    </Frame>
+  </Step>
+
+  <Step title="Habilitar Reinscrição">
+    Ative a **Reinscrição** para garantir que o fluxo de trabalho seja acionado corretamente para contatos que atendem aos critérios várias vezes.
+  </Step>
+</Steps>
+
+<Warning>
+Se a Reinscrição não estiver habilitada, os contatos passarão pelo fluxo de trabalho apenas uma vez, mesmo se atenderem aos critérios de gatilho novamente.
+</Warning>
+
+---
+
+### Passo 3: Adicionar Ação de Mensagem do WhatsApp
+
+<Steps>
+  <Step title="Adicionar Ação">
+    Clique no ícone **+** abaixo do seu gatilho para adicionar uma ação.
+
+    <Frame>
+      <img src="/images/1255804613.png" alt="Adicionar Ação ao Fluxo de Trabalho" />
+    </Frame>
+  </Step>
+
+  <Step title="Selecionar Ação do WhatsApp">
+    Role para baixo e selecione **Enviar mensagem do WhatsApp** na seção de **integração EazyBe**.
+  </Step>
+</Steps>
+
+---
+
+### Passo 4: Configurar Ajustes da Mensagem
+
+<Steps>
+  <Step title="Definir Telefone do Destinatário">
+    Selecione o campo de telefone do contato como destinatário. Isso garante que a mensagem seja enviada para o número correto do WhatsApp.
+
+    <Frame>
+      <img src="/images/1255806368.png" alt="Configuração de Mensagem do WhatsApp" />
+    </Frame>
+  </Step>
+
+  <Step title="Personalizar Mensagem">
+    Escreva o conteúdo da sua mensagem. Você pode usar **tokens de contato** para personalizar a mensagem com:
+    - Nome do contato
+    - Nome da empresa
+    - Informações do negócio
+    - Propriedades personalizadas
+  </Step>
+
+  <Step title="Adicionar Mídia (Opcional)">
+    Se necessário, adicione uma **URL de Mídia** para incluir documentos ou arquivos com sua mensagem.
+  </Step>
+</Steps>
+
+<Tip>
+Use tokens de personalização como `{{contact.firstname}}` para tornar suas mensagens mais pessoais e aumentar as taxas de engajamento.
+</Tip>
+
+---
+
+### Passo 5: Revisar e Publicar
+
+<Steps>
+  <Step title="Visualizar Fluxo de Trabalho">
+    Revise a configuração do seu fluxo de trabalho para garantir que todos os passos estejam corretamente configurados.
+  </Step>
+
+  <Step title="Publicar Fluxo de Trabalho">
+    Clique em **Revisar e publicar** para ativar o fluxo de trabalho.
+  </Step>
+</Steps>
+
+<Note>
+Esta configuração permite agendar mensagens automatizadas do WhatsApp no momento perfeito, garantindo acompanhamentos consistentes e engajamento com seus leads.
+</Note>
+
+---
+
+## Considerações Importantes
+
+### Informações do Remetente
+
+Ao adicionar uma ação do WhatsApp em um fluxo de trabalho, o remetente refletirá o **WhatsApp do proprietário**, não do criador do fluxo de trabalho. Certifique-se de que o WhatsApp do membro da equipe apropriado esteja conectado.
+
+### Números de Telefone dos Contatos
+
+Os contatos do WhatsApp e HubSpot são vinculados automaticamente através do número de telefone único no campo "número de telefone" do HubSpot. Certifique-se de que os números de telefone dos contatos estejam corretamente formatados com códigos de país.
+
+### Temporização do Fluxo de Trabalho
+
+Considere a temporização das suas mensagens automatizadas:
+- Evite enviar mensagens em horários inapropriados
+- Use atrasos entre ações se enviar múltiplas mensagens
+- Teste seu fluxo de trabalho com um grupo pequeno antes de escalar
+
+---
+
+## Solução de Problemas
+
+### Problemas Comuns
+
+<AccordionGroup>
+  <Accordion title="A ação do WhatsApp não aparece no fluxo de trabalho?">
+    Certifique-se de que o Eazybe está corretamente conectado ao HubSpot. Você pode precisar reconectar a integração ou atualizar o editor de fluxos de trabalho.
+  </Accordion>
+
+  <Accordion title="As mensagens não estão sendo enviadas?">
+    Verifique se:
+    - O WhatsApp Web está aberto com o Eazybe ativo
+    - O contato tem um número de telefone válido
+    - A reinscrição está habilitada se necessário
+    - O fluxo de trabalho está publicado e ativo
+  </Accordion>
+
+  <Accordion title="O remetente errado está aparecendo nas mensagens?">
+    O remetente reflete o WhatsApp do proprietário do contato no HubSpot. Verifique se a propriedade do contato está corretamente atribuída no HubSpot.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Artigos Relacionados
+
+- [Começando com a Integração do HubSpot](/pt/integrations/hubspot-overview)
+- [Como Solucionar Problemas de Fluxos de Trabalho do HubSpot](/pt/integrations/hubspot-workflow-troubleshooting)
+- [Vinculando Seus Contatos do HubSpot e WhatsApp](/pt/integrations/hubspot-contact-linking)
