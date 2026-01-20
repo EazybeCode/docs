@@ -131,6 +131,7 @@
                       "en/guides/whats-app-business-api/broadcasting/untitled-page",
                       "waba/broadcasting/overview",
                       "waba/broadcasting/create-campaign",
+                      "en/waba/broadcasting/how-to-send-broadcast",
                       "waba/broadcasting/import-contacts",
                       "waba/broadcasting/scheduling",
                       "waba/broadcasting/analytics",
@@ -565,6 +566,7 @@
                     "group": "Difusión",
                     "pages": [
                       "es/waba/broadcasting/create-campaign",
+                      "es/waba/broadcasting/how-to-send-broadcast",
                       "es/waba/broadcasting/analytics",
                       "es/integrations/hubspot-workflow-for-whatsapp"
                     ]
@@ -798,6 +800,7 @@
                     "group": "Transmissão",
                     "pages": [
                       "pt/waba/broadcasting/create-campaign",
+                      "pt/waba/broadcasting/how-to-send-broadcast",
                       "pt/waba/broadcasting/analytics",
                       "pt/integrations/hubspot-workflow-for-whatsapp"
                     ]
@@ -1031,6 +1034,7 @@
                     "group": "Yayın",
                     "pages": [
                       "tr/waba/broadcasting/create-campaign",
+                      "tr/waba/broadcasting/how-to-send-broadcast",
                       "tr/waba/broadcasting/analytics",
                       "tr/integrations/hubspot-workflow-for-whatsapp"
                     ]
