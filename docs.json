@@ -221,6 +221,7 @@
                   "integrations/hubspot/overview",
                   "en/integrations/hubspot/prerequisites",
                   "en/integrations/hubspot/account-connection",
+                  "en/integrations/hubspot/disconnect",
                   "integrations/hubspot/setup",
                   "integrations/hubspot/contact-sync",
                   "integrations/hubspot/chat-backup",
@@ -623,6 +624,7 @@
                 "pages": [
                   "es/integrations/hubspot/prerequisites",
                   "es/integrations/hubspot/account-connection",
+                  "es/integrations/hubspot/disconnect",
                   "es/integrations/hubspot/setup",
                   "es/integrations/hubspot/contact-sync",
                   "es/integrations/hubspot/chat-backup",
@@ -863,6 +865,7 @@
                 "pages": [
                   "pt/integrations/hubspot/prerequisites",
                   "pt/integrations/hubspot/account-connection",
+                  "pt/integrations/hubspot/disconnect",
                   "pt/integrations/hubspot/setup",
                   "pt/integrations/hubspot/contact-sync",
                   "pt/integrations/hubspot/chat-backup",
@@ -1103,6 +1106,7 @@
                 "pages": [
                   "tr/integrations/hubspot/prerequisites",
                   "tr/integrations/hubspot/account-connection",
+                  "tr/integrations/hubspot/disconnect",
                   "tr/integrations/hubspot/setup",
                   "tr/integrations/hubspot/contact-sync",
                   "tr/integrations/hubspot/chat-backup",
