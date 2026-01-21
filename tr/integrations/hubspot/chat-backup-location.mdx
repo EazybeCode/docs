@@ -1,0 +1,136 @@
+---
+title: "Sohbet Yedekleme Konumu"
+description: "Eazybe'yi HubSpot entegrasyonu ile kullanırken WhatsApp sohbet verilerinizin nerede yedeklendiğini anlayın"
+---
+
+## Genel Bakış
+
+Eazybe, WhatsApp sohbet verilerinin **Eazybe sunucularında asla depolanmamasını** sağlayarak gizliliğinizi ön planda tutar. Bunun yerine, veriler ya doğrudan CRM sisteminize senkronize olur ya da Team Inbox kullanıcıları için Google Drive'a yedeklenir.
+
+<Note>
+Eazybe güvenli bir veri bağlayıcısı olarak çalışır — sohbet verilerinizin transferini kolaylaştırır ancak mesajlarınızı veya eklerinizi depolamaz, okumaz veya kaydetmez.
+</Note>
+
+---
+
+## CRM Entegrasyonu Yedeklemesi
+
+Eazybe'yi HubSpot (veya Zoho, LeadSquared, Salesforce gibi diğer CRM'ler) ile kullandığınızda, sohbet verileriniz güvenli bir yol izler:
+
+<Steps>
+  <Step title="WhatsApp Web'den Doğrudan Senkronizasyon">
+    Sohbetleriniz resmi API'ler kullanılarak doğrudan WhatsApp Web'den CRM'inizin bulut depolamasına senkronize olur.
+  </Step>
+
+  <Step title="Eazybe Veri Bağlayıcısı Olarak">
+    Eazybe yalnızca bir **veri bağlayıcısı** olarak işlev görür. Mesajlarınızı veya eklerinizi depolamaz, okumaz veya kaydetmez.
+  </Step>
+
+  <Step title="CRM Depolamayı Yönetir">
+    CRM sisteminiz (HubSpot) sohbet verilerinizin tüm depolama, arama, saklama ve şifrelemesini yönetir.
+  </Step>
+</Steps>
+
+<Info>
+Tüm veri transferi, CRM platformunuz tarafından sağlanan güvenli, resmi API'ler aracılığıyla gerçekleşir.
+</Info>
+
+---
+
+## Team Inbox Yedeklemesi
+
+Team Inbox kullanıcıları için sohbet verileri bağlı Google Drive hesabınıza yedeklenir:
+
+### Depolama Konumu
+
+| Bileşen | Nerede Depolanır |
+|---------|------------------|
+| **Kişisel Hesaplar** | Kişisel Google Drive'ınız |
+| **İş Hesapları** | Şirket G Suite/Workspace Drive'ı |
+
+### Neler Depolanır
+
+<CardGroup cols={2}>
+  <Card title="Mesaj İçeriği" icon="message">
+    Konuşmalarınızdaki tüm mesajların tam metni.
+  </Card>
+  <Card title="Zaman Damgaları" icon="clock">
+    Her mesajın ne zaman gönderildiği veya alındığı.
+  </Card>
+  <Card title="Gönderen Bilgisi" icon="user">
+    Konuşmada her mesajı kimin gönderdiği.
+  </Card>
+  <Card title="Medya Dosyaları" icon="image">
+    Sohbetlerde paylaşılan görüntüler, belgeler ve diğer ekler.
+  </Card>
+</CardGroup>
+
+<Warning>
+Eazybe bu verilerin **hiçbirini** kendi sunucularında depolamaz. Google Drive'ınız Team Inbox yedeklemeleri için tek depolama konumudur.
+</Warning>
+
+---
+
+## Güvenlik ve Kontrol
+
+Eazybe, verileriniz üzerinde güçlü güvenlik önlemleri ve tam kullanıcı kontrolü sağlar:
+
+### Veri Sahipliği
+
+<Check>
+Tüm sohbet verilerinizin tam sahipliğini her zaman korursunuz.
+</Check>
+
+### Uyumluluk
+
+Veri işlemeniz şunlarla uyumludur:
+- **GDPR** — Avrupa Genel Veri Koruma Yönetmeliği
+- **CCPA** — Kaliforniya Tüketici Gizlilik Yasası
+
+### Kullanıcı Kontrolleri
+
+| Kontrol | Nasıl Erişilir |
+|---------|----------------|
+| **Erişimi İptal Et** | Eazybe Panelinden entegrasyonu bağlantısını kes |
+| **Senkronizasyonu Devre Dışı Bırak** | Eazybe ayarlarında senkronizasyonu kapat |
+| **Verileri Sil** | Verileri doğrudan CRM'inizden veya Google Drive'dan kaldır |
+
+---
+
+## Temel Gizlilik Noktaları
+
+<AccordionGroup>
+  <Accordion title="Eazybe mesajlarımı depoluyor mu?">
+    Hayır. Eazybe mesajlarınızı sunucularında asla depolamaz. Veriler ya CRM'inize senkronize olur ya da Google Drive'ınıza yedeklenir.
+  </Accordion>
+
+  <Accordion title="Eazybe sohbetlerimi okuyabilir mi?">
+    Hayır. Eazybe yalnızca bir bağlayıcı olarak çalışır. Transferi kolaylaştırır ancak mesaj içeriğinizi okumaz veya kaydetmez.
+  </Accordion>
+
+  <Accordion title="Yedekleme verilerime kim erişebilir?">
+    Yalnızca siz ve CRM veya Google Drive paylaşım ayarlarınız aracılığıyla erişim verdiğiniz kişiler.
+  </Accordion>
+
+  <Accordion title="Senkronizasyonu nasıl durdurabilirim?">
+    Eazybe Panelinden istediğiniz zaman senkronizasyonu devre dışı bırakabilir veya entegrasyonu tamamen bağlantısını kesebilirsiniz.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Hızlı Referans
+
+| Yedekleme Türü | Depolama Konumu | Yöneten |
+|----------------|-----------------|---------|
+| **CRM Entegrasyonu** | HubSpot Bulutu | HubSpot |
+| **Team Inbox** | Google Drive | Siz |
+| **Eazybe Sunucuları** | Hiçbiri | N/A |
+
+---
+
+## Yardıma mı İhtiyacınız Var?
+
+<Card title="Destek ile İletişim" icon="envelope">
+  Herhangi bir sorunuz varsa veya ek yardıma ihtiyacınız varsa, **hey@eazybe.com** adresinden bize ulaşın. Yardımcı olmaktan mutluluk duyarız!
+</Card>

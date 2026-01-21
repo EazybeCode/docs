@@ -3,7 +3,8 @@
     "allow": [
       "Bash(git checkout:*)",
       "Bash(python -c:*)",
-      "Bash(curl:*)"
+      "Bash(curl:*)",
+      "Bash(findstr:*)"
     ]
   }
 }

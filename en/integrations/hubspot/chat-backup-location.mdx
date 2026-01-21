@@ -1,0 +1,136 @@
+---
+title: "Chat Backup Location"
+description: "Understand where your WhatsApp chat data is backed up when using Eazybe with HubSpot integration"
+---
+
+## Overview
+
+Eazybe prioritizes your privacy by ensuring WhatsApp chat data is **never stored on Eazybe's servers**. Instead, data either syncs directly with your CRM system or backs up to Google Drive for Team Inbox users.
+
+<Note>
+Eazybe acts as a secure data connector — it facilitates the transfer of your chat data but does not store, read, or log your messages or attachments.
+</Note>
+
+---
+
+## CRM Integration Backup
+
+When using Eazybe with HubSpot (or other CRMs like Zoho, LeadSquared, or Salesforce), your chat data follows a secure path:
+
+<Steps>
+  <Step title="Direct Sync from WhatsApp Web">
+    Your chats sync directly from WhatsApp Web to your CRM's cloud storage using official APIs.
+  </Step>
+
+  <Step title="Eazybe as Data Connector">
+    Eazybe functions solely as a **data connector**. It does not store, read, or log your messages or attachments.
+  </Step>
+
+  <Step title="CRM Manages Storage">
+    Your CRM system (HubSpot) handles all storage, search, retention, and encryption of your chat data.
+  </Step>
+</Steps>
+
+<Info>
+All data transfer happens through secure, official APIs provided by your CRM platform.
+</Info>
+
+---
+
+## Team Inbox Backup
+
+For Team Inbox users, chat data is backed up to your connected Google Drive account:
+
+### Storage Location
+
+| Component | Where It's Stored |
+|-----------|-------------------|
+| **Personal Accounts** | Your personal Google Drive |
+| **Business Accounts** | Company G Suite/Workspace Drive |
+
+### What Gets Stored
+
+<CardGroup cols={2}>
+  <Card title="Message Content" icon="message">
+    Full text of all messages in your conversations.
+  </Card>
+  <Card title="Timestamps" icon="clock">
+    When each message was sent or received.
+  </Card>
+  <Card title="Sender Information" icon="user">
+    Who sent each message in the conversation.
+  </Card>
+  <Card title="Media Files" icon="image">
+    Images, documents, and other attachments shared in chats.
+  </Card>
+</CardGroup>
+
+<Warning>
+Eazybe does **not** store any of this data on its own servers. Your Google Drive is the sole storage location for Team Inbox backups.
+</Warning>
+
+---
+
+## Security & Control
+
+Eazybe provides robust security measures and full user control over your data:
+
+### Data Ownership
+
+<Check>
+You retain complete ownership of all your chat data at all times.
+</Check>
+
+### Compliance
+
+Your data handling is compliant with:
+- **GDPR** — European General Data Protection Regulation
+- **CCPA** — California Consumer Privacy Act
+
+### User Controls
+
+| Control | How To Access |
+|---------|---------------|
+| **Revoke Access** | Disconnect integration from Eazybe Dashboard |
+| **Disable Syncing** | Turn off sync in Eazybe settings |
+| **Delete Data** | Remove data directly from your CRM or Google Drive |
+
+---
+
+## Key Privacy Points
+
+<AccordionGroup>
+  <Accordion title="Does Eazybe store my messages?">
+    No. Eazybe never stores your messages on its servers. Data is either synced to your CRM or backed up to your Google Drive.
+  </Accordion>
+
+  <Accordion title="Can Eazybe read my chats?">
+    No. Eazybe acts only as a connector. It facilitates the transfer but does not read or log your message content.
+  </Accordion>
+
+  <Accordion title="Who has access to my backup data?">
+    Only you and those you grant access to through your CRM or Google Drive sharing settings.
+  </Accordion>
+
+  <Accordion title="How do I stop syncing?">
+    You can disable syncing at any time from the Eazybe Dashboard or disconnect the integration entirely.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Quick Reference
+
+| Backup Type | Storage Location | Managed By |
+|-------------|------------------|------------|
+| **CRM Integration** | HubSpot Cloud | HubSpot |
+| **Team Inbox** | Google Drive | You |
+| **Eazybe Servers** | None | N/A |
+
+---
+
+## Need Help?
+
+<Card title="Contact Support" icon="envelope">
+  If you have any questions or need further assistance, reach out to us at **hey@eazybe.com**. We're happy to help!
+</Card>

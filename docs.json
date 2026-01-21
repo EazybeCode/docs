@@ -232,12 +232,18 @@
                     "group": "Chat Backup",
                     "pages": [
                       "en/integrations/hubspot/message-syncing",
-                      "en/integrations/hubspot/exclude-contacts-from-sync"
+                      "en/integrations/hubspot/exclude-contacts-from-sync",
+                      "en/integrations/hubspot/chat-backup-location"
                     ]
                   },
                   {
                     "group": "Mini-CRM View",
                     "pages": [
+                      "en/integrations/hubspot/mini-crm/about",
+                      "en/integrations/hubspot/mini-crm/create-and-customize-contacts",
+                      "en/integrations/hubspot/mini-crm/create-task-and-notes",
+                      "en/integrations/hubspot/mini-crm/create-and-customize-deals",
+                      "en/integrations/hubspot/mini-crm/create-call-logs",
                       "integrations/hubspot/mini-crm/overview",
                       "integrations/hubspot/mini-crm/contacts",
                       "integrations/hubspot/mini-crm/deals",
@@ -640,12 +646,18 @@
                     "group": "Respaldo de Chat",
                     "pages": [
                       "es/integrations/hubspot/message-syncing",
-                      "es/integrations/hubspot/exclude-contacts-from-sync"
+                      "es/integrations/hubspot/exclude-contacts-from-sync",
+                      "es/integrations/hubspot/chat-backup-location"
                     ]
                   },
                   {
                     "group": "Vista Mini-CRM",
                     "pages": [
+                      "es/integrations/hubspot/mini-crm/about",
+                      "es/integrations/hubspot/mini-crm/create-and-customize-contacts",
+                      "es/integrations/hubspot/mini-crm/create-task-and-notes",
+                      "es/integrations/hubspot/mini-crm/create-and-customize-deals",
+                      "es/integrations/hubspot/mini-crm/create-call-logs",
                       "es/integrations/hubspot/mini-crm/overview",
                       "es/integrations/hubspot/mini-crm/contacts",
                       "es/integrations/hubspot/mini-crm/deals",
@@ -890,12 +902,18 @@
                     "group": "Backup de Chat",
                     "pages": [
                       "pt/integrations/hubspot/message-syncing",
-                      "pt/integrations/hubspot/exclude-contacts-from-sync"
+                      "pt/integrations/hubspot/exclude-contacts-from-sync",
+                      "pt/integrations/hubspot/chat-backup-location"
                     ]
                   },
                   {
                     "group": "Vista Mini-CRM",
                     "pages": [
+                      "pt/integrations/hubspot/mini-crm/about",
+                      "pt/integrations/hubspot/mini-crm/create-and-customize-contacts",
+                      "pt/integrations/hubspot/mini-crm/create-task-and-notes",
+                      "pt/integrations/hubspot/mini-crm/create-and-customize-deals",
+                      "pt/integrations/hubspot/mini-crm/create-call-logs",
                       "pt/integrations/hubspot/mini-crm/overview",
                       "pt/integrations/hubspot/mini-crm/contacts",
                       "pt/integrations/hubspot/mini-crm/deals",
@@ -1140,12 +1158,18 @@
                     "group": "Sohbet Yedekleme",
                     "pages": [
                       "tr/integrations/hubspot/message-syncing",
-                      "tr/integrations/hubspot/exclude-contacts-from-sync"
+                      "tr/integrations/hubspot/exclude-contacts-from-sync",
+                      "tr/integrations/hubspot/chat-backup-location"
                     ]
                   },
                   {
                     "group": "Mini-CRM Görünümü",
                     "pages": [
+                      "tr/integrations/hubspot/mini-crm/about",
+                      "tr/integrations/hubspot/mini-crm/create-and-customize-contacts",
+                      "tr/integrations/hubspot/mini-crm/create-task-and-notes",
+                      "tr/integrations/hubspot/mini-crm/create-and-customize-deals",
+                      "tr/integrations/hubspot/mini-crm/create-call-logs",
                       "tr/integrations/hubspot/mini-crm/overview",
                       "tr/integrations/hubspot/mini-crm/contacts",
                       "tr/integrations/hubspot/mini-crm/deals",
