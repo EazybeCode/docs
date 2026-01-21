@@ -1,0 +1,127 @@
+---
+title: "Mesaj Senkronizasyonu"
+description: "WhatsApp mesajlarının sorunsuz sohbet yedeklemesi için HubSpot kişileriyle nasıl otomatik senkronize olduğunu öğrenin"
+---
+
+## Genel Bakış
+
+Eazybe, WhatsApp konuşmalarınızı HubSpot kişileriyle otomatik olarak senkronize eder ve tüm müşteri iletişimlerinizin yedeklenip CRM'inizde erişilebilir olmasını sağlar. Bu rehber, mesaj senkronizasyonunun nasıl çalıştığını ve senkronizasyon ayarlarınızı nasıl yöneteceğinizi açıklar.
+
+<Note>
+Mesaj senkronizasyonu yalnızca HubSpot CRM'inizde mevcut olan kişilerle yapılan sohbetler için gerçekleşir. Otomatik yedekleme için kişilerinizin düzgün bir şekilde bağlı olduğundan emin olun.
+</Note>
+
+---
+
+## Otomatik Senkronizasyon
+
+WhatsApp konuşmaları HubSpot kişileriyle her **3 dakikada** bir otomatik olarak senkronize olur. Uzantı, senkronizasyon başladığında son senkronizasyon tarih ve saatini görüntüler.
+
+<img src="/images/1112974432.png" alt="Otomatik Senkronizasyon Zamanlayıcısı" />
+
+### Ana Özellikler
+
+<CardGroup cols={2}>
+  <Card title="3 Dakikalık Aralıklar" icon="clock">
+    Konuşmalar manuel müdahale olmadan her 3 dakikada bir otomatik olarak senkronize olur.
+  </Card>
+  <Card title="Seçici Senkronizasyon" icon="filter">
+    HubSpot Mini-CRM görünümündeki Senkronizasyon ayarları aracılığıyla hangi sohbetlerin senkronize olacağını yönetin.
+  </Card>
+</CardGroup>
+
+<img src="/images/1112974589.png" alt="Senkronizasyon Ayarları" />
+
+---
+
+## İlk Entegrasyon
+
+HubSpot'u Eazybe ile ilk kez entegre ettiğinizde, sistem otomatik olarak **son 3 günü** kapsayan bir sohbet yedeklemesi sağlar. Bu, HubSpot'ta hemen kullanılabilir yakın tarihli konuşma geçmişine sahip olmanızı sağlar.
+
+<Info>
+3 günlük geçmiş yedekleme yalnızca ilk kurulum sırasında bir kez gerçekleşir. Bundan sonra, yalnızca yeni mesajlar 3 dakikalık aralıklarla senkronize olur.
+</Info>
+
+---
+
+## Aktivite Kaydı
+
+WhatsApp sohbetleri, HubSpot'un aktivite bölümündeki **WhatsApp Aktivitesi** nesnesinde korunur.
+
+<img src="/images/1182628247.png" alt="HubSpot'ta WhatsApp Aktivitesi" />
+
+### Sohbetler Nerede Görünür
+
+<Steps>
+  <Step title="Kişi Genel Bakışı">
+    Son WhatsApp aktiviteleri, her kişinin profilinin Genel Bakış bölümünde görünür.
+
+    <img src="/images/1182618610.png" alt="Kişi Genel Bakış Bölümü" />
+  </Step>
+
+  <Step title="Fırsat Sayfaları">
+    Sohbetler HubSpot Fırsat sayfalarına yedeklenir ve konuşmaların ilgili fırsat kayıtlarında yakalanmasını sağlar.
+
+    <img src="/images/1182626215.png" alt="Fırsat Sayfası Sohbet Yedeklemesi" />
+  </Step>
+
+  <Step title="Şirket Sayfaları">
+    Konuşmalar ayrıca Şirket sayfalarına senkronize olur ve şirket düzeyinde tam bir iletişim geçmişi sağlar.
+
+    <img src="/images/1182626971.png" alt="Şirket Sayfası Sohbet Yedeklemesi" />
+  </Step>
+</Steps>
+
+---
+
+## Ek Yedeklemesi
+
+Ekler, HubSpot'un WhatsApp aktivitesindeki mesajlarla birlikte senkronize olur. Sistem, metin ve ek bağlantılarını birleşik bir formatta birleştirir.
+
+<img src="/images/1182619530.png" alt="HubSpot'ta Ekler" />
+
+### Ekler Nasıl Çalışır
+
+- **Birleşik Format** — Metin mesajları ve ekler aktivite günlüğünde birlikte görünür
+- **Tıklanabilir Bağlantılar** — Görüntüleri, belgeleri ve diğer dosyaları görüntülemek için ek bağlantılarına tıklayın
+- **Tam Geçmiş** — Konuşmalarda paylaşılan tüm medya korunur ve erişilebilir
+
+<Tip>
+Ekler güvenli bir şekilde saklanır ve HubSpot'taki aktivite bağlantıları aracılığıyla her zaman erişilebilir.
+</Tip>
+
+---
+
+## Senkronizasyon Yönetimi
+
+### Seçici Senkronizasyon Ayarları
+
+Mini-CRM görünümü aracılığıyla hangi konuşmaların HubSpot'a senkronize olacağını yönetebilirsiniz:
+
+1. Eazybe uzantısında HubSpot Mini-CRM panelini açın
+2. Senkronizasyon ayarlarına gidin
+3. Belirli kişiler için senkronizasyonu etkinleştirin veya devre dışı bırakın
+
+<Warning>
+Bir kişi için senkronizasyonu devre dışı bırakmak yeni mesajların yedeklenmesini durduracak, ancak daha önce senkronize edilmiş mesajlar HubSpot'ta kalacaktır.
+</Warning>
+
+---
+
+## Hızlı Referans
+
+| Özellik | Detaylar |
+|---------|----------|
+| **Senkronizasyon Sıklığı** | Her 3 dakikada bir |
+| **İlk Yedekleme** | Son 3 günlük sohbet geçmişi |
+| **Senkronizasyon Kapsamı** | Yalnızca HubSpot kişileri |
+| **Ekler** | Tıklanabilir bağlantılarla dahil |
+| **Aktivite Konumu** | Kişiler, Fırsatlar, Şirketler |
+
+---
+
+## Yardıma mı İhtiyacınız Var?
+
+<Card title="Destek ile İletişim" icon="envelope">
+  Herhangi bir sorunuz varsa veya ek yardıma ihtiyacınız varsa, **hey@eazybe.com** adresinden bize ulaşın. Yardımcı olmaktan mutluluk duyarız!
+</Card>

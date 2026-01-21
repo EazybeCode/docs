@@ -227,6 +227,13 @@
                   "integrations/hubspot/setup",
                   "integrations/hubspot/contact-sync",
                   "integrations/hubspot/chat-backup",
+
+                  {
+                    "group": "Chat Backup",
+                    "pages": [
+                      "en/integrations/hubspot/message-syncing"
+                    ]
+                  },
                   {
                     "group": "Mini-CRM View",
                     "pages": [
@@ -238,11 +245,7 @@
                       "integrations/hubspot/mini-crm/call-logs"
                     ]
                   },
-                  "integrations/hubspot/workflows",
-                  "integrations/hubspot/dynamic-labels",
-                  "integrations/hubspot/admin-management",
-                  "integrations/hubspot/troubleshooting",
-                  "integrations/hubspot/faq",
+
                   {
                     "group": "Playbooks",
                     "pages": [
@@ -633,6 +636,12 @@
                   "es/integrations/hubspot/contact-sync",
                   "es/integrations/hubspot/chat-backup",
                   {
+                    "group": "Respaldo de Chat",
+                    "pages": [
+                      "es/integrations/hubspot/message-syncing"
+                    ]
+                  },
+                  {
                     "group": "Vista Mini-CRM",
                     "pages": [
                       "es/integrations/hubspot/mini-crm/overview",
@@ -876,6 +885,12 @@
                   "pt/integrations/hubspot/contact-sync",
                   "pt/integrations/hubspot/chat-backup",
                   {
+                    "group": "Backup de Chat",
+                    "pages": [
+                      "pt/integrations/hubspot/message-syncing"
+                    ]
+                  },
+                  {
                     "group": "Vista Mini-CRM",
                     "pages": [
                       "pt/integrations/hubspot/mini-crm/overview",
@@ -1118,6 +1133,12 @@
                   "tr/integrations/hubspot/setup",
                   "tr/integrations/hubspot/contact-sync",
                   "tr/integrations/hubspot/chat-backup",
+                  {
+                    "group": "Sohbet Yedekleme",
+                    "pages": [
+                      "tr/integrations/hubspot/message-syncing"
+                    ]
+                  },
                   {
                     "group": "Mini-CRM Görünümü",
                     "pages": [
