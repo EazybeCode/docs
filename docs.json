@@ -231,7 +231,8 @@
                   {
                     "group": "Chat Backup",
                     "pages": [
-                      "en/integrations/hubspot/message-syncing"
+                      "en/integrations/hubspot/message-syncing",
+                      "en/integrations/hubspot/exclude-contacts-from-sync"
                     ]
                   },
                   {
@@ -638,7 +639,8 @@
                   {
                     "group": "Respaldo de Chat",
                     "pages": [
-                      "es/integrations/hubspot/message-syncing"
+                      "es/integrations/hubspot/message-syncing",
+                      "es/integrations/hubspot/exclude-contacts-from-sync"
                     ]
                   },
                   {
@@ -887,7 +889,8 @@
                   {
                     "group": "Backup de Chat",
                     "pages": [
-                      "pt/integrations/hubspot/message-syncing"
+                      "pt/integrations/hubspot/message-syncing",
+                      "pt/integrations/hubspot/exclude-contacts-from-sync"
                     ]
                   },
                   {
@@ -1136,7 +1139,8 @@
                   {
                     "group": "Sohbet Yedekleme",
                     "pages": [
-                      "tr/integrations/hubspot/message-syncing"
+                      "tr/integrations/hubspot/message-syncing",
+                      "tr/integrations/hubspot/exclude-contacts-from-sync"
                     ]
                   },
                   {

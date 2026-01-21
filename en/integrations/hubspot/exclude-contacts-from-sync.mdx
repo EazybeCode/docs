@@ -1,0 +1,106 @@
+---
+title: "Exclude Contacts from Sync"
+description: "Learn how to stop chat synchronization for specific contacts in your HubSpot integration"
+---
+
+## Overview
+
+When you have many HubSpot-connected contacts, you may not want all conversations to sync automatically. Eazybe provides a label-based system that allows you to selectively exclude specific contacts from chat backup synchronization.
+
+<Note>
+This feature is useful for excluding personal contacts, internal team chats, or any conversations you don't want recorded in HubSpot.
+</Note>
+
+---
+
+## How It Works
+
+Eazybe uses a **label-based exclusion system**. You create a shared label, add contacts you want to exclude, and then disable sync for that entire label. This approach makes it easy to manage multiple contacts at once.
+
+---
+
+## Step-by-Step Guide
+
+<Steps>
+  <Step title="Create a Shared Label">
+    First, create a shared label within the Eazybe WhatsApp extension. Add all the contacts you **do not want** chat backups to sync with HubSpot under this label.
+
+    <img src="/images/1185335801.png" alt="Create Shared Label" />
+
+    <Tip>
+    Name your label something descriptive like "No Sync" or "Exclude from Backup" for easy identification.
+    </Tip>
+  </Step>
+
+  <Step title="Access Backup and Sync Settings">
+    Click the **Backup and Sync** icon in the WhatsApp extension's right sidebar. In the resulting window, select the **HubSpot** button to access HubSpot-specific sync settings.
+  </Step>
+
+  <Step title="Disable Sync for the Label">
+    Locate the label containing the contacts you want to exclude. Click the **Don't Sync** button beside the label to disable synchronization for all contacts in that label.
+
+    <img src="/images/1185336317.png" alt="Don't Sync Button" />
+
+    <Check>
+    Chat synchronization is now disabled for all contacts in this label!
+    </Check>
+  </Step>
+</Steps>
+
+---
+
+## Re-enabling Sync
+
+If you need to restore synchronization for previously excluded contacts:
+
+<Steps>
+  <Step title="Enable Sync for the Label">
+    Navigate back to the Backup and Sync settings, find your excluded label, and click the **Sync** button to restore synchronization.
+
+    <img src="/images/1185339683.png" alt="Sync Button" />
+  </Step>
+
+  <Step title="Selective Re-enabling">
+    To selectively enable sync for specific contacts only:
+
+    1. Remove those contacts from the excluded label
+    2. Keep other contacts in the label to maintain their exclusion
+    3. The removed contacts will automatically resume syncing
+  </Step>
+</Steps>
+
+---
+
+## Best Practices
+
+<AccordionGroup>
+  <Accordion title="Use Descriptive Label Names">
+    Name your exclusion labels clearly (e.g., "No HubSpot Sync", "Personal Contacts") so team members understand their purpose.
+  </Accordion>
+
+  <Accordion title="Review Exclusions Periodically">
+    Regularly review your excluded contacts to ensure you're not missing important business conversations.
+  </Accordion>
+
+  <Accordion title="Document Your Exclusion Policy">
+    If you're part of a team, document which types of contacts should be excluded to maintain consistency.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Quick Reference
+
+| Action | How To |
+|--------|--------|
+| **Exclude Contacts** | Add to label → Click "Don't Sync" |
+| **Include Contacts** | Remove from label OR Click "Sync" |
+| **Bulk Exclude** | Add multiple contacts to one label |
+
+---
+
+## Need Help?
+
+<Card title="Contact Support" icon="envelope">
+  If you have any questions or need further assistance, reach out to us at **hey@eazybe.com**. We're happy to help!
+</Card>
