@@ -300,7 +300,7 @@
                 "icon": "circle-nodes",
                 "pages": [
                   "integrations/zoho/overview",
-                  "integrations/zoho/prerequisites",
+                  "en/integrations/zoho/prerequisites",
                   "integrations/zoho/setup",
                   "integrations/zoho/contact-sync",
                   "integrations/zoho/chat-backup",
