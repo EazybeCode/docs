@@ -1,0 +1,120 @@
+---
+title: "Crear Flujo de Trabajo"
+description: "Aprende a usar los flujos de trabajo de HubSpot para enviar mensajes de WhatsApp automatizados con la integración de Eazybe"
+---
+
+## Descripción General
+
+Los flujos de trabajo de HubSpot te permiten automatizar mensajes de WhatsApp basados en disparadores como cambios en la etapa del ciclo de vida, actualizaciones de negocios o eventos personalizados. Esta guía te muestra cómo configurar mensajes de WhatsApp automatizados usando la integración de Eazybe.
+
+<Frame>
+  <iframe
+    width="560"
+    height="315"
+    src="https://www.youtube.com/embed/vrM6RE2pXBo"
+    title="Tutorial de Flujos de Trabajo de HubSpot"
+    frameBorder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowFullScreen
+  />
+</Frame>
+
+---
+
+## Configurando Tu Flujo de Trabajo
+
+<Steps>
+  <Step title="Crear un Nuevo Flujo de Trabajo">
+    Navega a la pestaña **Automatización** en HubSpot y selecciona **Flujos de trabajo** del menú desplegable. Haz clic en **Crear flujo de trabajo** y elige **Desde cero**.
+
+    Selecciona el tipo de flujo de trabajo según tus necesidades:
+    - **Basado en contactos** — Disparar según propiedades del contacto
+    - **Basado en negocios** — Disparar según cambios en la etapa del negocio
+    - **Basado en empresas** — Disparar según propiedades de la empresa
+
+    <img src="/images/1255812257.png" alt="Crear Flujo de Trabajo en HubSpot" />
+  </Step>
+
+  <Step title="Agregar un Disparador">
+    Dale a tu flujo de trabajo un nombre descriptivo, luego haz clic en **Configurar disparadores** para definir las condiciones que iniciarán el flujo de trabajo.
+
+    Elige entre las opciones de disparador disponibles:
+    - **Propiedades del contacto** — Disparar cuando un contacto alcanza una etapa específica del ciclo de vida
+    - **Propiedades del negocio** — Disparar por cambios en la etapa del negocio
+    - **Disparadores personalizados** — Define tus propias condiciones
+
+    <img src="/images/1267586286.png" alt="Configurar Disparadores del Flujo de Trabajo" />
+
+    <Warning>
+      Asegúrate de habilitar la **Re-inscripción** si deseas que el flujo de trabajo se dispare múltiples veces para el mismo contacto cuando cumpla las condiciones nuevamente.
+    </Warning>
+  </Step>
+
+  <Step title="Agregar Acción de WhatsApp de Eazybe">
+    Haz clic en el icono **+** debajo de tu disparador para agregar una acción. Desplázate hacia abajo entre las acciones disponibles y selecciona **Enviar mensaje de WhatsApp** en la sección de integración de **Eazybe**.
+
+    <img src="/images/1267587957.png" alt="Agregar Acción de WhatsApp de Eazybe" />
+  </Step>
+
+  <Step title="Configurar el Mensaje de WhatsApp">
+    Configura tu mensaje de WhatsApp con las siguientes opciones:
+
+    <img src="/images/1255804613.png" alt="Configurar Mensaje de WhatsApp" />
+
+    | Campo | Descripción |
+    |-------|-------------|
+    | **Teléfono del Destinatario** | Selecciona el campo de número de teléfono del contacto de HubSpot |
+    | **Mensaje** | Personaliza tu mensaje usando tokens de contacto para personalización |
+    | **URL de Medios** *(Opcional)* | Agrega una URL para compartir documentos, imágenes o archivos |
+
+    <Tip>
+      Usa tokens de personalización como `{{contact.firstname}}` para hacer tus mensajes más atractivos y relevantes para cada destinatario.
+    </Tip>
+  </Step>
+
+  <Step title="Revisar y Activar">
+    Previsualiza tu flujo de trabajo para asegurarte de que todos los pasos estén configurados correctamente. Cuando estés listo, haz clic en **Revisar y publicar** para activar tu flujo de trabajo.
+
+    <img src="/images/1255806368.png" alt="Revisar y Publicar Flujo de Trabajo" />
+  </Step>
+</Steps>
+
+---
+
+## Mejores Prácticas
+
+<CardGroup cols={2}>
+  <Card title="Probar Antes de Publicar" icon="flask">
+    Siempre prueba tu flujo de trabajo con un contacto de muestra antes de activarlo para toda tu base de datos.
+  </Card>
+  <Card title="Usar Disparadores Claros" icon="bullseye">
+    Define condiciones de disparador específicas para evitar enviar mensajes a destinatarios no deseados.
+  </Card>
+  <Card title="Personalizar Mensajes" icon="user">
+    Aprovecha los tokens de HubSpot para crear mensajes de WhatsApp personalizados que resuenen con tus contactos.
+  </Card>
+  <Card title="Monitorear Rendimiento" icon="chart-line">
+    Revisa regularmente las analíticas del flujo de trabajo para optimizar tu estrategia de mensajería.
+  </Card>
+</CardGroup>
+
+---
+
+## Beneficios Clave
+
+<Info>
+Esta configuración te permite programar mensajes de WhatsApp automatizados en el momento perfecto, asegurando una comunicación consistente con tus leads y clientes. Los beneficios incluyen:
+
+- **Seguimientos Oportunos** — Contacta automáticamente cuando los contactos alcanzan hitos clave
+- **Comunicación Consistente** — Nunca pierdas una oportunidad de interactuar
+- **Alcance Personalizado** — Adapta los mensajes según los datos del contacto
+- **Automatización Escalable** — Maneja grandes volúmenes sin esfuerzo manual
+</Info>
+
+---
+
+## ¿Necesitas Ayuda?
+
+<Card title="Contactar Soporte" icon="envelope">
+  Si tienes preguntas o necesitas asistencia configurando tus flujos de trabajo, contáctanos en **hey@eazybe.com**.
+</Card>

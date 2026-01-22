@@ -1,0 +1,102 @@
+---
+title: "Dynamic WhatsApp Labels"
+description: "Automatically organize WhatsApp contacts using dynamic labels synced with HubSpot CRM properties in real-time"
+---
+
+<Frame>
+  <iframe
+    width="560"
+    height="315"
+    src="https://www.youtube.com/embed/yyJ-seXjeD0"
+    title="Dynamic WhatsApp Labels Tutorial"
+    frameBorder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowFullScreen
+  />
+</Frame>
+
+## About Dynamic Labels
+
+Dynamic Labels are WhatsApp labels that are automatically generated based on rules you define using HubSpot properties. When a contact matches the specified criteria, they are automatically added to the label. Similarly, when a contact no longer meets the criteria, they are automatically removed.
+
+This ensures your WhatsApp communication stays aligned with the most current customer information in your CRM.
+
+---
+
+## Creating a Dynamic Label
+
+<Steps>
+  <Step title="Provide a Label Name">
+    Enter a descriptive name for your label that clearly identifies its purpose.
+
+    ![Label Selection](/images/1838705229.png)
+
+    <Tip>
+    Use clear, descriptive names like "New Leads," "VIP Customers," or "High-Value Prospects" for easy identification.
+    </Tip>
+  </Step>
+
+  <Step title="Select a HubSpot Module and Property">
+    Choose the HubSpot module (e.g., Contacts) that contains the property you want to use for filtering.
+
+    ![Contact Module](/images/1838705870.png)
+
+    Then select the specific property from that module.
+
+    ![Property Selection](/images/1838706322.png)
+
+    <Info>
+    Common properties include: Lifecycle Stage, Deal Stage, Region, Lead Status, and custom properties you've created in HubSpot.
+    </Info>
+  </Step>
+
+  <Step title="Set the Condition">
+    Choose a condition that determines how the property value should be evaluated:
+
+    ![Conditions](/images/1838706776.png)
+
+    Available conditions:
+    - **is equal to** - Exact match
+    - **is not equal to** - Excludes specific value
+    - **contains** - Partial match
+    - **does not contain** - Excludes partial match
+  </Step>
+
+  <Step title="Enter a Value">
+    Specify the value that contacts must match (or not match) based on your condition.
+
+    ![Subproperties](/images/1838707034.png)
+
+    <Note>
+    Examples: "Customer", "Marketing Qualified Lead", "Lead", or any value relevant to your selected property.
+    </Note>
+  </Step>
+
+  <Step title="Save the Label">
+    Click **Save** to create your dynamic label. The label will be automatically created in WhatsApp, and all contacts meeting your criteria will be added.
+
+    ![Label Created](/images/1838708666.png)
+  </Step>
+</Steps>
+
+---
+
+## Benefits of Dynamic Labels
+
+<CardGroup cols={2}>
+  <Card title="Automated Organization" icon="wand-magic-sparkles">
+    Eliminate manual label management. Contacts are automatically categorized based on their CRM data.
+  </Card>
+
+  <Card title="Real-Time Sync" icon="rotate">
+    Labels update instantly as HubSpot records change, ensuring your WhatsApp organization always reflects current data.
+  </Card>
+
+  <Card title="Improved Targeting" icon="bullseye">
+    Send messages to the right customer segments with confidence, knowing labels are always accurate.
+  </Card>
+
+  <Card title="Increased Efficiency" icon="bolt">
+    Reduce time spent searching for contacts. Dynamic labels keep your conversations organized automatically.
+  </Card>
+</CardGroup>

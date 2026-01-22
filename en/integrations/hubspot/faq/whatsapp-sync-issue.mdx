@@ -1,0 +1,110 @@
+---
+title: "WhatsApp Sync Issue"
+description: "Troubleshooting guide to fix WhatsApp syncing issues with HubSpot when conversations aren't being backed up"
+---
+
+## Overview
+
+Are your WhatsApp conversations not syncing with HubSpot? You're moving your conversations forward, but the backup isn't getting stored on HubSpot. This guide will help you resolve common syncing issues.
+
+---
+
+## 1. Grant Access
+
+Eazybe requires specific permissions to integrate with HubSpot properly.
+
+<Warning>
+Ensure your **super-admin** grants the following permissions:
+- **File** permission
+- **App Marketplace** permission
+</Warning>
+
+![Grant Access](/images/1182670474.png)
+
+---
+
+## 2. WhatsApp Activity Enabled in HubSpot
+
+Make sure WhatsApp Activity is enabled in your HubSpot contact timeline.
+
+<Steps>
+  <Step title="Open a Contact">
+    Navigate to any HubSpot contact page.
+  </Step>
+
+  <Step title="Expand Filter Activity">
+    Click on **Filter activity** to expand the filtering options.
+
+    ![Filter Activity](/images/1182407641.png)
+  </Step>
+
+  <Step title="Enable WhatsApp Activity">
+    Under the **Communication** section, check the **WhatsApp Activity** checkbox.
+
+    ![WhatsApp Activity Checkbox](/images/1182409870.png)
+  </Step>
+</Steps>
+
+---
+
+## 3. HubSpot Permissions
+
+Verify that you have the necessary permissions in HubSpot.
+
+<Steps>
+  <Step title="Access Settings">
+    Go to your HubSpot **Settings**.
+  </Step>
+
+  <Step title="Navigate to Users & Teams">
+    Click on **Users & Teams** in the left sidebar.
+
+    ![Users & Teams](/images/1182411479.png)
+  </Step>
+
+  <Step title="Edit Permissions">
+    Click **Edit permissions** for your user account.
+  </Step>
+
+  <Step title="Request Required Permissions">
+    Ensure you have **App marketplace** and **Files** permissions. If not, request these from your super-admin.
+
+    ![Permission Settings](/images/1182439947.png)
+  </Step>
+</Steps>
+
+<Info>
+A **super-admin** has access to all permissions and can grant these to other users.
+</Info>
+
+---
+
+## 4. Label Sync Permissions
+
+If your conversations aren't backing up even though labels are being created, check your label sync settings.
+
+<Steps>
+  <Step title="Check Label Settings">
+    Navigate to your label settings in the Eazybe extension.
+
+    ![Label Settings](/images/1185301122.png)
+  </Step>
+
+  <Step title="Verify Sync Status">
+    Ensure the label is set to **Sync** and not **Don't Sync**.
+
+    ![Sync vs Don't Sync](/images/1185302765.png)
+  </Step>
+</Steps>
+
+<Tip>
+Labels set to "Don't Sync" will not back up conversations to HubSpot. Change them to "Sync" to enable backup.
+</Tip>
+
+---
+
+## Need Help?
+
+<Card title="Contact Support" icon="envelope">
+  If you're still experiencing syncing issues after following these steps, reach out to us at **hey@eazybe.com**. We're happy to help!
+</Card>

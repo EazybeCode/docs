@@ -1,0 +1,120 @@
+---
+title: "Create Workflow"
+description: "Learn how to use HubSpot workflows to send automated WhatsApp messages with Eazybe integration"
+---
+
+## Overview
+
+HubSpot workflows allow you to automate WhatsApp messaging based on triggers like lifecycle stage changes, deal updates, or custom events. This guide walks you through setting up automated WhatsApp messages using the Eazybe integration.
+
+<Frame>
+  <iframe
+    width="560"
+    height="315"
+    src="https://www.youtube.com/embed/vrM6RE2pXBo"
+    title="HubSpot Workflow Tutorial"
+    frameBorder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowFullScreen
+  />
+</Frame>
+
+---
+
+## Setting Up Your Workflow
+
+<Steps>
+  <Step title="Create a New Workflow">
+    Navigate to the **Automation** tab in HubSpot and select **Workflows** from the dropdown menu. Click **Create workflow** and choose **From scratch**.
+
+    Select the workflow type based on your needs:
+    - **Contact-based** — Trigger based on contact properties
+    - **Deal-based** — Trigger based on deal stage changes
+    - **Company-based** — Trigger based on company properties
+
+    <img src="/images/1255812257.png" alt="Create Workflow in HubSpot" />
+  </Step>
+
+  <Step title="Add a Trigger">
+    Give your workflow a descriptive name, then click **Set up triggers** to define the conditions that will initiate the workflow.
+
+    Choose from available trigger options:
+    - **Contact properties** — Trigger when a contact reaches a specific lifecycle stage
+    - **Deal properties** — Trigger on deal stage changes
+    - **Custom triggers** — Define your own conditions
+
+    <img src="/images/1267586286.png" alt="Set Up Workflow Triggers" />
+
+    <Warning>
+      Make sure to enable **Re-enrollment** if you want the workflow to trigger multiple times for the same contact when they meet the conditions again.
+    </Warning>
+  </Step>
+
+  <Step title="Add Eazybe WhatsApp Action">
+    Click the **+** icon below your trigger to add an action. Scroll down through the available actions and select **Send WhatsApp message** under the **Eazybe** integration section.
+
+    <img src="/images/1267587957.png" alt="Add Eazybe WhatsApp Action" />
+  </Step>
+
+  <Step title="Configure the WhatsApp Message">
+    Set up your WhatsApp message with the following options:
+
+    <img src="/images/1255804613.png" alt="Configure WhatsApp Message" />
+
+    | Field | Description |
+    |-------|-------------|
+    | **Recipient Phone** | Select the contact phone number field from HubSpot |
+    | **Message** | Customize your message using contact tokens for personalization |
+    | **Media URL** *(Optional)* | Add a URL to share documents, images, or files |
+
+    <Tip>
+      Use personalization tokens like `{{contact.firstname}}` to make your messages more engaging and relevant to each recipient.
+    </Tip>
+  </Step>
+
+  <Step title="Review and Activate">
+    Preview your workflow to ensure all steps are configured correctly. When ready, click **Review and publish** to make your workflow live.
+
+    <img src="/images/1255806368.png" alt="Review and Publish Workflow" />
+  </Step>
+</Steps>
+
+---
+
+## Best Practices
+
+<CardGroup cols={2}>
+  <Card title="Test Before Publishing" icon="flask">
+    Always test your workflow with a sample contact before activating it for your entire database.
+  </Card>
+  <Card title="Use Clear Triggers" icon="bullseye">
+    Define specific trigger conditions to avoid sending messages to unintended recipients.
+  </Card>
+  <Card title="Personalize Messages" icon="user">
+    Leverage HubSpot tokens to create personalized WhatsApp messages that resonate with your contacts.
+  </Card>
+  <Card title="Monitor Performance" icon="chart-line">
+    Regularly review workflow analytics to optimize your messaging strategy.
+  </Card>
+</CardGroup>
+
+---
+
+## Key Benefits
+
+<Info>
+This setup allows you to schedule automated WhatsApp messages at the perfect time, ensuring consistent engagement with your leads and customers. Benefits include:
+
+- **Timely Follow-ups** — Automatically reach out when contacts hit key milestones
+- **Consistent Communication** — Never miss an opportunity to engage
+- **Personalized Outreach** — Tailor messages based on contact data
+- **Scalable Automation** — Handle high volumes without manual effort
+</Info>
+
+---
+
+## Need Help?
+
+<Card title="Contact Support" icon="envelope">
+  If you have questions or need assistance setting up your workflows, reach out to us at **hey@eazybe.com**.
+</Card>

@@ -233,7 +233,10 @@
                     "pages": [
                       "en/integrations/hubspot/message-syncing",
                       "en/integrations/hubspot/exclude-contacts-from-sync",
-                      "en/integrations/hubspot/chat-backup-location"
+                      "en/integrations/hubspot/chat-backup-location",
+                      "en/integrations/hubspot/backup-view",
+                      "en/integrations/hubspot/attachment",
+                      "en/integrations/hubspot/last-sync-time"
                     ]
                   },
                   {
@@ -267,7 +270,29 @@
                     ]
                   },
                   "en/integrations/hubspot/admin-workspace-access",
-                  "en/integrations/hubspot/user-access"
+                  "en/integrations/hubspot/user-access",
+                  "en/integrations/hubspot/create-workflow",
+                  "en/integrations/hubspot/one-click-switch",
+                  "en/integrations/hubspot/edit-properties",
+                  "en/integrations/hubspot/dynamic-whatsapp-labels",
+                  "en/integrations/hubspot/workflow-troubleshoot",
+                  {
+                    "group": "FAQ",
+                    "pages": [
+                      "en/integrations/hubspot/faq/confirm-integration",
+                      "en/integrations/hubspot/faq/required-integration-permissions",
+                      "en/integrations/hubspot/faq/disconnect",
+                      "en/integrations/hubspot/faq/whatsapp-sync-issue",
+                      "en/integrations/hubspot/faq/stop-sync",
+                      "en/integrations/hubspot/faq/free-trial",
+                      "en/integrations/hubspot/faq/whos-connected",
+                      "en/integrations/hubspot/backup-view",
+                      "en/integrations/hubspot/attachment",
+                      "en/integrations/hubspot/last-sync-time",
+                      "en/integrations/hubspot/faq/attachment-sync-issue"
+                    ]
+                  },
+                  "en/integrations/hubspot/compliance-and-privacy"
                 ]
               },
               {
@@ -650,7 +675,10 @@
                     "pages": [
                       "es/integrations/hubspot/message-syncing",
                       "es/integrations/hubspot/exclude-contacts-from-sync",
-                      "es/integrations/hubspot/chat-backup-location"
+                      "es/integrations/hubspot/chat-backup-location",
+                      "es/integrations/hubspot/backup-view",
+                      "es/integrations/hubspot/attachment",
+                      "es/integrations/hubspot/last-sync-time"
                     ]
                   },
                   {
@@ -675,7 +703,29 @@
                   "es/integrations/hubspot/admin-management",
                   "es/integrations/hubspot/troubleshooting",
                   "es/integrations/hubspot/admin-workspace-access",
-                  "es/integrations/hubspot/user-access"
+                  "es/integrations/hubspot/user-access",
+                  "es/integrations/hubspot/create-workflow",
+                  "es/integrations/hubspot/one-click-switch",
+                  "es/integrations/hubspot/edit-properties",
+                  "es/integrations/hubspot/dynamic-whatsapp-labels",
+                  "es/integrations/hubspot/workflow-troubleshoot",
+                  {
+                    "group": "Preguntas Frecuentes",
+                    "pages": [
+                      "es/integrations/hubspot/faq/confirm-integration",
+                      "es/integrations/hubspot/faq/required-integration-permissions",
+                      "es/integrations/hubspot/faq/disconnect",
+                      "es/integrations/hubspot/faq/whatsapp-sync-issue",
+                      "es/integrations/hubspot/faq/stop-sync",
+                      "es/integrations/hubspot/faq/free-trial",
+                      "es/integrations/hubspot/faq/whos-connected",
+                      "es/integrations/hubspot/backup-view",
+                      "es/integrations/hubspot/attachment",
+                      "es/integrations/hubspot/last-sync-time",
+                      "es/integrations/hubspot/faq/attachment-sync-issue"
+                    ]
+                  },
+                  "es/integrations/hubspot/compliance-and-privacy"
                 ]
               },
               {
@@ -909,7 +959,10 @@
                     "pages": [
                       "pt/integrations/hubspot/message-syncing",
                       "pt/integrations/hubspot/exclude-contacts-from-sync",
-                      "pt/integrations/hubspot/chat-backup-location"
+                      "pt/integrations/hubspot/chat-backup-location",
+                      "pt/integrations/hubspot/backup-view",
+                      "pt/integrations/hubspot/attachment",
+                      "pt/integrations/hubspot/last-sync-time"
                     ]
                   },
                   {
@@ -934,7 +987,29 @@
                   "pt/integrations/hubspot/admin-management",
                   "pt/integrations/hubspot/troubleshooting",
                   "pt/integrations/hubspot/admin-workspace-access",
-                  "pt/integrations/hubspot/user-access"
+                  "pt/integrations/hubspot/user-access",
+                  "pt/integrations/hubspot/create-workflow",
+                  "pt/integrations/hubspot/one-click-switch",
+                  "pt/integrations/hubspot/edit-properties",
+                  "pt/integrations/hubspot/dynamic-whatsapp-labels",
+                  "pt/integrations/hubspot/workflow-troubleshoot",
+                  {
+                    "group": "Perguntas Frequentes",
+                    "pages": [
+                      "pt/integrations/hubspot/faq/confirm-integration",
+                      "pt/integrations/hubspot/faq/required-integration-permissions",
+                      "pt/integrations/hubspot/faq/disconnect",
+                      "pt/integrations/hubspot/faq/whatsapp-sync-issue",
+                      "pt/integrations/hubspot/faq/stop-sync",
+                      "pt/integrations/hubspot/faq/free-trial",
+                      "pt/integrations/hubspot/faq/whos-connected",
+                      "pt/integrations/hubspot/backup-view",
+                      "pt/integrations/hubspot/attachment",
+                      "pt/integrations/hubspot/last-sync-time",
+                      "pt/integrations/hubspot/faq/attachment-sync-issue"
+                    ]
+                  },
+                  "pt/integrations/hubspot/compliance-and-privacy"
                 ]
               },
               {
@@ -1168,7 +1243,10 @@
                     "pages": [
                       "tr/integrations/hubspot/message-syncing",
                       "tr/integrations/hubspot/exclude-contacts-from-sync",
-                      "tr/integrations/hubspot/chat-backup-location"
+                      "tr/integrations/hubspot/chat-backup-location",
+                      "tr/integrations/hubspot/backup-view",
+                      "tr/integrations/hubspot/attachment",
+                      "tr/integrations/hubspot/last-sync-time"
                     ]
                   },
                   {
@@ -1193,7 +1271,29 @@
                   "tr/integrations/hubspot/admin-management",
                   "tr/integrations/hubspot/troubleshooting",
                   "tr/integrations/hubspot/admin-workspace-access",
-                  "tr/integrations/hubspot/user-access"
+                  "tr/integrations/hubspot/user-access",
+                  "tr/integrations/hubspot/create-workflow",
+                  "tr/integrations/hubspot/one-click-switch",
+                  "tr/integrations/hubspot/edit-properties",
+                  "tr/integrations/hubspot/dynamic-whatsapp-labels",
+                  "tr/integrations/hubspot/workflow-troubleshoot",
+                  {
+                    "group": "SSS",
+                    "pages": [
+                      "tr/integrations/hubspot/faq/confirm-integration",
+                      "tr/integrations/hubspot/faq/required-integration-permissions",
+                      "tr/integrations/hubspot/faq/disconnect",
+                      "tr/integrations/hubspot/faq/whatsapp-sync-issue",
+                      "tr/integrations/hubspot/faq/stop-sync",
+                      "tr/integrations/hubspot/faq/free-trial",
+                      "tr/integrations/hubspot/faq/whos-connected",
+                      "tr/integrations/hubspot/backup-view",
+                      "tr/integrations/hubspot/attachment",
+                      "tr/integrations/hubspot/last-sync-time",
+                      "tr/integrations/hubspot/faq/attachment-sync-issue"
+                    ]
+                  },
+                  "tr/integrations/hubspot/compliance-and-privacy"
                 ]
               },
               {

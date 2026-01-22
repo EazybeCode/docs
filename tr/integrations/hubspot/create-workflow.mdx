@@ -1,0 +1,120 @@
+---
+title: "İş Akışı Oluştur"
+description: "Eazybe entegrasyonu ile HubSpot iş akışlarını kullanarak otomatik WhatsApp mesajları göndermeyi öğrenin"
+---
+
+## Genel Bakış
+
+HubSpot iş akışları, yaşam döngüsü aşaması değişiklikleri, anlaşma güncellemeleri veya özel olaylar gibi tetikleyicilere dayalı olarak WhatsApp mesajlaşmasını otomatikleştirmenize olanak tanır. Bu kılavuz, Eazybe entegrasyonunu kullanarak otomatik WhatsApp mesajlarını ayarlamanızı gösterir.
+
+<Frame>
+  <iframe
+    width="560"
+    height="315"
+    src="https://www.youtube.com/embed/vrM6RE2pXBo"
+    title="HubSpot İş Akışı Eğitimi"
+    frameBorder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowFullScreen
+  />
+</Frame>
+
+---
+
+## İş Akışınızı Kurma
+
+<Steps>
+  <Step title="Yeni Bir İş Akışı Oluşturun">
+    HubSpot'ta **Otomasyon** sekmesine gidin ve açılır menüden **İş Akışları**'nı seçin. **İş akışı oluştur**'a tıklayın ve **Sıfırdan**'ı seçin.
+
+    İhtiyaçlarınıza göre iş akışı türünü seçin:
+    - **Kişi tabanlı** — Kişi özelliklerine göre tetikle
+    - **Anlaşma tabanlı** — Anlaşma aşaması değişikliklerine göre tetikle
+    - **Şirket tabanlı** — Şirket özelliklerine göre tetikle
+
+    <img src="/images/1255812257.png" alt="HubSpot'ta İş Akışı Oluştur" />
+  </Step>
+
+  <Step title="Tetikleyici Ekleyin">
+    İş akışınıza açıklayıcı bir ad verin, ardından iş akışını başlatacak koşulları tanımlamak için **Tetikleyicileri ayarla**'ya tıklayın.
+
+    Mevcut tetikleyici seçeneklerinden birini seçin:
+    - **Kişi özellikleri** — Bir kişi belirli bir yaşam döngüsü aşamasına ulaştığında tetikle
+    - **Anlaşma özellikleri** — Anlaşma aşaması değişikliklerinde tetikle
+    - **Özel tetikleyiciler** — Kendi koşullarınızı tanımlayın
+
+    <img src="/images/1267586286.png" alt="İş Akışı Tetikleyicilerini Ayarla" />
+
+    <Warning>
+      Aynı kişi koşulları tekrar karşıladığında iş akışının birden fazla kez tetiklenmesini istiyorsanız **Yeniden kayıt**'ı etkinleştirdiğinizden emin olun.
+    </Warning>
+  </Step>
+
+  <Step title="Eazybe WhatsApp Eylemi Ekleyin">
+    Bir eylem eklemek için tetikleyicinizin altındaki **+** simgesine tıklayın. Mevcut eylemler arasında aşağı kaydırın ve **Eazybe** entegrasyon bölümü altında **WhatsApp mesajı gönder**'i seçin.
+
+    <img src="/images/1267587957.png" alt="Eazybe WhatsApp Eylemi Ekle" />
+  </Step>
+
+  <Step title="WhatsApp Mesajını Yapılandırın">
+    WhatsApp mesajınızı aşağıdaki seçeneklerle ayarlayın:
+
+    <img src="/images/1255804613.png" alt="WhatsApp Mesajını Yapılandır" />
+
+    | Alan | Açıklama |
+    |------|----------|
+    | **Alıcı Telefonu** | HubSpot'tan kişi telefon numarası alanını seçin |
+    | **Mesaj** | Kişiselleştirme için kişi belirteçlerini kullanarak mesajınızı özelleştirin |
+    | **Medya URL'si** *(İsteğe bağlı)* | Belge, resim veya dosya paylaşmak için bir URL ekleyin |
+
+    <Tip>
+      Mesajlarınızı her alıcı için daha ilgi çekici ve alakalı hale getirmek için `{{contact.firstname}}` gibi kişiselleştirme belirteçleri kullanın.
+    </Tip>
+  </Step>
+
+  <Step title="İnceleyin ve Etkinleştirin">
+    Tüm adımların doğru yapılandırıldığından emin olmak için iş akışınızı önizleyin. Hazır olduğunuzda, iş akışınızı canlıya almak için **İncele ve yayınla**'ya tıklayın.
+
+    <img src="/images/1255806368.png" alt="İş Akışını İncele ve Yayınla" />
+  </Step>
+</Steps>
+
+---
+
+## En İyi Uygulamalar
+
+<CardGroup cols={2}>
+  <Card title="Yayınlamadan Önce Test Edin" icon="flask">
+    Tüm veritabanınız için etkinleştirmeden önce iş akışınızı örnek bir kişiyle test edin.
+  </Card>
+  <Card title="Net Tetikleyiciler Kullanın" icon="bullseye">
+    İstenmeyen alıcılara mesaj göndermekten kaçınmak için belirli tetikleyici koşulları tanımlayın.
+  </Card>
+  <Card title="Mesajları Kişiselleştirin" icon="user">
+    Kişilerinizle rezonans oluşturan kişiselleştirilmiş WhatsApp mesajları oluşturmak için HubSpot belirteçlerinden yararlanın.
+  </Card>
+  <Card title="Performansı İzleyin" icon="chart-line">
+    Mesajlaşma stratejinizi optimize etmek için iş akışı analizlerini düzenli olarak gözden geçirin.
+  </Card>
+</CardGroup>
+
+---
+
+## Temel Faydalar
+
+<Info>
+Bu kurulum, otomatik WhatsApp mesajlarını mükemmel zamanda planlamanıza olanak tanır ve potansiyel müşterileriniz ve müşterilerinizle tutarlı etkileşim sağlar. Faydalar şunlardır:
+
+- **Zamanında Takipler** — Kişiler önemli kilometre taşlarına ulaştığında otomatik olarak ulaşın
+- **Tutarlı İletişim** — Etkileşim fırsatını asla kaçırmayın
+- **Kişiselleştirilmiş Erişim** — Mesajları kişi verilerine göre uyarlayın
+- **Ölçeklenebilir Otomasyon** — Manuel çaba olmadan yüksek hacimleri yönetin
+</Info>
+
+---
+
+## Yardıma mı İhtiyacınız Var?
+
+<Card title="Destek ile İletişim" icon="envelope">
+  Sorularınız varsa veya iş akışlarınızı kurmada yardıma ihtiyacınız varsa, **hey@eazybe.com** adresinden bize ulaşın.
+</Card>

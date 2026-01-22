@@ -1,0 +1,123 @@
+---
+title: "Workflow Troubleshoot"
+description: "Common solutions and troubleshooting steps for HubSpot workflow issues with Eazybe WhatsApp integration"
+---
+
+## Overview
+
+If your HubSpot workflows aren't sending WhatsApp messages as expected, this guide covers the most common issues and their solutions.
+
+---
+
+## 1. Email ID Registration Match
+
+<Warning>
+The email address registered on your HubSpot account and your Eazybe account **must be the same** for workflows to function correctly.
+</Warning>
+
+<Steps>
+  <Step title="Install Chrome Extension">
+    Ensure the Eazybe Chrome extension is properly installed and active.
+
+    ![Chrome Extension](/images/1677063035.png)
+  </Step>
+
+  <Step title="Integrate with HubSpot">
+    Connect your HubSpot account through the Eazybe extension settings.
+
+    ![HubSpot Integration](/images/1677287737.png)
+  </Step>
+
+  <Step title="Verify Email Addresses Match">
+    Confirm that the email address used in HubSpot matches the one in your Eazybe account.
+
+    ![Email Verification](/images/1677287738.png)
+  </Step>
+</Steps>
+
+---
+
+## 2. Cloud Connection Requirement
+
+<Info>
+The **cloud connection must be active** for successful message delivery when WhatsApp Web is offline.
+</Info>
+
+Ensure your cloud connection is enabled to allow workflows to send messages even when you're not actively using WhatsApp Web.
+
+![Cloud Connection](/images/1677296011.png)
+
+---
+
+## 3. Workflow Sender Identity
+
+<Note>
+Messages are sent **from the contact owner's or deal owner's WhatsApp number**, regardless of which user created the workflow.
+</Note>
+
+This means:
+- If John is the contact owner, messages go from John's WhatsApp
+- The workflow creator's number is not used unless they own the contact/deal
+
+![Sender Identity](/images/1677289925.png)
+
+---
+
+## 4. Failed Message Tracking
+
+<Tip>
+Check the **scheduled labels in WhatsApp** to keep track of failed messages and identify delivery issues.
+</Tip>
+
+![Scheduled Labels](/images/1677293365.png)
+
+Use the scheduled labels feature to:
+- Monitor pending messages
+- Identify failed deliveries
+- Retry failed messages manually if needed
+
+---
+
+## 5. Delivery Timing
+
+<Info>
+It takes approximately **2 minutes** for scheduled messages to be delivered after a workflow trigger fires.
+</Info>
+
+![Delivery Timing](/images/1677294496.png)
+
+If messages aren't appearing immediately:
+- Wait at least 2-3 minutes after the trigger
+- Check that the workflow was properly triggered in HubSpot
+- Verify the contact meets all enrollment criteria
+
+---
+
+## 6. Multi-Device Duplication
+
+<Warning>
+Duplicate messages occur when the **same account is active on more than one device** simultaneously.
+</Warning>
+
+![Multi-Device Issue](/images/1677297547.png)
+
+To prevent duplicate sends:
+
+<CardGroup cols={2}>
+  <Card title="Use One Device" icon="mobile">
+    Keep your WhatsApp account active on only one device at a time when running workflows.
+  </Card>
+  <Card title="Log Out Other Sessions" icon="right-from-bracket">
+    Check WhatsApp Web's linked devices and remove any extra sessions.
+  </Card>
+</CardGroup>
+
+![Device Management](/images/1677300398.png)
+
+---
+
+## Need More Help?
+
+<Card title="Contact Support" icon="envelope">
+  If you're still experiencing issues, reach out to our support team at **hey@eazybe.com**
+</Card>

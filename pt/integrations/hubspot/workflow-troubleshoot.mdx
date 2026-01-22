@@ -1,0 +1,123 @@
+---
+title: "Solução de Problemas de Workflows"
+description: "Soluções comuns e etapas de solução de problemas para fluxos de trabalho do HubSpot com a integração WhatsApp da Eazybe"
+---
+
+## Visão Geral
+
+Se seus fluxos de trabalho do HubSpot não estão enviando mensagens do WhatsApp como esperado, este guia cobre os problemas mais comuns e suas soluções.
+
+---
+
+## 1. Correspondência de ID de E-mail
+
+<Warning>
+O endereço de e-mail registrado na sua conta do HubSpot e na sua conta Eazybe **deve ser o mesmo** para que os fluxos de trabalho funcionem corretamente.
+</Warning>
+
+<Steps>
+  <Step title="Instalar Extensão do Chrome">
+    Certifique-se de que a extensão do Chrome da Eazybe esteja corretamente instalada e ativa.
+
+    ![Extensão do Chrome](/images/1677063035.png)
+  </Step>
+
+  <Step title="Integrar com HubSpot">
+    Conecte sua conta do HubSpot através das configurações da extensão Eazybe.
+
+    ![Integração HubSpot](/images/1677287737.png)
+  </Step>
+
+  <Step title="Verificar se os E-mails Correspondem">
+    Confirme que o endereço de e-mail usado no HubSpot corresponde ao da sua conta Eazybe.
+
+    ![Verificação de E-mail](/images/1677287738.png)
+  </Step>
+</Steps>
+
+---
+
+## 2. Requisito de Conexão na Nuvem
+
+<Info>
+A **conexão na nuvem deve estar ativa** para entrega bem-sucedida de mensagens quando o WhatsApp Web estiver offline.
+</Info>
+
+Certifique-se de que sua conexão na nuvem esteja habilitada para permitir que os fluxos de trabalho enviem mensagens mesmo quando você não estiver usando ativamente o WhatsApp Web.
+
+![Conexão na Nuvem](/images/1677296011.png)
+
+---
+
+## 3. Identidade do Remetente do Workflow
+
+<Note>
+As mensagens são enviadas **do número do WhatsApp do proprietário do contato ou do negócio**, independentemente de qual usuário criou o fluxo de trabalho.
+</Note>
+
+Isso significa:
+- Se João é o proprietário do contato, as mensagens saem do WhatsApp do João
+- O número do criador do workflow não é usado, a menos que ele seja o proprietário do contato/negócio
+
+![Identidade do Remetente](/images/1677289925.png)
+
+---
+
+## 4. Rastreamento de Mensagens com Falha
+
+<Tip>
+Verifique as **etiquetas agendadas no WhatsApp** para acompanhar mensagens com falha e identificar problemas de entrega.
+</Tip>
+
+![Etiquetas Agendadas](/images/1677293365.png)
+
+Use o recurso de etiquetas agendadas para:
+- Monitorar mensagens pendentes
+- Identificar entregas com falha
+- Reenviar mensagens com falha manualmente, se necessário
+
+---
+
+## 5. Tempo de Entrega
+
+<Info>
+Leva aproximadamente **2 minutos** para que as mensagens agendadas sejam entregues após o acionamento de um workflow.
+</Info>
+
+![Tempo de Entrega](/images/1677294496.png)
+
+Se as mensagens não aparecerem imediatamente:
+- Aguarde pelo menos 2-3 minutos após o gatilho
+- Verifique se o workflow foi acionado corretamente no HubSpot
+- Confirme que o contato atende a todos os critérios de inscrição
+
+---
+
+## 6. Duplicação por Múltiplos Dispositivos
+
+<Warning>
+Mensagens duplicadas ocorrem quando a **mesma conta está ativa em mais de um dispositivo** simultaneamente.
+</Warning>
+
+![Problema de Múltiplos Dispositivos](/images/1677297547.png)
+
+Para evitar envios duplicados:
+
+<CardGroup cols={2}>
+  <Card title="Use Um Dispositivo" icon="mobile">
+    Mantenha sua conta do WhatsApp ativa em apenas um dispositivo por vez ao executar workflows.
+  </Card>
+  <Card title="Encerre Outras Sessões" icon="right-from-bracket">
+    Verifique os dispositivos vinculados do WhatsApp Web e remova sessões extras.
+  </Card>
+</CardGroup>
+
+![Gerenciamento de Dispositivos](/images/1677300398.png)
+
+---
+
+## Precisa de Mais Ajuda?
+
+<Card title="Contatar Suporte" icon="envelope">
+  Se você ainda estiver com problemas, entre em contato com nossa equipe de suporte em **hey@eazybe.com**
+</Card>

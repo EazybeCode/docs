@@ -1,0 +1,120 @@
+---
+title: "Criar Fluxo de Trabalho"
+description: "Aprenda a usar os fluxos de trabalho do HubSpot para enviar mensagens automatizadas do WhatsApp com a integração Eazybe"
+---
+
+## Visão Geral
+
+Os fluxos de trabalho do HubSpot permitem automatizar mensagens do WhatsApp com base em gatilhos como mudanças de estágio do ciclo de vida, atualizações de negócios ou eventos personalizados. Este guia mostra como configurar mensagens automatizadas do WhatsApp usando a integração Eazybe.
+
+<Frame>
+  <iframe
+    width="560"
+    height="315"
+    src="https://www.youtube.com/embed/vrM6RE2pXBo"
+    title="Tutorial de Fluxo de Trabalho do HubSpot"
+    frameBorder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowFullScreen
+  />
+</Frame>
+
+---
+
+## Configurando Seu Fluxo de Trabalho
+
+<Steps>
+  <Step title="Criar um Novo Fluxo de Trabalho">
+    Navegue até a aba **Automação** no HubSpot e selecione **Fluxos de trabalho** no menu suspenso. Clique em **Criar fluxo de trabalho** e escolha **Do zero**.
+
+    Selecione o tipo de fluxo de trabalho com base em suas necessidades:
+    - **Baseado em contatos** — Disparar com base em propriedades do contato
+    - **Baseado em negócios** — Disparar com base em mudanças de estágio do negócio
+    - **Baseado em empresas** — Disparar com base em propriedades da empresa
+
+    <img src="/images/1255812257.png" alt="Criar Fluxo de Trabalho no HubSpot" />
+  </Step>
+
+  <Step title="Adicionar um Gatilho">
+    Dê ao seu fluxo de trabalho um nome descritivo, então clique em **Configurar gatilhos** para definir as condições que iniciarão o fluxo de trabalho.
+
+    Escolha entre as opções de gatilho disponíveis:
+    - **Propriedades do contato** — Disparar quando um contato atinge um estágio específico do ciclo de vida
+    - **Propriedades do negócio** — Disparar em mudanças de estágio do negócio
+    - **Gatilhos personalizados** — Defina suas próprias condições
+
+    <img src="/images/1267586286.png" alt="Configurar Gatilhos do Fluxo de Trabalho" />
+
+    <Warning>
+      Certifique-se de habilitar a **Reinscrição** se você quiser que o fluxo de trabalho dispare várias vezes para o mesmo contato quando ele atender às condições novamente.
+    </Warning>
+  </Step>
+
+  <Step title="Adicionar Ação do WhatsApp Eazybe">
+    Clique no ícone **+** abaixo do seu gatilho para adicionar uma ação. Role para baixo pelas ações disponíveis e selecione **Enviar mensagem do WhatsApp** na seção de integração **Eazybe**.
+
+    <img src="/images/1267587957.png" alt="Adicionar Ação do WhatsApp Eazybe" />
+  </Step>
+
+  <Step title="Configurar a Mensagem do WhatsApp">
+    Configure sua mensagem do WhatsApp com as seguintes opções:
+
+    <img src="/images/1255804613.png" alt="Configurar Mensagem do WhatsApp" />
+
+    | Campo | Descrição |
+    |-------|-----------|
+    | **Telefone do Destinatário** | Selecione o campo de número de telefone do contato do HubSpot |
+    | **Mensagem** | Personalize sua mensagem usando tokens de contato para personalização |
+    | **URL de Mídia** *(Opcional)* | Adicione uma URL para compartilhar documentos, imagens ou arquivos |
+
+    <Tip>
+      Use tokens de personalização como `{{contact.firstname}}` para tornar suas mensagens mais envolventes e relevantes para cada destinatário.
+    </Tip>
+  </Step>
+
+  <Step title="Revisar e Ativar">
+    Visualize seu fluxo de trabalho para garantir que todas as etapas estejam configuradas corretamente. Quando estiver pronto, clique em **Revisar e publicar** para ativar seu fluxo de trabalho.
+
+    <img src="/images/1255806368.png" alt="Revisar e Publicar Fluxo de Trabalho" />
+  </Step>
+</Steps>
+
+---
+
+## Melhores Práticas
+
+<CardGroup cols={2}>
+  <Card title="Testar Antes de Publicar" icon="flask">
+    Sempre teste seu fluxo de trabalho com um contato de amostra antes de ativá-lo para todo o seu banco de dados.
+  </Card>
+  <Card title="Usar Gatilhos Claros" icon="bullseye">
+    Defina condições de gatilho específicas para evitar enviar mensagens para destinatários não intencionados.
+  </Card>
+  <Card title="Personalizar Mensagens" icon="user">
+    Aproveite os tokens do HubSpot para criar mensagens personalizadas do WhatsApp que ressoem com seus contatos.
+  </Card>
+  <Card title="Monitorar Desempenho" icon="chart-line">
+    Revise regularmente as análises do fluxo de trabalho para otimizar sua estratégia de mensagens.
+  </Card>
+</CardGroup>
+
+---
+
+## Principais Benefícios
+
+<Info>
+Esta configuração permite agendar mensagens automatizadas do WhatsApp no momento perfeito, garantindo engajamento consistente com seus leads e clientes. Os benefícios incluem:
+
+- **Acompanhamentos Oportunos** — Entre em contato automaticamente quando os contatos atingirem marcos importantes
+- **Comunicação Consistente** — Nunca perca uma oportunidade de engajar
+- **Alcance Personalizado** — Adapte mensagens com base nos dados do contato
+- **Automação Escalável** — Lide com grandes volumes sem esforço manual
+</Info>
+
+---
+
+## Precisa de Ajuda?
+
+<Card title="Contatar Suporte" icon="envelope">
+  Se você tiver dúvidas ou precisar de assistência para configurar seus fluxos de trabalho, entre em contato conosco em **hey@eazybe.com**.
+</Card>

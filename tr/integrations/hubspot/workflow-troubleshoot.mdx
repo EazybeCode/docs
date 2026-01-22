@@ -1,0 +1,123 @@
+---
+title: "Workflow Sorun Giderme"
+description: "Eazybe WhatsApp entegrasyonu ile HubSpot workflow sorunları için yaygın çözümler ve sorun giderme adımları"
+---
+
+## Genel Bakış
+
+HubSpot workflow'larınız beklendiği gibi WhatsApp mesajları göndermiyorsa, bu kılavuz en yaygın sorunları ve çözümlerini kapsar.
+
+---
+
+## 1. E-posta Kimliği Eşleşmesi
+
+<Warning>
+HubSpot hesabınızda ve Eazybe hesabınızda kayıtlı e-posta adresi, workflow'ların düzgün çalışması için **aynı olmalıdır**.
+</Warning>
+
+<Steps>
+  <Step title="Chrome Uzantısını Yükleyin">
+    Eazybe Chrome uzantısının düzgün şekilde yüklendiğinden ve aktif olduğundan emin olun.
+
+    ![Chrome Uzantısı](/images/1677063035.png)
+  </Step>
+
+  <Step title="HubSpot ile Entegre Edin">
+    HubSpot hesabınızı Eazybe uzantı ayarları üzerinden bağlayın.
+
+    ![HubSpot Entegrasyonu](/images/1677287737.png)
+  </Step>
+
+  <Step title="E-posta Adreslerinin Eşleştiğini Doğrulayın">
+    HubSpot'ta kullanılan e-posta adresinin Eazybe hesabınızdaki ile aynı olduğunu onaylayın.
+
+    ![E-posta Doğrulama](/images/1677287738.png)
+  </Step>
+</Steps>
+
+---
+
+## 2. Bulut Bağlantısı Gereksinimi
+
+<Info>
+WhatsApp Web çevrimdışı olduğunda başarılı mesaj teslimatı için **bulut bağlantısı aktif olmalıdır**.
+</Info>
+
+WhatsApp Web'i aktif olarak kullanmadığınızda bile workflow'ların mesaj göndermesine izin vermek için bulut bağlantınızın etkin olduğundan emin olun.
+
+![Bulut Bağlantısı](/images/1677296011.png)
+
+---
+
+## 3. Workflow Gönderici Kimliği
+
+<Note>
+Mesajlar, workflow'u hangi kullanıcının oluşturduğundan bağımsız olarak **kişi sahibinin veya anlaşma sahibinin WhatsApp numarasından** gönderilir.
+</Note>
+
+Bu şu anlama gelir:
+- Ahmet kişi sahibiyse, mesajlar Ahmet'in WhatsApp'ından gider
+- Workflow oluşturucusunun numarası, kişi/anlaşmanın sahibi olmadıkça kullanılmaz
+
+![Gönderici Kimliği](/images/1677289925.png)
+
+---
+
+## 4. Başarısız Mesaj Takibi
+
+<Tip>
+Başarısız mesajları takip etmek ve teslimat sorunlarını belirlemek için **WhatsApp'taki zamanlanmış etiketleri** kontrol edin.
+</Tip>
+
+![Zamanlanmış Etiketler](/images/1677293365.png)
+
+Zamanlanmış etiketler özelliğini şunlar için kullanın:
+- Bekleyen mesajları izleme
+- Başarısız teslimatları belirleme
+- Gerekirse başarısız mesajları manuel olarak yeniden deneme
+
+---
+
+## 5. Teslimat Süresi
+
+<Info>
+Zamanlanmış mesajların bir workflow tetikleyicisi çalıştıktan sonra teslim edilmesi yaklaşık **2 dakika** sürer.
+</Info>
+
+![Teslimat Süresi](/images/1677294496.png)
+
+Mesajlar hemen görünmüyorsa:
+- Tetikleyiciden sonra en az 2-3 dakika bekleyin
+- Workflow'un HubSpot'ta düzgün şekilde tetiklendiğini kontrol edin
+- Kişinin tüm kayıt kriterlerini karşıladığını doğrulayın
+
+---
+
+## 6. Çoklu Cihaz Çoğaltması
+
+<Warning>
+**Aynı hesap birden fazla cihazda** aynı anda aktif olduğunda yinelenen mesajlar oluşur.
+</Warning>
+
+![Çoklu Cihaz Sorunu](/images/1677297547.png)
+
+Yinelenen gönderimleri önlemek için:
+
+<CardGroup cols={2}>
+  <Card title="Tek Cihaz Kullanın" icon="mobile">
+    Workflow'ları çalıştırırken WhatsApp hesabınızı aynı anda yalnızca bir cihazda aktif tutun.
+  </Card>
+  <Card title="Diğer Oturumları Kapatın" icon="right-from-bracket">
+    WhatsApp Web'in bağlı cihazlarını kontrol edin ve fazladan oturumları kaldırın.
+  </Card>
+</CardGroup>
+
+![Cihaz Yönetimi](/images/1677300398.png)
+
+---
+
+## Daha Fazla Yardıma mı İhtiyacınız Var?
+
+<Card title="Destek ile İletişim" icon="envelope">
+  Hâlâ sorun yaşıyorsanız, destek ekibimize **hey@eazybe.com** adresinden ulaşın
+</Card>

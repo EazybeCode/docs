@@ -1,0 +1,110 @@
+---
+title: "Problema de Sincronización de WhatsApp"
+description: "Guía de solución de problemas para arreglar problemas de sincronización de WhatsApp con HubSpot cuando las conversaciones no se respaldan"
+---
+
+## Descripción General
+
+¿Tus conversaciones de WhatsApp no se sincronizan con HubSpot? Estás avanzando con tus conversaciones, pero el respaldo no se está almacenando en HubSpot. Esta guía te ayudará a resolver problemas comunes de sincronización.
+
+---
+
+## 1. Otorgar Acceso
+
+Eazybe requiere permisos específicos para integrarse correctamente con HubSpot.
+
+<Warning>
+Asegúrate de que tu **super-administrador** otorgue los siguientes permisos:
+- Permiso de **Archivo**
+- Permiso de **App Marketplace**
+</Warning>
+
+![Otorgar Acceso](/images/1182670474.png)
+
+---
+
+## 2. Actividad de WhatsApp Habilitada en HubSpot
+
+Asegúrate de que la Actividad de WhatsApp esté habilitada en la línea de tiempo de contactos de HubSpot.
+
+<Steps>
+  <Step title="Abrir un Contacto">
+    Navega a cualquier página de contacto de HubSpot.
+  </Step>
+
+  <Step title="Expandir Filtrar Actividad">
+    Haz clic en **Filtrar actividad** para expandir las opciones de filtrado.
+
+    ![Filtrar Actividad](/images/1182407641.png)
+  </Step>
+
+  <Step title="Habilitar Actividad de WhatsApp">
+    En la sección **Comunicación**, marca la casilla **Actividad de WhatsApp**.
+
+    ![Casilla de Actividad de WhatsApp](/images/1182409870.png)
+  </Step>
+</Steps>
+
+---
+
+## 3. Permisos de HubSpot
+
+Verifica que tengas los permisos necesarios en HubSpot.
+
+<Steps>
+  <Step title="Acceder a Configuración">
+    Ve a la **Configuración** de tu HubSpot.
+  </Step>
+
+  <Step title="Navegar a Usuarios y Equipos">
+    Haz clic en **Usuarios y Equipos** en la barra lateral izquierda.
+
+    ![Usuarios y Equipos](/images/1182411479.png)
+  </Step>
+
+  <Step title="Editar Permisos">
+    Haz clic en **Editar permisos** para tu cuenta de usuario.
+  </Step>
+
+  <Step title="Solicitar Permisos Requeridos">
+    Asegúrate de tener permisos de **App marketplace** y **Archivos**. Si no, solicítalos a tu super-administrador.
+
+    ![Configuración de Permisos](/images/1182439947.png)
+  </Step>
+</Steps>
+
+<Info>
+Un **super-administrador** tiene acceso a todos los permisos y puede otorgarlos a otros usuarios.
+</Info>
+
+---
+
+## 4. Permisos de Sincronización de Etiquetas
+
+Si tus conversaciones no se respaldan aunque se estén creando etiquetas, verifica la configuración de sincronización de etiquetas.
+
+<Steps>
+  <Step title="Verificar Configuración de Etiquetas">
+    Navega a la configuración de etiquetas en la extensión de Eazybe.
+
+    ![Configuración de Etiquetas](/images/1185301122.png)
+  </Step>
+
+  <Step title="Verificar Estado de Sincronización">
+    Asegúrate de que la etiqueta esté configurada en **Sincronizar** y no en **No Sincronizar**.
+
+    ![Sincronizar vs No Sincronizar](/images/1185302765.png)
+  </Step>
+</Steps>
+
+<Tip>
+Las etiquetas configuradas en "No Sincronizar" no respaldarán conversaciones en HubSpot. Cámbialas a "Sincronizar" para habilitar el respaldo.
+</Tip>
+
+---
+
+## ¿Necesitas Ayuda?
+
+<Card title="Contactar Soporte" icon="envelope">
+  Si aún tienes problemas de sincronización después de seguir estos pasos, contáctanos en **hey@eazybe.com**. ¡Estamos felices de ayudar!
+</Card>
