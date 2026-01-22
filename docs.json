@@ -244,6 +244,7 @@
                       "en/integrations/hubspot/mini-crm/create-task-and-notes",
                       "en/integrations/hubspot/mini-crm/create-and-customize-deals",
                       "en/integrations/hubspot/mini-crm/create-call-logs",
+                      "en/integrations/hubspot/mini-crm/create-tickets",
                       "integrations/hubspot/mini-crm/overview",
                       "integrations/hubspot/mini-crm/contacts",
                       "integrations/hubspot/mini-crm/deals",
@@ -264,7 +265,9 @@
                       "integrations/hubspot/playbooks/team-performance",
                       "integrations/hubspot/playbooks/broadcast-lists"
                     ]
-                  }
+                  },
+                  "en/integrations/hubspot/admin-workspace-access",
+                  "en/integrations/hubspot/user-access"
                 ]
               },
               {
@@ -658,6 +661,7 @@
                       "es/integrations/hubspot/mini-crm/create-task-and-notes",
                       "es/integrations/hubspot/mini-crm/create-and-customize-deals",
                       "es/integrations/hubspot/mini-crm/create-call-logs",
+                      "es/integrations/hubspot/mini-crm/create-tickets",
                       "es/integrations/hubspot/mini-crm/overview",
                       "es/integrations/hubspot/mini-crm/contacts",
                       "es/integrations/hubspot/mini-crm/deals",
@@ -669,7 +673,9 @@
                   "es/integrations/hubspot/workflows",
                   "es/integrations/hubspot/dynamic-labels",
                   "es/integrations/hubspot/admin-management",
-                  "es/integrations/hubspot/troubleshooting"
+                  "es/integrations/hubspot/troubleshooting",
+                  "es/integrations/hubspot/admin-workspace-access",
+                  "es/integrations/hubspot/user-access"
                 ]
               },
               {
@@ -914,6 +920,7 @@
                       "pt/integrations/hubspot/mini-crm/create-task-and-notes",
                       "pt/integrations/hubspot/mini-crm/create-and-customize-deals",
                       "pt/integrations/hubspot/mini-crm/create-call-logs",
+                      "pt/integrations/hubspot/mini-crm/create-tickets",
                       "pt/integrations/hubspot/mini-crm/overview",
                       "pt/integrations/hubspot/mini-crm/contacts",
                       "pt/integrations/hubspot/mini-crm/deals",
@@ -925,7 +932,9 @@
                   "pt/integrations/hubspot/workflows",
                   "pt/integrations/hubspot/dynamic-labels",
                   "pt/integrations/hubspot/admin-management",
-                  "pt/integrations/hubspot/troubleshooting"
+                  "pt/integrations/hubspot/troubleshooting",
+                  "pt/integrations/hubspot/admin-workspace-access",
+                  "pt/integrations/hubspot/user-access"
                 ]
               },
               {
@@ -1170,6 +1179,7 @@
                       "tr/integrations/hubspot/mini-crm/create-task-and-notes",
                       "tr/integrations/hubspot/mini-crm/create-and-customize-deals",
                       "tr/integrations/hubspot/mini-crm/create-call-logs",
+                      "tr/integrations/hubspot/mini-crm/create-tickets",
                       "tr/integrations/hubspot/mini-crm/overview",
                       "tr/integrations/hubspot/mini-crm/contacts",
                       "tr/integrations/hubspot/mini-crm/deals",
@@ -1181,7 +1191,9 @@
                   "tr/integrations/hubspot/workflows",
                   "tr/integrations/hubspot/dynamic-labels",
                   "tr/integrations/hubspot/admin-management",
-                  "tr/integrations/hubspot/troubleshooting"
+                  "tr/integrations/hubspot/troubleshooting",
+                  "tr/integrations/hubspot/admin-workspace-access",
+                  "tr/integrations/hubspot/user-access"
                 ]
               },
               {
