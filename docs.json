@@ -302,6 +302,7 @@
                   "integrations/zoho/overview",
                   "en/integrations/zoho/prerequisites",
                   "integrations/zoho/setup",
+                  "en/integrations/zoho/invite-team",
                   "integrations/zoho/contact-sync",
                   "integrations/zoho/chat-backup",
                   {
@@ -734,6 +735,7 @@
                 "pages": [
                   "es/integrations/zoho/prerequisites",
                   "es/integrations/zoho/setup",
+                  "es/integrations/zoho/invite-team",
                   "es/integrations/zoho/contact-sync",
                   "es/integrations/zoho/chat-backup",
                   {
@@ -1018,6 +1020,7 @@
                 "pages": [
                   "pt/integrations/zoho/prerequisites",
                   "pt/integrations/zoho/setup",
+                  "pt/integrations/zoho/invite-team",
                   "pt/integrations/zoho/contact-sync",
                   "pt/integrations/zoho/chat-backup",
                   {
@@ -1302,6 +1305,7 @@
                 "pages": [
                   "tr/integrations/zoho/prerequisites",
                   "tr/integrations/zoho/setup",
+                  "tr/integrations/zoho/invite-team",
                   "tr/integrations/zoho/contact-sync",
                   "tr/integrations/zoho/chat-backup",
                   {
