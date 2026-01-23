@@ -333,10 +333,24 @@
                   },
                   "en/integrations/zoho/admin-workspace-access",
                   "en/integrations/zoho/user-access",
-                  "integrations/zoho/workflows",
+                  "en/integrations/zoho/workflow",
+                  "en/integrations/zoho/one-click-switch",
+                  "en/integrations/zoho/dynamic-whatsapp-labels",
+                  "en/integrations/zoho/troubleshoot-workflow",
                   "integrations/zoho/admin-management",
                   "integrations/zoho/troubleshooting",
-                  "integrations/zoho/faq",
+                  {
+                    "group": "FAQ",
+                    "pages": [
+                      "integrations/zoho/faq",
+                      "en/integrations/zoho/faq/integration-confirmation",
+                      "en/integrations/zoho/faq/permissions-required",
+                      "en/integrations/zoho/faq/how-to-disconnect",
+                      "en/integrations/zoho/faq/whatsapp-sync-issue",
+                      "en/integrations/zoho/faq/free-trial",
+                      "en/integrations/zoho/faq/whos-connected"
+                    ]
+                  },
                   {
                     "group": "Playbooks",
                     "pages": [
@@ -785,9 +799,23 @@
                   },
                   "es/integrations/zoho/admin-workspace-access",
                   "es/integrations/zoho/user-access",
-                  "es/integrations/zoho/workflows",
+                  "es/integrations/zoho/workflow",
+                  "es/integrations/zoho/one-click-switch",
+                  "es/integrations/zoho/dynamic-whatsapp-labels",
+                  "es/integrations/zoho/troubleshoot-workflow",
                   "es/integrations/zoho/admin-management",
-                  "es/integrations/zoho/troubleshooting"
+                  "es/integrations/zoho/troubleshooting",
+                  {
+                    "group": "FAQ",
+                    "pages": [
+                      "es/integrations/zoho/faq/integration-confirmation",
+                      "es/integrations/zoho/faq/permissions-required",
+                      "es/integrations/zoho/faq/how-to-disconnect",
+                      "es/integrations/zoho/faq/whatsapp-sync-issue",
+                      "es/integrations/zoho/faq/free-trial",
+                      "es/integrations/zoho/faq/whos-connected"
+                    ]
+                  }
                 ]
               },
               {
@@ -1089,9 +1117,23 @@
                   },
                   "pt/integrations/zoho/admin-workspace-access",
                   "pt/integrations/zoho/user-access",
-                  "pt/integrations/zoho/workflows",
+                  "pt/integrations/zoho/workflow",
+                  "pt/integrations/zoho/one-click-switch",
+                  "pt/integrations/zoho/dynamic-whatsapp-labels",
+                  "pt/integrations/zoho/troubleshoot-workflow",
                   "pt/integrations/zoho/admin-management",
-                  "pt/integrations/zoho/troubleshooting"
+                  "pt/integrations/zoho/troubleshooting",
+                  {
+                    "group": "FAQ",
+                    "pages": [
+                      "pt/integrations/zoho/faq/integration-confirmation",
+                      "pt/integrations/zoho/faq/permissions-required",
+                      "pt/integrations/zoho/faq/how-to-disconnect",
+                      "pt/integrations/zoho/faq/whatsapp-sync-issue",
+                      "pt/integrations/zoho/faq/free-trial",
+                      "pt/integrations/zoho/faq/whos-connected"
+                    ]
+                  }
                 ]
               },
               {
@@ -1393,9 +1435,23 @@
                   },
                   "tr/integrations/zoho/admin-workspace-access",
                   "tr/integrations/zoho/user-access",
-                  "tr/integrations/zoho/workflows",
+                  "tr/integrations/zoho/workflow",
+                  "tr/integrations/zoho/one-click-switch",
+                  "tr/integrations/zoho/dynamic-whatsapp-labels",
+                  "tr/integrations/zoho/troubleshoot-workflow",
                   "tr/integrations/zoho/admin-management",
-                  "tr/integrations/zoho/troubleshooting"
+                  "tr/integrations/zoho/troubleshooting",
+                  {
+                    "group": "FAQ",
+                    "pages": [
+                      "tr/integrations/zoho/faq/integration-confirmation",
+                      "tr/integrations/zoho/faq/permissions-required",
+                      "tr/integrations/zoho/faq/how-to-disconnect",
+                      "tr/integrations/zoho/faq/whatsapp-sync-issue",
+                      "tr/integrations/zoho/faq/free-trial",
+                      "tr/integrations/zoho/faq/whos-connected"
+                    ]
+                  }
                 ]
               },
               {

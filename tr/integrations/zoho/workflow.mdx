@@ -1,0 +1,64 @@
+---
+title: "Is Akisi"
+description: "EazyBe entegrasyonu araciligiyla WhatsApp mesajlari gondermeyi otomatiklestirmek icin Zoho is akislarini nasil kullanacaginizi ogrenin"
+---
+
+Belirli is olaylari tarafindan tetiklenen kisisellestirilmis musteri iletisimleri gondermek icin Zoho is akislari araciligiyla WhatsApp mesajlarinizi otomatiklestirin. Bu kilavuz, otomatik olarak WhatsApp mesajlari gonderen bir is akisi kurmanizi adim adim gosterir.
+
+## WhatsApp icin Zoho Is Akislari Kurulumu
+
+<Steps>
+  <Step title="Is Akisi Ayarlarina Erisin">
+    Zoho CRM'inizde **Ayarlar** → **Otomasyon** → **Is Akisi Kurallari** bolumune gidin.
+
+    ![Is Akisi Ayarlari](/images/1291001886.jpg)
+  </Step>
+
+  <Step title="Yeni Bir Is Akisi Kurali Olusturun">
+    **Kural Olustur**'a tiklayin ve is akisini tetiklemek istediginiz modulu secin (Kisiler, Firsatlar, Musteriler, vb.). Is akisiniza aciklayici bir ad verin ve ne zaman calistirilacagini tanimlayin (kayit olusturuldiginda, duzenlendiginde veya planli olarak).
+
+    ![Is Akisi Kurali Olustur](/images/1291002018.jpg)
+  </Step>
+
+  <Step title="Tetikleme Kriterlerini Yapilandirin">
+    Is akisini tetikleyecek kosullari ayarlayin. Ornegin, bir Kisi Asamasi "Yeni Musteri Adayi" olarak degistiginde veya bir Firsat belirli bir asamaya ulastiginda WhatsApp mesaji gondermek isteyebilirsiniz.
+
+    ![Tetikleyici Yapilandirmasi](/images/1290779158.png)
+  </Step>
+
+  <Step title="EazyBe WhatsApp Eylemini Ekleyin">
+    Is akisi eylemleri bolumunde, mevcut eylemlerden **messageonWhatsApp**'i secin. Bu, WhatsApp mesajlasmasi saglayan EazyBe entegrasyon eylemidir.
+
+    ![WhatsApp Eylemi Ekle](/images/1291002676.jpg)
+  </Step>
+
+  <Step title="Gonderen Telefon Numarasini Yapilandirin">
+    WhatsApp mesajlarini gonderecek telefon numarasini secin. Bu, EazyBe hesabiniza zaten bagli olan bir telefon numarasi olmalidir.
+
+    ![Gondereni Yapilandir](/images/1291003153.jpg)
+  </Step>
+
+  <Step title="Mesajinizi Yazin">
+    Iletisimi kisisellestirimek icin dinamik Zoho alanlarini kullanarak mesaj icerigini yazin. Kisisellestirilmis mesajlar olusturmak icin `$First_Name`, `$Company` veya herhangi bir Zoho alani gibi birlestirme alanlarini kullanabilirsiniz.
+
+    ![Mesaj Yaz](/images/1291003379.jpg)
+  </Step>
+
+  <Step title="Inceleyin ve Etkinlestirin">
+    Her seyin dogru yapilandirildigindan emin olmak icin tum is akisi yapilandirmalarinizi inceleyin. Dogrulandiktan sonra, otomatik WhatsApp mesajlari gondermeye baslamak icin is akisini kaydedin ve etkinlestirin.
+
+    ![Incele ve Etkinlestir](/images/1291003649.jpg)
+  </Step>
+</Steps>
+
+<Info>
+  Is akisi, tetikleme kosullari her karsilandiginda otomatik olarak WhatsApp mesajlari gonderecektir. EazyBe hesabinizin duzgun bir sekilde baglandigindans ve gonderen telefon numarasinin aktif oldugundans emin olun.
+</Info>
+
+<Tip>
+  Otomatik mesajlarinizin daha kisisel hissettirmesi ve etkilesim oranlarini artirmak icin `$First_Name` gibi kisiselletirme belirteclerini kullanin.
+</Tip>
+
+## Yardima mi Ihtiyaciniz Var?
+
+Sorulariniz varsa veya daha fazla yardima ihtiyaciniz varsa, destek ekibimizle [hey@eazybe.com](mailto:hey@eazybe.com) adresinden iletisime gecmekten cekinmeyin.

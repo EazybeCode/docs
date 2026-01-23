@@ -1,0 +1,64 @@
+---
+title: "Workflow"
+description: "Learn how to use Zoho workflows to automate sending WhatsApp messages through EazyBe integration"
+---
+
+Automate your WhatsApp messaging through Zoho workflows to send personalized customer communications triggered by specific business events. This guide walks you through setting up a workflow that sends WhatsApp messages automatically.
+
+## Setting Up Zoho Workflows for WhatsApp
+
+<Steps>
+  <Step title="Access Workflow Settings">
+    Navigate to **Settings** → **Automation** → **Workflow Rules** in your Zoho CRM.
+
+    ![Workflow Settings](/images/1291001886.jpg)
+  </Step>
+
+  <Step title="Create a New Workflow Rule">
+    Click on **Create Rule** and select the module you want to trigger the workflow from (Contacts, Deals, Leads, etc.). Give your workflow a descriptive name and define when it should execute (on record creation, edit, or on a scheduled basis).
+
+    ![Create Workflow Rule](/images/1291002018.jpg)
+  </Step>
+
+  <Step title="Configure Trigger Criteria">
+    Set up the conditions that will trigger the workflow. For example, you might want to send a WhatsApp message when a Contact Stage changes to "New Lead" or when a Deal reaches a specific stage.
+
+    ![Trigger Configuration](/images/1290779158.png)
+  </Step>
+
+  <Step title="Add the EazyBe WhatsApp Action">
+    In the workflow actions section, select **messageonWhatsApp** from the available actions. This is the EazyBe integration action that enables WhatsApp messaging.
+
+    ![Add WhatsApp Action](/images/1291002676.jpg)
+  </Step>
+
+  <Step title="Configure Sender Phone Number">
+    Select the phone number that will send the WhatsApp messages. This must be a phone number that is already connected to your EazyBe account.
+
+    ![Configure Sender](/images/1291003153.jpg)
+  </Step>
+
+  <Step title="Compose Your Message">
+    Write your message content using dynamic Zoho fields to personalize the communication. You can use merge fields like `$First_Name`, `$Company`, or any other Zoho field to create personalized messages.
+
+    ![Compose Message](/images/1291003379.jpg)
+  </Step>
+
+  <Step title="Review and Activate">
+    Review all your workflow configurations to ensure everything is set up correctly. Once verified, save and activate the workflow to start sending automated WhatsApp messages.
+
+    ![Review and Activate](/images/1291003649.jpg)
+  </Step>
+</Steps>
+
+<Info>
+  The workflow will automatically send WhatsApp messages whenever the trigger conditions are met. Make sure your EazyBe account is properly connected and the sender phone number is active.
+</Info>
+
+<Tip>
+  Use personalization tokens like `$First_Name` to make your automated messages feel more personal and increase engagement rates.
+</Tip>
+
+## Need Help?
+
+If you have any questions or need further assistance, feel free to reach out to our support team at [hey@eazybe.com](mailto:hey@eazybe.com).

@@ -1,0 +1,64 @@
+---
+title: "Flujo de Trabajo"
+description: "Aprende a usar los flujos de trabajo de Zoho para automatizar el envio de mensajes de WhatsApp a traves de la integracion con EazyBe"
+---
+
+Automatiza tus mensajes de WhatsApp a traves de flujos de trabajo de Zoho para enviar comunicaciones personalizadas a clientes activadas por eventos de negocio especificos. Esta guia te muestra como configurar un flujo de trabajo que envia mensajes de WhatsApp automaticamente.
+
+## Configuracion de Flujos de Trabajo de Zoho para WhatsApp
+
+<Steps>
+  <Step title="Acceder a la Configuracion de Flujos de Trabajo">
+    Navega a **Configuracion** → **Automatizacion** → **Reglas de Flujo de Trabajo** en tu Zoho CRM.
+
+    ![Configuracion de Flujos de Trabajo](/images/1291001886.jpg)
+  </Step>
+
+  <Step title="Crear una Nueva Regla de Flujo de Trabajo">
+    Haz clic en **Crear Regla** y selecciona el modulo desde el cual quieres activar el flujo de trabajo (Contactos, Negocios, Leads, etc.). Dale a tu flujo de trabajo un nombre descriptivo y define cuando debe ejecutarse (al crear un registro, al editar, o de forma programada).
+
+    ![Crear Regla de Flujo de Trabajo](/images/1291002018.jpg)
+  </Step>
+
+  <Step title="Configurar los Criterios de Activacion">
+    Establece las condiciones que activaran el flujo de trabajo. Por ejemplo, puedes querer enviar un mensaje de WhatsApp cuando el Estado de un Contacto cambie a "Nuevo Lead" o cuando un Negocio alcance una etapa especifica.
+
+    ![Configuracion del Activador](/images/1290779158.png)
+  </Step>
+
+  <Step title="Agregar la Accion de WhatsApp de EazyBe">
+    En la seccion de acciones del flujo de trabajo, selecciona **messageonWhatsApp** de las acciones disponibles. Esta es la accion de integracion de EazyBe que habilita los mensajes de WhatsApp.
+
+    ![Agregar Accion de WhatsApp](/images/1291002676.jpg)
+  </Step>
+
+  <Step title="Configurar el Numero de Telefono del Remitente">
+    Selecciona el numero de telefono que enviara los mensajes de WhatsApp. Este debe ser un numero de telefono que ya este conectado a tu cuenta de EazyBe.
+
+    ![Configurar Remitente](/images/1291003153.jpg)
+  </Step>
+
+  <Step title="Redactar tu Mensaje">
+    Escribe el contenido de tu mensaje usando campos dinamicos de Zoho para personalizar la comunicacion. Puedes usar campos de combinacion como `$First_Name`, `$Company`, o cualquier otro campo de Zoho para crear mensajes personalizados.
+
+    ![Redactar Mensaje](/images/1291003379.jpg)
+  </Step>
+
+  <Step title="Revisar y Activar">
+    Revisa todas las configuraciones de tu flujo de trabajo para asegurarte de que todo este configurado correctamente. Una vez verificado, guarda y activa el flujo de trabajo para comenzar a enviar mensajes de WhatsApp automatizados.
+
+    ![Revisar y Activar](/images/1291003649.jpg)
+  </Step>
+</Steps>
+
+<Info>
+  El flujo de trabajo enviara automaticamente mensajes de WhatsApp cada vez que se cumplan las condiciones de activacion. Asegurate de que tu cuenta de EazyBe este correctamente conectada y el numero de telefono del remitente este activo.
+</Info>
+
+<Tip>
+  Usa tokens de personalizacion como `$First_Name` para hacer que tus mensajes automatizados se sientan mas personales y aumentar las tasas de interaccion.
+</Tip>
+
+## ¿Necesitas Ayuda?
+
+Si tienes alguna pregunta o necesitas mas asistencia, no dudes en contactar a nuestro equipo de soporte en [hey@eazybe.com](mailto:hey@eazybe.com).
