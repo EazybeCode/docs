@@ -1,0 +1,117 @@
+---
+title: "API Access"
+description: "Learn how to enable Zoho CRM API access for user profiles to allow Eazybe integration"
+---
+
+## Overview
+
+This guide provides administrators with instructions for enabling API access at the profile level in Zoho CRM. Enabling API access is essential for Eazybe to communicate with your Zoho CRM data.
+
+## Who Should Use This Guide
+
+<CardGroup cols={3}>
+  <Card title="CRM Administrators" icon="user-shield">
+    Zoho CRM administrators managing user permissions
+  </Card>
+  <Card title="IT/Integration Teams" icon="network-wired">
+    Teams setting up system integrations
+  </Card>
+  <Card title="Developers" icon="code">
+    Developers configuring API-based integrations
+  </Card>
+</CardGroup>
+
+<Note>
+  Only users with administrative access can modify profile-level security settings in Zoho CRM.
+</Note>
+
+## Prerequisites
+
+Before proceeding, ensure you have:
+
+- **Administrative access** to Zoho CRM
+- Knowledge of which **profile** is assigned to the API-calling user (Standard, Sales, or custom profiles)
+
+## Steps to Enable API Access
+
+<Steps>
+  <Step title="Log Into Zoho CRM">
+    Sign in to your Zoho CRM account using administrator credentials.
+
+    <!-- TODO(image-missing): original_url="https://downloads.intercomcdn.com/i/o/p2m2ant5/1968881807/053051122c0f673ed863f83c1bbb/image-20260114-111657.png" -->
+  </Step>
+
+  <Step title="Access Setup">
+    Click the **gear icon** (Setup) in the top-right corner of the screen.
+
+    <!-- TODO(image-missing): original_url="https://downloads.intercomcdn.com/i/o/p2m2ant5/1968884377/52fceaf3b902be991ab41cb86f28/image-20260114-111800.png" -->
+  </Step>
+
+  <Step title="Navigate to Security Control">
+    Go to **Security Control** and select **Profiles** from the available options.
+
+    <!-- TODO(image-missing): original_url="https://downloads.intercomcdn.com/i/o/p2m2ant5/1968890074/498f241b06507722de83fa060190/image-20260114-111943.png" -->
+  </Step>
+
+  <Step title="Select the User Profile">
+    In the **Profiles** tab, locate and click the profile assigned to the API user.
+
+    <!-- TODO(image-missing): original_url="https://downloads.intercomcdn.com/i/o/p2m2ant5/1968891619/c6ad5e402d2de971d8d36de07c21/image-20260114-112042.png" -->
+  </Step>
+
+  <Step title="Find Developer Permissions">
+    Scroll to the bottom of the profile settings page and find the **Developer Permissions** section.
+  </Step>
+
+  <Step title="Enable API Access">
+    Toggle the **Zoho CRM API Access** switch to **ON**. The switch displays green when enabled.
+
+    <!-- TODO(image-missing): original_url="https://downloads.intercomcdn.com/i/o/p2m2ant5/1968892209/487cdfaa26191835128fa89489f4/image-20260114-112042.png" -->
+  </Step>
+
+  <Step title="Save Changes">
+    Click **Save** to apply the updated permissions.
+  </Step>
+</Steps>
+
+## Verification
+
+After enabling API access, verify the configuration:
+
+<AccordionGroup>
+  <Accordion title="Check Profile Status">
+    The profile should display **API Access** status as **ON**.
+  </Accordion>
+
+  <Accordion title="Test Authentication">
+    User authentication should succeed with API credentials or OAuth tokens.
+  </Accordion>
+
+  <Accordion title="Verify API Calls">
+    API calls should no longer return permission errors.
+  </Accordion>
+</AccordionGroup>
+
+## Troubleshooting
+
+<Warning>
+  If API calls still fail after enabling access, check the following common issues:
+</Warning>
+
+| Issue | Solution |
+|-------|----------|
+| Incorrect profile updated | Verify you edited the correct profile assigned to the API user |
+| Session not refreshed | Ask the user to log out and log back in |
+| IP restrictions | Check if IP-based access restrictions are blocking API calls |
+| OAuth scope | Verify OAuth token has the required scopes |
+
+## Security Best Practices
+
+<Tip>
+  Follow these security recommendations when managing API access:
+</Tip>
+
+- **Enable selectively** - Only enable API access for profiles that require it
+- **Avoid broad access** - Do not enable API access for all profiles unnecessarily
+- **Regular audits** - Periodically review which profiles have API access enabled
+- **Revoke when unused** - Disable API access when integrations are no longer in use

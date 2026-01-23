@@ -1,0 +1,72 @@
+---
+title: "Permisos de Objetos Personalizados"
+description: "Aprenda como habilitar permisos de objetos personalizados en Zoho CRM para una integracion fluida con Eazybe"
+---
+
+## Descripcion General
+
+Para garantizar una integracion fluida con Eazybe, debe habilitar los permisos necesarios para objetos personalizados en su cuenta de Zoho CRM. Estos permisos permiten que Eazybe sincronice objetos personalizados correctamente entre Zoho CRM y su espacio de trabajo.
+
+## Pasos para Habilitar Permisos de Objetos Personalizados
+
+<Steps>
+  <Step title="Iniciar Sesion en Zoho CRM">
+    Inicie sesion en su cuenta de Zoho CRM usando credenciales de administrador. Necesita acceso de administrador para modificar la configuracion de permisos.
+  </Step>
+
+  <Step title="Acceder a la Configuracion de Permisos">
+    Navegue a la configuracion de **Permisos** o **Personalizacion** en su panel de Zoho CRM.
+
+    ![Configuracion de Permisos de Objetos Personalizados](/images/1360832639.png)
+
+    <Note>
+      Es posible que una seccion dedicada de "Objetos Personalizados" no sea visible en la interfaz actual. Busque la configuracion de permisos dentro del area general de personalizacion.
+    </Note>
+  </Step>
+
+  <Step title="Habilitar los Permisos Requeridos">
+    Dentro del area de permisos, asegurese de que los siguientes permisos esten habilitados:
+
+    - **Crear Objetos Personalizados** - Permite crear nuevos objetos personalizados
+    - **Editar Objetos Personalizados** - Permite modificar objetos personalizados existentes
+    - **Actualizar Objetos Personalizados** - Permite actualizar registros de objetos personalizados
+  </Step>
+
+  <Step title="Guardar Cambios">
+    Haga clic en **Guardar** para confirmar su configuracion y habilitar la gestion adecuada de la integracion con Eazybe.
+  </Step>
+</Steps>
+
+## Lista de Verificacion de Permisos Requeridos
+
+<CardGroup cols={3}>
+  <Card title="Crear" icon="plus">
+    Permiso para crear nuevos objetos personalizados en Zoho CRM
+  </Card>
+  <Card title="Editar" icon="pen">
+    Permiso para modificar estructuras de objetos personalizados
+  </Card>
+  <Card title="Actualizar" icon="refresh">
+    Permiso para actualizar registros de objetos personalizados
+  </Card>
+</CardGroup>
+
+<Warning>
+  **Importante:** Estos permisos son cruciales para el correcto funcionamiento de la integracion con Eazybe. Sin ellos, la integracion podria no poder sincronizar objetos personalizados correctamente entre Zoho CRM y Eazybe.
+</Warning>
+
+## Solucion de Problemas
+
+<AccordionGroup>
+  <Accordion title="No veo permisos de objetos personalizados en mi configuracion">
+    Los permisos de objetos personalizados pueden estar ubicados en diferentes secciones del menu segun su edicion de Zoho CRM. Intente verificar en **Configuracion** → **Usuarios y Control** → **Perfiles** y edite el perfil correspondiente.
+  </Accordion>
+
+  <Accordion title="Los cambios no surten efecto">
+    Despues de guardar los cambios de permisos, es posible que deba cerrar sesion y volver a iniciarla para que los cambios surtan efecto. Tambien asegurese de estar editando el perfil de usuario correcto.
+  </Accordion>
+
+  <Accordion title="La integracion aun no sincroniza objetos personalizados">
+    Verifique que los tres permisos (Crear, Editar, Actualizar) esten habilitados. Si los problemas persisten, contacte a soporte en **hey@eazybe.com**.
+  </Accordion>
+</AccordionGroup>

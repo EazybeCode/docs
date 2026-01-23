@@ -1,0 +1,96 @@
+---
+title: "Mesaj Senkronizasyonu"
+description: "WhatsApp mesajlarinin Zoho CRM kisi ve leadlerine nasil otomatik olarak senkronize edilip yedeklendigini ogrenin"
+---
+
+## Genel Bakis
+
+Eazybe, WhatsApp konusmalarinizi Zoho CRM ile otomatik olarak senkronize ederek tum musteri iletisimlerinizin CRM kayitlarinizda yedeklenmesini ve erisilebilir olmasini saglar.
+
+## Otomatik Senkronizasyon Sureci
+
+<Info>
+  Zoho kisileri veya leadleri ile yapilan WhatsApp konusmalari otomatik olarak **her 3 dakikada** senkronize edilir.
+</Info>
+
+Son senkronizasyon tarihi ve saati Eazybe uzantisinda goruntulenir. Kisinin Zoho sayfasina erismek icin simgeye tiklayarak senkronizasyonun tamamlandigini dogrulayabilirsiniz.
+
+![Senkronizasyon Durumu Gorunumu](/images/1223655076.png)
+
+## Ilk Entegrasyon Yedegi
+
+<Note>
+  Ilk Zoho entegrasyonunda, sistem otomatik olarak **onceki 3 gunluk** konusmalarin sohbet yedegini saglar.
+</Note>
+
+Bu, entegrasyonu kurarken herhangi bir yakin gecmisteki konusma gecmisini kaybetmemenizi saglar.
+
+## Mesajlarin Kaydedildigi Yerler
+
+### Notlar Bolumu
+
+WhatsApp sohbetleri, Zoho CRM'deki Kisiler ve Leadler sayfalarinin **Notlar Bolumune** yedeklenir.
+
+![Notlar Bolumu Yedegi](/images/1192590765.png)
+
+### Anlasmalar Sayfalari
+
+Yedek ayrica bir kisiyle iliskili **en son 5 anlasmada** Anlasmalar sayfasinda da gorunur.
+
+![Anlasmalar Sayfasi Yedegi](/images/1192593143.png)
+
+## Eklerin Yedeklenmesi
+
+WhatsApp ekleri, Zoho Leadler ve Kisiler sayfalarinin hem **Notlar** hem de **Ekler** bolumlerinde saklanir.
+
+### Notlar Bolumunde
+
+Baglantilar, konusma baglaminda dosyalara kolay erisim saglar.
+
+![Notlarda Ekler](/images/1192596920.png)
+
+### Ekler Bolumunde
+
+Dosyalar asagidaki ayrintilari iceren tablo formatinda goruntulenir:
+
+| Sutun | Aciklama |
+|-------|----------|
+| **Dosya Adi** | Eklenen dosyanin adi |
+| **Ekleyen** | Eki gonderen kullanici |
+| **Ekleme Tarihi** | Ekin ne zaman senkronize edildigi |
+| **Boyut** | Dosya boyutu |
+
+![Ekler Sekmesi Gorunumu](/images/1192693196.png)
+
+![Ekler Tablosu Detaylari](/images/1192693197.png)
+
+## Senkronizasyon Sikligi Ozeti
+
+<CardGroup cols={2}>
+  <Card title="Otomatik Senkronizasyon" icon="clock">
+    Aktif konusmalar icin her 3 dakikada
+  </Card>
+  <Card title="Ilk Yedek" icon="history">
+    Ilk entegrasyonda onceki 3 gun
+  </Card>
+</CardGroup>
+
+## Sikca Sorulan Sorular
+
+<AccordionGroup>
+  <Accordion title="Senkronizasyon ne siklikta gerceklesir?">
+    WhatsApp mesajlari her 3 dakikada otomatik olarak Zoho CRM'inize senkronize edilir.
+  </Accordion>
+
+  <Accordion title="Son senkronizasyon zamanini nerede gorebilirim?">
+    Son senkronizasyon tarihi ve saati Eazybe uzanti panelinde goruntulenir.
+  </Accordion>
+
+  <Accordion title="Ekler de yedeklenir mi?">
+    Evet, WhatsApp konusmalarindan tum ekler Zoho CRM'de hem Notlar hem de Ekler bolumlerine yedeklenir.
+  </Accordion>
+
+  <Accordion title="Kac anlasma sohbet yedegini gosterir?">
+    Sohbet yedekleri bir kisiyle iliskili en son 5 anlasmada gorunur.
+  </Accordion>
+</AccordionGroup>

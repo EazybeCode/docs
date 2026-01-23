@@ -1,0 +1,72 @@
+---
+title: "Ozel Nesne Izinleri"
+description: "Sorunsuz Eazybe entegrasyonu icin Zoho CRM'de ozel nesne izinlerini nasil etkinlestireceg inizi ogrenin"
+---
+
+## Genel Bakis
+
+Eazybe ile sorunsuz bir entegrasyon saglamak icin Zoho CRM hesabinizda ozel nesneler icin gerekli izinleri etkinlestirmeniz gerekir. Bu izinler, Eazybe'nin Zoho CRM ile calisma alaniniz arasinda ozel nesneleri dogru sekilde senkronize etmesini saglar.
+
+## Ozel Nesne Izinlerini Etkinlestirme Adimlari
+
+<Steps>
+  <Step title="Zoho CRM'e Giris Yapin">
+    Yonetici kimlik bilgilerini kullanarak Zoho CRM hesabiniza giris yapin. Izin ayarlarini degistirmek icin yonetici erisimne ihtiyaciniz var.
+  </Step>
+
+  <Step title="Izin Ayarlarina Erisin">
+    Zoho CRM panonuzda **Izinler** veya **Ozellestirme** ayarlarina gidin.
+
+    ![Ozel Nesne Izin Ayarlari](/images/1360832639.png)
+
+    <Note>
+      Mevcut arayuzde ozel bir "Ozel Nesne" bolumu gorunmeyebilir. Genel ozellestirme alani icerisindeki izin ayarlarini arayin.
+    </Note>
+  </Step>
+
+  <Step title="Gerekli Izinleri Etkinlestirin">
+    Izinler alaninda, asagidaki izinlerin etkinlestirildiginden emin olun:
+
+    - **Ozel Nesne Olustur** - Yeni ozel nesneler olusturmaya izin verir
+    - **Ozel Nesne Duzenle** - Mevcut ozel nesneleri degistirmeye izin verir
+    - **Ozel Nesne Guncelle** - Ozel nesne kayitlarini guncellemeye izin verir
+  </Step>
+
+  <Step title="Degisiklikleri Kaydedin">
+    Ayarlarinizi onaylamak ve uygun Eazybe entegrasyon yonetimini etkinlestirmek icin **Kaydet**'e tiklayin.
+  </Step>
+</Steps>
+
+## Gerekli Izinler Kontrol Listesi
+
+<CardGroup cols={3}>
+  <Card title="Olustur" icon="plus">
+    Zoho CRM'de yeni ozel nesneler olusturma izni
+  </Card>
+  <Card title="Duzenle" icon="pen">
+    Ozel nesne yapilarini degistirme izni
+  </Card>
+  <Card title="Guncelle" icon="refresh">
+    Ozel nesne kayitlarini guncelleme izni
+  </Card>
+</CardGroup>
+
+<Warning>
+  **Onemli:** Bu izinler, Eazybe entegrasyonunun duzgun calismasi icin cok onemlidir. Bunlar olmadan, entegrasyon Zoho CRM ile Eazybe arasinda ozel nesneleri dogru sekilde senkronize edemeyebilir.
+</Warning>
+
+## Sorun Giderme
+
+<AccordionGroup>
+  <Accordion title="Ayarlarimda ozel nesne izinlerini goremiyorum">
+    Ozel nesne izinleri, Zoho CRM surumunuze bagli olarak farkli menu bolumlerinde bulunabilir. **Kurulum** → **Kullanicilar ve Kontrol** → **Profiller** altinda kontrol etmeyi deneyin ve ilgili profili duzenleyin.
+  </Accordion>
+
+  <Accordion title="Degisiklikler etkili olmuyor">
+    Izin degisikliklerini kaydettikten sonra, degisikliklerin etkili olmasi icin cikis yapip tekrar giris yapmaniz gerekebilir. Ayrica dogru kullanici profilini duzenlediginizden emin olun.
+  </Accordion>
+
+  <Accordion title="Entegrasyon hala ozel nesneleri senkronize etmiyor">
+    Uc iznin de (Olustur, Duzenle, Guncelle) etkinlestirildigini dogrulayin. Sorunlar devam ederse, **hey@eazybe.com** adresinden destekle iletisime gecin.
+  </Accordion>
+</AccordionGroup>

@@ -1,0 +1,72 @@
+---
+title: "Custom Object Permissions"
+description: "Learn how to enable custom object permissions in Zoho CRM for seamless Eazybe integration"
+---
+
+## Overview
+
+To ensure a smooth integration with Eazybe, you must enable the necessary permissions for custom objects in your Zoho CRM account. These permissions allow Eazybe to sync custom objects correctly between Zoho CRM and your workspace.
+
+## Steps to Enable Custom Object Permissions
+
+<Steps>
+  <Step title="Log Into Zoho CRM">
+    Sign in to your Zoho CRM account using administrator credentials. You need admin access to modify permission settings.
+  </Step>
+
+  <Step title="Access Permissions Settings">
+    Navigate to the **Permissions** or **Customization** settings in your Zoho CRM dashboard.
+
+    ![Custom Object Permissions Settings](/images/1360832639.png)
+
+    <Note>
+      A dedicated "Custom Object" section may not be visible in the current interface. Look for permission settings within the general customization area.
+    </Note>
+  </Step>
+
+  <Step title="Enable Required Permissions">
+    Within the permissions area, ensure the following permissions are enabled:
+
+    - **Create Custom Objects** - Allows creating new custom objects
+    - **Edit Custom Objects** - Allows modifying existing custom objects
+    - **Update Custom Objects** - Allows updating custom object records
+  </Step>
+
+  <Step title="Save Changes">
+    Click **Save** to confirm your settings and enable proper Eazybe integration management.
+  </Step>
+</Steps>
+
+## Required Permissions Checklist
+
+<CardGroup cols={3}>
+  <Card title="Create" icon="plus">
+    Permission to create new custom objects in Zoho CRM
+  </Card>
+  <Card title="Edit" icon="pen">
+    Permission to modify custom object structures
+  </Card>
+  <Card title="Update" icon="refresh">
+    Permission to update custom object records
+  </Card>
+</CardGroup>
+
+<Warning>
+  **Important:** These permissions are crucial for the proper functioning of the Eazybe integration. Without them, the integration might not be able to sync custom objects correctly between Zoho CRM and Eazybe.
+</Warning>
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="I don't see custom object permissions in my settings">
+    Custom object permissions may be located under different menu sections depending on your Zoho CRM edition. Try checking under **Setup** → **Users and Control** → **Profiles** and edit the relevant profile.
+  </Accordion>
+
+  <Accordion title="Changes aren't taking effect">
+    After saving permission changes, you may need to log out and log back in for the changes to take effect. Also ensure you're editing the correct user profile.
+  </Accordion>
+
+  <Accordion title="Integration still not syncing custom objects">
+    Verify that all three permissions (Create, Edit, Update) are enabled. If issues persist, contact support at **hey@eazybe.com**.
+  </Accordion>
+</AccordionGroup>

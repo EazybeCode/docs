@@ -1,0 +1,117 @@
+---
+title: "Acceso a la API"
+description: "Aprenda como habilitar el acceso a la API de Zoho CRM para perfiles de usuario para permitir la integracion con Eazybe"
+---
+
+## Descripcion General
+
+Esta guia proporciona a los administradores instrucciones para habilitar el acceso a la API a nivel de perfil en Zoho CRM. Habilitar el acceso a la API es esencial para que Eazybe se comunique con los datos de su Zoho CRM.
+
+## Quien Debe Usar Esta Guia
+
+<CardGroup cols={3}>
+  <Card title="Administradores de CRM" icon="user-shield">
+    Administradores de Zoho CRM que gestionan permisos de usuario
+  </Card>
+  <Card title="Equipos de TI/Integracion" icon="network-wired">
+    Equipos que configuran integraciones de sistemas
+  </Card>
+  <Card title="Desarrolladores" icon="code">
+    Desarrolladores que configuran integraciones basadas en API
+  </Card>
+</CardGroup>
+
+<Note>
+  Solo los usuarios con acceso administrativo pueden modificar la configuracion de seguridad a nivel de perfil en Zoho CRM.
+</Note>
+
+## Requisitos Previos
+
+Antes de continuar, asegurese de tener:
+
+- **Acceso administrativo** a Zoho CRM
+- Conocimiento de que **perfil** esta asignado al usuario que realiza llamadas a la API (Estandar, Ventas o perfiles personalizados)
+
+## Pasos para Habilitar el Acceso a la API
+
+<Steps>
+  <Step title="Iniciar Sesion en Zoho CRM">
+    Inicie sesion en su cuenta de Zoho CRM con credenciales de administrador.
+
+    <!-- TODO(image-missing): original_url="https://downloads.intercomcdn.com/i/o/p2m2ant5/1968881807/053051122c0f673ed863f83c1bbb/image-20260114-111657.png" -->
+  </Step>
+
+  <Step title="Acceder a Configuracion">
+    Haga clic en el **icono de engranaje** (Configuracion) en la esquina superior derecha de la pantalla.
+
+    <!-- TODO(image-missing): original_url="https://downloads.intercomcdn.com/i/o/p2m2ant5/1968884377/52fceaf3b902be991ab41cb86f28/image-20260114-111800.png" -->
+  </Step>
+
+  <Step title="Navegar a Control de Seguridad">
+    Vaya a **Control de Seguridad** y seleccione **Perfiles** de las opciones disponibles.
+
+    <!-- TODO(image-missing): original_url="https://downloads.intercomcdn.com/i/o/p2m2ant5/1968890074/498f241b06507722de83fa060190/image-20260114-111943.png" -->
+  </Step>
+
+  <Step title="Seleccionar el Perfil de Usuario">
+    En la pestana **Perfiles**, localice y haga clic en el perfil asignado al usuario de la API.
+
+    <!-- TODO(image-missing): original_url="https://downloads.intercomcdn.com/i/o/p2m2ant5/1968891619/c6ad5e402d2de971d8d36de07c21/image-20260114-112042.png" -->
+  </Step>
+
+  <Step title="Encontrar Permisos de Desarrollador">
+    Desplacese hasta la parte inferior de la pagina de configuracion del perfil y encuentre la seccion **Permisos de Desarrollador**.
+  </Step>
+
+  <Step title="Habilitar Acceso a la API">
+    Active el interruptor **Acceso a la API de Zoho CRM** en **ON**. El interruptor se muestra en verde cuando esta habilitado.
+
+    <!-- TODO(image-missing): original_url="https://downloads.intercomcdn.com/i/o/p2m2ant5/1968892209/487cdfaa26191835128fa89489f4/image-20260114-112042.png" -->
+  </Step>
+
+  <Step title="Guardar Cambios">
+    Haga clic en **Guardar** para aplicar los permisos actualizados.
+  </Step>
+</Steps>
+
+## Verificacion
+
+Despues de habilitar el acceso a la API, verifique la configuracion:
+
+<AccordionGroup>
+  <Accordion title="Verificar Estado del Perfil">
+    El perfil debe mostrar el estado de **Acceso a la API** como **ON**.
+  </Accordion>
+
+  <Accordion title="Probar Autenticacion">
+    La autenticacion del usuario debe tener exito con credenciales de API o tokens OAuth.
+  </Accordion>
+
+  <Accordion title="Verificar Llamadas a la API">
+    Las llamadas a la API ya no deben devolver errores de permisos.
+  </Accordion>
+</AccordionGroup>
+
+## Solucion de Problemas
+
+<Warning>
+  Si las llamadas a la API aun fallan despues de habilitar el acceso, verifique los siguientes problemas comunes:
+</Warning>
+
+| Problema | Solucion |
+|----------|----------|
+| Perfil incorrecto actualizado | Verifique que edito el perfil correcto asignado al usuario de la API |
+| Sesion no actualizada | Pida al usuario que cierre sesion y vuelva a iniciarla |
+| Restricciones de IP | Verifique si las restricciones de acceso basadas en IP estan bloqueando las llamadas a la API |
+| Alcance de OAuth | Verifique que el token OAuth tenga los alcances requeridos |
+
+## Mejores Practicas de Seguridad
+
+<Tip>
+  Siga estas recomendaciones de seguridad al gestionar el acceso a la API:
+</Tip>
+
+- **Habilitar selectivamente** - Solo habilite el acceso a la API para perfiles que lo requieran
+- **Evitar acceso amplio** - No habilite el acceso a la API para todos los perfiles innecesariamente
+- **Auditorias regulares** - Revise periodicamente que perfiles tienen habilitado el acceso a la API
+- **Revocar cuando no se use** - Deshabilite el acceso a la API cuando las integraciones ya no esten en uso
