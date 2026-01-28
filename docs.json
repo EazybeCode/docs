@@ -348,7 +348,10 @@
                       "en/integrations/zoho/faq/how-to-disconnect",
                       "en/integrations/zoho/faq/whatsapp-sync-issue",
                       "en/integrations/zoho/faq/free-trial",
-                      "en/integrations/zoho/faq/whos-connected"
+                      "en/integrations/zoho/faq/whos-connected",
+                      "en/integrations/zoho/faq/backup-view",
+                      "en/integrations/zoho/faq/attachment-backup",
+                      "en/integrations/zoho/faq/last-sync-time"
                     ]
                   },
                   {
@@ -360,30 +363,19 @@
                       "integrations/zoho/playbooks/workflow-automation",
                       "integrations/zoho/playbooks/deal-tracking"
                     ]
-                  }
+                  },
+                  "en/integrations/zoho/compliance-and-privacy"
                 ]
               },
               {
                 "group": "Salesforce",
                 "icon": "salesforce",
                 "pages": [
-                  "integrations/salesforce/overview",
-                  "integrations/salesforce/prerequisites",
-                  "integrations/salesforce/setup",
-                  "integrations/salesforce/contact-sync",
-                  "integrations/salesforce/chat-backup",
                   {
                     "group": "Mini-CRM View",
-                    "pages": [
-                      "integrations/salesforce/mini-crm/overview",
-                      "integrations/salesforce/mini-crm/contacts",
-                      "integrations/salesforce/mini-crm/leads",
-                      "integrations/salesforce/mini-crm/opportunities"
-                    ]
+                    "pages": []
                   },
-                  "integrations/salesforce/admin-management",
-                  "integrations/salesforce/troubleshooting",
-                  "integrations/salesforce/faq",
+
                   {
                     "group": "Playbooks",
                     "pages": [
@@ -400,12 +392,6 @@
                 "group": "Pipedrive",
                 "icon": "pipe-section",
                 "pages": [
-                  "integrations/pipedrive/overview",
-                  "integrations/pipedrive/setup",
-                  "integrations/pipedrive/contact-sync",
-                  "integrations/pipedrive/chat-backup",
-                  "integrations/pipedrive/mini-crm",
-                  "integrations/pipedrive/troubleshooting",
                   {
                     "group": "Playbooks",
                     "pages": [
@@ -421,22 +407,40 @@
                 "group": "LeadSquared",
                 "icon": "bullseye",
                 "pages": [
-                  "integrations/leadsquared/overview",
-                  "integrations/leadsquared/prerequisites",
-                  "integrations/leadsquared/setup",
-                  "integrations/leadsquared/contact-sync",
-                  "integrations/leadsquared/chat-backup",
-                  "integrations/leadsquared/mini-crm",
-                  "integrations/leadsquared/admin-management",
-                  "integrations/leadsquared/troubleshooting",
-                  "integrations/leadsquared/faq",
+                  "en/integrations/leadsquared/prerequisites",
+                  "en/integrations/leadsquared/integration",
+                  "en/integrations/leadsquared/disconnect",
+                  "en/integrations/leadsquared/invite-team",
+                  "en/integrations/leadsquared/help-desk",
+                  "en/integrations/leadsquared/link-contact",
+                  "en/integrations/leadsquared/message-sync",
+                  "en/integrations/leadsquared/analytics",
+                  "en/integrations/leadsquared/administrator-dashboard",
+                  "en/integrations/leadsquared/admin-access",
+                  "en/integrations/leadsquared/one-click-switch",
+                  {
+                    "group": "Mini-CRM",
+                    "pages": [
+                      "en/integrations/leadsquared/create-and-customize-lead",
+                      "en/integrations/leadsquared/profile",
+                      "en/integrations/leadsquared/notes",
+                      "en/integrations/leadsquared/tasks",
+                      "en/integrations/leadsquared/create-opportunity",
+                      "en/integrations/leadsquared/manage-opportunity",
+                      "en/integrations/leadsquared/opportunity-tasks"
+                    ]
+                  },
                   {
                     "group": "Playbooks",
+                    "pages": []
+                  },
+                  {
+                    "group": "FAQ",
                     "pages": [
-                      "integrations/leadsquared/playbooks/overview",
-                      "integrations/leadsquared/playbooks/lead-capture",
-                      "integrations/leadsquared/playbooks/chat-backup",
-                      "integrations/leadsquared/playbooks/automation-rules"
+                      "en/integrations/leadsquared/faq/integration-confirmation",
+                      "en/integrations/leadsquared/faq/permissions-required",
+                      "en/integrations/leadsquared/faq/disconnect-integration",
+                      "en/integrations/leadsquared/faq/sync-issue"
                     ]
                   }
                 ]
@@ -445,52 +449,26 @@
                 "group": "Bitrix24",
                 "icon": "cubes",
                 "pages": [
-                  "integrations/bitrix/overview",
-                  "integrations/bitrix/setup",
-                  "integrations/bitrix/contact-sync",
-                  "integrations/bitrix/chat-backup",
-                  "integrations/bitrix/mini-crm",
-                  "integrations/bitrix/troubleshooting",
                   {
                     "group": "Playbooks",
-                    "pages": [
-                      "integrations/bitrix/playbooks/overview",
-                      "integrations/bitrix/playbooks/contact-capture",
-                      "integrations/bitrix/playbooks/chat-backup"
-                    ]
+                    "pages": []
                   }
                 ]
               },
               {
                 "group": "Google Sheets",
                 "icon": "table",
-                "pages": [
-                  "integrations/google-sheets/overview",
-                  "integrations/google-sheets/setup",
-                  "integrations/google-sheets/sync-contacts",
-                  "integrations/google-sheets/chat-backup",
-                  "integrations/google-sheets/troubleshooting"
-                ]
+                "pages": []
               },
               {
                 "group": "Freshdesk",
                 "icon": "headset",
-                "pages": [
-                  "integrations/freshdesk/overview",
-                  "integrations/freshdesk/setup",
-                  "integrations/freshdesk/tickets",
-                  "integrations/freshdesk/troubleshooting"
-                ]
+                "pages": []
               },
               {
                 "group": "Webhooks & Custom",
                 "icon": "code",
-                "pages": [
-                  "integrations/webhooks/overview",
-                  "integrations/webhooks/setup",
-                  "integrations/webhooks/events",
-                  "integrations/webhooks/security"
-                ]
+                "pages": []
               }
             ]
           },
@@ -813,9 +791,13 @@
                       "es/integrations/zoho/faq/how-to-disconnect",
                       "es/integrations/zoho/faq/whatsapp-sync-issue",
                       "es/integrations/zoho/faq/free-trial",
-                      "es/integrations/zoho/faq/whos-connected"
+                      "es/integrations/zoho/faq/whos-connected",
+                      "es/integrations/zoho/faq/backup-view",
+                      "es/integrations/zoho/faq/attachment-backup",
+                      "es/integrations/zoho/faq/last-sync-time"
                     ]
-                  }
+                  },
+                  "es/integrations/zoho/compliance-and-privacy"
                 ]
               },
               {
@@ -843,12 +825,43 @@
                 "icon": "bullseye",
                 "pages": [
                   "es/integrations/leadsquared/prerequisites",
+                  "es/integrations/leadsquared/integration",
                   "es/integrations/leadsquared/setup",
                   "es/integrations/leadsquared/contact-sync",
                   "es/integrations/leadsquared/chat-backup",
                   "es/integrations/leadsquared/mini-crm",
                   "es/integrations/leadsquared/admin-management",
-                  "es/integrations/leadsquared/troubleshooting"
+                  "es/integrations/leadsquared/troubleshooting",
+                  "es/integrations/leadsquared/disconnect",
+                  "es/integrations/leadsquared/invite-team",
+                  "es/integrations/leadsquared/help-desk",
+                  "es/integrations/leadsquared/link-contact",
+                  "es/integrations/leadsquared/message-sync",
+                  "es/integrations/leadsquared/analytics",
+                  "es/integrations/leadsquared/administrator-dashboard",
+                  "es/integrations/leadsquared/admin-access",
+                  "es/integrations/leadsquared/one-click-switch",
+                  {
+                    "group": "Mini-CRM",
+                    "pages": [
+                      "es/integrations/leadsquared/create-and-customize-lead",
+                      "es/integrations/leadsquared/profile",
+                      "es/integrations/leadsquared/notes",
+                      "es/integrations/leadsquared/tasks",
+                      "es/integrations/leadsquared/create-opportunity",
+                      "es/integrations/leadsquared/manage-opportunity",
+                      "es/integrations/leadsquared/opportunity-tasks"
+                    ]
+                  },
+                  {
+                    "group": "FAQ",
+                    "pages": [
+                      "es/integrations/leadsquared/faq/integration-confirmation",
+                      "es/integrations/leadsquared/faq/permissions-required",
+                      "es/integrations/leadsquared/faq/disconnect-integration",
+                      "es/integrations/leadsquared/faq/sync-issue"
+                    ]
+                  }
                 ]
               },
               {
@@ -1131,9 +1144,13 @@
                       "pt/integrations/zoho/faq/how-to-disconnect",
                       "pt/integrations/zoho/faq/whatsapp-sync-issue",
                       "pt/integrations/zoho/faq/free-trial",
-                      "pt/integrations/zoho/faq/whos-connected"
+                      "pt/integrations/zoho/faq/whos-connected",
+                      "pt/integrations/zoho/faq/backup-view",
+                      "pt/integrations/zoho/faq/attachment-backup",
+                      "pt/integrations/zoho/faq/last-sync-time"
                     ]
-                  }
+                  },
+                  "pt/integrations/zoho/compliance-and-privacy"
                 ]
               },
               {
@@ -1161,12 +1178,43 @@
                 "icon": "bullseye",
                 "pages": [
                   "pt/integrations/leadsquared/prerequisites",
+                  "pt/integrations/leadsquared/integration",
                   "pt/integrations/leadsquared/setup",
                   "pt/integrations/leadsquared/contact-sync",
                   "pt/integrations/leadsquared/chat-backup",
                   "pt/integrations/leadsquared/mini-crm",
                   "pt/integrations/leadsquared/admin-management",
-                  "pt/integrations/leadsquared/troubleshooting"
+                  "pt/integrations/leadsquared/troubleshooting",
+                  "pt/integrations/leadsquared/disconnect",
+                  "pt/integrations/leadsquared/invite-team",
+                  "pt/integrations/leadsquared/help-desk",
+                  "pt/integrations/leadsquared/link-contact",
+                  "pt/integrations/leadsquared/message-sync",
+                  "pt/integrations/leadsquared/analytics",
+                  "pt/integrations/leadsquared/administrator-dashboard",
+                  "pt/integrations/leadsquared/admin-access",
+                  "pt/integrations/leadsquared/one-click-switch",
+                  {
+                    "group": "Mini-CRM",
+                    "pages": [
+                      "pt/integrations/leadsquared/create-and-customize-lead",
+                      "pt/integrations/leadsquared/profile",
+                      "pt/integrations/leadsquared/notes",
+                      "pt/integrations/leadsquared/tasks",
+                      "pt/integrations/leadsquared/create-opportunity",
+                      "pt/integrations/leadsquared/manage-opportunity",
+                      "pt/integrations/leadsquared/opportunity-tasks"
+                    ]
+                  },
+                  {
+                    "group": "FAQ",
+                    "pages": [
+                      "pt/integrations/leadsquared/faq/integration-confirmation",
+                      "pt/integrations/leadsquared/faq/permissions-required",
+                      "pt/integrations/leadsquared/faq/disconnect-integration",
+                      "pt/integrations/leadsquared/faq/sync-issue"
+                    ]
+                  }
                 ]
               },
               {
@@ -1449,9 +1497,13 @@
                       "tr/integrations/zoho/faq/how-to-disconnect",
                       "tr/integrations/zoho/faq/whatsapp-sync-issue",
                       "tr/integrations/zoho/faq/free-trial",
-                      "tr/integrations/zoho/faq/whos-connected"
+                      "tr/integrations/zoho/faq/whos-connected",
+                      "tr/integrations/zoho/faq/backup-view",
+                      "tr/integrations/zoho/faq/attachment-backup",
+                      "tr/integrations/zoho/faq/last-sync-time"
                     ]
-                  }
+                  },
+                  "tr/integrations/zoho/compliance-and-privacy"
                 ]
               },
               {
@@ -1479,12 +1531,43 @@
                 "icon": "bullseye",
                 "pages": [
                   "tr/integrations/leadsquared/prerequisites",
+                  "tr/integrations/leadsquared/integration",
                   "tr/integrations/leadsquared/setup",
                   "tr/integrations/leadsquared/contact-sync",
                   "tr/integrations/leadsquared/chat-backup",
                   "tr/integrations/leadsquared/mini-crm",
                   "tr/integrations/leadsquared/admin-management",
-                  "tr/integrations/leadsquared/troubleshooting"
+                  "tr/integrations/leadsquared/troubleshooting",
+                  "tr/integrations/leadsquared/disconnect",
+                  "tr/integrations/leadsquared/invite-team",
+                  "tr/integrations/leadsquared/help-desk",
+                  "tr/integrations/leadsquared/link-contact",
+                  "tr/integrations/leadsquared/message-sync",
+                  "tr/integrations/leadsquared/analytics",
+                  "tr/integrations/leadsquared/administrator-dashboard",
+                  "tr/integrations/leadsquared/admin-access",
+                  "tr/integrations/leadsquared/one-click-switch",
+                  {
+                    "group": "Mini-CRM",
+                    "pages": [
+                      "tr/integrations/leadsquared/create-and-customize-lead",
+                      "tr/integrations/leadsquared/profile",
+                      "tr/integrations/leadsquared/notes",
+                      "tr/integrations/leadsquared/tasks",
+                      "tr/integrations/leadsquared/create-opportunity",
+                      "tr/integrations/leadsquared/manage-opportunity",
+                      "tr/integrations/leadsquared/opportunity-tasks"
+                    ]
+                  },
+                  {
+                    "group": "FAQ",
+                    "pages": [
+                      "tr/integrations/leadsquared/faq/integration-confirmation",
+                      "tr/integrations/leadsquared/faq/permissions-required",
+                      "tr/integrations/leadsquared/faq/disconnect-integration",
+                      "tr/integrations/leadsquared/faq/sync-issue"
+                    ]
+                  }
                 ]
               },
               {
