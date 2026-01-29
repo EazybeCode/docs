@@ -492,6 +492,21 @@
                 "pages": [
                   "en/integrations/bitrix/prerequisites",
                   "en/integrations/bitrix/install-and-connect",
+                  "en/integrations/bitrix/disconnect",
+                  "en/integrations/bitrix/link-contacts",
+                  {
+                    "group": "Mini CRM",
+                    "pages": [
+                      "en/integrations/bitrix/mini-crm/create-contact",
+                      "en/integrations/bitrix/mini-crm/contact-profile",
+                      "en/integrations/bitrix/mini-crm/contact-activity",
+                      "en/integrations/bitrix/mini-crm/create-lead",
+                      "en/integrations/bitrix/mini-crm/lead-profile",
+                      "en/integrations/bitrix/mini-crm/lead-activity",
+                      "en/integrations/bitrix/mini-crm/lead-comment",
+                      "en/integrations/bitrix/mini-crm/lead-task"
+                    ]
+                  },
                   {
                     "group": "Playbooks",
                     "pages": []
@@ -944,7 +959,22 @@
                 "icon": "cubes",
                 "pages": [
                   "es/integrations/bitrix/prerequisites",
-                  "es/integrations/bitrix/install-and-connect"
+                  "es/integrations/bitrix/install-and-connect",
+                  "es/integrations/bitrix/disconnect",
+                  "es/integrations/bitrix/link-contacts",
+                  {
+                    "group": "Mini CRM",
+                    "pages": [
+                      "es/integrations/bitrix/mini-crm/create-contact",
+                      "es/integrations/bitrix/mini-crm/contact-profile",
+                      "es/integrations/bitrix/mini-crm/contact-activity",
+                      "es/integrations/bitrix/mini-crm/create-lead",
+                      "es/integrations/bitrix/mini-crm/lead-profile",
+                      "es/integrations/bitrix/mini-crm/lead-activity",
+                      "es/integrations/bitrix/mini-crm/lead-comment",
+                      "es/integrations/bitrix/mini-crm/lead-task"
+                    ]
+                  }
                 ]
               },
               {
@@ -1327,7 +1357,22 @@
                 "icon": "cubes",
                 "pages": [
                   "pt/integrations/bitrix/prerequisites",
-                  "pt/integrations/bitrix/install-and-connect"
+                  "pt/integrations/bitrix/install-and-connect",
+                  "pt/integrations/bitrix/disconnect",
+                  "pt/integrations/bitrix/link-contacts",
+                  {
+                    "group": "Mini CRM",
+                    "pages": [
+                      "pt/integrations/bitrix/mini-crm/create-contact",
+                      "pt/integrations/bitrix/mini-crm/contact-profile",
+                      "pt/integrations/bitrix/mini-crm/contact-activity",
+                      "pt/integrations/bitrix/mini-crm/create-lead",
+                      "pt/integrations/bitrix/mini-crm/lead-profile",
+                      "pt/integrations/bitrix/mini-crm/lead-activity",
+                      "pt/integrations/bitrix/mini-crm/lead-comment",
+                      "pt/integrations/bitrix/mini-crm/lead-task"
+                    ]
+                  }
                 ]
               },
               {
@@ -1710,7 +1755,22 @@
                 "icon": "cubes",
                 "pages": [
                   "tr/integrations/bitrix/prerequisites",
-                  "tr/integrations/bitrix/install-and-connect"
+                  "tr/integrations/bitrix/install-and-connect",
+                  "tr/integrations/bitrix/disconnect",
+                  "tr/integrations/bitrix/link-contacts",
+                  {
+                    "group": "Mini CRM",
+                    "pages": [
+                      "tr/integrations/bitrix/mini-crm/create-contact",
+                      "tr/integrations/bitrix/mini-crm/contact-profile",
+                      "tr/integrations/bitrix/mini-crm/contact-activity",
+                      "tr/integrations/bitrix/mini-crm/create-lead",
+                      "tr/integrations/bitrix/mini-crm/lead-profile",
+                      "tr/integrations/bitrix/mini-crm/lead-activity",
+                      "tr/integrations/bitrix/mini-crm/lead-comment",
+                      "tr/integrations/bitrix/mini-crm/lead-task"
+                    ]
+                  }
                 ]
               },
               {
