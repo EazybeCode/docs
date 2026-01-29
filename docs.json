@@ -533,7 +533,12 @@
               {
                 "group": "Google Sheets",
                 "icon": "table",
-                "pages": []
+                "pages": [
+                  "en/integrations/google-sheets/integration",
+                  "en/integrations/google-sheets/create-contact",
+                  "en/integrations/google-sheets/user-profile",
+                  "en/integrations/google-sheets/notes"
+                ]
               },
               {
                 "group": "Freshdesk",
@@ -1014,7 +1019,13 @@
               {
                 "group": "Google Sheets",
                 "icon": "table",
-                "pages": ["es/integrations/google-sheets/setup"]
+                "pages": [
+                  "es/integrations/google-sheets/integration",
+                  "es/integrations/google-sheets/create-contact",
+                  "es/integrations/google-sheets/user-profile",
+                  "es/integrations/google-sheets/notes",
+                  "es/integrations/google-sheets/setup"
+                ]
               },
               {
                 "group": "Freshdesk",
@@ -1429,7 +1440,13 @@
               {
                 "group": "Google Sheets",
                 "icon": "table",
-                "pages": ["pt/integrations/google-sheets/setup"]
+                "pages": [
+                  "pt/integrations/google-sheets/integration",
+                  "pt/integrations/google-sheets/create-contact",
+                  "pt/integrations/google-sheets/user-profile",
+                  "pt/integrations/google-sheets/notes",
+                  "pt/integrations/google-sheets/setup"
+                ]
               },
               {
                 "group": "Freshdesk",
@@ -1844,7 +1861,13 @@
               {
                 "group": "Google Sheets",
                 "icon": "table",
-                "pages": ["tr/integrations/google-sheets/setup"]
+                "pages": [
+                  "tr/integrations/google-sheets/integration",
+                  "tr/integrations/google-sheets/create-contact",
+                  "tr/integrations/google-sheets/user-profile",
+                  "tr/integrations/google-sheets/notes",
+                  "tr/integrations/google-sheets/setup"
+                ]
               },
               {
                 "group": "Freshdesk",
