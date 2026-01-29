@@ -494,12 +494,16 @@
                   "en/integrations/bitrix/install-and-connect",
                   "en/integrations/bitrix/disconnect",
                   "en/integrations/bitrix/link-contacts",
+                  "en/integrations/bitrix/message-sync",
+                  "en/integrations/bitrix/one-click-switch",
                   {
                     "group": "Mini CRM",
                     "pages": [
                       "en/integrations/bitrix/mini-crm/create-contact",
                       "en/integrations/bitrix/mini-crm/contact-profile",
                       "en/integrations/bitrix/mini-crm/contact-activity",
+                      "en/integrations/bitrix/mini-crm/contact-comment",
+                      "en/integrations/bitrix/mini-crm/contact-task",
                       "en/integrations/bitrix/mini-crm/create-lead",
                       "en/integrations/bitrix/mini-crm/lead-profile",
                       "en/integrations/bitrix/mini-crm/lead-activity",
@@ -510,7 +514,20 @@
                   {
                     "group": "Playbooks",
                     "pages": []
-                  }
+                  },
+                  {
+                    "group": "FAQ",
+                    "pages": [
+                      "en/integrations/bitrix/faq/integration-check",
+                      "en/integrations/bitrix/faq/disconnect-integration",
+                      "en/integrations/bitrix/faq/whatsapp-sync-issue",
+                      "en/integrations/bitrix/faq/required-permissions",
+                      "en/integrations/bitrix/faq/whos-connected",
+                      "en/integrations/bitrix/faq/last-sync-time",
+                      "en/integrations/bitrix/faq/free-trial"
+                    ]
+                  },
+                  "en/integrations/bitrix/compliance-and-privacy"
                 ]
               },
               {
@@ -962,19 +979,36 @@
                   "es/integrations/bitrix/install-and-connect",
                   "es/integrations/bitrix/disconnect",
                   "es/integrations/bitrix/link-contacts",
+                  "es/integrations/bitrix/message-sync",
+                  "es/integrations/bitrix/one-click-switch",
                   {
                     "group": "Mini CRM",
                     "pages": [
                       "es/integrations/bitrix/mini-crm/create-contact",
                       "es/integrations/bitrix/mini-crm/contact-profile",
                       "es/integrations/bitrix/mini-crm/contact-activity",
+                      "es/integrations/bitrix/mini-crm/contact-comment",
+                      "es/integrations/bitrix/mini-crm/contact-task",
                       "es/integrations/bitrix/mini-crm/create-lead",
                       "es/integrations/bitrix/mini-crm/lead-profile",
                       "es/integrations/bitrix/mini-crm/lead-activity",
                       "es/integrations/bitrix/mini-crm/lead-comment",
                       "es/integrations/bitrix/mini-crm/lead-task"
                     ]
-                  }
+                  },
+                  {
+                    "group": "FAQ",
+                    "pages": [
+                      "es/integrations/bitrix/faq/integration-check",
+                      "es/integrations/bitrix/faq/disconnect-integration",
+                      "es/integrations/bitrix/faq/whatsapp-sync-issue",
+                      "es/integrations/bitrix/faq/required-permissions",
+                      "es/integrations/bitrix/faq/whos-connected",
+                      "es/integrations/bitrix/faq/last-sync-time",
+                      "es/integrations/bitrix/faq/free-trial"
+                    ]
+                  },
+                  "es/integrations/bitrix/compliance-and-privacy"
                 ]
               },
               {
@@ -1360,19 +1394,36 @@
                   "pt/integrations/bitrix/install-and-connect",
                   "pt/integrations/bitrix/disconnect",
                   "pt/integrations/bitrix/link-contacts",
+                  "pt/integrations/bitrix/message-sync",
+                  "pt/integrations/bitrix/one-click-switch",
                   {
                     "group": "Mini CRM",
                     "pages": [
                       "pt/integrations/bitrix/mini-crm/create-contact",
                       "pt/integrations/bitrix/mini-crm/contact-profile",
                       "pt/integrations/bitrix/mini-crm/contact-activity",
+                      "pt/integrations/bitrix/mini-crm/contact-comment",
+                      "pt/integrations/bitrix/mini-crm/contact-task",
                       "pt/integrations/bitrix/mini-crm/create-lead",
                       "pt/integrations/bitrix/mini-crm/lead-profile",
                       "pt/integrations/bitrix/mini-crm/lead-activity",
                       "pt/integrations/bitrix/mini-crm/lead-comment",
                       "pt/integrations/bitrix/mini-crm/lead-task"
                     ]
-                  }
+                  },
+                  {
+                    "group": "FAQ",
+                    "pages": [
+                      "pt/integrations/bitrix/faq/integration-check",
+                      "pt/integrations/bitrix/faq/disconnect-integration",
+                      "pt/integrations/bitrix/faq/whatsapp-sync-issue",
+                      "pt/integrations/bitrix/faq/required-permissions",
+                      "pt/integrations/bitrix/faq/whos-connected",
+                      "pt/integrations/bitrix/faq/last-sync-time",
+                      "pt/integrations/bitrix/faq/free-trial"
+                    ]
+                  },
+                  "pt/integrations/bitrix/compliance-and-privacy"
                 ]
               },
               {
@@ -1758,19 +1809,36 @@
                   "tr/integrations/bitrix/install-and-connect",
                   "tr/integrations/bitrix/disconnect",
                   "tr/integrations/bitrix/link-contacts",
+                  "tr/integrations/bitrix/message-sync",
+                  "tr/integrations/bitrix/one-click-switch",
                   {
                     "group": "Mini CRM",
                     "pages": [
                       "tr/integrations/bitrix/mini-crm/create-contact",
                       "tr/integrations/bitrix/mini-crm/contact-profile",
                       "tr/integrations/bitrix/mini-crm/contact-activity",
+                      "tr/integrations/bitrix/mini-crm/contact-comment",
+                      "tr/integrations/bitrix/mini-crm/contact-task",
                       "tr/integrations/bitrix/mini-crm/create-lead",
                       "tr/integrations/bitrix/mini-crm/lead-profile",
                       "tr/integrations/bitrix/mini-crm/lead-activity",
                       "tr/integrations/bitrix/mini-crm/lead-comment",
                       "tr/integrations/bitrix/mini-crm/lead-task"
                     ]
-                  }
+                  },
+                  {
+                    "group": "FAQ",
+                    "pages": [
+                      "tr/integrations/bitrix/faq/integration-check",
+                      "tr/integrations/bitrix/faq/disconnect-integration",
+                      "tr/integrations/bitrix/faq/whatsapp-sync-issue",
+                      "tr/integrations/bitrix/faq/required-permissions",
+                      "tr/integrations/bitrix/faq/whos-connected",
+                      "tr/integrations/bitrix/faq/last-sync-time",
+                      "tr/integrations/bitrix/faq/free-trial"
+                    ]
+                  },
+                  "tr/integrations/bitrix/compliance-and-privacy"
                 ]
               },
               {

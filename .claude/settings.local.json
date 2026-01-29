@@ -5,7 +5,8 @@
       "Bash(python -c:*)",
       "Bash(curl:*)",
       "Bash(findstr:*)",
-      "WebFetch(domain:help.eazybe.com)"
+      "WebFetch(domain:help.eazybe.com)",
+      "Bash(dir:*)"
     ]
   }
 }

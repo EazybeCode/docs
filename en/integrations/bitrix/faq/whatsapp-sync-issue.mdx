@@ -1,0 +1,47 @@
+---
+title: "WhatsApp Sync Issue"
+description: "Troubleshooting guide to fix WhatsApp conversation syncing issues with Bitrix integration"
+---
+
+If your WhatsApp conversations are not being backed up in Bitrix, follow this troubleshooting guide to verify your setup is configured correctly.
+
+## Check Your Account
+
+Before troubleshooting further, verify these essential requirements:
+
+<Steps>
+  <Step title="Verify EazyBe Installation">
+    Confirm that EazyBe is properly installed through Bitrix's Apps Marketplace. The app should be listed in your installed applications.
+  </Step>
+
+  <Step title="Validate Active Subscriptions">
+    Ensure that both your Bitrix and EazyBe subscriptions are active and not expired. Inactive subscriptions will prevent syncing.
+  </Step>
+</Steps>
+
+## Grant Access
+
+When integrating EazyBe with Bitrix, you must authorize specific permissions. These permissions are essential for storing WhatsApp conversations via the EazyBe extension.
+
+![Grant Access Permissions](/images/1205473993.png)
+
+<Note>
+Without proper permissions granted, EazyBe cannot sync your WhatsApp chats to Bitrix. Make sure all requested permissions are approved during the integration setup.
+</Note>
+
+## Common Issues Checklist
+
+If syncing still isn't working after verifying the above:
+
+- **Browser extension disabled** - Ensure the EazyBe extension is enabled in your browser
+- **WhatsApp Web not active** - Keep WhatsApp Web open for syncing to occur
+- **Contact not linked** - Only conversations with linked Bitrix contacts will sync
+- **Network issues** - Check your internet connection stability
+
+<Tip>
+Syncing occurs automatically every 3 minutes for linked contacts. If you just connected, wait a few minutes for the initial sync to complete.
+</Tip>
+
+---
+
+If you have any questions or need further assistance, reach out to us at [hey@eazybe.com](mailto:hey@eazybe.com).
