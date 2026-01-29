@@ -405,6 +405,21 @@
                       "integrations/salesforce/playbooks/flow-automation",
                       "integrations/salesforce/playbooks/opportunity-alerts"
                     ]
+                  },
+                  {
+                    "group": "FAQ",
+                    "pages": [
+                      "en/integrations/salesforce/faq/integration-confirmation",
+                      "en/integrations/salesforce/faq/required-permission-for-integration",
+                      "en/integrations/salesforce/faq/disconnect-integration",
+                      "en/integrations/salesforce/faq/whatsapp-sync-issue",
+                      "en/integrations/salesforce/faq/connected-accounts",
+                      "en/integrations/salesforce/faq/free-trial",
+                      "en/integrations/salesforce/faq/backup-view",
+                      "en/integrations/salesforce/faq/attachment-backup",
+                      "en/integrations/salesforce/faq/last-sync-time",
+                      "en/integrations/salesforce/faq/compliance-and-privacy"
+                    ]
                   }
                 ]
               },
@@ -475,6 +490,8 @@
                 "group": "Bitrix24",
                 "icon": "cubes",
                 "pages": [
+                  "en/integrations/bitrix/prerequisites",
+                  "en/integrations/bitrix/install-and-connect",
                   {
                     "group": "Playbooks",
                     "pages": []
@@ -854,7 +871,22 @@
                     ]
                   },
                   "es/integrations/salesforce/admin-workspace-access",
-                  "es/integrations/salesforce/one-click-switch"
+                  "es/integrations/salesforce/one-click-switch",
+                  {
+                    "group": "FAQ",
+                    "pages": [
+                      "es/integrations/salesforce/faq/integration-confirmation",
+                      "es/integrations/salesforce/faq/required-permission-for-integration",
+                      "es/integrations/salesforce/faq/disconnect-integration",
+                      "es/integrations/salesforce/faq/whatsapp-sync-issue",
+                      "es/integrations/salesforce/faq/connected-accounts",
+                      "es/integrations/salesforce/faq/free-trial",
+                      "es/integrations/salesforce/faq/backup-view",
+                      "es/integrations/salesforce/faq/attachment-backup",
+                      "es/integrations/salesforce/faq/last-sync-time",
+                      "es/integrations/salesforce/faq/compliance-and-privacy"
+                    ]
+                  }
                 ]
               },
               {
@@ -911,10 +943,8 @@
                 "group": "Bitrix24",
                 "icon": "cubes",
                 "pages": [
-                  "es/integrations/bitrix/setup",
-                  "es/integrations/bitrix/contact-sync",
-                  "es/integrations/bitrix/mini-crm",
-                  "es/integrations/bitrix/troubleshooting"
+                  "es/integrations/bitrix/prerequisites",
+                  "es/integrations/bitrix/install-and-connect"
                 ]
               },
               {
@@ -1224,7 +1254,22 @@
                     ]
                   },
                   "pt/integrations/salesforce/admin-workspace-access",
-                  "pt/integrations/salesforce/one-click-switch"
+                  "pt/integrations/salesforce/one-click-switch",
+                  {
+                    "group": "FAQ",
+                    "pages": [
+                      "pt/integrations/salesforce/faq/integration-confirmation",
+                      "pt/integrations/salesforce/faq/required-permission-for-integration",
+                      "pt/integrations/salesforce/faq/disconnect-integration",
+                      "pt/integrations/salesforce/faq/whatsapp-sync-issue",
+                      "pt/integrations/salesforce/faq/connected-accounts",
+                      "pt/integrations/salesforce/faq/free-trial",
+                      "pt/integrations/salesforce/faq/backup-view",
+                      "pt/integrations/salesforce/faq/attachment-backup",
+                      "pt/integrations/salesforce/faq/last-sync-time",
+                      "pt/integrations/salesforce/faq/compliance-and-privacy"
+                    ]
+                  }
                 ]
               },
               {
@@ -1281,10 +1326,8 @@
                 "group": "Bitrix24",
                 "icon": "cubes",
                 "pages": [
-                  "pt/integrations/bitrix/setup",
-                  "pt/integrations/bitrix/contact-sync",
-                  "pt/integrations/bitrix/mini-crm",
-                  "pt/integrations/bitrix/troubleshooting"
+                  "pt/integrations/bitrix/prerequisites",
+                  "pt/integrations/bitrix/install-and-connect"
                 ]
               },
               {
@@ -1594,7 +1637,22 @@
                     ]
                   },
                   "tr/integrations/salesforce/admin-workspace-access",
-                  "tr/integrations/salesforce/one-click-switch"
+                  "tr/integrations/salesforce/one-click-switch",
+                  {
+                    "group": "FAQ",
+                    "pages": [
+                      "tr/integrations/salesforce/faq/integration-confirmation",
+                      "tr/integrations/salesforce/faq/required-permission-for-integration",
+                      "tr/integrations/salesforce/faq/disconnect-integration",
+                      "tr/integrations/salesforce/faq/whatsapp-sync-issue",
+                      "tr/integrations/salesforce/faq/connected-accounts",
+                      "tr/integrations/salesforce/faq/free-trial",
+                      "tr/integrations/salesforce/faq/backup-view",
+                      "tr/integrations/salesforce/faq/attachment-backup",
+                      "tr/integrations/salesforce/faq/last-sync-time",
+                      "tr/integrations/salesforce/faq/compliance-and-privacy"
+                    ]
+                  }
                 ]
               },
               {
@@ -1651,10 +1709,8 @@
                 "group": "Bitrix24",
                 "icon": "cubes",
                 "pages": [
-                  "tr/integrations/bitrix/setup",
-                  "tr/integrations/bitrix/contact-sync",
-                  "tr/integrations/bitrix/mini-crm",
-                  "tr/integrations/bitrix/troubleshooting"
+                  "tr/integrations/bitrix/prerequisites",
+                  "tr/integrations/bitrix/install-and-connect"
                 ]
               },
               {
