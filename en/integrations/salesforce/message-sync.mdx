@@ -1,0 +1,51 @@
+---
+title: "Message Sync"
+description: "How WhatsApp messages are automatically synced with Salesforce"
+---
+
+This guide explains how WhatsApp conversations are automatically synchronized with your Salesforce contacts and leads.
+
+## Automatic Synchronization
+
+<Info>
+  WhatsApp conversations with your Salesforce contacts or leads are automatically synced every **3 minutes**.
+</Info>
+
+The last synced date and time displays in the EazyBe extension. You can verify the sync completion by clicking the icon to access the contact's Salesforce page.
+
+![Sync Status in Extension](/images/1223679959.png)
+
+## Initial Integration
+
+When you first integrate Salesforce with EazyBe, the system automatically provides backup data spanning the **past 3 days**. This ensures you have recent conversation history available immediately.
+
+![Initial Backup](/images/1197995392.png)
+
+## Activity Logging
+
+WhatsApp chats are stored in two locations within Salesforce:
+
+<Steps>
+  <Step title="Notes & Attachments Section">
+    For Contacts, chats appear in the Notes & Attachments section of the contact record.
+
+    ![Notes & Attachments](/images/1197996550.png)
+  </Step>
+  <Step title="Custom Activity Object">
+    A custom activity object called **WhatsApp Chats by EazyBe** stores all conversation data for both Contacts and Leads.
+
+    ![WhatsApp Chats Activity Object](/images/1197997538.png)
+  </Step>
+</Steps>
+
+## Attachments Backup
+
+<Tip>
+  Attachments from WhatsApp conversations are stored in the **WhatsApp Chats by EazyBe** custom activity object for both Leads and Contacts pages.
+</Tip>
+
+![Attachments Storage](/images/1197998532.png)
+
+## Need Help?
+
+If you have any questions or need assistance, contact our support team at **hey@eazybe.com**.

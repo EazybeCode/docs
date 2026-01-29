@@ -1,0 +1,51 @@
+---
+title: "Sincronização de Mensagens"
+description: "Como as mensagens do WhatsApp são sincronizadas automaticamente com o Salesforce"
+---
+
+Este guia explica como as conversas do WhatsApp são sincronizadas automaticamente com seus contatos e leads do Salesforce.
+
+## Sincronização Automática
+
+<Info>
+  As conversas do WhatsApp com seus contatos ou leads do Salesforce são sincronizadas automaticamente a cada **3 minutos**.
+</Info>
+
+A data e hora da última sincronização são exibidas na extensão EazyBe. Você pode verificar a conclusão da sincronização clicando no ícone para acessar a página do Salesforce do contato.
+
+![Status de Sincronização na Extensão](/images/1223679959.png)
+
+## Integração Inicial
+
+Quando você integra o Salesforce com o EazyBe pela primeira vez, o sistema fornece automaticamente dados de backup dos **últimos 3 dias**. Isso garante que você tenha o histórico de conversas recente disponível imediatamente.
+
+![Backup Inicial](/images/1197995392.png)
+
+## Registro de Atividades
+
+Os chats do WhatsApp são armazenados em dois locais dentro do Salesforce:
+
+<Steps>
+  <Step title="Seção de Notas e Anexos">
+    Para Contatos, os chats aparecem na seção de Notas e Anexos do registro do contato.
+
+    ![Notas e Anexos](/images/1197996550.png)
+  </Step>
+  <Step title="Objeto de Atividade Personalizado">
+    Um objeto de atividade personalizado chamado **WhatsApp Chats by EazyBe** armazena todos os dados de conversa tanto para Contatos quanto para Leads.
+
+    ![Objeto de Atividade WhatsApp Chats](/images/1197997538.png)
+  </Step>
+</Steps>
+
+## Backup de Anexos
+
+<Tip>
+  Os anexos das conversas do WhatsApp são armazenados no objeto de atividade personalizado **WhatsApp Chats by EazyBe** tanto para as páginas de Leads quanto de Contatos.
+</Tip>
+
+![Armazenamento de Anexos](/images/1197998532.png)
+
+## Precisa de Ajuda?
+
+Se você tiver alguma dúvida ou precisar de assistência, entre em contato com nossa equipe de suporte em **hey@eazybe.com**.

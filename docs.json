@@ -371,11 +371,31 @@
                 "group": "Salesforce",
                 "icon": "salesforce",
                 "pages": [
+                  "en/integrations/salesforce/prerequisites",
+                  "en/integrations/salesforce/setup",
+                  "en/integrations/salesforce/disconnect",
+                  "en/integrations/salesforce/invite-team",
+                  "en/integrations/salesforce/linking-contacts",
+                  "en/integrations/salesforce/message-sync",
                   {
                     "group": "Mini-CRM View",
-                    "pages": []
+                    "pages": [
+                      "en/integrations/salesforce/mini-crm/create-lead",
+                      "en/integrations/salesforce/mini-crm/lead-profile",
+                      "en/integrations/salesforce/mini-crm/edit-lead-profile",
+                      "en/integrations/salesforce/mini-crm/lead-event",
+                      "en/integrations/salesforce/mini-crm/lead-tasks",
+                      "en/integrations/salesforce/mini-crm/lead-call-logs",
+                      "en/integrations/salesforce/mini-crm/create-contact",
+                      "en/integrations/salesforce/mini-crm/contact-profile",
+                      "en/integrations/salesforce/mini-crm/edit-contact-profile",
+                      "en/integrations/salesforce/mini-crm/contact-event",
+                      "en/integrations/salesforce/mini-crm/contact-tasks",
+                      "en/integrations/salesforce/mini-crm/contact-call-logs"
+                    ]
                   },
-
+                  "en/integrations/salesforce/admin-workspace-access",
+                  "en/integrations/salesforce/one-click-switch",
                   {
                     "group": "Playbooks",
                     "pages": [
@@ -440,9 +460,15 @@
                       "en/integrations/leadsquared/faq/integration-confirmation",
                       "en/integrations/leadsquared/faq/permissions-required",
                       "en/integrations/leadsquared/faq/disconnect-integration",
-                      "en/integrations/leadsquared/faq/sync-issue"
+                      "en/integrations/leadsquared/faq/sync-issue",
+                      "en/integrations/leadsquared/faq/free-trial",
+                      "en/integrations/leadsquared/faq/whos-connected",
+                      "en/integrations/leadsquared/faq/chat-backup-view",
+                      "en/integrations/leadsquared/faq/last-sync-time",
+                      "en/integrations/leadsquared/faq/api-rate-limit"
                     ]
-                  }
+                  },
+                  "en/integrations/leadsquared/compliance-and-privacy"
                 ]
               },
               {
@@ -806,18 +832,29 @@
                 "pages": [
                   "es/integrations/salesforce/prerequisites",
                   "es/integrations/salesforce/setup",
-                  "es/integrations/salesforce/contact-sync",
-                  "es/integrations/salesforce/chat-backup",
+                  "es/integrations/salesforce/disconnect",
+                  "es/integrations/salesforce/invite-team",
+                  "es/integrations/salesforce/linking-contacts",
+                  "es/integrations/salesforce/message-sync",
                   {
                     "group": "Vista Mini-CRM",
                     "pages": [
-                      "es/integrations/salesforce/mini-crm/overview",
-                      "es/integrations/salesforce/mini-crm/contacts",
-                      "es/integrations/salesforce/mini-crm/leads"
+                      "es/integrations/salesforce/mini-crm/create-lead",
+                      "es/integrations/salesforce/mini-crm/lead-profile",
+                      "es/integrations/salesforce/mini-crm/edit-lead-profile",
+                      "es/integrations/salesforce/mini-crm/lead-event",
+                      "es/integrations/salesforce/mini-crm/lead-tasks",
+                      "es/integrations/salesforce/mini-crm/lead-call-logs",
+                      "es/integrations/salesforce/mini-crm/create-contact",
+                      "es/integrations/salesforce/mini-crm/contact-profile",
+                      "es/integrations/salesforce/mini-crm/edit-contact-profile",
+                      "es/integrations/salesforce/mini-crm/contact-event",
+                      "es/integrations/salesforce/mini-crm/contact-tasks",
+                      "es/integrations/salesforce/mini-crm/contact-call-logs"
                     ]
                   },
-                  "es/integrations/salesforce/admin-management",
-                  "es/integrations/salesforce/troubleshooting"
+                  "es/integrations/salesforce/admin-workspace-access",
+                  "es/integrations/salesforce/one-click-switch"
                 ]
               },
               {
@@ -859,9 +896,15 @@
                       "es/integrations/leadsquared/faq/integration-confirmation",
                       "es/integrations/leadsquared/faq/permissions-required",
                       "es/integrations/leadsquared/faq/disconnect-integration",
-                      "es/integrations/leadsquared/faq/sync-issue"
+                      "es/integrations/leadsquared/faq/sync-issue",
+                      "es/integrations/leadsquared/faq/free-trial",
+                      "es/integrations/leadsquared/faq/whos-connected",
+                      "es/integrations/leadsquared/faq/chat-backup-view",
+                      "es/integrations/leadsquared/faq/last-sync-time",
+                      "es/integrations/leadsquared/faq/api-rate-limit"
                     ]
-                  }
+                  },
+                  "es/integrations/leadsquared/compliance-and-privacy"
                 ]
               },
               {
@@ -1159,18 +1202,29 @@
                 "pages": [
                   "pt/integrations/salesforce/prerequisites",
                   "pt/integrations/salesforce/setup",
-                  "pt/integrations/salesforce/contact-sync",
-                  "pt/integrations/salesforce/chat-backup",
+                  "pt/integrations/salesforce/disconnect",
+                  "pt/integrations/salesforce/invite-team",
+                  "pt/integrations/salesforce/linking-contacts",
+                  "pt/integrations/salesforce/message-sync",
                   {
                     "group": "Vista Mini-CRM",
                     "pages": [
-                      "pt/integrations/salesforce/mini-crm/overview",
-                      "pt/integrations/salesforce/mini-crm/contacts",
-                      "pt/integrations/salesforce/mini-crm/leads"
+                      "pt/integrations/salesforce/mini-crm/create-lead",
+                      "pt/integrations/salesforce/mini-crm/lead-profile",
+                      "pt/integrations/salesforce/mini-crm/edit-lead-profile",
+                      "pt/integrations/salesforce/mini-crm/lead-event",
+                      "pt/integrations/salesforce/mini-crm/lead-tasks",
+                      "pt/integrations/salesforce/mini-crm/lead-call-logs",
+                      "pt/integrations/salesforce/mini-crm/create-contact",
+                      "pt/integrations/salesforce/mini-crm/contact-profile",
+                      "pt/integrations/salesforce/mini-crm/edit-contact-profile",
+                      "pt/integrations/salesforce/mini-crm/contact-event",
+                      "pt/integrations/salesforce/mini-crm/contact-tasks",
+                      "pt/integrations/salesforce/mini-crm/contact-call-logs"
                     ]
                   },
-                  "pt/integrations/salesforce/admin-management",
-                  "pt/integrations/salesforce/troubleshooting"
+                  "pt/integrations/salesforce/admin-workspace-access",
+                  "pt/integrations/salesforce/one-click-switch"
                 ]
               },
               {
@@ -1212,9 +1266,15 @@
                       "pt/integrations/leadsquared/faq/integration-confirmation",
                       "pt/integrations/leadsquared/faq/permissions-required",
                       "pt/integrations/leadsquared/faq/disconnect-integration",
-                      "pt/integrations/leadsquared/faq/sync-issue"
+                      "pt/integrations/leadsquared/faq/sync-issue",
+                      "pt/integrations/leadsquared/faq/free-trial",
+                      "pt/integrations/leadsquared/faq/whos-connected",
+                      "pt/integrations/leadsquared/faq/chat-backup-view",
+                      "pt/integrations/leadsquared/faq/last-sync-time",
+                      "pt/integrations/leadsquared/faq/api-rate-limit"
                     ]
-                  }
+                  },
+                  "pt/integrations/leadsquared/compliance-and-privacy"
                 ]
               },
               {
@@ -1512,18 +1572,29 @@
                 "pages": [
                   "tr/integrations/salesforce/prerequisites",
                   "tr/integrations/salesforce/setup",
-                  "tr/integrations/salesforce/contact-sync",
-                  "tr/integrations/salesforce/chat-backup",
+                  "tr/integrations/salesforce/disconnect",
+                  "tr/integrations/salesforce/invite-team",
+                  "tr/integrations/salesforce/linking-contacts",
+                  "tr/integrations/salesforce/message-sync",
                   {
                     "group": "Mini-CRM Görünümü",
                     "pages": [
-                      "tr/integrations/salesforce/mini-crm/overview",
-                      "tr/integrations/salesforce/mini-crm/contacts",
-                      "tr/integrations/salesforce/mini-crm/leads"
+                      "tr/integrations/salesforce/mini-crm/create-lead",
+                      "tr/integrations/salesforce/mini-crm/lead-profile",
+                      "tr/integrations/salesforce/mini-crm/edit-lead-profile",
+                      "tr/integrations/salesforce/mini-crm/lead-event",
+                      "tr/integrations/salesforce/mini-crm/lead-tasks",
+                      "tr/integrations/salesforce/mini-crm/lead-call-logs",
+                      "tr/integrations/salesforce/mini-crm/create-contact",
+                      "tr/integrations/salesforce/mini-crm/contact-profile",
+                      "tr/integrations/salesforce/mini-crm/edit-contact-profile",
+                      "tr/integrations/salesforce/mini-crm/contact-event",
+                      "tr/integrations/salesforce/mini-crm/contact-tasks",
+                      "tr/integrations/salesforce/mini-crm/contact-call-logs"
                     ]
                   },
-                  "tr/integrations/salesforce/admin-management",
-                  "tr/integrations/salesforce/troubleshooting"
+                  "tr/integrations/salesforce/admin-workspace-access",
+                  "tr/integrations/salesforce/one-click-switch"
                 ]
               },
               {
@@ -1565,9 +1636,15 @@
                       "tr/integrations/leadsquared/faq/integration-confirmation",
                       "tr/integrations/leadsquared/faq/permissions-required",
                       "tr/integrations/leadsquared/faq/disconnect-integration",
-                      "tr/integrations/leadsquared/faq/sync-issue"
+                      "tr/integrations/leadsquared/faq/sync-issue",
+                      "tr/integrations/leadsquared/faq/free-trial",
+                      "tr/integrations/leadsquared/faq/whos-connected",
+                      "tr/integrations/leadsquared/faq/chat-backup-view",
+                      "tr/integrations/leadsquared/faq/last-sync-time",
+                      "tr/integrations/leadsquared/faq/api-rate-limit"
                     ]
-                  }
+                  },
+                  "tr/integrations/leadsquared/compliance-and-privacy"
                 ]
               },
               {

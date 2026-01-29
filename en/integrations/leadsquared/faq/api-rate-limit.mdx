@@ -1,0 +1,39 @@
+---
+title: "API Rate Limit"
+description: "Understanding the API limit exceeded toast and rate limits when working with LeadSquared"
+---
+
+If you're seeing a toast notification about API limit being exceeded, this article explains the rate limits in place when working with the LeadSquared integration.
+
+## Rate Limit Information
+
+<Warning>
+  There is a rate limit of **5 API calls per second** when working with the LeadSquared integration.
+</Warning>
+
+The EazyBe system has been optimized to handle this constraint efficiently. However, when you receive a toast notification about API limits, it indicates that the 5 calls-per-second threshold has been exceeded.
+
+## Why This Happens
+
+The API rate limit notification may appear when:
+
+- Multiple WhatsApp conversations are being synced simultaneously
+- Rapid actions are being performed in the Mini-CRM panel
+- Several team members are actively using the integration at the same time
+
+<Info>
+  This is a limitation imposed by LeadSquared's API, not by EazyBe. The rate limit helps ensure stable service for all users.
+</Info>
+
+## What To Do
+
+<Tip>
+  If you frequently encounter the API limit notification:
+  - Wait a few seconds before retrying your action
+  - Space out your activities when performing multiple operations
+  - The system will automatically retry failed requests when the limit resets
+</Tip>
+
+## Need Help?
+
+If you have any questions or need further assistance, feel free to reach out to us at **hey@eazybe.com**.

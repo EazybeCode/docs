@@ -1,0 +1,51 @@
+---
+title: "Sincronización de Mensajes"
+description: "Cómo se sincronizan automáticamente los mensajes de WhatsApp con Salesforce"
+---
+
+Esta guía explica cómo las conversaciones de WhatsApp se sincronizan automáticamente con tus contactos y leads de Salesforce.
+
+## Sincronización Automática
+
+<Info>
+  Las conversaciones de WhatsApp con tus contactos o leads de Salesforce se sincronizan automáticamente cada **3 minutos**.
+</Info>
+
+La fecha y hora de la última sincronización se muestra en la extensión EazyBe. Puedes verificar que la sincronización se completó haciendo clic en el icono para acceder a la página de Salesforce del contacto.
+
+![Estado de Sincronización en la Extensión](/images/1223679959.png)
+
+## Integración Inicial
+
+Cuando integras Salesforce con EazyBe por primera vez, el sistema proporciona automáticamente datos de respaldo de los **últimos 3 días**. Esto asegura que tengas el historial de conversaciones reciente disponible inmediatamente.
+
+![Respaldo Inicial](/images/1197995392.png)
+
+## Registro de Actividades
+
+Los chats de WhatsApp se almacenan en dos ubicaciones dentro de Salesforce:
+
+<Steps>
+  <Step title="Sección de Notas y Archivos Adjuntos">
+    Para Contactos, los chats aparecen en la sección de Notas y Archivos Adjuntos del registro del contacto.
+
+    ![Notas y Archivos Adjuntos](/images/1197996550.png)
+  </Step>
+  <Step title="Objeto de Actividad Personalizado">
+    Un objeto de actividad personalizado llamado **WhatsApp Chats by EazyBe** almacena todos los datos de conversación tanto para Contactos como para Leads.
+
+    ![Objeto de Actividad WhatsApp Chats](/images/1197997538.png)
+  </Step>
+</Steps>
+
+## Respaldo de Archivos Adjuntos
+
+<Tip>
+  Los archivos adjuntos de las conversaciones de WhatsApp se almacenan en el objeto de actividad personalizado **WhatsApp Chats by EazyBe** tanto para las páginas de Leads como de Contactos.
+</Tip>
+
+![Almacenamiento de Archivos Adjuntos](/images/1197998532.png)
+
+## ¿Necesitas Ayuda?
+
+Si tienes alguna pregunta o necesitas asistencia, contacta a nuestro equipo de soporte en **hey@eazybe.com**.

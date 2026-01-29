@@ -1,0 +1,39 @@
+---
+title: "API Hız Limiti"
+description: "LeadSquared ile çalışırken API limiti aşıldı bildirimi ve hız limitlerini anlama"
+---
+
+API limitinin aşıldığına dair bir bildirim görüyorsanız, bu makale LeadSquared entegrasyonu ile çalışırken geçerli olan hız limitlerini açıklamaktadır.
+
+## Hız Limiti Bilgisi
+
+<Warning>
+  LeadSquared entegrasyonu ile çalışırken **saniyede 5 API çağrısı** hız limiti bulunmaktadır.
+</Warning>
+
+EazyBe sistemi bu kısıtlamayı verimli bir şekilde yönetmek için optimize edilmiştir. Ancak, API limitleri hakkında bir bildirim aldığınızda, bu saniyede 5 çağrı eşiğinin aşıldığını gösterir.
+
+## Bu Neden Oluyor
+
+API hız limiti bildirimi şu durumlarda görünebilir:
+
+- Birden fazla WhatsApp konuşması aynı anda senkronize edilirken
+- Mini-CRM panelinde hızlı işlemler yapılırken
+- Birkaç ekip üyesi entegrasyonu aynı anda aktif olarak kullanırken
+
+<Info>
+  Bu, EazyBe tarafından değil, LeadSquared API'si tarafından uygulanan bir sınırlamadır. Hız limiti, tüm kullanıcılar için istikrarlı bir hizmet sağlamaya yardımcı olur.
+</Info>
+
+## Ne Yapmalı
+
+<Tip>
+  API limit bildirimiyle sık karşılaşıyorsanız:
+  - İşleminizi yeniden denemeden önce birkaç saniye bekleyin
+  - Birden fazla işlem yaparken aktivitelerinizi aralıklı yapın
+  - Sistem, limit sıfırlandığında başarısız istekleri otomatik olarak yeniden deneyecektir
+</Tip>
+
+## Yardıma mı İhtiyacınız Var?
+
+Sorularınız varsa veya yardıma ihtiyacınız varsa, **hey@eazybe.com** adresinden destek ekibiyle iletişime geçin.
