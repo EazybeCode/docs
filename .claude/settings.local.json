@@ -6,7 +6,8 @@
       "Bash(curl:*)",
       "Bash(findstr:*)",
       "WebFetch(domain:help.eazybe.com)",
-      "Bash(dir:*)"
+      "Bash(dir:*)",
+      "Bash(node -e:*)"
     ]
   }
 }
