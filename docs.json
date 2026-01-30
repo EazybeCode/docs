@@ -544,7 +544,26 @@
                 "group": "Freshdesk",
                 "icon": "headset",
                 "pages": [
-                  "en/integrations/freshdesk/integration"
+                  "en/integrations/freshdesk/integration",
+                  "en/integrations/freshdesk/create-contact",
+                  "en/integrations/freshdesk/create-tickets",
+                  "en/integrations/freshdesk/resolved-tickets"
+                ]
+              },
+              {
+                "group": "WhatsApp as CRM",
+                "icon": "whatsapp",
+                "pages": [
+                  "en/integrations/whatsapp-crm/ai-suggestions",
+                  "en/integrations/whatsapp-crm/user-profile",
+                  "en/integrations/whatsapp-crm/calendar",
+                  "en/integrations/whatsapp-crm/backup-and-sync",
+                  {
+                    "group": "Labels and Funnels",
+                    "pages": [
+                      "en/integrations/whatsapp-crm/labels-funnels/add-label-and-funnel"
+                    ]
+                  }
                 ]
               },
               {
@@ -1034,7 +1053,26 @@
                 "icon": "headset",
                 "pages": [
                   "es/integrations/freshdesk/integration",
+                  "es/integrations/freshdesk/create-contact",
+                  "es/integrations/freshdesk/create-tickets",
+                  "es/integrations/freshdesk/resolved-tickets",
                   "es/integrations/freshdesk/setup"
+                ]
+              },
+              {
+                "group": "WhatsApp as CRM",
+                "icon": "whatsapp",
+                "pages": [
+                  "es/integrations/whatsapp-crm/ai-suggestions",
+                  "es/integrations/whatsapp-crm/user-profile",
+                  "es/integrations/whatsapp-crm/calendar",
+                  "es/integrations/whatsapp-crm/backup-and-sync",
+                  {
+                    "group": "Etiquetas y Embudos",
+                    "pages": [
+                      "es/integrations/whatsapp-crm/labels-funnels/add-label-and-funnel"
+                    ]
+                  }
                 ]
               }
             ]
@@ -1458,7 +1496,26 @@
                 "icon": "headset",
                 "pages": [
                   "pt/integrations/freshdesk/integration",
+                  "pt/integrations/freshdesk/create-contact",
+                  "pt/integrations/freshdesk/create-tickets",
+                  "pt/integrations/freshdesk/resolved-tickets",
                   "pt/integrations/freshdesk/setup"
+                ]
+              },
+              {
+                "group": "WhatsApp as CRM",
+                "icon": "whatsapp",
+                "pages": [
+                  "pt/integrations/whatsapp-crm/ai-suggestions",
+                  "pt/integrations/whatsapp-crm/user-profile",
+                  "pt/integrations/whatsapp-crm/calendar",
+                  "pt/integrations/whatsapp-crm/backup-and-sync",
+                  {
+                    "group": "Etiquetas e Funis",
+                    "pages": [
+                      "pt/integrations/whatsapp-crm/labels-funnels/add-label-and-funnel"
+                    ]
+                  }
                 ]
               }
             ]
@@ -1882,7 +1939,26 @@
                 "icon": "headset",
                 "pages": [
                   "tr/integrations/freshdesk/integration",
+                  "tr/integrations/freshdesk/create-contact",
+                  "tr/integrations/freshdesk/create-tickets",
+                  "tr/integrations/freshdesk/resolved-tickets",
                   "tr/integrations/freshdesk/setup"
+                ]
+              },
+              {
+                "group": "WhatsApp as CRM",
+                "icon": "whatsapp",
+                "pages": [
+                  "tr/integrations/whatsapp-crm/ai-suggestions",
+                  "tr/integrations/whatsapp-crm/user-profile",
+                  "tr/integrations/whatsapp-crm/calendar",
+                  "tr/integrations/whatsapp-crm/backup-and-sync",
+                  {
+                    "group": "Etiketler ve Huniler",
+                    "pages": [
+                      "tr/integrations/whatsapp-crm/labels-funnels/add-label-and-funnel"
+                    ]
+                  }
                 ]
               }
             ]
