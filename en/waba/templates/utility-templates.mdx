@@ -1,0 +1,118 @@
+---
+title: "Utility Templates"
+description: "Learn how to create and use utility templates for sending transactional notifications like order confirmations, appointment reminders, and account alerts via WhatsApp Business API."
+---
+
+Utility templates are pre-approved messages used to send transactional information to customers who have opted in to receive notifications. These templates are designed for essential, non-promotional communication.
+
+## When to Use Utility Templates
+
+Utility templates are recommended for:
+
+<CardGroup cols={2}>
+  <Card title="Order Updates" icon="box">
+    Order confirmations and shipment tracking updates
+  </Card>
+  <Card title="Appointment Reminders" icon="calendar-check">
+    Scheduled appointment notifications and reminders
+  </Card>
+  <Card title="Account Alerts" icon="bell">
+    Account and subscription notifications
+  </Card>
+  <Card title="Opt-in Confirmations" icon="check-circle">
+    Confirmation messages for customer opt-ins
+  </Card>
+</CardGroup>
+
+- **Feedback surveys** - Post-interaction feedback requests
+
+## How to Create a Utility Template
+
+<Steps>
+  <Step title="Navigate to Templates">
+    Go to the **Templates** section in your EazyBe dashboard.
+  </Step>
+
+  <Step title="Create New Template">
+    Click on the **Create Template** button to start creating a new template.
+  </Step>
+
+  <Step title="Fill Template Details">
+    Enter the following information:
+    - **Template Name** - A descriptive name for your template
+    - **Category** - Select **Utility** as the category
+    - **Language** - Choose the language for your template
+  </Step>
+
+  <Step title="Compose Your Message">
+    Build your template with these optional components:
+    - **Header** (optional) - Text, image, video, or document
+    - **Body** - Your main message text with placeholders like `{{1}}`, `{{2}}`
+    - **Footer** (optional) - Additional information or disclaimer
+  </Step>
+
+  <Step title="Add Buttons (Optional)">
+    Add up to two buttons:
+    - **Quick Replies** - Predefined response options
+    - **Calls to Action** - Links or phone number buttons
+  </Step>
+
+  <Step title="Submit for Approval">
+    Submit your template for Meta approval. Approval typically takes from a few minutes up to 24 hours.
+  </Step>
+</Steps>
+
+## Template Examples
+
+<Tabs>
+  <Tab title="Order Confirmation">
+    ```
+    Hi {{1}},
+
+    Your order #{{2}} has been confirmed!
+
+    Estimated delivery: {{3}}
+
+    Thank you for shopping with us.
+    ```
+  </Tab>
+  <Tab title="Appointment Reminder">
+    ```
+    Hello {{1}},
+
+    This is a reminder for your appointment on {{2}} at {{3}}.
+
+    Please arrive 10 minutes early.
+
+    Reply YES to confirm or NO to reschedule.
+    ```
+  </Tab>
+  <Tab title="Account Alert">
+    ```
+    Hi {{1}},
+
+    Your account password was recently changed.
+
+    If you did not make this change, please contact support immediately.
+    ```
+  </Tab>
+</Tabs>
+
+## Best Practices
+
+<Warning>
+  Avoid promotional or marketing language in utility templates. Meta may recategorize mixed-content templates to "Marketing" which has different pricing and restrictions.
+</Warning>
+
+- **Keep it concise** - Use clear, direct messaging
+- **Format placeholders correctly** - Use sequential numbering (`{{1}}`, `{{2}}`, `{{3}}`)
+- **Respect character limits** - Body text has a 1024 character limit
+- **Be transactional** - Focus on essential information only
+
+<Tip>
+  Always test your templates with sample data before using them in production campaigns.
+</Tip>
+
+## Need Help?
+
+If you have any questions or need further assistance, feel free to reach out to us at [hey@eazybe.com](mailto:hey@eazybe.com). We're happy to help!

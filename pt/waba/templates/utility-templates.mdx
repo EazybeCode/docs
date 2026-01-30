@@ -1,152 +1,152 @@
 ---
-title: "Utility Templates"
-description: "Create transactional message templates for order updates, alerts, and notifications"
+title: "Modelos de Utilidade"
+description: "Crie modelos de mensagens transacionais para atualizações de pedidos, alertas e notificações"
 ---
 
-## What Are Utility Templates?
+## O Que São Modelos de Utilidade?
 
-Utility templates are used for **transactional, informational messages** such as:
-- Order confirmations and updates
-- Shipping notifications
-- Appointment reminders
-- Account alerts
-- Payment receipts
+Modelos de utilidade são usados para **mensagens transacionais e informativas** como:
+- Confirmações e atualizações de pedidos
+- Notificações de envio
+- Lembretes de compromissos
+- Alertas de conta
+- Recibos de pagamento
 
 <Info>
-Utility templates cost **less than marketing** and have higher approval rates since they provide genuine value to recipients.
+Modelos de utilidade custam **menos que os de marketing** e têm maiores taxas de aprovação, pois fornecem valor genuíno aos destinatários.
 </Info>
 
-## When to Use Utility Templates
+## Quando Usar Modelos de Utilidade
 
-| Use Case | Example |
-|----------|---------|
-| **Order Confirmation** | "Your order #12345 has been placed" |
-| **Shipping Update** | "Your package is out for delivery" |
-| **Appointment Reminder** | "Reminder: Your appointment is tomorrow at 3 PM" |
-| **Payment Confirmation** | "We've received your payment of ₹999" |
-| **Account Alert** | "Your subscription renews in 3 days" |
+| Caso de Uso | Exemplo |
+|-------------|---------|
+| **Confirmação de Pedido** | "Seu pedido #12345 foi realizado" |
+| **Atualização de Envio** | "Seu pacote está a caminho para entrega" |
+| **Lembrete de Compromisso** | "Lembrete: Seu compromisso é amanhã às 15h" |
+| **Confirmação de Pagamento** | "Recebemos seu pagamento de R$999" |
+| **Alerta de Conta** | "Sua assinatura renova em 3 dias" |
 
-## Example Templates
+## Exemplos de Modelos
 
-### Order Confirmation
+### Confirmação de Pedido
 
 ```
-✅ Order Confirmed!
+✅ Pedido Confirmado!
 
-Hi {{1}},
+Olá {{1}},
 
-Thank you for your order!
+Obrigado pelo seu pedido!
 
-Order #: {{2}}
-Items: {{3}}
+Pedido #: {{2}}
+Itens: {{3}}
 Total: {{4}}
 
-We'll notify you when it ships.
+Notificaremos você quando for enviado.
 ```
 
-**Buttons:**
-- [View Order] → https://store.com/orders/{{2}}
+**Botões:**
+- [Ver Pedido] → https://loja.com/pedidos/{{2}}
 
 ---
 
-### Shipping Notification
+### Notificação de Envio
 
 ```
-📦 Your order is on the way!
+📦 Seu pedido está a caminho!
 
-Hi {{1}},
+Olá {{1}},
 
-Great news! Order #{{2}} has been shipped.
+Ótimas notícias! O pedido #{{2}} foi enviado.
 
-Courier: {{3}}
-Tracking #: {{4}}
-Expected delivery: {{5}}
+Transportadora: {{3}}
+# de Rastreamento: {{4}}
+Entrega prevista: {{5}}
 
-Track your package below 👇
+Rastreie seu pacote abaixo 👇
 ```
 
-**Buttons:**
-- [Track Package] → {{6}}
+**Botões:**
+- [Rastrear Pacote] → {{6}}
 
 ---
 
-### Appointment Reminder
+### Lembrete de Compromisso
 
 ```
-📅 Appointment Reminder
+📅 Lembrete de Compromisso
 
-Hi {{1}},
+Olá {{1}},
 
-This is a reminder for your upcoming appointment:
+Este é um lembrete do seu próximo compromisso:
 
 📍 {{2}}
 🗓️ {{3}}
 ⏰ {{4}}
 
-Please arrive 10 minutes early.
+Por favor, chegue 10 minutos antes.
 ```
 
-**Buttons:**
-- [Reschedule] → https://calendar.com/reschedule
-- [Get Directions] → {{5}}
+**Botões:**
+- [Reagendar] → https://calendario.com/reagendar
+- [Obter Direções] → {{5}}
 
 ---
 
-### Payment Receipt
+### Recibo de Pagamento
 
 ```
-💳 Payment Received
+💳 Pagamento Recebido
 
-Hi {{1}},
+Olá {{1}},
 
-We've received your payment of {{2}}.
+Recebemos seu pagamento de {{2}}.
 
-Transaction ID: {{3}}
-Date: {{4}}
-Payment Method: {{5}}
+ID da Transação: {{3}}
+Data: {{4}}
+Método de Pagamento: {{5}}
 
-Thank you for your business!
+Obrigado pela preferência!
 ```
 
-**Buttons:**
-- [View Receipt] → https://billing.com/receipt/{{3}}
+**Botões:**
+- [Ver Recibo] → https://faturamento.com/recibo/{{3}}
 
-## Free Utility Messages
+## Mensagens de Utilidade Gratuitas
 
 <Tip>
-**Save Money:** Utility templates sent **within the 24-hour service window** (after a customer messages you) are **FREE**!
+**Economize Dinheiro:** Modelos de utilidade enviados **dentro da janela de serviço de 24 horas** (após um cliente enviar mensagem para você) são **GRÁTIS**!
 </Tip>
 
-| Scenario | Cost |
-|----------|------|
-| Customer messages you, you reply with utility template within 24 hours | **Free** |
-| You send utility template without prior conversation | **Charged** |
-| Customer messages, 24 hours pass, you send utility template | **Charged** |
+| Cenário | Custo |
+|---------|-------|
+| Cliente envia mensagem, você responde com modelo de utilidade dentro de 24 horas | **Grátis** |
+| Você envia modelo de utilidade sem conversa prévia | **Cobrado** |
+| Cliente envia mensagem, passam 24 horas, você envia modelo de utilidade | **Cobrado** |
 
-## Best Practices
+## Melhores Práticas
 
 <CardGroup cols={2}>
-  <Card title="Be Informative" icon="info">
-    Focus on providing useful information, not selling
+  <Card title="Seja Informativo" icon="info">
+    Foque em fornecer informações úteis, não em vender
   </Card>
-  <Card title="Include Key Details" icon="list">
-    Order numbers, dates, amounts – everything the customer needs
+  <Card title="Inclua Detalhes Chave" icon="list">
+    Números de pedido, datas, valores – tudo que o cliente precisa
   </Card>
-  <Card title="Use Action Buttons" icon="hand-pointer">
-    Add tracking links, view order buttons
+  <Card title="Use Botões de Ação" icon="hand-pointer">
+    Adicione links de rastreamento, botões para ver pedido
   </Card>
-  <Card title="Avoid Promotion" icon="ban">
-    Don't add sales messages – that makes it Marketing
+  <Card title="Evite Promoção" icon="ban">
+    Não adicione mensagens de venda – isso transforma em Marketing
   </Card>
 </CardGroup>
 
-## Category Mismatch Warning
+## Aviso de Categoria Incorreta
 
 <Warning>
-If your "utility" template contains promotional content like:
-- "Check out our new products!"
-- "Get 20% off your next order"
-- "Limited time offer!"
+Se seu modelo de "utilidade" contiver conteúdo promocional como:
+- "Confira nossos novos produtos!"
+- "Ganhe 20% de desconto no próximo pedido"
+- "Oferta por tempo limitado!"
 
-It will be **rejected** and you'll need to resubmit as **Marketing**.
+Será **rejeitado** e você precisará reenviar como **Marketing**.
 </Warning>

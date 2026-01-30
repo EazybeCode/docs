@@ -1,0 +1,79 @@
+---
+title: "Uyumluluk ve Gizlilik"
+description: "EazyBe Webhooks ve Özel API'ler için uyumluluk ve gizlilik bilgileri"
+---
+
+EazyBe, Webhooks ve Özel API entegrasyonlarımızı kullanırken verilerinizi korumaya ve endüstri standartlarıyla uyumluluğu sağlamaya kararlıdır.
+
+## Veri İşleme
+
+<CardGroup cols={2}>
+  <Card title="Aktarımdaki Veriler" icon="lock">
+    Tüm webhook verileri TLS şifrelemesiyle HTTPS üzerinden iletilir
+  </Card>
+  <Card title="Veri Depolama Yok" icon="database">
+    EazyBe sunucularımızda webhook payload verilerini saklamaz
+  </Card>
+  <Card title="Doğrudan Teslimat" icon="arrow-right">
+    Webhook olayları doğrudan belirttiğiniz endpoint'e teslim edilir
+  </Card>
+  <Card title="Kullanıcı Kontrolü" icon="user-shield">
+    Webhook yapılandırması ve hedefleri üzerinde tam kontrole sahipsiniz
+  </Card>
+</CardGroup>
+
+## Güvenlik En İyi Uygulamaları
+
+<Steps>
+  <Step title="HTTPS Endpoint'leri Kullanın">
+    Şifreli veri iletimini sağlamak için webhook URL'lerinizi her zaman HTTPS ile yapılandırın.
+  </Step>
+
+  <Step title="Kimlik Doğrulama Uygulayın">
+    Webhook isteklerinin EazyBe'den geldiğini doğrulamak için isteğe bağlı Kimlik Doğrulama Token'ı özelliğini kullanın.
+  </Step>
+
+  <Step title="Payload'ları Doğrulayın">
+    Veri bütünlüğünü sağlamak için sunucunuzda payload doğrulaması uygulayın.
+  </Step>
+
+  <Step title="Token'larınızı Koruyun">
+    Organizasyon Kimlik Doğrulama Token'ınızı gizli tutun ve asla istemci tarafı kodunda veya herkese açık depolarda ifşa etmeyin.
+  </Step>
+</Steps>
+
+## Sizin Sorumluluklarınız
+
+<Warning>
+EazyBe API'lerini ve Webhook'larını kullanırken şunlardan sorumlusunuz:
+- Endpoint sunucularınızın güvenli olmasını sağlamak
+- Geçerli veri koruma düzenlemelerine (GDPR, KVKK, vb.) uymak
+- Alınan verileri gizlilik politikanıza uygun şekilde işlemek
+- API'leri spam veya yetkisiz mesajlaşma için kullanmamak
+</Warning>
+
+## Veri İşleme
+
+<Info>
+EazyBe, webhook olaylarını iletirken veri işleyicisi olarak hareket eder. Webhook'larda bulunan veriler (mesaj içeriği, iletişim bilgileri) entegrasyonu yapılandırdığınızda talimatlarınıza göre işlenir.
+</Info>
+
+## API Hız Limitleri
+
+Hizmet kararlılığını ve adil kullanımı sağlamak için:
+
+| Kaynak | Limit |
+|--------|-------|
+| Webhook teslimatları | En iyi çabayla gerçek zamanlı teslimat |
+| API istekleri | Makul kullanım limitlerine tabi |
+| Yeniden deneme girişimleri | Başarısız teslimatlar üstel geri çekilmeyle yeniden denenir |
+
+## Bize Ulaşın
+
+Uyumlulukla ilgili sorularınız için veya Veri İşleme Sözleşmesi (DPA) talep etmek için ekibimizle iletişime geçin.
+
+---
+
+<Note>
+Herhangi bir sorunuz varsa veya daha fazla yardıma ihtiyacınız varsa, **hey@eazybe.com** adresinden bize ulaşmaktan çekinmeyin. Yardımcı olmaktan mutluluk duyarız!
+</Note>

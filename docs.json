@@ -69,6 +69,27 @@
                       "getting-started/personal-vs-business-vs-api",
                       "getting-started/coexistence-mode"
                     ]
+                  },
+                  {
+                    "group": "Cloud WhatsApp",
+                    "pages": [
+                      "en/getting-started/cloud-whatsapp/about",
+                      "en/getting-started/cloud-whatsapp/how-to-connect",
+                      "en/getting-started/cloud-whatsapp/disconnect",
+                      "en/getting-started/cloud-whatsapp/compliance-and-privacy",
+                      {
+                        "group": "FAQ",
+                        "pages": [
+                          "en/getting-started/cloud-whatsapp/connection-check",
+                          "en/getting-started/cloud-whatsapp/disconnection-check",
+                          "en/getting-started/cloud-whatsapp/backup-and-scheduling",
+                          "en/getting-started/cloud-whatsapp/crm-integration",
+                          "en/getting-started/cloud-whatsapp/prerequisites",
+                          "en/getting-started/cloud-whatsapp/connection-issue",
+                          "en/getting-started/cloud-whatsapp/free-trial"
+                        ]
+                      }
+                    ]
                   }
                 ]
               },
@@ -202,6 +223,13 @@
                   "troubleshooting/connection-issues",
                   "troubleshooting/extension-issues",
                   "troubleshooting/faq"
+                ]
+              },
+              {
+                "group": "FAQ",
+                "icon": "circle-question",
+                "pages": [
+                  "en/faq/account-setup"
                 ]
               }
             ]
@@ -561,7 +589,22 @@
                   {
                     "group": "Labels and Funnels",
                     "pages": [
-                      "en/integrations/whatsapp-crm/labels-funnels/add-label-and-funnel"
+                      "en/integrations/whatsapp-crm/labels-funnels/add-label-and-funnel",
+                      "en/integrations/whatsapp-crm/labels-funnels/edit-label-and-funnel",
+                      "en/integrations/whatsapp-crm/labels-funnels/mid-section-bar",
+                      "en/integrations/whatsapp-crm/labels-funnels/business-label"
+                    ]
+                  },
+                  {
+                    "group": "Workspace",
+                    "pages": [
+                      "en/integrations/whatsapp-crm/workspace/workspace",
+                      "en/integrations/whatsapp-crm/workspace/organization",
+                      "en/integrations/whatsapp-crm/workspace/dashboard",
+                      "en/integrations/whatsapp-crm/workspace/team-inbox",
+                      "en/integrations/whatsapp-crm/workspace/integrations",
+                      "en/integrations/whatsapp-crm/workspace/account",
+                      "en/integrations/whatsapp-crm/workspace/number-of-employees"
                     ]
                   }
                 ]
@@ -569,7 +612,22 @@
               {
                 "group": "Webhooks & Custom",
                 "icon": "code",
-                "pages": []
+                "pages": [
+                  "en/integrations/webhooks-custom/scheduler-api",
+                  "en/integrations/webhooks-custom/add-chat-id",
+                  "en/integrations/webhooks-custom/webhooks",
+                  "en/integrations/webhooks-custom/create-group-and-add-chat-id",
+                  "en/integrations/webhooks-custom/active-user-api",
+                  "en/integrations/webhooks-custom/compliance-and-privacy",
+                  {
+                    "group": "FAQ",
+                    "pages": [
+                      "en/integrations/webhooks-custom/faq/available-apis",
+                      "en/integrations/webhooks-custom/faq/custom-apis",
+                      "en/integrations/webhooks-custom/faq/create-webhook"
+                    ]
+                  }
+                ]
               }
             ]
           },
@@ -677,6 +735,27 @@
                       "es/getting-started/personal-vs-business-vs-api",
                       "es/getting-started/coexistence-mode"
                     ]
+                  },
+                  {
+                    "group": "Cloud WhatsApp",
+                    "pages": [
+                      "es/getting-started/cloud-whatsapp/about",
+                      "es/getting-started/cloud-whatsapp/how-to-connect",
+                      "es/getting-started/cloud-whatsapp/disconnect",
+                      "es/getting-started/cloud-whatsapp/compliance-and-privacy",
+                      {
+                        "group": "FAQ",
+                        "pages": [
+                          "es/getting-started/cloud-whatsapp/connection-check",
+                          "es/getting-started/cloud-whatsapp/disconnection-check",
+                          "es/getting-started/cloud-whatsapp/backup-and-scheduling",
+                          "es/getting-started/cloud-whatsapp/crm-integration",
+                          "es/getting-started/cloud-whatsapp/prerequisites",
+                          "es/getting-started/cloud-whatsapp/connection-issue",
+                          "es/getting-started/cloud-whatsapp/free-trial"
+                        ]
+                      }
+                    ]
                   }
                 ]
               },
@@ -719,6 +798,7 @@
                       "es/waba/templates/creating-templates",
                       "es/waba/templates/creating-and-managing-templates",
                       "es/waba/templates/how-to-create-template-with-hubspot-variables",
+                      "es/waba/templates/utility-templates",
                       "es/waba/templates/approval-process",
                       "es/waba/templates/guidelines"
                     ]
@@ -764,6 +844,13 @@
                 "pages": [
                   "es/troubleshooting/sync-issues",
                   "es/troubleshooting/connection-issues"
+                ]
+              },
+              {
+                "group": "FAQ",
+                "icon": "circle-question",
+                "pages": [
+                  "es/faq/account-setup"
                 ]
               }
             ]
@@ -1070,7 +1157,42 @@
                   {
                     "group": "Etiquetas y Embudos",
                     "pages": [
-                      "es/integrations/whatsapp-crm/labels-funnels/add-label-and-funnel"
+                      "es/integrations/whatsapp-crm/labels-funnels/add-label-and-funnel",
+                      "es/integrations/whatsapp-crm/labels-funnels/edit-label-and-funnel",
+                      "es/integrations/whatsapp-crm/labels-funnels/mid-section-bar",
+                      "es/integrations/whatsapp-crm/labels-funnels/business-label"
+                    ]
+                  },
+                  {
+                    "group": "Espacio de Trabajo",
+                    "pages": [
+                      "es/integrations/whatsapp-crm/workspace/workspace",
+                      "es/integrations/whatsapp-crm/workspace/organization",
+                      "es/integrations/whatsapp-crm/workspace/dashboard",
+                      "es/integrations/whatsapp-crm/workspace/team-inbox",
+                      "es/integrations/whatsapp-crm/workspace/integrations",
+                      "es/integrations/whatsapp-crm/workspace/account",
+                      "es/integrations/whatsapp-crm/workspace/number-of-employees"
+                    ]
+                  }
+                ]
+              },
+              {
+                "group": "Webhooks & Custom",
+                "icon": "code",
+                "pages": [
+                  "es/integrations/webhooks-custom/scheduler-api",
+                  "es/integrations/webhooks-custom/add-chat-id",
+                  "es/integrations/webhooks-custom/webhooks",
+                  "es/integrations/webhooks-custom/create-group-and-add-chat-id",
+                  "es/integrations/webhooks-custom/active-user-api",
+                  "es/integrations/webhooks-custom/compliance-and-privacy",
+                  {
+                    "group": "FAQ",
+                    "pages": [
+                      "es/integrations/webhooks-custom/faq/available-apis",
+                      "es/integrations/webhooks-custom/faq/custom-apis",
+                      "es/integrations/webhooks-custom/faq/create-webhook"
                     ]
                   }
                 ]
@@ -1120,6 +1242,27 @@
                       "pt/getting-started/personal-vs-business-vs-api",
                       "pt/getting-started/coexistence-mode"
                     ]
+                  },
+                  {
+                    "group": "Cloud WhatsApp",
+                    "pages": [
+                      "pt/getting-started/cloud-whatsapp/about",
+                      "pt/getting-started/cloud-whatsapp/how-to-connect",
+                      "pt/getting-started/cloud-whatsapp/disconnect",
+                      "pt/getting-started/cloud-whatsapp/compliance-and-privacy",
+                      {
+                        "group": "FAQ",
+                        "pages": [
+                          "pt/getting-started/cloud-whatsapp/connection-check",
+                          "pt/getting-started/cloud-whatsapp/disconnection-check",
+                          "pt/getting-started/cloud-whatsapp/backup-and-scheduling",
+                          "pt/getting-started/cloud-whatsapp/crm-integration",
+                          "pt/getting-started/cloud-whatsapp/prerequisites",
+                          "pt/getting-started/cloud-whatsapp/connection-issue",
+                          "pt/getting-started/cloud-whatsapp/free-trial"
+                        ]
+                      }
+                    ]
                   }
                 ]
               },
@@ -1162,6 +1305,7 @@
                       "pt/waba/templates/creating-templates",
                       "pt/waba/templates/creating-and-managing-templates",
                       "pt/waba/templates/how-to-create-template-with-hubspot-variables",
+                      "pt/waba/templates/utility-templates",
                       "pt/waba/templates/approval-process",
                       "pt/waba/templates/guidelines"
                     ]
@@ -1207,6 +1351,13 @@
                 "pages": [
                   "pt/troubleshooting/sync-issues",
                   "pt/troubleshooting/connection-issues"
+                ]
+              },
+              {
+                "group": "FAQ",
+                "icon": "circle-question",
+                "pages": [
+                  "pt/faq/account-setup"
                 ]
               }
             ]
@@ -1513,7 +1664,42 @@
                   {
                     "group": "Etiquetas e Funis",
                     "pages": [
-                      "pt/integrations/whatsapp-crm/labels-funnels/add-label-and-funnel"
+                      "pt/integrations/whatsapp-crm/labels-funnels/add-label-and-funnel",
+                      "pt/integrations/whatsapp-crm/labels-funnels/edit-label-and-funnel",
+                      "pt/integrations/whatsapp-crm/labels-funnels/mid-section-bar",
+                      "pt/integrations/whatsapp-crm/labels-funnels/business-label"
+                    ]
+                  },
+                  {
+                    "group": "Área de Trabalho",
+                    "pages": [
+                      "pt/integrations/whatsapp-crm/workspace/workspace",
+                      "pt/integrations/whatsapp-crm/workspace/organization",
+                      "pt/integrations/whatsapp-crm/workspace/dashboard",
+                      "pt/integrations/whatsapp-crm/workspace/team-inbox",
+                      "pt/integrations/whatsapp-crm/workspace/integrations",
+                      "pt/integrations/whatsapp-crm/workspace/account",
+                      "pt/integrations/whatsapp-crm/workspace/number-of-employees"
+                    ]
+                  }
+                ]
+              },
+              {
+                "group": "Webhooks & Custom",
+                "icon": "code",
+                "pages": [
+                  "pt/integrations/webhooks-custom/scheduler-api",
+                  "pt/integrations/webhooks-custom/add-chat-id",
+                  "pt/integrations/webhooks-custom/webhooks",
+                  "pt/integrations/webhooks-custom/create-group-and-add-chat-id",
+                  "pt/integrations/webhooks-custom/active-user-api",
+                  "pt/integrations/webhooks-custom/compliance-and-privacy",
+                  {
+                    "group": "FAQ",
+                    "pages": [
+                      "pt/integrations/webhooks-custom/faq/available-apis",
+                      "pt/integrations/webhooks-custom/faq/custom-apis",
+                      "pt/integrations/webhooks-custom/faq/create-webhook"
                     ]
                   }
                 ]
@@ -1563,6 +1749,27 @@
                       "tr/getting-started/personal-vs-business-vs-api",
                       "tr/getting-started/coexistence-mode"
                     ]
+                  },
+                  {
+                    "group": "Cloud WhatsApp",
+                    "pages": [
+                      "tr/getting-started/cloud-whatsapp/about",
+                      "tr/getting-started/cloud-whatsapp/how-to-connect",
+                      "tr/getting-started/cloud-whatsapp/disconnect",
+                      "tr/getting-started/cloud-whatsapp/compliance-and-privacy",
+                      {
+                        "group": "FAQ",
+                        "pages": [
+                          "tr/getting-started/cloud-whatsapp/connection-check",
+                          "tr/getting-started/cloud-whatsapp/disconnection-check",
+                          "tr/getting-started/cloud-whatsapp/backup-and-scheduling",
+                          "tr/getting-started/cloud-whatsapp/crm-integration",
+                          "tr/getting-started/cloud-whatsapp/prerequisites",
+                          "tr/getting-started/cloud-whatsapp/connection-issue",
+                          "tr/getting-started/cloud-whatsapp/free-trial"
+                        ]
+                      }
+                    ]
                   }
                 ]
               },
@@ -1605,6 +1812,7 @@
                       "tr/waba/templates/creating-templates",
                       "tr/waba/templates/creating-and-managing-templates",
                       "tr/waba/templates/how-to-create-template-with-hubspot-variables",
+                      "tr/waba/templates/utility-templates",
                       "tr/waba/templates/approval-process",
                       "tr/waba/templates/guidelines"
                     ]
@@ -1650,6 +1858,13 @@
                 "pages": [
                   "tr/troubleshooting/sync-issues",
                   "tr/troubleshooting/connection-issues"
+                ]
+              },
+              {
+                "group": "FAQ",
+                "icon": "circle-question",
+                "pages": [
+                  "tr/faq/account-setup"
                 ]
               }
             ]
@@ -1956,7 +2171,42 @@
                   {
                     "group": "Etiketler ve Huniler",
                     "pages": [
-                      "tr/integrations/whatsapp-crm/labels-funnels/add-label-and-funnel"
+                      "tr/integrations/whatsapp-crm/labels-funnels/add-label-and-funnel",
+                      "tr/integrations/whatsapp-crm/labels-funnels/edit-label-and-funnel",
+                      "tr/integrations/whatsapp-crm/labels-funnels/mid-section-bar",
+                      "tr/integrations/whatsapp-crm/labels-funnels/business-label"
+                    ]
+                  },
+                  {
+                    "group": "Çalışma Alanı",
+                    "pages": [
+                      "tr/integrations/whatsapp-crm/workspace/workspace",
+                      "tr/integrations/whatsapp-crm/workspace/organization",
+                      "tr/integrations/whatsapp-crm/workspace/dashboard",
+                      "tr/integrations/whatsapp-crm/workspace/team-inbox",
+                      "tr/integrations/whatsapp-crm/workspace/integrations",
+                      "tr/integrations/whatsapp-crm/workspace/account",
+                      "tr/integrations/whatsapp-crm/workspace/number-of-employees"
+                    ]
+                  }
+                ]
+              },
+              {
+                "group": "Webhooks & Custom",
+                "icon": "code",
+                "pages": [
+                  "tr/integrations/webhooks-custom/scheduler-api",
+                  "tr/integrations/webhooks-custom/add-chat-id",
+                  "tr/integrations/webhooks-custom/webhooks",
+                  "tr/integrations/webhooks-custom/create-group-and-add-chat-id",
+                  "tr/integrations/webhooks-custom/active-user-api",
+                  "tr/integrations/webhooks-custom/compliance-and-privacy",
+                  {
+                    "group": "FAQ",
+                    "pages": [
+                      "tr/integrations/webhooks-custom/faq/available-apis",
+                      "tr/integrations/webhooks-custom/faq/custom-apis",
+                      "tr/integrations/webhooks-custom/faq/create-webhook"
                     ]
                   }
                 ]

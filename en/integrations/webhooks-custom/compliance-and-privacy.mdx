@@ -1,0 +1,79 @@
+---
+title: "Compliance and Privacy"
+description: "Compliance and privacy information for EazyBe Webhooks & Custom APIs"
+---
+
+EazyBe is committed to protecting your data and ensuring compliance with industry standards when using our Webhooks and Custom API integrations.
+
+## Data Handling
+
+<CardGroup cols={2}>
+  <Card title="Data in Transit" icon="lock">
+    All webhook data is transmitted over HTTPS with TLS encryption
+  </Card>
+  <Card title="No Data Storage" icon="database">
+    EazyBe does not store webhook payload data on our servers
+  </Card>
+  <Card title="Direct Delivery" icon="arrow-right">
+    Webhook events are delivered directly to your specified endpoint
+  </Card>
+  <Card title="User Control" icon="user-shield">
+    You have full control over webhook configuration and destinations
+  </Card>
+</CardGroup>
+
+## Security Best Practices
+
+<Steps>
+  <Step title="Use HTTPS Endpoints">
+    Always configure your webhook URLs with HTTPS to ensure encrypted data transmission.
+  </Step>
+
+  <Step title="Implement Authentication">
+    Use the optional Auth Token feature to verify that webhook requests originate from EazyBe.
+  </Step>
+
+  <Step title="Validate Payloads">
+    Implement payload validation on your server to ensure data integrity.
+  </Step>
+
+  <Step title="Secure Your Tokens">
+    Keep your Organization Auth Token confidential and never expose it in client-side code or public repositories.
+  </Step>
+</Steps>
+
+## Your Responsibilities
+
+<Warning>
+When using EazyBe APIs and Webhooks, you are responsible for:
+- Ensuring your endpoint servers are secure
+- Complying with applicable data protection regulations (GDPR, CCPA, etc.)
+- Handling received data in accordance with your privacy policy
+- Not using the APIs for spam or unauthorized messaging
+</Warning>
+
+## Data Processing
+
+<Info>
+EazyBe acts as a data processor when transmitting webhook events. The data contained in webhooks (message content, contact information) is processed according to your instructions when you configure the integration.
+</Info>
+
+## API Rate Limits
+
+To ensure service stability and fair usage:
+
+| Resource | Limit |
+|----------|-------|
+| Webhook deliveries | Best-effort real-time delivery |
+| API requests | Subject to reasonable use limits |
+| Retry attempts | Failed deliveries are retried with exponential backoff |
+
+## Contact Us
+
+For compliance-related inquiries or to request a Data Processing Agreement (DPA), please contact our team.
+
+---
+
+<Note>
+If you have any questions or need further assistance, feel free to reach out to us at **hey@eazybe.com**. We're happy to help!
+</Note>

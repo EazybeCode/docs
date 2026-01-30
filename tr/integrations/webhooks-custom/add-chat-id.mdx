@@ -1,0 +1,126 @@
+---
+title: "Chat ID Ekle"
+description: "EazyBe API'sini kullanarak programatik olarak iş etiketlerine chat ID'leri ekleyin"
+---
+
+Chat ID Ekle API'si, belirli sohbetleri iş etiketlerine eklemenizi sağlar. Bulut oturumunun aktif olup olmadığını doğrular, mevcut iş etiketlerini alır ve belirtilen sohbetleri belirli bir etiketle ilişkilendirir.
+
+<Warning>
+Bu API'yi spam veya toplu mesajlaşma için kullanmayın. Kötüye kullanım hesap yasaklanmasına neden olabilir.
+</Warning>
+
+## Endpoint
+
+```
+POST https://api.eazybe.com/v2/cloud/business-label
+```
+
+## Kimlik Doğrulama
+
+EazyBe Workspace'inizden **Organizasyon Kimlik Doğrulama Token'ı** almanız gerekiyor.
+
+<Steps>
+  <Step title="EazyBe Workspace'e Erişin">
+    [workspace.eazybe.com](https://workspace.eazybe.com) adresine gidin
+  </Step>
+
+  <Step title="Organizasyon Sayfasına Gidin">
+    Bir yöneticinin Organizasyon sayfasına erişmesi gerekiyor.
+  </Step>
+
+  <Step title="Kimlik Doğrulama Token'ını Kopyalayın">
+    Organizasyon Kimlik Doğrulama Token'ı bu sayfada görüntülenecektir. API kullanımı için kopyalayın.
+  </Step>
+</Steps>
+
+## Headers
+
+| Header | Değer | Açıklama |
+|--------|-------|----------|
+| `Content-Type` | `application/json; charset=UTF-8` | JSON formatını belirtir |
+| `Authorization` | `Bearer {token}` | Organizasyon Kimlik Doğrulama Token'ı |
+
+## İstek Payload'ı
+
+API aşağıdaki alanları gerektirir:
+
+| Alan | Tür | Açıklama |
+|------|-----|----------|
+| `labelName` | string | Sohbetlerin ekleneceği iş etiketi adı |
+| `contacts` | array | Kişi telefon numaraları listesi (uluslararası format) |
+
+### Örnek Payload
+
+```json
+{
+  "labelName": "Priority Clients",
+  "contacts": [
+    "911234567891",
+    "911234567892",
+    "911234567893"
+  ]
+}
+```
+
+## Kod Örneği (Node.js)
+
+```javascript
+const axios = require('axios');
+
+const config = {
+  method: 'post',
+  url: 'https://api.eazybe.com/v2/cloud/business-label',
+  headers: {
+    'Authorization': 'Bearer YOUR_ORGANIZATION_AUTH_TOKEN',
+    'Content-Type': 'application/json; charset=UTF-8'
+  },
+  data: {
+    labelName: 'Priority Clients',
+    contacts: [
+      '911234567891',
+      '911234567892',
+      '911234567893'
+    ]
+  }
+};
+
+axios(config)
+  .then(response => console.log(response.data))
+  .catch(error => console.error(error));
+```
+
+## Yanıt
+
+### Başarılı Yanıt (200 OK)
+
+```json
+{
+  "status": true,
+  "data": {
+    "message": "Contacts added successfully."
+  }
+}
+```
+
+## En İyi Uygulamalar
+
+<CardGroup cols={2}>
+  <Card title="Aktif Cloud Oturumu" icon="cloud">
+    API çağrıları yapmadan önce bulut oturumunuzun aktif olduğundan emin olun
+  </Card>
+  <Card title="Geçerli Etiket Adı" icon="tag">
+    Workspace'inizdeki mevcut bir iş etiketi adı kullanın
+  </Card>
+  <Card title="Uluslararası Format" icon="phone">
+    Uluslararası telefon numarası formatı kullanın (örn., 911234567891)
+  </Card>
+  <Card title="Geçerli Token" icon="key">
+    Geçerli bir Organizasyon Kimlik Doğrulama Token'ı bulundurun
+  </Card>
+</CardGroup>
+
+---
+
+<Note>
+Herhangi bir sorunuz varsa veya daha fazla yardıma ihtiyacınız varsa, **hey@eazybe.com** adresinden bize ulaşmaktan çekinmeyin. Yardımcı olmaktan mutluluk duyarız!
+</Note>

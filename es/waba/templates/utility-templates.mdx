@@ -1,152 +1,152 @@
 ---
-title: "Utility Templates"
-description: "Create transactional message templates for order updates, alerts, and notifications"
+title: "Plantillas de Utilidad"
+description: "Crea plantillas de mensajes transaccionales para actualizaciones de pedidos, alertas y notificaciones"
 ---
 
-## What Are Utility Templates?
+## ¿Qué Son las Plantillas de Utilidad?
 
-Utility templates are used for **transactional, informational messages** such as:
-- Order confirmations and updates
-- Shipping notifications
-- Appointment reminders
-- Account alerts
-- Payment receipts
+Las plantillas de utilidad se utilizan para **mensajes transaccionales e informativos** como:
+- Confirmaciones y actualizaciones de pedidos
+- Notificaciones de envío
+- Recordatorios de citas
+- Alertas de cuenta
+- Recibos de pago
 
 <Info>
-Utility templates cost **less than marketing** and have higher approval rates since they provide genuine value to recipients.
+Las plantillas de utilidad cuestan **menos que las de marketing** y tienen mayores tasas de aprobación ya que proporcionan valor genuino a los destinatarios.
 </Info>
 
-## When to Use Utility Templates
+## Cuándo Usar Plantillas de Utilidad
 
-| Use Case | Example |
-|----------|---------|
-| **Order Confirmation** | "Your order #12345 has been placed" |
-| **Shipping Update** | "Your package is out for delivery" |
-| **Appointment Reminder** | "Reminder: Your appointment is tomorrow at 3 PM" |
-| **Payment Confirmation** | "We've received your payment of ₹999" |
-| **Account Alert** | "Your subscription renews in 3 days" |
+| Caso de Uso | Ejemplo |
+|-------------|---------|
+| **Confirmación de Pedido** | "Tu pedido #12345 ha sido realizado" |
+| **Actualización de Envío** | "Tu paquete está en camino para entrega" |
+| **Recordatorio de Cita** | "Recordatorio: Tu cita es mañana a las 3 PM" |
+| **Confirmación de Pago** | "Hemos recibido tu pago de $999" |
+| **Alerta de Cuenta** | "Tu suscripción se renueva en 3 días" |
 
-## Example Templates
+## Ejemplos de Plantillas
 
-### Order Confirmation
+### Confirmación de Pedido
 
 ```
-✅ Order Confirmed!
+✅ ¡Pedido Confirmado!
 
-Hi {{1}},
+Hola {{1}},
 
-Thank you for your order!
+¡Gracias por tu pedido!
 
-Order #: {{2}}
-Items: {{3}}
+Pedido #: {{2}}
+Artículos: {{3}}
 Total: {{4}}
 
-We'll notify you when it ships.
+Te notificaremos cuando se envíe.
 ```
 
-**Buttons:**
-- [View Order] → https://store.com/orders/{{2}}
+**Botones:**
+- [Ver Pedido] → https://tienda.com/pedidos/{{2}}
 
 ---
 
-### Shipping Notification
+### Notificación de Envío
 
 ```
-📦 Your order is on the way!
+📦 ¡Tu pedido está en camino!
 
-Hi {{1}},
+Hola {{1}},
 
-Great news! Order #{{2}} has been shipped.
+¡Buenas noticias! El pedido #{{2}} ha sido enviado.
 
-Courier: {{3}}
-Tracking #: {{4}}
-Expected delivery: {{5}}
+Transportista: {{3}}
+# de Seguimiento: {{4}}
+Entrega esperada: {{5}}
 
-Track your package below 👇
+Rastrea tu paquete abajo 👇
 ```
 
-**Buttons:**
-- [Track Package] → {{6}}
+**Botones:**
+- [Rastrear Paquete] → {{6}}
 
 ---
 
-### Appointment Reminder
+### Recordatorio de Cita
 
 ```
-📅 Appointment Reminder
+📅 Recordatorio de Cita
 
-Hi {{1}},
+Hola {{1}},
 
-This is a reminder for your upcoming appointment:
+Este es un recordatorio de tu próxima cita:
 
 📍 {{2}}
 🗓️ {{3}}
 ⏰ {{4}}
 
-Please arrive 10 minutes early.
+Por favor llega 10 minutos antes.
 ```
 
-**Buttons:**
-- [Reschedule] → https://calendar.com/reschedule
-- [Get Directions] → {{5}}
+**Botones:**
+- [Reprogramar] → https://calendario.com/reprogramar
+- [Obtener Direcciones] → {{5}}
 
 ---
 
-### Payment Receipt
+### Recibo de Pago
 
 ```
-💳 Payment Received
+💳 Pago Recibido
 
-Hi {{1}},
+Hola {{1}},
 
-We've received your payment of {{2}}.
+Hemos recibido tu pago de {{2}}.
 
-Transaction ID: {{3}}
-Date: {{4}}
-Payment Method: {{5}}
+ID de Transacción: {{3}}
+Fecha: {{4}}
+Método de Pago: {{5}}
 
-Thank you for your business!
+¡Gracias por tu preferencia!
 ```
 
-**Buttons:**
-- [View Receipt] → https://billing.com/receipt/{{3}}
+**Botones:**
+- [Ver Recibo] → https://facturacion.com/recibo/{{3}}
 
-## Free Utility Messages
+## Mensajes de Utilidad Gratuitos
 
 <Tip>
-**Save Money:** Utility templates sent **within the 24-hour service window** (after a customer messages you) are **FREE**!
+**Ahorra Dinero:** ¡Las plantillas de utilidad enviadas **dentro de la ventana de servicio de 24 horas** (después de que un cliente te envía un mensaje) son **GRATIS**!
 </Tip>
 
-| Scenario | Cost |
-|----------|------|
-| Customer messages you, you reply with utility template within 24 hours | **Free** |
-| You send utility template without prior conversation | **Charged** |
-| Customer messages, 24 hours pass, you send utility template | **Charged** |
+| Escenario | Costo |
+|-----------|-------|
+| El cliente te envía un mensaje, respondes con plantilla de utilidad dentro de 24 horas | **Gratis** |
+| Envías plantilla de utilidad sin conversación previa | **Con cargo** |
+| El cliente envía mensaje, pasan 24 horas, envías plantilla de utilidad | **Con cargo** |
 
-## Best Practices
+## Mejores Prácticas
 
 <CardGroup cols={2}>
-  <Card title="Be Informative" icon="info">
-    Focus on providing useful information, not selling
+  <Card title="Sé Informativo" icon="info">
+    Enfócate en proporcionar información útil, no en vender
   </Card>
-  <Card title="Include Key Details" icon="list">
-    Order numbers, dates, amounts – everything the customer needs
+  <Card title="Incluye Detalles Clave" icon="list">
+    Números de pedido, fechas, montos – todo lo que el cliente necesita
   </Card>
-  <Card title="Use Action Buttons" icon="hand-pointer">
-    Add tracking links, view order buttons
+  <Card title="Usa Botones de Acción" icon="hand-pointer">
+    Agrega enlaces de seguimiento, botones para ver pedido
   </Card>
-  <Card title="Avoid Promotion" icon="ban">
-    Don't add sales messages – that makes it Marketing
+  <Card title="Evita la Promoción" icon="ban">
+    No agregues mensajes de venta – eso lo convierte en Marketing
   </Card>
 </CardGroup>
 
-## Category Mismatch Warning
+## Advertencia de Categoría Incorrecta
 
 <Warning>
-If your "utility" template contains promotional content like:
-- "Check out our new products!"
-- "Get 20% off your next order"
-- "Limited time offer!"
+Si tu plantilla de "utilidad" contiene contenido promocional como:
+- "¡Mira nuestros nuevos productos!"
+- "Obtén 20% de descuento en tu próximo pedido"
+- "¡Oferta por tiempo limitado!"
 
-It will be **rejected** and you'll need to resubmit as **Marketing**.
+Será **rechazada** y deberás reenviarla como **Marketing**.
 </Warning>

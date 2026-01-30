@@ -1,0 +1,126 @@
+---
+title: "Adicionar ID de Chat"
+description: "Adicione IDs de chat a etiquetas de negócio programaticamente usando a API do EazyBe"
+---
+
+A API de Adicionar ID de Chat permite que você adicione chats específicos a etiquetas de negócio. Ela verifica se a sessão na nuvem está ativa, recupera as etiquetas de negócio disponíveis e associa os chats especificados a uma determinada etiqueta.
+
+<Warning>
+Não use esta API para spam ou mensagens em massa. O uso indevido pode resultar em banimento da conta.
+</Warning>
+
+## Endpoint
+
+```
+POST https://api.eazybe.com/v2/cloud/business-label
+```
+
+## Autenticação
+
+Você precisa obter o **Token de Autenticação da Organização** do seu Workspace EazyBe.
+
+<Steps>
+  <Step title="Acesse o Workspace EazyBe">
+    Vá para [workspace.eazybe.com](https://workspace.eazybe.com)
+  </Step>
+
+  <Step title="Navegue até a Página da Organização">
+    Um administrador precisa acessar a página da Organização.
+  </Step>
+
+  <Step title="Copie o Token de Autenticação">
+    O Token de Autenticação da Organização será exibido nesta página. Copie-o para uso com a API.
+  </Step>
+</Steps>
+
+## Headers
+
+| Header | Valor | Descrição |
+|--------|-------|-----------|
+| `Content-Type` | `application/json; charset=UTF-8` | Especifica formato JSON |
+| `Authorization` | `Bearer {token}` | Token de Autenticação da Organização |
+
+## Payload da Requisição
+
+A API requer os seguintes campos:
+
+| Campo | Tipo | Descrição |
+|-------|------|-----------|
+| `labelName` | string | Nome da etiqueta de negócio para adicionar chats |
+| `contacts` | array | Lista de números de telefone de contatos (formato internacional) |
+
+### Exemplo de Payload
+
+```json
+{
+  "labelName": "Priority Clients",
+  "contacts": [
+    "911234567891",
+    "911234567892",
+    "911234567893"
+  ]
+}
+```
+
+## Exemplo de Código (Node.js)
+
+```javascript
+const axios = require('axios');
+
+const config = {
+  method: 'post',
+  url: 'https://api.eazybe.com/v2/cloud/business-label',
+  headers: {
+    'Authorization': 'Bearer YOUR_ORGANIZATION_AUTH_TOKEN',
+    'Content-Type': 'application/json; charset=UTF-8'
+  },
+  data: {
+    labelName: 'Priority Clients',
+    contacts: [
+      '911234567891',
+      '911234567892',
+      '911234567893'
+    ]
+  }
+};
+
+axios(config)
+  .then(response => console.log(response.data))
+  .catch(error => console.error(error));
+```
+
+## Resposta
+
+### Resposta de Sucesso (200 OK)
+
+```json
+{
+  "status": true,
+  "data": {
+    "message": "Contacts added successfully."
+  }
+}
+```
+
+## Melhores Práticas
+
+<CardGroup cols={2}>
+  <Card title="Sessão Cloud Ativa" icon="cloud">
+    Certifique-se de que sua sessão na nuvem esteja ativa antes de fazer chamadas API
+  </Card>
+  <Card title="Nome de Etiqueta Válido" icon="tag">
+    Use um nome de etiqueta de negócio existente no seu workspace
+  </Card>
+  <Card title="Formato Internacional" icon="phone">
+    Use formato de telefone internacional (ex., 911234567891)
+  </Card>
+  <Card title="Token Válido" icon="key">
+    Mantenha um Token de Autenticação da Organização válido
+  </Card>
+</CardGroup>
+
+---
+
+<Note>
+Se você tiver alguma dúvida ou precisar de mais assistência, sinta-se à vontade para nos contatar em **hey@eazybe.com**. Estamos felizes em ajudar!
+</Note>

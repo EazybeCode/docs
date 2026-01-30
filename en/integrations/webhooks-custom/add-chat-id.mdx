@@ -1,0 +1,126 @@
+---
+title: "Add Chat ID"
+description: "Add chat IDs to business labels programmatically using the EazyBe API"
+---
+
+The Add Chat ID API enables you to add specific chats to business labels. It verifies if the cloud session is active, retrieves available business labels, and associates the specified chats with a given label.
+
+<Warning>
+Do not use this API for spam or bulk messaging. Misuse may result in account bans.
+</Warning>
+
+## Endpoint
+
+```
+POST https://api.eazybe.com/v2/cloud/business-label
+```
+
+## Authentication
+
+You need to obtain the **Organization Auth Token** from your EazyBe Workspace.
+
+<Steps>
+  <Step title="Access EazyBe Workspace">
+    Go to [workspace.eazybe.com](https://workspace.eazybe.com)
+  </Step>
+
+  <Step title="Navigate to Organization Page">
+    An admin needs to access the Organization page.
+  </Step>
+
+  <Step title="Copy Auth Token">
+    The Organization Auth Token will be displayed on this page. Copy it for API use.
+  </Step>
+</Steps>
+
+## Headers
+
+| Header | Value | Description |
+|--------|-------|-------------|
+| `Content-Type` | `application/json; charset=UTF-8` | Specifies JSON format |
+| `Authorization` | `Bearer {token}` | Organization Auth Token |
+
+## Request Payload
+
+The API requires the following fields:
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `labelName` | string | Name of the business label to add chats to |
+| `contacts` | array | List of contact phone numbers (international format) |
+
+### Example Payload
+
+```json
+{
+  "labelName": "Priority Clients",
+  "contacts": [
+    "911234567891",
+    "911234567892",
+    "911234567893"
+  ]
+}
+```
+
+## Code Example (Node.js)
+
+```javascript
+const axios = require('axios');
+
+const config = {
+  method: 'post',
+  url: 'https://api.eazybe.com/v2/cloud/business-label',
+  headers: {
+    'Authorization': 'Bearer YOUR_ORGANIZATION_AUTH_TOKEN',
+    'Content-Type': 'application/json; charset=UTF-8'
+  },
+  data: {
+    labelName: 'Priority Clients',
+    contacts: [
+      '911234567891',
+      '911234567892',
+      '911234567893'
+    ]
+  }
+};
+
+axios(config)
+  .then(response => console.log(response.data))
+  .catch(error => console.error(error));
+```
+
+## Response
+
+### Success Response (200 OK)
+
+```json
+{
+  "status": true,
+  "data": {
+    "message": "Contacts added successfully."
+  }
+}
+```
+
+## Best Practices
+
+<CardGroup cols={2}>
+  <Card title="Active Cloud Session" icon="cloud">
+    Ensure your cloud session is active before making API calls
+  </Card>
+  <Card title="Valid Label Name" icon="tag">
+    Use an existing business label name from your workspace
+  </Card>
+  <Card title="International Format" icon="phone">
+    Use international phone number format (e.g., 911234567891)
+  </Card>
+  <Card title="Valid Token" icon="key">
+    Maintain a valid Organization Auth Token
+  </Card>
+</CardGroup>
+
+---
+
+<Note>
+If you have any questions or need further assistance, feel free to reach out to us at **hey@eazybe.com**. We're happy to help!
+</Note>

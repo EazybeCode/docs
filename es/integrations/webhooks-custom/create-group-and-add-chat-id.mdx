@@ -1,0 +1,136 @@
+---
+title: "Crear Grupo y Agregar ID de Chat"
+description: "Crea grupos de WhatsApp y agrega IDs de chat programáticamente usando la API de EazyBe"
+---
+
+La API de Crear Grupo y Agregar ID de Chat te permite crear nuevos grupos de WhatsApp o actualizar los existentes agregando IDs de chat. Si un grupo existe, los contactos se agregan a él. Si el grupo no existe y la bandera `create` está habilitada, se creará un nuevo grupo.
+
+<Warning>
+No uses esta API para spam o mensajes masivos. El uso indebido puede resultar en bloqueo de cuenta.
+</Warning>
+
+## Endpoint
+
+```
+POST https://api.eazybe.com/v2/cloud/group
+```
+
+## Autenticación
+
+Necesitas obtener el **Token de Autenticación de la Organización** desde tu Workspace de EazyBe.
+
+<Steps>
+  <Step title="Accede al Workspace de EazyBe">
+    Ve a [workspace.eazybe.com](https://workspace.eazybe.com)
+  </Step>
+
+  <Step title="Navega a la Página de Organización">
+    Un administrador necesita acceder a la página de Organización.
+  </Step>
+
+  <Step title="Copia el Token de Autenticación">
+    El Token de Autenticación de la Organización se mostrará en esta página. Cópialo para usar con la API.
+  </Step>
+</Steps>
+
+## Headers
+
+| Header | Tipo | Descripción |
+|--------|------|-------------|
+| `Content-Type` | string | `application/json` |
+| `Authorization` | string | `Bearer {TU_TOKEN_DE_AUTENTICACION}` |
+
+## Payload de la Solicitud
+
+La API requiere los siguientes campos:
+
+| Campo | Tipo | Requerido | Descripción |
+|-------|------|-----------|-------------|
+| `groupName` | string | Sí | Nombre del grupo a crear o actualizar |
+| `contacts` | array | Sí | Lista de números de teléfono a agregar (formato internacional) |
+| `create` | boolean | No | Crear grupo si no existe (por defecto `false`) |
+
+### Ejemplo de Payload
+
+```json
+{
+  "groupName": "Sales Team",
+  "contacts": [
+    "911234567891",
+    "911234567892",
+    "911234567893"
+  ],
+  "create": true
+}
+```
+
+## Ejemplo de Código (Node.js)
+
+```javascript
+const axios = require('axios');
+
+const config = {
+  method: 'post',
+  url: 'https://api.eazybe.com/v2/cloud/group',
+  headers: {
+    'Authorization': 'Bearer YOUR_ORGANIZATION_AUTH_TOKEN',
+    'Content-Type': 'application/json'
+  },
+  data: {
+    groupName: 'Sales Team',
+    contacts: [
+      '911234567891',
+      '911234567892',
+      '911234567893'
+    ],
+    create: true
+  }
+};
+
+axios(config)
+  .then(response => console.log(response.data))
+  .catch(error => console.error(error));
+```
+
+## Respuesta
+
+### Respuesta Exitosa (200 OK)
+
+```json
+{
+  "status": true,
+  "message": "Group created and chat IDs added successfully."
+}
+```
+
+### Respuestas de Error
+
+| Código de Estado | Descripción |
+|------------------|-------------|
+| **400** | Datos de solicitud inválidos |
+| **403** | Sesión en la nube inactiva |
+| **404** | Grupo no encontrado (cuando `create` es `false`) |
+| **500** | Falló la creación del grupo |
+
+## Mejores Prácticas
+
+<CardGroup cols={2}>
+  <Card title="Sesión Cloud Activa" icon="cloud">
+    Asegúrate de que tu sesión en la nube esté activa antes de hacer llamadas API
+  </Card>
+  <Card title="Bandera Create" icon="plus">
+    Configura `create: true` para crear automáticamente grupos que no existan
+  </Card>
+  <Card title="Formato Internacional" icon="phone">
+    Usa formato de teléfono internacional (ej., 911234567891)
+  </Card>
+  <Card title="Token Válido" icon="key">
+    Mantén un Token de Autenticación de Organización válido
+  </Card>
+</CardGroup>
+
+---
+
+<Note>
+Si tienes alguna pregunta o necesitas más asistencia, no dudes en contactarnos en **hey@eazybe.com**. ¡Estamos felices de ayudar!
+</Note>

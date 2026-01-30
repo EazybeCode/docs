@@ -1,0 +1,136 @@
+---
+title: "Grup Oluştur ve Chat ID Ekle"
+description: "EazyBe API'sini kullanarak programatik olarak WhatsApp grupları oluşturun ve chat ID'leri ekleyin"
+---
+
+Grup Oluştur ve Chat ID Ekle API'si, yeni WhatsApp grupları oluşturmanızı veya chat ID'leri ekleyerek mevcut grupları güncellemenizi sağlar. Bir grup varsa, kişiler ona eklenir. Grup yoksa ve `create` bayrağı etkinse, yeni bir grup oluşturulur.
+
+<Warning>
+Bu API'yi spam veya toplu mesajlaşma için kullanmayın. Kötüye kullanım hesap yasaklanmasına neden olabilir.
+</Warning>
+
+## Endpoint
+
+```
+POST https://api.eazybe.com/v2/cloud/group
+```
+
+## Kimlik Doğrulama
+
+EazyBe Workspace'inizden **Organizasyon Kimlik Doğrulama Token'ı** almanız gerekiyor.
+
+<Steps>
+  <Step title="EazyBe Workspace'e Erişin">
+    [workspace.eazybe.com](https://workspace.eazybe.com) adresine gidin
+  </Step>
+
+  <Step title="Organizasyon Sayfasına Gidin">
+    Bir yöneticinin Organizasyon sayfasına erişmesi gerekiyor.
+  </Step>
+
+  <Step title="Kimlik Doğrulama Token'ını Kopyalayın">
+    Organizasyon Kimlik Doğrulama Token'ı bu sayfada görüntülenecektir. API kullanımı için kopyalayın.
+  </Step>
+</Steps>
+
+## Headers
+
+| Header | Tür | Açıklama |
+|--------|-----|----------|
+| `Content-Type` | string | `application/json` |
+| `Authorization` | string | `Bearer {ORGANIZASYON_TOKEN'INIZ}` |
+
+## İstek Payload'ı
+
+API aşağıdaki alanları gerektirir:
+
+| Alan | Tür | Gerekli | Açıklama |
+|------|-----|---------|----------|
+| `groupName` | string | Evet | Oluşturulacak veya güncellenecek grup adı |
+| `contacts` | array | Evet | Eklenecek telefon numaraları listesi (uluslararası format) |
+| `create` | boolean | Hayır | Grup yoksa oluştur (varsayılan `false`) |
+
+### Örnek Payload
+
+```json
+{
+  "groupName": "Sales Team",
+  "contacts": [
+    "911234567891",
+    "911234567892",
+    "911234567893"
+  ],
+  "create": true
+}
+```
+
+## Kod Örneği (Node.js)
+
+```javascript
+const axios = require('axios');
+
+const config = {
+  method: 'post',
+  url: 'https://api.eazybe.com/v2/cloud/group',
+  headers: {
+    'Authorization': 'Bearer YOUR_ORGANIZATION_AUTH_TOKEN',
+    'Content-Type': 'application/json'
+  },
+  data: {
+    groupName: 'Sales Team',
+    contacts: [
+      '911234567891',
+      '911234567892',
+      '911234567893'
+    ],
+    create: true
+  }
+};
+
+axios(config)
+  .then(response => console.log(response.data))
+  .catch(error => console.error(error));
+```
+
+## Yanıt
+
+### Başarılı Yanıt (200 OK)
+
+```json
+{
+  "status": true,
+  "message": "Group created and chat IDs added successfully."
+}
+```
+
+### Hata Yanıtları
+
+| Durum Kodu | Açıklama |
+|------------|----------|
+| **400** | Geçersiz istek verileri |
+| **403** | Aktif olmayan bulut oturumu |
+| **404** | Grup bulunamadı (`create` `false` olduğunda) |
+| **500** | Grup oluşturma başarısız |
+
+## En İyi Uygulamalar
+
+<CardGroup cols={2}>
+  <Card title="Aktif Cloud Oturumu" icon="cloud">
+    API çağrıları yapmadan önce bulut oturumunuzun aktif olduğundan emin olun
+  </Card>
+  <Card title="Create Bayrağı" icon="plus">
+    Var olmayan grupları otomatik oluşturmak için `create: true` ayarlayın
+  </Card>
+  <Card title="Uluslararası Format" icon="phone">
+    Uluslararası telefon numarası formatı kullanın (örn., 911234567891)
+  </Card>
+  <Card title="Geçerli Token" icon="key">
+    Geçerli bir Organizasyon Kimlik Doğrulama Token'ı bulundurun
+  </Card>
+</CardGroup>
+
+---
+
+<Note>
+Herhangi bir sorunuz varsa veya daha fazla yardıma ihtiyacınız varsa, **hey@eazybe.com** adresinden bize ulaşmaktan çekinmeyin. Yardımcı olmaktan mutluluk duyarız!
+</Note>

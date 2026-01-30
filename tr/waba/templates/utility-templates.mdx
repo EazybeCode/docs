@@ -1,152 +1,152 @@
 ---
-title: "Utility Templates"
-description: "Create transactional message templates for order updates, alerts, and notifications"
+title: "Fayda Şablonları"
+description: "Sipariş güncellemeleri, uyarılar ve bildirimler için işlemsel mesaj şablonları oluşturun"
 ---
 
-## What Are Utility Templates?
+## Fayda Şablonları Nedir?
 
-Utility templates are used for **transactional, informational messages** such as:
-- Order confirmations and updates
-- Shipping notifications
-- Appointment reminders
-- Account alerts
-- Payment receipts
+Fayda şablonları **işlemsel, bilgilendirici mesajlar** için kullanılır:
+- Sipariş onayları ve güncellemeleri
+- Kargo bildirimleri
+- Randevu hatırlatıcıları
+- Hesap uyarıları
+- Ödeme makbuzları
 
 <Info>
-Utility templates cost **less than marketing** and have higher approval rates since they provide genuine value to recipients.
+Fayda şablonları **pazarlamadan daha az** maliyetlidir ve alıcılara gerçek değer sağladıkları için daha yüksek onay oranlarına sahiptir.
 </Info>
 
-## When to Use Utility Templates
+## Fayda Şablonları Ne Zaman Kullanılır
 
-| Use Case | Example |
-|----------|---------|
-| **Order Confirmation** | "Your order #12345 has been placed" |
-| **Shipping Update** | "Your package is out for delivery" |
-| **Appointment Reminder** | "Reminder: Your appointment is tomorrow at 3 PM" |
-| **Payment Confirmation** | "We've received your payment of ₹999" |
-| **Account Alert** | "Your subscription renews in 3 days" |
+| Kullanım Durumu | Örnek |
+|-----------------|-------|
+| **Sipariş Onayı** | "Siparişiniz #12345 alındı" |
+| **Kargo Güncellemesi** | "Paketiniz teslimata çıktı" |
+| **Randevu Hatırlatıcısı** | "Hatırlatma: Randevunuz yarın saat 15:00'te" |
+| **Ödeme Onayı** | "₺999 tutarındaki ödemenizi aldık" |
+| **Hesap Uyarısı** | "Aboneliğiniz 3 gün içinde yenileniyor" |
 
-## Example Templates
+## Örnek Şablonlar
 
-### Order Confirmation
+### Sipariş Onayı
 
 ```
-✅ Order Confirmed!
+✅ Sipariş Onaylandı!
 
-Hi {{1}},
+Merhaba {{1}},
 
-Thank you for your order!
+Siparişiniz için teşekkürler!
 
-Order #: {{2}}
-Items: {{3}}
-Total: {{4}}
+Sipariş #: {{2}}
+Ürünler: {{3}}
+Toplam: {{4}}
 
-We'll notify you when it ships.
+Kargoya verildiğinde sizi bilgilendireceğiz.
 ```
 
-**Buttons:**
-- [View Order] → https://store.com/orders/{{2}}
+**Düğmeler:**
+- [Siparişi Görüntüle] → https://magaza.com/siparisler/{{2}}
 
 ---
 
-### Shipping Notification
+### Kargo Bildirimi
 
 ```
-📦 Your order is on the way!
+📦 Siparişiniz yolda!
 
-Hi {{1}},
+Merhaba {{1}},
 
-Great news! Order #{{2}} has been shipped.
+Harika haber! Sipariş #{{2}} kargoya verildi.
 
-Courier: {{3}}
-Tracking #: {{4}}
-Expected delivery: {{5}}
+Kargo: {{3}}
+Takip #: {{4}}
+Tahmini teslimat: {{5}}
 
-Track your package below 👇
+Paketinizi aşağıdan takip edin 👇
 ```
 
-**Buttons:**
-- [Track Package] → {{6}}
+**Düğmeler:**
+- [Paketi Takip Et] → {{6}}
 
 ---
 
-### Appointment Reminder
+### Randevu Hatırlatıcısı
 
 ```
-📅 Appointment Reminder
+📅 Randevu Hatırlatıcısı
 
-Hi {{1}},
+Merhaba {{1}},
 
-This is a reminder for your upcoming appointment:
+Bu, yaklaşan randevunuz için bir hatırlatmadır:
 
 📍 {{2}}
 🗓️ {{3}}
 ⏰ {{4}}
 
-Please arrive 10 minutes early.
+Lütfen 10 dakika erken gelin.
 ```
 
-**Buttons:**
-- [Reschedule] → https://calendar.com/reschedule
-- [Get Directions] → {{5}}
+**Düğmeler:**
+- [Yeniden Planla] → https://takvim.com/yenidenplanla
+- [Yol Tarifi Al] → {{5}}
 
 ---
 
-### Payment Receipt
+### Ödeme Makbuzu
 
 ```
-💳 Payment Received
+💳 Ödeme Alındı
 
-Hi {{1}},
+Merhaba {{1}},
 
-We've received your payment of {{2}}.
+{{2}} tutarındaki ödemenizi aldık.
 
-Transaction ID: {{3}}
-Date: {{4}}
-Payment Method: {{5}}
+İşlem ID: {{3}}
+Tarih: {{4}}
+Ödeme Yöntemi: {{5}}
 
-Thank you for your business!
+Tercihleriniz için teşekkürler!
 ```
 
-**Buttons:**
-- [View Receipt] → https://billing.com/receipt/{{3}}
+**Düğmeler:**
+- [Makbuzu Görüntüle] → https://faturalama.com/makbuz/{{3}}
 
-## Free Utility Messages
+## Ücretsiz Fayda Mesajları
 
 <Tip>
-**Save Money:** Utility templates sent **within the 24-hour service window** (after a customer messages you) are **FREE**!
+**Para Tasarrufu:** **24 saatlik hizmet penceresi içinde** (bir müşteri size mesaj gönderdikten sonra) gönderilen fayda şablonları **ÜCRETSİZ**!
 </Tip>
 
-| Scenario | Cost |
-|----------|------|
-| Customer messages you, you reply with utility template within 24 hours | **Free** |
-| You send utility template without prior conversation | **Charged** |
-| Customer messages, 24 hours pass, you send utility template | **Charged** |
+| Senaryo | Maliyet |
+|---------|---------|
+| Müşteri size mesaj gönderir, 24 saat içinde fayda şablonuyla yanıt verirsiniz | **Ücretsiz** |
+| Önceki konuşma olmadan fayda şablonu gönderirsiniz | **Ücretli** |
+| Müşteri mesaj gönderir, 24 saat geçer, fayda şablonu gönderirsiniz | **Ücretli** |
 
-## Best Practices
+## En İyi Uygulamalar
 
 <CardGroup cols={2}>
-  <Card title="Be Informative" icon="info">
-    Focus on providing useful information, not selling
+  <Card title="Bilgilendirici Olun" icon="info">
+    Satış değil, faydalı bilgi sağlamaya odaklanın
   </Card>
-  <Card title="Include Key Details" icon="list">
-    Order numbers, dates, amounts – everything the customer needs
+  <Card title="Anahtar Detayları Ekleyin" icon="list">
+    Sipariş numaraları, tarihler, tutarlar – müşterinin ihtiyacı olan her şey
   </Card>
-  <Card title="Use Action Buttons" icon="hand-pointer">
-    Add tracking links, view order buttons
+  <Card title="Eylem Düğmeleri Kullanın" icon="hand-pointer">
+    Takip bağlantıları, sipariş görüntüleme düğmeleri ekleyin
   </Card>
-  <Card title="Avoid Promotion" icon="ban">
-    Don't add sales messages – that makes it Marketing
+  <Card title="Tanıtımdan Kaçının" icon="ban">
+    Satış mesajları eklemeyin – bu Pazarlama yapar
   </Card>
 </CardGroup>
 
-## Category Mismatch Warning
+## Kategori Uyumsuzluğu Uyarısı
 
 <Warning>
-If your "utility" template contains promotional content like:
-- "Check out our new products!"
-- "Get 20% off your next order"
-- "Limited time offer!"
+"Fayda" şablonunuz şu tür tanıtım içeriği içeriyorsa:
+- "Yeni ürünlerimize göz atın!"
+- "Sonraki siparişinizde %20 indirim kazanın"
+- "Sınırlı süreli teklif!"
 
-It will be **rejected** and you'll need to resubmit as **Marketing**.
+**Reddedilecek** ve **Pazarlama** olarak yeniden göndermeniz gerekecektir.
 </Warning>

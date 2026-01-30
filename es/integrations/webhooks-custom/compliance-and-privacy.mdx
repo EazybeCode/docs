@@ -1,0 +1,79 @@
+---
+title: "Cumplimiento y Privacidad"
+description: "Información de cumplimiento y privacidad para Webhooks y APIs personalizadas de EazyBe"
+---
+
+EazyBe está comprometido con proteger tus datos y garantizar el cumplimiento de los estándares de la industria al usar nuestras integraciones de Webhooks y APIs personalizadas.
+
+## Manejo de Datos
+
+<CardGroup cols={2}>
+  <Card title="Datos en Tránsito" icon="lock">
+    Todos los datos de webhook se transmiten sobre HTTPS con cifrado TLS
+  </Card>
+  <Card title="Sin Almacenamiento de Datos" icon="database">
+    EazyBe no almacena datos de payload de webhook en nuestros servidores
+  </Card>
+  <Card title="Entrega Directa" icon="arrow-right">
+    Los eventos de webhook se entregan directamente a tu endpoint especificado
+  </Card>
+  <Card title="Control del Usuario" icon="user-shield">
+    Tienes control total sobre la configuración y destinos de webhooks
+  </Card>
+</CardGroup>
+
+## Mejores Prácticas de Seguridad
+
+<Steps>
+  <Step title="Usa Endpoints HTTPS">
+    Siempre configura tus URLs de webhook con HTTPS para asegurar la transmisión cifrada de datos.
+  </Step>
+
+  <Step title="Implementa Autenticación">
+    Usa la función opcional de Token de Autenticación para verificar que las solicitudes de webhook provienen de EazyBe.
+  </Step>
+
+  <Step title="Valida los Payloads">
+    Implementa validación de payload en tu servidor para asegurar la integridad de los datos.
+  </Step>
+
+  <Step title="Protege Tus Tokens">
+    Mantén tu Token de Autenticación de Organización confidencial y nunca lo expongas en código del lado del cliente o repositorios públicos.
+  </Step>
+</Steps>
+
+## Tus Responsabilidades
+
+<Warning>
+Al usar las APIs y Webhooks de EazyBe, eres responsable de:
+- Asegurar que tus servidores de endpoint sean seguros
+- Cumplir con las regulaciones de protección de datos aplicables (GDPR, CCPA, etc.)
+- Manejar los datos recibidos de acuerdo con tu política de privacidad
+- No usar las APIs para spam o mensajería no autorizada
+</Warning>
+
+## Procesamiento de Datos
+
+<Info>
+EazyBe actúa como procesador de datos al transmitir eventos de webhook. Los datos contenidos en los webhooks (contenido de mensajes, información de contacto) se procesan según tus instrucciones cuando configuras la integración.
+</Info>
+
+## Límites de Tasa de API
+
+Para asegurar la estabilidad del servicio y el uso justo:
+
+| Recurso | Límite |
+|---------|--------|
+| Entregas de webhook | Entrega en tiempo real con mejor esfuerzo |
+| Solicitudes de API | Sujeto a límites de uso razonable |
+| Intentos de reintento | Las entregas fallidas se reintentan con retroceso exponencial |
+
+## Contáctanos
+
+Para consultas relacionadas con cumplimiento o para solicitar un Acuerdo de Procesamiento de Datos (DPA), contacta a nuestro equipo.
+
+---
+
+<Note>
+Si tienes alguna pregunta o necesitas más asistencia, no dudes en contactarnos en **hey@eazybe.com**. ¡Estamos felices de ayudar!
+</Note>

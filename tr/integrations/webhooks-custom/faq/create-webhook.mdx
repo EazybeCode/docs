@@ -1,0 +1,67 @@
+---
+title: "Webhook Oluştur"
+description: "EazyBe ile nasıl webhook oluşturup entegre edebilirim?"
+---
+
+EazyBe ile webhook oluşturmak ve entegre etmek oldukça basittir. WhatsApp mesajları gönderildiğinde veya alındığında tetiklenen özel webhooks ayarlamak için aşağıdaki adımları izleyin.
+
+## Hızlı Kurulum Kılavuzu
+
+<Steps>
+  <Step title="EazyBe Uzantısını Yükleyin">
+    Tarayıcınızda EazyBe WhatsApp uzantısının en son sürümünün yüklü olduğundan emin olun.
+  </Step>
+
+  <Step title="WhatsApp Web'i Açın">
+    EazyBe uzantısının aktif olduğu WhatsApp Web hesabınıza giriş yapın.
+  </Step>
+
+  <Step title="Entegrasyonlara Erişin">
+    Sağdaki EazyBe kenar çubuğunda **Entegrasyonlar** bölümüne tıklayın.
+  </Step>
+
+  <Step title="Webhooks'u Bağlayın">
+    **Webhooks** seçeneğini bulun ve webhook yapılandırmasını açmak için **Bağlan**'a tıklayın.
+  </Step>
+
+  <Step title="Webhooks'u Etkinleştirin">
+    Sağ üst köşedeki webhook anahtarını **AÇIK** konumuna getirin.
+  </Step>
+
+  <Step title="Webhook URL'nizi Girin">
+    WhatsApp olay bildirimlerini almak istediğiniz hedef webhook URL'nizi girin.
+  </Step>
+
+  <Step title="Yapılandırmayı Kaydedin">
+    Webhook entegrasyonunuzu etkinleştirmek için **Kaydet**'e tıklayın.
+  </Step>
+</Steps>
+
+## Webhook'unuzu Test Edin
+
+<Tip>
+Üretim sistemlerinize bağlanmadan önce entegrasyonunuzun düzgün çalıştığını doğrulamak için [webhook.site](https://webhook.site/) gibi ücretsiz hizmetleri kullanarak test webhook URL'leri oluşturabilirsiniz.
+</Tip>
+
+## Hangi Olaylar Webhooks'u Tetikleyebilir?
+
+<CardGroup cols={2}>
+  <Card title="Gelen Mesajlar" icon="message-arrow-down">
+    Bir ekip üyesi WhatsApp mesajı aldığında tetiklenir
+  </Card>
+  <Card title="Giden Mesajlar" icon="message-arrow-up">
+    Bir ekip üyesi WhatsApp mesajı gönderdiğinde tetiklenir
+  </Card>
+</CardGroup>
+
+## Daha Fazla Detaya İhtiyacınız Var mı?
+
+<Info>
+Ekran görüntüleri ve gelişmiş yapılandırma seçenekleri içeren kapsamlı bir kılavuz için [Webhooks belgelerimize](/tr/integrations/webhooks-custom/webhooks) bakın.
+</Info>
+
+---
+
+<Note>
+Herhangi bir sorunuz varsa veya daha fazla yardıma ihtiyacınız varsa, **hey@eazybe.com** adresinden bize ulaşmaktan çekinmeyin. Yardımcı olmaktan mutluluk duyarız!
+</Note>

@@ -1,0 +1,105 @@
+---
+title: "Active User API"
+description: "Fetch a list of recently active users in your organization using the EazyBe API"
+---
+
+The Active User API allows you to fetch a list of users who have recently been active within your organization. This is useful for monitoring team activity and engagement.
+
+<Warning>
+Avoid excessive polling of this API. Use responsibly to maintain system performance.
+</Warning>
+
+## Endpoint
+
+```
+GET https://api.eazybe.com/v2/users/public/last-active
+```
+
+## Authentication
+
+You need to obtain the **Organization Auth Token** from your EazyBe Workspace.
+
+<Steps>
+  <Step title="Access EazyBe Workspace">
+    Go to [workspace.eazybe.com](https://workspace.eazybe.com) and log in as an organization admin.
+  </Step>
+
+  <Step title="Navigate to Organization Page">
+    Access the Organization page from the admin dashboard.
+
+    ![Organization Page](/images/1771414527.png)
+  </Step>
+
+  <Step title="Copy Auth Token">
+    The Organization Auth Token will be displayed on this page. Copy it for API use.
+
+    ![Auth Token Location](/images/1771414529.png)
+  </Step>
+</Steps>
+
+## Headers
+
+| Header | Value |
+|--------|-------|
+| `Authorization` | `Bearer YOUR_ORGANIZATION_AUTH_TOKEN` |
+
+## Code Examples
+
+### cURL
+
+```bash
+curl --location 'https://api.eazybe.com/v2/users/public/last-active' \
+--header 'Authorization: Bearer YOUR_ORGANIZATION_AUTH_TOKEN'
+```
+
+### Node.js with Axios
+
+```javascript
+const axios = require('axios');
+
+const config = {
+  method: 'get',
+  maxBodyLength: Infinity,
+  url: 'https://api.eazybe.com/v2/users/public/last-active',
+  headers: {
+    'Authorization': 'Bearer YOUR_ORGANIZATION_AUTH_TOKEN'
+  }
+};
+
+axios.request(config)
+  .then((response) => console.log(JSON.stringify(response.data, null, 2)))
+  .catch((error) => console.error(error));
+```
+
+## Response Fields
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `id` | number | Unique identifier of the user |
+| `name` | string | Full name of the user |
+| `email` | string | Registered email address |
+| `phone` | string | Phone number in international format |
+| `last_active` | string (ISO Date) | Timestamp of user's last activity |
+
+## Best Practices
+
+<CardGroup cols={2}>
+  <Card title="Valid Token" icon="key">
+    Always use a valid Organization Auth Token
+  </Card>
+  <Card title="Secure Storage" icon="lock">
+    Never expose credentials in public repositories or client-side code
+  </Card>
+  <Card title="Rate Limiting" icon="gauge">
+    Minimize polling frequency to avoid rate limits
+  </Card>
+  <Card title="Error Handling" icon="triangle-exclamation">
+    Implement proper error handling in your application
+  </Card>
+</CardGroup>
+
+---
+
+<Note>
+If you have any questions or need further assistance, feel free to reach out to us at **hey@eazybe.com**. We're happy to help!
+</Note>

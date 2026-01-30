@@ -1,0 +1,105 @@
+---
+title: "API de Usuarios Activos"
+description: "Obtén una lista de usuarios recientemente activos en tu organización usando la API de EazyBe"
+---
+
+La API de Usuarios Activos te permite obtener una lista de usuarios que han estado recientemente activos dentro de tu organización. Esto es útil para monitorear la actividad y el compromiso del equipo.
+
+<Warning>
+Evita consultar excesivamente esta API. Úsala responsablemente para mantener el rendimiento del sistema.
+</Warning>
+
+## Endpoint
+
+```
+GET https://api.eazybe.com/v2/users/public/last-active
+```
+
+## Autenticación
+
+Necesitas obtener el **Token de Autenticación de la Organización** desde tu Workspace de EazyBe.
+
+<Steps>
+  <Step title="Accede al Workspace de EazyBe">
+    Ve a [workspace.eazybe.com](https://workspace.eazybe.com) e inicia sesión como administrador de la organización.
+  </Step>
+
+  <Step title="Navega a la Página de Organización">
+    Accede a la página de Organización desde el panel de administración.
+
+    ![Página de Organización](/images/1771414527.png)
+  </Step>
+
+  <Step title="Copia el Token de Autenticación">
+    El Token de Autenticación de la Organización se mostrará en esta página. Cópialo para usar con la API.
+
+    ![Ubicación del Token de Autenticación](/images/1771414529.png)
+  </Step>
+</Steps>
+
+## Headers
+
+| Header | Valor |
+|--------|-------|
+| `Authorization` | `Bearer TU_TOKEN_DE_AUTENTICACION` |
+
+## Ejemplos de Código
+
+### cURL
+
+```bash
+curl --location 'https://api.eazybe.com/v2/users/public/last-active' \
+--header 'Authorization: Bearer TU_TOKEN_DE_AUTENTICACION'
+```
+
+### Node.js con Axios
+
+```javascript
+const axios = require('axios');
+
+const config = {
+  method: 'get',
+  maxBodyLength: Infinity,
+  url: 'https://api.eazybe.com/v2/users/public/last-active',
+  headers: {
+    'Authorization': 'Bearer TU_TOKEN_DE_AUTENTICACION'
+  }
+};
+
+axios.request(config)
+  .then((response) => console.log(JSON.stringify(response.data, null, 2)))
+  .catch((error) => console.error(error));
+```
+
+## Campos de Respuesta
+
+| Campo | Tipo | Descripción |
+|-------|------|-------------|
+| `id` | number | Identificador único del usuario |
+| `name` | string | Nombre completo del usuario |
+| `email` | string | Dirección de correo electrónico registrada |
+| `phone` | string | Número de teléfono en formato internacional |
+| `last_active` | string (ISO Date) | Marca de tiempo de la última actividad del usuario |
+
+## Mejores Prácticas
+
+<CardGroup cols={2}>
+  <Card title="Token Válido" icon="key">
+    Siempre usa un Token de Autenticación de Organización válido
+  </Card>
+  <Card title="Almacenamiento Seguro" icon="lock">
+    Nunca expongas credenciales en repositorios públicos o código del lado del cliente
+  </Card>
+  <Card title="Límite de Tasa" icon="gauge">
+    Minimiza la frecuencia de consultas para evitar límites de tasa
+  </Card>
+  <Card title="Manejo de Errores" icon="triangle-exclamation">
+    Implementa un manejo de errores adecuado en tu aplicación
+  </Card>
+</CardGroup>
+
+---
+
+<Note>
+Si tienes alguna pregunta o necesitas más asistencia, no dudes en contactarnos en **hey@eazybe.com**. ¡Estamos felices de ayudar!
+</Note>

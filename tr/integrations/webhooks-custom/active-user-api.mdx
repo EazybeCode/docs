@@ -1,0 +1,105 @@
+---
+title: "Aktif Kullanıcı API"
+description: "EazyBe API'sini kullanarak organizasyonunuzdaki son aktif kullanıcıların listesini alın"
+---
+
+Aktif Kullanıcı API'si, organizasyonunuzda yakın zamanda aktif olan kullanıcıların listesini almanızı sağlar. Bu, ekip aktivitesini ve katılımını izlemek için kullanışlıdır.
+
+<Warning>
+Bu API'yi aşırı sorgulamaktan kaçının. Sistem performansını korumak için sorumlu bir şekilde kullanın.
+</Warning>
+
+## Endpoint
+
+```
+GET https://api.eazybe.com/v2/users/public/last-active
+```
+
+## Kimlik Doğrulama
+
+EazyBe Workspace'inizden **Organizasyon Kimlik Doğrulama Token'ı** almanız gerekiyor.
+
+<Steps>
+  <Step title="EazyBe Workspace'e Erişin">
+    [workspace.eazybe.com](https://workspace.eazybe.com) adresine gidin ve organizasyon yöneticisi olarak giriş yapın.
+  </Step>
+
+  <Step title="Organizasyon Sayfasına Gidin">
+    Yönetici panelinden Organizasyon sayfasına erişin.
+
+    ![Organizasyon Sayfası](/images/1771414527.png)
+  </Step>
+
+  <Step title="Kimlik Doğrulama Token'ını Kopyalayın">
+    Organizasyon Kimlik Doğrulama Token'ı bu sayfada görüntülenecektir. API kullanımı için kopyalayın.
+
+    ![Kimlik Doğrulama Token'ı Konumu](/images/1771414529.png)
+  </Step>
+</Steps>
+
+## Headers
+
+| Header | Değer |
+|--------|-------|
+| `Authorization` | `Bearer ORGANIZASYON_TOKEN'INIZ` |
+
+## Kod Örnekleri
+
+### cURL
+
+```bash
+curl --location 'https://api.eazybe.com/v2/users/public/last-active' \
+--header 'Authorization: Bearer ORGANIZASYON_TOKEN'INIZ'
+```
+
+### Node.js ile Axios
+
+```javascript
+const axios = require('axios');
+
+const config = {
+  method: 'get',
+  maxBodyLength: Infinity,
+  url: 'https://api.eazybe.com/v2/users/public/last-active',
+  headers: {
+    'Authorization': 'Bearer ORGANIZASYON_TOKEN\'INIZ'
+  }
+};
+
+axios.request(config)
+  .then((response) => console.log(JSON.stringify(response.data, null, 2)))
+  .catch((error) => console.error(error));
+```
+
+## Yanıt Alanları
+
+| Alan | Tür | Açıklama |
+|------|-----|----------|
+| `id` | number | Kullanıcının benzersiz tanımlayıcısı |
+| `name` | string | Kullanıcının tam adı |
+| `email` | string | Kayıtlı e-posta adresi |
+| `phone` | string | Uluslararası formatta telefon numarası |
+| `last_active` | string (ISO Date) | Kullanıcının son aktivite zaman damgası |
+
+## En İyi Uygulamalar
+
+<CardGroup cols={2}>
+  <Card title="Geçerli Token" icon="key">
+    Her zaman geçerli bir Organizasyon Kimlik Doğrulama Token'ı kullanın
+  </Card>
+  <Card title="Güvenli Depolama" icon="lock">
+    Kimlik bilgilerini asla public depolarda veya istemci tarafı kodda ifşa etmeyin
+  </Card>
+  <Card title="Hız Sınırlaması" icon="gauge">
+    Hız sınırlarından kaçınmak için sorgulama sıklığını minimize edin
+  </Card>
+  <Card title="Hata İşleme" icon="triangle-exclamation">
+    Uygulamanızda uygun hata işleme uygulayın
+  </Card>
+</CardGroup>
+
+---
+
+<Note>
+Herhangi bir sorunuz varsa veya daha fazla yardıma ihtiyacınız varsa, **hey@eazybe.com** adresinden bize ulaşmaktan çekinmeyin. Yardımcı olmaktan mutluluk duyarız!
+</Note>
