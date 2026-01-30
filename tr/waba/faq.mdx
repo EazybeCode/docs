@@ -1,118 +1,109 @@
 ---
-title: "WABA: Sıkça Sorulan Sorular (SSS)"
-description: "Eazybe ile WhatsApp Business Hesabı (WABA) entegrasyonu hakkında sıkça sorulan sorular."
+title: "Sık Sorulan Sorular"
+description: "WhatsApp Business Hesabı (WABA) entegrasyonu hakkında sık sorulan sorular"
 ---
 
-## Giriş
+Bu makale, Eazybe ile WhatsApp Business Hesabı (WABA) entegrasyonuna ilişkin en sık sorulan soruları içermektedir.
 
-Bu SSS, Eazybe ile WhatsApp Business Hesabı (WABA) entegrasyonunun kullanımı hakkındaki en yaygın soruları ele almaktadır. Faturalandırma, doğrulama, şablonlar ve sorun giderme hakkında aşağıda yanıtlar bulabilirsiniz.
-
----
+## Faturalandırma ve Krediler
 
 <AccordionGroup>
-  <Accordion title="Faturalandırma nasıl çalışır? Eazybe cüzdanı nedir?">
-    WhatsApp şablon mesajları için tüm ücretler **Eazybe cüzdanınız** üzerinden yönetilir.
+  <Accordion title="Faturalandırma nasıl çalışır? Eazybe cüzdanı nedir?" icon="wallet">
+    Eazybe Cüzdanı, tüm WABA ile ilgili ücretler için merkezi ödeme sisteminizdir.
 
-    <Steps>
-      <Step title="Başlangıç Kredileri">
-        Başladığınızda, kuruluşunuz Eazybe'den başlamak için **₹100 veya $1 ücretsiz kredi** alır.
-      </Step>
-      <Step title="Kullanım Kesintileri">
-        Şablon mesajları gönderdikçe, fonlar otomatik olarak cüzdan bakiyenizden düşülür.
-      </Step>
-      <Step title="Yükleme">
-        Bakiyeniz düştüğünde, panonuzdaki **Faturalandırma** bölümünden cüzdanınızı kolayca yükleyebilirsiniz.
-      </Step>
-    </Steps>
+    **Önemli noktalar:**
+    - Her yeni kuruluş başlamak için **₹100 veya $1 ücretsiz kredi** alır
+    - WhatsApp şablon mesaj ücretleri cüzdan bakiyenizden otomatik olarak düşülür
+    - Panonuzun **Faturalama** bölümünden istediğiniz zaman fon ekleyebilirsiniz
 
     <Tip>
-    Kesintisiz mesajlaşma yetenekleri sağlamak için cüzdan bakiyenizi düzenli olarak izleyin.
-    </Tip>
-  </Accordion>
-
-  <Accordion title="WhatsApp profilimde Yeşil Onay alabilir miyim?">
-    **Evet.** Eazybe aracılığıyla resmi bir WABA kullanmak, Meta'nın Yeşil Onay doğrulamasına başvurmaya hak kazanmanızı sağlar.
-
-    <Note>
-    Yeşil Onay doğrulama süreci, hesabınız aktif olduktan ve Meta'nın önem kriterlerini karşıladıktan sonra **Meta Business Manager** üzerinden yönetilir.
-    </Note>
-
-    **Yeşil Onay için Gereksinimler:**
-    - Aktif WABA hesabı
-    - Meta Business Manager'da doğrulanmış işletme
-    - Meta'nın önem standartlarını karşılama
-  </Accordion>
-
-  <Accordion title="Mesaj Şablonum neden reddedildi?">
-    Meta, mesaj şablonları için katı politikalar uygular. Yaygın ret nedenleri şunlardır:
-
-    | Neden | Açıklama |
-    |-------|----------|
-    | **Tanıtım İçeriği** | Pazarlama dışı şablon kategorilerinde tanıtım içeriği kullanma |
-    | **Hassas Veri Talepleri** | Hassas kişisel veya finansal veriler isteme |
-    | **Yanlış Biçimlendirme** | Şablon biçimlendirmesi Meta'nın yönergelerine uymuyor |
-
-    <Warning>
-    Meta'nın politikalarına uyacak şekilde içeriği güncelleyerek yeni bir şablon oluşturabilir ve onay için yeniden gönderebilirsiniz.
-    </Warning>
-  </Accordion>
-
-  <Accordion title="CSV yüklemem neden başarısız oldu?">
-    CSV yükleme hataları genellikle biçimlendirme sorunları nedeniyle oluşur. Kişi listenizin bu gereksinimleri karşıladığından emin olun:
-
-    <Steps>
-      <Step title="Dosya Formatı">
-        Dosya `.csv` formatında olmalıdır.
-      </Step>
-      <Step title="Sütun Adı">
-        Dosya özellikle **"Phone"** adlı bir sütun içermelidir.
-      </Step>
-      <Step title="Telefon Numarası Formatı">
-        Telefon numaraları ülke kodunu içermeli ancak `+` işareti **olmadan** olmalıdır.
-      </Step>
-    </Steps>
-
-    **Örnek Format:**
-    ```
-    Phone
-    91xxxxxxxxxx
-    44xxxxxxxxxx
-    1xxxxxxxxxx
-    ```
-
-    <Warning>
-    Ülke kodundan önce `+` sembolünü eklemeyin. `+91xxxxxxxxxx` yerine `91xxxxxxxxxx` kullanın.
-    </Warning>
-  </Accordion>
-
-  <Accordion title="WABA Coexistence hesabım neden bağlantısı kesildi?">
-    Hesabınız, güvenlik ve Meta'nın yönergeleriyle uyumluluk ile ilgili çeşitli nedenlerle bağlantısı kesilebilir:
-
-    | Neden | Açıklama |
-    |-------|----------|
-    | **Mobil Cihaz Değiştirme** | WhatsApp Business hesabınızı yeni bir telefona taşırken bağlantınız kaybolabilir |
-    | **Paralel Uygulama ve Web Kullanımı** | Mobil uygulamayı ve WhatsApp Web'i aynı anda kullanmak bağlantı sorunlarına neden olabilir |
-    | **Hareketsizlik** | WhatsApp Business Uygulaması 14 günden fazla açılmazsa bağlantı sona erebilir |
-    | **Politika İhlalleri** | Spam veya yasaklanmış eylemler yoluyla WhatsApp'ın İş Politikasını ihlal etmek bağlantının kesilmesine yol açar |
-    | **Uygulama Türü Değiştirme** | Numaranızı tüketici ve Business uygulamaları arasında taşımak bağlantıyı kesebilir |
-
-    <Tip>
-    Kararlı bir bağlantı sürdürmek için WhatsApp Business Uygulamanızı düzenli olarak açın ve tüketici ile business sürümleri arasında geçiş yapmaktan kaçının.
+    Kesintisiz yayın kampanyaları ve şablon mesajlaşma sağlamak için cüzdanınızı fonlu tutun.
     </Tip>
   </Accordion>
 </AccordionGroup>
 
----
+## Doğrulama ve Hesap Durumu
+
+<AccordionGroup>
+  <Accordion title="WhatsApp profilimde Yeşil Tik alabilir miyim?" icon="circle-check">
+    Evet! Eazybe üzerinden bağlanan resmi WABA hesapları Meta'nın Yeşil Tik doğrulaması için uygundur.
+
+    **Gereksinimler:**
+    - WABA hesabınız aktif ve iyi durumda olmalıdır
+    - İşletmeniz Meta'nın dikkat çekicilik gereksinimlerini karşılamalıdır
+    - Hesabınız kurulduktan sonra doğrulama başvurusunda bulunabilirsiniz
+
+    <Info>
+    Yeşil Tik, işletme kimliğinizi müşterilere doğrulayan Meta'nın resmi doğrulama rozetidir.
+    </Info>
+  </Accordion>
+</AccordionGroup>
+
+## Mesaj Şablonları
+
+<AccordionGroup>
+  <Accordion title="Mesaj Şablonum neden reddedildi?" icon="triangle-exclamation">
+    Meta, WhatsApp mesaj şablonları için katı içerik politikaları uygular. Yaygın ret nedenleri şunlardır:
+
+    | Neden | Açıklama |
+    |-------|----------|
+    | **Promosyon içeriği** | Pazarlama dışı şablon kategorilerinde promosyon dili kullanmak |
+    | **Hassas bilgiler** | Şifre, PIN veya finansal detay talep etmek |
+    | **Biçimlendirme hataları** | Yanlış değişken sözdizimi veya yer tutucu biçimlendirmesi |
+    | **Politika ihlalleri** | WhatsApp Business Politikasını ihlal eden içerik |
+
+    <Warning>
+    Göndermeden önce her zaman Meta'nın şablon yönergelerini inceleyin. Reddedilen şablonları düzenleyip yeniden gönderebilirsiniz.
+    </Warning>
+  </Accordion>
+</AccordionGroup>
+
+## CSV ve Kişi Yükleme
+
+<AccordionGroup>
+  <Accordion title="CSV yüklemem başarısız oldu. Neden?" icon="file-csv">
+    CSV yükleme hataları genellikle biçimlendirme sorunlarından kaynaklanır. Dosyanızın şu gereksinimleri karşıladığından emin olun:
+
+    **Dosya gereksinimleri:**
+    - Dosya formatı `.csv` olmalıdır
+    - **"Phone"** etiketli bir sütun içermelidir
+    - Telefon numaraları ülke kodlarını içermelidir
+    - "+" sembolünü **dahil ETMEYİN**
+
+    **Doğru format örneği:**
+    ```
+    Phone
+    91xxxxxxxxxx
+    1xxxxxxxxxx
+    44xxxxxxxxxx
+    ```
+
+    <Tip>
+    Hindistan için `91xxxxxxxxxx` formatını kullanın. ABD için `1xxxxxxxxxx` kullanın.
+    </Tip>
+  </Accordion>
+</AccordionGroup>
+
+## WABA Birlikte Yaşam
+
+<AccordionGroup>
+  <Accordion title="WABA Birlikte Yaşam hesabım neden bağlantısı kesildi?" icon="link-slash">
+    WABA Birlikte Yaşam, hem WhatsApp mobil uygulamasını hem de WABA'yı aynı anda kullanmanızı sağlar. Ancak bazı eylemler bağlantı kesilmesine neden olabilir:
+
+    **Yaygın bağlantı kesme tetikleyicileri:**
+
+    1. **Cihaz değiştirme** - Uygun geçiş olmadan yeni bir mobil cihaza geçmek
+    2. **Eşzamanlı oturumlar** - Mobil uygulama ve WhatsApp Web'i aynı anda kullanmak
+    3. **Uzun süreli hareketsizlik** - 14 günden fazla aktivite olmaması
+    4. **Spam ihlalleri** - WhatsApp Business Politikasını ihlal eden toplu istenmeyen mesajlar göndermek
+    5. **Uygulama değiştirme** - Numaranızı tüketici WhatsApp ve Business uygulaması arasında taşımak
+
+    <Warning>
+    Birlikte yaşamı sürdürmek için bu tetikleyicilerden kaçının ve hesabınızda düzenli aktivite sağlayın.
+    </Warning>
+  </Accordion>
+</AccordionGroup>
 
 ## Daha Fazla Yardıma mı İhtiyacınız Var?
 
-Ek sorularınız varsa veya daha fazla yardıma ihtiyacınız varsa, **[hey@eazybe.com](mailto:hey@eazybe.com)** adresinden bize ulaşmaktan çekinmeyin. Yardımcı olmaktan mutluluk duyarız!
-
----
-
-## İlgili Makaleler
-
-- [Resmi WhatsApp Business Hesabınızla (WABA) Başlarken](/tr/waba/overview)
-- [WhatsApp Business Hesabınızı (WABA) Eazybe'ye Nasıl Bağlarsınız](/tr/waba/connect-waba)
-- [WhatsApp Mesaj Şablonları Oluşturma ve Yönetme](/tr/waba/templates/creating-and-managing-templates)
-- [Eazybe Cüzdan Bakiyesi ve Yükleme](/tr/waba/wallet)
+Sorunuz burada yanıtlanmadıysa veya daha fazla yardıma ihtiyacınız varsa, [hey@eazybe.com](mailto:hey@eazybe.com) adresinden bizimle iletişime geçmekten çekinmeyin. Yardımcı olmaktan mutluluk duyarız!

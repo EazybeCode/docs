@@ -1,0 +1,135 @@
+---
+title: "Team Inbox"
+description: "Learn how to view incoming and outgoing messages between your WABA and customers"
+---
+
+The Team Inbox serves as your collaborative hub for all customer conversations on your WABA number. This guide explains how messaging works based on your specific setup.
+
+## Understanding Your Messaging Setup
+
+Your experience in the Team Inbox depends on how you've configured your WhatsApp integration:
+
+<CardGroup cols={3}>
+  <Card title="Extension-Only User" icon="puzzle-piece">
+    Uses Chrome extension to sync WhatsApp conversations without WABA connection
+  </Card>
+  <Card title="WABA-Only User" icon="cloud">
+    Uses Team Inbox as the primary interface for official WhatsApp Business API
+  </Card>
+  <Card title="Extension + WABA User" icon="layer-group">
+    Operates both channels simultaneously for maximum flexibility
+  </Card>
+</CardGroup>
+
+## For Extension-Only Users
+
+Your experience in the Team Inbox remains unchanged. Key features include:
+
+- Conversations sync directly from WhatsApp Web
+- You can send and receive any type of message (text, media, etc.) at any time without restrictions
+
+![Extension User Interface](/images/1589309753.png)
+
+## Key Concepts for WABA-Powered Messaging
+
+### The 24-Hour Customer Service Window
+
+WhatsApp enforces specific messaging windows that determine how you can communicate with customers:
+
+<AccordionGroup>
+  <Accordion title="Window OPEN" icon="clock">
+    When a customer messages you, a 24-hour window opens. The Team Inbox displays the time remaining (e.g., "15h 30m"). During this window, free-form messaging is allowed.
+
+    ![Window Open Status](/images/1589300920.png)
+  </Accordion>
+  <Accordion title="Window CLOSED" icon="lock">
+    After 24 hours without customer interaction, the window closes. The display shows "This chat is resolved and expired." Only template messages are permitted.
+
+    ![Window Closed Status](/images/1589282163.png)
+  </Accordion>
+</AccordionGroup>
+
+### The Dynamic Message Composer
+
+The message input area adapts automatically based on the window status:
+
+- **Open window:** Standard free-form composer for unrestricted messaging
+- **Closed window:** "Send Template" button replaces the composer
+
+![Dynamic Message Composer](/images/1589289300.png)
+
+### Sending Message Templates
+
+When the messaging window is closed, follow these steps to send a template:
+
+<Steps>
+  <Step title="Click Send Template">
+    Click the **Send Template** button in the message composer area.
+  </Step>
+
+  <Step title="Browse Templates">
+    A pop-up appears displaying your approved templates list.
+
+    ![Template Selection](/images/1589292361.png)
+  </Step>
+
+  <Step title="Review Template Details">
+    View each template's name, category, and language to select the appropriate one.
+  </Step>
+
+  <Step title="Send Template">
+    Select your desired template to send it to the customer.
+  </Step>
+</Steps>
+
+## How Messaging Works for Your Specific Setup
+
+### Scenario A: WABA-Only User
+
+<Info>
+As a WABA-only user, all your messaging follows WhatsApp Business API rules.
+</Info>
+
+- **Starting conversations:** Requires selecting a Message Template
+- **Replying to customers:** Depends on window status—free-form if open, templates only if closed
+
+![WABA-Only Messaging](/images/1589294503.png)
+
+### Scenario B: Dual User (Extension + WABA)
+
+#### Using Different Numbers
+
+When your extension and WABA use different phone numbers:
+
+- Team Inbox separates conversations by number filter
+- **Extension-synced chats:** Message freely anytime without restrictions
+- **WABA chats:** Follow WABA rules (24-hour window, templates)
+- **New chats:** Prompt appears to choose contact and select sending number
+
+![Dual User Different Numbers](/images/1589299274.png)
+
+#### Using the Same Number
+
+When both channels share the same phone number:
+
+<Warning>
+**WABA is Default:** Any message you send from the Team Inbox will default to using the WABA (Cloud API) channel. WABA rules apply automatically.
+</Warning>
+
+- Conversations merge into single threads
+- All messages follow WABA messaging rules
+
+## WABA Message Statuses and Errors
+
+Understanding message status indicators helps you track delivery:
+
+| Status | Indicator | Meaning |
+|--------|-----------|---------|
+| **Sent** | One grey tick | Message sent to WhatsApp servers |
+| **Delivered** | Two grey ticks | Message delivered to recipient's device |
+| **Read** | Two blue ticks | Recipient has read the message |
+| **Failed** | Red exclamation mark | Message failed to send |
+
+## Need Help?
+
+If you have any questions or need further assistance, feel free to reach out to us at [hey@eazybe.com](mailto:hey@eazybe.com). We're happy to help!

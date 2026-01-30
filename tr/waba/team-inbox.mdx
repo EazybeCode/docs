@@ -1,0 +1,135 @@
+---
+title: "Ekip Gelen Kutusu"
+description: "WABA'nız ile müşteriler arasındaki gelen ve giden mesajları nasıl görüntüleyeceğinizi öğrenin"
+---
+
+Ekip Gelen Kutusu, WABA numaranızdaki tüm müşteri görüşmeleri için işbirliği merkeziniz olarak hizmet verir. Bu kılavuz, özel kurulumunuza göre mesajlaşmanın nasıl çalıştığını açıklar.
+
+## Mesajlaşma Kurulumunuzu Anlama
+
+Ekip Gelen Kutusundaki deneyiminiz, WhatsApp entegrasyonunuzu nasıl yapılandırdığınıza bağlıdır:
+
+<CardGroup cols={3}>
+  <Card title="Yalnızca Uzantı Kullanıcısı" icon="puzzle-piece">
+    WABA bağlantısı olmadan WhatsApp görüşmelerini senkronize etmek için Chrome uzantısını kullanır
+  </Card>
+  <Card title="Yalnızca WABA Kullanıcısı" icon="cloud">
+    Resmi WhatsApp Business API için birincil arayüz olarak Ekip Gelen Kutusunu kullanır
+  </Card>
+  <Card title="Uzantı + WABA Kullanıcısı" icon="layer-group">
+    Maksimum esneklik için her iki kanalı aynı anda çalıştırır
+  </Card>
+</CardGroup>
+
+## Yalnızca Uzantı Kullanıcıları İçin
+
+Ekip Gelen Kutusundaki deneyiminiz değişmeden kalır. Temel özellikler şunlardır:
+
+- Görüşmeler doğrudan WhatsApp Web'den senkronize olur
+- Her türlü mesajı (metin, medya, vb.) herhangi bir zamanda kısıtlama olmadan gönderip alabilirsiniz
+
+![Uzantı Kullanıcı Arayüzü](/images/1589309753.png)
+
+## WABA Destekli Mesajlaşma İçin Temel Kavramlar
+
+### 24 Saatlik Müşteri Hizmetleri Penceresi
+
+WhatsApp, müşterilerle nasıl iletişim kurabileceğinizi belirleyen belirli mesajlaşma pencereleri uygular:
+
+<AccordionGroup>
+  <Accordion title="Pencere AÇIK" icon="clock">
+    Bir müşteri size mesaj gönderdiğinde, 24 saatlik bir pencere açılır. Ekip Gelen Kutusu kalan süreyi gösterir (örn., "15s 30d"). Bu pencere boyunca serbest form mesajlaşmaya izin verilir.
+
+    ![Pencere Açık Durumu](/images/1589300920.png)
+  </Accordion>
+  <Accordion title="Pencere KAPALI" icon="lock">
+    Müşteri etkileşimi olmadan 24 saat sonra pencere kapanır. Ekran "Bu sohbet çözüldü ve süresi doldu." gösterir. Yalnızca şablon mesajlara izin verilir.
+
+    ![Pencere Kapalı Durumu](/images/1589282163.png)
+  </Accordion>
+</AccordionGroup>
+
+### Dinamik Mesaj Oluşturucu
+
+Mesaj giriş alanı pencere durumuna göre otomatik olarak uyum sağlar:
+
+- **Açık pencere:** Kısıtlamasız mesajlaşma için standart serbest form oluşturucu
+- **Kapalı pencere:** "Şablon Gönder" düğmesi oluşturucunun yerini alır
+
+![Dinamik Mesaj Oluşturucu](/images/1589289300.png)
+
+### Mesaj Şablonları Gönderme
+
+Mesajlaşma penceresi kapalıyken, şablon göndermek için şu adımları izleyin:
+
+<Steps>
+  <Step title="Şablon Gönder'e Tıklayın">
+    Mesaj oluşturucu alanındaki **Şablon Gönder** düğmesine tıklayın.
+  </Step>
+
+  <Step title="Şablonlara Göz Atın">
+    Onaylı şablonlarınızın listesini gösteren bir açılır pencere görünür.
+
+    ![Şablon Seçimi](/images/1589292361.png)
+  </Step>
+
+  <Step title="Şablon Ayrıntılarını İnceleyin">
+    Uygun olanı seçmek için her şablonun adını, kategorisini ve dilini görüntüleyin.
+  </Step>
+
+  <Step title="Şablonu Gönderin">
+    Müşteriye göndermek için istediğiniz şablonu seçin.
+  </Step>
+</Steps>
+
+## Mesajlaşma Özel Kurulumunuz İçin Nasıl Çalışır
+
+### Senaryo A: Yalnızca WABA Kullanıcısı
+
+<Info>
+Yalnızca WABA kullanıcısı olarak, tüm mesajlaşmanız WhatsApp Business API kurallarını takip eder.
+</Info>
+
+- **Görüşme başlatma:** Mesaj Şablonu seçimi gerektirir
+- **Müşterilere yanıt verme:** Pencere durumuna bağlıdır—açıksa serbest form, kapalıysa yalnızca şablonlar
+
+![Yalnızca WABA Mesajlaşma](/images/1589294503.png)
+
+### Senaryo B: Çift Kullanıcı (Uzantı + WABA)
+
+#### Farklı Numaralar Kullanma
+
+Uzantınız ve WABA farklı telefon numaraları kullandığında:
+
+- Ekip Gelen Kutusu görüşmeleri numara filtresine göre ayırır
+- **Uzantı senkronizeli sohbetler:** Herhangi bir zamanda kısıtlama olmadan serbestçe mesaj gönderin
+- **WABA sohbetleri:** WABA kurallarını izleyin (24 saatlik pencere, şablonlar)
+- **Yeni sohbetler:** Kişi seçmek ve gönderen numarayı seçmek için bir istem görünür
+
+![Farklı Numaralarla Çift Kullanıcı](/images/1589299274.png)
+
+#### Aynı Numarayı Kullanma
+
+Her iki kanal da aynı telefon numarasını paylaştığında:
+
+<Warning>
+**WABA Varsayılandır:** Ekip Gelen Kutusundan gönderdiğiniz herhangi bir mesaj varsayılan olarak WABA (Cloud API) kanalını kullanır. WABA kuralları otomatik olarak uygulanır.
+</Warning>
+
+- Görüşmeler tek konularda birleşir
+- Tüm mesajlar WABA mesajlaşma kurallarını izler
+
+## WABA Mesaj Durumları ve Hatalar
+
+Mesaj durum göstergelerini anlamak, teslimatı izlemenize yardımcı olur:
+
+| Durum | Gösterge | Anlam |
+|-------|----------|-------|
+| **Gönderildi** | Bir gri tik | Mesaj WhatsApp sunucularına gönderildi |
+| **Teslim Edildi** | İki gri tik | Mesaj alıcının cihazına teslim edildi |
+| **Okundu** | İki mavi tik | Alıcı mesajı okudu |
+| **Başarısız** | Kırmızı ünlem işareti | Mesaj gönderilemedi |
+
+## Yardıma mı İhtiyacınız Var?
+
+Herhangi bir sorunuz varsa veya daha fazla yardıma ihtiyacınız varsa, [hey@eazybe.com](mailto:hey@eazybe.com) adresinden bizimle iletişime geçmekten çekinmeyin. Yardımcı olmaktan mutluluk duyarız!

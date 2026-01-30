@@ -1,123 +1,109 @@
 ---
-title: "faq"
-description: "Frequently asked questions about the WhatsApp Business Account (WABA) integration with Eazybe."
+title: "FAQ"
+description: "Frequently asked questions about WhatsApp Business Account (WABA) integration"
 ---
 
-## Introduction
+This article contains the most frequently asked questions related to the WhatsApp Business Account (WABA) integration with Eazybe.
 
-This FAQ addresses the most common questions about using the WhatsApp Business Account (WABA) integration with Eazybe. Find answers to billing, verification, templates, and troubleshooting queries below.
-
----
+## Billing & Credits
 
 <AccordionGroup>
-  <Accordion title="How does billing work? What is the Eazybe wallet?">
-    All charges for WhatsApp template messages are managed through your **Eazybe wallet**.
+  <Accordion title="How does billing work? What is the Eazybe wallet?" icon="wallet">
+    The Eazybe Wallet is your central payment system for all WABA-related charges.
 
-    <Steps>
-      <Step title="Initial Credits">
-        When you start, your organization receives **₹100 or $1 free credits** from Eazybe to get started.
-      </Step>
-      <Step title="Usage Deductions">
-        As you send template messages, funds are automatically deducted from your wallet balance.
-      </Step>
-      <Step title="Recharging">
-        You can easily recharge your wallet from the **Billing** section in your dashboard when your balance runs low.
-      </Step>
-    </Steps>
+    **Key points:**
+    - Every new organization receives **₹100 or $1 in free credits** to get started
+    - WhatsApp template message charges are automatically deducted from your wallet balance
+    - You can add funds anytime through the **Billing** section of your dashboard
 
     <Tip>
-    Monitor your wallet balance regularly to ensure uninterrupted messaging capabilities.
+    Keep your wallet funded to ensure uninterrupted broadcast campaigns and template messaging.
     </Tip>
-
-  </Accordion>
-
-  <Accordion title="Can I get the Green Tick on my WhatsApp profile?">
-    **Yes.** Using an official WABA through Eazybe makes you eligible to apply for Meta's Green Tick verification.
-
-    <Note>
-    The Green Tick verification process is handled through **Meta Business Manager** once your account is active and meets Meta's notability criteria.
-    </Note>
-
-    **Requirements for Green Tick:**
-    - Active WABA account
-    - Verified business on Meta Business Manager
-    - Meeting Meta's notability standards
-
-  </Accordion>
-
-  <Accordion title="Why was my Message Template rejected?">
-    Meta enforces strict policies for message templates. Common rejection reasons include:
-
-    | Reason | Description |
-    |--------|-------------|
-    | **Promotional Content** | Using promotional content in non-marketing template categories |
-    | **Sensitive Data Requests** | Asking for sensitive personal or financial data |
-    | **Incorrect Formatting** | Template formatting does not meet Meta's guidelines |
-
-    <Warning>
-    You can create a new template by updating the content to comply with Meta's policies and resubmit it for approval.
-    </Warning>
-
-  </Accordion>
-
-  <Accordion title="My CSV upload failed. Why?">
-    CSV upload failures typically occur due to formatting issues. Ensure your contact list meets these requirements:
-
-    <Steps>
-      <Step title="File Format">
-        The file must be in `.csv` format.
-      </Step>
-      <Step title="Column Name">
-        The file must contain a column specifically named **"Phone"**.
-      </Step>
-      <Step title="Phone Number Format">
-        Phone numbers must include the country code but **without** the `+` sign.
-      </Step>
-    </Steps>
-
-    **Example Format:**
-    ```
-    Phone
-    91xxxxxxxxxx
-    44xxxxxxxxxx
-    1xxxxxxxxxx
-    ```
-
-    <Warning>
-    Do not include the `+` symbol before the country code. Use `91xxxxxxxxxx` instead of `+91xxxxxxxxxx`.
-    </Warning>
-
-  </Accordion>
-
-  <Accordion title="Why did my WABA Coexistence account disconnect?">
-    Your account may disconnect for several reasons related to security and compliance with Meta's guidelines:
-
-    | Reason | Description |
-    |--------|-------------|
-    | **Switching Mobile Devices** | Your connection may be lost when moving your WhatsApp Business account to a new phone |
-    | **Parallel App and Web Use** | Using the mobile app and WhatsApp Web simultaneously can cause connection issues |
-    | **Inactivity** | The connection can expire if the WhatsApp Business App is not opened for over 14 days |
-    | **Policy Violations** | Violating WhatsApp's Business Policy through spam or prohibited actions leads to disconnection |
-    | **Switching App Types** | Moving your number between the consumer and Business apps can sever the connection |
-
-    <Tip>
-    To maintain a stable connection, regularly open your WhatsApp Business App and avoid switching between consumer and business versions.
-    </Tip>
-
   </Accordion>
 </AccordionGroup>
 
----
+## Verification & Account Status
+
+<AccordionGroup>
+  <Accordion title="Can I get the Green Tick on my WhatsApp profile?" icon="circle-check">
+    Yes! Official WABA accounts connected through Eazybe qualify for Meta's Green Tick verification.
+
+    **Requirements:**
+    - Your WABA account must be active and in good standing
+    - Your business must meet Meta's notability requirements
+    - You can apply for verification once your account is set up
+
+    <Info>
+    The Green Tick is Meta's official verification badge that confirms your business identity to customers.
+    </Info>
+  </Accordion>
+</AccordionGroup>
+
+## Message Templates
+
+<AccordionGroup>
+  <Accordion title="Why was my Message Template rejected?" icon="triangle-exclamation">
+    Meta enforces strict content policies for WhatsApp message templates. Common rejection reasons include:
+
+    | Reason | Description |
+    |--------|-------------|
+    | **Promotional content** | Using promotional language in non-marketing template categories |
+    | **Sensitive information** | Requesting passwords, PINs, or financial details |
+    | **Formatting errors** | Incorrect variable syntax or placeholder formatting |
+    | **Policy violations** | Content that violates WhatsApp Business Policy |
+
+    <Warning>
+    Always review Meta's template guidelines before submitting. You can edit and resubmit rejected templates.
+    </Warning>
+  </Accordion>
+</AccordionGroup>
+
+## CSV & Contact Upload
+
+<AccordionGroup>
+  <Accordion title="My CSV upload failed. Why?" icon="file-csv">
+    CSV upload failures typically occur due to formatting issues. Ensure your file meets these requirements:
+
+    **File Requirements:**
+    - File format must be `.csv`
+    - Must contain a column labeled **"Phone"**
+    - Phone numbers must include country codes
+    - Do **NOT** include the "+" symbol
+
+    **Correct format example:**
+    ```
+    Phone
+    91xxxxxxxxxx
+    1xxxxxxxxxx
+    44xxxxxxxxxx
+    ```
+
+    <Tip>
+    For India, use format `91xxxxxxxxxx`. For USA, use `1xxxxxxxxxx`.
+    </Tip>
+  </Accordion>
+</AccordionGroup>
+
+## WABA Coexistence
+
+<AccordionGroup>
+  <Accordion title="Why did my WABA Coexistence account disconnect?" icon="link-slash">
+    WABA Coexistence allows you to use both the WhatsApp mobile app and WABA simultaneously. However, certain actions can cause disconnection:
+
+    **Common disconnection triggers:**
+
+    1. **Device switching** - Moving to a new mobile device without proper migration
+    2. **Simultaneous sessions** - Using the mobile app and WhatsApp Web at the same time
+    3. **Extended inactivity** - No activity for more than 14 days
+    4. **Spam violations** - Sending bulk unsolicited messages that violate WhatsApp Business Policy
+    5. **App switching** - Moving your number between consumer WhatsApp and Business app
+
+    <Warning>
+    To maintain coexistence, avoid these triggers and ensure regular activity on your account.
+    </Warning>
+  </Accordion>
+</AccordionGroup>
 
 ## Need More Help?
 
-If you have additional questions or need further assistance, feel free to reach out to us at **[hey@eazybe.com](mailto:hey@eazybe.com)**. We're happy to help!
-
----
-
-## Related Articles
-
-- [Getting Started with Your Official WhatsApp Business Account (WABA)](/en/waba/overview)
-- [How to Connect Your WhatsApp Business Account (WABA) to Eazybe](/en/waba/connect-waba)
-- [Creating and Managing WhatsApp Message Templates](/en/waba/templates/creating-and-managing-templates)
-- [Eazybe Wallet Balance and Top-Up](/en/waba/wallet)
+If your question isn't answered here or you need further assistance, feel free to reach out to us at [hey@eazybe.com](mailto:hey@eazybe.com). We're happy to help!
