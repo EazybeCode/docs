@@ -543,7 +543,9 @@
               {
                 "group": "Freshdesk",
                 "icon": "headset",
-                "pages": []
+                "pages": [
+                  "en/integrations/freshdesk/integration"
+                ]
               },
               {
                 "group": "Webhooks & Custom",
@@ -1030,7 +1032,10 @@
               {
                 "group": "Freshdesk",
                 "icon": "headset",
-                "pages": ["es/integrations/freshdesk/setup"]
+                "pages": [
+                  "es/integrations/freshdesk/integration",
+                  "es/integrations/freshdesk/setup"
+                ]
               }
             ]
           },
@@ -1451,7 +1456,10 @@
               {
                 "group": "Freshdesk",
                 "icon": "headset",
-                "pages": ["pt/integrations/freshdesk/setup"]
+                "pages": [
+                  "pt/integrations/freshdesk/integration",
+                  "pt/integrations/freshdesk/setup"
+                ]
               }
             ]
           },
@@ -1872,7 +1880,10 @@
               {
                 "group": "Freshdesk",
                 "icon": "headset",
-                "pages": ["tr/integrations/freshdesk/setup"]
+                "pages": [
+                  "tr/integrations/freshdesk/integration",
+                  "tr/integrations/freshdesk/setup"
+                ]
               }
             ]
           },
