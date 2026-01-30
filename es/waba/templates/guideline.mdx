@@ -1,0 +1,154 @@
+---
+title: "Directrices"
+description: "Plazos de aprobación de plantillas, directrices y mejores prácticas para plantillas de mensajes de WhatsApp"
+---
+
+Esta guía cubre todo lo que necesitas saber sobre los plazos de aprobación de plantillas de mensajes de WhatsApp, directrices y mejores prácticas para asegurar la creación exitosa de plantillas.
+
+## Plazos de Aprobación
+
+Meta emplea IA automatizada combinada con revisión humana para aprobaciones de plantillas. Aunque la guía oficial permite aprobaciones dentro de **24 horas**, la mayoría de las plantillas se procesan mucho más rápido.
+
+| Escenario | Tiempo Estimado | Contexto |
+|-----------|-----------------|----------|
+| **Aprobación Estándar** | 1-5 Minutos | Plantillas bien estructuradas aprobadas casi instantáneamente |
+| **Complejo/Marcado** | 1-24 Horas | Contenido ambiguo detectado por IA enviado para revisión humana |
+| **Re-Envío** | Hasta 24 Horas | Plantillas rechazadas o cambios de categoría requieren verificación |
+
+<Tip>
+**Consejo Pro:** Planifica tus campañas con al menos 24 horas de anticipación para considerar posibles retrasos en la revisión.
+</Tip>
+
+## Resumen de Categorías de Plantillas
+
+### 1. Plantillas de Utilidad
+
+<Card title="Plantillas de Utilidad" icon="bell">
+  **Propósito:** Facilitar transacciones o actualizaciones específicas y acordadas
+</Card>
+
+**Casos de Uso Comunes:**
+- Confirmaciones de pedidos
+- Actualizaciones de envío
+- Alertas de saldo de cuenta
+- Recordatorios de citas
+
+<Warning>
+Las plantillas de utilidad deben **excluir** ventas adicionales, mensajes de calentamiento y lenguaje promocional.
+</Warning>
+
+**Velocidad de Aprobación:** Minutos si las variables son claras (ej., `{{1}}` para ID de pedido)
+
+### 2. Plantillas de Marketing
+
+<Card title="Plantillas de Marketing" icon="bullhorn">
+  **Propósito:** Promover productos, servicios y conocimiento de marca
+</Card>
+
+**Casos de Uso Comunes:**
+- Ofertas de descuento
+- Boletines informativos
+- Recuperación de carritos abandonados
+- Series de bienvenida
+
+<Info>
+Las plantillas de marketing se someten a un escrutinio más estricto respecto al consentimiento y calidad del contenido.
+</Info>
+
+## Restricciones y Requisitos para Aprobación Exitosa
+
+### Contenido y Formato
+
+<AccordionGroup>
+  <Accordion title="Variables" icon="code">
+    Siempre proporciona valores de muestra para las variables.
+
+    **Ejemplo:** `{{1}}` = "Juan"
+
+    Las variables poco claras sin muestras provocarán rechazo.
+  </Accordion>
+
+  <Accordion title="Gramática y Ortografía" icon="spell-check">
+    Los errores de gramática u ortografía resultan en rechazo automático como contenido de "baja calidad".
+
+    Siempre revisa tus plantillas antes de enviarlas.
+  </Accordion>
+
+  <Accordion title="Acortadores de Enlaces" icon="link">
+    **No uses** acortadores de enlaces genéricos (como bit.ly) en el texto del cuerpo.
+
+    Ocultan la URL de destino y activan alertas de seguridad.
+
+    <Tip>
+    Usa las funciones de botones integradas de WhatsApp en lugar de incrustar enlaces acortados en el texto.
+    </Tip>
+  </Accordion>
+</AccordionGroup>
+
+### Cumplimiento de Políticas
+
+<AccordionGroup>
+  <Accordion title="Sin Categorías Mixtas" icon="layer-group">
+    Mezclar contenido de utilidad y marketing en una sola plantilla causa rechazo.
+
+    Mantén el propósito de tu plantilla claro y consistente.
+  </Accordion>
+
+  <Accordion title="Contenido Restringido" icon="ban">
+    Evita:
+    - Identificadores sensibles (datos financieros, información de salud)
+    - Lenguaje amenazante o coercitivo
+    - Contenido que viole las políticas de WhatsApp
+  </Accordion>
+
+  <Accordion title="Consistencia de Categoría" icon="tags">
+    Meta puede auto-detectar y cambiar plantillas mal categorizadas.
+
+    Tienes **60 días para apelar** este cambio si no estás de acuerdo con la recategorización.
+  </Accordion>
+</AccordionGroup>
+
+## Entendiendo los Estados de Plantillas
+
+| Estado | Icono | Descripción |
+|--------|-------|-------------|
+| **Pendiente** | 🟡 | Actualmente bajo revisión de Meta |
+| **Aprobada** | 🟢 | Lista para enviar a clientes |
+| **Rechazada** | 🔴 | Falló la revisión; verifica el panel para ver la razón |
+| **Pausada** | ⏸️ | Marcada por baja calidad (altas tasas de bloqueo); no puede enviarse hasta que mejore la calidad |
+
+<Warning>
+Si tu plantilla está **Pausada**, revisa el contenido de tu mensaje y las prácticas de envío. Las altas tasas de bloqueo indican que los destinatarios están marcando tus mensajes como spam.
+</Warning>
+
+## Resumen de Mejores Prácticas
+
+<Steps>
+  <Step title="Planifica con Anticipación">
+    Permite al menos 24 horas mínimo para aprobaciones de plantillas antes de las campañas.
+  </Step>
+
+  <Step title="Variables Claras">
+    Proporciona valores de muestra claros para todas las variables para evitar rechazos.
+  </Step>
+
+  <Step title="Contenido de Calidad">
+    Mantén estándares apropiados de gramática y ortografía en todo momento.
+  </Step>
+
+  <Step title="Usa Botones">
+    Usa las funciones de botones de WhatsApp en lugar de acortadores de enlaces en el texto.
+  </Step>
+
+  <Step title="Categorías Precisas">
+    Mantén las asignaciones de categoría precisas y consistentes con el contenido.
+  </Step>
+
+  <Step title="Monitorea la Calidad">
+    Rastrea las puntuaciones de calidad para evitar que tus plantillas sean pausadas.
+  </Step>
+</Steps>
+
+## ¿Necesitas Ayuda?
+
+Si tienes alguna pregunta o necesitas más asistencia, no dudes en contactarnos en [hey@eazybe.com](mailto:hey@eazybe.com). ¡Estamos encantados de ayudar!

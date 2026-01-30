@@ -1,0 +1,220 @@
+---
+title: "Onboarding a Coex/API"
+description: "Guía completa para la integración de WhatsApp Coexistence a través de Eazybe"
+---
+
+WhatsApp Coexistence permite a las empresas conectar su número activo de WhatsApp Business App a la WhatsApp Cloud API — sin perder chats, contactos ni requerir el re-registro del número.
+
+## ¿Qué es Coexistence?
+
+<CardGroup cols={2}>
+  <Card title="Conectar a Cloud API" icon="cloud">
+    Conecta WhatsApp Business App a la Cloud API sin problemas
+  </Card>
+  <Card title="Seguir Usando Business App" icon="mobile">
+    Continúa usando la aplicación Business normalmente después de la conexión
+  </Card>
+  <Card title="Sincronizar Todo" icon="arrows-rotate">
+    Sincronización de mensajes y contactos en tiempo real
+  </Card>
+  <Card title="Sin Pérdida de Datos" icon="shield-check">
+    Preserva el historial de chats y contactos sin ninguna pérdida de datos
+  </Card>
+</CardGroup>
+
+<Info>
+Este es el método más seguro para migrar a Cloud API sin perder datos. Puedes usar el mismo número de teléfono tanto en WhatsApp Business App como en la API.
+</Info>
+
+## Requisitos Previos
+
+Antes de iniciar el proceso de onboarding, asegúrate de cumplir con todos estos requisitos:
+
+<AccordionGroup>
+  <Accordion title="Cuenta de WhatsApp Business" icon="whatsapp">
+    Debes tener una cuenta/número de WhatsApp Business existente. **Los números personales de WhatsApp no son compatibles.**
+  </Accordion>
+
+  <Accordion title="Versión de la App" icon="mobile">
+    Se requiere WhatsApp Business App **versión 2.24.17 o superior**. Las versiones anteriores fallarán durante el enlace QR.
+  </Accordion>
+
+  <Accordion title="Estado del Número" icon="heart-pulse">
+    Tu número debe tener:
+    - Actividad regular en WhatsApp
+    - Sin restricciones de Meta
+    - Sin violaciones de políticas
+    - Uso genuino activo durante **mínimo 3-7 días**
+  </Accordion>
+
+  <Accordion title="Página de Facebook Business" icon="facebook">
+    Se requiere una Página de Facebook Business con **acceso de administrador**.
+  </Accordion>
+
+  <Accordion title="Restricciones Regionales" icon="globe">
+    Los números de **Nigeria o Sudáfrica** no son compatibles actualmente debido a las regulaciones de Meta.
+  </Accordion>
+
+  <Accordion title="Elegibilidad del Número" icon="check-circle">
+    Tu número no debe estar:
+    - Vinculado a otro proveedor de WhatsApp API
+    - Bloqueado por Meta
+  </Accordion>
+</AccordionGroup>
+
+## Guía de Configuración
+
+<Steps>
+  <Step title="Ingresar Email e Iniciar Sesión">
+    Ingresa tu dirección de correo electrónico e inicia sesión con tu cuenta.
+
+    ![Pantalla de Inicio de Sesión](/images/1908199740.png)
+  </Step>
+
+  <Step title="Ingresar OTP">
+    Ingresa el OTP enviado a tu bandeja de entrada de Gmail.
+
+    ![Verificación OTP](/images/1908200066.png)
+  </Step>
+
+  <Step title="Agregar Número">
+    Haz clic en **Agregar Número** para continuar con el flujo de registro integrado.
+
+    ![Agregar Número](/images/1908200542.png)
+  </Step>
+
+  <Step title="Inicio de Sesión en Facebook">
+    Ingresa tus credenciales de inicio de sesión de Facebook, o haz clic en **Continuar como** si tu sesión está guardada.
+
+    ![Inicio de Sesión en Facebook](/images/1908201946.png)
+  </Step>
+
+  <Step title="Otorgar Permisos">
+    Haz clic en **Continuar** en la página de permisos para autorizar la conexión.
+
+    ![Permisos](/images/1908202235.png)
+  </Step>
+
+  <Step title="Completar Detalles del Negocio">
+    Completa el formulario de detalles comerciales con información precisa.
+
+    ![Detalles del Negocio](/images/1908202704.png)
+  </Step>
+
+  <Step title="Crear Portafolio de Negocio">
+    Crea o elige tu portafolio de negocio.
+
+    ![Portafolio de Negocio](/images/1908203806.png)
+
+    <Warning>
+    Siempre crea una **NUEVA cuenta WABA** para coexistencia para asegurar un uso limpio y flujo saludable.
+    </Warning>
+  </Step>
+
+  <Step title="Elegir Método de Onboarding">
+    Selecciona tu método de onboarding:
+    1. Conectar número existente de WhatsApp Business
+    2. Comenzar con nuevo número de contacto de WhatsApp
+
+    ![Método de Onboarding](/images/1908204415.png)
+
+    <Info>
+    **Restricciones:** El número no debe estar vinculado a ningún otro partner, debe ser un número nuevo o existente de WhatsApp Business, y no debe estar bloqueado por Meta.
+    </Info>
+  </Step>
+
+  <Step title="Ingresar Número de Teléfono">
+    Selecciona tu código de país e ingresa tu número de teléfono.
+
+    ![Ingreso de Número](/images/1908205469.png)
+  </Step>
+
+  <Step title="Escanear Código QR">
+    Escanea el código QR usando tu WhatsApp Business App.
+
+    ![Escaneo de Código QR](/images/1908205712.png)
+  </Step>
+
+  <Step title="Importar Historial de Chats">
+    Elige si deseas importar el historial de chats:
+    - Todos los contactos se importan automáticamente
+    - Opcional: Hasta **6 meses** de chats 1:1
+    - Opcional: Hasta **2 semanas** de archivos multimedia
+    - Los chats grupales **no** se importan
+
+    ![Importar Historial de Chats](/images/1908207407.png)
+  </Step>
+
+  <Step title="Verificar Cuenta">
+    Espera la verificación de la cuenta. El proceso de conexión toma algo de tiempo.
+
+    ![Verificación](/images/1908207865.png)
+  </Step>
+
+  <Step title="Completar Configuración">
+    Haz clic en **Finalizar** para completar el proceso de configuración.
+
+    ![Configuración Completa](/images/1908208073.png)
+  </Step>
+</Steps>
+
+## Solución de Problemas
+
+### Fallo en la Integración
+
+<Warning>
+Razones comunes para el fallo de integración:
+- Versión antigua de WhatsApp
+- Inactividad del número
+- Restricciones de Meta
+- Sin acceso de administrador a la Página de Facebook
+</Warning>
+
+**Solución:** Usa otro número que tenga uso activo de WhatsApp Business y sin violaciones previas.
+
+### El Historial de Chats No Se Importó
+
+<Steps>
+  <Step title="Abrir WhatsApp Business App">
+    Navega a **Configuración > Herramientas de Negocio > Plataforma WhatsApp Business**
+  </Step>
+  <Step title="Desconectar">
+    Toca **Desconectar** para eliminar la conexión actual
+  </Step>
+  <Step title="Reiniciar Onboarding">
+    Reinicia el proceso de onboarding de Coex desde el principio
+  </Step>
+</Steps>
+
+<Info>
+Si omitiste manualmente la importación del historial inicialmente, debes hacer offboarding completo y onboarding nuevamente para importar el historial de chats.
+</Info>
+
+### Número con Restricciones de Meta
+
+**Síntomas:**
+- Fallo instantáneo
+- El código QR no completa el escaneo
+- No aparece el mensaje "Conectar a la Plataforma Business"
+
+**Solución:** Usa un número sin problemas de políticas y con actividad legítima frecuente en WhatsApp Business.
+
+## Preguntas Frecuentes
+
+<AccordionGroup>
+  <Accordion title="¿Puedo usar un número personal de WhatsApp?" icon="question">
+    **No.** Solo se permiten números de WhatsApp Business App para Coexistence.
+  </Accordion>
+
+  <Accordion title="¿Mis chats permanecerán en la app del teléfono?" icon="question">
+    **Sí.** Nada se elimina del WhatsApp Business App. Todos tus chats permanecen intactos.
+  </Accordion>
+
+  <Accordion title="¿Puedo seguir usando WhatsApp Business App después de Coex?" icon="question">
+    **Sí.** Puedes continuar usando WhatsApp Business App normalmente después de configurar Coexistence.
+  </Accordion>
+</AccordionGroup>
+
+## ¿Necesitas Ayuda?
+
+Si tienes alguna pregunta o necesitas más asistencia, no dudes en contactarnos en [hey@eazybe.com](mailto:hey@eazybe.com). ¡Estaremos encantados de ayudarte!

@@ -1,0 +1,243 @@
+---
+title: "Mevcut WhatsApp ile Bağlan"
+description: "Mevcut WhatsApp Business uygulamanızı coexistence modu kullanarak Eazybe'ye bağlayın - mobil uygulama ve Cloud API'yi aynı anda kullanın"
+---
+
+WhatsApp Business App Coexistence, işletmenizin aynı WhatsApp numarasını hem WhatsApp Business uygulaması hem de WhatsApp Cloud API ile eşzamanlı olarak kullanmasına olanak tanır. Bu, API destekli mesajlaşmaya geçiş sırasında sohbet geçmişi kaybını önler.
+
+## Coexistence Nedir?
+
+<CardGroup cols={2}>
+  <Card title="Birleşik Telefon Numarası" icon="phone">
+    Aynı WhatsApp numarasını her iki platformda sorunsuz kullanın
+  </Card>
+  <Card title="Gerçek Zamanlı Senkronizasyon" icon="arrows-rotate">
+    Uygulama ve API arasında gerçek zamanlı mesaj ve kişi senkronizasyonu
+  </Card>
+  <Card title="İş Akışlarını Birleştirin" icon="shuffle">
+    Manuel etkileşimleri otomatik iş akışlarıyla birleştirin
+  </Card>
+  <Card title="Her Şeyi Koruyun" icon="shield-check">
+    Mevcut konuşmaları, kişileri ve mobil arayüz erişimini koruyun
+  </Card>
+</CardGroup>
+
+<Info>
+Bu, hiçbir veri kaybetmeden Cloud API'ye geçiş yapmanın en güvenli yöntemidir. Bağlandıktan sonra WhatsApp Business uygulamasını normal şekilde kullanmaya devam edebilirsiniz.
+</Info>
+
+## Ön Koşullar
+
+Entegrasyon sürecini başlatmadan önce, tüm bu gereksinimleri karşıladığınızdan emin olun:
+
+<AccordionGroup>
+  <Accordion title="WhatsApp Business App Sürümü" icon="mobile">
+    WhatsApp Business App **sürüm 2.24.17 veya üzeri** gereklidir. Eski sürümler QR bağlantısı sırasında başarısız olur.
+  </Accordion>
+
+  <Accordion title="Doğrulanmış Meta Business Hesabı" icon="badge-check">
+    İşletme doğrulaması tamamlanmış, doğrulanmış bir Meta Business hesabınız olmalıdır.
+  </Accordion>
+
+  <Accordion title="Uygun Telefon Numarası" icon="phone">
+    Numaranız:
+    - Diğer API sağlayıcılarına bağlı olmamalı
+    - Aktif bir WhatsApp Business numarası olmalı
+    - Meta kısıtlamaları veya politika ihlalleri olmamalı
+  </Accordion>
+
+  <Accordion title="Eazybe Cloud API Erişimi" icon="cloud">
+    Uygun izinlerle aktif Eazybe Cloud API erişimi gereklidir.
+  </Accordion>
+
+  <Accordion title="Teknik Gereksinimler" icon="gear">
+    - Yapılandırılmış webhook endpoint'leri
+    - Oturum günlüğü etkinleştirilmiş
+  </Accordion>
+</AccordionGroup>
+
+## 8 Adımlı Entegrasyon Süreci
+
+<Steps>
+  <Step title="Facebook Business Hesabına Erişin">
+    Facebook Business hesabınıza erişmek ve gömülü kayıt akışını başlatmak için **Bağlan** düğmesine tıklayın.
+
+    ![Facebook Business Hesabına Erişin](/images/1720506698.png)
+  </Step>
+
+  <Step title="İşletme Bilgilerini Doldurun">
+    Tüm gerekli alanlarda doğru verilerle işletme bilgileri formunu tamamlayın.
+
+    ![İşletme Bilgilerini Doldurun](/images/1710744494.png)
+  </Step>
+
+  <Step title="Cep Telefonu Numaranızı Girin">
+    Mevcut WhatsApp Business cep telefonu numaranızı doğru ülke koduyla girin.
+
+    ![Cep Telefonu Numaranızı Girin](/images/1710745572.png)
+  </Step>
+
+  <Step title="QR Kodunu Tarayın">
+    WhatsApp Business uygulamanızı kullanarak QR kodunu tarayın. İki seçenek mevcuttur:
+
+    <Tabs>
+      <Tab title="Seçenek 1: Doğrudan Tarama">
+        WhatsApp Business uygulamasını açın ve ekranda görüntülenen QR kodunu tarayın.
+
+        ![QR Kodu Seçenek 1](/images/1713494691.png)
+      </Tab>
+      <Tab title="Seçenek 2: Cihaz Bağla">
+        WhatsApp Business uygulamanızda Ayarlar > Bağlı Cihazlar > Cihaz Bağla'ya gidin.
+
+        ![QR Kodu Seçenek 2](/images/1713499623.png)
+      </Tab>
+    </Tabs>
+  </Step>
+
+  <Step title="Sohbet Geçmişini Senkronize Et (İsteğe Bağlı)">
+    Sohbet geçmişinizi senkronize edip etmemeyi seçin:
+
+    - **Tüm kişiler** otomatik olarak içe aktarılır
+    - **İsteğe bağlı:** 6 aya kadar 1:1 sohbet geçmişi
+    - **İsteğe bağlı:** 2 haftaya kadar medya dosyaları
+    - **Not:** Grup sohbetleri içe aktarılmaz
+
+    ![Sohbet Geçmişini Senkronize Et](/images/1720537088.png)
+
+    <Warning>
+    Mesaj kaybını önlemek için kurulum sırasında WhatsApp Business uygulamasını çalışır durumda tutun.
+    </Warning>
+  </Step>
+
+  <Step title="Hesap Ayrıntılarını Doğrulayın">
+    WhatsApp Business hesap ayrıntılarınızı gözden geçirin ve güncelleyin:
+
+    - İşletme görünen adı
+    - İşletme kategorisi
+    - Saat dilimi ayarları
+
+    ![Hesap Ayrıntılarını Doğrulayın](/images/1720535910.png)
+  </Step>
+
+  <Step title="Erişim İzinlerini Gözden Geçirin">
+    Entegrasyonun düzgün çalışması için gerekli erişim izinlerini gözden geçirin ve onaylayın.
+
+    <Tabs>
+      <Tab title="iOS">
+        ![iOS İzinleri](/images/1720564805.PNG)
+      </Tab>
+      <Tab title="Android">
+        ![Android İzinleri](/images/1720564008.png)
+      </Tab>
+    </Tabs>
+  </Step>
+
+  <Step title="Bağlantıyı Tamamlayın">
+    Bağlantı sürecini tamamlamak için **Bitir**'e tıklayın. WhatsApp Business uygulamanız artık Eazybe Cloud API'ye bağlı.
+
+    ![Bağlantı Tamamlandı](/images/1720577061.png)
+  </Step>
+</Steps>
+
+## Bağlantı Sonrası Yapılandırma
+
+Bağlantıyı tamamladıktan sonra:
+
+<CardGroup cols={2}>
+  <Card title="Mesaj Senkronizasyonu" icon="messages">
+    Mesajlar mobil uygulama ve Eazybe paneli arasında gerçek zamanlı olarak senkronize olacak
+  </Card>
+  <Card title="Kişi İçe Aktarma" icon="address-book">
+    Tüm kişiler otomatik olarak Eazybe çalışma alanınıza aktarılır
+  </Card>
+</CardGroup>
+
+![Bağlantı Sonrası Panel](/images/1720600772.png)
+
+## Doğrulama Adımları
+
+Bağlantınızın düzgün çalıştığını doğrulamak için:
+
+<Steps>
+  <Step title="Bağlantı Durumunu Kontrol Edin">
+    Eazybe çalışma alanınıza gidin ve bağlantı durumunun "Bağlı" gösterdiğini doğrulayın.
+
+    ![Bağlantı Durumu](/images/1720609270.png)
+  </Step>
+
+  <Step title="Test Mesajı Gönderin">
+    Senkronizasyonun çalıştığını onaylamak için mobil uygulamadan veya Eazybe panelinden bir test mesajı gönderin.
+
+    ![Test Mesajı](/images/1720611072.png)
+  </Step>
+
+  <Step title="Mobil Uygulamada Doğrulayın">
+    Eazybe'den gönderilen mesajların WhatsApp Business uygulamanızda göründüğünü kontrol edin.
+
+    ![Mobil Uygulama Doğrulaması](/images/1720632884.png)
+  </Step>
+</Steps>
+
+## Sorun Giderme
+
+<AccordionGroup>
+  <Accordion title="QR Kodu Taranmıyor" icon="qrcode">
+    **Yaygın nedenler:**
+    - WhatsApp Business App sürümü güncel değil
+    - Zayıf internet bağlantısı
+    - Kamera izni verilmemiş
+
+    **Çözüm:** Uygulamanızı 2.24.17 veya üzeri sürüme güncelleyin ve stabil internet bağlantısı sağlayın.
+  </Accordion>
+
+  <Accordion title="Sohbet Geçmişi İçe Aktarılmadı" icon="clock-rotate-left">
+    Başlangıçta geçmiş içe aktarmayı atladıysanız:
+    1. WhatsApp Business uygulamasını açın
+    2. **Ayarlar > İşletme Araçları > WhatsApp Business Platform**'a gidin
+    3. Mevcut bağlantıyı kaldırmak için **Bağlantıyı Kes**'e dokunun
+    4. Entegrasyon sürecini baştan başlatın
+  </Accordion>
+
+  <Accordion title="Bağlantı Başarısız" icon="triangle-exclamation">
+    **Yaygın nedenler:**
+    - Numara başka bir API sağlayıcısına bağlı
+    - Hesapta Meta kısıtlamaları
+    - Facebook Sayfası yönetici erişimi yok
+
+    **Çözüm:** Aktif WhatsApp Business kullanımı olan ve politika ihlali olmayan bir numara kullanın.
+  </Accordion>
+
+  <Accordion title="Mesajlar Senkronize Olmuyor" icon="rotate">
+    - Her iki cihazın da stabil internet bağlantısına sahip olduğundan emin olun
+    - WhatsApp Business uygulamasının arka planda çalıştığını doğrulayın
+    - Webhook endpoint'lerinin doğru yapılandırıldığını kontrol edin
+  </Accordion>
+</AccordionGroup>
+
+## Sıkça Sorulan Sorular
+
+<AccordionGroup>
+  <Accordion title="Coexistence mevcut numaramla çalışır mı?" icon="question">
+    **Evet**, numaranız tüm ön koşulları karşılıyorsa: WhatsApp Business App sürüm 2.24.17+, doğrulanmış Meta Business hesabı ve mevcut API sağlayıcı bağlantısı olmaması.
+  </Accordion>
+
+  <Accordion title="Kişilerimi veya sohbet geçmişimi kaybeder miyim?" icon="question">
+    **Hayır** — kurulum süreci sırasında sorunsuz senkronizasyon gerçekleşir. Tüm kişiler otomatik olarak içe aktarılır ve isteğe bağlı olarak 6 aya kadar sohbet geçmişini senkronize edebilirsiniz.
+  </Accordion>
+
+  <Accordion title="Bağlandıktan sonra WhatsApp Business uygulamasını kullanmaya devam edebilir miyim?" icon="question">
+    **Evet**, Eazybe otomatik yanıtları ve yayınları yönetirken kişisel sohbetler için WhatsApp Business uygulamasını kullanmaya devam edebilirsiniz.
+  </Accordion>
+
+  <Accordion title="Coexistence'ı nasıl devre dışı bırakırım?" icon="question">
+    Eazybe çalışma alanı ayarlarınız üzerinden bağlantıyı kaldırabilirsiniz. Numarayı yeniden bağlamak istiyorsanız **1-2 aylık bekleme süresi** uygulandığını unutmayın.
+  </Accordion>
+
+  <Accordion title="Coexistence ek ücret gerektirir mi?" icon="question">
+    **Hayır**, coexistence'ın kendisi için ek ücret yoktur. Standart Meta mesajlaşma ücretleri ve Eazybe abonelik ücretleri normal şekilde uygulanır.
+  </Accordion>
+</AccordionGroup>
+
+## Yardıma mı İhtiyacınız Var?
+
+Herhangi bir sorunuz varsa veya daha fazla yardıma ihtiyacınız varsa, [hey@eazybe.com](mailto:hey@eazybe.com) adresinden bize ulaşmaktan çekinmeyin. Size yardımcı olmaktan mutluluk duyarız!

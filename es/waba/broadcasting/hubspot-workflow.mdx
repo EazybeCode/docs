@@ -1,0 +1,161 @@
+---
+title: "Flujo de Trabajo HubSpot"
+description: "Cómo crear un flujo de trabajo de HubSpot para automatización de campañas de WhatsApp"
+---
+
+Esta guía proporciona instrucciones paso a paso para crear campañas de marketing automatizadas de WhatsApp a través de flujos de trabajo de HubSpot, permitiendo mensajes personalizados y una mejor interacción con el cliente.
+
+## Requisitos Previos
+
+Antes de crear un flujo de trabajo de HubSpot para campañas de WhatsApp, asegúrate de tener:
+
+<CardGroup cols={2}>
+  <Card title="Cuenta HubSpot" icon="hubspot">
+    Una cuenta HubSpot activa con acceso a automatización de flujos de trabajo
+  </Card>
+  <Card title="Integración Eazybe" icon="plug">
+    Integración de WhatsApp por Eazybe instalada en HubSpot
+  </Card>
+  <Card title="Plantillas Aprobadas" icon="file-check">
+    Al menos una plantilla de mensaje de WhatsApp aprobada
+  </Card>
+  <Card title="Propiedades de Contacto" icon="address-book">
+    Propiedades de contacto configuradas para segmentación
+  </Card>
+</CardGroup>
+
+## Creando Tu Flujo de Trabajo HubSpot
+
+<Steps>
+  <Step title="Acceder a HubSpot">
+    Inicia sesión en tu cuenta de HubSpot y navega al panel principal.
+  </Step>
+
+  <Step title="Navegar a Automatización">
+    Ve a la sección **Automatización** en el menú de navegación de HubSpot.
+  </Step>
+
+  <Step title="Seleccionar Flujos de Trabajo">
+    Haz clic en **Flujos de trabajo** para acceder al área de gestión de flujos de trabajo.
+  </Step>
+
+  <Step title="Crear Nuevo Flujo de Trabajo">
+    Haz clic en el botón **Crear flujo de trabajo** para comenzar a construir una nueva automatización.
+  </Step>
+
+  <Step title="Elegir Desde Cero">
+    Selecciona **Desde cero** para construir un flujo de trabajo personalizado adaptado a tus necesidades.
+  </Step>
+
+  <Step title="Establecer Tipo de Disparador">
+    Elige **Cumple criterios de filtro** como tu tipo de disparador para segmentar contactos específicos.
+  </Step>
+
+  <Step title="Seleccionar Tipo de Objeto">
+    Elige **Contacto** como el tipo de objeto para la inscripción en tu flujo de trabajo.
+  </Step>
+
+  <Step title="Elegir Propiedades de Contacto">
+    Selecciona **Propiedades de contacto** para definir tus criterios de segmentación.
+  </Step>
+
+  <Step title="Buscar Propiedad">
+    Busca la propiedad de contacto deseada en el campo de búsqueda.
+  </Step>
+
+  <Step title="Seleccionar Nombre de Propiedad">
+    Elige el nombre de propiedad específico por el cual quieres filtrar (ej., Nombre de empresa).
+  </Step>
+
+  <Step title="Configurar Condiciones">
+    Establece tus condiciones de filtro (ej., **es igual a cualquiera de**) y agrega valores coincidentes.
+
+    <Tip>
+    Puedes agregar múltiples valores para segmentar contactos de diferentes empresas o segmentos.
+    </Tip>
+  </Step>
+
+  <Step title="Continuar Configuración">
+    Haz clic en **Siguiente** para proceder a la configuración de inscripción.
+  </Step>
+
+  <Step title="Habilitar Re-inscripción">
+    Si deseas re-inscribir contactos existentes que cumplan los criterios nuevamente, habilita la opción **Re-inscribir**.
+
+    <Info>
+    La re-inscripción permite que los contactos pasen por el flujo de trabajo múltiples veces cuando cumplan los criterios de disparador nuevamente.
+    </Info>
+  </Step>
+
+  <Step title="Guardar y Continuar">
+    Haz clic en **Guardar y continuar** para finalizar tu configuración de disparador.
+  </Step>
+
+  <Step title="Agregar Acción de WhatsApp">
+    Desplázate hacia abajo y selecciona **Integración de WhatsApp por Eazybe** de las acciones disponibles.
+  </Step>
+
+  <Step title="Elegir Acción de Plantilla">
+    Haz clic en **Enviar Plantilla de WhatsApp Lista para Usar** para configurar el mensaje.
+  </Step>
+
+  <Step title="Seleccionar Campo de Contacto">
+    Elige el campo de contacto que contiene el número de teléfono para la entrega de la plantilla.
+  </Step>
+
+  <Step title="Elegir Plantilla">
+    Selecciona tu plantilla de WhatsApp aprobada de la lista desplegable.
+
+    <Warning>
+    Solo las plantillas con estado **Aprobada** aparecerán en la lista. Asegúrate de que tu plantilla esté aprobada antes de crear el flujo de trabajo.
+    </Warning>
+  </Step>
+
+  <Step title="Guardar Acción">
+    Haz clic en **Guardar** para confirmar tu configuración de acción de WhatsApp.
+  </Step>
+
+  <Step title="Revisar Flujo de Trabajo">
+    Haz clic en **Revisar y activar** para revisar tu configuración completa del flujo de trabajo.
+  </Step>
+
+  <Step title="Configuración de Inscripción">
+    Elige tus configuraciones de inscripción preferidas para el flujo de trabajo.
+  </Step>
+
+  <Step title="Verificaciones Finales">
+    Haz clic en **Omitir para activar** o completa cualquier verificación adicional según sea necesario.
+  </Step>
+
+  <Step title="Activar Flujo de Trabajo">
+    Haz clic en **Activar flujo de trabajo** para activar tu automatización de campaña de WhatsApp.
+
+    <Info>
+    ¡Tu flujo de trabajo está ahora activo! Los contactos que coincidan con tus criterios recibirán automáticamente mensajes de WhatsApp.
+    </Info>
+  </Step>
+</Steps>
+
+## Mejores Prácticas
+
+<AccordionGroup>
+  <Accordion title="Probar Antes de Lanzar" icon="flask">
+    Siempre prueba tu flujo de trabajo con un pequeño grupo de contactos antes de lanzar a una audiencia mayor.
+  </Accordion>
+
+  <Accordion title="Monitorear Rendimiento" icon="chart-line">
+    Revisa regularmente las analíticas de tu flujo de trabajo para optimizar la entrega de mensajes y las tasas de interacción.
+  </Accordion>
+
+  <Accordion title="Respetar Exclusiones" icon="user-shield">
+    Asegúrate de que tu lista de contactos respete las preferencias y solicitudes de exclusión de los clientes.
+  </Accordion>
+
+  <Accordion title="Usar Variables" icon="code">
+    Personaliza tus plantillas con propiedades de contacto de HubSpot para mejor interacción.
+  </Accordion>
+</AccordionGroup>
+
+## ¿Necesitas Ayuda?
+
+Si tienes alguna pregunta o necesitas más asistencia, no dudes en contactarnos en [hey@eazybe.com](mailto:hey@eazybe.com). ¡Estamos encantados de ayudar!

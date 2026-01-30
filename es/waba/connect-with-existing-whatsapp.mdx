@@ -1,0 +1,243 @@
+---
+title: "Conectar con WhatsApp Existente"
+description: "Conecta tu aplicación WhatsApp Business existente a Eazybe usando el modo de coexistencia - usa tanto la aplicación móvil como la Cloud API simultáneamente"
+---
+
+La coexistencia de WhatsApp Business App permite que tu negocio use el mismo número de WhatsApp con la aplicación WhatsApp Business y la WhatsApp Cloud API simultáneamente. Esto evita la pérdida del historial de chats durante la transición a mensajería impulsada por API.
+
+## ¿Qué es la Coexistencia?
+
+<CardGroup cols={2}>
+  <Card title="Número Unificado" icon="phone">
+    Usa el mismo número de WhatsApp en ambas plataformas sin problemas
+  </Card>
+  <Card title="Sincronización en Tiempo Real" icon="arrows-rotate">
+    Sincronización de mensajes y contactos en tiempo real entre la app y la API
+  </Card>
+  <Card title="Combina Flujos de Trabajo" icon="shuffle">
+    Combina interacciones manuales con flujos de trabajo automatizados
+  </Card>
+  <Card title="Preserva Todo" icon="shield-check">
+    Mantén conversaciones existentes, contactos y acceso a la interfaz móvil
+  </Card>
+</CardGroup>
+
+<Info>
+Este es el método más seguro para migrar a la Cloud API sin perder ningún dato. Puedes continuar usando la aplicación WhatsApp Business normalmente después de conectar.
+</Info>
+
+## Requisitos Previos
+
+Antes de iniciar el proceso de incorporación, asegúrate de cumplir con todos estos requisitos:
+
+<AccordionGroup>
+  <Accordion title="Versión de WhatsApp Business App" icon="mobile">
+    Se requiere WhatsApp Business App **versión 2.24.17 o superior**. Las versiones anteriores fallarán durante el enlace QR.
+  </Accordion>
+
+  <Accordion title="Cuenta de Meta Business Verificada" icon="badge-check">
+    Debes tener una cuenta de Meta Business verificada con la verificación comercial completada.
+  </Accordion>
+
+  <Accordion title="Número de Teléfono Elegible" icon="phone">
+    Tu número debe:
+    - No estar vinculado a otros proveedores de API
+    - Ser un número activo de WhatsApp Business
+    - No tener restricciones de Meta ni violaciones de políticas
+  </Accordion>
+
+  <Accordion title="Acceso a Eazybe Cloud API" icon="cloud">
+    Se requiere acceso activo a Eazybe Cloud API con los permisos adecuados.
+  </Accordion>
+
+  <Accordion title="Requisitos Técnicos" icon="gear">
+    - Endpoints de webhook configurados
+    - Registro de sesión habilitado
+  </Accordion>
+</AccordionGroup>
+
+## Proceso de Incorporación en 8 Pasos
+
+<Steps>
+  <Step title="Acceder a la Cuenta de Facebook Business">
+    Haz clic en el botón **Conectar** para acceder a tu cuenta de Facebook Business e iniciar el flujo de registro integrado.
+
+    ![Acceder a la Cuenta de Facebook Business](/images/1720506698.png)
+  </Step>
+
+  <Step title="Completar Información del Negocio">
+    Completa el formulario de información comercial con datos precisos en todos los campos requeridos.
+
+    ![Completar Información del Negocio](/images/1710744494.png)
+  </Step>
+
+  <Step title="Ingresar tu Número Móvil">
+    Ingresa tu número móvil de WhatsApp Business existente con el código de país correcto.
+
+    ![Ingresar Número Móvil](/images/1710745572.png)
+  </Step>
+
+  <Step title="Escanear Código QR">
+    Escanea el código QR usando tu aplicación WhatsApp Business. Hay dos opciones disponibles:
+
+    <Tabs>
+      <Tab title="Opción 1: Escaneo Directo">
+        Abre la aplicación WhatsApp Business y escanea el código QR mostrado en pantalla.
+
+        ![Código QR Opción 1](/images/1713494691.png)
+      </Tab>
+      <Tab title="Opción 2: Vincular Dispositivo">
+        Navega a Configuración > Dispositivos vinculados > Vincular un dispositivo en tu aplicación WhatsApp Business.
+
+        ![Código QR Opción 2](/images/1713499623.png)
+      </Tab>
+    </Tabs>
+  </Step>
+
+  <Step title="Sincronizar Historial de Chats (Opcional)">
+    Elige si deseas sincronizar tu historial de chats:
+
+    - **Todos los contactos** se importan automáticamente
+    - **Opcional:** Hasta 6 meses de historial de chats 1:1
+    - **Opcional:** Hasta 2 semanas de archivos multimedia
+    - **Nota:** Los chats grupales no se importan
+
+    ![Sincronizar Historial de Chats](/images/1720537088.png)
+
+    <Warning>
+    Mantén la aplicación WhatsApp Business ejecutándose durante la configuración para evitar pérdida de mensajes.
+    </Warning>
+  </Step>
+
+  <Step title="Verificar Detalles de la Cuenta">
+    Revisa y actualiza los detalles de tu cuenta de WhatsApp Business incluyendo:
+
+    - Nombre comercial visible
+    - Categoría del negocio
+    - Configuración de zona horaria
+
+    ![Verificar Detalles de la Cuenta](/images/1720535910.png)
+  </Step>
+
+  <Step title="Revisar Permisos de Acceso">
+    Revisa y confirma los permisos de acceso necesarios para que la integración funcione correctamente.
+
+    <Tabs>
+      <Tab title="iOS">
+        ![Permisos iOS](/images/1720564805.PNG)
+      </Tab>
+      <Tab title="Android">
+        ![Permisos Android](/images/1720564008.png)
+      </Tab>
+    </Tabs>
+  </Step>
+
+  <Step title="Completar Conexión">
+    Haz clic en **Finalizar** para completar el proceso de conexión. Tu aplicación WhatsApp Business ahora está conectada a Eazybe Cloud API.
+
+    ![Conexión Completa](/images/1720577061.png)
+  </Step>
+</Steps>
+
+## Configuración Posterior a la Conexión
+
+Después de completar la conexión:
+
+<CardGroup cols={2}>
+  <Card title="Sincronización de Mensajes" icon="messages">
+    Los mensajes se sincronizarán en tiempo real entre la aplicación móvil y el panel de Eazybe
+  </Card>
+  <Card title="Importación de Contactos" icon="address-book">
+    Todos los contactos se importan automáticamente a tu espacio de trabajo de Eazybe
+  </Card>
+</CardGroup>
+
+![Panel Posterior a la Conexión](/images/1720600772.png)
+
+## Pasos de Verificación
+
+Para verificar que tu conexión funciona correctamente:
+
+<Steps>
+  <Step title="Verificar Estado de Conexión">
+    Navega a tu espacio de trabajo de Eazybe y verifica que el estado de conexión muestre "Conectado".
+
+    ![Estado de Conexión](/images/1720609270.png)
+  </Step>
+
+  <Step title="Enviar Mensaje de Prueba">
+    Envía un mensaje de prueba desde la aplicación móvil o el panel de Eazybe para confirmar que la sincronización funciona.
+
+    ![Mensaje de Prueba](/images/1720611072.png)
+  </Step>
+
+  <Step title="Verificar en la Aplicación Móvil">
+    Comprueba que los mensajes enviados desde Eazybe aparezcan en tu aplicación WhatsApp Business.
+
+    ![Verificación en Aplicación Móvil](/images/1720632884.png)
+  </Step>
+</Steps>
+
+## Solución de Problemas
+
+<AccordionGroup>
+  <Accordion title="El Código QR No Escanea" icon="qrcode">
+    **Causas comunes:**
+    - La versión de WhatsApp Business App está desactualizada
+    - Conexión a internet deficiente
+    - Permiso de cámara no otorgado
+
+    **Solución:** Actualiza tu aplicación a la versión 2.24.17 o superior y asegura una conexión a internet estable.
+  </Accordion>
+
+  <Accordion title="El Historial de Chats No Se Importó" icon="clock-rotate-left">
+    Si omitiste la importación del historial inicialmente:
+    1. Abre la aplicación WhatsApp Business
+    2. Navega a **Configuración > Herramientas de Negocio > WhatsApp Business Platform**
+    3. Toca **Desconectar** para eliminar la conexión actual
+    4. Reinicia el proceso de incorporación desde el principio
+  </Accordion>
+
+  <Accordion title="Conexión Fallida" icon="triangle-exclamation">
+    **Razones comunes:**
+    - El número está vinculado a otro proveedor de API
+    - Restricciones de Meta en la cuenta
+    - Sin acceso de administrador a la página de Facebook
+
+    **Solución:** Usa un número con uso activo de WhatsApp Business y sin violaciones de políticas.
+  </Accordion>
+
+  <Accordion title="Los Mensajes No Se Sincronizan" icon="rotate">
+    - Asegúrate de que ambos dispositivos tengan conexión a internet estable
+    - Verifica que la aplicación WhatsApp Business esté ejecutándose en segundo plano
+    - Comprueba que los endpoints de webhook estén configurados correctamente
+  </Accordion>
+</AccordionGroup>
+
+## Preguntas Frecuentes
+
+<AccordionGroup>
+  <Accordion title="¿La coexistencia funciona con mi número existente?" icon="question">
+    **Sí**, si tu número cumple con todos los requisitos previos: WhatsApp Business App versión 2.24.17+, cuenta de Meta Business verificada y sin conexiones de proveedores de API existentes.
+  </Accordion>
+
+  <Accordion title="¿Perderé mis contactos o historial de chats?" icon="question">
+    **No** — la sincronización fluida ocurre durante el proceso de configuración. Todos los contactos se importan automáticamente y puedes sincronizar opcionalmente hasta 6 meses de historial de chats.
+  </Accordion>
+
+  <Accordion title="¿Puedo seguir usando la aplicación WhatsApp Business después de conectar?" icon="question">
+    **Sí**, puedes continuar usando la aplicación WhatsApp Business para chats personales mientras Eazybe gestiona respuestas automatizadas y difusiones.
+  </Accordion>
+
+  <Accordion title="¿Cómo desactivo la coexistencia?" icon="question">
+    Puedes desvincular la conexión a través de la configuración de tu espacio de trabajo de Eazybe. Ten en cuenta que aplica un **período de enfriamiento de 1-2 meses** si deseas reconectar el número.
+  </Accordion>
+
+  <Accordion title="¿La coexistencia tiene costos adicionales?" icon="question">
+    **No**, no hay tarifas adicionales por la coexistencia en sí. Se aplican las tarifas estándar de mensajería de Meta y los cargos de suscripción de Eazybe de forma normal.
+  </Accordion>
+</AccordionGroup>
+
+## ¿Necesitas Ayuda?
+
+Si tienes alguna pregunta o necesitas más asistencia, no dudes en contactarnos en [hey@eazybe.com](mailto:hey@eazybe.com). ¡Estaremos encantados de ayudarte!

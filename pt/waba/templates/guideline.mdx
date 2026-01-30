@@ -1,0 +1,154 @@
+---
+title: "Diretrizes"
+description: "Prazos de aprovação de modelos, diretrizes e melhores práticas para modelos de mensagens do WhatsApp"
+---
+
+Este guia cobre tudo o que você precisa saber sobre prazos de aprovação de modelos de mensagens do WhatsApp, diretrizes e melhores práticas para garantir a criação bem-sucedida de modelos.
+
+## Prazos de Aprovação
+
+A Meta emprega IA automatizada combinada com revisão humana para aprovações de modelos. Embora a orientação oficial permita aprovações dentro de **24 horas**, a maioria dos modelos é processada muito mais rápido.
+
+| Cenário | Tempo Estimado | Contexto |
+|---------|----------------|----------|
+| **Aprovação Padrão** | 1-5 Minutos | Modelos bem estruturados aprovados quase instantaneamente |
+| **Complexo/Sinalizado** | 1-24 Horas | Conteúdo ambíguo detectado por IA encaminhado para revisão humana |
+| **Re-Envio** | Até 24 Horas | Modelos rejeitados ou mudanças de categoria requerem verificação |
+
+<Tip>
+**Dica Pro:** Planeje suas campanhas com pelo menos 24 horas de antecedência para considerar possíveis atrasos na revisão.
+</Tip>
+
+## Visão Geral das Categorias de Modelos
+
+### 1. Modelos de Utilidade
+
+<Card title="Modelos de Utilidade" icon="bell">
+  **Propósito:** Facilitar transações ou atualizações específicas e acordadas
+</Card>
+
+**Casos de Uso Comuns:**
+- Confirmações de pedidos
+- Atualizações de envio
+- Alertas de saldo de conta
+- Lembretes de compromissos
+
+<Warning>
+Modelos de utilidade devem **excluir** vendas adicionais, mensagens de aquecimento e linguagem promocional.
+</Warning>
+
+**Velocidade de Aprovação:** Minutos se as variáveis forem claras (ex., `{{1}}` para ID do pedido)
+
+### 2. Modelos de Marketing
+
+<Card title="Modelos de Marketing" icon="bullhorn">
+  **Propósito:** Promover produtos, serviços e reconhecimento da marca
+</Card>
+
+**Casos de Uso Comuns:**
+- Ofertas de desconto
+- Newsletters
+- Recuperação de carrinho abandonado
+- Séries de boas-vindas
+
+<Info>
+Modelos de marketing passam por escrutínio mais rigoroso em relação ao consentimento e qualidade do conteúdo.
+</Info>
+
+## Restrições e Requisitos para Aprovação Bem-Sucedida
+
+### Conteúdo e Formatação
+
+<AccordionGroup>
+  <Accordion title="Variáveis" icon="code">
+    Sempre forneça valores de amostra para variáveis.
+
+    **Exemplo:** `{{1}}` = "João"
+
+    Variáveis pouco claras sem amostras provocarão rejeição.
+  </Accordion>
+
+  <Accordion title="Gramática e Ortografia" icon="spell-check">
+    Erros de gramática ou ortografia resultam em rejeição automática como conteúdo de "baixa qualidade".
+
+    Sempre revise seus modelos antes de enviar.
+  </Accordion>
+
+  <Accordion title="Encurtadores de Links" icon="link">
+    **Não use** encurtadores de links genéricos (como bit.ly) no texto do corpo.
+
+    Eles ocultam a URL de destino e acionam alertas de segurança.
+
+    <Tip>
+    Use os recursos de botões integrados do WhatsApp em vez de incorporar links encurtados no texto.
+    </Tip>
+  </Accordion>
+</AccordionGroup>
+
+### Conformidade com Políticas
+
+<AccordionGroup>
+  <Accordion title="Sem Categorias Mistas" icon="layer-group">
+    Misturar conteúdo de utilidade e marketing em um único modelo causa rejeição.
+
+    Mantenha o propósito do seu modelo claro e consistente.
+  </Accordion>
+
+  <Accordion title="Conteúdo Restrito" icon="ban">
+    Evite:
+    - Identificadores sensíveis (dados financeiros, informações de saúde)
+    - Linguagem ameaçadora ou coercitiva
+    - Conteúdo que viole as políticas do WhatsApp
+  </Accordion>
+
+  <Accordion title="Consistência de Categoria" icon="tags">
+    A Meta pode auto-detectar e alterar modelos mal categorizados.
+
+    Você tem **60 dias para apelar** esta mudança se discordar da recategorização.
+  </Accordion>
+</AccordionGroup>
+
+## Entendendo os Status dos Modelos
+
+| Status | Ícone | Descrição |
+|--------|-------|-----------|
+| **Pendente** | 🟡 | Atualmente sob revisão da Meta |
+| **Aprovado** | 🟢 | Pronto para enviar aos clientes |
+| **Rejeitado** | 🔴 | Falhou na revisão; verifique o painel para ver o motivo |
+| **Pausado** | ⏸️ | Sinalizado por baixa qualidade (altas taxas de bloqueio); não pode enviar até que a qualidade melhore |
+
+<Warning>
+Se seu modelo estiver **Pausado**, revise o conteúdo da sua mensagem e as práticas de envio. Altas taxas de bloqueio indicam que os destinatários estão marcando suas mensagens como spam.
+</Warning>
+
+## Resumo de Melhores Práticas
+
+<Steps>
+  <Step title="Planeje com Antecedência">
+    Permita pelo menos 24 horas mínimas para aprovações de modelos antes das campanhas.
+  </Step>
+
+  <Step title="Variáveis Claras">
+    Forneça valores de amostra claros para todas as variáveis para evitar rejeições.
+  </Step>
+
+  <Step title="Conteúdo de Qualidade">
+    Mantenha padrões apropriados de gramática e ortografia em todo momento.
+  </Step>
+
+  <Step title="Use Botões">
+    Use os recursos de botões do WhatsApp em vez de encurtadores de links no texto.
+  </Step>
+
+  <Step title="Categorias Precisas">
+    Mantenha as atribuições de categoria precisas e consistentes com o conteúdo.
+  </Step>
+
+  <Step title="Monitore a Qualidade">
+    Acompanhe as pontuações de qualidade para evitar que seus modelos sejam pausados.
+  </Step>
+</Steps>
+
+## Precisa de Ajuda?
+
+Se você tiver alguma dúvida ou precisar de mais assistência, sinta-se à vontade para entrar em contato conosco em [hey@eazybe.com](mailto:hey@eazybe.com). Ficaremos felizes em ajudar!

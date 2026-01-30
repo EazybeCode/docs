@@ -1,294 +1,180 @@
 ---
 title: "Signup Troubleshooting"
-description: "Resolve common WhatsApp Coexistence signup issues with step-by-step solutions"
+description: "Troubleshoot common issues when enabling WhatsApp Coexistence for your business"
 ---
 
-## Overview
+This comprehensive guide addresses common issues when enabling WhatsApp Coexistence, which allows businesses to use the WhatsApp Business App and Business API simultaneously with the same phone number.
 
-**WhatsApp Coexistence** enables businesses to use the **WhatsApp Business App** and **WhatsApp Business API** with the same phone number. This allows teams to manage conversations in both platforms simultaneously without changing numbers.
+![Coexistence Overview](/images/1855687476.png)
 
-<Note>
-Since Coexistence is a relatively new Meta capability, onboarding issues during **embedded signup** are common. This guide covers the most frequent problems and their solutions.
-</Note>
+## Quick Pre-Flight Checklist
 
----
+Before troubleshooting, verify these requirements:
 
-## 1. Phone Number Not Eligible
+<CardGroup cols={2}>
+  <Card title="App Version" icon="mobile">
+    Confirm WhatsApp Business App version **2.24.17** or newer
+  </Card>
+  <Card title="Solution Provider" icon="handshake">
+    Work with an official WhatsApp Solution Provider
+  </Card>
+  <Card title="Active Usage" icon="clock">
+    Ensure minimum **7 days** of active usage on Business App
+  </Card>
+  <Card title="Cooldown Period" icon="hourglass">
+    Delete old WABA and respect **1-2 month** cooldown if applicable
+  </Card>
+</CardGroup>
+
+<Tip>
+Back up important conversations before starting. WhatsApp Coexistence supports up to 6 months of sync capacity.
+</Tip>
+
+## Common Issues and Solutions
+
+### 1. Phone Number Not Eligible
 
 <Warning>
-**Error Message:** "Your phone number isn't eligible to connect to the WhatsApp Business Platform. More activity on the WhatsApp Business App is needed to help determine eligibility."
+**Error Message:** "Your phone number isn't eligible to connect to the WhatsApp Business Platform."
 </Warning>
 
-![Phone number not eligible error](/images/1855687476.png)
+**Root Causes:**
+- Insufficient usage history (requires 7 days minimum on Business App)
+- Newly registered numbers or low chat activity
+- Previous WABA linkage blocking eligibility
 
-### Why This Happens
+<AccordionGroup>
+  <Accordion title="Solutions" icon="wrench">
+    - Exchange real conversations for minimum **7 days**; 30-60 days recommended
+    - Avoid repeatedly deleting and re-registering the number
+    - Remove old WABA setup and maintain **1-2 month** cooldown period
+  </Accordion>
+</AccordionGroup>
 
-- Meta requires at least **7 days** of genuine activity on the WhatsApp Business App
-- Newly registered numbers or those with minimal chat activity are flagged as ineligible
-- Numbers previously tied to a WABA account impact eligibility until cooldown expires
+### 2. Country or Region Not Supported
 
-### How to Fix
+**Root Causes:**
+- Meta compliance and regulatory restrictions in specific regions
+- Nigeria and South Africa are commonly unsupported
 
-<Steps>
-  <Step title="Use the number actively">
-    Exchange real customer conversations on the WhatsApp Business App for a minimum of **7 days**. For smoother approval, stay active for **30–60 days**.
-  </Step>
-  <Step title="Avoid re-registering">
-    Do not repeatedly delete and re-register the number—this resets activity history and delays eligibility.
-  </Step>
-  <Step title="Clear old WABA linkage">
-    If the number was used with a previous API provider, remove the old WABA setup, re-register in the Business App, and maintain activity for **1–2 months** before retrying.
-  </Step>
-</Steps>
+<AccordionGroup>
+  <Accordion title="Solutions" icon="wrench">
+    **Supported Countries include:**
+    - India, Brazil, Mexico, Indonesia
+    - USA, Hong Kong, Singapore
 
----
+    - Monitor Meta documentation for expanding regional support
+    - Consider alternate messaging channels pending availability
+  </Accordion>
+</AccordionGroup>
 
-## 2. Country or Region Not Supported
+### 3. Number Previously Used With WhatsApp Business API
 
-<Warning>
-**Error:** The number's country code is not supported for Coexistence.
-</Warning>
+**Root Cause:** Meta enforces mandatory cooldown periods between provider transitions.
 
-![Country not supported error](/images/1855689918.png)
+![Provider Transition](/images/1855689918.png)
 
-### Why This Happens
+<AccordionGroup>
+  <Accordion title="Solutions" icon="wrench">
+    - Delete old WABA configuration completely
+    - Re-register in Business App and maintain active status for **1-2 months**
+    - Avoid rushing API reconnection during cooldown period
+  </Accordion>
+</AccordionGroup>
 
-- Meta has restricted Coexistence for certain regions due to compliance or regulatory limitations
-- Numbers from countries such as **Nigeria** and **South Africa** are commonly not compatible
+### 4. Chat Sync Delays or Failures
 
-### How to Fix
+**Root Causes:**
+- Large chat histories and contact lists extend sync time
+- Unstable connectivity or closed app during synchronization
 
-<Steps>
-  <Step title="Use a supported country code">
-    Choose a number from an enabled region: **India, Brazil, Mexico, Indonesia, U.S., Hong Kong, or Singapore** (availability may change).
-  </Step>
-  <Step title="Monitor updates">
-    Check Meta's official documentation regularly—support for new regions is expanding.
-  </Step>
-  <Step title="Consider interim options">
-    If Coexistence isn't available for your region, temporarily rely on the WhatsApp Business App alone.
-  </Step>
-</Steps>
+<AccordionGroup>
+  <Accordion title="Solutions" icon="wrench">
+    - Keep phone unlocked with app open during sync
+    - Maintain reliable Wi-Fi or strong mobile data
+    - Allow **4-6+ hours** for large histories
+    - Rescan QR code if stuck; verify app version 2.24.17+
+  </Accordion>
+</AccordionGroup>
 
----
+### 5. QR Code Not Appearing or Not Scanning
 
-## 3. Number Previously Used with WhatsApp Business API
-
-<Warning>
-**Error:** The number is already registered to an existing WhatsApp account or WABA.
-</Warning>
-
-![Number previously used error](/images/1855690369.png)
-
-### Why This Happens
-
-- Meta requires a **cooldown period** when a number was previously used with WABA
-- Attempting to connect too soon after deleting or moving between providers triggers errors
-
-### How to Fix
-
-<Steps>
-  <Step title="Delete the old WABA">
-    Log into your previous provider's portal (or Business Manager) and fully remove the WABA configuration for that number.
-  </Step>
-  <Step title="Re-register in the Business App">
-    Set up the same number in the WhatsApp Business App and use it actively for **1–2 months**.
-  </Step>
-  <Step title="Do not rush re-integration">
-    Avoid reconnecting to the API immediately—retrying during cooldown causes repeated failures.
-  </Step>
-</Steps>
-
----
-
-## 4. Chat Sync Delays or Failures
-
-<Info>
-**Symptom:** Long delays (several hours) for chat history and contacts to appear, or sync processes that fail midway.
-</Info>
-
-### Why This Happens
-
-- Very large chat histories and contact lists significantly increase sync time
-- Unstable internet or a closed/inactive app during sync interrupts the process
-
-### How to Fix
-
-<Steps>
-  <Step title="Keep phone and app active">
-    Leave your phone unlocked with the WhatsApp Business App open during sync.
-  </Step>
-  <Step title="Use a stable connection">
-    Connect to reliable Wi-Fi or strong mobile data before starting sync.
-  </Step>
-  <Step title="Allow enough time">
-    For heavy histories, expect **4–6 hours or more**. Avoid interrupting the process.
-  </Step>
-  <Step title="Restart if needed">
-    If sync appears stuck, rescan the QR code after confirming app version **2.24.17 or later**.
-  </Step>
-</Steps>
-
----
-
-## 5. QR Code Not Appearing or Not Scanning
-
-<Info>
-**Symptom:** The QR code doesn't render on screen or cannot be scanned from the app.
-</Info>
-
-### Why This Happens
-
-- The WhatsApp Business App is outdated and doesn't support Coexistence
+**Root Causes:**
+- Outdated WhatsApp Business App version
 - Incorrect signup flow navigation
-- Device camera issues or temporary Meta service problems
+- Camera or temporary Meta service issues
 
-### How to Fix
+![QR Code Issue](/images/1855690369.png)
 
-<Steps>
-  <Step title="Update your app">
-    Confirm the WhatsApp Business App is on version **2.24.17 or newer**.
-  </Step>
-  <Step title="Follow the correct menu path">
-    Navigate to **Settings → WhatsApp → Sign Up with Facebook** in the app.
-  </Step>
-  <Step title="Check camera and lighting">
-    Clean the camera lens, use good lighting, and avoid reflections or glare.
-  </Step>
-  <Step title="Retry after some time">
-    Close both the app and browser, wait a few minutes, then try again.
-  </Step>
-  <Step title="Reinstall as last resort">
-    If persistent, uninstall and reinstall the WhatsApp Business App.
-  </Step>
-</Steps>
+<AccordionGroup>
+  <Accordion title="Solutions" icon="wrench">
+    - Update to version **2.24.17** or newer
+    - Follow correct path: **Settings > WhatsApp > Sign Up with Facebook**
+    - Clean camera lens and optimize lighting
+    - Close and retry after waiting; reinstall if persistent
+  </Accordion>
+</AccordionGroup>
 
----
+### 6. Facebook Page Linking Issues
 
-## 6. Facebook Page Linking Issues
+**Root Causes:**
+- Missing Facebook Page or Meta Business Account
+- Insufficient admin permissions
+- Account-level Meta restrictions
 
-<Info>
-**Symptom:** Errors or incomplete flows when linking WhatsApp to a Facebook Page during onboarding.
-</Info>
+<AccordionGroup>
+  <Accordion title="Solutions" icon="wrench">
+    - Create or connect Facebook Page via Business Tools settings
+    - Verify admin access on both Page and Business Account
+    - Complete Meta Business Account setup with all required details
+  </Accordion>
+</AccordionGroup>
 
-### Why This Happens
-
-- No Facebook Page or Meta Business Account is configured
-- The logged-in user lacks admin access to the Page or Business Manager
-- Account-level or regional restrictions block the linking step
-
-### How to Fix
-
-<Steps>
-  <Step title="Create a Facebook Page">
-    If you don't have one, create or connect a Page from **Business Tools → Facebook & Instagram** in the app.
-  </Step>
-  <Step title="Confirm admin permissions">
-    Ensure you're signed in with a Meta account that has **admin rights** on both the Page and Business Account.
-  </Step>
-  <Step title="Complete Meta Business Account setup">
-    During embedded signup, select or create a Meta Business Account and fill in all required business details.
-  </Step>
-</Steps>
-
----
-
-## 7. Cannot Disable Coexistence
+### 7. Cannot Disable Coexistence
 
 <Info>
-**Symptom:** No visible toggle in your API provider's platform to turn off Coexistence.
+Coexistence is controlled from the WhatsApp Business App side. The Cloud API interface does not expose a direct "disable" option.
 </Info>
 
-### Why This Happens
+<AccordionGroup>
+  <Accordion title="Solutions" icon="wrench">
+    - Use app disconnect: **Settings > Account > Business Platform**
+    - Avoid uninstalling the app
+    - Contact your provider or Meta support if status doesn't update
+  </Accordion>
+</AccordionGroup>
 
-- Coexistence is controlled from the WhatsApp Business App side—the Cloud API interface doesn't expose a direct "disable" option
+### 8. Unsupported Companion Devices
 
-### How to Fix
+**Root Causes:**
+- Only WhatsApp Web and official desktop apps are supported
+- Messages from unsupported devices won't sync to API
 
-<Steps>
-  <Step title="Disconnect via the app">
-    In the WhatsApp Business App, go to **Settings → Account → Business Platform** and use the **Disconnect** option.
-  </Step>
-  <Step title="Avoid uninstalling">
-    Don't uninstall the app to disable Coexistence—this complicates future onboarding.
-  </Step>
-  <Step title="Contact support">
-    If you cannot see the disconnect option, contact your provider or Meta support.
-  </Step>
-</Steps>
+<AccordionGroup>
+  <Accordion title="Solutions" icon="wrench">
+    - Link via **WhatsApp Web** or official **Mac/Windows** desktop app
+    - Monitor provider updates for expanding device support
+    - Watch for placeholder warnings on unsupported messages
+  </Accordion>
+</AccordionGroup>
 
----
+### 9. Business Name Locked After Onboarding
 
-## 8. Unsupported Companion Devices
+**Root Cause:** Meta enforces consistent business identity across platforms after onboarding completion.
+
+<AccordionGroup>
+  <Accordion title="Solutions" icon="wrench">
+    - Finalize your business name **before** starting signup
+    - Request post-onboarding changes via Meta support (approval not guaranteed)
+  </Accordion>
+</AccordionGroup>
+
+## Key Takeaway
 
 <Info>
-**Symptom:** Messages from certain companion devices (e.g., wearables) are missing from API conversations.
+With the right preparation and troubleshooting, most onboarding issues can be resolved quickly. If problems persist, contact your WhatsApp solution provider's support team.
 </Info>
 
-### Why This Happens
+## Need Help?
 
-- Only **WhatsApp Web** and official desktop apps are supported in Coexistence
-- Messages from unsupported companions are delivered to end users but not synced to the Cloud API
-
-### How to Fix
-
-<Steps>
-  <Step title="Re-link to supported devices">
-    Use **WhatsApp Web** or the official **WhatsApp desktop app for Mac/Windows**.
-  </Step>
-  <Step title="Watch for placeholders">
-    Some solutions show warnings when messages come from unsupported devices.
-  </Step>
-  <Step title="Track changes">
-    Monitor product updates—Meta is gradually adding support for additional device types.
-  </Step>
-</Steps>
-
----
-
-## 9. Business Name Locked After Onboarding
-
-<Info>
-**Symptom:** Unable to modify your business name once Coexistence is active.
-</Info>
-
-### Why This Happens
-
-- Meta enforces a single, consistent business identity across the WhatsApp Business App and API to prevent misuse
-
-### How to Fix
-
-<Steps>
-  <Step title="Finalize before onboarding">
-    Confirm the correct business name in both the app and Meta Business Manager **before** starting signup.
-  </Step>
-  <Step title="Request changes via support">
-    If you must update the name after onboarding, raise a request through Meta support or your provider. Approvals are not guaranteed.
-  </Step>
-</Steps>
-
----
-
-## Pre-Flight Checklist
-
-<Check>
-Use this checklist before starting Coexistence setup to minimize issues:
-</Check>
-
-| Requirement | Details |
-|-------------|---------|
-| **App Version** | WhatsApp Business App **2.24.17 or newer** |
-| **Trusted Provider** | Work with a certified provider like **Eazybe** |
-| **Number Readiness** | At least **7 days** of real usage on the Business App |
-| **Old WABA Cleanup** | Delete old WABA and respect **1–2 month** cooldown |
-| **Data Backup** | Back up important conversations (sync covers up to **6 months**) |
-
----
-
-## Conclusion
-
-WhatsApp Coexistence is a powerful way to maintain your existing WhatsApp Business App workflow while scaling automation through the Cloud API. With proper preparation and troubleshooting, most onboarding issues can be resolved quickly.
-
-<Card title="Need More Help?" icon="headset">
-  If problems persist, contact your WhatsApp solution provider's support team for additional review.
-</Card>
+If you have any questions or need further assistance, feel free to reach out to us at [hey@eazybe.com](mailto:hey@eazybe.com). We're happy to help!

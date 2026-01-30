@@ -1,294 +1,180 @@
 ---
 title: "Kayıt Sorun Giderme"
-description: "WhatsApp Coexistence kayıt sorunlarını adım adım çözümlerle giderin"
+description: "İşletmeniz için WhatsApp Birlikte Yaşamı etkinleştirirken yaşanan yaygın sorunları giderin"
 ---
 
-## Genel Bakış
+Bu kapsamlı kılavuz, işletmelerin aynı telefon numarasıyla WhatsApp Business Uygulaması ve Business API'yi aynı anda kullanmasına olanak tanıyan WhatsApp Birlikte Yaşam özelliğini etkinleştirirken karşılaşılan yaygın sorunları ele almaktadır.
 
-**WhatsApp Coexistence**, işletmelerin **WhatsApp Business Uygulaması** ve **WhatsApp Business API'sini** aynı telefon numarasıyla kullanmasını sağlar. Bu, ekiplerin numara değiştirmeden her iki platformda aynı anda konuşmaları yönetmesine olanak tanır.
+![Birlikte Yaşam Genel Görünümü](/images/1855687476.png)
 
-<Note>
-Coexistence, Meta'nın nispeten yeni bir özelliği olduğundan, **entegre kayıt** sırasında entegrasyon sorunları yaygındır. Bu kılavuz, en sık karşılaşılan sorunları ve çözümlerini kapsar.
-</Note>
+## Hızlı Ön Kontrol Listesi
 
----
+Sorun gidermeden önce şu gereksinimleri doğrulayın:
 
-## 1. Telefon Numarası Uygun Değil
+<CardGroup cols={2}>
+  <Card title="Uygulama Sürümü" icon="mobile">
+    WhatsApp Business App sürümünün **2.24.17** veya daha yeni olduğunu doğrulayın
+  </Card>
+  <Card title="Çözüm Sağlayıcı" icon="handshake">
+    Resmi bir WhatsApp Çözüm Sağlayıcısı ile çalışın
+  </Card>
+  <Card title="Aktif Kullanım" icon="clock">
+    Business App'te minimum **7 gün** aktif kullanım sağlayın
+  </Card>
+  <Card title="Bekleme Süresi" icon="hourglass">
+    Eski WABA'yı silin ve gerekiyorsa **1-2 ay** bekleme süresine uyun
+  </Card>
+</CardGroup>
+
+<Tip>
+Başlamadan önce önemli konuşmaları yedekleyin. WhatsApp Birlikte Yaşam 6 aya kadar senkronizasyon kapasitesini destekler.
+</Tip>
+
+## Yaygın Sorunlar ve Çözümler
+
+### 1. Telefon Numarası Uygun Değil
 
 <Warning>
-**Hata Mesajı:** "Telefon numaranız WhatsApp Business Platformuna bağlanmak için uygun değil. Uygunluğu belirlemek için WhatsApp Business Uygulamasında daha fazla aktivite gerekiyor."
+**Hata Mesajı:** "Telefon numaranız WhatsApp Business Platformuna bağlanmak için uygun değil."
 </Warning>
 
-![Uygun olmayan numara hatası](/images/1855687476.png)
+**Temel Nedenler:**
+- Yetersiz kullanım geçmişi (Business App'te minimum 7 gün gerektirir)
+- Yeni kaydedilmiş numaralar veya düşük sohbet aktivitesi
+- Önceki WABA bağlantısı uygunluğu engelliyor
 
-### Bu Neden Oluyor
+<AccordionGroup>
+  <Accordion title="Çözümler" icon="wrench">
+    - Minimum **7 gün** gerçek görüşmeler yapın; 30-60 gün önerilir
+    - Numarayı tekrar tekrar silip yeniden kaydetmekten kaçının
+    - Eski WABA kurulumunu kaldırın ve **1-2 ay** bekleme süresini koruyun
+  </Accordion>
+</AccordionGroup>
 
-- Meta, WhatsApp Business Uygulamasında en az **7 gün** gerçek aktivite gerektirir
-- Yeni kaydedilen numaralar veya minimum sohbet aktivitesi olanlar uygun değil olarak işaretlenir
-- Daha önce bir WABA hesabına bağlı numaralar, bekleme süresi dolana kadar uygunluğu etkiler
+### 2. Ülke veya Bölge Desteklenmiyor
 
-### Nasıl Düzeltilir
+**Temel Nedenler:**
+- Belirli bölgelerde Meta uyumluluk ve düzenleyici kısıtlamalar
+- Nijerya ve Güney Afrika genellikle desteklenmiyor
 
-<Steps>
-  <Step title="Numarayı aktif olarak kullanın">
-    WhatsApp Business Uygulamasında müşterilerle minimum **7 gün** gerçek konuşmalar yapın. Daha sorunsuz onay için **30–60 gün** aktif kalın.
-  </Step>
-  <Step title="Yeniden kayıt yapmaktan kaçının">
-    Numarayı tekrar tekrar silip kaydetmeyin—bu, aktivite geçmişini sıfırlar ve uygunluğu geciktirir.
-  </Step>
-  <Step title="Eski WABA bağlantısını temizleyin">
-    Numara önceki bir API sağlayıcısıyla kullanıldıysa, eski WABA yapılandırmasını kaldırın, Business Uygulamasında yeniden kaydolun ve tekrar denemeden önce **1–2 ay** aktivite sürdürün.
-  </Step>
-</Steps>
+<AccordionGroup>
+  <Accordion title="Çözümler" icon="wrench">
+    **Desteklenen ülkeler şunlardır:**
+    - Hindistan, Brezilya, Meksika, Endonezya
+    - ABD, Hong Kong, Singapur
 
----
+    - Genişleyen bölgesel destek için Meta belgelerini izleyin
+    - Beklerken alternatif mesajlaşma kanallarını değerlendirin
+  </Accordion>
+</AccordionGroup>
 
-## 2. Ülke veya Bölge Desteklenmiyor
+### 3. Numara Daha Önce WhatsApp Business API ile Kullanılmış
 
-<Warning>
-**Hata:** Numaranın ülke kodu Coexistence için desteklenmiyor.
-</Warning>
+**Temel Neden:** Meta, sağlayıcı geçişleri arasında zorunlu bekleme süreleri uygular.
 
-![Desteklenmeyen ülke hatası](/images/1855689918.png)
+![Sağlayıcı Geçişi](/images/1855689918.png)
 
-### Bu Neden Oluyor
+<AccordionGroup>
+  <Accordion title="Çözümler" icon="wrench">
+    - Eski WABA yapılandırmasını tamamen silin
+    - Business App'te yeniden kayıt olun ve **1-2 ay** aktif durumu koruyun
+    - Bekleme süresi boyunca API yeniden bağlantısını acele etmeyin
+  </Accordion>
+</AccordionGroup>
 
-- Meta, düzenleyici veya uyumluluk sınırlamaları nedeniyle belirli bölgelerde Coexistence'ı kısıtladı
-- **Nijerya** ve **Güney Afrika** gibi ülkelerden numaralar genellikle uyumlu değil
+### 4. Sohbet Senkronizasyon Gecikmeleri veya Hataları
 
-### Nasıl Düzeltilir
+**Temel Nedenler:**
+- Büyük sohbet geçmişleri ve kişi listeleri senkronizasyon süresini uzatır
+- Kararsız bağlantı veya senkronizasyon sırasında kapalı uygulama
 
-<Steps>
-  <Step title="Desteklenen bir ülke kodu kullanın">
-    Etkinleştirilmiş bir bölgeden numara seçin: **Hindistan, Brezilya, Meksika, Endonezya, ABD, Hong Kong veya Singapur** (kullanılabilirlik değişebilir).
-  </Step>
-  <Step title="Güncellemeleri takip edin">
-    Meta'nın resmi belgelerini düzenli olarak kontrol edin—yeni bölgeler için destek genişliyor.
-  </Step>
-  <Step title="Geçici seçenekleri değerlendirin">
-    Coexistence bölgeniz için mevcut değilse, geçici olarak sadece WhatsApp Business Uygulamasını kullanın.
-  </Step>
-</Steps>
+<AccordionGroup>
+  <Accordion title="Çözümler" icon="wrench">
+    - Senkronizasyon sırasında telefonu kilit açık ve uygulama açık tutun
+    - Güvenilir Wi-Fi veya güçlü mobil veri bağlantısı sağlayın
+    - Büyük geçmişler için **4-6+ saat** bekleyin
+    - Takılırsa QR kodunu yeniden tarayın; sürüm 2.24.17+ doğrulayın
+  </Accordion>
+</AccordionGroup>
 
----
+### 5. QR Kod Görünmüyor veya Taranmıyor
 
-## 3. Numara Daha Önce WhatsApp Business API ile Kullanılmış
-
-<Warning>
-**Hata:** Numara zaten mevcut bir WhatsApp hesabına veya WABA'ya kayıtlı.
-</Warning>
-
-![Daha önce kullanılmış numara hatası](/images/1855690369.png)
-
-### Bu Neden Oluyor
-
-- Numara daha önce WABA ile kullanıldığında Meta bir **bekleme süresi** gerektirir
-- Sağlayıcılar arasında silme veya geçiş yaptıktan çok kısa süre sonra bağlanmaya çalışmak hatalara neden olur
-
-### Nasıl Düzeltilir
-
-<Steps>
-  <Step title="Eski WABA'yı silin">
-    Önceki sağlayıcınızın portalına (veya Business Manager'a) giriş yapın ve o numara için WABA yapılandırmasını tamamen kaldırın.
-  </Step>
-  <Step title="Business Uygulamasında yeniden kaydolun">
-    Aynı numarayı WhatsApp Business Uygulamasında ayarlayın ve **1–2 ay** aktif olarak kullanın.
-  </Step>
-  <Step title="Yeniden entegrasyonu acele etmeyin">
-    API'ye hemen yeniden bağlanmaktan kaçının—bekleme süresi boyunca tekrar denemek tekrarlanan başarısızlıklara neden olur.
-  </Step>
-</Steps>
-
----
-
-## 4. Sohbet Senkronizasyonu Gecikmeleri veya Başarısızlıkları
-
-<Info>
-**Belirti:** Sohbet geçmişi ve kişilerin görünmesi için uzun gecikmeler (birkaç saat) veya yarıda başarısız olan senkronizasyon işlemleri.
-</Info>
-
-### Bu Neden Oluyor
-
-- Çok büyük sohbet geçmişleri ve kişi listeleri senkronizasyon süresini önemli ölçüde artırır
-- Senkronizasyon sırasında kararsız internet bağlantısı veya kapalı/inaktif uygulama işlemi kesintiye uğratır
-
-### Nasıl Düzeltilir
-
-<Steps>
-  <Step title="Telefonu ve uygulamayı aktif tutun">
-    Senkronizasyon sırasında telefonunuzu kilitsiz ve WhatsApp Business Uygulamasını açık bırakın.
-  </Step>
-  <Step title="Kararlı bir bağlantı kullanın">
-    Senkronizasyonu başlatmadan önce güvenilir Wi-Fi veya güçlü mobil veriye bağlanın.
-  </Step>
-  <Step title="Yeterli zaman tanıyın">
-    Büyük geçmişler için **4–6 saat veya daha fazla** bekleyin. İşlemi kesintiye uğratmaktan kaçının.
-  </Step>
-  <Step title="Gerekirse yeniden başlatın">
-    Senkronizasyon takılmış görünüyorsa, uygulama sürümünün **2.24.17 veya sonrası** olduğunu doğruladıktan sonra QR kodunu yeniden tarayın.
-  </Step>
-</Steps>
-
----
-
-## 5. QR Kodu Görünmüyor veya Taranmıyor
-
-<Info>
-**Belirti:** QR kodu ekranda görünmüyor veya uygulamadan taranamıyor.
-</Info>
-
-### Bu Neden Oluyor
-
-- WhatsApp Business Uygulaması güncel değil ve Coexistence'ı desteklemiyor
+**Temel Nedenler:**
+- Güncel olmayan WhatsApp Business App sürümü
 - Yanlış kayıt akışı navigasyonu
-- Cihaz kamera sorunları veya geçici Meta hizmet sorunları
+- Kamera veya geçici Meta hizmet sorunları
 
-### Nasıl Düzeltilir
+![QR Kod Sorunu](/images/1855690369.png)
 
-<Steps>
-  <Step title="Uygulamanızı güncelleyin">
-    WhatsApp Business Uygulamasının **2.24.17 veya daha yeni** sürümde olduğunu doğrulayın.
-  </Step>
-  <Step title="Doğru menü yolunu izleyin">
-    Uygulamada **Ayarlar → WhatsApp → Facebook ile Kaydol** seçeneğine gidin.
-  </Step>
-  <Step title="Kamera ve aydınlatmayı kontrol edin">
-    Kamera lensini temizleyin, iyi aydınlatma kullanın ve yansıma veya parlamadan kaçının.
-  </Step>
-  <Step title="Bir süre sonra tekrar deneyin">
-    Hem uygulamayı hem de tarayıcıyı kapatın, birkaç dakika bekleyin ve tekrar deneyin.
-  </Step>
-  <Step title="Son çare olarak yeniden yükleyin">
-    Devam ederse, WhatsApp Business Uygulamasını kaldırıp yeniden yükleyin.
-  </Step>
-</Steps>
+<AccordionGroup>
+  <Accordion title="Çözümler" icon="wrench">
+    - **2.24.17** veya daha yeni sürüme güncelleyin
+    - Doğru yolu izleyin: **Ayarlar > WhatsApp > Facebook ile Kaydol**
+    - Kamera lensini temizleyin ve aydınlatmayı optimize edin
+    - Kapatın ve bekledikten sonra tekrar deneyin; kalıcıysa yeniden yükleyin
+  </Accordion>
+</AccordionGroup>
 
----
+### 6. Facebook Sayfa Bağlantı Sorunları
 
-## 6. Facebook Sayfası Bağlantı Sorunları
+**Temel Nedenler:**
+- Facebook Sayfası veya Meta Business Hesabı eksik
+- Yetersiz yönetici izinleri
+- Hesap düzeyinde Meta kısıtlamaları
 
-<Info>
-**Belirti:** Entegrasyon sırasında WhatsApp'ı bir Facebook Sayfasına bağlarken hatalar veya tamamlanmamış akışlar.
-</Info>
+<AccordionGroup>
+  <Accordion title="Çözümler" icon="wrench">
+    - Business Araçları ayarları üzerinden Facebook Sayfası oluşturun veya bağlayın
+    - Hem Sayfa hem de Business Hesabında yönetici erişimini doğrulayın
+    - Gerekli tüm ayrıntılarla Meta Business Account kurulumunu tamamlayın
+  </Accordion>
+</AccordionGroup>
 
-### Bu Neden Oluyor
-
-- Facebook Sayfası veya Meta Business Hesabı yapılandırılmamış
-- Giriş yapan kullanıcının Sayfa veya Business Manager'da yönetici erişimi yok
-- Hesap düzeyinde veya bölgesel kısıtlamalar bağlantı adımını engelliyor
-
-### Nasıl Düzeltilir
-
-<Steps>
-  <Step title="Bir Facebook Sayfası oluşturun">
-    Yoksa, uygulamada **İş Araçları → Facebook ve Instagram** bölümünden bir Sayfa oluşturun veya bağlayın.
-  </Step>
-  <Step title="Yönetici izinlerini doğrulayın">
-    Hem Sayfa hem de Business Hesabında **yönetici hakları** olan bir Meta hesabıyla giriş yaptığınızdan emin olun.
-  </Step>
-  <Step title="Meta Business Hesabı kurulumunu tamamlayın">
-    Entegre kayıt sırasında, bir Meta Business Hesabı seçin veya oluşturun ve gerekli tüm işletme bilgilerini doldurun.
-  </Step>
-</Steps>
-
----
-
-## 7. Coexistence Devre Dışı Bırakılamıyor
+### 7. Birlikte Yaşam Devre Dışı Bırakılamıyor
 
 <Info>
-**Belirti:** API sağlayıcınızın platformunda Coexistence'ı kapatmak için görünür bir düğme yok.
+Birlikte Yaşam, WhatsApp Business App tarafından kontrol edilir. Cloud API arayüzü doğrudan bir "devre dışı bırak" seçeneği sunmaz.
 </Info>
 
-### Bu Neden Oluyor
+<AccordionGroup>
+  <Accordion title="Çözümler" icon="wrench">
+    - Uygulama bağlantısını kesin: **Ayarlar > Hesap > Business Platformu**
+    - Uygulamayı kaldırmaktan kaçının
+    - Durum güncellenmezse sağlayıcınıza veya Meta desteğine başvurun
+  </Accordion>
+</AccordionGroup>
 
-- Coexistence, WhatsApp Business Uygulaması tarafından kontrol edilir—Cloud API arayüzü doğrudan bir "devre dışı bırak" seçeneği sunmaz
+### 8. Desteklenmeyen Tamamlayıcı Cihazlar
 
-### Nasıl Düzeltilir
+**Temel Nedenler:**
+- Yalnızca WhatsApp Web ve resmi masaüstü uygulamaları desteklenir
+- Desteklenmeyen cihazlardan gelen mesajlar API'ye senkronize edilmez
 
-<Steps>
-  <Step title="Uygulama üzerinden bağlantıyı kesin">
-    WhatsApp Business Uygulamasında **Ayarlar → Hesap → Business Platformu** bölümüne gidin ve **Bağlantıyı Kes** seçeneğini kullanın.
-  </Step>
-  <Step title="Kaldırmaktan kaçının">
-    Coexistence'ı devre dışı bırakmak için uygulamayı kaldırmayın—bu, gelecekteki entegrasyonu zorlaştırır.
-  </Step>
-  <Step title="Destek ile iletişime geçin">
-    Bağlantı kesme seçeneğini göremiyorsanız, sağlayıcınıza veya Meta desteğine başvurun.
-  </Step>
-</Steps>
+<AccordionGroup>
+  <Accordion title="Çözümler" icon="wrench">
+    - **WhatsApp Web** veya resmi **Mac/Windows** masaüstü uygulaması üzerinden bağlayın
+    - Genişleyen cihaz desteği için sağlayıcı güncellemelerini izleyin
+    - Desteklenmeyen mesajlarda yer tutucu uyarılarını izleyin
+  </Accordion>
+</AccordionGroup>
 
----
+### 9. Kayıttan Sonra İşletme Adı Kilitli
 
-## 8. Desteklenmeyen Tamamlayıcı Cihazlar
+**Temel Neden:** Meta, kayıt tamamlandıktan sonra platformlar arasında tutarlı işletme kimliği uygular.
+
+<AccordionGroup>
+  <Accordion title="Çözümler" icon="wrench">
+    - Kayıda başlamadan **önce** işletme adınızı kesinleştirin
+    - Kayıt sonrası değişiklikleri Meta desteği aracılığıyla talep edin (onay garanti değildir)
+  </Accordion>
+</AccordionGroup>
+
+## Önemli Nokta
 
 <Info>
-**Belirti:** Belirli tamamlayıcı cihazlardan (örn., giyilebilir cihazlar) gelen mesajlar API konuşmalarında görünmüyor.
+Doğru hazırlık ve sorun giderme ile çoğu entegrasyon sorunu hızla çözülebilir. Sorunlar devam ederse, WhatsApp çözüm sağlayıcınızın destek ekibiyle iletişime geçin.
 </Info>
 
-### Bu Neden Oluyor
+## Yardıma mı İhtiyacınız Var?
 
-- Coexistence'da yalnızca **WhatsApp Web** ve resmi masaüstü uygulamaları desteklenir
-- Desteklenmeyen tamamlayıcılardan gelen mesajlar son kullanıcılara iletilir ancak Cloud API ile senkronize edilmez
-
-### Nasıl Düzeltilir
-
-<Steps>
-  <Step title="Desteklenen cihazlara yeniden bağlanın">
-    **WhatsApp Web** veya **Mac/Windows için resmi WhatsApp masaüstü uygulamasını** kullanın.
-  </Step>
-  <Step title="Yer tutucuları izleyin">
-    Bazı çözümler, mesajlar desteklenmeyen cihazlardan geldiğinde uyarılar gösterir.
-  </Step>
-  <Step title="Değişiklikleri takip edin">
-    Ürün güncellemelerini izleyin—Meta kademeli olarak ek cihaz türleri için destek ekliyor.
-  </Step>
-</Steps>
-
----
-
-## 9. Entegrasyondan Sonra İşletme Adı Kilitli
-
-<Info>
-**Belirti:** Coexistence aktif olduktan sonra işletme adı değiştirilemiyor.
-</Info>
-
-### Bu Neden Oluyor
-
-- Meta, kötüye kullanımı önlemek için WhatsApp Business Uygulaması ve API genelinde tek, tutarlı bir işletme kimliği uygular
-
-### Nasıl Düzeltilir
-
-<Steps>
-  <Step title="Entegrasyondan önce sonlandırın">
-    Kayıt başlatmadan **önce** hem uygulamada hem de Meta Business Manager'da doğru işletme adını onaylayın.
-  </Step>
-  <Step title="Destek aracılığıyla değişiklik talep edin">
-    Entegrasyondan sonra adı güncellemeniz gerekiyorsa, Meta desteği veya sağlayıcınız aracılığıyla bir talep oluşturun. Onaylar garanti edilmez.
-  </Step>
-</Steps>
-
----
-
-## Ön Kontrol Listesi
-
-<Check>
-Sorunları en aza indirmek için Coexistence kurulumuna başlamadan önce bu kontrol listesini kullanın:
-</Check>
-
-| Gereksinim | Detaylar |
-|------------|----------|
-| **Uygulama Sürümü** | WhatsApp Business Uygulaması **2.24.17 veya daha yeni** |
-| **Sertifikalı Sağlayıcı** | **Eazybe** gibi sertifikalı bir sağlayıcıyla çalışın |
-| **Numara Hazırlığı** | Business Uygulamasında en az **7 gün** gerçek kullanım |
-| **Eski WABA Temizliği** | Eski WABA'yı silin ve **1–2 ay** bekleme süresine uyun |
-| **Veri Yedekleme** | Önemli konuşmaları yedekleyin (senkronizasyon **6 aya kadar** kapsar) |
-
----
-
-## Sonuç
-
-WhatsApp Coexistence, Cloud API aracılığıyla otomasyonu ölçeklendirirken mevcut WhatsApp Business Uygulaması iş akışınızı sürdürmenin güçlü bir yoludur. Uygun hazırlık ve sorun giderme ile çoğu entegrasyon sorunu hızla çözülebilir.
-
-<Card title="Daha Fazla Yardıma mı İhtiyacınız Var?" icon="headset">
-  Sorunlar devam ederse, ek inceleme için WhatsApp çözüm sağlayıcınızın destek ekibiyle iletişime geçin.
-</Card>
+Herhangi bir sorunuz varsa veya daha fazla yardıma ihtiyacınız varsa, [hey@eazybe.com](mailto:hey@eazybe.com) adresinden bizimle iletişime geçmekten çekinmeyin. Yardımcı olmaktan mutluluk duyarız!

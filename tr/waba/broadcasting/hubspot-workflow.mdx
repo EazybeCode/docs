@@ -1,0 +1,161 @@
+---
+title: "HubSpot İş Akışı"
+description: "WhatsApp kampanyası otomasyonu için HubSpot iş akışı nasıl oluşturulur"
+---
+
+Bu kılavuz, HubSpot iş akışları aracılığıyla otomatik WhatsApp pazarlama kampanyaları oluşturmak için adım adım talimatlar sunarak kişiselleştirilmiş mesajlaşma ve daha iyi müşteri etkileşimi sağlar.
+
+## Ön Koşullar
+
+WhatsApp kampanyaları için bir HubSpot iş akışı oluşturmadan önce, aşağıdakilere sahip olduğunuzdan emin olun:
+
+<CardGroup cols={2}>
+  <Card title="HubSpot Hesabı" icon="hubspot">
+    İş akışı otomasyonuna erişimi olan aktif bir HubSpot hesabı
+  </Card>
+  <Card title="Eazybe Entegrasyonu" icon="plug">
+    HubSpot'a yüklenmiş Eazybe tarafından WhatsApp Entegrasyonu
+  </Card>
+  <Card title="Onaylı Şablonlar" icon="file-check">
+    En az bir onaylı WhatsApp mesaj şablonu
+  </Card>
+  <Card title="Kişi Özellikleri" icon="address-book">
+    Segmentasyon için yapılandırılmış kişi özellikleri
+  </Card>
+</CardGroup>
+
+## HubSpot İş Akışınızı Oluşturma
+
+<Steps>
+  <Step title="HubSpot'a Erişin">
+    HubSpot hesabınıza giriş yapın ve ana panele gidin.
+  </Step>
+
+  <Step title="Otomasyona Gidin">
+    HubSpot gezinme menüsündeki **Otomasyon** bölümüne gidin.
+  </Step>
+
+  <Step title="İş Akışlarını Seçin">
+    İş akışı yönetim alanına erişmek için **İş akışları**'na tıklayın.
+  </Step>
+
+  <Step title="Yeni İş Akışı Oluşturun">
+    Yeni bir otomasyon oluşturmaya başlamak için **İş akışı oluştur** düğmesine tıklayın.
+  </Step>
+
+  <Step title="Sıfırdan Seçin">
+    İhtiyaçlarınıza uygun özel bir iş akışı oluşturmak için **Sıfırdan**'ı seçin.
+  </Step>
+
+  <Step title="Tetikleyici Türünü Tanımlayın">
+    Belirli kişileri hedeflemek için tetikleyici türünüz olarak **Filtre kriterlerini karşıladı**'yı seçin.
+  </Step>
+
+  <Step title="Nesne Türünü Seçin">
+    İş akışı kaydınız için nesne türü olarak **Kişi**'yi seçin.
+  </Step>
+
+  <Step title="Kişi Özelliklerini Seçin">
+    Segmentasyon kriterlerinizi tanımlamak için **Kişi özellikleri**'ni seçin.
+  </Step>
+
+  <Step title="Özellik Arayın">
+    Arama alanında istenen kişi özelliğini arayın.
+  </Step>
+
+  <Step title="Özellik Adını Seçin">
+    Filtrelemek istediğiniz belirli özellik adını seçin (örn., Şirket adı).
+  </Step>
+
+  <Step title="Koşulları Yapılandırın">
+    Filtre koşullarınızı tanımlayın (örn., **şunlardan herhangi birine eşit**) ve eşleşen değerleri ekleyin.
+
+    <Tip>
+    Farklı şirket veya segmentlerden kişileri hedeflemek için birden fazla değer ekleyebilirsiniz.
+    </Tip>
+  </Step>
+
+  <Step title="Kuruluma Devam Edin">
+    Kayıt ayarlarına devam etmek için **İleri**'ye tıklayın.
+  </Step>
+
+  <Step title="Yeniden Kaydı Etkinleştirin">
+    Kriterleri tekrar karşılayan mevcut kişileri yeniden kaydetmek istiyorsanız, **Yeniden kaydet** seçeneğini etkinleştirin.
+
+    <Info>
+    Yeniden kayıt, kişilerin tetikleyici kriterleri tekrar karşıladıklarında iş akışından birden fazla kez geçmelerine olanak tanır.
+    </Info>
+  </Step>
+
+  <Step title="Kaydet ve Devam Et">
+    Tetikleyici ayarlarınızı tamamlamak için **Kaydet ve devam et**'e tıklayın.
+  </Step>
+
+  <Step title="WhatsApp Eylemi Ekleyin">
+    Aşağı kaydırın ve mevcut eylemlerden **Eazybe tarafından WhatsApp Entegrasyonu**'nu seçin.
+  </Step>
+
+  <Step title="Şablon Eylemini Seçin">
+    Mesajı yapılandırmak için **Kullanıma Hazır WhatsApp Şablonu Gönder**'e tıklayın.
+  </Step>
+
+  <Step title="Kişi Alanını Seçin">
+    Şablon teslimi için telefon numarasını içeren kişi alanını seçin.
+  </Step>
+
+  <Step title="Şablon Seçin">
+    Açılır listeden onaylı WhatsApp şablonunuzu seçin.
+
+    <Warning>
+    Listede yalnızca **Onaylı** durumundaki şablonlar görünecektir. İş akışını oluşturmadan önce şablonunuzun onaylandığından emin olun.
+    </Warning>
+  </Step>
+
+  <Step title="Eylemi Kaydedin">
+    WhatsApp eylem yapılandırmanızı onaylamak için **Kaydet**'e tıklayın.
+  </Step>
+
+  <Step title="İş Akışını İnceleyin">
+    Tüm iş akışı yapılandırmanızı incelemek için **İncele ve etkinleştir**'e tıklayın.
+  </Step>
+
+  <Step title="Kayıt Ayarları">
+    İş akışı için tercih ettiğiniz kayıt ayarlarını seçin.
+  </Step>
+
+  <Step title="Son Kontroller">
+    **Etkinleştirmek için atla**'ya tıklayın veya gerektiği gibi ek kontrolleri tamamlayın.
+  </Step>
+
+  <Step title="İş Akışını Etkinleştirin">
+    WhatsApp kampanya otomasyonunuzu başlatmak için **İş akışını etkinleştir**'e tıklayın.
+
+    <Info>
+    İş akışınız artık aktif! Kriterlerinize uyan kişiler otomatik olarak WhatsApp mesajları alacaktır.
+    </Info>
+  </Step>
+</Steps>
+
+## En İyi Uygulamalar
+
+<AccordionGroup>
+  <Accordion title="Başlatmadan Önce Test Edin" icon="flask">
+    Daha geniş bir kitleye başlatmadan önce iş akışınızı her zaman küçük bir kişi grubuyla test edin.
+  </Accordion>
+
+  <Accordion title="Performansı İzleyin" icon="chart-line">
+    Mesaj teslimini ve etkileşim oranlarını optimize etmek için iş akışı analizlerinizi düzenli olarak kontrol edin.
+  </Accordion>
+
+  <Accordion title="Çıkışlara Saygı Gösterin" icon="user-shield">
+    Kişi listenizin müşteri tercihlerine ve abonelikten çıkma isteklerine saygı gösterdiğinden emin olun.
+  </Accordion>
+
+  <Accordion title="Değişkenler Kullanın" icon="code">
+    Daha iyi etkileşim için şablonlarınızı HubSpot kişi özellikleriyle kişiselleştirin.
+  </Accordion>
+</AccordionGroup>
+
+## Yardıma mı İhtiyacınız Var?
+
+Herhangi bir sorunuz varsa veya daha fazla yardıma ihtiyacınız varsa, [hey@eazybe.com](mailto:hey@eazybe.com) adresinden bizimle iletişime geçmekten çekinmeyin. Yardımcı olmaktan mutluluk duyarız!

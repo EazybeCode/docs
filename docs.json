@@ -140,18 +140,23 @@
                     "pages": [
                       "en/waba/templates/create-template",
                       "en/waba/templates/how-to-create-template-with-hubspot-variables",
-                      "en/waba/templates/utility-templates"
+                      "en/waba/templates/utility-templates",
+                      "en/waba/templates/guideline"
                     ]
                   },
                   {
                     "group": "Broadcasting",
                     "pages": [
-                      "en/waba/broadcasting/send-broadcast"
+                      "en/waba/broadcasting/send-broadcast",
+                      "en/waba/broadcasting/hubspot-workflow"
                     ]
                   },
                   "en/waba/broadcast-rate-list-1st-jan-2026",
                   "en/waba/wallet-management",
                   "en/waba/team-inbox",
+                  "en/waba/signup-troubleshooting",
+                  "en/waba/connect-with-existing-whatsapp",
+                  "en/waba/onboarding-to-coex-api",
                   "en/waba/faq"
                 ]
               },
@@ -798,7 +803,7 @@
                       "es/waba/templates/how-to-create-template-with-hubspot-variables",
                       "es/waba/templates/utility-templates",
                       "es/waba/templates/approval-process",
-                      "es/waba/templates/guidelines"
+                      "es/waba/templates/guideline"
                     ]
                   },
                   {
@@ -807,11 +812,13 @@
                       "es/waba/broadcasting/create-campaign",
                       "es/waba/broadcasting/send-broadcast",
                       "es/waba/broadcasting/analytics",
-                      "es/integrations/hubspot-workflow-for-whatsapp"
+                      "es/waba/broadcasting/hubspot-workflow"
                     ]
                   },
                   "es/waba/coexistence",
                   "es/waba/signup-troubleshooting",
+                  "es/waba/connect-with-existing-whatsapp",
+                  "es/waba/onboarding-to-coex-api",
                   "es/waba/broadcast-rate-list-1st-jan-2026",
                   "es/waba/wallet-management",
                   "es/waba/team-inbox",
@@ -1319,7 +1326,7 @@
                       "pt/waba/templates/how-to-create-template-with-hubspot-variables",
                       "pt/waba/templates/utility-templates",
                       "pt/waba/templates/approval-process",
-                      "pt/waba/templates/guidelines"
+                      "pt/waba/templates/guideline"
                     ]
                   },
                   {
@@ -1328,11 +1335,13 @@
                       "pt/waba/broadcasting/create-campaign",
                       "pt/waba/broadcasting/send-broadcast",
                       "pt/waba/broadcasting/analytics",
-                      "pt/integrations/hubspot-workflow-for-whatsapp"
+                      "pt/waba/broadcasting/hubspot-workflow"
                     ]
                   },
                   "pt/waba/coexistence",
                   "pt/waba/signup-troubleshooting",
+                  "pt/waba/connect-with-existing-whatsapp",
+                  "pt/waba/onboarding-to-coex-api",
                   "pt/waba/broadcast-rate-list-1st-jan-2026",
                   "pt/waba/wallet-management",
                   "pt/waba/team-inbox",
@@ -1840,7 +1849,7 @@
                       "tr/waba/templates/how-to-create-template-with-hubspot-variables",
                       "tr/waba/templates/utility-templates",
                       "tr/waba/templates/approval-process",
-                      "tr/waba/templates/guidelines"
+                      "tr/waba/templates/guideline"
                     ]
                   },
                   {
@@ -1849,11 +1858,13 @@
                       "tr/waba/broadcasting/create-campaign",
                       "tr/waba/broadcasting/send-broadcast",
                       "tr/waba/broadcasting/analytics",
-                      "tr/integrations/hubspot-workflow-for-whatsapp"
+                      "tr/waba/broadcasting/hubspot-workflow"
                     ]
                   },
                   "tr/waba/coexistence",
                   "tr/waba/signup-troubleshooting",
+                  "tr/waba/connect-with-existing-whatsapp",
+                  "tr/waba/onboarding-to-coex-api",
                   "tr/waba/broadcast-rate-list-1st-jan-2026",
                   "tr/waba/wallet-management",
                   "tr/waba/team-inbox",

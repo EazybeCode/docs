@@ -1,0 +1,207 @@
+---
+title: "HubSpot Workflow"
+description: "How to create HubSpot workflow for WhatsApp campaign automation"
+---
+
+This guide provides step-by-step instructions for creating automated WhatsApp marketing campaigns through HubSpot workflows, enabling personalized messaging and improved customer engagement.
+
+## Prerequisites
+
+Before creating a HubSpot workflow for WhatsApp campaigns, ensure you have:
+
+<CardGroup cols={2}>
+  <Card title="HubSpot Account" icon="hubspot">
+    An active HubSpot account with workflow automation access
+  </Card>
+  <Card title="Eazybe Integration" icon="plug">
+    WhatsApp Integration by Eazybe installed in HubSpot
+  </Card>
+  <Card title="Approved Templates" icon="file-check">
+    At least one approved WhatsApp message template
+  </Card>
+  <Card title="Contact Properties" icon="address-book">
+    Contact properties configured for targeting
+  </Card>
+</CardGroup>
+
+## Creating Your HubSpot Workflow
+
+<Steps>
+  <Step title="Access HubSpot">
+    Log into your HubSpot account and navigate to the main dashboard.
+
+    <!-- TODO(image-missing): original_url="step1-hubspot-login" -->
+  </Step>
+
+  <Step title="Navigate to Automation">
+    Go to the **Automation** section in your HubSpot navigation menu.
+
+    <!-- TODO(image-missing): original_url="step2-automation-section" -->
+  </Step>
+
+  <Step title="Select Workflows">
+    Click on **Workflows** to access the workflow management area.
+
+    <!-- TODO(image-missing): original_url="step3-workflows" -->
+  </Step>
+
+  <Step title="Create New Workflow">
+    Click the **Create workflow** button to start building a new automation.
+
+    <!-- TODO(image-missing): original_url="step4-create-workflow" -->
+  </Step>
+
+  <Step title="Choose From Scratch">
+    Select **From scratch** to build a custom workflow tailored to your needs.
+
+    <!-- TODO(image-missing): original_url="step5-from-scratch" -->
+  </Step>
+
+  <Step title="Set Trigger Type">
+    Choose **Met filter criteria** as your trigger type to target specific contacts.
+
+    <!-- TODO(image-missing): original_url="step6-trigger-type" -->
+  </Step>
+
+  <Step title="Select Object Type">
+    Pick **Contact** as the object type for your workflow enrollment.
+
+    <!-- TODO(image-missing): original_url="step7-object-type" -->
+  </Step>
+
+  <Step title="Choose Contact Properties">
+    Select **Contact properties** to define your targeting criteria.
+
+    <!-- TODO(image-missing): original_url="step8-contact-properties" -->
+  </Step>
+
+  <Step title="Search Property">
+    Search for your desired contact property in the search field.
+
+    <!-- TODO(image-missing): original_url="step9-search-property" -->
+  </Step>
+
+  <Step title="Select Property Name">
+    Choose the specific property name you want to filter by (e.g., Company name).
+
+    <!-- TODO(image-missing): original_url="step10-property-name" -->
+  </Step>
+
+  <Step title="Configure Conditions">
+    Set your filter conditions (e.g., **is equal to any of**) and add matching values.
+
+    <!-- TODO(image-missing): original_url="step11-configure-conditions" -->
+
+    <Tip>
+    You can add multiple values to target contacts from different companies or segments.
+    </Tip>
+  </Step>
+
+  <Step title="Continue Setup">
+    Click **Next** to proceed to the enrollment settings.
+
+    <!-- TODO(image-missing): original_url="step12-next" -->
+  </Step>
+
+  <Step title="Enable Re-enrollment">
+    If you want to re-enroll existing contacts who meet the criteria again, enable the **Re-enroll** option.
+
+    <!-- TODO(image-missing): original_url="step13-re-enroll" -->
+
+    <Info>
+    Re-enrollment allows contacts to go through the workflow multiple times when they meet the trigger criteria again.
+    </Info>
+  </Step>
+
+  <Step title="Save and Continue">
+    Click **Save and continue** to finalize your trigger settings.
+
+    <!-- TODO(image-missing): original_url="step14-save-continue" -->
+  </Step>
+
+  <Step title="Add WhatsApp Action">
+    Scroll down and select **WhatsApp Integration by Eazybe** from the available actions.
+
+    <!-- TODO(image-missing): original_url="step15-whatsapp-integration" -->
+  </Step>
+
+  <Step title="Choose Template Action">
+    Click **Send Ready-to-Use WhatsApp Template** to configure the message.
+
+    <!-- TODO(image-missing): original_url="step16-send-template" -->
+  </Step>
+
+  <Step title="Select Contact Field">
+    Choose the contact field that contains the phone number for template delivery.
+
+    <!-- TODO(image-missing): original_url="step17-contact-field" -->
+  </Step>
+
+  <Step title="Choose Template">
+    Select your approved WhatsApp template from the dropdown list.
+
+    <!-- TODO(image-missing): original_url="step18-choose-template" -->
+
+    <Warning>
+    Only templates with **Approved** status will appear in the list. Ensure your template is approved before creating the workflow.
+    </Warning>
+  </Step>
+
+  <Step title="Save Action">
+    Click **Save** to confirm your WhatsApp action configuration.
+
+    <!-- TODO(image-missing): original_url="step19-save-action" -->
+  </Step>
+
+  <Step title="Review Workflow">
+    Click **Review and turn on** to review your complete workflow setup.
+
+    <!-- TODO(image-missing): original_url="step20-review" -->
+  </Step>
+
+  <Step title="Enrollment Settings">
+    Choose your preferred enrollment settings for the workflow.
+
+    <!-- TODO(image-missing): original_url="step21-enrollment-settings" -->
+  </Step>
+
+  <Step title="Final Checks">
+    Either click **Skip to turn on** or complete any additional checks as needed.
+
+    <!-- TODO(image-missing): original_url="step22-final-checks" -->
+  </Step>
+
+  <Step title="Activate Workflow">
+    Click **Turn on workflow** to activate your WhatsApp campaign automation.
+
+    <!-- TODO(image-missing): original_url="step23-turn-on" -->
+
+    <Info>
+    Your workflow is now active! Contacts matching your criteria will automatically receive WhatsApp messages.
+    </Info>
+  </Step>
+</Steps>
+
+## Best Practices
+
+<AccordionGroup>
+  <Accordion title="Test Before Launch" icon="flask">
+    Always test your workflow with a small group of contacts before launching to a larger audience.
+  </Accordion>
+
+  <Accordion title="Monitor Performance" icon="chart-line">
+    Regularly check your workflow analytics to optimize message delivery and engagement rates.
+  </Accordion>
+
+  <Accordion title="Respect Opt-outs" icon="user-shield">
+    Ensure your contact list respects customer preferences and opt-out requests.
+  </Accordion>
+
+  <Accordion title="Use Variables" icon="code">
+    Personalize your templates with HubSpot contact properties for better engagement.
+  </Accordion>
+</AccordionGroup>
+
+## Need Help?
+
+If you have any questions or need further assistance, feel free to reach out to us at [hey@eazybe.com](mailto:hey@eazybe.com). We're happy to help!

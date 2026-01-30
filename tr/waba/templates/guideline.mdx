@@ -1,0 +1,154 @@
+---
+title: "Kılavuz"
+description: "WhatsApp mesaj şablonları için şablon onay süreleri, kılavuzlar ve en iyi uygulamalar"
+---
+
+Bu kılavuz, başarılı şablon oluşturmayı sağlamak için WhatsApp mesaj şablonu onay süreleri, kılavuzlar ve en iyi uygulamalar hakkında bilmeniz gereken her şeyi kapsamaktadır.
+
+## Onay Süreleri
+
+Meta, şablon onayları için otomatik yapay zeka ile insan incelemesini birleştirir. Resmi kılavuz **24 saat** içinde onaylara izin verse de, çoğu şablon çok daha hızlı işlenir.
+
+| Senaryo | Tahmini Süre | Bağlam |
+|---------|--------------|--------|
+| **Standart Onay** | 1-5 Dakika | İyi yapılandırılmış şablonlar neredeyse anında onaylanır |
+| **Karmaşık/İşaretlenmiş** | 1-24 Saat | Yapay zeka tarafından tespit edilen belirsiz içerik insan incelemesine yönlendirilir |
+| **Yeniden Gönderim** | 24 Saate Kadar | Reddedilen şablonlar veya kategori değişiklikleri doğrulama gerektirir |
+
+<Tip>
+**Pro İpucu:** Olası inceleme gecikmelerini hesaba katmak için kampanyalarınızı en az 24 saat önceden planlayın.
+</Tip>
+
+## Şablon Kategorilerine Genel Bakış
+
+### 1. Hizmet Şablonları
+
+<Card title="Hizmet Şablonları" icon="bell">
+  **Amaç:** Belirli, üzerinde anlaşılmış işlemleri veya güncellemeleri kolaylaştırmak
+</Card>
+
+**Yaygın Kullanım Alanları:**
+- Sipariş onayları
+- Kargo güncellemeleri
+- Hesap bakiye uyarıları
+- Randevu hatırlatıcıları
+
+<Warning>
+Hizmet şablonları ek satışlar, ısınma mesajları ve promosyon dili **içermemelidir**.
+</Warning>
+
+**Onay Hızı:** Değişkenler açıksa dakikalar içinde (örn., sipariş kimliği için `{{1}}`)
+
+### 2. Pazarlama Şablonları
+
+<Card title="Pazarlama Şablonları" icon="bullhorn">
+  **Amaç:** Ürünleri, hizmetleri ve marka bilinirliğini tanıtmak
+</Card>
+
+**Yaygın Kullanım Alanları:**
+- İndirim teklifleri
+- Bültenler
+- Terk edilmiş sepet kurtarma
+- Hoş geldin serileri
+
+<Info>
+Pazarlama şablonları onay ve içerik kalitesi açısından daha sıkı incelemeye tabi tutulur.
+</Info>
+
+## Başarılı Onay İçin Kısıtlamalar ve Gereksinimler
+
+### İçerik ve Biçimlendirme
+
+<AccordionGroup>
+  <Accordion title="Değişkenler" icon="code">
+    Değişkenler için her zaman örnek değerler sağlayın.
+
+    **Örnek:** `{{1}}` = "Ahmet"
+
+    Örneksiz belirsiz değişkenler redde neden olacaktır.
+  </Accordion>
+
+  <Accordion title="Dilbilgisi ve Yazım" icon="spell-check">
+    Dilbilgisi veya yazım hataları "düşük kalite" içerik olarak otomatik redde neden olur.
+
+    Göndermeden önce şablonlarınızı her zaman gözden geçirin.
+  </Accordion>
+
+  <Accordion title="Link Kısaltıcılar" icon="link">
+    Gövde metninde genel link kısaltıcılar (bit.ly gibi) **kullanmayın**.
+
+    Hedef URL'yi gizlerler ve güvenlik uyarılarını tetiklerler.
+
+    <Tip>
+    Metne kısaltılmış linkler yerleştirmek yerine WhatsApp'ın yerleşik düğme özelliklerini kullanın.
+    </Tip>
+  </Accordion>
+</AccordionGroup>
+
+### Politika Uyumluluğu
+
+<AccordionGroup>
+  <Accordion title="Karışık Kategori Yok" icon="layer-group">
+    Tek bir şablonda hizmet ve pazarlama içeriğini karıştırmak redde neden olur.
+
+    Şablon amacınızı açık ve tutarlı tutun.
+  </Accordion>
+
+  <Accordion title="Kısıtlı İçerik" icon="ban">
+    Kaçının:
+    - Hassas tanımlayıcılar (finansal veriler, sağlık bilgileri)
+    - Tehditkar veya zorlayıcı dil
+    - WhatsApp politikalarını ihlal eden içerik
+  </Accordion>
+
+  <Accordion title="Kategori Tutarlılığı" icon="tags">
+    Meta, yanlış kategorize edilmiş şablonları otomatik olarak algılayıp değiştirebilir.
+
+    Yeniden kategorizasyona katılmıyorsanız bu değişikliğe **60 gün içinde itiraz** edebilirsiniz.
+  </Accordion>
+</AccordionGroup>
+
+## Şablon Durumlarını Anlama
+
+| Durum | Simge | Açıklama |
+|-------|-------|----------|
+| **Beklemede** | 🟡 | Şu anda Meta incelemesi altında |
+| **Onaylandı** | 🟢 | Müşterilere göndermeye hazır |
+| **Reddedildi** | 🔴 | İncelemede başarısız; nedeni için panoya bakın |
+| **Duraklatıldı** | ⏸️ | Düşük kalite nedeniyle işaretlendi (yüksek engelleme oranları); kalite iyileşene kadar gönderilemiyor |
+
+<Warning>
+Şablonunuz **Duraklatıldıysa**, mesaj içeriğinizi ve gönderme uygulamalarınızı gözden geçirin. Yüksek engelleme oranları, alıcıların mesajlarınızı spam olarak işaretlediğini gösterir.
+</Warning>
+
+## En İyi Uygulamalar Özeti
+
+<Steps>
+  <Step title="Önceden Planlayın">
+    Kampanyalardan önce şablon onayları için en az 24 saat süre tanıyın.
+  </Step>
+
+  <Step title="Açık Değişkenler">
+    Reddi önlemek için tüm değişkenler için açık örnek değerler sağlayın.
+  </Step>
+
+  <Step title="Kaliteli İçerik">
+    Baştan sona uygun dilbilgisi ve yazım standartlarını koruyun.
+  </Step>
+
+  <Step title="Düğmeleri Kullanın">
+    Metinde link kısaltıcılar yerine WhatsApp düğme özelliklerini kullanın.
+  </Step>
+
+  <Step title="Doğru Kategoriler">
+    Kategori atamalarını içerikle doğru ve tutarlı tutun.
+  </Step>
+
+  <Step title="Kaliteyi İzleyin">
+    Şablonlarınızın duraklatılmasını önlemek için kalite puanlarını takip edin.
+  </Step>
+</Steps>
+
+## Yardıma mı İhtiyacınız Var?
+
+Herhangi bir sorunuz varsa veya daha fazla yardıma ihtiyacınız varsa, [hey@eazybe.com](mailto:hey@eazybe.com) adresinden bizimle iletişime geçmekten çekinmeyin. Yardımcı olmaktan mutluluk duyarız!
