@@ -139,6 +139,7 @@
                     "group": "Message Templates",
                     "pages": [
                       "en/waba/templates/create-template",
+                      "en/waba/templates/create-template-with-extension",
                       "en/waba/templates/how-to-create-template-with-hubspot-variables",
                       "en/waba/templates/utility-templates",
                       "en/waba/templates/guideline"
@@ -148,6 +149,7 @@
                     "group": "Broadcasting",
                     "pages": [
                       "en/waba/broadcasting/send-broadcast",
+                      "en/waba/broadcasting/create-broadcast-with-extension",
                       "en/waba/broadcasting/hubspot-workflow"
                     ]
                   },
@@ -800,6 +802,7 @@
                     "pages": [
                       "es/waba/templates/creating-templates",
                       "es/waba/templates/create-template",
+                      "es/waba/templates/create-template-with-extension",
                       "es/waba/templates/how-to-create-template-with-hubspot-variables",
                       "es/waba/templates/utility-templates",
                       "es/waba/templates/approval-process",
@@ -811,6 +814,7 @@
                     "pages": [
                       "es/waba/broadcasting/create-campaign",
                       "es/waba/broadcasting/send-broadcast",
+                      "es/waba/broadcasting/create-broadcast-with-extension",
                       "es/waba/broadcasting/analytics",
                       "es/waba/broadcasting/hubspot-workflow"
                     ]
@@ -1323,6 +1327,7 @@
                     "pages": [
                       "pt/waba/templates/creating-templates",
                       "pt/waba/templates/create-template",
+                      "pt/waba/templates/create-template-with-extension",
                       "pt/waba/templates/how-to-create-template-with-hubspot-variables",
                       "pt/waba/templates/utility-templates",
                       "pt/waba/templates/approval-process",
@@ -1334,6 +1339,7 @@
                     "pages": [
                       "pt/waba/broadcasting/create-campaign",
                       "pt/waba/broadcasting/send-broadcast",
+                      "pt/waba/broadcasting/create-broadcast-with-extension",
                       "pt/waba/broadcasting/analytics",
                       "pt/waba/broadcasting/hubspot-workflow"
                     ]
@@ -1846,6 +1852,7 @@
                     "pages": [
                       "tr/waba/templates/creating-templates",
                       "tr/waba/templates/create-template",
+                      "tr/waba/templates/create-template-with-extension",
                       "tr/waba/templates/how-to-create-template-with-hubspot-variables",
                       "tr/waba/templates/utility-templates",
                       "tr/waba/templates/approval-process",
@@ -1857,6 +1864,7 @@
                     "pages": [
                       "tr/waba/broadcasting/create-campaign",
                       "tr/waba/broadcasting/send-broadcast",
+                      "tr/waba/broadcasting/create-broadcast-with-extension",
                       "tr/waba/broadcasting/analytics",
                       "tr/waba/broadcasting/hubspot-workflow"
                     ]
