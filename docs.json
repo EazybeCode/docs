@@ -132,42 +132,24 @@
                 "group": "WhatsApp Business API",
                 "icon": "whatsapp",
                 "pages": [
-                  "waba/overview",
-                  "waba/getting-started",
-                  "waba/connect-waba",
+                  "en/waba/getting-started",
+                  "en/waba/connect-waba",
+                  "en/waba/facebook-business-verification",
                   {
                     "group": "Message Templates",
                     "pages": [
-                      "waba/templates/overview",
-                      "waba/templates/creating-templates",
-                      "en/waba/templates/creating-and-managing-templates",
+                      "en/waba/templates/create-template",
                       "en/waba/templates/how-to-create-template-with-hubspot-variables",
-                      "waba/templates/utility-templates",
-                      "waba/templates/marketing-templates",
-                      "waba/templates/approval-process",
-                      "en/waba/templates/guidelines"
+                      "en/waba/templates/utility-templates"
                     ]
                   },
                   {
                     "group": "Broadcasting",
                     "pages": [
-                      "en/guides/whats-app-business-api/broadcasting/untitled-page",
-                      "waba/broadcasting/overview",
-                      "waba/broadcasting/create-campaign",
-                      "en/waba/broadcasting/how-to-send-broadcast",
-                      "waba/broadcasting/import-contacts",
-                      "waba/broadcasting/scheduling",
-                      "waba/broadcasting/analytics",
-                      "waba/broadcasting/best-practices",
-                      "en/integrations/hubspot-workflow-for-whatsapp"
+                      "en/waba/broadcasting/send-broadcast"
                     ]
                   },
-                  "waba/coexistence",
-                  "en/waba/signup-troubleshooting",
-                  "en/waba/broadcast-rate-list-1st-jan-2026",
-                  "waba/wallet",
-                  "waba/pricing",
-                  "en/waba/faq"
+                  "en/waba/broadcast-rate-list-1st-jan-2026"
                 ]
               },
               {
@@ -178,7 +160,13 @@
                   "productivity/scheduled-messages",
                   "productivity/message-templates",
                   "productivity/bulk-messaging",
-                  "productivity/privacy-blur"
+                  "productivity/privacy-blur",
+                  "en/productivity/start-chat",
+                  "en/productivity/quick-reply",
+                  "en/productivity/setting-button",
+                  "en/productivity/broadcast-messages",
+                  "en/productivity/scheduler-message",
+                  "en/productivity/managing-unreplied-chats"
                 ]
               },
               {
@@ -229,7 +217,12 @@
                 "group": "FAQ",
                 "icon": "circle-question",
                 "pages": [
-                  "en/faq/account-setup"
+                  "en/faq/account-setup",
+                  "en/faq/join-organization",
+                  "en/faq/manage-subscription",
+                  "en/faq/manage-accounts",
+                  "en/faq/privacy-and-compliance",
+                  "en/faq/it-security-compliance"
                 ]
               }
             ]
@@ -791,12 +784,14 @@
                 "icon": "whatsapp",
                 "pages": [
                   "es/waba/overview",
+                  "es/waba/getting-started",
                   "es/waba/connect-waba",
+                  "es/waba/facebook-business-verification",
                   {
                     "group": "Plantillas de Mensajes",
                     "pages": [
                       "es/waba/templates/creating-templates",
-                      "es/waba/templates/creating-and-managing-templates",
+                      "es/waba/templates/create-template",
                       "es/waba/templates/how-to-create-template-with-hubspot-variables",
                       "es/waba/templates/utility-templates",
                       "es/waba/templates/approval-process",
@@ -807,7 +802,7 @@
                     "group": "Difusión",
                     "pages": [
                       "es/waba/broadcasting/create-campaign",
-                      "es/waba/broadcasting/how-to-send-broadcast",
+                      "es/waba/broadcasting/send-broadcast",
                       "es/waba/broadcasting/analytics",
                       "es/integrations/hubspot-workflow-for-whatsapp"
                     ]
@@ -826,7 +821,13 @@
                 "pages": [
                   "es/productivity/quick-replies",
                   "es/productivity/scheduled-messages",
-                  "es/productivity/bulk-messaging"
+                  "es/productivity/bulk-messaging",
+                  "es/productivity/start-chat",
+                  "es/productivity/quick-reply",
+                  "es/productivity/setting-button",
+                  "es/productivity/broadcast-messages",
+                  "es/productivity/scheduler-message",
+                  "es/productivity/managing-unreplied-chats"
                 ]
               },
               {
@@ -850,7 +851,12 @@
                 "group": "FAQ",
                 "icon": "circle-question",
                 "pages": [
-                  "es/faq/account-setup"
+                  "es/faq/account-setup",
+                  "es/faq/join-organization",
+                  "es/faq/manage-subscription",
+                  "es/faq/manage-accounts",
+                  "es/faq/privacy-and-compliance",
+                  "es/faq/it-security-compliance"
                 ]
               }
             ]
@@ -1298,12 +1304,14 @@
                 "icon": "whatsapp",
                 "pages": [
                   "pt/waba/overview",
+                  "pt/waba/getting-started",
                   "pt/waba/connect-waba",
+                  "pt/waba/facebook-business-verification",
                   {
                     "group": "Modelos de Mensagens",
                     "pages": [
                       "pt/waba/templates/creating-templates",
-                      "pt/waba/templates/creating-and-managing-templates",
+                      "pt/waba/templates/create-template",
                       "pt/waba/templates/how-to-create-template-with-hubspot-variables",
                       "pt/waba/templates/utility-templates",
                       "pt/waba/templates/approval-process",
@@ -1314,7 +1322,7 @@
                     "group": "Transmissão",
                     "pages": [
                       "pt/waba/broadcasting/create-campaign",
-                      "pt/waba/broadcasting/how-to-send-broadcast",
+                      "pt/waba/broadcasting/send-broadcast",
                       "pt/waba/broadcasting/analytics",
                       "pt/integrations/hubspot-workflow-for-whatsapp"
                     ]
@@ -1333,7 +1341,13 @@
                 "pages": [
                   "pt/productivity/quick-replies",
                   "pt/productivity/scheduled-messages",
-                  "pt/productivity/bulk-messaging"
+                  "pt/productivity/bulk-messaging",
+                  "pt/productivity/start-chat",
+                  "pt/productivity/quick-reply",
+                  "pt/productivity/setting-button",
+                  "pt/productivity/broadcast-messages",
+                  "pt/productivity/scheduler-message",
+                  "pt/productivity/managing-unreplied-chats"
                 ]
               },
               {
@@ -1357,7 +1371,12 @@
                 "group": "FAQ",
                 "icon": "circle-question",
                 "pages": [
-                  "pt/faq/account-setup"
+                  "pt/faq/account-setup",
+                  "pt/faq/join-organization",
+                  "pt/faq/manage-subscription",
+                  "pt/faq/manage-accounts",
+                  "pt/faq/privacy-and-compliance",
+                  "pt/faq/it-security-compliance"
                 ]
               }
             ]
@@ -1805,12 +1824,14 @@
                 "icon": "whatsapp",
                 "pages": [
                   "tr/waba/overview",
+                  "tr/waba/getting-started",
                   "tr/waba/connect-waba",
+                  "tr/waba/facebook-business-verification",
                   {
                     "group": "Mesaj Şablonları",
                     "pages": [
                       "tr/waba/templates/creating-templates",
-                      "tr/waba/templates/creating-and-managing-templates",
+                      "tr/waba/templates/create-template",
                       "tr/waba/templates/how-to-create-template-with-hubspot-variables",
                       "tr/waba/templates/utility-templates",
                       "tr/waba/templates/approval-process",
@@ -1821,7 +1842,7 @@
                     "group": "Yayın",
                     "pages": [
                       "tr/waba/broadcasting/create-campaign",
-                      "tr/waba/broadcasting/how-to-send-broadcast",
+                      "tr/waba/broadcasting/send-broadcast",
                       "tr/waba/broadcasting/analytics",
                       "tr/integrations/hubspot-workflow-for-whatsapp"
                     ]
@@ -1840,7 +1861,13 @@
                 "pages": [
                   "tr/productivity/quick-replies",
                   "tr/productivity/scheduled-messages",
-                  "tr/productivity/bulk-messaging"
+                  "tr/productivity/bulk-messaging",
+                  "tr/productivity/start-chat",
+                  "tr/productivity/quick-reply",
+                  "tr/productivity/setting-button",
+                  "tr/productivity/broadcast-messages",
+                  "tr/productivity/scheduler-message",
+                  "tr/productivity/managing-unreplied-chats"
                 ]
               },
               {
@@ -1864,7 +1891,12 @@
                 "group": "FAQ",
                 "icon": "circle-question",
                 "pages": [
-                  "tr/faq/account-setup"
+                  "tr/faq/account-setup",
+                  "tr/faq/join-organization",
+                  "tr/faq/manage-subscription",
+                  "tr/faq/manage-accounts",
+                  "tr/faq/privacy-and-compliance",
+                  "tr/faq/it-security-compliance"
                 ]
               }
             ]

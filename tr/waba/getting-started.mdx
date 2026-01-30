@@ -1,110 +1,65 @@
 ---
-title: "Getting Started with WABA"
-description: "Prerequisites and requirements before connecting your WhatsApp Business Account"
+title: "Başlarken"
+description: "WhatsApp Business Hesabı (WABA) hakkında bilgi edinin ve Eazybe'ye bağlanmadan önce nelere ihtiyacınız olduğunu öğrenin"
 ---
 
-## Before You Begin
+Resmi WhatsApp Business Hesabı (WABA), işletmenizin müşterilerle geniş ölçekte iletişim kurması için güçlü özellikler sunar. Bu kılavuz, WABA'nın ne olduğunu ve Eazybe'ye bağlamadan önce nelere ihtiyacınız olduğunu açıklar.
 
-To connect a WhatsApp Business Account (WABA) through Eazybe, ensure you have the following ready:
+## WABA Nedir?
 
-<AccordionGroup>
-  <Accordion title="Meta Business Account" icon="meta">
-    Your business must be set up on **Meta's Business Manager**. If you don't have one, you can create it during the Eazybe setup process.
-    
-    [Create Meta Business Account →](https://business.facebook.com/)
-  </Accordion>
-  
-  <Accordion title="Phone Number" icon="phone">
-    You need a phone number that can receive **OTP verification** via SMS or call. This can be:
-    - A new number dedicated to WhatsApp API
-    - Your existing WhatsApp Business App number (for Coexistence mode)
-    
-    <Warning>
-    Personal WhatsApp numbers are **not** supported. You must use a WhatsApp Business App number.
-    </Warning>
-  </Accordion>
-  
-  <Accordion title="Admin Access" icon="user-shield">
-    You must be an **administrator** of the Facebook Business Account to complete the connection process.
-  </Accordion>
-</AccordionGroup>
+Eazybe'ye QR kod tarayarak bağlandığınızda, kişisel veya standart bir WhatsApp Business numarası kullanıyorsunuz. WABA farklıdır — doğrudan Meta sunucularına bağlı resmi bir iş hattıdır.
 
-## Connection Options
+<Info>
+WABA, kurumsal düzeyde mesajlaşma yetenekleri sağlar ve engellenme riski olmadan geniş ölçekte yayın göndermenize olanak tanır.
+</Info>
 
-<CardGroup cols={2}>
-  <Card title="New Number" icon="plus">
-    **Fresh Start**
-    
-    Register a new phone number directly with the WhatsApp API. Best for businesses wanting a dedicated API line.
-    
-    - No cooldown period
-    - Clean slate for templates
-    - Separate from existing WhatsApp
-  </Card>
-  
-  <Card title="Existing Number (Coexistence)" icon="arrows-rotate">
-    **Keep Your Number**
-    
-    Connect your existing WhatsApp Business App number while continuing to use the mobile app.
-    
-    - Sync up to 6 months of chat history
-    - Use app + API simultaneously
-    - Keep your verified badge
-  </Card>
-</CardGroup>
+## WABA ve Standart Hesap Karşılaştırması
 
-## Requirements Checklist
+| Özellik | Standart Hesap (QR Kod) | Resmi WABA |
+|---------|-------------------------|------------|
+| **Bağlantı** | WhatsApp açık ve bağlı kalmalı | Cep telefonu gerekmiyor |
+| **Yayınlar** | Sınırlı ve engellenme riski | Binlerce kullanıcıya güvenle gönderin |
+| **Güvenilirlik** | Standart profil | Resmi iş profili, Yeşil Tik için uygun |
+| **Ekip Erişimi** | Aynı anda bir kullanıcı | Tek Ekip Gelen Kutusunda birden fazla ekip üyesi |
+| **Kullanım Durumu** | Düşük hacimli, kişisel sohbetler | Pazarlama, bildirimler ve geniş ölçekte destek |
+
+## Ön Koşullar
+
+Eazybe aracılığıyla bir WABA bağlamak için aşağıdakileri hazır bulundurmanız gerekir:
 
 <Steps>
-  <Step title="Meta Business Manager">
-    ✅ Business account created and verified
-    
-    ✅ Admin access confirmed
+  <Step title="Facebook Business Hesabı">
+    İşletmeniz **Meta Business Manager**'da kurulu olmalıdır. Yoksa, kurulum işlemi sırasında oluşturabilirsiniz.
+
+    [Meta Business Hesabı Oluştur →](https://business.facebook.com/)
   </Step>
-  
-  <Step title="Phone Number">
-    ✅ Can receive OTP (SMS or voice call)
-    
-    ✅ Not linked to another WABA provider
-    
-    ✅ For Coexistence: WhatsApp Business App v2.24.17+
+
+  <Step title="Telefon Numarası">
+    İlk kurulum için **OTP doğrulaması** alabilecek bir telefon numarasına ihtiyacınız var.
+
+    <Tip>
+    Mevcut bir WhatsApp Business numarasını kullanmak istiyorsanız, ilk kurulum sırasında sohbet geçmişini paylaşma izinleri vermeyi seçebilirsiniz.
+    </Tip>
   </Step>
-  
-  <Step title="Business Information">
-    ✅ Legal business name
-    
-    ✅ Business address
-    
-    ✅ Website (recommended for verification)
-  </Step>
-  
-  <Step title="Eazybe Account">
-    ✅ Active Eazybe subscription
-    
-    ✅ Workspace admin access
+
+  <Step title="Yönetici Erişimi">
+    Bağlantı işlemini tamamlamak için Facebook Business Hesabının **yöneticisi** olmanız gerekir.
   </Step>
 </Steps>
 
-## Important Notes
+## Sonraki Adımlar
 
-<Warning>
-**For Existing WhatsApp Business App Users:**
+Bu ön koşulları hazırladığınızda, hesabınızı bağlamaya devam edebilirsiniz:
 
-If your number was previously connected to another WABA provider, you must:
-1. Disconnect from the previous provider
-2. Wait **1-2 months** (cooldown period)
-3. Keep the number active on WhatsApp Business App
-4. Then connect via Eazybe
-</Warning>
+<CardGroup cols={2}>
+  <Card title="WABA'nızı Bağlayın" icon="link" href="/tr/waba/connect-waba">
+    WhatsApp Business Hesabınızı bağlamak için adım adım kılavuzumuzu izleyin
+  </Card>
+  <Card title="Ekip Gelen Kutusu" icon="users" href="/tr/revenue-inbox/team-inbox">
+    İşbirlikçi mesajlaşma için ekip gelen kutunuzu nasıl kuracağınızı öğrenin
+  </Card>
+</CardGroup>
 
-<Info>
-**Chat History Import**
+## Yardıma mı İhtiyacınız Var?
 
-When using Coexistence mode, you can import up to **6 months** of chat history from your WhatsApp Business App. Keep the app open during the import process for best results.
-</Info>
-
-## Next Step
-
-<Card title="Connect Your WABA" icon="arrow-right" href="/waba/connect-waba">
-  Ready? Follow our step-by-step connection guide
-</Card>
+Herhangi bir sorunuz varsa veya daha fazla yardıma ihtiyacınız varsa, [hey@eazybe.com](mailto:hey@eazybe.com) adresinden bizimle iletişime geçmekten çekinmeyin. Yardımcı olmaktan mutluluk duyarız!

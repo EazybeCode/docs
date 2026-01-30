@@ -1,0 +1,156 @@
+---
+title: "IT Security Compliance"
+description: "Learn about Eazybe's IT security practices, data handling policies, GDPR compliance, encryption standards, and infrastructure requirements."
+---
+
+Eazybe is a Chrome extension that enhances WhatsApp Web with productivity and CRM integration features for sales and support teams. Key capabilities include CRM mini-views, shared team inboxes, contact labels, and data synchronization to Google Drive or CRM systems.
+
+## Data Privacy & Security Compliance
+
+### GDPR Compliance
+
+<Info>
+Eazybe maintains GDPR readiness through third-party audit verification via Sprinto.
+</Info>
+
+Our GDPR compliance includes:
+
+<CardGroup cols={2}>
+  <Card title="Privacy Officer" icon="user-shield">
+    Appointed Privacy Officer and EU Representative
+  </Card>
+  <Card title="Documentation" icon="file-lines">
+    Published privacy documentation
+  </Card>
+  <Card title="Vendor Assessments" icon="clipboard-check">
+    Annual vendor risk assessments
+  </Card>
+  <Card title="ROPA" icon="database">
+    Records of Processing Activities (ROPA)
+  </Card>
+</CardGroup>
+
+Regular Data Protection Impact Assessments are conducted. Users can request data access or deletion by emailing support or using the extension's WhatsApp support feature.
+
+## Data Handling & Storage
+
+| Category | Details |
+|----------|---------|
+| **Message Storage** | Eazybe does not store messages. All chats remain within WhatsApp. |
+| **CRM Data** | Displayed via APIs; credentials not stored; OAuth preferred |
+| **Backups** | Stored in user's Google Drive |
+| **Attachments** | Media stored in Google Drive when backup enabled |
+| **Server Storage** | Data remains client-side or within user's cloud services |
+
+## Encryption & Infrastructure
+
+<AccordionGroup>
+  <Accordion title="Data in Transit">
+    TLS/HTTPS encryption for all data in transit
+  </Accordion>
+  <Accordion title="Stored Backups">
+    Google Drive's built-in encryption for stored backups
+  </Accordion>
+  <Accordion title="Access Controls">
+    Role-based internal access controls
+  </Accordion>
+  <Accordion title="Endpoint Security">
+    Authorized-device-only access policies
+  </Accordion>
+  <Accordion title="Firewall Rules">
+    Production firewalls using deny-by-default rules
+  </Accordion>
+</AccordionGroup>
+
+## Chat Backup Defaults
+
+<Warning>
+When Team Inbox is enabled, all WhatsApp chats are backed up by default to Google Drive.
+</Warning>
+
+Users can control backup settings via:
+- **"Don't Sync" labels** for specific contacts
+- **Admin controls** for organization-wide sync rules
+
+## Cloud WhatsApp Connectivity
+
+Optional feature enabling scheduled/automated messaging when browser is closed:
+
+- No WhatsApp data stored on Eazybe servers
+- Authentication via WhatsApp's QR code login
+- Sessions can be disconnected anytime from extension
+
+## Required Permissions
+
+| Permission | Purpose |
+|------------|---------|
+| **Chrome Tab Access** | UI overlay for WhatsApp Web |
+| **CRM Access** | OAuth/API integration with HubSpot, Zoho, Salesforce, etc. |
+| **Google Drive** | Optional backup and Team Inbox storage |
+
+## IT Setup Requirements
+
+<Steps>
+  <Step title="Browser Requirements">
+    Google Chrome browser required with WhatsApp Web login in the same Chrome profile.
+  </Step>
+  <Step title="Extension Permissions">
+    Enable Chrome extension permissions for Eazybe.
+  </Step>
+  <Step title="Optional: CRM Integration">
+    Configure CRM API keys or OAuth credentials if using CRM features.
+  </Step>
+  <Step title="Optional: Google Drive">
+    Grant Google Drive access for workspace admins if using backup features.
+  </Step>
+  <Step title="Firewall Configuration">
+    Allow HTTPS to `web.eazybe.com`, `api.eazybe.com`, and your CRM endpoints.
+  </Step>
+</Steps>
+
+<Tip>
+Eazybe does not require software installation on user machines - just a lightweight Chrome extension. We recommend using test accounts for safe evaluation.
+</Tip>
+
+## Integration Options
+
+Supported platforms include:
+- HubSpot
+- Zoho
+- Salesforce
+- LeadSquared
+- Freshdesk
+- Bitrix24
+- Google Sheets
+- Custom CRMs via webhooks
+
+The app is listed as authorized in respective marketplace ecosystems.
+
+## Safe Trial Recommendations
+
+<CardGroup cols={3}>
+  <Card title="Test Numbers" icon="phone">
+    Use temporary WhatsApp numbers for testing
+  </Card>
+  <Card title="Test Accounts" icon="flask">
+    Limit access to test CRM accounts
+  </Card>
+  <Card title="Monitor Activity" icon="eye">
+    Review extension activity via Chrome controls
+  </Card>
+</CardGroup>
+
+## Cancellation & Offboarding
+
+Users can:
+- Uninstall the extension anytime
+- Disconnect integrations from respective dashboards
+- Request data deletion from the support team
+
+## Support Contact
+
+<Card title="Contact Support" icon="headset">
+  **Email:** [hey@eazybe.com](mailto:hey@eazybe.com)
+
+  **WhatsApp:** Use the support icon within the extension
+</Card>

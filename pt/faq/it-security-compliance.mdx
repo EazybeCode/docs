@@ -1,0 +1,156 @@
+---
+title: "Conformidade de Segurança de TI"
+description: "Conheça as práticas de segurança de TI do Eazybe, políticas de tratamento de dados, conformidade com LGPD/GDPR, padrões de criptografia e requisitos de infraestrutura."
+---
+
+Eazybe é uma extensão do Chrome que aprimora o WhatsApp Web com recursos de produtividade e integração com CRM para equipes de vendas e suporte. Os principais recursos incluem mini-visualizações de CRM, caixas de entrada de equipe compartilhadas, etiquetas de contatos e sincronização de dados para Google Drive ou sistemas CRM.
+
+## Privacidade de Dados e Conformidade de Segurança
+
+### Conformidade com GDPR
+
+<Info>
+O Eazybe mantém prontidão para GDPR através de verificação de auditoria de terceiros via Sprinto.
+</Info>
+
+Nossa conformidade com GDPR inclui:
+
+<CardGroup cols={2}>
+  <Card title="Oficial de Privacidade" icon="user-shield">
+    Oficial de Privacidade designado e Representante na UE
+  </Card>
+  <Card title="Documentação" icon="file-lines">
+    Documentação de privacidade publicada
+  </Card>
+  <Card title="Avaliações de Fornecedores" icon="clipboard-check">
+    Avaliações anuais de risco de fornecedores
+  </Card>
+  <Card title="ROPA" icon="database">
+    Registros de Atividades de Processamento (ROPA)
+  </Card>
+</CardGroup>
+
+Avaliações de Impacto de Proteção de Dados são realizadas regularmente. Os usuários podem solicitar acesso ou exclusão de dados por e-mail ao suporte ou usando o recurso de suporte do WhatsApp na extensão.
+
+## Tratamento e Armazenamento de Dados
+
+| Categoria | Detalhes |
+|-----------|----------|
+| **Armazenamento de Mensagens** | O Eazybe não armazena mensagens. Todos os chats permanecem no WhatsApp. |
+| **Dados de CRM** | Exibidos via APIs; credenciais não armazenadas; OAuth preferido |
+| **Backups** | Armazenados no Google Drive do usuário |
+| **Anexos** | Mídia armazenada no Google Drive quando o backup está habilitado |
+| **Armazenamento em Servidor** | Os dados permanecem do lado do cliente ou nos serviços de nuvem do usuário |
+
+## Criptografia e Infraestrutura
+
+<AccordionGroup>
+  <Accordion title="Dados em Trânsito">
+    Criptografia TLS/HTTPS para todos os dados em trânsito
+  </Accordion>
+  <Accordion title="Backups Armazenados">
+    Criptografia incorporada do Google Drive para backups armazenados
+  </Accordion>
+  <Accordion title="Controles de Acesso">
+    Controles de acesso interno baseados em funções
+  </Accordion>
+  <Accordion title="Segurança de Endpoints">
+    Políticas de acesso somente de dispositivos autorizados
+  </Accordion>
+  <Accordion title="Regras de Firewall">
+    Firewalls de produção usando regras de negação por padrão
+  </Accordion>
+</AccordionGroup>
+
+## Padrões de Backup de Chat
+
+<Warning>
+Quando o Team Inbox está habilitado, todos os chats do WhatsApp são backupeados por padrão no Google Drive.
+</Warning>
+
+Os usuários podem controlar as configurações de backup através de:
+- **Etiquetas "Não Sincronizar"** para contatos específicos
+- **Controles de administrador** para regras de sincronização de toda a organização
+
+## Conectividade Cloud WhatsApp
+
+Recurso opcional que permite mensagens agendadas/automatizadas quando o navegador está fechado:
+
+- Nenhum dado do WhatsApp armazenado nos servidores do Eazybe
+- Autenticação via código QR do WhatsApp
+- Sessões podem ser desconectadas a qualquer momento pela extensão
+
+## Permissões Necessárias
+
+| Permissão | Propósito |
+|-----------|-----------|
+| **Acesso às Abas do Chrome** | Sobreposição de UI para WhatsApp Web |
+| **Acesso ao CRM** | Integração OAuth/API com HubSpot, Zoho, Salesforce, etc. |
+| **Google Drive** | Backup opcional e armazenamento do Team Inbox |
+
+## Requisitos de Configuração de TI
+
+<Steps>
+  <Step title="Requisitos do Navegador">
+    Navegador Google Chrome necessário com login no WhatsApp Web no mesmo perfil do Chrome.
+  </Step>
+  <Step title="Permissões da Extensão">
+    Habilitar as permissões da extensão Chrome para o Eazybe.
+  </Step>
+  <Step title="Opcional: Integração de CRM">
+    Configurar chaves de API do CRM ou credenciais OAuth se usar recursos de CRM.
+  </Step>
+  <Step title="Opcional: Google Drive">
+    Conceder acesso ao Google Drive para administradores do workspace se usar recursos de backup.
+  </Step>
+  <Step title="Configuração de Firewall">
+    Permitir HTTPS para `web.eazybe.com`, `api.eazybe.com` e seus endpoints de CRM.
+  </Step>
+</Steps>
+
+<Tip>
+O Eazybe não requer instalação de software nas máquinas dos usuários - apenas uma extensão leve do Chrome. Recomendamos usar contas de teste para avaliação segura.
+</Tip>
+
+## Opções de Integração
+
+As plataformas suportadas incluem:
+- HubSpot
+- Zoho
+- Salesforce
+- LeadSquared
+- Freshdesk
+- Bitrix24
+- Google Sheets
+- CRMs personalizados via webhooks
+
+O aplicativo está listado como autorizado nos respectivos ecossistemas de marketplace.
+
+## Recomendações para Teste Seguro
+
+<CardGroup cols={3}>
+  <Card title="Números de Teste" icon="phone">
+    Usar números de WhatsApp temporários para testes
+  </Card>
+  <Card title="Contas de Teste" icon="flask">
+    Limitar acesso a contas de CRM de teste
+  </Card>
+  <Card title="Monitorar Atividade" icon="eye">
+    Revisar atividade da extensão via controles do Chrome
+  </Card>
+</CardGroup>
+
+## Cancelamento e Offboarding
+
+Os usuários podem:
+- Desinstalar a extensão a qualquer momento
+- Desconectar integrações dos respectivos painéis
+- Solicitar exclusão de dados da equipe de suporte
+
+## Contato de Suporte
+
+<Card title="Contatar Suporte" icon="headset">
+  **E-mail:** [hey@eazybe.com](mailto:hey@eazybe.com)
+
+  **WhatsApp:** Use o ícone de suporte dentro da extensão
+</Card>

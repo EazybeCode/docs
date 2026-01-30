@@ -1,0 +1,156 @@
+---
+title: "BT Güvenlik Uyumluluğu"
+description: "Eazybe'nin BT güvenlik uygulamaları, veri işleme politikaları, GDPR uyumluluğu, şifreleme standartları ve altyapı gereksinimleri hakkında bilgi edinin."
+---
+
+Eazybe, satış ve destek ekipleri için WhatsApp Web'i üretkenlik ve CRM entegrasyon özellikleriyle geliştiren bir Chrome uzantısıdır. Temel yetenekler arasında CRM mini görünümleri, paylaşılan ekip gelen kutuları, kişi etiketleri ve Google Drive veya CRM sistemlerine veri senkronizasyonu bulunur.
+
+## Veri Gizliliği ve Güvenlik Uyumluluğu
+
+### GDPR Uyumluluğu
+
+<Info>
+Eazybe, Sprinto aracılığıyla üçüncü taraf denetim doğrulaması ile GDPR hazırlığını sürdürür.
+</Info>
+
+GDPR uyumluluğumuz şunları içerir:
+
+<CardGroup cols={2}>
+  <Card title="Gizlilik Görevlisi" icon="user-shield">
+    Atanmış Gizlilik Görevlisi ve AB Temsilcisi
+  </Card>
+  <Card title="Dokümantasyon" icon="file-lines">
+    Yayınlanmış gizlilik belgeleri
+  </Card>
+  <Card title="Tedarikçi Değerlendirmeleri" icon="clipboard-check">
+    Yıllık tedarikçi risk değerlendirmeleri
+  </Card>
+  <Card title="ROPA" icon="database">
+    İşleme Faaliyetleri Kayıtları (ROPA)
+  </Card>
+</CardGroup>
+
+Düzenli Veri Koruma Etki Değerlendirmeleri yapılmaktadır. Kullanıcılar, desteğe e-posta göndererek veya uzantının WhatsApp destek özelliğini kullanarak veri erişimi veya silme talebinde bulunabilir.
+
+## Veri İşleme ve Depolama
+
+| Kategori | Detaylar |
+|----------|----------|
+| **Mesaj Depolama** | Eazybe mesajları depolamaz. Tüm sohbetler WhatsApp'ta kalır. |
+| **CRM Verileri** | API'ler aracılığıyla görüntülenir; kimlik bilgileri depolanmaz; OAuth tercih edilir |
+| **Yedeklemeler** | Kullanıcının Google Drive'ında depolanır |
+| **Ekler** | Yedekleme etkinleştirildiğinde medya Google Drive'da depolanır |
+| **Sunucu Depolama** | Veriler istemci tarafında veya kullanıcının bulut hizmetlerinde kalır |
+
+## Şifreleme ve Altyapı
+
+<AccordionGroup>
+  <Accordion title="Aktarımdaki Veriler">
+    Aktarımdaki tüm veriler için TLS/HTTPS şifrelemesi
+  </Accordion>
+  <Accordion title="Depolanan Yedeklemeler">
+    Depolanan yedeklemeler için Google Drive'ın yerleşik şifrelemesi
+  </Accordion>
+  <Accordion title="Erişim Kontrolleri">
+    Rol tabanlı dahili erişim kontrolleri
+  </Accordion>
+  <Accordion title="Uç Nokta Güvenliği">
+    Yalnızca yetkili cihazlardan erişim politikaları
+  </Accordion>
+  <Accordion title="Güvenlik Duvarı Kuralları">
+    Varsayılan olarak reddet kuralları kullanan üretim güvenlik duvarları
+  </Accordion>
+</AccordionGroup>
+
+## Sohbet Yedekleme Varsayılanları
+
+<Warning>
+Team Inbox etkinleştirildiğinde, tüm WhatsApp sohbetleri varsayılan olarak Google Drive'a yedeklenir.
+</Warning>
+
+Kullanıcılar yedekleme ayarlarını şu şekilde kontrol edebilir:
+- Belirli kişiler için **"Senkronize Etme" etiketleri**
+- Organizasyon genelinde senkronizasyon kuralları için **yönetici kontrolleri**
+
+## Cloud WhatsApp Bağlantısı
+
+Tarayıcı kapalıyken zamanlanmış/otomatik mesajlaşmayı etkinleştiren isteğe bağlı özellik:
+
+- Eazybe sunucularında WhatsApp verisi depolanmaz
+- WhatsApp'ın QR kod girişi ile kimlik doğrulama
+- Oturumlar uzantıdan her zaman bağlantısı kesilebilir
+
+## Gerekli İzinler
+
+| İzin | Amaç |
+|------|------|
+| **Chrome Sekme Erişimi** | WhatsApp Web için UI kaplaması |
+| **CRM Erişimi** | HubSpot, Zoho, Salesforce vb. ile OAuth/API entegrasyonu |
+| **Google Drive** | İsteğe bağlı yedekleme ve Team Inbox depolaması |
+
+## BT Kurulum Gereksinimleri
+
+<Steps>
+  <Step title="Tarayıcı Gereksinimleri">
+    Aynı Chrome profilinde WhatsApp Web girişi ile Google Chrome tarayıcısı gereklidir.
+  </Step>
+  <Step title="Uzantı İzinleri">
+    Eazybe için Chrome uzantı izinlerini etkinleştirin.
+  </Step>
+  <Step title="İsteğe Bağlı: CRM Entegrasyonu">
+    CRM özelliklerini kullanıyorsanız CRM API anahtarlarını veya OAuth kimlik bilgilerini yapılandırın.
+  </Step>
+  <Step title="İsteğe Bağlı: Google Drive">
+    Yedekleme özelliklerini kullanıyorsanız workspace yöneticileri için Google Drive erişimi verin.
+  </Step>
+  <Step title="Güvenlik Duvarı Yapılandırması">
+    `web.eazybe.com`, `api.eazybe.com` ve CRM uç noktalarınıza HTTPS'ye izin verin.
+  </Step>
+</Steps>
+
+<Tip>
+Eazybe, kullanıcı makinelerine yazılım kurulumu gerektirmez - sadece hafif bir Chrome uzantısı. Güvenli değerlendirme için test hesapları kullanmanızı öneririz.
+</Tip>
+
+## Entegrasyon Seçenekleri
+
+Desteklenen platformlar şunlardır:
+- HubSpot
+- Zoho
+- Salesforce
+- LeadSquared
+- Freshdesk
+- Bitrix24
+- Google Sheets
+- Webhook'lar aracılığıyla özel CRM'ler
+
+Uygulama, ilgili marketplace ekosistemlerinde yetkili olarak listelenmiştir.
+
+## Güvenli Deneme Önerileri
+
+<CardGroup cols={3}>
+  <Card title="Test Numaraları" icon="phone">
+    Test için geçici WhatsApp numaraları kullanın
+  </Card>
+  <Card title="Test Hesapları" icon="flask">
+    Test CRM hesaplarına erişimi sınırlayın
+  </Card>
+  <Card title="Aktiviteyi İzle" icon="eye">
+    Chrome kontrolleri aracılığıyla uzantı aktivitesini inceleyin
+  </Card>
+</CardGroup>
+
+## İptal ve Offboarding
+
+Kullanıcılar şunları yapabilir:
+- Uzantıyı her zaman kaldırabilir
+- İlgili panellerden entegrasyonların bağlantısını kesebilir
+- Destek ekibinden veri silme talebinde bulunabilir
+
+## Destek İletişimi
+
+<Card title="Desteğe Ulaşın" icon="headset">
+  **E-posta:** [hey@eazybe.com](mailto:hey@eazybe.com)
+
+  **WhatsApp:** Uzantı içindeki destek simgesini kullanın
+</Card>

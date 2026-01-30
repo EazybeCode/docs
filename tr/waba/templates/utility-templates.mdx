@@ -1,32 +1,32 @@
 ---
-title: "Fayda Şablonları"
-description: "Sipariş güncellemeleri, uyarılar ve bildirimler için işlemsel mesaj şablonları oluşturun"
+title: "Yardımcı Şablonlar"
+description: "Sipariş güncellemeleri, uyarılar ve bildirimler için işlemsel mesaj şablonları oluşturmayı öğrenin"
 ---
 
-## Fayda Şablonları Nedir?
+## Yardımcı Şablonlar Nedir?
 
-Fayda şablonları **işlemsel, bilgilendirici mesajlar** için kullanılır:
+Yardımcı şablonlar, aşağıdaki gibi **işlemsel ve bilgilendirici mesajlar** için kullanılır:
 - Sipariş onayları ve güncellemeleri
 - Kargo bildirimleri
-- Randevu hatırlatıcıları
+- Randevu hatırlatmaları
 - Hesap uyarıları
 - Ödeme makbuzları
 
 <Info>
-Fayda şablonları **pazarlamadan daha az** maliyetlidir ve alıcılara gerçek değer sağladıkları için daha yüksek onay oranlarına sahiptir.
+Yardımcı şablonlar **pazarlamadan daha az maliyetlidir** ve alıcılara gerçek değer sağladığı için daha yüksek onay oranlarına sahiptir.
 </Info>
 
-## Fayda Şablonları Ne Zaman Kullanılır
+## Yardımcı Şablonlar Ne Zaman Kullanılır?
 
 | Kullanım Durumu | Örnek |
 |-----------------|-------|
-| **Sipariş Onayı** | "Siparişiniz #12345 alındı" |
-| **Kargo Güncellemesi** | "Paketiniz teslimata çıktı" |
-| **Randevu Hatırlatıcısı** | "Hatırlatma: Randevunuz yarın saat 15:00'te" |
-| **Ödeme Onayı** | "₺999 tutarındaki ödemenizi aldık" |
-| **Hesap Uyarısı** | "Aboneliğiniz 3 gün içinde yenileniyor" |
+| **Sipariş Onayı** | "Siparişiniz #12345 oluşturuldu" |
+| **Kargo Güncellemesi** | "Paketiniz dağıtıma çıktı" |
+| **Randevu Hatırlatması** | "Hatırlatma: Randevunuz yarın saat 15:00'te" |
+| **Ödeme Onayı** | "999 TL tutarındaki ödemenizi aldık" |
+| **Hesap Uyarısı** | "Aboneliğiniz 3 gün içinde yenilenecek" |
 
-## Örnek Şablonlar
+## Şablon Örnekleri
 
 ### Sipariş Onayı
 
@@ -35,16 +35,16 @@ Fayda şablonları **pazarlamadan daha az** maliyetlidir ve alıcılara gerçek 
 
 Merhaba {{1}},
 
-Siparişiniz için teşekkürler!
+Siparişiniz için teşekkür ederiz!
 
 Sipariş #: {{2}}
 Ürünler: {{3}}
 Toplam: {{4}}
 
-Kargoya verildiğinde sizi bilgilendireceğiz.
+Kargoya verildiğinde size bildireceğiz.
 ```
 
-**Düğmeler:**
+**Butonlar:**
 - [Siparişi Görüntüle] → https://magaza.com/siparisler/{{2}}
 
 ---
@@ -52,28 +52,28 @@ Kargoya verildiğinde sizi bilgilendireceğiz.
 ### Kargo Bildirimi
 
 ```
-📦 Siparişiniz yolda!
+📦 Siparişiniz yola çıktı!
 
 Merhaba {{1}},
 
-Harika haber! Sipariş #{{2}} kargoya verildi.
+Harika haberler! Sipariş #{{2}} kargoya verildi.
 
-Kargo: {{3}}
+Kargo Firması: {{3}}
 Takip #: {{4}}
 Tahmini teslimat: {{5}}
 
 Paketinizi aşağıdan takip edin 👇
 ```
 
-**Düğmeler:**
+**Butonlar:**
 - [Paketi Takip Et] → {{6}}
 
 ---
 
-### Randevu Hatırlatıcısı
+### Randevu Hatırlatması
 
 ```
-📅 Randevu Hatırlatıcısı
+📅 Randevu Hatırlatması
 
 Merhaba {{1}},
 
@@ -86,7 +86,7 @@ Bu, yaklaşan randevunuz için bir hatırlatmadır:
 Lütfen 10 dakika erken gelin.
 ```
 
-**Düğmeler:**
+**Butonlar:**
 - [Yeniden Planla] → https://takvim.com/yenidenplanla
 - [Yol Tarifi Al] → {{5}}
 
@@ -101,51 +101,51 @@ Merhaba {{1}},
 
 {{2}} tutarındaki ödemenizi aldık.
 
-İşlem ID: {{3}}
+İşlem Kimliği: {{3}}
 Tarih: {{4}}
 Ödeme Yöntemi: {{5}}
 
-Tercihleriniz için teşekkürler!
+Bizi tercih ettiğiniz için teşekkür ederiz!
 ```
 
-**Düğmeler:**
+**Butonlar:**
 - [Makbuzu Görüntüle] → https://faturalama.com/makbuz/{{3}}
 
-## Ücretsiz Fayda Mesajları
+## Ücretsiz Yardımcı Mesajlar
 
 <Tip>
-**Para Tasarrufu:** **24 saatlik hizmet penceresi içinde** (bir müşteri size mesaj gönderdikten sonra) gönderilen fayda şablonları **ÜCRETSİZ**!
+**Para Tasarrufu:** **24 saatlik hizmet penceresi içinde** (bir müşteri size mesaj gönderdikten sonra) gönderilen yardımcı şablonlar **ÜCRETSİZDİR**!
 </Tip>
 
 | Senaryo | Maliyet |
 |---------|---------|
-| Müşteri size mesaj gönderir, 24 saat içinde fayda şablonuyla yanıt verirsiniz | **Ücretsiz** |
-| Önceki konuşma olmadan fayda şablonu gönderirsiniz | **Ücretli** |
-| Müşteri mesaj gönderir, 24 saat geçer, fayda şablonu gönderirsiniz | **Ücretli** |
+| Müşteri size mesaj gönderir, 24 saat içinde yardımcı şablonla yanıt verirsiniz | **Ücretsiz** |
+| Önceden konuşma olmadan yardımcı şablon gönderirsiniz | **Ücretli** |
+| Müşteri mesaj gönderir, 24 saat geçer, yardımcı şablon gönderirsiniz | **Ücretli** |
 
 ## En İyi Uygulamalar
 
 <CardGroup cols={2}>
   <Card title="Bilgilendirici Olun" icon="info">
-    Satış değil, faydalı bilgi sağlamaya odaklanın
+    Satış yapmak yerine faydalı bilgiler sağlamaya odaklanın
   </Card>
-  <Card title="Anahtar Detayları Ekleyin" icon="list">
-    Sipariş numaraları, tarihler, tutarlar – müşterinin ihtiyacı olan her şey
+  <Card title="Önemli Detayları Ekleyin" icon="list">
+    Sipariş numaraları, tarihler, tutarlar – müşterinin ihtiyaç duyduğu her şey
   </Card>
-  <Card title="Eylem Düğmeleri Kullanın" icon="hand-pointer">
-    Takip bağlantıları, sipariş görüntüleme düğmeleri ekleyin
+  <Card title="Eylem Butonları Kullanın" icon="hand-pointer">
+    Takip bağlantıları, siparişi görüntüle butonları ekleyin
   </Card>
-  <Card title="Tanıtımdan Kaçının" icon="ban">
-    Satış mesajları eklemeyin – bu Pazarlama yapar
+  <Card title="Promosyondan Kaçının" icon="ban">
+    Satış mesajları eklemeyin – bu Pazarlama kategorisine alınır
   </Card>
 </CardGroup>
 
 ## Kategori Uyumsuzluğu Uyarısı
 
 <Warning>
-"Fayda" şablonunuz şu tür tanıtım içeriği içeriyorsa:
+"Yardımcı" şablonunuz aşağıdaki gibi promosyonel içerik içeriyorsa:
 - "Yeni ürünlerimize göz atın!"
-- "Sonraki siparişinizde %20 indirim kazanın"
+- "Bir sonraki siparişinizde %20 indirim kazanın"
 - "Sınırlı süreli teklif!"
 
 **Reddedilecek** ve **Pazarlama** olarak yeniden göndermeniz gerekecektir.
