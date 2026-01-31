@@ -60,14 +60,6 @@
                     ]
                   },
                   {
-                    "group": "WhatsApp Account Types",
-                    "pages": [
-                      "getting-started/whatsapp-types",
-                      "getting-started/personal-vs-business-vs-api",
-                      "getting-started/coexistence-mode"
-                    ]
-                  },
-                  {
                     "group": "Cloud WhatsApp",
                     "pages": [
                       "en/getting-started/cloud-whatsapp/about",
@@ -163,10 +155,7 @@
                 "group": "Productivity Tools",
                 "icon": "bolt",
                 "pages": [
-                  "productivity/quick-replies",
-                  "productivity/scheduled-messages",
                   "productivity/message-templates",
-                  "productivity/bulk-messaging",
                   "productivity/privacy-blur",
                   "en/productivity/start-chat",
                   "en/productivity/quick-reply",
@@ -191,22 +180,8 @@
                 "group": "Account & Settings",
                 "icon": "gear",
                 "pages": [
-                  "settings/workspace",
                   "settings/team-management",
-                  "settings/roles-permissions",
-                  "settings/billing",
-                  "settings/security",
-                  "settings/data-privacy"
-                ]
-              },
-              {
-                "group": "Privacy & Compliance",
-                "icon": "shield-check",
-                "pages": [
-                  "privacy/overview",
-                  "privacy/gdpr",
-                  "privacy/data-storage",
-                  "privacy/employee-monitoring"
+                  "settings/roles-permissions"
                 ]
               },
               {
