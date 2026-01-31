@@ -238,10 +238,6 @@
               {
                 "group": "Overview",
                 "icon": "plug",
-                "pages": [
-                  "integrations/overview",
-                  "integrations/choosing-crm"
-                ]
                 "pages": ["integrations/overview", "integrations/choosing-crm"]
               },
               {
