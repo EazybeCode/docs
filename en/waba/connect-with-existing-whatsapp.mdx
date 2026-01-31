@@ -23,7 +23,7 @@ WhatsApp Business App Coexistence allows your business to use the same WhatsApp 
 </CardGroup>
 
 <Info>
-This is the safest method to migrate to Cloud API without losing any data. You can continue using the WhatsApp Business App normally after connecting.
+  This is the safest method to migrate to Cloud API without losing any data. You can continue using the WhatsApp Business App normally after connecting.
 </Info>
 
 ## Prerequisites
@@ -34,22 +34,19 @@ Before starting the onboarding process, ensure you meet all these requirements:
   <Accordion title="WhatsApp Business App Version" icon="mobile">
     WhatsApp Business App **version 2.24.17 or higher** is required. Older versions will fail during QR-linking.
   </Accordion>
-
   <Accordion title="Verified Meta Business Account" icon="badge-check">
     You must have a verified Meta Business Account with completed business verification.
   </Accordion>
-
   <Accordion title="Eligible Phone Number" icon="phone">
     Your number must:
+
     - Not be linked to other API providers
     - Be an active WhatsApp Business number
     - Have no Meta restrictions or policy violations
   </Accordion>
-
   <Accordion title="Eazybe Cloud API Access" icon="cloud">
     Active Eazybe Cloud API access with proper permissions is required.
   </Accordion>
-
   <Accordion title="Technical Requirements" icon="gear">
     - Configured webhook endpoints
     - Session logging enabled
@@ -64,19 +61,16 @@ Before starting the onboarding process, ensure you meet all these requirements:
 
     ![Access Facebook Business Account](/images/1720506698.png)
   </Step>
-
   <Step title="Fill Business Information">
     Complete the business information form with accurate details in all required input fields.
 
     ![Fill Business Information](/images/1710744494.png)
   </Step>
-
   <Step title="Enter Your Mobile Number">
     Enter your existing WhatsApp Business mobile number with the correct country code.
 
     ![Enter Mobile Number](/images/1710745572.png)
   </Step>
-
   <Step title="Scan QR Code">
     Scan the QR code using your WhatsApp Business App. There are two options available:
 
@@ -87,13 +81,12 @@ Before starting the onboarding process, ensure you meet all these requirements:
         ![QR Code Option 1](/images/1713494691.png)
       </Tab>
       <Tab title="Option 2: Link Device">
-        Navigate to Settings > Linked Devices > Link a Device in your WhatsApp Business App.
+        Navigate to Settings \> Linked Devices \> Link a Device in your WhatsApp Business App.
 
         ![QR Code Option 2](/images/1713499623.png)
       </Tab>
     </Tabs>
   </Step>
-
   <Step title="Sync Chat History (Optional)">
     Choose whether to sync your chat history:
 
@@ -105,10 +98,9 @@ Before starting the onboarding process, ensure you meet all these requirements:
     ![Sync Chat History](/images/1720537088.png)
 
     <Warning>
-    Keep the WhatsApp Business App running during setup to prevent message loss.
+      Keep the WhatsApp Business App running during setup to prevent message loss.
     </Warning>
   </Step>
-
   <Step title="Verify Account Details">
     Review and update your WhatsApp Business account details including:
 
@@ -118,20 +110,15 @@ Before starting the onboarding process, ensure you meet all these requirements:
 
     ![Verify Account Details](/images/1720535910.png)
   </Step>
-
   <Step title="Review Access Permissions">
     Review and confirm the access permissions required for the integration to function properly.
 
     <Tabs>
-      <Tab title="iOS">
-        ![iOS Permissions](/images/1720564805.PNG)
-      </Tab>
       <Tab title="Android">
         ![Android Permissions](/images/1720564008.png)
       </Tab>
     </Tabs>
   </Step>
-
   <Step title="Complete Connection">
     Click **Finish** to complete the connection process. Your WhatsApp Business App is now connected to Eazybe Cloud API.
 
@@ -164,13 +151,11 @@ To verify your connection is working properly:
 
     ![Connection Status](/images/1720609270.png)
   </Step>
-
   <Step title="Send Test Message">
     Send a test message from either the mobile app or Eazybe dashboard to confirm sync is working.
 
     ![Test Message](/images/1720611072.png)
   </Step>
-
   <Step title="Verify in Mobile App">
     Check that messages sent from Eazybe appear in your WhatsApp Business App.
 
@@ -183,30 +168,30 @@ To verify your connection is working properly:
 <AccordionGroup>
   <Accordion title="QR Code Won't Scan" icon="qrcode">
     **Common causes:**
+
     - WhatsApp Business App version is outdated
     - Poor internet connection
     - Camera permission not granted
 
     **Solution:** Update your app to version 2.24.17 or higher and ensure stable internet connectivity.
   </Accordion>
-
   <Accordion title="Chat History Did Not Import" icon="clock-rotate-left">
     If you skipped history import initially:
+
     1. Open WhatsApp Business App
-    2. Navigate to **Settings > Business Tools > WhatsApp Business Platform**
+    2. Navigate to **Settings \> Business Tools \> WhatsApp Business Platform**
     3. Tap **Disconnect** to remove the current connection
     4. Restart the onboarding process from the beginning
   </Accordion>
-
   <Accordion title="Connection Failed" icon="triangle-exclamation">
     **Common reasons:**
+
     - Number is linked to another API provider
     - Meta restrictions on the account
     - No Facebook Page admin access
 
     **Solution:** Use a number with active WhatsApp Business usage and no policy violations.
   </Accordion>
-
   <Accordion title="Messages Not Syncing" icon="rotate">
     - Ensure both devices have stable internet connection
     - Check that the WhatsApp Business App is running in the background
@@ -220,19 +205,15 @@ To verify your connection is working properly:
   <Accordion title="Can coexistence work with my existing number?" icon="question">
     **Yes**, if your number meets all the prerequisites: WhatsApp Business App version 2.24.17+, verified Meta Business Account, and no existing API provider connections.
   </Accordion>
-
   <Accordion title="Will I lose my contacts or chat history?" icon="question">
     **No** — seamless synchronization occurs during the setup process. All contacts are automatically imported, and you can optionally sync up to 6 months of chat history.
   </Accordion>
-
   <Accordion title="Can I still use the WhatsApp Business App after connecting?" icon="question">
     **Yes**, you can continue using the WhatsApp Business App for personal chats while Eazybe manages automated responses and broadcasts.
   </Accordion>
-
   <Accordion title="How do I disable coexistence?" icon="question">
     You can unlink the connection via your Eazybe workspace settings. Note that a **1-2 month cooldown period** applies if you want to reconnect the number.
   </Accordion>
-
   <Accordion title="Does coexistence incur additional fees?" icon="question">
     **No**, there are no additional fees for coexistence itself. Standard Meta messaging fees and Eazybe subscription charges apply as normal.
   </Accordion>
