@@ -213,11 +213,6 @@
             "tab": "CRM Integrations",
             "groups": [
               {
-                "group": "Overview",
-                "icon": "plug",
-                "pages": []
-              },
-              {
                 "group": "HubSpot",
                 "icon": "hubspot",
                 "pages": [
@@ -226,9 +221,6 @@
                   "en/integrations/hubspot/disconnect",
                   "en/integrations/hubspot/invite-team",
                   "en/integrations/hubspot/link-whatsapp-contacts",
-                  "integrations/hubspot/setup",
-                  "integrations/hubspot/contact-sync",
-                  "integrations/hubspot/chat-backup",
                   {
                     "group": "Chat Backup",
                     "pages": [
@@ -249,12 +241,7 @@
                       "en/integrations/hubspot/mini-crm/create-and-customize-deals",
                       "en/integrations/hubspot/mini-crm/create-call-logs",
                       "en/integrations/hubspot/mini-crm/create-tickets",
-                      "integrations/hubspot/mini-crm/overview",
-                      "integrations/hubspot/mini-crm/contacts",
-                      "integrations/hubspot/mini-crm/deals",
-                      "integrations/hubspot/mini-crm/tasks-notes",
-                      "integrations/hubspot/mini-crm/tickets",
-                      "integrations/hubspot/mini-crm/call-logs"
+                      "integrations/hubspot/mini-crm/overview"
                     ]
                   },
                   {
@@ -299,15 +286,11 @@
                 "group": "Zoho CRM",
                 "icon": "circle-nodes",
                 "pages": [
-                  "integrations/zoho/overview",
                   "en/integrations/zoho/prerequisites",
-                  "integrations/zoho/setup",
                   "en/integrations/zoho/invite-team",
                   "en/integrations/zoho/link-whatsapp-contacts",
                   "en/integrations/zoho/custom-object-permissions",
                   "en/integrations/zoho/api-access",
-                  "integrations/zoho/contact-sync",
-                  "integrations/zoho/chat-backup",
                   "en/integrations/zoho/message-sync",
                   "en/integrations/zoho/component-backup",
                   {
@@ -342,7 +325,6 @@
                   {
                     "group": "FAQ",
                     "pages": [
-                      "integrations/zoho/faq",
                       "en/integrations/zoho/faq/integration-confirmation",
                       "en/integrations/zoho/faq/permissions-required",
                       "en/integrations/zoho/faq/how-to-disconnect",
@@ -698,18 +680,7 @@
                   {
                     "group": "Configuración",
                     "pages": [
-                      "es/getting-started/installation",
-                      "es/getting-started/system-requirements",
-                      "es/getting-started/connect-whatsapp",
                       "es/getting-started/onboarding-to-coexistence"
-                    ]
-                  },
-                  {
-                    "group": "Tipos de Cuenta WhatsApp",
-                    "pages": [
-                      "es/getting-started/whatsapp-types",
-                      "es/getting-started/personal-vs-business-vs-api",
-                      "es/getting-started/coexistence-mode"
                     ]
                   },
                   {
@@ -807,9 +778,6 @@
                 "group": "Herramientas de Productividad",
                 "icon": "bolt",
                 "pages": [
-                  "es/productivity/quick-replies",
-                  "es/productivity/scheduled-messages",
-                  "es/productivity/bulk-messaging",
                   "es/productivity/start-chat",
                   "es/productivity/quick-reply",
                   "es/productivity/setting-button",
@@ -822,9 +790,7 @@
                 "group": "Configuración",
                 "icon": "gear",
                 "pages": [
-                  "es/settings/workspace",
-                  "es/settings/team-management",
-                  "es/settings/billing"
+                  "es/settings/team-management"
                 ]
               },
               {
