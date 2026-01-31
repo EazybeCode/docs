@@ -1,0 +1,202 @@
+---
+title: "HubSpot Workflow for WhatsApp Campaigns"
+description: "Create automated WhatsApp marketing campaigns using HubSpot workflows. Learn how to set up triggers, actions, and integrations to send personalized WhatsApp messages and streamline customer communication."
+---
+
+This guide walks you through creating a HubSpot workflow that automatically sends WhatsApp messages to your contacts using the Eazybe integration.
+
+## Prerequisites
+
+Before setting up your workflow, ensure you have:
+
+<CardGroup cols={2}>
+  <Card title="HubSpot Account" icon="hubspot">
+    An active HubSpot account with workflow access
+  </Card>
+  <Card title="Eazybe Integration" icon="plug">
+    WhatsApp Integration by Eazybe installed in HubSpot
+  </Card>
+</CardGroup>
+
+## Creating Your HubSpot Workflow
+
+<Steps>
+  <Step title="Access Your HubSpot Account">
+    Log in to your HubSpot account to begin setting up the workflow.
+
+    ![Access HubSpot](/images/1933597310.png)
+  </Step>
+
+  <Step title="Navigate to Automation">
+    Click on the **Automation** button in the main navigation menu.
+
+    ![Navigate to Automation](/images/1933597303.png)
+  </Step>
+
+  <Step title="Select Workflows">
+    From the automation menu, select **Workflows** to access the workflow builder.
+
+    ![Select Workflows](/images/1933597307.png)
+  </Step>
+
+  <Step title="Create New Workflow">
+    Click **Create workflow** to start building a new automation.
+
+    ![Create Workflow](/images/1933597320.png)
+  </Step>
+
+  <Step title="Choose From Scratch">
+    Select **From scratch** to create a custom workflow tailored to your needs.
+
+    ![From Scratch](/images/1933597313.png)
+  </Step>
+
+  <Step title="Set Filter Criteria">
+    Click **Met filter criteria** to define the conditions for workflow enrollment.
+
+    ![Filter Criteria](/images/1933597309.png)
+  </Step>
+
+  <Step title="Select Contact as Trigger">
+    Choose **Contact** as the object type that will trigger this workflow.
+
+    ![Select Contact](/images/1933597302.png)
+  </Step>
+
+  <Step title="Access Contact Properties">
+    Click on **Contact properties** to configure specific enrollment criteria.
+
+    ![Contact Properties](/images/1933597316.png)
+  </Step>
+
+  <Step title="Search for Property">
+    Search for the contact property you want to use as the enrollment trigger.
+
+    ![Search Property](/images/1933597306.png)
+  </Step>
+
+  <Step title="Choose Property Name">
+    Select your desired property (for example, "Company name") from the list.
+
+    ![Choose Property](/images/1933597299.png)
+
+    <Info>
+    You can use any contact property such as lifecycle stage, lead status, or custom properties you've created.
+    </Info>
+  </Step>
+
+  <Step title="Configure Conditions">
+    Set the condition (e.g., "is equal to any of") and add the matching values under **Add values**.
+
+    ![Configure Conditions](/images/1933597301.png)
+  </Step>
+
+  <Step title="Proceed to Next Step">
+    Click **Next** to continue to the re-enrollment settings.
+
+    ![Click Next](/images/1933597311.png)
+  </Step>
+
+  <Step title="Enable Re-enrollment">
+    Toggle **Re-enroll** if you want contacts who already met the criteria to enter the workflow again.
+
+    ![Re-enrollment](/images/1933597304.png)
+
+    <Warning>
+    Be cautious with re-enrollment settings to avoid sending duplicate messages to the same contacts.
+    </Warning>
+  </Step>
+
+  <Step title="Save Enrollment Settings">
+    Click **Save and continue** to preserve your enrollment configuration.
+
+    ![Save Settings](/images/1933597323.png)
+  </Step>
+
+  <Step title="Add WhatsApp Integration">
+    Scroll down in the actions panel and select **WhatsApp Integration by Eazybe**.
+
+    ![WhatsApp Integration](/images/1933597315.png)
+  </Step>
+
+  <Step title="Select Template Action">
+    Click **Send Ready-to-Use WhatsApp Template** to choose a pre-approved message template.
+
+    ![Select Template Action](/images/1933597312.png)
+  </Step>
+
+  <Step title="Specify Phone Number Field">
+    Choose which contact property field contains the recipient's phone number.
+
+    ![Phone Number Field](/images/1933597300.png)
+
+    <Tip>
+    Ensure phone numbers are stored in international format (e.g., +1234567890) for successful delivery.
+    </Tip>
+  </Step>
+
+  <Step title="Choose WhatsApp Template">
+    Select an approved WhatsApp template from the available options.
+
+    ![Choose Template](/images/1933597314.png)
+  </Step>
+
+  <Step title="Save Template Selection">
+    Click **Save** to confirm your template selection.
+
+    ![Save Template](/images/1933597308.png)
+  </Step>
+
+  <Step title="Review Workflow">
+    Click **Review and turn on** to access the final review screen.
+
+    ![Review Workflow](/images/1933597318.png)
+  </Step>
+
+  <Step title="Set Enrollment Preferences">
+    Configure your enrollment preference settings based on your campaign requirements.
+
+    ![Enrollment Preferences](/images/1933597322.png)
+  </Step>
+
+  <Step title="Final Review">
+    Either click **Skip to turn on** or click **Next** to perform additional validation checks.
+
+    ![Final Review](/images/1933597317.png)
+  </Step>
+
+  <Step title="Activate Workflow">
+    Click **Turn on workflow** to activate your WhatsApp campaign automation.
+
+    ![Turn On Workflow](/images/1933597319.png)
+  </Step>
+</Steps>
+
+## Your Workflow is Ready
+
+Congratulations! Your HubSpot workflow is now configured to automatically send WhatsApp messages to contacts who meet your specified criteria.
+
+<Check>
+Your workflow will now automatically trigger WhatsApp messages whenever a contact meets the enrollment criteria you defined.
+</Check>
+
+## Related Resources
+
+<CardGroup cols={2}>
+  <Card title="Send WhatsApp via Workflows" href="/en/integrations/hubspot/create-workflow" icon="paper-plane">
+    Learn more about sending WhatsApp messages through HubSpot workflows
+  </Card>
+  <Card title="Troubleshoot Workflow Issues" href="/en/integrations/hubspot/workflow-troubleshoot" icon="wrench">
+    Common issues and solutions for HubSpot workflow problems
+  </Card>
+  <Card title="Create Templates with HubSpot Variables" href="/en/waba/templates/how-to-create-template-with-hubspot-variables" icon="file-code">
+    Use HubSpot contact properties in your WhatsApp templates
+  </Card>
+  <Card title="Broadcast Campaigns" href="/en/waba/broadcasting/send-broadcast" icon="bullhorn">
+    Send bulk WhatsApp messages to multiple recipients
+  </Card>
+</CardGroup>
+
+## Need Help?
+
+If you have any questions or need further assistance, feel free to reach out to us at [hey@eazybe.com](mailto:hey@eazybe.com). We're happy to help!

@@ -1,0 +1,202 @@
+---
+title: "Fluxo de Trabalho do HubSpot para Campanhas de WhatsApp"
+description: "Crie campanhas automatizadas de marketing por WhatsApp usando fluxos de trabalho do HubSpot. Aprenda a configurar gatilhos, ações e integrações para enviar mensagens personalizadas e otimizar a comunicação com clientes."
+---
+
+Este guia mostra como criar um fluxo de trabalho no HubSpot que envia automaticamente mensagens de WhatsApp para seus contatos usando a integração do Eazybe.
+
+## Pré-requisitos
+
+Antes de configurar seu fluxo de trabalho, certifique-se de ter:
+
+<CardGroup cols={2}>
+  <Card title="Conta do HubSpot" icon="hubspot">
+    Uma conta ativa do HubSpot com acesso a fluxos de trabalho
+  </Card>
+  <Card title="Integração Eazybe" icon="plug">
+    WhatsApp Integration by Eazybe instalado no HubSpot
+  </Card>
+</CardGroup>
+
+## Criando Seu Fluxo de Trabalho no HubSpot
+
+<Steps>
+  <Step title="Acesse Sua Conta do HubSpot">
+    Faça login na sua conta do HubSpot para começar a configurar o fluxo de trabalho.
+
+    ![Acessar HubSpot](/images/1933597310.png)
+  </Step>
+
+  <Step title="Navegue até Automação">
+    Clique no botão **Automation** no menu de navegação principal.
+
+    ![Navegar para Automação](/images/1933597303.png)
+  </Step>
+
+  <Step title="Selecione Fluxos de Trabalho">
+    No menu de automação, selecione **Workflows** para acessar o construtor de fluxos de trabalho.
+
+    ![Selecionar Workflows](/images/1933597307.png)
+  </Step>
+
+  <Step title="Criar Novo Fluxo de Trabalho">
+    Clique em **Create workflow** para começar a construir uma nova automação.
+
+    ![Criar Workflow](/images/1933597320.png)
+  </Step>
+
+  <Step title="Escolher Do Zero">
+    Selecione **From scratch** para criar um fluxo de trabalho personalizado adaptado às suas necessidades.
+
+    ![Do Zero](/images/1933597313.png)
+  </Step>
+
+  <Step title="Definir Critérios de Filtro">
+    Clique em **Met filter criteria** para definir as condições de inscrição no fluxo de trabalho.
+
+    ![Critérios de Filtro](/images/1933597309.png)
+  </Step>
+
+  <Step title="Selecionar Contato como Gatilho">
+    Escolha **Contact** como o tipo de objeto que acionará este fluxo de trabalho.
+
+    ![Selecionar Contato](/images/1933597302.png)
+  </Step>
+
+  <Step title="Acessar Propriedades do Contato">
+    Clique em **Contact properties** para configurar critérios específicos de inscrição.
+
+    ![Propriedades do Contato](/images/1933597316.png)
+  </Step>
+
+  <Step title="Buscar Propriedade">
+    Procure a propriedade do contato que você deseja usar como gatilho de inscrição.
+
+    ![Buscar Propriedade](/images/1933597306.png)
+  </Step>
+
+  <Step title="Escolher Nome da Propriedade">
+    Selecione a propriedade desejada (por exemplo, "Company name") da lista.
+
+    ![Escolher Propriedade](/images/1933597299.png)
+
+    <Info>
+    Você pode usar qualquer propriedade de contato como estágio do ciclo de vida, status do lead ou propriedades personalizadas que você criou.
+    </Info>
+  </Step>
+
+  <Step title="Configurar Condições">
+    Defina a condição (por exemplo, "is equal to any of") e adicione os valores correspondentes em **Add values**.
+
+    ![Configurar Condições](/images/1933597301.png)
+  </Step>
+
+  <Step title="Prosseguir para o Próximo Passo">
+    Clique em **Next** para continuar para as configurações de reinscrição.
+
+    ![Clique em Next](/images/1933597311.png)
+  </Step>
+
+  <Step title="Habilitar Reinscrição">
+    Ative **Re-enroll** se você quiser que os contatos que já atenderam aos critérios entrem novamente no fluxo de trabalho.
+
+    ![Reinscrição](/images/1933597304.png)
+
+    <Warning>
+    Tenha cuidado com as configurações de reinscrição para evitar o envio de mensagens duplicadas para os mesmos contatos.
+    </Warning>
+  </Step>
+
+  <Step title="Salvar Configurações de Inscrição">
+    Clique em **Save and continue** para preservar sua configuração de inscrição.
+
+    ![Salvar Configurações](/images/1933597323.png)
+  </Step>
+
+  <Step title="Adicionar Integração do WhatsApp">
+    Role para baixo no painel de ações e selecione **WhatsApp Integration by Eazybe**.
+
+    ![Integração WhatsApp](/images/1933597315.png)
+  </Step>
+
+  <Step title="Selecionar Ação de Template">
+    Clique em **Send Ready-to-Use WhatsApp Template** para escolher um template de mensagem pré-aprovado.
+
+    ![Selecionar Ação de Template](/images/1933597312.png)
+  </Step>
+
+  <Step title="Especificar Campo de Número de Telefone">
+    Escolha qual campo de propriedade do contato contém o número de telefone do destinatário.
+
+    ![Campo de Número de Telefone](/images/1933597300.png)
+
+    <Tip>
+    Certifique-se de que os números de telefone estejam armazenados em formato internacional (ex., +1234567890) para entrega bem-sucedida.
+    </Tip>
+  </Step>
+
+  <Step title="Escolher Template do WhatsApp">
+    Selecione um template de WhatsApp aprovado das opções disponíveis.
+
+    ![Escolher Template](/images/1933597314.png)
+  </Step>
+
+  <Step title="Salvar Seleção de Template">
+    Clique em **Save** para confirmar sua seleção de template.
+
+    ![Salvar Template](/images/1933597308.png)
+  </Step>
+
+  <Step title="Revisar Fluxo de Trabalho">
+    Clique em **Review and turn on** para acessar a tela de revisão final.
+
+    ![Revisar Workflow](/images/1933597318.png)
+  </Step>
+
+  <Step title="Definir Preferências de Inscrição">
+    Configure suas preferências de inscrição com base nos requisitos da sua campanha.
+
+    ![Preferências de Inscrição](/images/1933597322.png)
+  </Step>
+
+  <Step title="Revisão Final">
+    Clique em **Skip to turn on** ou em **Next** para realizar verificações de validação adicionais.
+
+    ![Revisão Final](/images/1933597317.png)
+  </Step>
+
+  <Step title="Ativar Fluxo de Trabalho">
+    Clique em **Turn on workflow** para ativar a automação da sua campanha de WhatsApp.
+
+    ![Ativar Workflow](/images/1933597319.png)
+  </Step>
+</Steps>
+
+## Seu Fluxo de Trabalho Está Pronto
+
+Parabéns! Seu fluxo de trabalho do HubSpot agora está configurado para enviar automaticamente mensagens de WhatsApp para os contatos que atendem aos seus critérios especificados.
+
+<Check>
+Seu fluxo de trabalho agora acionará automaticamente mensagens de WhatsApp sempre que um contato atender aos critérios de inscrição que você definiu.
+</Check>
+
+## Recursos Relacionados
+
+<CardGroup cols={2}>
+  <Card title="Enviar WhatsApp via Workflows" href="/pt/integrations/hubspot/create-workflow" icon="paper-plane">
+    Saiba mais sobre enviar mensagens de WhatsApp através de fluxos de trabalho do HubSpot
+  </Card>
+  <Card title="Solucionar Problemas de Workflow" href="/pt/integrations/hubspot/workflow-troubleshoot" icon="wrench">
+    Problemas comuns e soluções para fluxos de trabalho do HubSpot
+  </Card>
+  <Card title="Criar Templates com Variáveis do HubSpot" href="/pt/waba/templates/how-to-create-template-with-hubspot-variables" icon="file-code">
+    Use propriedades de contato do HubSpot em seus templates de WhatsApp
+  </Card>
+  <Card title="Campanhas de Transmissão" href="/pt/waba/broadcasting/send-broadcast" icon="bullhorn">
+    Envie mensagens em massa de WhatsApp para múltiplos destinatários
+  </Card>
+</CardGroup>
+
+## Precisa de Ajuda?
+
+Se você tiver alguma dúvida ou precisar de mais assistência, entre em contato conosco em [hey@eazybe.com](mailto:hey@eazybe.com). Ficaremos felizes em ajudar!

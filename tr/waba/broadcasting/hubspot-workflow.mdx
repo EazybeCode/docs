@@ -1,0 +1,202 @@
+---
+title: "WhatsApp Kampanyaları için HubSpot İş Akışı"
+description: "HubSpot iş akışlarını kullanarak otomatik WhatsApp pazarlama kampanyaları oluşturun. Tetikleyicileri, eylemleri ve entegrasyonları yapılandırarak kişiselleştirilmiş WhatsApp mesajları göndermeyi ve müşteri iletişimini optimize etmeyi öğrenin."
+---
+
+Bu kılavuz, Eazybe entegrasyonunu kullanarak kişilerinize otomatik olarak WhatsApp mesajları gönderen bir HubSpot iş akışı oluşturmanızı adım adım gösterir.
+
+## Ön Koşullar
+
+İş akışınızı kurmadan önce aşağıdakilere sahip olduğunuzdan emin olun:
+
+<CardGroup cols={2}>
+  <Card title="HubSpot Hesabı" icon="hubspot">
+    İş akışı erişimine sahip aktif bir HubSpot hesabı
+  </Card>
+  <Card title="Eazybe Entegrasyonu" icon="plug">
+    HubSpot'ta kurulu WhatsApp Integration by Eazybe
+  </Card>
+</CardGroup>
+
+## HubSpot İş Akışınızı Oluşturma
+
+<Steps>
+  <Step title="HubSpot Hesabınıza Erişin">
+    İş akışını kurmaya başlamak için HubSpot hesabınıza giriş yapın.
+
+    ![HubSpot'a Erişin](/images/1933597310.png)
+  </Step>
+
+  <Step title="Otomasyona Gidin">
+    Ana navigasyon menüsünde **Automation** düğmesine tıklayın.
+
+    ![Otomasyona Git](/images/1933597303.png)
+  </Step>
+
+  <Step title="İş Akışlarını Seçin">
+    Otomasyon menüsünden iş akışı oluşturucuya erişmek için **Workflows** seçeneğini seçin.
+
+    ![Workflows Seç](/images/1933597307.png)
+  </Step>
+
+  <Step title="Yeni İş Akışı Oluştur">
+    Yeni bir otomasyon oluşturmaya başlamak için **Create workflow** seçeneğine tıklayın.
+
+    ![Workflow Oluştur](/images/1933597320.png)
+  </Step>
+
+  <Step title="Sıfırdan Başla">
+    İhtiyaçlarınıza uygun özel bir iş akışı oluşturmak için **From scratch** seçeneğini seçin.
+
+    ![Sıfırdan](/images/1933597313.png)
+  </Step>
+
+  <Step title="Filtre Kriterlerini Belirleyin">
+    İş akışına kayıt koşullarını tanımlamak için **Met filter criteria** seçeneğine tıklayın.
+
+    ![Filtre Kriterleri](/images/1933597309.png)
+  </Step>
+
+  <Step title="Tetikleyici Olarak Kişi Seçin">
+    Bu iş akışını tetikleyecek nesne türü olarak **Contact** seçeneğini seçin.
+
+    ![Kişi Seç](/images/1933597302.png)
+  </Step>
+
+  <Step title="Kişi Özelliklerine Erişin">
+    Belirli kayıt kriterlerini yapılandırmak için **Contact properties** seçeneğine tıklayın.
+
+    ![Kişi Özellikleri](/images/1933597316.png)
+  </Step>
+
+  <Step title="Özellik Ara">
+    Kayıt tetikleyicisi olarak kullanmak istediğiniz kişi özelliğini arayın.
+
+    ![Özellik Ara](/images/1933597306.png)
+  </Step>
+
+  <Step title="Özellik Adını Seçin">
+    Listeden istediğiniz özelliği (örneğin, "Company name") seçin.
+
+    ![Özellik Seç](/images/1933597299.png)
+
+    <Info>
+    Yaşam döngüsü aşaması, lead durumu veya oluşturduğunuz özel özellikler gibi herhangi bir kişi özelliğini kullanabilirsiniz.
+    </Info>
+  </Step>
+
+  <Step title="Koşulları Yapılandırın">
+    Koşulu belirleyin (örneğin, "is equal to any of") ve **Add values** altında eşleşen değerleri ekleyin.
+
+    ![Koşulları Yapılandır](/images/1933597301.png)
+  </Step>
+
+  <Step title="Sonraki Adıma Geçin">
+    Yeniden kayıt ayarlarına devam etmek için **Next** seçeneğine tıklayın.
+
+    ![Next'e Tıkla](/images/1933597311.png)
+  </Step>
+
+  <Step title="Yeniden Kaydı Etkinleştirin">
+    Kriterleri zaten karşılayan kişilerin iş akışına tekrar girmesini istiyorsanız **Re-enroll** seçeneğini açın.
+
+    ![Yeniden Kayıt](/images/1933597304.png)
+
+    <Warning>
+    Aynı kişilere yinelenen mesajlar göndermemek için yeniden kayıt ayarlarına dikkat edin.
+    </Warning>
+  </Step>
+
+  <Step title="Kayıt Ayarlarını Kaydet">
+    Kayıt yapılandırmanızı korumak için **Save and continue** seçeneğine tıklayın.
+
+    ![Ayarları Kaydet](/images/1933597323.png)
+  </Step>
+
+  <Step title="WhatsApp Entegrasyonunu Ekleyin">
+    Eylemler panelinde aşağı kaydırın ve **WhatsApp Integration by Eazybe** seçeneğini seçin.
+
+    ![WhatsApp Entegrasyonu](/images/1933597315.png)
+  </Step>
+
+  <Step title="Şablon Eylemini Seçin">
+    Önceden onaylanmış bir mesaj şablonu seçmek için **Send Ready-to-Use WhatsApp Template** seçeneğine tıklayın.
+
+    ![Şablon Eylemi Seç](/images/1933597312.png)
+  </Step>
+
+  <Step title="Telefon Numarası Alanını Belirtin">
+    Alıcının telefon numarasını içeren kişi özelliği alanını seçin.
+
+    ![Telefon Numarası Alanı](/images/1933597300.png)
+
+    <Tip>
+    Başarılı teslimat için telefon numaralarının uluslararası formatta (örn., +1234567890) depolandığından emin olun.
+    </Tip>
+  </Step>
+
+  <Step title="WhatsApp Şablonunu Seçin">
+    Mevcut seçeneklerden onaylanmış bir WhatsApp şablonu seçin.
+
+    ![Şablon Seç](/images/1933597314.png)
+  </Step>
+
+  <Step title="Şablon Seçimini Kaydet">
+    Şablon seçiminizi onaylamak için **Save** seçeneğine tıklayın.
+
+    ![Şablonu Kaydet](/images/1933597308.png)
+  </Step>
+
+  <Step title="İş Akışını İnceleyin">
+    Son inceleme ekranına erişmek için **Review and turn on** seçeneğine tıklayın.
+
+    ![Workflow'u İncele](/images/1933597318.png)
+  </Step>
+
+  <Step title="Kayıt Tercihlerini Ayarlayın">
+    Kampanya gereksinimlerinize göre kayıt tercih ayarlarınızı yapılandırın.
+
+    ![Kayıt Tercihleri](/images/1933597322.png)
+  </Step>
+
+  <Step title="Son İnceleme">
+    Ek doğrulama kontrolleri yapmak için **Skip to turn on** veya **Next** seçeneğine tıklayın.
+
+    ![Son İnceleme](/images/1933597317.png)
+  </Step>
+
+  <Step title="İş Akışını Etkinleştirin">
+    WhatsApp kampanya otomasyonunuzu etkinleştirmek için **Turn on workflow** seçeneğine tıklayın.
+
+    ![Workflow'u Aç](/images/1933597319.png)
+  </Step>
+</Steps>
+
+## İş Akışınız Hazır
+
+Tebrikler! HubSpot iş akışınız artık belirlediğiniz kriterleri karşılayan kişilere otomatik olarak WhatsApp mesajları gönderecek şekilde yapılandırıldı.
+
+<Check>
+İş akışınız artık tanımladığınız kayıt kriterlerini karşılayan bir kişi olduğunda otomatik olarak WhatsApp mesajlarını tetikleyecektir.
+</Check>
+
+## İlgili Kaynaklar
+
+<CardGroup cols={2}>
+  <Card title="Workflows ile WhatsApp Gönder" href="/tr/integrations/hubspot/create-workflow" icon="paper-plane">
+    HubSpot iş akışları aracılığıyla WhatsApp mesajları gönderme hakkında daha fazla bilgi edinin
+  </Card>
+  <Card title="Workflow Sorunlarını Giderin" href="/tr/integrations/hubspot/workflow-troubleshoot" icon="wrench">
+    HubSpot iş akışı sorunları için yaygın problemler ve çözümler
+  </Card>
+  <Card title="HubSpot Değişkenleriyle Şablon Oluştur" href="/tr/waba/templates/how-to-create-template-with-hubspot-variables" icon="file-code">
+    WhatsApp şablonlarınızda HubSpot kişi özelliklerini kullanın
+  </Card>
+  <Card title="Yayın Kampanyaları" href="/tr/waba/broadcasting/send-broadcast" icon="bullhorn">
+    Birden fazla alıcıya toplu WhatsApp mesajları gönderin
+  </Card>
+</CardGroup>
+
+## Yardıma mı İhtiyacınız Var?
+
+Herhangi bir sorunuz varsa veya daha fazla yardıma ihtiyacınız varsa, [hey@eazybe.com](mailto:hey@eazybe.com) adresinden bize ulaşmaktan çekinmeyin. Size yardımcı olmaktan mutluluk duyarız!

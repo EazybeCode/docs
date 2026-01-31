@@ -149,7 +149,8 @@
                     "group": "Broadcasting",
                     "pages": [
                       "en/waba/broadcasting/send-broadcast",
-                      "en/waba/broadcasting/create-broadcast-with-extension"
+                      "en/waba/broadcasting/create-broadcast-with-extension",
+                      "en/waba/broadcasting/hubspot-workflow"
                     ]
                   },
                   "en/waba/broadcast-rate-list-1st-jan-2026",
@@ -814,6 +815,7 @@
                       "es/waba/broadcasting/create-campaign",
                       "es/waba/broadcasting/send-broadcast",
                       "es/waba/broadcasting/create-broadcast-with-extension",
+                      "es/waba/broadcasting/hubspot-workflow",
                       "es/waba/broadcasting/analytics"
                     ]
                   },
@@ -1338,6 +1340,7 @@
                       "pt/waba/broadcasting/create-campaign",
                       "pt/waba/broadcasting/send-broadcast",
                       "pt/waba/broadcasting/create-broadcast-with-extension",
+                      "pt/waba/broadcasting/hubspot-workflow",
                       "pt/waba/broadcasting/analytics"
                     ]
                   },
@@ -1862,6 +1865,7 @@
                       "tr/waba/broadcasting/create-campaign",
                       "tr/waba/broadcasting/send-broadcast",
                       "tr/waba/broadcasting/create-broadcast-with-extension",
+                      "tr/waba/broadcasting/hubspot-workflow",
                       "tr/waba/broadcasting/analytics"
                     ]
                   },
