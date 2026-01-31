@@ -55,7 +55,9 @@
                   "quickstart",
                   {
                     "group": "Setup",
-                    "pages": ["en/getting-started/onboarding-to-coexistence"]
+                    "pages": [
+                      "en/getting-started/onboarding-to-coexistence"
+                    ]
                   },
                   {
                     "group": "WhatsApp Account Types",
@@ -238,7 +240,7 @@
               {
                 "group": "Overview",
                 "icon": "plug",
-                "pages": ["integrations/overview", "integrations/choosing-crm"]
+                "pages": []
               },
               {
                 "group": "HubSpot",
@@ -633,7 +635,9 @@
               {
                 "group": "Overview",
                 "icon": "robot",
-                "pages": ["ai-agents/overview"]
+                "pages": [
+                  "ai-agents/overview"
+                ]
               },
               {
                 "group": "AI Features",
@@ -697,7 +701,9 @@
               {
                 "group": "Changelog",
                 "icon": "clock-rotate-left",
-                "pages": ["changelog/overview"]
+                "pages": [
+                  "changelog/overview"
+                ]
               }
             ]
           }
