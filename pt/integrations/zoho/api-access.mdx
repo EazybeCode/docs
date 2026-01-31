@@ -1,117 +1,115 @@
 ---
-title: "Acesso a API"
-description: "Aprenda como habilitar o acesso a API do Zoho CRM para perfis de usuario para permitir a integracao com o Eazybe"
+title: "Habilitar Acesso à API do Zoho CRM"
+description: "Aprenda como habilitar o acesso à API do Zoho CRM para perfis de usuário para permitir a integração com o Eazybe e uma comunicação de dados fluida."
 ---
 
-## Visao Geral
-
-Este guia fornece aos administradores instrucoes para habilitar o acesso a API no nivel de perfil no Zoho CRM. Habilitar o acesso a API e essencial para que o Eazybe se comunique com os dados do seu Zoho CRM.
+Este guia fornece aos administradores instruções para habilitar o acesso à API no nível de perfil no Zoho CRM. Habilitar o acesso à API é essencial para que o Eazybe se comunique com os dados do seu Zoho CRM.
 
 ## Quem Deve Usar Este Guia
 
 <CardGroup cols={3}>
   <Card title="Administradores de CRM" icon="user-shield">
-    Administradores do Zoho CRM que gerenciam permissoes de usuario
+    Administradores do Zoho CRM que gerenciam permissões de usuário
   </Card>
-  <Card title="Equipes de TI/Integracao" icon="network-wired">
-    Equipes configurando integracoes de sistemas
+  <Card title="Equipes de TI/Integração" icon="network-wired">
+    Equipes configurando integrações de sistemas
   </Card>
   <Card title="Desenvolvedores" icon="code">
-    Desenvolvedores configurando integracoes baseadas em API
+    Desenvolvedores configurando integrações baseadas em API
   </Card>
 </CardGroup>
 
 <Note>
-  Apenas usuarios com acesso administrativo podem modificar as configuracoes de seguranca no nivel de perfil no Zoho CRM.
+  Apenas usuários com acesso administrativo podem modificar as configurações de segurança no nível de perfil no Zoho CRM.
 </Note>
 
-## Pre-requisitos
+## Pré-requisitos
 
 Antes de continuar, certifique-se de ter:
 
 - **Acesso administrativo** ao Zoho CRM
-- Conhecimento de qual **perfil** esta atribuido ao usuario que faz chamadas a API (Padrao, Vendas ou perfis personalizados)
+- Conhecimento de qual **perfil** está atribuído ao usuário que faz chamadas à API (Padrão, Vendas ou perfis personalizados)
 
-## Passos para Habilitar o Acesso a API
+## Passos para Habilitar o Acesso à API
 
 <Steps>
   <Step title="Fazer Login no Zoho CRM">
     Entre na sua conta do Zoho CRM com credenciais de administrador.
 
-    <!-- TODO(image-missing): original_url="https://downloads.intercomcdn.com/i/o/p2m2ant5/1968881807/053051122c0f673ed863f83c1bbb/image-20260114-111657.png" -->
+    ![Fazer Login no Zoho CRM](/images/1968881807.png)
   </Step>
 
-  <Step title="Acessar Configuracao">
-    Clique no **icone de engrenagem** (Configuracao) no canto superior direito da tela.
+  <Step title="Acessar Configuração">
+    Clique no **ícone de engrenagem** (Configuração) no canto superior direito da tela.
 
-    <!-- TODO(image-missing): original_url="https://downloads.intercomcdn.com/i/o/p2m2ant5/1968884377/52fceaf3b902be991ab41cb86f28/image-20260114-111800.png" -->
+    ![Acessar Configuração](/images/1968884377.png)
   </Step>
 
-  <Step title="Navegar para Controle de Seguranca">
-    Va para **Controle de Seguranca** e selecione **Perfis** das opcoes disponiveis.
+  <Step title="Navegar para Controle de Segurança">
+    Vá para **Security Control** e selecione **Profiles** das opções disponíveis.
 
-    <!-- TODO(image-missing): original_url="https://downloads.intercomcdn.com/i/o/p2m2ant5/1968890074/498f241b06507722de83fa060190/image-20260114-111943.png" -->
+    ![Navegar para Controle de Segurança](/images/1968890074.png)
   </Step>
 
-  <Step title="Selecionar o Perfil do Usuario">
-    Na aba **Perfis**, localize e clique no perfil atribuido ao usuario da API.
+  <Step title="Selecionar o Perfil do Usuário">
+    Na aba **Profiles**, localize e clique no perfil atribuído ao usuário da API.
 
-    <!-- TODO(image-missing): original_url="https://downloads.intercomcdn.com/i/o/p2m2ant5/1968891619/c6ad5e402d2de971d8d36de07c21/image-20260114-112042.png" -->
+    ![Selecionar Perfil do Usuário](/images/1968891619.png)
   </Step>
 
-  <Step title="Encontrar Permissoes de Desenvolvedor">
-    Role ate a parte inferior da pagina de configuracoes do perfil e encontre a secao **Permissoes de Desenvolvedor**.
+  <Step title="Encontrar Permissões de Desenvolvedor">
+    Role até a parte inferior da página de configurações do perfil e encontre a seção **Developer Permissions**.
   </Step>
 
-  <Step title="Habilitar Acesso a API">
-    Ative o interruptor **Acesso a API do Zoho CRM** para **ON**. O interruptor fica verde quando habilitado.
+  <Step title="Habilitar Acesso à API">
+    Ative o interruptor **Zoho CRM API Access** para **ON**. O interruptor fica verde quando habilitado.
 
-    <!-- TODO(image-missing): original_url="https://downloads.intercomcdn.com/i/o/p2m2ant5/1968892209/487cdfaa26191835128fa89489f4/image-20260114-112042.png" -->
+    ![Habilitar Acesso à API](/images/1968892209.png)
   </Step>
 
-  <Step title="Salvar Alteracoes">
-    Clique em **Salvar** para aplicar as permissoes atualizadas.
+  <Step title="Salvar Alterações">
+    Clique em **Save** para aplicar as permissões atualizadas.
   </Step>
 </Steps>
 
-## Verificacao
+## Verificação
 
-Apos habilitar o acesso a API, verifique a configuracao:
+Após habilitar o acesso à API, verifique a configuração:
 
 <AccordionGroup>
   <Accordion title="Verificar Status do Perfil">
-    O perfil deve exibir o status de **Acesso a API** como **ON**.
+    O perfil deve exibir o status de **API Access** como **ON**.
   </Accordion>
 
-  <Accordion title="Testar Autenticacao">
-    A autenticacao do usuario deve ter sucesso com credenciais de API ou tokens OAuth.
+  <Accordion title="Testar Autenticação">
+    A autenticação do usuário deve ter sucesso com credenciais de API ou tokens OAuth.
   </Accordion>
 
-  <Accordion title="Verificar Chamadas a API">
-    As chamadas a API nao devem mais retornar erros de permissao.
+  <Accordion title="Verificar Chamadas à API">
+    As chamadas à API não devem mais retornar erros de permissão.
   </Accordion>
 </AccordionGroup>
 
-## Solucao de Problemas
+## Solução de Problemas
 
 <Warning>
-  Se as chamadas a API ainda falharem apos habilitar o acesso, verifique os seguintes problemas comuns:
+  Se as chamadas à API ainda falharem após habilitar o acesso, verifique os seguintes problemas comuns:
 </Warning>
 
-| Problema | Solucao |
+| Problema | Solução |
 |----------|---------|
-| Perfil incorreto atualizado | Verifique se voce editou o perfil correto atribuido ao usuario da API |
-| Sessao nao atualizada | Peca ao usuario para fazer logout e login novamente |
-| Restricoes de IP | Verifique se restricoes de acesso baseadas em IP estao bloqueando as chamadas a API |
-| Escopo do OAuth | Verifique se o token OAuth tem os escopos necessarios |
+| Perfil incorreto atualizado | Verifique se você editou o perfil correto atribuído ao usuário da API |
+| Sessão não atualizada | Peça ao usuário para fazer logout e login novamente |
+| Restrições de IP | Verifique se restrições de acesso baseadas em IP estão bloqueando as chamadas à API |
+| Escopo do OAuth | Verifique se o token OAuth tem os escopos necessários |
 
-## Melhores Praticas de Seguranca
+## Melhores Práticas de Segurança
 
 <Tip>
-  Siga estas recomendacoes de seguranca ao gerenciar o acesso a API:
+  Siga estas recomendações de segurança ao gerenciar o acesso à API:
 </Tip>
 
-- **Habilitar seletivamente** - Apenas habilite o acesso a API para perfis que necessitam
-- **Evitar acesso amplo** - Nao habilite o acesso a API para todos os perfis desnecessariamente
-- **Auditorias regulares** - Revise periodicamente quais perfis tem o acesso a API habilitado
-- **Revogar quando nao usado** - Desabilite o acesso a API quando as integracoes nao estiverem mais em uso
+- **Habilitar seletivamente** - Apenas habilite o acesso à API para perfis que necessitam
+- **Evitar acesso amplo** - Não habilite o acesso à API para todos os perfis desnecessariamente
+- **Auditorias regulares** - Revise periodicamente quais perfis têm o acesso à API habilitado
+- **Revogar quando não usado** - Desabilite o acesso à API quando as integrações não estiverem mais em uso

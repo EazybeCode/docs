@@ -1,117 +1,115 @@
 ---
-title: "API Erisimi"
-description: "Eazybe entegrasyonunu etkinlestirmek icin Zoho CRM API erisimini kullanici profilleri icin nasil etkinlestireceg inizi ogrenin"
+title: "Zoho CRM API Erişimini Etkinleştirme"
+description: "Eazybe entegrasyonu ve sorunsuz veri iletişimi için Zoho CRM API erişimini kullanıcı profilleri için nasıl etkinleştireceğinizi öğrenin."
 ---
 
-## Genel Bakis
+Bu kılavuz, yöneticilere Zoho CRM'de profil düzeyinde API erişimini etkinleştirme talimatları sağlar. API erişimini etkinleştirmek, Eazybe'nin Zoho CRM verilerinizle iletişim kurabilmesi için gereklidir.
 
-Bu kilavuz, yoneticilere Zoho CRM'de profil duzeyinde API erisimini etkinlestirme talimatlari saglar. API erisimini etkinlestirmek, Eazybe'nin Zoho CRM verilerinizle iletisim kurabilmesi icin gereklidir.
-
-## Bu Kilavuzu Kimler Kullanmali
+## Bu Kılavuzu Kimler Kullanmalı
 
 <CardGroup cols={3}>
-  <Card title="CRM Yoneticileri" icon="user-shield">
-    Kullanici izinlerini yoneten Zoho CRM yoneticileri
+  <Card title="CRM Yöneticileri" icon="user-shield">
+    Kullanıcı izinlerini yöneten Zoho CRM yöneticileri
   </Card>
   <Card title="BT/Entegrasyon Ekipleri" icon="network-wired">
-    Sistem entegrasyonlarini kuran ekipler
+    Sistem entegrasyonlarını kuran ekipler
   </Card>
   <Card title="Geliştiriciler" icon="code">
-    API tabanli entegrasyonlari yapilandiran gelistiriciler
+    API tabanlı entegrasyonları yapılandıran geliştiriciler
   </Card>
 </CardGroup>
 
 <Note>
-  Zoho CRM'de yalnizca yonetici erisimi olan kullanicilar profil duzeyindeki guvenlik ayarlarini degistirebilir.
+  Zoho CRM'de yalnızca yönetici erişimi olan kullanıcılar profil düzeyindeki güvenlik ayarlarını değiştirebilir.
 </Note>
 
-## On Kosullar
+## Ön Koşullar
 
-Devam etmeden once, asagidakilere sahip oldugunuzdan emin olun:
+Devam etmeden önce, aşağıdakilere sahip olduğunuzdan emin olun:
 
-- Zoho CRM'e **yonetici erisimi**
-- API cagrilari yapan kullaniciya hangi **profilin** atandigini bilmek (Standart, Satis veya ozel profiller)
+- Zoho CRM'e **yönetici erişimi**
+- API çağrıları yapan kullanıcıya hangi **profilin** atandığını bilmek (Standart, Satış veya özel profiller)
 
-## API Erisimini Etkinlestirme Adimlari
+## API Erişimini Etkinleştirme Adımları
 
 <Steps>
-  <Step title="Zoho CRM'e Giris Yapin">
-    Yonetici kimlik bilgilerini kullanarak Zoho CRM hesabiniza giris yapin.
+  <Step title="Zoho CRM'e Giriş Yapın">
+    Yönetici kimlik bilgilerini kullanarak Zoho CRM hesabınıza giriş yapın.
 
-    <!-- TODO(image-missing): original_url="https://downloads.intercomcdn.com/i/o/p2m2ant5/1968881807/053051122c0f673ed863f83c1bbb/image-20260114-111657.png" -->
+    ![Zoho CRM'e Giriş Yapın](/images/1968881807.png)
   </Step>
 
-  <Step title="Kuruluma Erisin">
-    Ekranin sag ust kosesindeki **disli simgesine** (Kurulum) tiklayin.
+  <Step title="Kuruluma Erişin">
+    Ekranın sağ üst köşesindeki **dişli simgesine** (Setup) tıklayın.
 
-    <!-- TODO(image-missing): original_url="https://downloads.intercomcdn.com/i/o/p2m2ant5/1968884377/52fceaf3b902be991ab41cb86f28/image-20260114-111800.png" -->
+    ![Kuruluma Erişin](/images/1968884377.png)
   </Step>
 
-  <Step title="Guvenlik Kontrolune Gidin">
-    **Guvenlik Kontrolu**'ne gidin ve mevcut seceneklerden **Profiller**'i secin.
+  <Step title="Güvenlik Kontrolüne Gidin">
+    **Security Control**'e gidin ve mevcut seçeneklerden **Profiles**'i seçin.
 
-    <!-- TODO(image-missing): original_url="https://downloads.intercomcdn.com/i/o/p2m2ant5/1968890074/498f241b06507722de83fa060190/image-20260114-111943.png" -->
+    ![Güvenlik Kontrolüne Gidin](/images/1968890074.png)
   </Step>
 
-  <Step title="Kullanici Profilini Secin">
-    **Profiller** sekmesinde, API kullanicisina atanan profili bulun ve tiklayin.
+  <Step title="Kullanıcı Profilini Seçin">
+    **Profiles** sekmesinde, API kullanıcısına atanan profili bulun ve tıklayın.
 
-    <!-- TODO(image-missing): original_url="https://downloads.intercomcdn.com/i/o/p2m2ant5/1968891619/c6ad5e402d2de971d8d36de07c21/image-20260114-112042.png" -->
+    ![Kullanıcı Profilini Seçin](/images/1968891619.png)
   </Step>
 
-  <Step title="Gelistirici Izinlerini Bulun">
-    Profil ayarlari sayfasinin en altina kaydin ve **Gelistirici Izinleri** bolumunu bulun.
+  <Step title="Geliştirici İzinlerini Bulun">
+    Profil ayarları sayfasının en altına kaydırın ve **Developer Permissions** bölümünü bulun.
   </Step>
 
-  <Step title="API Erisimini Etkinlestirin">
-    **Zoho CRM API Erisimi** anahtarini **ACIK** konumuna getirin. Anahtar etkinlestirildiginde yesil renkte goruntulenir.
+  <Step title="API Erişimini Etkinleştirin">
+    **Zoho CRM API Access** anahtarını **ON** konumuna getirin. Anahtar etkinleştirildiğinde yeşil renkte görüntülenir.
 
-    <!-- TODO(image-missing): original_url="https://downloads.intercomcdn.com/i/o/p2m2ant5/1968892209/487cdfaa26191835128fa89489f4/image-20260114-112042.png" -->
+    ![API Erişimini Etkinleştirin](/images/1968892209.png)
   </Step>
 
-  <Step title="Degisiklikleri Kaydedin">
-    Guncellenen izinleri uygulamak icin **Kaydet**'e tiklayin.
+  <Step title="Değişiklikleri Kaydedin">
+    Güncellenen izinleri uygulamak için **Save**'e tıklayın.
   </Step>
 </Steps>
 
-## Dogrulama
+## Doğrulama
 
-API erisimini etkinlestirdikten sonra, yapilandirmayi dogrulayin:
+API erişimini etkinleştirdikten sonra, yapılandırmayı doğrulayın:
 
 <AccordionGroup>
   <Accordion title="Profil Durumunu Kontrol Edin">
-    Profil, **API Erisimi** durumunu **ACIK** olarak gostermelidir.
+    Profil, **API Access** durumunu **ON** olarak göstermelidir.
   </Accordion>
 
-  <Accordion title="Kimlik Dogrulamayi Test Edin">
-    Kullanici kimlik dogrulamasi API kimlik bilgileri veya OAuth tokenlari ile basarili olmalidir.
+  <Accordion title="Kimlik Doğrulamayı Test Edin">
+    Kullanıcı kimlik doğrulaması API kimlik bilgileri veya OAuth tokenları ile başarılı olmalıdır.
   </Accordion>
 
-  <Accordion title="API Cagrilarini Dogrulayin">
-    API cagrilari artik izin hatalari dondurmemelidir.
+  <Accordion title="API Çağrılarını Doğrulayın">
+    API çağrıları artık izin hataları döndürmemelidir.
   </Accordion>
 </AccordionGroup>
 
 ## Sorun Giderme
 
 <Warning>
-  API cagrilari erisimi etkinlestirdikten sonra hala basarisiz oluyorsa, asagidaki yaygin sorunlari kontrol edin:
+  API çağrıları erişimi etkinleştirdikten sonra hala başarısız oluyorsa, aşağıdaki yaygın sorunları kontrol edin:
 </Warning>
 
-| Sorun | Cozum |
+| Sorun | Çözüm |
 |-------|-------|
-| Yanlis profil guncellendi | API kullanicisina atanan dogru profili duzenleyip duzenlemediginizi dogrulayin |
-| Oturum yenilenmedi | Kullanicidan cikis yapmasini ve tekrar giris yapmasini isteyin |
-| IP kisitlamalari | IP tabanli erisim kisitlamalarinin API cagrilarini engelleyip engellemedigini kontrol edin |
-| OAuth kapsami | OAuth tokeninin gerekli kapsamlara sahip olduğunu dogrulayin |
+| Yanlış profil güncellendi | API kullanıcısına atanan doğru profili düzenleyip düzenlemediğinizi doğrulayın |
+| Oturum yenilenmedi | Kullanıcıdan çıkış yapmasını ve tekrar giriş yapmasını isteyin |
+| IP kısıtlamaları | IP tabanlı erişim kısıtlamalarının API çağrılarını engelleyip engellemediğini kontrol edin |
+| OAuth kapsamı | OAuth tokeninin gerekli kapsamlara sahip olduğunu doğrulayın |
 
-## Guvenlik En Iyi Uygulamalari
+## Güvenlik En İyi Uygulamaları
 
 <Tip>
-  API erisimini yonetirken bu guvenlik onerilerini izleyin:
+  API erişimini yönetirken bu güvenlik önerilerini izleyin:
 </Tip>
 
-- **Secici sekilde etkinlestirin** - API erisimini yalnizca bunu gerektiren profiller icin etkinlestirin
-- **Genis erişimden kacinin** - API erisimini tum profiller icin gereksiz yere etkinlestirmeyin
-- **Duzenli denetimler** - Hangi profillerin API erisiminin etkinlestirildigini periyodik olarak gozden gecirin
-- **Kullanilmadiginda iptal edin** - Entegrasyonlar artik kullanilmadiginda API erisimini devre disi birakin
+- **Seçici şekilde etkinleştirin** - API erişimini yalnızca bunu gerektiren profiller için etkinleştirin
+- **Geniş erişimden kaçının** - API erişimini tüm profiller için gereksiz yere etkinleştirmeyin
+- **Düzenli denetimler** - Hangi profillerin API erişiminin etkinleştirildiğini periyodik olarak gözden geçirin
+- **Kullanılmadığında iptal edin** - Entegrasyonlar artık kullanılmadığında API erişimini devre dışı bırakın
