@@ -246,7 +246,6 @@
                 "group": "HubSpot",
                 "icon": "hubspot",
                 "pages": [
-                  "integrations/hubspot/overview",
                   "en/integrations/hubspot/prerequisites",
                   "en/integrations/hubspot/account-connection",
                   "en/integrations/hubspot/disconnect",
