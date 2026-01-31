@@ -56,9 +56,7 @@
                   {
                     "group": "Setup",
                     "pages": [
-                      "getting-started/installation",
                       "getting-started/system-requirements",
-                      "getting-started/connect-whatsapp",
                       "en/getting-started/onboarding-to-coexistence"
                     ]
                   },
@@ -243,7 +241,10 @@
               {
                 "group": "Overview",
                 "icon": "plug",
-                "pages": ["integrations/overview", "integrations/choosing-crm"]
+                "pages": [
+                  "integrations/overview",
+                  "integrations/choosing-crm"
+                ]
               },
               {
                 "group": "HubSpot",
@@ -258,7 +259,6 @@
                   "integrations/hubspot/setup",
                   "integrations/hubspot/contact-sync",
                   "integrations/hubspot/chat-backup",
-
                   {
                     "group": "Chat Backup",
                     "pages": [
@@ -287,7 +287,6 @@
                       "integrations/hubspot/mini-crm/call-logs"
                     ]
                   },
-
                   {
                     "group": "Playbooks",
                     "pages": [
@@ -640,7 +639,9 @@
               {
                 "group": "Overview",
                 "icon": "robot",
-                "pages": ["ai-agents/overview"]
+                "pages": [
+                  "ai-agents/overview"
+                ]
               },
               {
                 "group": "AI Features",
@@ -704,7 +705,9 @@
               {
                 "group": "Changelog",
                 "icon": "clock-rotate-left",
-                "pages": ["changelog/overview"]
+                "pages": [
+                  "changelog/overview"
+                ]
               }
             ]
           }
