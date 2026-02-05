@@ -1810,9 +1810,6 @@
                 "group": "Verimlilik Araçları",
                 "icon": "bolt",
                 "pages": [
-                  "tr/productivity/quick-replies",
-                  "tr/productivity/scheduled-messages",
-                  "tr/productivity/bulk-messaging",
                   "tr/productivity/start-chat",
                   "tr/productivity/quick-reply",
                   "tr/productivity/setting-button",
@@ -1825,9 +1822,7 @@
                 "group": "Ayarlar",
                 "icon": "gear",
                 "pages": [
-                  "tr/settings/workspace",
-                  "tr/settings/team-management",
-                  "tr/settings/billing"
+                  "tr/settings/team-management"
                 ]
               },
               {
@@ -1942,16 +1937,6 @@
                   {
                     "group": "Mini-CRM Görünümü",
                     "pages": [
-                      "tr/integrations/zoho/mini-crm-view",
-                      "tr/integrations/zoho/create-lead",
-                      "tr/integrations/zoho/lead-profile",
-                      "tr/integrations/zoho/edit-lead-profile",
-                      "tr/integrations/zoho/lead-notes",
-                      "tr/integrations/zoho/create-contacts",
-                      "tr/integrations/zoho/contact-profile",
-                      "tr/integrations/zoho/edit-contact-profile",
-                      "tr/integrations/zoho/contact-notes",
-                      "tr/integrations/zoho/contact-tasks",
                       "tr/integrations/zoho/contact-deals",
                       "tr/integrations/zoho/manage-contact-deals",
                       "tr/integrations/zoho/mini-crm/overview",
