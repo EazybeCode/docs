@@ -1291,9 +1291,6 @@
                 "group": "Ferramentas de Produtividade",
                 "icon": "bolt",
                 "pages": [
-                  "pt/productivity/quick-replies",
-                  "pt/productivity/scheduled-messages",
-                  "pt/productivity/bulk-messaging",
                   "pt/productivity/start-chat",
                   "pt/productivity/quick-reply",
                   "pt/productivity/setting-button",
@@ -1306,9 +1303,7 @@
                 "group": "Configurações",
                 "icon": "gear",
                 "pages": [
-                  "pt/settings/workspace",
-                  "pt/settings/team-management",
-                  "pt/settings/billing"
+                  "pt/settings/team-management"
                 ]
               },
               {
