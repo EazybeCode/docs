@@ -1712,8 +1712,7 @@
                     "group": "WhatsApp Hesap Türleri",
                     "pages": [
                       "tr/getting-started/whatsapp-types",
-                      "tr/getting-started/personal-vs-business-vs-api",
-                      "tr/getting-started/coexistence-mode"
+                      "tr/getting-started/personal-vs-business-vs-api"
                     ]
                   },
                   {
