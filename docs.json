@@ -1189,19 +1189,12 @@
                   {
                     "group": "Configuração",
                     "pages": [
-                      "pt/getting-started/installation",
-                      "pt/getting-started/system-requirements",
-                      "pt/getting-started/connect-whatsapp",
                       "pt/getting-started/onboarding-to-coexistence"
                     ]
                   },
                   {
                     "group": "Tipos de Conta WhatsApp",
-                    "pages": [
-                      "pt/getting-started/whatsapp-types",
-                      "pt/getting-started/personal-vs-business-vs-api",
-                      "pt/getting-started/coexistence-mode"
-                    ]
+                    "pages": []
                   },
                   {
                     "group": "Cloud WhatsApp",
