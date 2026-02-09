@@ -1,0 +1,269 @@
+---
+title: "Remover Funcionarios em Massa"
+description: "Anteriormente: Remove Employees Bulk API. Remova varios funcionarios da sua organizacao em uma unica solicitacao usando seus enderecos de e-mail."
+---
+
+## Visao Geral
+
+A API de Remocao em Massa de Funcionarios permite remover varios funcionarios da sua organizacao em uma unica solicitacao usando seus enderecos de e-mail. Esta API publica foi projetada para que sistemas externos e integracoes gerenciem o acesso de funcionarios sem exigir autenticacao de administrador por meio do fluxo JWT padrao.
+
+Ela requer um **Token de Portador da Organizacao** (`auth_token`) para autenticacao, garantindo que apenas organizacoes autorizadas possam remover funcionarios do seu espaco de trabalho.
+
+---
+
+## URL do Caminho
+
+```
+https://api.eazybe.com/v2/organizations/public/remove-employee-bulk
+```
+
+---
+
+## Uso da API
+
+**Endpoint:**
+
+```
+POST https://api.eazybe.com/v2/organizations/public/remove-employee-bulk
+```
+
+---
+
+## Cabecalhos
+
+| Cabecalho | Descricao | Exemplo |
+|-----------|-----------|---------|
+| `Authorization` | Token de portador usado para autenticacao. Deve ser um Token de Autenticacao de Organizacao valido. | `Bearer YOUR-BEARER-TOKEN` |
+| `Content-Type` | O tipo de conteudo do corpo da solicitacao | `application/json` |
+
+---
+
+## Corpo da Solicitacao
+
+| Campo | Tipo | Obrigatorio | Descricao |
+|-------|------|-------------|-----------|
+| `emails` | array de strings | Sim | Array de enderecos de e-mail dos funcionarios a serem removidos da organizacao |
+
+---
+
+## Exemplo de Solicitacao cURL
+
+```bash
+curl --location 'https://api.eazybe.com/v2/organizations/public/remove-employee-bulk' \
+--header 'Authorization: Bearer YOUR-BEARER-TOKEN' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+  "emails": [
+    "john.doe@company.com",
+    "jane.smith@company.com",
+    "robert.brown@company.com"
+  ]
+}'
+```
+
+---
+
+## Codigo de Solicitacao de Exemplo (Node.js com Axios)
+
+```javascript
+const axios = require('axios');
+
+let data = JSON.stringify({
+  "emails": [
+    "john.doe@company.com",
+    "jane.smith@company.com",
+    "robert.brown@company.com"
+  ]
+});
+
+let config = {
+  method: 'post',
+  maxBodyLength: Infinity,
+  url: 'https://api.eazybe.com/v2/organizations/public/remove-employee-bulk',
+  headers: {
+    'Authorization': 'Bearer YOUR-BEARER-TOKEN',
+    'Content-Type': 'application/json'
+  },
+  data: data
+};
+
+axios.request(config)
+  .then((response) => {
+    console.log(JSON.stringify(response.data, null, 2));
+  })
+  .catch((error) => {
+    console.error(error);
+  });
+```
+
+---
+
+## Exemplo de Resposta (Sucesso)
+
+```json
+{
+  "statusCode": 200,
+  "status": "success",
+  "message": "Employees removed successfully",
+  "data": {
+    "removedEmails": [
+      "john.doe@company.com",
+      "jane.smith@company.com"
+    ],
+    "notFoundEmails": [
+      "robert.brown@company.com"
+    ]
+  }
+}
+```
+
+---
+
+## Campos de Resposta
+
+| Campo | Tipo | Descricao |
+|-------|------|-----------|
+| `statusCode` | number | Codigo de status HTTP (200 para sucesso, 400/401/404/500 para erros) |
+| `status` | string | Status da solicitacao (`"success"` ou `"error"`) |
+| `message` | string | Mensagem legivel descrevendo o resultado |
+| `data` | object | Dados de resposta contendo e-mails removidos e nao encontrados |
+| `data.removedEmails` | array de strings | Lista de enderecos de e-mail removidos com sucesso |
+| `data.notFoundEmails` | array de strings | Lista de enderecos de e-mail nao encontrados no sistema |
+
+---
+
+## Respostas de Erro
+
+### 401 Nao Autorizado - Token de Acesso Invalido
+
+```json
+{
+  "statusCode": 401,
+  "status": "error",
+  "message": "Invalid access token",
+  "data": {
+    "error": {
+      "message": "Invalid access token"
+    }
+  }
+}
+```
+
+### 400 Solicitacao Incorreta - Nenhum E-mail Fornecido
+
+```json
+{
+  "statusCode": 400,
+  "status": "error",
+  "message": "No email IDs provided",
+  "data": {
+    "error": {
+      "message": "No email IDs provided"
+    }
+  }
+}
+```
+
+### 404 Nao Encontrado - Nenhum Usuario Encontrado
+
+```json
+{
+  "statusCode": 404,
+  "status": "error",
+  "message": "No users found for the provided emails",
+  "data": {
+    "error": {
+      "message": "No users found for the provided emails"
+    }
+  }
+}
+```
+
+### 500 Erro Interno do Servidor
+
+```json
+{
+  "statusCode": 500,
+  "status": "error",
+  "message": "Something went wrong while removing employees",
+  "data": []
+}
+```
+
+---
+
+## Como Obter o Token de Autenticacao da Organizacao
+
+<Steps>
+  <Step title="Fazer login no EazyBe Workspace">
+    O administrador da organizacao deve fazer login no EazyBe Workspace usando suas credenciais.
+  </Step>
+  <Step title="Localizar o Token de Autenticacao">
+    Na pagina da Organizacao, o Token de Autenticacao da Organizacao sera exibido.
+  </Step>
+  <Step title="Copiar e usar o token">
+    O administrador pode copiar o Token de Autenticacao da Organizacao e cola-lo na solicitacao da API.
+  </Step>
+</Steps>
+
+---
+
+## Codigos de Status de Resposta
+
+| Codigo de Status | Descricao |
+|------------------|-----------|
+| 200 | Funcionarios removidos com sucesso da organizacao |
+| 400 | Solicitacao incorreta - entrada invalida ou campos obrigatorios ausentes |
+| 401 | Nao autorizado - token de acesso invalido ou ausente |
+| 404 | Nao encontrado - nenhum usuario encontrado para os enderecos de e-mail fornecidos |
+| 500 | Erro interno do servidor - erro inesperado no lado do servidor |
+
+---
+
+## Notas Importantes
+
+<Note>
+**O que acontece quando voce remove funcionarios?**
+
+- Os funcionarios sao removidos do espaco de trabalho da organizacao (`callyzer_user_details`)
+- A associacao deles a organizacao e revogada (`callyzer_user_mappings`)
+- Os usuarios **nao** sao excluidos completamente do sistema - apenas a associacao deles com esta organizacao especifica e removida
+- A API processara todos os e-mails validos e informara quais foram removidos com sucesso e quais nao foram encontrados
+</Note>
+
+### Sucesso Parcial
+
+Se alguns e-mails nao forem encontrados no sistema, a API ainda removera os funcionarios que foram encontrados e retornara ambas as listas na resposta:
+
+- **removedEmails:** Funcionarios removidos com sucesso
+- **notFoundEmails:** E-mails que nao existem no sistema
+
+Isso permite que voce lide com falhas parciais de forma elegante e saiba exatamente quais operacoes foram bem-sucedidas.
+
+---
+
+## Praticas de Higiene
+
+<Warning>
+- Sempre use um **Token de Autenticacao de Organizacao valido**
+- Nao compartilhe nem exponha seu token publicamente
+- Verifique os enderecos de e-mail antes de fazer chamadas a API para minimizar `notFoundEmails`
+- Mantenha as credenciais da sua organizacao seguras em todos os momentos
+- Use esta API de forma responsavel - funcionarios removidos perderao acesso aos dados da organizacao
+- Considere implementar uma etapa de confirmacao em sua aplicacao antes de chamar esta API
+- Armazene a resposta da API para fins de auditoria para rastrear quem foi removido e quando
+</Warning>
+
+---
+
+## Casos de Uso
+
+- **Automacao de Desligamento:** Remova automaticamente funcionarios quando saem da empresa
+- **Gerenciamento em Massa de Usuarios:** Remova varios funcionarios de uma vez durante reestruturacoes organizacionais
+- **Integracao com Sistemas de RH:** Sincronize remocoes de funcionarios da sua plataforma de RH para o EazyBe
+- **Controle de Acesso:** Revogue rapidamente o acesso de varios usuarios em situacoes de emergencia
+- **Integracao com Sistemas Externos:** Permita que sistemas de terceiros gerenciem o acesso de funcionarios
+
+---
+
+Se voce tiver alguma duvida ou precisar de mais ajuda, entre em contato conosco em **[hey@eazybe.com](mailto:hey@eazybe.com)**.

@@ -626,7 +626,8 @@
                 "icon": "book",
                 "pages": [
                   "api-reference/introduction",
-                  "api-reference/authentication"
+                  "api-reference/authentication",
+                  "en/api-reference/employees-bulk-remove"
                 ]
               },
               {
@@ -1171,6 +1172,18 @@
                 ]
               }
             ]
+          },
+          {
+            "tab": "API Reference",
+            "groups": [
+              {
+                "group": "Overview",
+                "icon": "book",
+                "pages": [
+                  "es/api-reference/employees-bulk-remove"
+                ]
+              }
+            ]
           }
         ]
       },
@@ -1189,12 +1202,19 @@
                   {
                     "group": "Configuração",
                     "pages": [
+                      "pt/getting-started/installation",
+                      "pt/getting-started/system-requirements",
+                      "pt/getting-started/connect-whatsapp",
                       "pt/getting-started/onboarding-to-coexistence"
                     ]
                   },
                   {
                     "group": "Tipos de Conta WhatsApp",
-                    "pages": []
+                    "pages": [
+                      "pt/getting-started/whatsapp-types",
+                      "pt/getting-started/personal-vs-business-vs-api",
+                      "pt/getting-started/coexistence-mode"
+                    ]
                   },
                   {
                     "group": "Cloud WhatsApp",
@@ -1291,6 +1311,9 @@
                 "group": "Ferramentas de Produtividade",
                 "icon": "bolt",
                 "pages": [
+                  "pt/productivity/quick-replies",
+                  "pt/productivity/scheduled-messages",
+                  "pt/productivity/bulk-messaging",
                   "pt/productivity/start-chat",
                   "pt/productivity/quick-reply",
                   "pt/productivity/setting-button",
@@ -1303,7 +1326,9 @@
                 "group": "Configurações",
                 "icon": "gear",
                 "pages": [
-                  "pt/settings/team-management"
+                  "pt/settings/workspace",
+                  "pt/settings/team-management",
+                  "pt/settings/billing"
                 ]
               },
               {
@@ -1684,6 +1709,18 @@
                 ]
               }
             ]
+          },
+          {
+            "tab": "API Reference",
+            "groups": [
+              {
+                "group": "Overview",
+                "icon": "book",
+                "pages": [
+                  "pt/api-reference/employees-bulk-remove"
+                ]
+              }
+            ]
           }
         ]
       },
@@ -1712,7 +1749,8 @@
                     "group": "WhatsApp Hesap Türleri",
                     "pages": [
                       "tr/getting-started/whatsapp-types",
-                      "tr/getting-started/personal-vs-business-vs-api"
+                      "tr/getting-started/personal-vs-business-vs-api",
+                      "tr/getting-started/coexistence-mode"
                     ]
                   },
                   {
@@ -1810,6 +1848,9 @@
                 "group": "Verimlilik Araçları",
                 "icon": "bolt",
                 "pages": [
+                  "tr/productivity/quick-replies",
+                  "tr/productivity/scheduled-messages",
+                  "tr/productivity/bulk-messaging",
                   "tr/productivity/start-chat",
                   "tr/productivity/quick-reply",
                   "tr/productivity/setting-button",
@@ -1822,7 +1863,9 @@
                 "group": "Ayarlar",
                 "icon": "gear",
                 "pages": [
-                  "tr/settings/team-management"
+                  "tr/settings/workspace",
+                  "tr/settings/team-management",
+                  "tr/settings/billing"
                 ]
               },
               {
@@ -1937,6 +1980,16 @@
                   {
                     "group": "Mini-CRM Görünümü",
                     "pages": [
+                      "tr/integrations/zoho/mini-crm-view",
+                      "tr/integrations/zoho/create-lead",
+                      "tr/integrations/zoho/lead-profile",
+                      "tr/integrations/zoho/edit-lead-profile",
+                      "tr/integrations/zoho/lead-notes",
+                      "tr/integrations/zoho/create-contacts",
+                      "tr/integrations/zoho/contact-profile",
+                      "tr/integrations/zoho/edit-contact-profile",
+                      "tr/integrations/zoho/contact-notes",
+                      "tr/integrations/zoho/contact-tasks",
                       "tr/integrations/zoho/contact-deals",
                       "tr/integrations/zoho/manage-contact-deals",
                       "tr/integrations/zoho/mini-crm/overview",
@@ -2190,6 +2243,18 @@
                 "pages": [
                   "tr/automation/ai/reply-suggestions",
                   "tr/automation/ai/unreplied-chats-agent"
+                ]
+              }
+            ]
+          },
+          {
+            "tab": "API Reference",
+            "groups": [
+              {
+                "group": "Overview",
+                "icon": "book",
+                "pages": [
+                  "tr/api-reference/employees-bulk-remove"
                 ]
               }
             ]

@@ -1,0 +1,269 @@
+---
+title: "Toplu Calisan Kaldirma"
+description: "Onceki baslik: Remove Employees Bulk API. E-posta adreslerini kullanarak tek bir istekle organizasyonunuzdan birden fazla calisani kaldirin."
+---
+
+## Genel Bakis
+
+Toplu Calisan Kaldirma API'si, e-posta adreslerini kullanarak tek bir istekle organizasyonunuzdan birden fazla calisani kaldirmaniza olanak tanir. Bu genel API, harici sistemlerin ve entegrasyonlarin standart JWT akisi uzerinden yonetici kimlik dogrulamasi gerektirmeden calisan erisimini yonetmesi icin tasarlanmistir.
+
+Kimlik dogrulama icin bir **Organizasyon Tasiyici Tokeni** (`auth_token`) gerektirir ve yalnizca yetkili organizasyonlarin calisma alanindan calisanlari kaldirabilmesini saglar.
+
+---
+
+## Yol URL'si
+
+```
+https://api.eazybe.com/v2/organizations/public/remove-employee-bulk
+```
+
+---
+
+## API Kullanimi
+
+**Endpoint:**
+
+```
+POST https://api.eazybe.com/v2/organizations/public/remove-employee-bulk
+```
+
+---
+
+## Basliklar
+
+| Baslik | Aciklama | Ornek |
+|--------|----------|-------|
+| `Authorization` | Kimlik dogrulama icin kullanilan tasiyici token. Gecerli bir Organizasyon Kimlik Dogrulama Tokeni olmalidir. | `Bearer YOUR-BEARER-TOKEN` |
+| `Content-Type` | Istek govdesinin icerik turu | `application/json` |
+
+---
+
+## Istek Govdesi
+
+| Alan | Tur | Zorunlu | Aciklama |
+|------|-----|---------|----------|
+| `emails` | string dizisi | Evet | Organizasyondan kaldirilacak calisan e-posta adreslerinin dizisi |
+
+---
+
+## Ornek cURL Istegi
+
+```bash
+curl --location 'https://api.eazybe.com/v2/organizations/public/remove-employee-bulk' \
+--header 'Authorization: Bearer YOUR-BEARER-TOKEN' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+  "emails": [
+    "john.doe@company.com",
+    "jane.smith@company.com",
+    "robert.brown@company.com"
+  ]
+}'
+```
+
+---
+
+## Ornek Istek Kodu (Axios ile Node.js)
+
+```javascript
+const axios = require('axios');
+
+let data = JSON.stringify({
+  "emails": [
+    "john.doe@company.com",
+    "jane.smith@company.com",
+    "robert.brown@company.com"
+  ]
+});
+
+let config = {
+  method: 'post',
+  maxBodyLength: Infinity,
+  url: 'https://api.eazybe.com/v2/organizations/public/remove-employee-bulk',
+  headers: {
+    'Authorization': 'Bearer YOUR-BEARER-TOKEN',
+    'Content-Type': 'application/json'
+  },
+  data: data
+};
+
+axios.request(config)
+  .then((response) => {
+    console.log(JSON.stringify(response.data, null, 2));
+  })
+  .catch((error) => {
+    console.error(error);
+  });
+```
+
+---
+
+## Ornek Yanit (Basarili)
+
+```json
+{
+  "statusCode": 200,
+  "status": "success",
+  "message": "Employees removed successfully",
+  "data": {
+    "removedEmails": [
+      "john.doe@company.com",
+      "jane.smith@company.com"
+    ],
+    "notFoundEmails": [
+      "robert.brown@company.com"
+    ]
+  }
+}
+```
+
+---
+
+## Yanit Alanlari
+
+| Alan | Tur | Aciklama |
+|------|-----|----------|
+| `statusCode` | number | HTTP durum kodu (basari icin 200, hatalar icin 400/401/404/500) |
+| `status` | string | Istegin durumu (`"success"` veya `"error"`) |
+| `message` | string | Sonucu aciklayan okunabilir mesaj |
+| `data` | object | Kaldirilan ve bulunamayan e-postalari iceren yanit verileri |
+| `data.removedEmails` | string dizisi | Basariyla kaldirilan e-posta adreslerinin listesi |
+| `data.notFoundEmails` | string dizisi | Sistemde bulunamayan e-posta adreslerinin listesi |
+
+---
+
+## Hata Yanitlari
+
+### 401 Yetkisiz - Gecersiz Erisim Tokeni
+
+```json
+{
+  "statusCode": 401,
+  "status": "error",
+  "message": "Invalid access token",
+  "data": {
+    "error": {
+      "message": "Invalid access token"
+    }
+  }
+}
+```
+
+### 400 Hatali Istek - E-posta Saglanmadi
+
+```json
+{
+  "statusCode": 400,
+  "status": "error",
+  "message": "No email IDs provided",
+  "data": {
+    "error": {
+      "message": "No email IDs provided"
+    }
+  }
+}
+```
+
+### 404 Bulunamadi - Kullanici Bulunamadi
+
+```json
+{
+  "statusCode": 404,
+  "status": "error",
+  "message": "No users found for the provided emails",
+  "data": {
+    "error": {
+      "message": "No users found for the provided emails"
+    }
+  }
+}
+```
+
+### 500 Dahili Sunucu Hatasi
+
+```json
+{
+  "statusCode": 500,
+  "status": "error",
+  "message": "Something went wrong while removing employees",
+  "data": []
+}
+```
+
+---
+
+## Organizasyonun Kimlik Dogrulama Tokeni Nasil Alinir
+
+<Steps>
+  <Step title="EazyBe Workspace'e giris yapin">
+    Organizasyonun yoneticisi kimlik bilgilerini kullanarak EazyBe Workspace'e giris yapmalidir.
+  </Step>
+  <Step title="Kimlik Dogrulama Tokenini bulun">
+    Organizasyon sayfasinda, Organizasyonun Kimlik Dogrulama Tokeni goruntulenecektir.
+  </Step>
+  <Step title="Tokeni kopyalayin ve kullanin">
+    Yonetici, Organizasyonun Kimlik Dogrulama Tokenini kopyalayarak API istegine yapistirabilir.
+  </Step>
+</Steps>
+
+---
+
+## Yanit Durum Kodlari
+
+| Durum Kodu | Aciklama |
+|------------|----------|
+| 200 | Calisanlar organizasyondan basariyla kaldirildi |
+| 400 | Hatali istek - gecersiz giris veya eksik zorunlu alanlar |
+| 401 | Yetkisiz - gecersiz veya eksik erisim tokeni |
+| 404 | Bulunamadi - saglanan e-posta adresleri icin kullanici bulunamadi |
+| 500 | Dahili sunucu hatasi - beklenmeyen sunucu tarafi hatasi |
+
+---
+
+## Onemli Notlar
+
+<Note>
+**Calisanlari kaldirdiginizda ne olur?**
+
+- Calisanlar organizasyonun calisma alanindan kaldirilir (`callyzer_user_details`)
+- Organizasyon uyelikleri iptal edilir (`callyzer_user_mappings`)
+- Kullanicilar sistemden tamamen **silinmez** - yalnizca bu belirli organizasyonla olan iliskilendirmeleri kaldirilir
+- API tum gecerli e-postalari isler ve hangilerin basariyla kaldirildigini, hangilerin bulunamadigini raporlar
+</Note>
+
+### Kismi Basari
+
+Bazi e-postalar sistemde bulunamazsa, API bulunan calisanlari yine de kaldirir ve yanitte her iki listeyi de dondurur:
+
+- **removedEmails:** Basariyla kaldirilan calisanlar
+- **notFoundEmails:** Sistemde bulunmayan e-postalar
+
+Bu, kismi basarisizliklari zarif bir sekilde yonetmenize ve hangi islemlerin basarili oldugunu tam olarak bilmenize olanak tanir.
+
+---
+
+## Hijyen Uygulamalari
+
+<Warning>
+- Her zaman **gecerli bir Organizasyon Kimlik Dogrulama Tokeni** kullanin
+- Tokeninizi herkese acik sekilde paylasmayin veya ifsa etmeyin
+- `notFoundEmails` sayisini en aza indirmek icin API cagrilari yapmadan once e-posta adreslerini dogrulayin
+- Organizasyon kimlik bilgilerinizi her zaman guvenli tutun
+- Bu API'yi sorumlu bir sekilde kullanin - kaldirilan calisanlar organizasyonun verilerine erisimlerini kaybedecektir
+- Bu API'yi cagirmadan once uygulamanizda bir onay adimi uygulamayi dusunun
+- Kimin ne zaman kaldirildigini izlemek icin API yanitini denetim amaciyla saklayin
+</Warning>
+
+---
+
+## Kullanim Alanlari
+
+- **Ayrilma Otomasyonu:** Sirketten ayrildiklarinda calisanlari otomatik olarak kaldirin
+- **Toplu Kullanici Yonetimi:** Organizasyonel yeniden yapilanma sirasinda birden fazla calisani ayni anda kaldirin
+- **IK Sistemleriyle Entegrasyon:** IK platformunuzdaki calisan kaldirimlarini EazyBe ile senkronize edin
+- **Erisim Kontrolu:** Acil durumlarda birden fazla kullanicinin erisimini hizla iptal edin
+- **Harici Sistem Entegrasyonu:** Ucuncu taraf sistemlerin calisan erisimini yonetmesine izin verin
+
+---
+
+Herhangi bir sorunuz varsa veya daha fazla yardima ihtiyaciniz varsa, **[hey@eazybe.com](mailto:hey@eazybe.com)** adresinden bize ulasmaktan cekinmeyin.

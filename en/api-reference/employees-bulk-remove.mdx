@@ -1,0 +1,269 @@
+---
+title: "Remove Employees Bulk"
+description: "Previously: Remove Employees Bulk API. Remove multiple employees from your organization in a single request using their email addresses."
+---
+
+## Overview
+
+The Remove Employees Bulk API allows you to remove multiple employees from your organization in a single request using their email addresses. This public API is designed for external systems and integrations to manage employee access without requiring admin authentication through the standard JWT flow.
+
+It requires an **Organization Bearer Token** (`auth_token`) for authentication, ensuring only authorized organizations can remove employees from their workspace.
+
+---
+
+## Path URL
+
+```
+https://api.eazybe.com/v2/organizations/public/remove-employee-bulk
+```
+
+---
+
+## API Usage
+
+**Endpoint:**
+
+```
+POST https://api.eazybe.com/v2/organizations/public/remove-employee-bulk
+```
+
+---
+
+## Headers
+
+| Header | Description | Example |
+|--------|-------------|---------|
+| `Authorization` | Bearer token used for authentication. Must be a valid Organization Auth Token. | `Bearer YOUR-BEARER-TOKEN` |
+| `Content-Type` | The content type of the request body | `application/json` |
+
+---
+
+## Request Body
+
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| `emails` | array of strings | Yes | Array of employee email addresses to remove from the organization |
+
+---
+
+## Example cURL Request
+
+```bash
+curl --location 'https://api.eazybe.com/v2/organizations/public/remove-employee-bulk' \
+--header 'Authorization: Bearer YOUR-BEARER-TOKEN' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+  "emails": [
+    "john.doe@company.com",
+    "jane.smith@company.com",
+    "robert.brown@company.com"
+  ]
+}'
+```
+
+---
+
+## Sample Request Code (Node.js with Axios)
+
+```javascript
+const axios = require('axios');
+
+let data = JSON.stringify({
+  "emails": [
+    "john.doe@company.com",
+    "jane.smith@company.com",
+    "robert.brown@company.com"
+  ]
+});
+
+let config = {
+  method: 'post',
+  maxBodyLength: Infinity,
+  url: 'https://api.eazybe.com/v2/organizations/public/remove-employee-bulk',
+  headers: {
+    'Authorization': 'Bearer YOUR-BEARER-TOKEN',
+    'Content-Type': 'application/json'
+  },
+  data: data
+};
+
+axios.request(config)
+  .then((response) => {
+    console.log(JSON.stringify(response.data, null, 2));
+  })
+  .catch((error) => {
+    console.error(error);
+  });
+```
+
+---
+
+## Example Response (Success)
+
+```json
+{
+  "statusCode": 200,
+  "status": "success",
+  "message": "Employees removed successfully",
+  "data": {
+    "removedEmails": [
+      "john.doe@company.com",
+      "jane.smith@company.com"
+    ],
+    "notFoundEmails": [
+      "robert.brown@company.com"
+    ]
+  }
+}
+```
+
+---
+
+## Response Fields
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `statusCode` | number | HTTP status code (200 for success, 400/401/404/500 for errors) |
+| `status` | string | Status of the request (`"success"` or `"error"`) |
+| `message` | string | Human-readable message describing the result |
+| `data` | object | Response data containing removed and not found emails |
+| `data.removedEmails` | array of strings | List of email addresses that were successfully removed |
+| `data.notFoundEmails` | array of strings | List of email addresses that were not found in the system |
+
+---
+
+## Error Responses
+
+### 401 Unauthorized - Invalid Access Token
+
+```json
+{
+  "statusCode": 401,
+  "status": "error",
+  "message": "Invalid access token",
+  "data": {
+    "error": {
+      "message": "Invalid access token"
+    }
+  }
+}
+```
+
+### 400 Bad Request - No Emails Provided
+
+```json
+{
+  "statusCode": 400,
+  "status": "error",
+  "message": "No email IDs provided",
+  "data": {
+    "error": {
+      "message": "No email IDs provided"
+    }
+  }
+}
+```
+
+### 404 Not Found - No Users Found
+
+```json
+{
+  "statusCode": 404,
+  "status": "error",
+  "message": "No users found for the provided emails",
+  "data": {
+    "error": {
+      "message": "No users found for the provided emails"
+    }
+  }
+}
+```
+
+### 500 Internal Server Error
+
+```json
+{
+  "statusCode": 500,
+  "status": "error",
+  "message": "Something went wrong while removing employees",
+  "data": []
+}
+```
+
+---
+
+## How to Get Organization's Auth Token
+
+<Steps>
+  <Step title="Log in to EazyBe Workspace">
+    The organization's admin must log in to the EazyBe Workspace using their credentials.
+  </Step>
+  <Step title="Locate the Auth Token">
+    On the Organization page, the Organization's Auth Token will be displayed.
+  </Step>
+  <Step title="Copy and use the token">
+    The admin can copy the Organization's Auth Token and paste it into the API request.
+  </Step>
+</Steps>
+
+---
+
+## Response Status Codes
+
+| Status Code | Description |
+|-------------|-------------|
+| 200 | Employees successfully removed from the organization |
+| 400 | Bad request - invalid input or missing required fields |
+| 401 | Unauthorized - invalid or missing access token |
+| 404 | Not found - no users found for the provided email addresses |
+| 500 | Internal server error - unexpected server-side error |
+
+---
+
+## Important Notes
+
+<Note>
+**What happens when you remove employees?**
+
+- Employees are removed from the organization's workspace (`callyzer_user_details`)
+- Their organization membership is revoked (`callyzer_user_mappings`)
+- The users are **not** deleted from the system entirely - only their association with this specific organization is removed
+- The API will process all valid emails and report which ones were successfully removed and which were not found
+</Note>
+
+### Partial Success
+
+If some emails are not found in the system, the API will still remove the employees that were found and return both lists in the response:
+
+- **removedEmails:** Successfully removed employees
+- **notFoundEmails:** Emails that don't exist in the system
+
+This allows you to handle partial failures gracefully and know exactly which operations succeeded.
+
+---
+
+## Hygiene Practices
+
+<Warning>
+- Always use a **valid Organization Auth Token**
+- Do not share or expose your token publicly
+- Verify email addresses before making API calls to minimize `notFoundEmails`
+- Keep your organization credentials secure at all times
+- Use this API responsibly - removed employees will lose access to the organization's data
+- Consider implementing a confirmation step in your application before calling this API
+- Store the API response for audit purposes to track who was removed and when
+</Warning>
+
+---
+
+## Use Cases
+
+- **Offboarding Automation:** Automatically remove employees when they leave the company
+- **Bulk User Management:** Remove multiple employees at once during organizational restructuring
+- **Integration with HR Systems:** Sync employee removals from your HR platform to EazyBe
+- **Access Control:** Quickly revoke access for multiple users in emergency situations
+- **External System Integration:** Allow third-party systems to manage employee access
+
+---
+
+If you have any questions or need further assistance, feel free to reach out to us at **[hey@eazybe.com](mailto:hey@eazybe.com)**.
