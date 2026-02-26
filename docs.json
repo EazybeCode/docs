@@ -137,7 +137,8 @@
                     "pages": [
                       "en/waba/broadcasting/send-broadcast",
                       "en/waba/broadcasting/create-broadcast-with-extension",
-                      "en/waba/broadcasting/hubspot-workflow"
+                      "en/waba/broadcasting/hubspot-workflow",
+                      "en/waba/broadcasting/template-based-chatbot"
                     ]
                   },
                   "en/waba/broadcast-rate-list-1st-jan-2026",
@@ -753,7 +754,8 @@
                       "es/waba/broadcasting/send-broadcast",
                       "es/waba/broadcasting/create-broadcast-with-extension",
                       "es/waba/broadcasting/hubspot-workflow",
-                      "es/waba/broadcasting/analytics"
+                      "es/waba/broadcasting/analytics",
+                      "es/waba/broadcasting/template-based-chatbot"
                     ]
                   },
                   "es/waba/coexistence",
@@ -1281,7 +1283,8 @@
                       "pt/waba/broadcasting/send-broadcast",
                       "pt/waba/broadcasting/create-broadcast-with-extension",
                       "pt/waba/broadcasting/hubspot-workflow",
-                      "pt/waba/broadcasting/analytics"
+                      "pt/waba/broadcasting/analytics",
+                      "pt/waba/broadcasting/template-based-chatbot"
                     ]
                   },
                   "pt/waba/coexistence",
@@ -1816,7 +1819,8 @@
                       "tr/waba/broadcasting/send-broadcast",
                       "tr/waba/broadcasting/create-broadcast-with-extension",
                       "tr/waba/broadcasting/hubspot-workflow",
-                      "tr/waba/broadcasting/analytics"
+                      "tr/waba/broadcasting/analytics",
+                      "tr/waba/broadcasting/template-based-chatbot"
                     ]
                   },
                   "tr/waba/coexistence",

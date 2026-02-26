@@ -1,0 +1,230 @@
+[
+  {
+    "text": "Template-Based Chatbot",
+    "style": "Normal"
+  },
+  {
+    "text": "Orchestrate fully automated, interactive WhatsApp journeys directly within your HubSpot Workflows. This feature transforms static message templates into dynamic, two-way conversations. By leveraging Quick Reply buttons, you can build intelligent chatbots that engage leads, qualify prospects, and handle support queries 24/7—without writing a single line of code.",
+    "style": "Normal"
+  },
+  {
+    "text": "Using Eazybe’s advanced \"Send WhatsApp & Wait for Reply\" action, your HubSpot workflows pause to listen for customer inputs, then instantly route them down specific branches based on which button they clicked. It’s the ultimate tool for turning WhatsApp into an always-on engine for sales and support.",
+    "style": "Normal"
+  },
+  {
+    "text": "Why the Template-Based Chatbot Matters:",
+    "style": "Normal"
+  },
+  {
+    "text": "In an era of instant gratification, customers expect immediate answers. This feature bridges the gap between manual chatting and complex custom coding. It allows scaling businesses to automate repetitive conversations while keeping all data synchronized inside HubSpot, ensuring that your human agents only step in when high-value interactions occur.",
+    "style": "Normal"
+  },
+  {
+    "text": "Automates Lead Qualification: Stop wasting time on cold leads. Set up a workflow that asks qualifying questions via button clicks (e.g., \"Budget?\", \"Timeline?\"). Based on the reply, automatically update the HubSpot contact property or route them to the right sales rep.",
+    "style": "Normal"
+  },
+  {
+    "text": "Delivers Instant 24/7 Engagement: Your business never sleeps. Create workflows that greet customers, provide product details, or schedule demos instantly, regardless of the time of day, ensuring zero drop-offs due to delayed responses.",
+    "style": "Normal"
+  },
+  {
+    "text": "Standardizes Customer Journeys: Ensure every prospect receives the exact same high-quality onboarding or support experience. By pre-planning flows, you eliminate human error and maintain consistent brand messaging across every interaction.",
+    "style": "Normal"
+  },
+  {
+    "text": "Seamless HubSpot Data Sync: unlike external bot builders, this lives inside HubSpot. Every button click and response is captured natively, allowing you to trigger further marketing emails, tasks, or deal stage updates based on the chat outcome.",
+    "style": "Normal"
+  },
+  {
+    "text": "Scope of Capability",
+    "style": "Normal"
+  },
+  {
+    "text": "Surveys & Feedback: Send a template asking for a rating (1-5 buttons) and tag customers based on their score.",
+    "style": "Normal"
+  },
+  {
+    "text": "Appointment Booking: Guide users through selecting a time slot or service type.",
+    "style": "Normal"
+  },
+  {
+    "text": "FAQ Automation: Let users choose a topic (Pricing, Features, Support) and receive instant answers.",
+    "style": "Normal"
+  },
+  {
+    "text": "How It Works: Step-by-Step Configuration",
+    "style": "Normal"
+  },
+  {
+    "text": "To deploy your chatbot, follow this structured setup within your HubSpot account:",
+    "style": "Normal"
+  },
+  {
+    "text": "1. Blueprint & Template CreationFirst, map out your desired conversation flow. Create your WhatsApp Templates in Eazybe with Quick Reply buttons (e.g., \"Yes,\" \"No,\" \"More Info\") corresponding to the choices you want to offer.",
+    "style": "Normal"
+  },
+  {
+    "text": "2.Initialize the WorkflowNavigate to HubSpot Workflows. Set your enrolment criteria (e.g., \"New Lead Created\" or \"Form Submission\") to determine who enters the bot flow. Go to Automation",
+    "style": "Normal"
+  },
+  {
+    "text": "Select Workflows",
+    "style": "Normal"
+  },
+  {
+    "text": "Create a New Workflow",
+    "style": "Normal"
+  },
+  {
+    "text": "Choose \"From scratch\"",
+    "style": "Normal"
+  },
+  {
+    "text": "3. Deploy the \"Listen\" ActionAdd a new action and select \"Eazybe: Send WhatsApp & wait for Reply\".",
+    "style": "Normal"
+  },
+  {
+    "text": "Set Enrollment Trigger to \"Met filter criteria\" ( You can choose any filter criteria of your choice )",
+    "style": "Normal"
+  },
+  {
+    "text": "Select \"Contact\" as the Workflow Type",
+    "style": "Normal"
+  },
+  {
+    "text": "Define Enrollment Filters by Contact Properties",
+    "style": "Normal"
+  },
+  {
+    "text": "Add Filter Values",
+    "style": "Normal"
+  },
+  {
+    "text": "Proceed to Workflow Actions",
+    "style": "Normal"
+  },
+  {
+    "text": "Save the Initial Workflow Setup",
+    "style": "Normal"
+  },
+  {
+    "text": "Add a WhatsApp Integration Action",
+    "style": "Normal"
+  },
+  {
+    "text": "Choose \"Send WhatsApp & Wait for Reply\"",
+    "style": "Normal"
+  },
+  {
+    "text": "Choose the sender phone number.",
+    "style": "Normal"
+  },
+  {
+    "text": "Select the Template you created in Step 1.",
+    "style": "Normal"
+  },
+  {
+    "text": "Note: This action pauses the workflow until the user clicks a button.",
+    "style": "Normal"
+  },
+  {
+    "text": "Save the WhatsApp Send Action",
+    "style": "ListParagraph"
+  },
+  {
+    "text": "Add Another Workflow Action",
+    "style": "ListParagraph"
+  },
+  {
+    "text": "4. Configure Smart BranchingClick the \"+\" icon to add a branch.",
+    "style": "Normal"
+  },
+  {
+    "text": "Select \"Based on action output\" (specifically from the Eazybe action).",
+    "style": "Normal"
+  },
+  {
+    "text": "Choose the property \"Button Reply\" (or the specific action output variable).",
+    "style": "Normal"
+  },
+  {
+    "text": "Create a branch for each button option (e.g., Name one branch \"Interested\" and another \"Not Interested\"). Crucial: Ensure the branch name/value matches the exact text on your Quick Reply button.Add Another Workflow Action",
+    "style": "Normal"
+  },
+  {
+    "text": "Select the \"Branch\" Action",
+    "style": "Normal"
+  },
+  {
+    "text": "Choose \"One property or action output\" for Branching",
+    "style": "Normal"
+  },
+  {
+    "text": "Select the Property for Branching",
+    "style": "Normal"
+  },
+  {
+    "text": "Use \"User WhatsApp Reply\" as the Branching Property",
+    "style": "Normal"
+  },
+  {
+    "text": "Configure Branch Conditions",
+    "style": "Normal"
+  },
+  {
+    "text": "Enter Value for Branch 1 Condition",
+    "style": "Normal"
+  },
+  {
+    "text": "Add an Additional Branch",
+    "style": "Normal"
+  },
+  {
+    "text": "Enter Value for Branch 2 Condition",
+    "style": "Normal"
+  },
+  {
+    "text": "Save the Conditional Branch",
+    "style": "Normal"
+  },
+  {
+    "text": "Add an Action within a Branch",
+    "style": "Normal"
+  },
+  {
+    "text": "Add Another WhatsApp Integration Action",
+    "style": "Normal"
+  },
+  {
+    "text": "Choose \"Send WhatsApp & Wait for Reply\" within Branch",
+    "style": "Normal"
+  },
+  {
+    "text": "Select a Value for the Branch-Specific WhatsApp Message",
+    "style": "Normal"
+  },
+  {
+    "text": "Choose the WhatsApp Sender Number",
+    "style": "Normal"
+  },
+  {
+    "text": "Select the WhatsApp Template for Branch",
+    "style": "Normal"
+  },
+  {
+    "text": "Confirm \"catalogue2\" Template",
+    "style": "Normal"
+  },
+  {
+    "text": "Save the Branch-Specific WhatsApp Action",
+    "style": "Normal"
+  },
+  {
+    "text": "Review and Activate the Workflow",
+    "style": "Normal"
+  },
+  {
+    "text": "5. Build the JourneyUnder each branch, add the next step of your flow—whether it’s sending another WhatsApp template, assigning a task to a sales agent, or updating a deal stage. Repeat the process to build deep, multi-step conversations.Then save the workflow and your response based Hubspot chatbot is ready.",
+    "style": "Normal"
+  }
+]
