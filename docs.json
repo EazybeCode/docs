@@ -55,9 +55,7 @@
                   "quickstart",
                   {
                     "group": "Setup",
-                    "pages": [
-                      "en/getting-started/onboarding-to-coexistence"
-                    ]
+                    "pages": ["en/getting-started/onboarding-to-coexistence"]
                   },
                   {
                     "group": "Cloud WhatsApp",
@@ -139,8 +137,7 @@
                     "pages": [
                       "en/waba/broadcasting/send-broadcast",
                       "en/waba/broadcasting/create-broadcast-with-extension",
-                      "en/waba/broadcasting/hubspot-workflow",
-                      "en/waba/broadcasting/template-based-chatbot"
+                      "en/waba/broadcasting/hubspot-workflow"
                     ]
                   },
                   "en/waba/broadcast-rate-list-1st-jan-2026",
@@ -592,9 +589,7 @@
               {
                 "group": "Overview",
                 "icon": "robot",
-                "pages": [
-                  "ai-agents/overview"
-                ]
+                "pages": ["ai-agents/overview"]
               },
               {
                 "group": "AI Features",
@@ -659,9 +654,7 @@
               {
                 "group": "Changelog",
                 "icon": "clock-rotate-left",
-                "pages": [
-                  "changelog/overview"
-                ]
+                "pages": ["changelog/overview"]
               }
             ]
           }
@@ -681,9 +674,7 @@
                   "es/quickstart",
                   {
                     "group": "Configuración",
-                    "pages": [
-                      "es/getting-started/onboarding-to-coexistence"
-                    ]
+                    "pages": ["es/getting-started/onboarding-to-coexistence"]
                   },
                   {
                     "group": "Cloud WhatsApp",
@@ -762,8 +753,7 @@
                       "es/waba/broadcasting/send-broadcast",
                       "es/waba/broadcasting/create-broadcast-with-extension",
                       "es/waba/broadcasting/hubspot-workflow",
-                      "es/waba/broadcasting/analytics",
-                      "es/waba/broadcasting/template-based-chatbot"
+                      "es/waba/broadcasting/analytics"
                     ]
                   },
                   "es/waba/coexistence",
@@ -792,9 +782,7 @@
               {
                 "group": "Configuración",
                 "icon": "gear",
-                "pages": [
-                  "es/settings/team-management"
-                ]
+                "pages": ["es/settings/team-management"]
               },
               {
                 "group": "Solución de Problemas",
@@ -1181,9 +1169,7 @@
               {
                 "group": "Overview",
                 "icon": "book",
-                "pages": [
-                  "es/api-reference/employees-bulk-remove"
-                ]
+                "pages": ["es/api-reference/employees-bulk-remove"]
               }
             ]
           }
@@ -1295,8 +1281,7 @@
                       "pt/waba/broadcasting/send-broadcast",
                       "pt/waba/broadcasting/create-broadcast-with-extension",
                       "pt/waba/broadcasting/hubspot-workflow",
-                      "pt/waba/broadcasting/analytics",
-                      "pt/waba/broadcasting/template-based-chatbot"
+                      "pt/waba/broadcasting/analytics"
                     ]
                   },
                   "pt/waba/coexistence",
@@ -1719,9 +1704,7 @@
               {
                 "group": "Overview",
                 "icon": "book",
-                "pages": [
-                  "pt/api-reference/employees-bulk-remove"
-                ]
+                "pages": ["pt/api-reference/employees-bulk-remove"]
               }
             ]
           }
@@ -1833,8 +1816,7 @@
                       "tr/waba/broadcasting/send-broadcast",
                       "tr/waba/broadcasting/create-broadcast-with-extension",
                       "tr/waba/broadcasting/hubspot-workflow",
-                      "tr/waba/broadcasting/analytics",
-                      "tr/waba/broadcasting/template-based-chatbot"
+                      "tr/waba/broadcasting/analytics"
                     ]
                   },
                   "tr/waba/coexistence",
@@ -2257,9 +2239,7 @@
               {
                 "group": "Overview",
                 "icon": "book",
-                "pages": [
-                  "tr/api-reference/employees-bulk-remove"
-                ]
+                "pages": ["tr/api-reference/employees-bulk-remove"]
               }
             ]
           }
