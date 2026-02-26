@@ -1,7 +1,9 @@
 ---
-title: Template-Based Chatbot
-description: Orchestrate fully automated, interactive WhatsApp journeys directly within your HubSpot workflows using Quick Reply buttons for intelligent chatbot experiences.
+title: "Template-Based Chatbot"
+description: "Orchestrate fully automated, interactive WhatsApp journeys directly within your HubSpot workflows using Quick Reply buttons for intelligent chatbot experiences."
 ---
+
+import { Frame } from '@components/docs';
 
 # Template-Based Chatbot
 
@@ -17,20 +19,20 @@ In an era of instant gratification, customers expect immediate answers. This fea
 
 <Accordion>
   <AccordionItem title="Automates Lead Qualification">
-    Stop wasting time on cold leads. Set up a workflow that asks qualifying questions via button clicks (e.g., "Budget?", "Timeline?"). Based on the reply, automatically update the HubSpot contact property or route them to the right sales rep.
-  </AccordionItem>
+  Stop wasting time on cold leads. Set up a workflow that asks qualifying questions via button clicks (e.g., "Budget?", "Timeline?"). Based on the reply, automatically update the HubSpot contact property or route them to the right sales rep.
+</AccordionItem>
 
   <AccordionItem title="Delivers Instant 24/7 Engagement">
-    Your business never sleeps. Create workflows that greet customers, provide product details, or schedule demos instantly, regardless of the time of day, ensuring zero drop-offs due to delayed responses.
-  </AccordionItem>
+  Your business never sleeps. Create workflows that greet customers, provide product details, or schedule demos instantly, regardless of the time of day, ensuring zero drop-offs due to delayed responses.
+</AccordionItem>
 
   <AccordionItem title="Standardizes Customer Journeys">
-    Ensure every prospect receives the exact same high-quality onboarding or support experience. By pre-planning flows, you eliminate human error and maintain consistent brand messaging across every interaction.
-  </AccordionItem>
+  Ensure every prospect receives the exact same high-quality onboarding or support experience. By pre-planning flows, you eliminate human error and maintain consistent brand messaging across every interaction.
+</AccordionItem>
 
   <AccordionItem title="Seamless HubSpot Data Sync">
-    Unlike external bot builders, this lives inside HubSpot. Every button click and response is captured natively, allowing you to trigger further marketing emails, tasks, or deal stage updates based on the chat outcome.
-  </AccordionItem>
+  Unlike external bot builders, this lives inside HubSpot. Every button click and response is captured natively, allowing you to trigger further marketing emails, tasks, or deal stage updates based on the chat outcome.
+</AccordionItem>
 </Accordion>
 
 ## Scope of Capability
@@ -40,17 +42,15 @@ The Template-Based Chatbot is versatile and can handle various use cases:
 <Steps>
   <Step>
     <strong>Surveys & Feedback</strong>
-    <p>Send a template asking for a rating (1-5 buttons) and tag customers based on their score.</p>
+     <p>Send a template asking for a rating (1-5 buttons) and tag customers based on their score.</p>
   </Step>
-
   <Step>
     <strong>Appointment Booking</strong>
-    <p>Guide users through selecting a time slot or service type.</p>
+     <p>Guide users through selecting a time slot or service type.</p>
   </Step>
-
   <Step>
     <strong>FAQ Automation</strong>
-    <p>Let users choose a topic (Pricing, Features, Support) and receive instant answers.</p>
+     <p>Let users choose a topic (Pricing, Features, Support) and receive instant answers.</p>
   </Step>
 </Steps>
 
@@ -72,49 +72,45 @@ First, map out your desired conversation flow. Create your WhatsApp Templates in
   <Step>
     Navigate to <strong>HubSpot Workflows</strong>
   </Step>
-
   <Step>
     Go to <strong>Automation → Workflows</strong>
   </Step>
-
   <Step>
     Click <strong>Create a New Workflow</strong>
   </Step>
-
   <Step>
     Choose <strong>"From scratch"</strong>
   </Step>
-
   <Step>
-    Set <strong>Enrollment Trigger</strong> to <strong>"Met filter criteria"</strong>
-    <p>You can choose any filter criteria of your choice (e.g., "New Lead Created" or "Form Submission").</p>
+    Set <strong>Enrollment Trigger</strong>
+     to <strong>"Met filter criteria"</strong>
+     <p>You can choose any filter criteria of your choice (e.g., "New Lead Created" or "Form Submission").</p>
   </Step>
-
   <Step>
-    Select <strong>"Contact"</strong> as the Workflow Type
+    Select <strong>"Contact"</strong>
+     as the Workflow Type
   </Step>
-
   <Step>
-    Define <strong>Enrollment Filters</strong> by Contact Properties
+    Define <strong>Enrollment Filters</strong>
+     by Contact Properties
   </Step>
-
   <Step>
-    Add <strong>Filter Values</strong> and proceed to Workflow Actions
+    Add <strong>Filter Values</strong>
+     and proceed to Workflow Actions
   </Step>
-
   <Step>
     Save the Initial Workflow Setup
   </Step>
 </Steps>
 
-<img src="/images/chatbot/image1.png" alt="Navigate to HubSpot Workflows" />
-<img src="/images/chatbot/image2.png" alt="Go to Automation Workflows" />
-<img src="/images/chatbot/image3.png" alt="Create New Workflow" />
-<img src="/images/chatbot/image4.png" alt="Choose From scratch" />
-<img src="/images/chatbot/image5.png" alt="Set Enrollment Trigger" />
-<img src="/images/chatbot/image6.png" alt="Select Contact as Workflow Type" />
-<img src="/images/chatbot/image7.png" alt="Define Enrollment Filters" />
-<img src="/images/chatbot/image8.png" alt="Add Filter Values" />
+<Frame src="/images/chatbot/image1.png" width="100%" />
+<Frame src="/images/chatbot/image2.png" width="100%" />
+<Frame src="/images/chatbot/image3.png" width="100%" />
+<Frame src="/images/chatbot/image4.png" width="100%" />
+<Frame src="/images/chatbot/image5.png" width="100%" />
+<Frame src="/images/chatbot/image6.png" width="100%" />
+<Frame src="/images/chatbot/image7.png" width="100%" />
+<Frame src="/images/chatbot/image8.png" width="100%" />
 
 ### Step 3: Deploy the "Listen" Action
 
@@ -124,28 +120,25 @@ Add a new action and select **"Eazybe: Send WhatsApp & wait for Reply"**.
   <Step>
     Add a <strong>WhatsApp Integration Action</strong>
   </Step>
-
   <Step>
     Choose <strong>"Send WhatsApp & Wait for Reply"</strong>
   </Step>
-
   <Step>
     Choose the <strong>sender phone number</strong>
   </Step>
-
   <Step>
-    Select the <strong>Template</strong> you created in Step 1
+    Select the <strong>Template</strong>
+     you created in Step 1
   </Step>
-
   <Step>
     Save the <strong>WhatsApp Send Action</strong>
   </Step>
 </Steps>
 
-<img src="/images/chatbot/image9.png" alt="Add WhatsApp Integration Action" />
-<img src="/images/chatbot/image10.png" alt="Choose Send WhatsApp and Wait for Reply" />
-<img src="/images/chatbot/image11.png" alt="Choose sender phone number" />
-<img src="/images/chatbot/image12.png" alt="Select the Template" />
+<Frame src="/images/chatbot/image9.png" width="100%" />
+<Frame src="/images/chatbot/image10.png" width="100%" />
+<Frame src="/images/chatbot/image11.png" width="100%" />
+<Frame src="/images/chatbot/image12.png" width="100%" />
 
 <Warning>
   This action pauses the workflow until the user clicks a button. The workflow will wait indefinitely for a response.
@@ -155,46 +148,43 @@ Add a new action and select **"Eazybe: Send WhatsApp & wait for Reply"**.
 
 <Steps>
   <Step>
-    Click the <strong>"+"</strong> icon to add a branch
+    Click the <strong>"+"</strong>
+     icon to add a branch
   </Step>
-
   <Step>
-    Select <strong>"Based on action output"</strong> (specifically from the Eazybe action)
+    Select <strong>"Based on action output"</strong>
+     (specifically from the Eazybe action)
   </Step>
-
   <Step>
-    Choose the property <strong>"User WhatsApp Reply"</strong> (or the specific action output variable)
+    Choose the property <strong>"User WhatsApp Reply"</strong>
+     (or the specific action output variable)
   </Step>
-
   <Step>
-    Create a branch for each button option
-    <p>For example, name one branch "Interested" and another "Not Interested".</p>
+    Create a branch for each button option <p>For example, name one branch "Interested" and another "Not Interested".</p>
+
     <Tip>
       Ensure the branch name/value matches the exact text on your Quick Reply button.
     </Tip>
   </Step>
-
   <Step>
     Configure branch conditions and values
   </Step>
-
   <Step>
     Add additional branches as needed
   </Step>
-
   <Step>
     Save the <strong>Conditional Branch</strong>
   </Step>
 </Steps>
 
-<img src="/images/chatbot/image13.png" alt="Click plus icon to add branch" />
-<img src="/images/chatbot/image14.png" alt="Select Based on action output" />
-<img src="/images/chatbot/image15.png" alt="Choose User WhatsApp Reply property" />
-<img src="/images/chatbot/image16.png" alt="Create branch for each button option" />
-<img src="/images/chatbot/image17.png" alt="Configure branch conditions" />
-<img src="/images/chatbot/image18.png" alt="Add additional branches" />
-<img src="/images/chatbot/image19.png" alt="Enter value for branch 1" />
-<img src="/images/chatbot/image20.png" alt="Save Conditional Branch" />
+<Frame src="/images/chatbot/image13.png" width="100%" />
+<Frame src="/images/chatbot/image14.png" width="100%" />
+<Frame src="/images/chatbot/image15.png" width="100%" />
+<Frame src="/images/chatbot/image16.png" width="100%" />
+<Frame src="/images/chatbot/image17.png" width="100%" />
+<Frame src="/images/chatbot/image18.png" width="100%" />
+<Frame src="/images/chatbot/image19.png" width="100%" />
+<Frame src="/images/chatbot/image20.png" width="100%" />
 
 ### Step 5: Build the Journey
 
@@ -204,54 +194,51 @@ Under each branch, add the next step of your flow—whether it's sending another
   <Step>
     Add an <strong>Action within a Branch</strong>
   </Step>
-
   <Step>
     Add Another <strong>WhatsApp Integration Action</strong>
   </Step>
-
   <Step>
-    Choose <strong>"Send WhatsApp & Wait for Reply"</strong> within Branch
+    Choose <strong>"Send WhatsApp & Wait for Reply"</strong>
+     within Branch
   </Step>
-
   <Step>
     Select a value for the <strong>Branch-Specific WhatsApp Message</strong>
   </Step>
-
   <Step>
     Choose the <strong>WhatsApp Sender Number</strong>
   </Step>
-
   <Step>
-    Select the <strong>WhatsApp Template</strong> for the branch
+    Select the <strong>WhatsApp Template</strong>
+     for the branch
   </Step>
-
   <Step>
     Save the <strong>Branch-Specific WhatsApp Action</strong>
   </Step>
 </Steps>
 
-<img src="/images/chatbot/image21.png" alt="Add Action within a Branch" />
-<img src="/images/chatbot/image22.png" alt="Add Another WhatsApp Integration Action" />
-<img src="/images/chatbot/image23.png" alt="Choose Send WhatsApp and Wait for Reply within Branch" />
-<img src="/images/chatbot/image24.png" alt="Select value for Branch-Specific WhatsApp Message" />
-<img src="/images/chatbot/image25.png" alt="Choose WhatsApp Sender Number" />
-<img src="/images/chatbot/image26.png" alt="Select WhatsApp Template for Branch" />
+<Frame src="/images/chatbot/image21.png" width="100%" />
+<Frame src="/images/chatbot/image22.png" width="100%" />
+<Frame src="/images/chatbot/image23.png" width="100%" />
+<Frame src="/images/chatbot/image24.png" width="100%" />
+<Frame src="/images/chatbot/image25.png" width="100%" />
 
 Repeat the process to build deep, multi-step conversations. When you're ready:
 
 <Steps>
   <Step>
-    <strong>Review</strong> your workflow for accuracy
+    <strong>Review</strong>
+     your workflow for accuracy
   </Step>
-
   <Step>
-    <strong>Activate</strong> the workflow
+    <strong>Activate</strong>
+     the workflow
   </Step>
-
   <Step>
     Your response-based HubSpot chatbot is now ready!
   </Step>
 </Steps>
+
+<Frame src="/images/chatbot/image26.png" width="100%" />
 
 <Tip>
   Test your chatbot workflow with a test contact before activating it for all users.
