@@ -1,0 +1,130 @@
+[
+  {
+    "text": "Analytics Dashboard",
+    "style": "Normal"
+  },
+  {
+    "text": "Step by Step guide to make HubSpot Analytics guide",
+    "style": "Normal"
+  },
+  {
+    "text": "Click on \"Reporting\"",
+    "style": "Normal"
+  },
+  {
+    "text": "Click on \"Reports\"",
+    "style": "Normal"
+  },
+  {
+    "text": "Tab Name: Reports",
+    "style": "Normal"
+  },
+  {
+    "text": "Click on \"Create\"",
+    "style": "Normal"
+  },
+  {
+    "text": "Click on \"Create report\"",
+    "style": "Normal"
+  },
+  {
+    "text": "Tab Name: Create Report | HubSpot",
+    "style": "Normal"
+  },
+  {
+    "text": "Click on \"Next\"",
+    "style": "Normal"
+  },
+  {
+    "text": "Tab Name: Custom Report Builder",
+    "style": "Normal"
+  },
+  {
+    "text": "Turn on \" Add more data sources \"",
+    "style": "Normal"
+  },
+  {
+    "text": "Click on \"Next\"",
+    "style": "Normal"
+  },
+  {
+    "text": "Search for the data source.",
+    "style": "Normal"
+  },
+  {
+    "text": "( You can choose any data sources of your choice like :",
+    "style": "Normal"
+  },
+  {
+    "text": "Average Response Time",
+    "style": "ListParagraph"
+  },
+  {
+    "text": "Client Replied",
+    "style": "ListParagraph"
+  },
+  {
+    "text": "Current Label",
+    "style": "ListParagraph"
+  },
+  {
+    "text": "Current Main Label",
+    "style": "ListParagraph"
+  },
+  {
+    "text": "Current Sub Label",
+    "style": "ListParagraph"
+  },
+  {
+    "text": "First Response Time",
+    "style": "ListParagraph"
+  },
+  {
+    "text": "Follow-ups",
+    "style": "ListParagraph"
+  },
+  {
+    "text": "Last AI Summary",
+    "style": "ListParagraph"
+  },
+  {
+    "text": "Last Message send by",
+    "style": "ListParagraph"
+  },
+  {
+    "text": "Message Received",
+    "style": "ListParagraph"
+  },
+  {
+    "text": "Message sent",
+    "style": "ListParagraph"
+  },
+  {
+    "text": "Message you got",
+    "style": "ListParagraph"
+  },
+  {
+    "text": "Message you sent",
+    "style": "ListParagraph"
+  },
+  {
+    "text": "Time Since Last Client Message",
+    "style": "ListParagraph"
+  },
+  {
+    "text": "Total Messages )",
+    "style": "ListParagraph"
+  },
+  {
+    "text": "Click on the desired data source and drag to the axis based on the requirement eg. \"Total Messages\"",
+    "style": "Normal"
+  },
+  {
+    "text": "And so on drag and drop the required data sources based on the dashboard requirement.",
+    "style": "Normal"
+  },
+  {
+    "text": "Then click on Save report and your analytical dashboard is ready.",
+    "style": "Normal"
+  }
+]

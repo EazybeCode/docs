@@ -262,6 +262,7 @@
                   "en/integrations/hubspot/edit-properties",
                   "en/integrations/hubspot/dynamic-whatsapp-labels",
                   "en/integrations/hubspot/workflow-troubleshoot",
+                  "en/integrations/hubspot/analytics-dashboard",
                   {
                     "group": "FAQ",
                     "pages": [
@@ -862,6 +863,7 @@
                   "es/integrations/hubspot/edit-properties",
                   "es/integrations/hubspot/dynamic-whatsapp-labels",
                   "es/integrations/hubspot/workflow-troubleshoot",
+                  "es/integrations/hubspot/analytics-dashboard",
                   {
                     "group": "Preguntas Frecuentes",
                     "pages": [
@@ -1398,6 +1400,7 @@
                   "pt/integrations/hubspot/edit-properties",
                   "pt/integrations/hubspot/dynamic-whatsapp-labels",
                   "pt/integrations/hubspot/workflow-troubleshoot",
+                  "pt/integrations/hubspot/analytics-dashboard",
                   {
                     "group": "Perguntas Frequentes",
                     "pages": [
@@ -1934,6 +1937,7 @@
                   "tr/integrations/hubspot/edit-properties",
                   "tr/integrations/hubspot/dynamic-whatsapp-labels",
                   "tr/integrations/hubspot/workflow-troubleshoot",
+                  "tr/integrations/hubspot/analytics-dashboard",
                   {
                     "group": "SSS",
                     "pages": [
