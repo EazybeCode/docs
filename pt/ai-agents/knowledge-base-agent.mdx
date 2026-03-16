@@ -1,0 +1,223 @@
+---
+title: "Agente de Base de Conhecimento IA"
+description: "Crie um agente autônomo de IA treinado nos dados proprietários da sua empresa para suporte inteligente ao cliente via WhatsApp"
+---
+
+# Agente de Base de Conhecimento IA
+
+O Agente de Base de Conhecimento IA permite que você crie um agente autônomo de IA treinado especificamente nos dados proprietários da sua empresa. Ao carregar documentos, extrair conteúdo de URLs e indexar automaticamente históricos de conversas do WhatsApp, a IA aprende o contexto da sua organização para atender consultas de clientes de forma inteligente.
+
+## Visão Geral
+
+O Agente de Base de Conhecimento combina múltiplas fontes de dados em um banco de dados vetorial unificado (powered by Qdrant), permitindo que sua IA forneça respostas precisas e com base no contexto a partir do conhecimento da sua organização.
+
+<Note>
+  Todos os dados vetorizados são estritamente particionados usando IDs de locatário/organização para garantir isolamento completo de dados entre diferentes clientes da Eazybe.
+</Note>
+
+## Recursos Principais
+
+### Base de Conhecimento Multi-Fonte
+
+Treine seu agente usando três poderosas fontes de dados:
+
+<Steps>
+  <Step title="Links da Web">
+    Insira qualquer URL para extrair conteúdo de sites, artigos do central de ajuda, documentação ou blogs. O agente extrai e indexa automaticamente o conteúdo de texto.
+  </Step>
+  <Step title="Upload de Arquivos">
+    Arraste e solte documentos diretamente na plataforma. Os formatos suportados incluem:
+    <ul>
+      <li>Arquivos PDF</li>
+      <li>Documentos DOCX</li>
+      <li>Arquivos TXT</li>
+      <li>Planilhas CSV</li>
+    </ul>
+  </Step>
+  <Step title="Sincronização de Conversas do WhatsApp">
+    Ative a opção <strong>Sincronizar Histórico do WhatsApp</strong> para buscar e vetorizar automaticamente as conversas históricas do WhatsApp da sua organização. Isso fornece à IA contexto conversacional real e consultas de clientes previamente resolvidas.
+  </Step>
+</Steps>
+
+### Configuração do Agente
+
+Personalize o comportamento do seu agente com estas configurações:
+
+- **Nome do Agente**: Um identificador único para seu agente (ex. "Bot de Suporte Acme")
+- **Papel/Persona**: Defina como a IA deve se comportar (ex. "Você é um representante de suporte ao cliente prestatioso da Acme Corp")
+- **Prompt Base**: Estabeleça as instruções fundamentais que guiam todas as respostas do agente
+- **Ação de Fallback**: Configure o que acontece quando a IA não tem certeza (ex. "Transferir para agente humano")
+
+### Progresso de Indexação em Tempo Real
+
+Vetorizar documentos grandes ou milhares de conversas leva tempo. A interface fornece visibilidade clara do processo de indexação:
+
+```
+Progresso: 75% Indexado - 150/200 páginas processadas
+```
+
+<Warning>
+  Não feche o navegador durante a indexação inicial. No entanto, assim que a indexação começar, você pode navegar para fora - o processo continua de forma assíncrona em segundo plano.
+</Warning>
+
+### Implantação com Um Clique na WABA
+
+Depois que seu agente estiver totalmente treinado e indexado, implante-o em qualquer número de WhatsApp Business API (WABA) conectado:
+
+<Steps>
+  <Step title="Navegar até Implantar">
+    Vá para a aba <strong>Implantar</strong> dentro da configuração do seu agente
+  </Step>
+  <Step title="Selecionar Número WABA">
+    Escolha em um menu suspenso seus números de WhatsApp Business conectados
+  </Step>
+  <Step title="Implantar">
+    Clique em <strong>Implantar no WhatsApp</strong> para ativar o agente
+  </Step>
+</Steps>
+
+## Como Funciona
+
+### 1. Fase de Criação
+
+Clique em **Criar Novo Agente** e forneça um nome e descrição para seu agente de IA.
+
+### 2. Fase de Ingestão de Dados
+
+Carregue os materiais da sua base de conhecimento:
+
+- Arraste e solte PDFs de produtos, documentos de políticas ou materiais de treinamento
+- Cole URLs do seu site, central de ajuda ou documentação
+- Ative **Sincronizar Histórico do WhatsApp** para incluir conversas históricas
+
+### 3. Fase de Processamento
+
+O backend processa seus dados através destas etapas:
+
+1. **Fragmentação**: Documentos grandes são divididos em segmentos gerenciáveis
+2. **Geração de Embeddings**: Cada segmento é convertido em um embedding vetorial
+3. **Armazenamento**: Os embeddings são armazenados no Qdrant com isolamento adequado de locatário
+4. **Indexação**: Um índice pesquisável é construído para recuperação rápida
+
+Durante esta fase, você verá um indicador de progresso em tempo real mostrando a porcentagem concluída e o número de itens processados.
+
+### 4. Estado Pronto
+
+Assim que a indexação atingir 100%, o status do agente muda para **Pronto para Implantação**. Você pode revisar as fontes indexadas e fazer ajustes se necessário.
+
+### 5. Fase de Implantação
+
+Selecione seu número WABA e implante. A IA agora intercepta mensagens recebidas naquele número e responde com base apenas na sua base de conhecimento ingerida.
+
+### 6. Operação Ao Vivo
+
+O agente implantado atende consultas de clientes 24/7, usando apenas as informações da sua base de conhecimento para gerar respostas precisas e contextualmente relevantes.
+
+## Considerações Importantes
+
+### Isolamento e Segurança de Dados
+
+<Warning>
+  Todos os dados vetorizados (especialmente conversas do WhatsApp) enviados ao Qdrant são estritamente particionados usando IDs de locatário/organização. Isso previne vazamento de dados entre diferentes clientes da Eazybe.
+</Warning>
+
+### Uploads de Longa Duração
+
+Para bases de conhecimento grandes (ex. 5.000+ conversas do WhatsApp):
+
+- A indexação acontece de forma assíncrona através de um worker em segundo plano
+- A interface faz polling para atualizações de status a cada poucos segundos
+- Você pode navegar para fora da página durante a indexação
+- Volte a qualquer momento para verificar o progresso através do painel do agente
+
+### Conhecimento Obsoleto
+
+Se suas fontes de conhecimento mudarem (atualizações do site, novos documentos de produto, mudanças nas políticas):
+
+1. Navegue até a seção **Fontes de Dados** do seu agente
+2. Clique em **Re-sincronizar** ao lado da fonte afetada
+3. O sistema atualiza os embeddings no Qdrant com o conteúdo mais recente
+
+### Roteamento de Fallback
+
+Quando a IA encontra uma consulta que não pode responder com confiança com base na base de conhecimento, ela segue sua ação de fallback configurada:
+
+<Tip>
+  Ações de fallback recomendadas:
+  <ul>
+    <li><strong>Transferir para agente humano</strong> - Transferir para um membro da equipe ao vivo</li>
+    <li><strong>Coletar informações</strong> - Coletar detalhes do cliente para acompanhamento</li>
+    <li><strong>Fornecer resposta genérica</strong> - Oferecer uma resposta padrão com opções de contato</li>
+  </ul>
+</Tip>
+
+## Melhores Práticas
+
+### Comece Pequeno
+
+Comece com uma base de conhecimento focada em um caso de uso específico (ex. FAQs de produto, política de devoluções). Expanda gradualmente conforme você monitora o desempenho.
+
+### Qualidade sobre Quantidade
+
+- Use documentos bem estruturados e atualizados
+- PDFs limpos com formatação clara produzem melhores resultados
+- Evite informações duplicadas ou conflitantes
+
+### Monitore e Itere
+
+- Revise os logs de conversação para identificar lacunas de conhecimento
+- Adicione documentos ausentes para melhorar a cobertura
+- Refine o prompt base com base em interações reais
+
+### Teste Antes de Implantação
+
+Sempre teste seu agente minuciosamente com consultas de exemplo antes de conectá-lo ao seu número WABA ao vivo.
+
+## Solução de Problemas
+
+### Agente Não Respondendo
+
+- Verifique se o número WABA está conectado corretamente
+- Confirme que o status do agente esteja **Ao Vivo** (não apenas Pronto)
+- Certifique-se de que a indexação da base de conhecimento foi concluída com sucesso
+
+### Respostas Inaccuradas
+
+- Revise a base de conhecimento em busca de informações conflitantes
+- Verifique se os documentos relevantes foram indexados corretamente
+- Refine o prompt base para ser mais específico
+
+### Indexação Presa
+
+- Uploads de arquivos grandes podem levar tempo considerável
+- Verifique os tamanhos de arquivo - arquivos acima de 50MB podem precisar ser divididos
+- Se estiver preso por mais de 30 minutos, entre em contato com o suporte
+
+### Conversas do WhatsApp Ausentes
+
+- Verifique se o alternador **Sincronizar Histórico do WhatsApp** está ativado
+- Confirme que as permissões de conversa foram concedidas
+- Certifique-se de que as conversas estejam dentro da faixa de datas de sincronização
+
+## Perguntas Frequentes
+
+<Accordion>
+  <AccordionItem title="Quais tipos de arquivo são suportados?">
+    Atualmente são suportados arquivos PDF, DOCX, TXT e CSV. Mais formatos serão adicionados em futuras atualizações.
+  </AccordionItem>
+  <AccordionItem title="Existe algum limite no tamanho da base de conhecimento?">
+    Não há um limite rígido, mas indexar bases de conhecimento muito grandes (mais de 10.000 documentos) pode levar mais tempo. Entre em contato com o suporte para soluções empresariais.
+  </AccordionItem>
+  <AccordionItem title="Posso ter múltiplos agentes?">
+    Sim, você pode criar múltiplos agentes com diferentes bases de conhecimento e implantá-los em diferentes números WABA.
+  </AccordionItem>
+  <AccordionItem title="Com que frequência devo re-sincronizar meus dados?">
+    Re-sincronize sempre que suas fontes de conhecimento mudarem significativamente. Para conteúdo atualizado com frequência, considere configurar um cronograma regular de sincronização.
+  </AccordionItem>
+  <AccordionItem title="Meus dados estão seguros?">
+    Absolutamente. Todos os dados são criptografados em repouso e em trânsito. Os bancos de dados vetoriais são isolados por locatário e nunca compartilhamos seus dados de treinamento com outras organizações.
+  </AccordionItem>
+  <AccordionItem title="O agente pode lidar com mensagens multimídia?">
+    O agente processa mensagens de texto. Para imagens, áudio ou vídeo, ele pode extrair metadados e texto (ex. OCR) mas não pode analisar diretamente o conteúdo.
+  </AccordionItem>
+</Accordion>

@@ -1,0 +1,223 @@
+---
+title: "Agente de Base de Conocimiento IA"
+description: "Cree un agente autónomo de IA entrenado con los datos propietarios de su empresa para soporte inteligente al cliente por WhatsApp"
+---
+
+# Agente de Base de Conocimiento IA
+
+El Agente de Base de Conocimiento IA le permite crear un agente autónomo de IA entrenado específicamente con los datos propietarios de su empresa. Al cargar documentos, extraer contenido de URLs y indexar automáticamente historiales de chats de WhatsApp, la IA aprende el contexto de su organización para atender consultas de clientes de manera inteligente.
+
+## Resumen
+
+El Agente de Base de Conocimiento combina múltiples fuentes de datos en una base de datos vectorial unificada (potenciada por Qdrant), permitiendo que su IA proporcione respuestas precisas y con contexto basadas en el conocimiento de su organización.
+
+<Note>
+  Todos los datos vectorizados se particionan estrictamente mediante IDs de inquilino/organización para garantizar un aislamiento completo de datos entre diferentes clientes de Eazybe.
+</Note>
+
+## Características Principales
+
+### Base de Conocimiento Multi-Fuente
+
+Entrene su agente utilizando tres poderosas fuentes de datos:
+
+<Steps>
+  <Step title="Enlaces Web">
+    Ingrese cualquier URL para extraer contenido de sitios web, artículos del centro de ayuda, documentación o publicaciones de blog. El agente extrae e indexa automáticamente el contenido de texto.
+  </Step>
+  <Step title="Carga de Archivos">
+    Arrastre y suelte documentos directamente en la plataforma. Los formatos compatibles incluyen:
+    <ul>
+      <li>Archivos PDF</li>
+      <li>Documentos DOCX</li>
+      <li>Archivos TXT</li>
+      <li>Hojas de cálculo CSV</li>
+    </ul>
+  </Step>
+  <Step title="Sincronización de Chats de WhatsApp">
+    Active la opción <strong>Sincronizar Historial de WhatsApp</strong> para obtener y vectorizar automáticamente los chats históricos de WhatsApp de su organización. Esto proporciona a la IA contexto conversacional real y consultas de clientes previamente resueltas.
+  </Step>
+</Steps>
+
+### Configuración del Agente
+
+Personalice el comportamiento de su agente con estos ajustes:
+
+- **Nombre del Agente**: Un identificador único para su agente (ej. "Bot de Soporte Acme")
+- **Rol/Persona**: Defina cómo debe comportarse la IA (ej. "Eres un representante de soporte al cliente servicial para Acme Corp")
+- **Prompt Base**: Establezca las instrucciones fundamentales que guían todas las respuestas del agente
+- **Acción de Respaldo**: Configure qué sucede cuando la IA no está segura (ej. "Transferir a agente humano")
+
+### Progreso de Indexación en Tiempo Real
+
+Vectorizar documentos grandes o miles de chats lleva tiempo. La interfaz proporciona visibilidad clara del proceso de indexación:
+
+```
+Progreso: 75% Indexado - 150/200 páginas procesadas
+```
+
+<Warning>
+  No cierre el navegador durante la indexación inicial. Sin embargo, una vez que comienza la indexación, puede navegar lejos; el proceso continúa de forma asíncrona en segundo plano.
+</Warning>
+
+### Despliegue con Un Clic en WABA
+
+Una vez que su agente esté completamente entrenado e indexado, impleméntelo en cualquier número de WhatsApp Business API (WABA) conectado:
+
+<Steps>
+  <Step title="Navegar a Desplegar">
+    Vaya a la pestaña <strong>Desplegar</strong> dentro de la configuración de su agente
+  </Step>
+  <Step title="Seleccionar Número WABA">
+    Elija entre un menú desplegable sus números de WhatsApp Business conectados
+  </Step>
+  <Step title="Desplegar">
+    Haga clic en <strong>Desplegar en WhatsApp</strong> para activar el agente
+  </Step>
+</Steps>
+
+## Cómo Funciona
+
+### 1. Fase de Creación
+
+Haga clic en **Crear Nuevo Agente** y proporcione un nombre y descripción para su agente de IA.
+
+### 2. Fase de Ingesta de Datos
+
+Cargue los materiales de su base de conocimiento:
+
+- Arrastre y suelte PDFs de productos, documentos de políticas o materiales de capacitación
+- Pegue URLs de su sitio web, centro de ayuda o documentación
+- Active **Sincronizar Historial de WhatsApp** para incluir conversaciones históricas
+
+### 3. Fase de Procesamiento
+
+El backend procesa sus datos a través de estos pasos:
+
+1. **Segmentación**: Los documentos grandes se dividen en segmentos manejables
+2. **Generación de Embeddings**: Cada segmento se convierte en un embedding vectorial
+3. **Almacenamiento**: Los embeddings se almacenan en Qdrant con el aislamiento adecuado de inquilinos
+4. **Indexación**: Se crea un índice buscable para una recuperación rápida
+
+Durante esta fase, verá un indicador de progreso en tiempo real que muestra el porcentaje completado y el número de elementos procesados.
+
+### 4. Estado Listo
+
+Una vez que la indexación alcanza el 100%, el estado del agente cambia a **Listo para Desplegar**. Puede revisar las fuentes indexadas y realizar ajustes si es necesario.
+
+### 5. Fase de Despliegue
+
+Seleccione su número WABA y despliegue. La IA ahora intercepta los mensajes entrantes en ese número y responde basándose únicamente en su base de conocimiento ingerida.
+
+### 6. Operación en Vivo
+
+El agente desplegado atiende consultas de clientes las 24/7, utilizando solo la información de su base de conocimiento para generar respuestas precisas y contextualmente relevantes.
+
+## Consideraciones Importantes
+
+### Aislamiento y Seguridad de Datos
+
+<Warning>
+  Todos los datos vectorizados (especialmente los chats de WhatsApp) enviados a Qdrant se particionan estrictamente mediante IDs de inquilino/organización. Esto evita fugas de datos entre diferentes clientes de Eazybe.
+</Warning>
+
+### Cargas de Larga Duración
+
+Para bases de conocimiento grandes (ej. 5,000+ chats de WhatsApp):
+
+- La indexación ocurre de forma asíncrona mediante un trabajador en segundo plano
+- La interfaz sondea las actualizaciones de estado cada pocos segundos
+- Puede navegar lejos de la página durante la indexación
+- Vuelva en cualquier momento para verificar el progreso mediante el panel del agente
+
+### Conocimiento Obsoleto
+
+Si sus fuentes de conocimiento cambian (actualizaciones del sitio web, nuevos documentos de productos, cambios en las políticas):
+
+1. Navegue a la sección **Fuentes de Datos** de su agente
+2. Haga clic en **Resincronizar** junto a la fuente afectada
+3. El sistema actualiza los embeddings en Qdrant con el contenido más reciente
+
+### Enrutamiento de Respaldo
+
+Cuando la IA encuentra una consulta que no puede responder con confianza basándose en la base de conocimiento, sigue su acción de respaldo configurada:
+
+<Tip>
+  Acciones de respaldo recomendadas:
+  <ul>
+    <li><strong>Transferir a agente humano</strong> - Transferir a un miembro del equipo en vivo</li>
+    <li><strong>Recopilar información</strong> - Recopilar detalles del cliente para seguimiento</li>
+    <li><strong>Proporcionar respuesta genérica</strong> - Ofrecer una respuesta estándar con opciones de contacto</li>
+  </ul>
+</Tip>
+
+## Mejores Prácticas
+
+### Comience Pequeño
+
+Comience con una base de conocimiento enfocada en un caso de uso específico (ej. preguntas frecuentes del producto, política de devoluciones). Expánda gradualmente a medida que monitorea el rendimiento.
+
+### Calidad sobre Cantidad
+
+- Use documentos bien estructurados y actualizados
+- Los PDFs limpios con formato claro producen mejores resultados
+- Evite información duplicada o conflictiva
+
+### Monitoree e Itere
+
+- Revise los registros de conversación para identificar brechas de conocimiento
+- Agregue documentos faltantes para mejorar la cobertura
+- Refine el prompt base basándose en interacciones reales
+
+### Pruebe Antes de Desplegar
+
+Siempre pruebe su agente a fondo con consultas de muestra antes de conectarlo a su número WABA en vivo.
+
+## Solución de Problemas
+
+### El Agente No Responde
+
+- Verifique que el número WABA esté conectado correctamente
+- Compruebe que el estado del agente sea **En Vivo** (no solo Listo)
+- Asegúrese de que la indexación de la base de conocimiento se haya completado correctamente
+
+### Respuestas Inexactas
+
+- Revise la base de conocimiento en busca de información conflictiva
+- Verifique que los documentos relevantes se indexaron correctamente
+- Refine el prompt base para que sea más específico
+
+### Indexación Atascada
+
+- Las cargas de archivos grandes pueden tomar considerable tiempo
+- Verifique los tamaños de archivo: los archivos mayores de 50MB pueden necesitar dividirse
+- Si está atascado por más de 30 minutos, contacte soporte
+
+### Chats de WhatsApp Faltantes
+
+- Verifique que el interruptor **Sincronizar Historial de WhatsApp** esté activado
+- Compruebe que los permisos de chat estén otorgados
+- Asegúrese de que los chats estén dentro del rango de fechas de sincronización
+
+## Preguntas Frecuentes
+
+<Accordion>
+  <AccordionItem title="¿Qué tipos de archivos son compatibles?">
+    Actualmente se admiten archivos PDF, DOCX, TXT y CSV. Se agregarán más formatos en futuras actualizaciones.
+  </AccordionItem>
+  <AccordionItem title="¿Existe algún límite en el tamaño de la base de conocimiento?">
+    No hay un límite estricto, pero indexar bases de conocimiento muy grandes (más de 10,000 documentos) puede llevar más tiempo. Contacte soporte para soluciones empresariales.
+  </AccordionItem>
+  <AccordionItem title="¿Puedo tener múltiples agentes?">
+    Sí, puede crear múltiples agentes con diferentes bases de conocimiento y desplegarlos en diferentes números WABA.
+  </AccordionItem>
+  <AccordionItem title="¿Con qué frecuencia debo resincronizar mis datos?">
+    Resincronice cada vez que sus fuentes de conocimiento cambien significativamente. Para contenido actualizado frecuentemente, considere establecer un programa de sincronización regular.
+  </AccordionItem>
+  <AccordionItem title="¿Están seguros mis datos?">
+    Absolutamente. Todos los datos se cifran en reposo y en tránsito. Las bases de datos vectoriales están aisladas por inquilino y nunca compartimos sus datos de entrenamiento con otras organizaciones.
+  </AccordionItem>
+  <AccordionItem title="¿Puede el agente manejar mensajes multimedia?">
+    El agente procesa mensajes de texto. Para imágenes, audio o video, puede extraer metadatos y texto (ej. OCR) pero no puede analizar directamente el contenido.
+  </AccordionItem>
+</Accordion>

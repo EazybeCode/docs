@@ -1,0 +1,223 @@
+---
+title: "AI Knowledge Base Agent"
+description: "Create an autonomous AI agent trained on your company's proprietary data for intelligent WhatsApp customer support"
+---
+
+# AI Knowledge Base Agent
+
+The AI Knowledge Base Agent enables you to create an autonomous AI agent trained specifically on your company's proprietary data. By uploading documents, scraping website URLs, and automatically indexing historical WhatsApp chats, the AI learns your organization's context to handle customer inquiries intelligently.
+
+## Overview
+
+The Knowledge Base Agent combines multiple data sources into a unified vector database (powered by Qdrant), allowing your AI to provide accurate, context-aware responses based on your organization's knowledge.
+
+<Note>
+  All vectorized data is strictly partitioned using tenant/organization IDs to ensure complete data isolation between different Eazybe clients.
+</Note>
+
+## Key Features
+
+### Multi-Source Knowledge Base
+
+Train your agent using three powerful data sources:
+
+<Steps>
+  <Step title="Web Links">
+    Input any URL to scrape website content, help center articles, documentation, or blog posts. The agent automatically extracts and indexes the text content.
+  </Step>
+  <Step title="File Upload">
+    Drag and drop documents directly into the platform. Supported formats include:
+    <ul>
+      <li>PDF files</li>
+      <li>DOCX documents</li>
+      <li>TXT files</li>
+      <li>CSV spreadsheets</li>
+    </ul>
+  </Step>
+  <Step title="WhatsApp Chat Sync">
+    Toggle the <strong>Sync WhatsApp History</strong> option to automatically fetch and vectorize historical organizational WhatsApp chats. This provides the AI with real conversational context and previously resolved customer queries.
+  </Step>
+</Steps>
+
+### Agent Configuration
+
+Customize your agent's behavior with these settings:
+
+- **Agent Name**: A unique identifier for your agent (e.g., "Acme Support Bot")
+- **Role/Persona**: Define how the AI should behave (e.g., "You are a helpful customer support representative for Acme Corp")
+- **Base Prompt**: Set the foundational instructions that guide all agent responses
+- **Fallback Action**: Configure what happens when the AI is uncertain (e.g., "Handover to human agent")
+
+### Real-Time Indexing Progress
+
+Vectorizing large documents or thousands of chats takes time. The interface provides clear visibility into the indexing process:
+
+```
+Progress: 75% Indexed - 150/200 pages processed
+```
+
+<Warning>
+  Do not close the browser during initial indexing. However, once indexing begins, you can navigate away—the process continues asynchronously in the background.
+</Warning>
+
+### One-Click WABA Deployment
+
+Once your agent is fully trained and indexed, deploy it to any connected WhatsApp Business API (WABA) number:
+
+<Steps>
+  <Step title="Navigate to Deploy">
+    Go to the <strong>Deploy</strong> tab within your agent configuration
+  </Step>
+  <Step title="Select WABA Number">
+    Choose from a dropdown of your connected WhatsApp Business numbers
+  </Step>
+  <Step title="Deploy">
+    Click <strong>Deploy to WhatsApp</strong> to activate the agent
+  </Step>
+</Steps>
+
+## How It Works
+
+### 1. Creation Phase
+
+Click **Create New Agent** and provide a name and description for your AI agent.
+
+### 2. Data Ingestion Phase
+
+Upload your knowledge base materials:
+
+- Drag and drop product PDFs, policy documents, or training materials
+- Paste URLs from your website, help center, or documentation
+- Enable **Sync WhatsApp History** to include historical conversations
+
+### 3. Processing Phase
+
+The backend processes your data through these steps:
+
+1. **Chunking**: Large documents are broken into manageable segments
+2. **Embedding Generation**: Each chunk is converted to a vector embedding
+3. **Storage**: Embeddings are stored in Qdrant with proper tenant isolation
+4. **Indexing**: A searchable index is built for fast retrieval
+
+During this phase, you'll see a real-time progress indicator showing the percentage complete and number of items processed.
+
+### 4. Ready State
+
+Once indexing reaches 100%, the agent's status changes to **Ready to Deploy**. You can review the indexed sources and make adjustments if needed.
+
+### 5. Deployment Phase
+
+Select your WABA number and deploy. The AI now intercepts incoming messages on that number and responds based solely on your ingested knowledge base.
+
+### 6. Live Operation
+
+The deployed agent handles customer inquiries 24/7, using only the information from your knowledge base to generate accurate, contextually relevant responses.
+
+## Important Considerations
+
+### Data Isolation & Security
+
+<Warning>
+  All vectorized data (especially WhatsApp chats) pushed to Qdrant is strictly partitioned using tenant/organization IDs. This prevents data leakage between different Eazybe clients.
+</Warning>
+
+### Long-Running Uploads
+
+For large knowledge bases (e.g., 5,000+ WhatsApp chats):
+
+- Indexing happens asynchronously via a background worker
+- The UI polls for status updates every few seconds
+- You can navigate away from the page during indexing
+- Return anytime to check progress via the agent dashboard
+
+### Stale Knowledge
+
+If your knowledge sources change (website updates, new product docs, policy changes):
+
+1. Navigate to your agent's **Data Sources** section
+2. Click **Re-sync** next to the affected source
+3. The system updates the embeddings in Qdrant with the latest content
+
+### Fallback Routing
+
+When the AI encounters a query it cannot confidently answer based on the knowledge base, it follows your configured fallback action:
+
+<Tip>
+  Recommended fallback actions include:
+  <ul>
+    <li><strong>Handover to human agent</strong> - Transfer to a live team member</li>
+    <li><strong>Collect information</strong> - Gather customer details for follow-up</li>
+    <li><strong>Provide generic response</strong> - Offer a standard reply with contact options</li>
+  </ul>
+</Tip>
+
+## Best Practices
+
+### Start Small
+
+Begin with a focused knowledge base for a specific use case (e.g., product FAQs, return policy). Expand gradually as you monitor performance.
+
+### Quality Over Quantity
+
+- Use well-structured, up-to-date documents
+- Clean PDFs with clear formatting produce better results
+- Avoid duplicate or conflicting information
+
+### Monitor and Iterate
+
+- Review conversation logs to identify knowledge gaps
+- Add missing documents to improve coverage
+- Refine the base prompt based on real interactions
+
+### Test Before Deploying
+
+Always test your agent thoroughly with sample queries before connecting it to your live WABA number.
+
+## Troubleshooting
+
+### Agent Not Responding
+
+- Verify the WABA number is properly connected
+- Check that the agent status is **Live** (not just Ready)
+- Ensure the knowledge base indexing completed successfully
+
+### Inaccurate Responses
+
+- Review the knowledge base for conflicting information
+- Check that relevant documents were properly indexed
+- Refine the base prompt to be more specific
+
+### Indexing Stuck
+
+- Large file uploads may take considerable time
+- Check file sizes—files over 50MB may need to be split
+- If stuck for more than 30 minutes, contact support
+
+### Missing WhatsApp Chats
+
+- Verify the **Sync WhatsApp History** toggle is enabled
+- Check that chat permissions are granted
+- Ensure chats are within the sync date range
+
+## FAQ
+
+<Accordion>
+  <AccordionItem title="What file types are supported?">
+    PDF, DOCX, TXT, and CSV files are currently supported. More formats will be added in future updates.
+  </AccordionItem>
+  <AccordionItem title="Is there a limit on knowledge base size?">
+    There is no hard limit, but indexing very large knowledge bases (10,000+ documents) may take longer. Contact support for enterprise solutions.
+  </AccordionItem>
+  <AccordionItem title="Can I have multiple agents?">
+    Yes, you can create multiple agents with different knowledge bases and deploy them to different WABA numbers.
+  </AccordionItem>
+  <AccordionItem title="How often should I re-sync my data?">
+    Re-sync whenever your knowledge sources change significantly. For frequently updated content, consider setting up a regular sync schedule.
+  </AccordionItem>
+  <AccordionItem title="Is my data secure?">
+    Absolutely. All data is encrypted at rest and in transit. Vector databases are tenant-isolated, and we never share your training data with other organizations.
+  </AccordionItem>
+  <AccordionItem title="Can the agent handle multimedia messages?">
+    The agent processes text messages. For images, audio, or video, it can extract metadata and text (e.g., OCR) but cannot directly analyze the content.
+  </AccordionItem>
+</Accordion>

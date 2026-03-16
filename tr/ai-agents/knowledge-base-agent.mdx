@@ -1,0 +1,223 @@
+---
+title: "Yapay Zeka Bilgi Tabanı Aracısı"
+description: "Şirketinizin özel verilerinde eğitilmiş otonom bir yapay zeka aracısı oluşturun ve WhatsApp üzerinden akıllı müşteri desteği sağlayın"
+---
+
+# Yapay Zeka Bilgi Tabanı Aracısı
+
+Yapay Zeka Bilgi Tabanı Aracısı, şirketinizin özel verilerinde eğitilmiş otonom bir yapay zeka aracısı oluşturmanızı sağlar. Belgeleri yükleyerek, web sitesi URL'lerini tarayarak ve geçmiş WhatsApp sohbetlerini otomatik olarak dizinleyerek, yapay zeka kurumunuzun bağlamını öğrenir ve müşteri sorgularını akıllıca yanıtlar.
+
+## Genel Bakış
+
+Bilgi Tabanı Aracısı, çoklu veri kaynaklarını tek bir birleştirilmiş vektör veritabanında (Qdrant tarafından desteklenir) birleştirir, böylece yapay zekanız kurumunuzun bilgisine dayanarak doğru ve bağlama uygun yanıtlar verebilir.
+
+<Note>
+  Tüm vektörleştirilmiş veriler, farklı Eazybe müşterileri arasında tam veri yalıtımını sağlamak için kiracı/organizasyon kimlikleri kullanılarak katı şekilde ayrılır.
+</Note>
+
+## Temel Özellikler
+
+### Çok Kaynaklı Bilgi Tabanı
+
+Üç güçlü veri kaynağını kullanarak aracınızı eğitin:
+
+<Steps>
+  <Step title="Web Bağlantıları">
+    Web sitesi içeriğini, yardım merkezi makalelerini, belgeleri veya blog gönderilerini taramak için herhangi bir URL girin. Aracı metin içeriğini otomatik olarak çıkarır ve dizinler.
+  </Step>
+  <Step title="Dosya Yükleme">
+    Belgeleri doğrudan platforma sürükleyip bırakın. Desteklenen formatlar şunlardır:
+    <ul>
+      <li>PDF dosyaları</li>
+      <li>DOCX belgeleri</li>
+      <li>TXT dosyaları</li>
+      <li>CSV hesap tabloları</li>
+    </ul>
+  </Step>
+  <Step title="WhatsApp Sohbeti Senkronizasyonu">
+    Yapay zekaya gerçek sohbet bağlamı ve önceden çözülmüş müşteri sorguları sağlamak için <strong>WhatsApp Geçmişini Senkronize Et</strong> seçeneğini etkinleştirin.
+  </Step>
+</Steps>
+
+### Aracı Yapılandırma
+
+Bu ayarlarla aracınızın davranışını özelleştirin:
+
+- **Aracı Adı**: Aracınız için benzersiz bir tanımlayıcı (ör. "Acme Destek Botu")
+- **Rol/Kişilik**: Yapay zekanın nasıl davranması gerektiğini tanımlayın (ör. "Acme Corp için yardımsever bir müşteri desteği temsilcisisiniz")
+- **Temel İstek**: Aracı yanıtlarını yönlendiren temel talimatları ayarlayın
+- **Yedek Eylem**: Yapay zeka emin olmadığında ne olacağını yapılandırın (ör. "İnsan ajanına devret")
+
+### Gerçek Zamanlı Dizinleme İlerlemesi
+
+Büyük belgeleri veya binlerce sohbeti vektörleştirmek zaman alır. Arayüz, dizinleme sürecine net bir görünürlük sağlar:
+
+```
+İlerleme: %75 Dizinlendi - 150/200 sayfa işlendi
+```
+
+<Warning>
+  İlk dizinleme sırasında tarayıcıyı kapatmayın. Ancak, dizinleme başladıktan sonra sayfadan uzaklaşabilirsiniz - işlem arka planda eşzamansız olarak devam eder.
+</Warning>
+
+### Tek Tıkla WABA Dağıtımı
+
+Aracınız tamamen eğitildi ve dizinlendiğinde, bağlantılı herhangi bir WhatsApp Business API (WABA) numarasına dağıtın:
+
+<Steps>
+  <Step title="Dağıt'a Gitin">
+    Aracı yapılandırmanız içindeki <strong>Dağıt</strong> sekmesine gidin
+  </Step>
+  <Step title="WABA Numarası Seçin">
+    Bağlantılı WhatsApp Business numaralarınızdan birini açılır menüden seçin
+  </Step>
+  <Step title="Dağıtın">
+    Aracığı etkinleştirmek için <strong>WhatsApp'a Dağıt</strong>'ı tıklayın
+  </Step>
+</Steps>
+
+## Nasıl Çalışır
+
+### 1. Oluşturma Aşaması
+
+**Yeni Aracı Oluştur**'u tıklayın ve yapay zeka aracınız için bir ad ve açıklama girin.
+
+### 2. Veri Alım Aşaması
+
+Bilgi tabanı materyallerinizi yükleyin:
+
+- Ürün PDF'lerini, politika belgelerini veya eğitim materyallerini sürükleyip bırakın
+- Web sitenizden, yardım merkezinden veya belgelerden URL'leri yapıştırın
+- Geçmiş sohbetleri dahil etmek için **WhatsApp Geçmişini Senkronize Et**'i etkinleştirin
+
+### 3. İşleme Aşaması
+
+Backend verilerinizi şu adımlardan geçirir:
+
+1. **Parçalama**: Büyük belgeler yönetilebilir segmentlere bölünür
+2. **Gömme Oluşturma**: Her segment bir vektör gömmesine dönüştürülür
+3. **Depolama**: Gömmeler uygun kiracı yalıtımı ile Qdrant'ta saklanır
+4. **Dizinleme**: Hızlı geri alma için aranabilir bir dizin oluşturulur
+
+Bu aşama sırasında, tamamlanan yüzdesini ve işlenen öğe sayısını gösteren gerçek zamanlı bir ilerleme göstergesi görürsünüz.
+
+### 4. Hazır Durumu
+
+Dizinleme %100'e ulaştığında, aracının durumu **Dağıtımaya Hazır** olarak değişir. Dizinlenmiş kaynakları gözden geçirebilir ve gerekirse ayarlamalar yapabilirsiniz.
+
+### 5. Dağıtım Aşaması
+
+WABA numaranızı seçin ve dağıtın. Yapay zeka artık o numaradaki gelen mesajları yakalar ve sadece alınan bilgi tabanına dayalı olarak yanıt verir.
+
+### 6. Canlı Operasyon
+
+Dağıtılan aracı, bilgi tabanınızdaki bilgileri kullanarak doğru ve bağlamında ilgili yanıtlar oluşturarak müşteri sorgularını 7/24 yanıtlar.
+
+## Önemli Hususlar
+
+### Veri Yalıtımı ve Güvenliği
+
+<Warning>
+  Qdrant'a gönderilen tüm vektörleştirilmiş veriler (özellikle WhatsApp sohbetleri) kiracı/organizasyon kimlikleri kullanılarak katı şekilde ayrılır. Bu, farklı Eazybe müşterileri arasında veri sızıntısını önler.
+</Warning>
+
+### Uzun Süren Yüklemeler
+
+Büyük bilgi tabanları için (ör. 5.000+ WhatsApp sohbeti):
+
+- Dizinleme bir arka plan işçisi aracılığıyla eşzamansız olarak gerçekleşir
+- Arayüz her birkaç saniyede bir durum güncellemelerini sorar
+- Dizinleme sırasında sayfadan uzaklaşabilirsiniz
+- İlerlemeyi kontrol etmek için aracı paneline her zaman geri dönebilirsiniz
+
+### Eski Bilgi
+
+Bilgi kaynaklarınız değişirse (web sitesi güncellemeleri, yeni ürün belgeleri, politika değişiklikleri):
+
+1. Aracınızın **Veri Kaynakları** bölümüne gidin
+2. Etkilenen kaynağın yanındaki **Yeniden Senkronize Et**'i tıklayın
+3. Sistem Qdrant'taki gömmeleri en son içerikle günceller
+
+### Yedek Yönlendirme
+
+Yapay zeka, bilgi tabanına dayanarak güvenle yanıtlayamadığı bir sorguyla karşılaştığında, yapılandırdığınız yedek eylemi izler:
+
+<Tip>
+  Önerilen yedek eylemler:
+  <ul>
+    <li><strong>İnsan ajanına devret</strong> - Canlı bir ekip üyesine aktarın</li>
+    <li><strong>Bilgi toplama</strong> - Takip için müşteri detaylarını toplayın</li>
+    <li><strong>Genel yanıt sağla</strong> - İletişim seçenekleri içeren standart bir yanıt sunun</li>
+  </ul>
+</Tip>
+
+## En İyi Uygulamalar
+
+### Küçük Başlayın
+
+Belirli bir kullanım durumuna odaklanmış küçük bir bilgi tabanıyla başlayın (ör. ürün SSS, iade politikası). Performansı izledikçe genişletin.
+
+### Kalite Miktarın Üstündedir
+
+- İyi yapılandırılmış ve güncel belgeler kullanın
+- Temiz PDF'ler ve net biçimlendirme daha iyi sonuçlar verir
+- Yinelenen veya çelişkili bilgilerden kaçının
+
+### İzleyin ve Yineleyin
+
+- Bilgi boşluklarını belirlemek için sohbet günlüklerini inceleyin
+- Kapsamı iyileştirmek için eksik belgeler ekleyin
+- Gerçek etkileşimlere dayanarak temel isteği iyileştirin
+
+### Dağıtmadan Önce Test Edin
+
+Aracınızı canlı WABA numaranıza bağlamadan önce her zaman örnek sorgularla kapsamlı şekilde test edin.
+
+## Sorun Giderme
+
+### Aracı Yanıt Vermiyor
+
+- WABA numarasının doğru şekilde bağlı olduğunu doğrulayın
+- Aracı durumunun **Canlı** olduğunu (sadece Hazır değil) kontrol edin
+- Bilgi tabanı dizinlemenin başarıyla tamamlandığından emin olun
+
+### Yanlış Yanıtlar
+
+- Bilgi tabanını çelişkili bilgiler açısından inceleyin
+- İlgili belgelerin doğru şekilde dizinlendiğini kontrol edin
+- Temel isteği daha belirgin olacak şekilde iyileştirin
+
+### Dizinleme Takıldı
+
+- Büyük dosya yüklemeleri önemli zaman alabilir
+- Dosya boyutlarını kontrol edin - 50MB üzeri dosyalar bölünmesi gerekebilir
+- 30 dakikadan fazla takılırsa, destek ile iletişime geçin
+
+### WhatsApp Sohbetleri Eksik
+
+- **WhatsApp Geçmişini Senkronize Et** anahtarının etkin olduğunu doğrulayın
+- Sohbet izinlerinin verildiğini kontrol edin
+- Sohbetlerin senkronizasyon tarih aralığı içinde olduğundan emin olun
+
+## Sık Sorulan Sorular
+
+<Accordion>
+  <AccordionItem title="Hangi dosya türleri destekleniyor?">
+    Şu anda PDF, DOCX, TXT ve CSV dosyaları desteklenmektedir. Daha fazla format gelecek güncellemelerle eklenecektir.
+  </AccordionItem>
+  <AccordionItem title="Bilgi tabanı boyutunda bir sınır var mı?">
+    Katı bir sınır yoktur, ancak çok büyük bilgi tabanlarını (10.000+ belge) dizinlemek daha uzun sürebilir. Kurumsal çözümler için destek ile iletişime geçin.
+  </AccordionItem>
+  <AccordionItem title="Birden fazla aracı olabilir miyim?">
+    Evet, farklı bilgi tabanlarına sahip birden fazla aracı oluşturabilir ve bunları farklı WABA numaralarına dağıtabilirsiniz.
+  </AccordionItem>
+  <AccordionItem title="Verilerimi ne sıklıkla yeniden senkronize etmeliyim?">
+    Bilgi kaynaklarınız önemli ölçüde değiştiğinde yeniden senkronize edin. Sık güncellenen içerik için düzenli bir senkronizasyon programı oluşturmayı düşünün.
+  </AccordionItem>
+  <AccordionItem title="Verilerim güvende mi?">
+    Kesinlikle. Tüm veriler hem depolama hem de aktarım sırasında şifrelenir. Vektör veritabanları kiracı bazında yalıtılmıştır ve eğitim verilerinizi asla diğer kuruluşlarla paylaşmıyoruz.
+  </AccordionItem>
+  <AccordionItem title="Aracı çoklu medya mesajlarını işleyebilir mi?">
+    Aracı metin mesajlarını işler. Resimler, ses veya video için metaverileri ve metni (ör. OCR) çıkarabilir ancak içeriği doğrudan analiz edemez.
+  </AccordionItem>
+</Accordion>
