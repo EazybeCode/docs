@@ -606,7 +606,8 @@
                 "group": "AI Knowledge Base Agent",
                 "icon": "database",
                 "pages": [
-                  "en/ai-agents/knowledge-base-agent/agent-info"
+                  "en/ai-agents/knowledge-base-agent/agent-info",
+                  "en/ai-agents/knowledge-base-agent/setup-and-details"
                 ]
               },
               {
@@ -1176,7 +1177,8 @@
                 "group": "Agente de Base de Conocimiento",
                 "icon": "database",
                 "pages": [
-                  "es/ai-agents/knowledge-base-agent/agent-info"
+                  "es/ai-agents/knowledge-base-agent/agent-info",
+                  "es/ai-agents/knowledge-base-agent/setup-and-details"
                 ]
               }
             ]
@@ -1720,7 +1722,8 @@
                 "group": "Agente de Base de Conhecimento",
                 "icon": "database",
                 "pages": [
-                  "pt/ai-agents/knowledge-base-agent/agent-info"
+                  "pt/ai-agents/knowledge-base-agent/agent-info",
+                  "pt/ai-agents/knowledge-base-agent/setup-and-details"
                 ]
               }
             ]
@@ -2264,7 +2267,8 @@
                 "group": "Yapay Zeka Bilgi Tabanı Aracısı",
                 "icon": "database",
                 "pages": [
-                  "tr/ai-agents/knowledge-base-agent/agent-info"
+                  "tr/ai-agents/knowledge-base-agent/agent-info",
+                  "tr/ai-agents/knowledge-base-agent/setup-and-details"
                 ]
               }
             ]
