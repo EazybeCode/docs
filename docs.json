@@ -597,22 +597,28 @@
                 "group": "AI Features",
                 "icon": "brain",
                 "pages": [
-                  "ai-agents/reply-suggestions",
-                  "ai-agents/unreplied-chats-agent",
-                  "ai-agents/conversation-insights",
-                  "ai-agents/knowledge-base-agent"
+                  "en/ai-agents/reply-suggestions",
+                  "en/ai-agents/unreplied-chats-agent",
+                  "en/ai-agents/conversation-insights"
+                ]
+              },
+              {
+                "group": "AI Knowledge Base Agent",
+                "icon": "database",
+                "pages": [
+                  "en/ai-agents/knowledge-base-agent/agent-info"
                 ]
               },
               {
                 "group": "Chatbots",
                 "icon": "message-bot",
                 "pages": [
-                  "ai-agents/chatbots/overview",
-                  "ai-agents/chatbots/creating-chatbot",
-                  "ai-agents/chatbots/flow-builder",
-                  "ai-agents/chatbots/variables",
-                  "ai-agents/chatbots/human-handoff",
-                  "ai-agents/chatbots/analytics"
+                  "en/ai-agents/chatbots/overview",
+                  "en/ai-agents/chatbots/creating-chatbot",
+                  "en/ai-agents/chatbots/flow-builder",
+                  "en/ai-agents/chatbots/variables",
+                  "en/ai-agents/chatbots/human-handoff",
+                  "en/ai-agents/chatbots/analytics"
                 ]
               }
             ]
@@ -1163,8 +1169,14 @@
                 "icon": "brain",
                 "pages": [
                   "es/automation/ai/reply-suggestions",
-                  "es/automation/ai/unreplied-chats-agent",
-                  "es/ai-agents/knowledge-base-agent"
+                  "es/automation/ai/unreplied-chats-agent"
+                ]
+              },
+              {
+                "group": "Agente de Base de Conocimiento",
+                "icon": "database",
+                "pages": [
+                  "es/ai-agents/knowledge-base-agent/agent-info"
                 ]
               }
             ]
@@ -1701,8 +1713,14 @@
                 "icon": "brain",
                 "pages": [
                   "pt/automation/ai/reply-suggestions",
-                  "pt/automation/ai/unreplied-chats-agent",
-                  "pt/ai-agents/knowledge-base-agent"
+                  "pt/automation/ai/unreplied-chats-agent"
+                ]
+              },
+              {
+                "group": "Agente de Base de Conhecimento",
+                "icon": "database",
+                "pages": [
+                  "pt/ai-agents/knowledge-base-agent/agent-info"
                 ]
               }
             ]
@@ -2239,8 +2257,14 @@
                 "icon": "brain",
                 "pages": [
                   "tr/automation/ai/reply-suggestions",
-                  "tr/automation/ai/unreplied-chats-agent",
-                  "tr/ai-agents/knowledge-base-agent"
+                  "tr/automation/ai/unreplied-chats-agent"
+                ]
+              },
+              {
+                "group": "Yapay Zeka Bilgi Tabanı Aracısı",
+                "icon": "database",
+                "pages": [
+                  "tr/ai-agents/knowledge-base-agent/agent-info"
                 ]
               }
             ]

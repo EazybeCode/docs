@@ -1,9 +1,17 @@
 ---
-title: "Yapay Zeka Bilgi Tabanı Aracısı"
+title: "Aracı Bilgileri"
 description: "Şirketinizin özel verilerinde eğitilmiş otonom bir yapay zeka aracısı oluşturun ve WhatsApp üzerinden akıllı müşteri desteği sağlayın"
+import:
+  - Steps
+  - Step
+  - Note
+  - Warning
+  - Tip
+  - Accordion
+  - AccordionItem
 ---
 
-# Yapay Zeka Bilgi Tabanı Aracısı
+# Aracı Bilgileri
 
 Yapay Zeka Bilgi Tabanı Aracısı, şirketinizin özel verilerinde eğitilmiş otonom bir yapay zeka aracısı oluşturmanızı sağlar. Belgeleri yükleyerek, web sitesi URL'lerini tarayarak ve geçmiş WhatsApp sohbetlerini otomatik olarak dizinleyerek, yapay zeka kurumunuzun bağlamını öğrenir ve müşteri sorgularını akıllıca yanıtlar.
 
@@ -97,7 +105,7 @@ Backend verilerinizi şu adımlardan geçirir:
 1. **Parçalama**: Büyük belgeler yönetilebilir segmentlere bölünür
 2. **Gömme Oluşturma**: Her segment bir vektör gömmesine dönüştürülür
 3. **Depolama**: Gömmeler uygun kiracı yalıtımı ile Qdrant'ta saklanır
-4. **Dizinleme**: Hızlı geri alma için aranabilir bir dizin oluşturulur
+4. **Dizinleme**: Aranabilir bir dizin oluşturulur
 
 Bu aşama sırasında, tamamlanan yüzdesini ve işlenen öğe sayısını gösteren gerçek zamanlı bir ilerleme göstergesi görürsünüz.
 
@@ -135,7 +143,7 @@ Büyük bilgi tabanları için (ör. 5.000+ WhatsApp sohbeti):
 Bilgi kaynaklarınız değişirse (web sitesi güncellemeleri, yeni ürün belgeleri, politika değişiklikleri):
 
 1. Aracınızın **Veri Kaynakları** bölümüne gidin
-2. Etkilenen kaynağın yanındaki **Yeniden Senkronize Et**'i tıklayın
+2. Etkilen kaynağın yanındaki **Yeniden Senkronize Et**'i tıklayın
 3. Sistem Qdrant'taki gömmeleri en son içerikle günceller
 
 ### Yedek Yönlendirme
@@ -197,7 +205,7 @@ Aracınızı canlı WABA numaranıza bağlamadan önce her zaman örnek sorgular
 
 - **WhatsApp Geçmişini Senkronize Et** anahtarının etkin olduğunu doğrulayın
 - Sohbet izinlerinin verildiğini kontrol edin
-- Sohbetlerin senkronizasyon tarih aralığı içinde olduğundan emin olun
+- Sohbetlerin senkronizasyon tarih aralığında olduğundan emin olun
 
 ## Sık Sorulan Sorular
 
