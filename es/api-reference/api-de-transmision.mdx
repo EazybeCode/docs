@@ -1,0 +1,486 @@
+---
+title: "API de Transmisión"
+description: "Aprenda a usar la API de Transmisión Pública de Eazybe para operaciones de transmisión relacionadas con Meta WABA, incluyendo generación de claves API, transmisiones de plantillas únicas y masivas, verificaciones de estado y manejo de errores."
+---
+
+## Resumen
+
+Este documento explica cómo los clientes pueden usar la API de Transmisión Pública de Eazybe para operaciones de transmisión relacionadas con Meta WABA. La API admite:
+
+- Generación de claves API
+- Transmisiones de plantillas para un solo destinatario
+- Transmisiones masivas de plantillas
+- Verificaciones de estado
+- Manejo operativo de errores
+
+La API utiliza solicitudes JSON sobre HTTPS y se autentica a través del encabezado `x-api-key`. Está diseñada para mensajería saliente basada en plantillas de WhatsApp aprobadas a través de la plataforma Eazybe.
+
+## Configuración Base
+
+| Configuración | Valor |
+|---------|-------|
+| **URL Base** | `https://api.yourdomain.com` (reemplazar con el dominio de producción compartido por Eazybe) |
+| **Autenticación** | Encabezado `x-api-key` |
+| **Content-Type** | `application/json` |
+| **Operaciones Admitidas** | Generar clave, enviar transmisión única, enviar transmisión masiva, verificación de estado |
+
+## Antes de Comenzar
+
+<Warning>
+  Asegúrese de que el número de teléfono remitente ya esté integrado en Eazybe y vinculado a una configuración WABA activa. La generación de la clave API fallará si no se encuentra una cuenta WABA para el número enviado.
+</Warning>
+
+<Tip>
+  Confirme que sus plantillas de WhatsApp requeridas estén aprobadas en Meta antes de intentar enviar. Las plantillas no aprobadas o faltantes devolverán fallos en la solicitud.
+</Tip>
+
+---
+
+## Flujo de Autenticación
+
+<Steps>
+  <Step>
+    <h3>Generar Clave API</h3>
+    <p>Use este punto final una vez para un número de remitente registrado y almacene de forma segura la clave API devuelta para solicitudes futuras.</p>
+
+    <h4>Punto Final</h4>
+    <code>POST /broadcast/public/generate-key</code>
+
+    <h4>Cuerpo de la Solicitud</h4>
+    <table>
+      <thead>
+        <tr>
+          <th>Campo</th>
+          <th>Tipo</th>
+          <th>Requerido</th>
+          <th>Descripción</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>phoneNumber</code></td>
+          <td>string</td>
+          <td>Sí</td>
+          <td>Número de teléfono del remitente con código de país, sin espacios o <code>+</code></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h4>Solicitud de Ejemplo</h4>
+    ```bash
+    curl -X POST https://api.yourdomain.com/broadcast/public/generate-key \
+      -H "Content-Type: application/json" \
+      -d '{
+        "phoneNumber": "919876543210"
+      }'
+    ```
+
+    <h4>Respuesta Exitosa</h4>
+    ```json
+    {
+      "status": true,
+      "status_code": 200,
+      "message": "API key generated successfully",
+      "data": {
+        "apiKey": "15558044483"
+      }
+    }
+    ```
+
+    <h4>Ejemplo de Fallo</h4>
+    ```json
+    {
+      "status": false,
+      "status_code": 400,
+      "message": "User is not signed up yet.",
+      "data": {
+        "error": {
+          "message": "No WABA account found for this phone number"
+        }
+      }
+    }
+    ```
+  </Step>
+
+  <Step>
+    <h3>Usar Clave API en Encabezados de Solicitud</h3>
+    <p>Todos los puntos finales de transmisión requieren la clave API generada en el encabezado <code>x-api-key</code>.</p>
+
+    ```http
+    x-api-key: YOUR_API_KEY
+    ```
+
+    <Note>
+      Almacene su clave API de forma segura. Evite regenerarla innecesariamente.
+    </Note>
+  </Step>
+</Steps>
+
+---
+
+## Enviar Transmisión Única
+
+Use el punto final de transmisión única para enviar un mensaje de plantilla a un destinatario.
+
+### Punto Final
+
+```http
+POST /broadcast/public/send-single
+```
+
+### Estructura de Solicitud Requerida
+
+| Campo | Tipo | Requerido | Descripción |
+|---|---|---|---|
+| `templateName` | string | Sí | Nombre de plantilla de WhatsApp aprobada |
+| `templateLanguage` | string | Sí | Código de idioma de plantilla (ej., `en`) |
+| `templateType` | string | Sí | Categoría de plantilla: `MARKETING`, `UTILITY` o `AUTHENTICATION` |
+| `countryCode` | string | Sí | Código de país del destinatario sin `+` |
+| `toPhoneNumber` | string | Sí | Número móvil del destinatario |
+| `templateId` | string | No | ID de plantilla de Meta |
+| `templateParams` | string[] | No | Valores de variables de plantilla en orden |
+| `broadcastName` | string | No | Etiqueta opcional para este envío |
+
+### Solicitud de Ejemplo
+
+```bash
+curl -X POST https://api.yourdomain.com/broadcast/public/send-single \
+  -H "Content-Type: application/json" \
+  -H "x-api-key: YOUR_API_KEY" \
+  -d '{
+    "templateName": "christmas_template",
+    "templateLanguage": "en",
+    "templateType": "MARKETING",
+    "templateId": "768465685803110",
+    "countryCode": "91",
+    "toPhoneNumber": "8077378155",
+    "templateParams": ["John", "100"],
+    "broadcastName": "Single Broadcast Test"
+  }'
+```
+
+### Respuesta Exitosa
+
+```json
+{
+  "status": true,
+  "message": "Single broadcast queued successfully",
+  "data": {
+    "broadcastId": "6789abcdef123456",
+    "campaign_id": "abc123xyz456",
+    "status": "PENDING_SEND"
+  }
+}
+```
+
+### Respuestas Comunes de Fallo
+
+<Accordion>
+  <AccordionItem title="Clave API no válida o número no registrado">
+    La solicitud falla cuando la clave API no coincide con un remitente registrado válido.
+  </AccordionItem>
+  <AccordionItem title="Créditos insuficientes">
+    La solicitud falla cuando los créditos del monedero no son suficientes para el envío.
+  </AccordionItem>
+  <AccordionItem title="Plantilla no válida o no aprobada">
+    La solicitud falla si la plantilla no existe o no está aprobada.
+  </AccordionItem>
+</Accordion>
+
+---
+
+## Enviar Transmisión Masiva
+
+Use el punto final masivo para enviar la misma plantilla aprobada a múltiples destinatarios en una sola solicitud. Una sola solicitud puede incluir hasta **1000 destinatarios**.
+
+### Punto Final
+
+```http
+POST /broadcast/public/send-bulk
+```
+
+### Estructura de Solicitud Requerida
+
+| Campo | Tipo | Requerido | Descripción |
+|---|---|---|---|
+| `broadcastName` | string | Sí | Nombre único de campaña |
+| `templateName` | string | Sí | Nombre de plantilla de WhatsApp aprobada |
+| `templateLanguage` | string | Sí | Código de idioma de plantilla |
+| `templateType` | string | Sí | Categoría de plantilla |
+| `data` | array | Sí | Lista de destinatarios, máximo 1000 por solicitud |
+| `templateId` | string | No | ID de plantilla de Meta |
+| `globalTemplateParams` | string[] | No | Variables predeterminadas usadas cuando no se proporcionan parámetros a nivel de destinatario |
+
+### Objeto de Destinatario en `data`
+
+| Campo | Tipo | Requerido | Descripción |
+|---|---|---|---|
+| `countryCode` | string | Sí | Código de país del destinatario sin `+` |
+| `toPhoneNumber` | string | Sí | Número móvil del destinatario |
+| `templateParams` | string[] | No | Variables a nivel de destinatario que sobrescriben los valores globales |
+
+### Solicitud de Ejemplo
+
+```bash
+curl -X POST https://api.yourdomain.com/broadcast/public/send-bulk \
+  -H "Content-Type: application/json" \
+  -H "x-api-key: YOUR_API_KEY" \
+  -d '{
+    "broadcastName": "Campaña Festival 2024",
+    "templateName": "festive_offer_promo",
+    "templateLanguage": "en",
+    "templateType": "MARKETING",
+    "templateId": "1172528374418691",
+    "data": [
+      {
+        "countryCode": "91",
+        "toPhoneNumber": "9897964421",
+        "templateParams": ["John Doe", "212812790", "16-02-2026"]
+      },
+      {
+        "countryCode": "91",
+        "toPhoneNumber": "8077378155",
+        "templateParams": ["Vineet", "122878278", "14-02-2026"]
+      }
+    ],
+    "globalTemplateParams": ["Empresa Predeterminada", "Fecha de prueba"]
+  }'
+```
+
+### Respuesta Exitosa
+
+```json
+{
+  "status": true,
+  "message": "Broadcast is being processed",
+  "data": {
+    "total_contacts": 2,
+    "failed_contacts": 0,
+    "estimated_cost": 0.15,
+    "oldBalance": 100.5,
+    "newEstimatedBalance": 100.35
+  }
+}
+```
+
+### Notas Operativas
+
+<Warning>
+  <ul>
+    <li>Una solicitud masiva no puede exceder 1000 destinatarios.</li>
+    <li>Los nombres de transmisión deben ser únicos; de lo contrario, la solicitud falla.</li>
+  </ul>
+</Warning>
+
+<Note>
+  Los números no válidos pueden crear fallos parciales. Los contactos fallidos se cuentan por separado y no se deducen créditos para esos contactos no válidos. Los contactos fallidos pueden almacenarse con <code>failure_reason_code: "INVALID_PHONE_NUMBER"</code> para seguimiento descendente.
+</Note>
+
+---
+
+## Manejo de Parámetros de Plantilla
+
+La API admite parámetros tanto a nivel de destinatario como globales.
+
+### Parámetros a Nivel de Destinatario
+
+Use `templateParams` dentro de cada objeto de destinatario cuando cada contacto deba recibir diferentes valores de variables.
+
+**Casos de uso de ejemplo:**
+- ID de pedido por cliente
+- Hora de cita por cliente
+- Nombre personalizado por destinatario
+
+### Parámetros Globales
+
+Use `globalTemplateParams` cuando los mismos valores de variables se apliquen a todos los destinatarios en una campaña masiva.
+
+Esto reduce datos de carga repetidos y es útil para valores comunes de toda la campaña, como nombre de marca, código de cupón o porcentaje de oferta.
+
+### Regla de Precedencia
+
+<Info>
+  Cuando se proporcionan <code>templateParams</code> a nivel de destinatario, sobrescriben los valores globales para ese destinatario.
+</Info>
+
+---
+
+## Verificación de Estado
+
+Use el punto final de estado para verificar si el servicio de API de Transmisión Pública está operativo.
+
+### Punto Final
+
+```http
+GET /broadcast/public/health
+```
+
+### Solicitud de Ejemplo
+
+```bash
+curl -X GET https://api.yourdomain.com/broadcast/public/health
+```
+
+### Respuesta de Muestra
+
+```json
+{
+  "status": "ok",
+  "timestamp": "2024-01-15T10:30:00.000Z",
+  "service": "Public Broadcast API",
+  "version": "1.0.0",
+  "endpoints": {
+    "single": "POST /broadcast/public/send-single",
+    "bulk-standard": "POST /broadcast/public/send-bulk-standard",
+    "health": "GET /broadcast/public/health"
+  }
+}
+```
+
+---
+
+## Referencia de Manejo de Errores
+
+| Código de Estado | Error | Significado |
+|---|---|---|
+| `400` | `User is not signed up yet` | La clave API no es válida o el número de teléfono no está registrado |
+| `400` | `No subscriptions available` | No hay una suscripción activa disponible para transmisiones |
+| `400` | `Insufficient credits` | El saldo del monedero no es suficiente |
+| `400` | `Template does not exist` | La plantilla no existe o no está aprobada |
+| `400` | `Invalid template language` | La variante de idioma de plantilla solicitada no está aprobada |
+| `400` | `Invalid phone number format` | El formato del código de país o teléfono no es válido |
+| `400` | `Pricing not available` | El envío no es compatible con el código de país de destino |
+| `400` | `Recipient limit exceeded` | La solicitud masiva contiene más de 1000 destinatarios |
+| `400` | `Broadcast with same name exists` | El nombre de la campaña debe ser único |
+| `500` | `Internal Server Error` | Error inesperado del lado del servidor |
+
+## Códigos de Razón de Fallo
+
+| Código | Significado | Notas |
+|---|---|---|
+| `INVALID_PHONE_NUMBER` | Número de destinatario no válido | Verifique el formato del código de país y número |
+| `UNSUPPORTED_COUNTRY_CODE` | Precios de país no disponibles | Destino no admitido |
+| `TEMPLATE_SEND_FAILED` | Fallo en el envío de plantilla | Revise la respuesta de error de API sin procesar |
+| `131014` | Parámetro no válido | Problema con el parámetro de plantilla |
+| `131051` | Límite de tasa excedido | Demasiadas solicitudes enviadas en un intervalo corto |
+| `WORKER_ERROR` | Fallo de procesamiento de trabajador | Revise la respuesta de error de trabajador |
+
+---
+
+## Límites de Tasa y Restricciones de Plataforma
+
+<Warning>
+  Meta tiene una tasa de envío aproximada de alrededor de 30 mensajes por segundo por WABA. La API incluye reintentos automáticos con retroceso exponencial para errores de límite de tasa como <code>429</code>, <code>80007</code> y <code>130429</code>.
+</Warning>
+
+<Tip>
+  Procese por lotes de manera responsable y divida cargas grandes en múltiples solicitudes una vez que se acerque al límite de 1000 destinatarios por solicitud.
+</Tip>
+
+---
+
+## Flujo de Trabajo Recomendado para Clientes
+
+<Steps>
+  <Step>
+    <h3>Integrar y Verificar</h3>
+    <p>Integre y verifique el número de remitente en Eazybe antes de cualquier uso de la API.</p>
+  </Step>
+  <Step>
+    <h3>Generar Clave API</h3>
+    <p>Genere la clave API una vez y almacénela de forma segura.</p>
+  </Step>
+  <Step>
+    <h3>Verificar Plantillas</h3>
+    <p>Asegúrese de que la plantilla de WhatsApp esté aprobada en Meta y que la variante de idioma esté disponible.</p>
+  </Step>
+  <Step>
+    <h3>Validar Datos</h3>
+    <p>Valide códigos de país de destinatarios, números de teléfono y recuento de variables de plantilla antes de enviar.</p>
+  </Step>
+  <Step>
+    <h3>Enviar Transmisión</h3>
+    <p>Use el punto final único para pruebas únicas y el punto final masivo para campañas.</p>
+  </Step>
+  <Step>
+    <h3>Monitorear Respuesta</h3>
+    <p>Monitoree la respuesta para <code>failed_contacts</code>, cambios de saldo y estado de cola.</p>
+  </Step>
+  <Step>
+    <h3>Usar Nombres Únicos</h3>
+    <p>Use nombres de transmisión únicos para cada campaña.</p>
+  </Step>
+</Steps>
+
+---
+
+## Mejores Prácticas
+
+- Almacene la clave API de forma segura y evite regenerarla innecesariamente
+- Prevalide números para reducir fallos y limpieza operativa
+- Haga coincidir el número de variables de plantilla exactamente con los marcadores de posición de plantilla aprobados
+- Use `globalTemplateParams` para valores compartidos y parámetros a nivel de destinatario solo cuando se requiera personalización
+- Verifique créditos antes de solicitudes masivas grandes
+- Comience con un lote de prueba pequeño antes de enviar campañas de volumen completo
+
+---
+
+## Patrones de Carga de Ejemplo
+
+### Envío Único con Variables
+
+```json
+{
+  "templateName": "order_shipped",
+  "templateLanguage": "en",
+  "templateType": "MARKETING",
+  "countryCode": "91",
+  "toPhoneNumber": "9876543210",
+  "templateParams": ["John", "ORD12345", "17-02-2024"]
+}
+```
+
+### Envío Masivo con Variables a Nivel de Destinatario
+
+```json
+{
+  "broadcastName": "Recordatorios de Cita",
+  "templateName": "appointment_reminder",
+  "templateLanguage": "en",
+  "templateType": "UTILITY",
+  "data": [
+    {
+      "countryCode": "1",
+      "toPhoneNumber": "5551234567",
+      "templateParams": ["Alice", "2024-01-20", "10:00 AM"]
+    },
+    {
+      "countryCode": "1",
+      "toPhoneNumber": "5559876543",
+      "templateParams": ["Bob", "2024-01-20", "2:30 PM"]
+    }
+  ]
+}
+```
+
+### Envío Masivo con Variables Globales
+
+```json
+{
+  "broadcastName": "Promo Global",
+  "templateName": "promo_offer",
+  "templateLanguage": "en",
+  "templateType": "MARKETING",
+  "data": [
+    {
+      "countryCode": "91",
+      "toPhoneNumber": "9876543210"
+    },
+    {
+      "countryCode": "91",
+      "toPhoneNumber": "9876543211"
+    }
+  ],
+  "globalTemplateParams": ["MiTienda", "SAVE20", "20"]
+}
+```

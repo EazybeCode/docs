@@ -1,0 +1,486 @@
+---
+title: "Yayın API'si"
+description: "Meta WABA ile ilgili yayın işlemleri için Eazybe'nin Genel Yayın API'sini nasıl kullanacağınızı öğrenin; API anahtarı oluşturma, tek ve toplu şablon yayınları, sağlık kontrolleri ve hata işleme dahil."
+---
+
+## Genel Bakış
+
+Bu belge, istemcilerin Meta WABA ile ilgili yayın işlemleri için Eazybe'nin Genel Yayın API'sini nasıl kullanabileceğini açıklar. API şunları destekler:
+
+- API anahtarı oluşturma
+- Tek alıcı şablon yayınları
+- Toplu şablon yayınları
+- Sağlık kontrolleri
+- İşlemsel hata işleme
+
+API, HTTPS üzerinden JSON istekleri kullanır ve `x-api-key` başlığı aracılığıyla kimlik doğrular. Eazybe platformu üzerinden onaylanmış WhatsApp şablon tabanlı giden mesajlaşma için tasarlanmıştır.
+
+## Temel Yapılandırma
+
+| Ayar | Değer |
+|---------|-------|
+| **Temel URL** | `https://api.yourdomain.com` (Eazybe tarafından paylaşılan üretim alan adıyla değiştirin) |
+| **Kimlik Doğrulama** | `x-api-key` başlığı |
+| **Content-Type** | `application/json` |
+| **Desteklenen İşlemler** | Anahtar oluştur, tek yayın gönder, toplu yayın gönder, sağlık kontrolü |
+
+## Başlamadan Önce
+
+<Warning>
+  Gönderen telefon numarasının Eazybe'de zaten entegre edildiğinden ve aktif bir WABA kurulumuna bağlı olduğundan emin olun. Gönderilen numara için WABA hesabı bulunamazsa API anahtarı oluşturma başarısız olur.
+</Warning>
+
+<Tip>
+  Göndermeye çalışmadan önce gerekli WhatsApp şablonlarının Meta'da onaylandığını doğrulayın. Onaylanmamış veya eksik şablonlar istek hataları döndürür.
+</Tip>
+
+---
+
+## Kimlik Doğrulama Akışı
+
+<Steps>
+  <Step>
+    <h3>API Anahtarı Oluştur</h3>
+    <p>Kayıtlı bir gönderen numarası için bu uç noktayı bir kez kullanın ve dönen API anahtarını gelecekteki istekler için güvenli bir şekilde saklayın.</p>
+
+    <h4>Uç Nokta</h4>
+    <code>POST /broadcast/public/generate-key</code>
+
+    <h4>İstek Gövdesi</h4>
+    <table>
+      <thead>
+        <tr>
+          <th>Alan</th>
+          <th>Tür</th>
+          <th>Zorunlu</th>
+          <th>Açıklama</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>phoneNumber</code></td>
+          <td>string</td>
+          <td>Evet</td>
+          <td>Ülke kodu içeren gönderen telefon numarası, boşluk veya <code>+</code> olmadan</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h4>Örnek İstek</h4>
+    ```bash
+    curl -X POST https://api.yourdomain.com/broadcast/public/generate-key \
+      -H "Content-Type: application/json" \
+      -d '{
+        "phoneNumber": "919876543210"
+      }'
+    ```
+
+    <h4>Başarılı Yanıt</h4>
+    ```json
+    {
+      "status": true,
+      "status_code": 200,
+      "message": "API key generated successfully",
+      "data": {
+        "apiKey": "15558044483"
+      }
+    }
+    ```
+
+    <h4>Hata Örneği</h4>
+    ```json
+    {
+      "status": false,
+      "status_code": 400,
+      "message": "User is not signed up yet.",
+      "data": {
+        "error": {
+          "message": "No WABA account found for this phone number"
+        }
+      }
+    }
+    ```
+  </Step>
+
+  <Step>
+    <h3>API Anahtarını İstek Başlıklarında Kullanın</h3>
+    <p>Tüm yayın uç noktaları, oluşturulan API anahtarını <code>x-api-key</code> başlığında gerektirir.</p>
+
+    ```http
+    x-api-key: YOUR_API_KEY
+    ```
+
+    <Note>
+      API anahtarınızı güvenli bir şekilde saklayın. Gereksiz yere yeniden oluşturmaktan kaçının.
+    </Note>
+  </Step>
+</Steps>
+
+---
+
+## Tek Yayın Gönderin
+
+Tek bir şablon mesajını bir alıcıya göndermek için tek yayın uç noktasını kullanın.
+
+### Uç Nokta
+
+```http
+POST /broadcast/public/send-single
+```
+
+### Gerekli İstek Yapısı
+
+| Alan | Tür | Zorunlu | Açıklama |
+|---|---|---|---|
+| `templateName` | string | Evet | Onaylanmış WhatsApp şablon adı |
+| `templateLanguage` | string | Evet | Şablon dil kodu (ör., `en`) |
+| `templateType` | string | Evet | Şablon kategorisi: `MARKETING`, `UTILITY` veya `AUTHENTICATION` |
+| `countryCode` | string | Evet | `+` olmadan alıcı ülke kodu |
+| `toPhoneNumber` | string | Evet | Alıcı mobil numarası |
+| `templateId` | string | Hayır | Meta şablon kimliği |
+| `templateParams` | string[] | Hayır | Sırayla şablon değişken değerleri |
+| `broadcastName` | string | Hayır | Bu gönderim için isteğe bağlı etiket |
+
+### Örnek İstek
+
+```bash
+curl -X POST https://api.yourdomain.com/broadcast/public/send-single \
+  -H "Content-Type: application/json" \
+  -H "x-api-key: YOUR_API_KEY" \
+  -d '{
+    "templateName": "christmas_template",
+    "templateLanguage": "en",
+    "templateType": "MARKETING",
+    "templateId": "768465685803110",
+    "countryCode": "91",
+    "toPhoneNumber": "8077378155",
+    "templateParams": ["John", "100"],
+    "broadcastName": "Single Broadcast Test"
+  }'
+```
+
+### Başarılı Yanıt
+
+```json
+{
+  "status": true,
+  "message": "Single broadcast queued successfully",
+  "data": {
+    "broadcastId": "6789abcdef123456",
+    "campaign_id": "abc123xyz456",
+    "status": "PENDING_SEND"
+  }
+}
+```
+
+### Yaygın Hata Yanıtları
+
+<Accordion>
+  <AccordionItem title="Geçersiz API anahtarı veya kayıtsız numara">
+    İstek, API anahtarı geçerli bir kayıtlı gönderenle eşleşmediğinde başarısız olur.
+  </AccordionItem>
+  <AccordionItem title="Yetersiz kredi">
+    Cüzdan kredileri gönderim için yeterli olmadığında istek başarısız olur.
+  </AccordionItem>
+  <AccordionItem title="Geçersiz veya onaylanmamış şablon">
+    Şablon mevcut değilse veya onaylanmamışsa istek başarısız olur.
+  </AccordionItem>
+</Accordion>
+
+---
+
+## Toplu Yayın Gönderin
+
+Aynı onaylanmış şablonu tek bir istekte birden fazla alıcıya göndermek için toplu uç noktayı kullanın. Tek bir istek **1000 alıcıya kadar** içerebilir.
+
+### Uç Nokta
+
+```http
+POST /broadcast/public/send-bulk
+```
+
+### Gerekli İstek Yapısı
+
+| Alan | Tür | Zorunlu | Açıklama |
+|---|---|---|---|
+| `broadcastName` | string | Evet | Benzersiz kampanya adı |
+| `templateName` | string | Evet | Onaylanmış WhatsApp şablon adı |
+| `templateLanguage` | string | Evet | Şablon dil kodu |
+| `templateType` | string | Evet | Şablon kategorisi |
+| `data` | array | Evet | Alıcı listesi, istek başına maksimum 1000 |
+| `templateId` | string | Hayır | Meta şablon kimliği |
+| `globalTemplateParams` | string[] | Hayır | Alıcı düzeyinde parametreler sağlanmadığında kullanılan varsayılan değişkenler |
+
+### `data` İçindeki Alıcı Nesnesi
+
+| Alan | Tür | Zorunlu | Açıklama |
+|---|---|---|---|
+| `countryCode` | string | Evet | `+` olmadan alıcı ülke kodu |
+| `toPhoneNumber` | string | Evet | Alıcı mobil numarası |
+| `templateParams` | string[] | Hayır | Genel değerleri geçersiz kılan alıcı düzeyinde değişkenler |
+
+### Örnek İstek
+
+```bash
+curl -X POST https://api.yourdomain.com/broadcast/public/send-bulk \
+  -H "Content-Type: application/json" \
+  -H "x-api-key: YOUR_API_KEY" \
+  -d '{
+    "broadcastName": "Festival Kampanyası 2024",
+    "templateName": "festive_offer_promo",
+    "templateLanguage": "en",
+    "templateType": "MARKETING",
+    "templateId": "1172528374418691",
+    "data": [
+      {
+        "countryCode": "91",
+        "toPhoneNumber": "9897964421",
+        "templateParams": ["John Doe", "212812790", "16-02-2026"]
+      },
+      {
+        "countryCode": "91",
+        "toPhoneNumber": "8077378155",
+        "templateParams": ["Vineet", "122878278", "14-02-2026"]
+      }
+    ],
+    "globalTemplateParams": ["Varsayılan Şirket", "Test tarihi"]
+  }'
+```
+
+### Başarılı Yanıt
+
+```json
+{
+  "status": true,
+  "message": "Broadcast is being processed",
+  "data": {
+    "total_contacts": 2,
+    "failed_contacts": 0,
+    "estimated_cost": 0.15,
+    "oldBalance": 100.5,
+    "newEstimatedBalance": 100.35
+  }
+}
+```
+
+### İşlemsel Notlar
+
+<Warning>
+  <ul>
+    <li>Toplu bir istek 1000 alıcıyı aşamaz.</li>
+    <li>Yayın adları benzersiz olmalıdır, aksi takdirde istek başarısız olur.</li>
+  </ul>
+</Warning>
+
+<Note>
+  Geçersiz numaralar kısmi başarısızlıklar oluşturabilir. Başarısız kontaklar ayrı olarak sayılır ve bu geçersiz kontaklar için kredi düşülmez. Başarısız kontaklar aşağı akış takibi için <code>failure_reason_code: "INVALID_PHONE_NUMBER"</code> ile saklanabilir.
+</Note>
+
+---
+
+## Şablon Parametre İşleme
+
+API hem alıcı düzeyinde hem de genel parametreleri destekler.
+
+### Alıcı Düzeyinde Parametreler
+
+Her kontakın farklı değişken değerleri alması gerektiğinde her alıcı nesnesi içinde `templateParams` kullanın.
+
+**Örnek kullanım durumları:**
+- Müşteri başına sipariş kimliği
+- Müşteri başına randevu saati
+- Alıcı başına kişiselleştirilmiş ad
+
+### Genel Parametreler
+
+Bir toplu kampanyadaki tüm alıcılara aynı değişken değerleri uygulandığında `globalTemplateParams` kullanın.
+
+Bu, tekrarlanan yük verilerini azaltır ve marka adı, kupon kodu veya teklif yüzdesi gibi ortam genelindeki ortak değerler için kullanışlıdır.
+
+### Öncelik Kuralı
+
+<Info>
+  Alıcı düzeyinde <code>templateParams</code> sağlandığında, bu alıcı için genel değerleri geçersiz kılar.
+</Info>
+
+---
+
+## Sağlık Kontrolü
+
+Genel Yayın API hizmetinin operasyonel olup olmadığını doğrulamak için sağlık uç noktasını kullanın.
+
+### Uç Nokta
+
+```http
+GET /broadcast/public/health
+```
+
+### Örnek İstek
+
+```bash
+curl -X GET https://api.yourdomain.com/broadcast/public/health
+```
+
+### Örnek Yanıt
+
+```json
+{
+  "status": "ok",
+  "timestamp": "2024-01-15T10:30:00.000Z",
+  "service": "Public Broadcast API",
+  "version": "1.0.0",
+  "endpoints": {
+    "single": "POST /broadcast/public/send-single",
+    "bulk-standard": "POST /broadcast/public/send-bulk-standard",
+    "health": "GET /broadcast/public/health"
+  }
+}
+```
+
+---
+
+## Hata İşleme Referansı
+
+| Durum Kodu | Hata | Anlamı |
+|---|---|---|
+| `400` | `User is not signed up yet` | API anahtarı geçersiz veya telefon numarası kayıtlı değil |
+| `400` | `No subscriptions available` | Yayınlar için aktif bir abonelik mevcut değil |
+| `400` | `Insufficient credits` | Cüzdan bakiyesi yeterli değil |
+| `400` | `Template does not exist` | Şablon eksik veya onaylanmamış |
+| `400` | `Invalid template language` | İstenen şablon dil varyasyonu onaylanmamış |
+| `400` | `Invalid phone number format` | Ülke kodu veya telefon biçimi geçersiz |
+| `400` | `Pricing not available` | Hedef ülke kodu için gönderim desteklenmiyor |
+| `400` | `Recipient limit exceeded` | Toplu istek 1000'den fazla alıcı içeriyor |
+| `400` | `Broadcast with same name exists` | Kampanya adı benzersiz olmalı |
+| `500` | `Internal Server Error` | Beklenmeyen sunucu tarafı hata |
+
+## Hata Nedeni Kodları
+
+| Kod | Anlamı | Notlar |
+|---|---|---|
+| `INVALID_PHONE_NUMBER` | Geçersiz alıcı numarası | Ülke kodu ve numara biçimini kontrol edin |
+| `UNSUPPORTED_COUNTRY_CODE` | Ülke fiyatlandırması mevcut değil | Hedef desteklenmiyor |
+| `TEMPLATE_SEND_FAILED` | Şablon gönderimi başarısız oldu | Ham API hata yanıtını inceleyin |
+| `131014` | Geçersiz parametre | Şablon parametre sorunu |
+| `131051` | Hız sınırı aşıldı | Kısa bir süre içinde çok fazla istek gönderildi |
+| `WORKER_ERROR` | İşçi işleme hatası | İşçi hata yanıtını inceleyin |
+
+---
+
+## Hız Sınırları ve Platform Kısıtlamaları
+
+<Warning>
+  Meta'nın WABA başına saniyede yaklaşık 30 mesaj gönderim oranı vardır. API, <code>429</code>, <code>80007</code> ve <code>130429</code> gibi hız sınırlama hataları için otomatik yeniden deneme ve üstel geri çekme içerir.
+</Warning>
+
+<Tip>
+  İstek başına 1000 alıcı sınırına yaklaştığınızda, büyük yüklemeleri birden fazla istek için sorumlu bir şekilde bölün ve bölün.
+</Tip>
+
+---
+
+## İstemciler için Önerilen İş Akışı
+
+<Steps>
+  <Step>
+    <h3>Entegre Edin ve Doğrulayın</h3>
+    <p>Herhangi bir API kullanımından önce gönderen numarasını Eazybe'de entegre edin ve doğrulayın.</p>
+  </Step>
+  <Step>
+    <h3>API Anahtarı Oluşturun</h3>
+    <p>API anahtarını bir kez oluşturun ve güvenli bir şekilde saklayın.</p>
+  </Step>
+  <Step>
+    <h3>Şablonları Doğrulayın</h3>
+    <p>WhatsApp şablonunun Meta'da onaylandığından ve dil varyasyonunun mevcut olduğundan emin olun.</p>
+  </Step>
+  <Step>
+    <h3>Verileri Doğrulayın</h3>
+    <p>Göndermeden önce alıcı ülke kodlarını, telefon numaralarını ve şablon değişken sayısını doğrulayın.</p>
+  </Step>
+  <Step>
+    <h3>Yayın Gönderin</h3>
+    <p>Tek seferlik testler için tek uç noktayı, kampanyalar için toplu uç noktayı kullanın.</p>
+  </Step>
+  <Step>
+    <h3>Yanıtı İzleyin</h3>
+    <p><code>failed_contacts</code>, bakiye değişiklikleri ve kuyruk durumu için yanıtı izleyin.</p>
+  </Step>
+  <Step>
+    <h3>Benzersiz Adlar Kullanın</h3>
+    <p>Her kampanya için benzersiz yayın adları kullanın.</p>
+  </Step>
+</Steps>
+
+---
+
+## En İyi Uygulamalar
+
+- API anahtarını güvenli bir şekilde saklayın ve gereksiz yere yeniden oluşturmaktan kaçının
+- Başarısızlıkları ve operasyonel temizliği azaltmak için numaraları önceden doğrulayın
+- Şablon değişken sayısını onaylanmış şablon yer tutucularıyla tam olarak eşleştirin
+- Paylaşılan değerler için `globalTemplateParams` kullanın ve kişiselleştirme gerekmediğinde sadece alıcı düzeyinde parametreler kullanın
+- Büyük yayın isteklerinden önce kredileri kontrol edin
+- Tam hacimli kampanyalar göndermeden önce küçük bir test toplu işle başlayın
+
+---
+
+## Örnek Yük Desenleri
+
+### Değişkenli Tek Gönderim
+
+```json
+{
+  "templateName": "order_shipped",
+  "templateLanguage": "en",
+  "templateType": "MARKETING",
+  "countryCode": "91",
+  "toPhoneNumber": "9876543210",
+  "templateParams": ["John", "ORD12345", "17-02-2024"]
+}
+```
+
+### Alıcı Düzeyinde Değişkenlerle Toplu Gönderim
+
+```json
+{
+  "broadcastName": "Randevu Hatırlatmaları",
+  "templateName": "appointment_reminder",
+  "templateLanguage": "en",
+  "templateType": "UTILITY",
+  "data": [
+    {
+      "countryCode": "1",
+      "toPhoneNumber": "5551234567",
+      "templateParams": ["Alice", "2024-01-20", "10:00 AM"]
+    },
+    {
+      "countryCode": "1",
+      "toPhoneNumber": "5559876543",
+      "templateParams": ["Bob", "2024-01-20", "2:30 PM"]
+    }
+  ]
+}
+```
+
+### Genel Değişkenlerle Toplu Gönderim
+
+```json
+{
+  "broadcastName": "Küresel Promosyon",
+  "templateName": "promo_offer",
+  "templateLanguage": "en",
+  "templateType": "MARKETING",
+  "data": [
+    {
+      "countryCode": "91",
+      "toPhoneNumber": "9876543210"
+    },
+    {
+      "countryCode": "91",
+      "toPhoneNumber": "9876543211"
+    }
+  ],
+  "globalTemplateParams": ["Mağazam", "SAVE20", "20"]
+}
+```

@@ -626,6 +626,7 @@
                 "group": "Endpoints",
                 "icon": "server",
                 "pages": [
+                  "en/api-reference/endpoints/broadcast-api",
                   "api-reference/endpoints/messages",
                   "api-reference/endpoints/contacts",
                   "api-reference/endpoints/conversations",
@@ -1175,6 +1176,11 @@
                 "group": "Overview",
                 "icon": "book",
                 "pages": ["es/api-reference/employees-bulk-remove"]
+              },
+              {
+                "group": "Endpoints",
+                "icon": "server",
+                "pages": ["es/api-reference/api-de-transmision"]
               }
             ]
           }
@@ -1720,6 +1726,11 @@
                 "group": "Overview",
                 "icon": "book",
                 "pages": ["pt/api-reference/employees-bulk-remove"]
+              },
+              {
+                "group": "Endpoints",
+                "icon": "server",
+                "pages": ["pt/api-reference/api-de-transmissao"]
               }
             ]
           }
@@ -2265,6 +2276,11 @@
                 "group": "Overview",
                 "icon": "book",
                 "pages": ["tr/api-reference/employees-bulk-remove"]
+              },
+              {
+                "group": "Endpoints",
+                "icon": "server",
+                "pages": ["tr/api-reference/yayin-api-si"]
               }
             ]
           }

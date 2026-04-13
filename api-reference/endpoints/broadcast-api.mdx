@@ -1,0 +1,486 @@
+---
+title: "Broadcast API"
+description: "Learn how to use Eazybe's Public Broadcast API for Meta WABA-related broadcast operations including API key generation, single and bulk template broadcasts, health checks, and error handling."
+---
+
+## Overview
+
+This document explains how clients can use Eazybe's Public Broadcast API for Meta WABA-related broadcast operations. The API supports:
+
+- API key generation
+- Single-recipient template broadcasts
+- Bulk template broadcasts
+- Health checks
+- Operational error handling
+
+The API uses JSON requests over HTTPS and authenticates through the `x-api-key` header. It is intended for approved WhatsApp template-based outbound messaging through the Eazybe platform.
+
+## Base Configuration
+
+| Setting | Value |
+|---------|-------|
+| **Base URL** | `https://api.yourdomain.com` (replace with the production domain shared by Eazybe) |
+| **Authentication** | `x-api-key` header |
+| **Content-Type** | `application/json` |
+| **Supported Operations** | Generate key, send single broadcast, send bulk broadcast, health check |
+
+## Before You Start
+
+<Warning>
+  Ensure the sending phone number is already onboarded on Eazybe and linked to an active WABA setup. API key generation will fail if no WABA account is found for the submitted number.
+</Warning>
+
+<Tip>
+  Confirm that your required WhatsApp templates are approved in Meta before attempting sends. Unapproved or missing templates will return request failures.
+</Tip>
+
+---
+
+## Authentication Flow
+
+<Steps>
+  <Step>
+    <h3>Generate API Key</h3>
+    <p>Use this endpoint once for a registered sender number and securely store the returned API key for future requests.</p>
+
+    <h4>Endpoint</h4>
+    <code>POST /broadcast/public/generate-key</code>
+
+    <h4>Request Body</h4>
+    <table>
+      <thead>
+        <tr>
+          <th>Field</th>
+          <th>Type</th>
+          <th>Required</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>phoneNumber</code></td>
+          <td>string</td>
+          <td>Yes</td>
+          <td>Sender phone number with country code, without spaces or <code>+</code></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h4>Example Request</h4>
+    ```bash
+    curl -X POST https://api.yourdomain.com/broadcast/public/generate-key \
+      -H "Content-Type: application/json" \
+      -d '{
+        "phoneNumber": "919876543210"
+      }'
+    ```
+
+    <h4>Success Response</h4>
+    ```json
+    {
+      "status": true,
+      "status_code": 200,
+      "message": "API key generated successfully",
+      "data": {
+        "apiKey": "15558044483"
+      }
+    }
+    ```
+
+    <h4>Failure Example</h4>
+    ```json
+    {
+      "status": false,
+      "status_code": 400,
+      "message": "User is not signed up yet.",
+      "data": {
+        "error": {
+          "message": "No WABA account found for this phone number"
+        }
+      }
+    }
+    ```
+  </Step>
+
+  <Step>
+    <h3>Use API Key in Request Headers</h3>
+    <p>All broadcast endpoints require the generated API key in the <code>x-api-key</code> header.</p>
+
+    ```http
+    x-api-key: YOUR_API_KEY
+    ```
+
+    <Note>
+      Store your API key securely. Avoid regenerating it unnecessarily.
+    </Note>
+  </Step>
+</Steps>
+
+---
+
+## Send Single Broadcast
+
+Use the single broadcast endpoint to send one template message to one recipient.
+
+### Endpoint
+
+```http
+POST /broadcast/public/send-single
+```
+
+### Required Request Structure
+
+| Field | Type | Required | Description |
+|---|---|---|---|
+| `templateName` | string | Yes | Approved WhatsApp template name |
+| `templateLanguage` | string | Yes | Template language code (e.g., `en`) |
+| `templateType` | string | Yes | Template category: `MARKETING`, `UTILITY`, or `AUTHENTICATION` |
+| `countryCode` | string | Yes | Recipient country code without `+` |
+| `toPhoneNumber` | string | Yes | Recipient mobile number |
+| `templateId` | string | No | Meta template ID |
+| `templateParams` | string[] | No | Template variable values in order |
+| `broadcastName` | string | No | Optional label for this send |
+
+### Example Request
+
+```bash
+curl -X POST https://api.yourdomain.com/broadcast/public/send-single \
+  -H "Content-Type: application/json" \
+  -H "x-api-key: YOUR_API_KEY" \
+  -d '{
+    "templateName": "christmas_template",
+    "templateLanguage": "en",
+    "templateType": "MARKETING",
+    "templateId": "768465685803110",
+    "countryCode": "91",
+    "toPhoneNumber": "8077378155",
+    "templateParams": ["John", "100"],
+    "broadcastName": "Single Broadcast Test"
+  }'
+```
+
+### Success Response
+
+```json
+{
+  "status": true,
+  "message": "Single broadcast queued successfully",
+  "data": {
+    "broadcastId": "6789abcdef123456",
+    "campaign_id": "abc123xyz456",
+    "status": "PENDING_SEND"
+  }
+}
+```
+
+### Common Failure Responses
+
+<Accordion>
+  <AccordionItem title="Invalid API key or unregistered number">
+    Request fails when the API key does not match a valid signed-up sender.
+  </AccordionItem>
+  <AccordionItem title="Insufficient credits">
+    Request fails when wallet credits are not enough for the send.
+  </AccordionItem>
+  <AccordionItem title="Invalid or unapproved template">
+    Request fails if the template does not exist or is not approved.
+  </AccordionItem>
+</Accordion>
+
+---
+
+## Send Bulk Broadcast
+
+Use the bulk endpoint to send the same approved template to multiple recipients in one request. A single request can include up to **1000 recipients**.
+
+### Endpoint
+
+```http
+POST /broadcast/public/send-bulk
+```
+
+### Required Request Structure
+
+| Field | Type | Required | Description |
+|---|---|---|---|
+| `broadcastName` | string | Yes | Unique campaign name |
+| `templateName` | string | Yes | Approved WhatsApp template name |
+| `templateLanguage` | string | Yes | Template language code |
+| `templateType` | string | Yes | Template category |
+| `data` | array | Yes | Recipient list, maximum 1000 per request |
+| `templateId` | string | No | Meta template ID |
+| `globalTemplateParams` | string[] | No | Default variables used when recipient-level params are not provided |
+
+### Recipient Object in `data`
+
+| Field | Type | Required | Description |
+|---|---|---|---|
+| `countryCode` | string | Yes | Recipient country code without `+` |
+| `toPhoneNumber` | string | Yes | Recipient mobile number |
+| `templateParams` | string[] | No | Recipient-level variables that override global values |
+
+### Example Request
+
+```bash
+curl -X POST https://api.yourdomain.com/broadcast/public/send-bulk \
+  -H "Content-Type: application/json" \
+  -H "x-api-key: YOUR_API_KEY" \
+  -d '{
+    "broadcastName": "Festival Campaign 2024",
+    "templateName": "festive_offer_promo",
+    "templateLanguage": "en",
+    "templateType": "MARKETING",
+    "templateId": "1172528374418691",
+    "data": [
+      {
+        "countryCode": "91",
+        "toPhoneNumber": "9897964421",
+        "templateParams": ["John Doe", "212812790", "16-02-2026"]
+      },
+      {
+        "countryCode": "91",
+        "toPhoneNumber": "8077378155",
+        "templateParams": ["Vineet", "122878278", "14-02-2026"]
+      }
+    ],
+    "globalTemplateParams": ["Default Company", "Test date"]
+  }'
+```
+
+### Success Response
+
+```json
+{
+  "status": true,
+  "message": "Broadcast is being processed",
+  "data": {
+    "total_contacts": 2,
+    "failed_contacts": 0,
+    "estimated_cost": 0.15,
+    "oldBalance": 100.5,
+    "newEstimatedBalance": 100.35
+  }
+}
+```
+
+### Operational Notes
+
+<Warning>
+  <ul>
+    <li>A bulk request cannot exceed 1000 recipients.</li>
+    <li>Broadcast names must be unique, otherwise the request fails.</li>
+  </ul>
+</Warning>
+
+<Note>
+  Invalid numbers can create partial failures. Failed contacts are counted separately and credits are not deducted for those invalid contacts. Failed contacts may be stored with <code>failure_reason_code: "INVALID_PHONE_NUMBER"</code> for downstream tracking.
+</Note>
+
+---
+
+## Template Parameter Handling
+
+The API supports both recipient-level parameters and global parameters.
+
+### Recipient-Level Parameters
+
+Use `templateParams` inside each recipient object when every contact should receive different variable values.
+
+**Example use cases:**
+- Order ID per customer
+- Appointment time per customer
+- Personalized name per recipient
+
+### Global Parameters
+
+Use `globalTemplateParams` when the same variable values apply to all recipients in a bulk campaign.
+
+This reduces repeated payload data and is useful for common campaign-wide values such as brand name, coupon code, or offer percentage.
+
+### Rule of Precedence
+
+<Info>
+  When recipient-level <code>templateParams</code> are provided, they override the global values for that recipient.
+</Info>
+
+---
+
+## Health Check
+
+Use the health endpoint to verify whether the Public Broadcast API service is operational.
+
+### Endpoint
+
+```http
+GET /broadcast/public/health
+```
+
+### Example Request
+
+```bash
+curl -X GET https://api.yourdomain.com/broadcast/public/health
+```
+
+### Sample Response
+
+```json
+{
+  "status": "ok",
+  "timestamp": "2024-01-15T10:30:00.000Z",
+  "service": "Public Broadcast API",
+  "version": "1.0.0",
+  "endpoints": {
+    "single": "POST /broadcast/public/send-single",
+    "bulk-standard": "POST /broadcast/public/send-bulk-standard",
+    "health": "GET /broadcast/public/health"
+  }
+}
+```
+
+---
+
+## Error Handling Reference
+
+| Status Code | Error | Meaning |
+|---|---|---|
+| `400` | `User is not signed up yet` | API key is invalid or the phone number is not registered |
+| `400` | `No subscriptions available` | No active subscription is available for broadcasts |
+| `400` | `Insufficient credits` | Wallet balance is not enough |
+| `400` | `Template does not exist` | Template is missing or not approved |
+| `400` | `Invalid template language` | Requested template language variant is not approved |
+| `400` | `Invalid phone number format` | Country code or phone format is invalid |
+| `400` | `Pricing not available` | Sending is not supported for the target country code |
+| `400` | `Recipient limit exceeded` | Bulk request contains more than 1000 recipients |
+| `400` | `Broadcast with same name exists` | Campaign name must be unique |
+| `500` | `Internal Server Error` | Unexpected server-side error |
+
+## Failure Reason Codes
+
+| Code | Meaning | Notes |
+|---|---|---|
+| `INVALID_PHONE_NUMBER` | Invalid recipient number | Check country code and number formatting |
+| `UNSUPPORTED_COUNTRY_CODE` | Country pricing unavailable | Destination not supported |
+| `TEMPLATE_SEND_FAILED` | Template send failed | Review raw API error response |
+| `131014` | Invalid parameter | Template parameter issue |
+| `131051` | Rate limit exceeded | Too many requests sent in a short interval |
+| `WORKER_ERROR` | Worker processing failure | Review worker error response |
+
+---
+
+## Rate Limits and Platform Constraints
+
+<Warning>
+  Meta has an approximate sending rate of around 30 messages per second per WABA. The API includes automatic retry with exponential backoff for rate-limit errors such as <code>429</code>, <code>80007</code>, and <code>130429</code>.
+</Warning>
+
+<Tip>
+  Batch responsibly and split large uploads into multiple requests once you approach the 1000-recipient per-request limit.
+</Tip>
+
+---
+
+## Recommended Client Workflow
+
+<Steps>
+  <Step>
+    <h3>Onboard and Verify</h3>
+    <p>Onboard and verify the sender number on Eazybe before any API use.</p>
+  </Step>
+  <Step>
+    <h3>Generate API Key</h3>
+    <p>Generate the API key once and store it securely.</p>
+  </Step>
+  <Step>
+    <h3>Verify Templates</h3>
+    <p>Ensure the WhatsApp template is approved in Meta and the language variant is available.</p>
+  </Step>
+  <Step>
+    <h3>Validate Data</h3>
+    <p>Validate recipient country codes, phone numbers, and template variable count before sending.</p>
+  </Step>
+  <Step>
+    <h3>Send Broadcast</h3>
+    <p>Use the single endpoint for one-off tests and the bulk endpoint for campaigns.</p>
+  </Step>
+  <Step>
+    <h3>Monitor Response</h3>
+    <p>Monitor the response for <code>failed_contacts</code>, balance changes, and queue status.</p>
+  </Step>
+  <Step>
+    <h3>Use Unique Names</h3>
+    <p>Use unique broadcast names for every campaign.</p>
+  </Step>
+</Steps>
+
+---
+
+## Best Practices
+
+- Store the API key securely and avoid regenerating it unnecessarily
+- Pre-validate numbers to reduce failures and operational cleanup
+- Match the number of template variables exactly with the approved template placeholders
+- Use `globalTemplateParams` for shared values and recipient-level params only when personalization is required
+- Check credits before large broadcast requests
+- Start with a small test batch before sending full-volume campaigns
+
+---
+
+## Example Payload Patterns
+
+### Single Send with Variables
+
+```json
+{
+  "templateName": "order_shipped",
+  "templateLanguage": "en",
+  "templateType": "MARKETING",
+  "countryCode": "91",
+  "toPhoneNumber": "9876543210",
+  "templateParams": ["John", "ORD12345", "17-02-2024"]
+}
+```
+
+### Bulk Send with Recipient-Level Variables
+
+```json
+{
+  "broadcastName": "Appointment Reminders",
+  "templateName": "appointment_reminder",
+  "templateLanguage": "en",
+  "templateType": "UTILITY",
+  "data": [
+    {
+      "countryCode": "1",
+      "toPhoneNumber": "5551234567",
+      "templateParams": ["Alice", "2024-01-20", "10:00 AM"]
+    },
+    {
+      "countryCode": "1",
+      "toPhoneNumber": "5559876543",
+      "templateParams": ["Bob", "2024-01-20", "2:30 PM"]
+    }
+  ]
+}
+```
+
+### Bulk Send with Global Variables
+
+```json
+{
+  "broadcastName": "Global Promo",
+  "templateName": "promo_offer",
+  "templateLanguage": "en",
+  "templateType": "MARKETING",
+  "data": [
+    {
+      "countryCode": "91",
+      "toPhoneNumber": "9876543210"
+    },
+    {
+      "countryCode": "91",
+      "toPhoneNumber": "9876543211"
+    }
+  ],
+  "globalTemplateParams": ["MyStore", "SAVE20", "20"]
+}
+```
