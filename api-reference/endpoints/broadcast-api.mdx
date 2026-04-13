@@ -19,7 +19,7 @@ The API uses JSON requests over HTTPS and authenticates through the `x-api-key` 
 
 | Setting | Value |
 |---------|-------|
-| **Base URL** | `https://api.yourdomain.com` (replace with the production domain shared by Eazybe) |
+| **Base URL** | `https://cerberus.eazybe.com/prod/api/v2` |
 | **Authentication** | `x-api-key` header |
 | **Content-Type** | `application/json` |
 | **Supported Operations** | Generate key, send single broadcast, send bulk broadcast, health check |
@@ -68,7 +68,7 @@ The API uses JSON requests over HTTPS and authenticates through the `x-api-key` 
 
     <h4>Example Request</h4>
     ```bash
-    curl -X POST https://api.yourdomain.com/broadcast/public/generate-key \
+    curl -X POST https://cerberus.eazybe.com/prod/api/v2/broadcast/public/generate-key \
       -H "Content-Type: application/json" \
       -d '{
         "phoneNumber": "919876543210"
@@ -144,7 +144,7 @@ POST /broadcast/public/send-single
 ### Example Request
 
 ```bash
-curl -X POST https://api.yourdomain.com/broadcast/public/send-single \
+curl -X POST https://cerberus.eazybe.com/prod/api/v2/broadcast/public/send-single \
   -H "Content-Type: application/json" \
   -H "x-api-key: YOUR_API_KEY" \
   -d '{
@@ -222,7 +222,7 @@ POST /broadcast/public/send-bulk
 ### Example Request
 
 ```bash
-curl -X POST https://api.yourdomain.com/broadcast/public/send-bulk \
+curl -X POST https://cerberus.eazybe.com/prod/api/v2/broadcast/public/send-bulk \
   -H "Content-Type: application/json" \
   -H "x-api-key: YOUR_API_KEY" \
   -d '{
@@ -318,7 +318,7 @@ GET /broadcast/public/health
 ### Example Request
 
 ```bash
-curl -X GET https://api.yourdomain.com/broadcast/public/health
+curl -X GET https://cerberus.eazybe.com/prod/api/v2/broadcast/public/health
 ```
 
 ### Sample Response
