@@ -68,37 +68,37 @@ API, HTTPS üzerinden JSON istekleri kullanır ve `x-api-key` başlığı aracı
 
     <h4>Örnek İstek</h4>
     ```bash
-    curl -X POST https://cerberus.eazybe.com/prod/api/v2/broadcast/public/generate-key \
-      -H "Content-Type: application/json" \
-      -d '{
-        "phoneNumber": "919876543210"
-      }'
+curl -X POST https://cerberus.eazybe.com/prod/api/v2/broadcast/public/generate-key \
+  -H "Content-Type: application/json" \
+  -d '{
+    "phoneNumber": "919876543210"
+  }'
     ```
 
     <h4>Başarılı Yanıt</h4>
     ```json
-    {
-      "status": true,
-      "status_code": 200,
-      "message": "API key generated successfully",
-      "data": {
-        "apiKey": "15558044483"
-      }
-    }
+{
+  "status": true,
+  "status_code": 200,
+  "message": "API key generated successfully",
+  "data": {
+    "apiKey": "15558044483"
+  }
+}
     ```
 
     <h4>Hata Örneği</h4>
     ```json
-    {
-      "status": false,
-      "status_code": 400,
-      "message": "User is not signed up yet.",
-      "data": {
-        "error": {
-          "message": "No WABA account found for this phone number"
-        }
-      }
+{
+  "status": false,
+  "status_code": 400,
+  "message": "User is not signed up yet.",
+  "data": {
+    "error": {
+      "message": "No WABA account found for this phone number"
     }
+  }
+}
     ```
   </Step>
 
@@ -107,7 +107,7 @@ API, HTTPS üzerinden JSON istekleri kullanır ve `x-api-key` başlığı aracı
     <p>Tüm yayın uç noktaları, oluşturulan API anahtarını <code>x-api-key</code> başlığında gerektirir.</p>
 
     ```http
-    x-api-key: YOUR_API_KEY
+x-api-key: YOUR_API_KEY
     ```
 
     <Note>
@@ -133,7 +133,7 @@ POST /broadcast/public/send-single
 | Alan | Tür | Zorunlu | Açıklama |
 |---|---|---|---|
 | `templateName` | string | Evet | Onaylanmış WhatsApp şablon adı |
-| `templateLanguage` | string | Evet | Şablon dil kodu (ör., `en`) |
+| `templateLanguage` | string | Evet | Şablon dil kodu, örneğin `en` |
 | `templateType` | string | Evet | Şablon kategorisi: `MARKETING`, `UTILITY` veya `AUTHENTICATION` |
 | `countryCode` | string | Evet | `+` olmadan alıcı ülke kodu |
 | `toPhoneNumber` | string | Evet | Alıcı mobil numarası |
@@ -414,7 +414,7 @@ curl -X GET https://cerberus.eazybe.com/prod/api/v2/broadcast/public/health
 
 ---
 
-## En İyi Uygulamalar
+## En İyi Uygulamalar İçin İstemciler
 
 - API anahtarını güvenli bir şekilde saklayın ve gereksiz yere yeniden oluşturmaktan kaçının
 - Başarısızlıkları ve operasyonel temizliği azaltmak için numaraları önceden doğrulayın
