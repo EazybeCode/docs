@@ -17,21 +17,25 @@ La API utiliza solicitudes JSON sobre HTTPS y se autentica a través del encabez
 
 ## Configuración Base
 
-| Configuración | Valor |
-|---------|-------|
-| **URL Base** | `https://cerberus.eazybe.com/prod/api/v2` |
-| **Autenticación** | Encabezado `x-api-key` |
-| **Content-Type** | `application/json` |
+| Configuración             | Valor                                                                                      |
+| ------------------------- | ------------------------------------------------------------------------------------------ |
+| **URL Base**              | `https://cerberus.eazybe.com/prod/api/v2`                                                  |
+| **Autenticación**         | Encabezado `x-api-key`                                                                     |
+| **Content-Type**          | `application/json`                                                                         |
 | **Operaciones Admitidas** | Generar clave, enviar transmisión única, enviar transmisión masiva, verificación de estado |
 
 ## Antes de Comenzar
 
 <Warning>
-  Asegúrese de que el número de teléfono remitente ya esté integrado en Eazybe y vinculado a una configuración WABA activa. La generación de la clave API fallará si no se encuentra una cuenta WABA para el número enviado.
+  Asegúrese de que el número de teléfono remitente ya esté integrado en Eazybe y
+  vinculado a una configuración WABA activa. La generación de la clave API
+  fallará si no se encuentra una cuenta WABA para el número enviado.
 </Warning>
 
 <Tip>
-  Confirme que sus plantillas de WhatsApp requeridas estén aprobadas en Meta antes de intentar enviar. Las plantillas no aprobadas o faltantes devolverán fallos en la solicitud.
+  Confirme que sus plantillas de WhatsApp requeridas estén aprobadas en Meta
+  antes de intentar enviar. Las plantillas no aprobadas o faltantes devolverán
+  fallos en la solicitud.
 </Tip>
 
 ---
@@ -68,42 +72,46 @@ La API utiliza solicitudes JSON sobre HTTPS y se autentica a través del encabez
 
     <h4>Solicitud de Ejemplo</h4>
     ```bash
+
 curl -X POST https://cerberus.eazybe.com/prod/api/v2/broadcast/public/generate-key \
-  -H "Content-Type: application/json" \
-  -d '{
-    "phoneNumber": "919876543210"
-  }'
-    ```
+ -H "Content-Type: application/json" \
+ -d '{
+"phoneNumber": "919876543210"
+}'
+```
 
     <h4>Respuesta Exitosa</h4>
     ```json
+
 {
-  "status": true,
-  "message": "API key generated successfully",
-  "data": {
-    "apiKey": "9548e0f4ea0ab360ac9eeaf69f9754d72c6b606353037125d21842b9364ca8"
-  }
+"status": true,
+"message": "API key generated successfully",
+"data": {
+"apiKey": "9548e0f4ea0ab360ac9eeaf69f9754d72c6b606353037125d21842b9364ca8"
 }
-    ```
+}
+```
 
     <h4>Ejemplo de Fallo</h4>
     ```json
+
 {
-  "statusCode": 400,
-  "timestamp": "2026-04-14T07:13:33.289Z",
-  "path": "/broadcast/public/generate-key",
-  "method": "POST",
-  "requestId": "9c57a355c364f07060335e348902c9b8",
-  "message": "Failed to generate API key",
-  "status": false,
-  "status_code": 400,
-  "data": {
-    "error": {
-      "message": "Phone number not found or not connected to WABA."
-    }
-  }
+"statusCode": 400,
+"timestamp": "2026-04-14T07:13:33.289Z",
+"path": "/broadcast/public/generate-key",
+"method": "POST",
+"requestId": "9c57a355c364f07060335e348902c9b8",
+"message": "Failed to generate API key",
+"status": false,
+"status_code": 400,
+"data": {
+"error": {
+"message": "Phone number not found or not connected to WABA."
 }
-    ```
+}
+}
+```
+
   </Step>
 
   <Step>
@@ -111,12 +119,14 @@ curl -X POST https://cerberus.eazybe.com/prod/api/v2/broadcast/public/generate-k
     <p>Todos los puntos finales de transmisión requieren la clave API generada en el encabezado <code>x-api-key</code>.</p>
 
     ```http
+
 x-api-key: YOUR_API_KEY
-    ```
+```
 
     <Note>
       Almacene su clave API de forma segura. Evite regenerarla innecesariamente.
     </Note>
+
   </Step>
 </Steps>
 
@@ -134,16 +144,16 @@ POST /broadcast/public/send-single
 
 ### Estructura de Solicitud Requerida
 
-| Campo | Tipo | Requerido | Descripción |
-|---|---|---|---|
-| `templateName` | string | Sí | Nombre de plantilla de WhatsApp aprobada |
-| `templateLanguage` | string | Sí | Código de idioma de plantilla, por ejemplo `en` |
-| `templateType` | string | Sí | Categoría de plantilla: `MARKETING`, `UTILITY` |
-| `countryCode` | string | Sí | Código de país del destinatario sin `+` |
-| `toPhoneNumber` | string | Sí | Número móvil del destinatario |
-| `templateId` | string | No | ID de plantilla de Meta |
-| `templateParams` | string[] | No | Valores de variables de plantilla en orden {Requerido solo para plantillas basadas en variables} |
-| `broadcastName` | string | No | Etiqueta opcional para este envío |
+| Campo              | Tipo     | Requerido | Descripción                                                                                      |
+| ------------------ | -------- | --------- | ------------------------------------------------------------------------------------------------ |
+| `templateName`     | string   | Sí        | Nombre de plantilla de WhatsApp aprobada                                                         |
+| `templateLanguage` | string   | Sí        | Código de idioma de plantilla, por ejemplo `en`                                                  |
+| `templateType`     | string   | Sí        | Categoría de plantilla: `MARKETING`, `UTILITY`                                                   |
+| `countryCode`      | string   | Sí        | Código de país del destinatario sin `+`                                                          |
+| `toPhoneNumber`    | string   | Sí        | Número móvil del destinatario                                                                    |
+| `templateId`       | string   | No        | ID de plantilla de Meta                                                                          |
+| `templateParams`   | string[] | No        | Valores de variables de plantilla en orden - Requerido solo para plantillas basadas en variables |
+| `broadcastName`    | string   | No        | Etiqueta opcional para este envío                                                                |
 
 ### Solicitud de Ejemplo
 
@@ -187,10 +197,12 @@ curl -X POST https://cerberus.eazybe.com/prod/api/v2/broadcast/public/send-singl
 
 <Accordion>
   <AccordionItem title="Clave API no válida o número no registrado">
-    La solicitud falla cuando la clave API no coincide con un remitente registrado válido.
+    La solicitud falla cuando la clave API no coincide con un remitente
+    registrado válido.
   </AccordionItem>
   <AccordionItem title="Créditos insuficientes">
-    La solicitud falla cuando los créditos del monedero no son suficientes para el envío.
+    La solicitud falla cuando los créditos del monedero no son suficientes para
+    el envío.
   </AccordionItem>
   <AccordionItem title="Plantilla no válida o no aprobada">
     La solicitud falla si la plantilla no existe o no está aprobada.
@@ -211,23 +223,23 @@ POST /broadcast/public/send-bulk
 
 ### Estructura de Solicitud Requerida
 
-| Campo | Tipo | Requerido | Descripción |
-|---|---|---|---|
-| `broadcastName` | string | Sí | Nombre único de campaña |
-| `templateName` | string | Sí | Nombre de plantilla de WhatsApp aprobada |
-| `templateLanguage` | string | Sí | Código de idioma de plantilla |
-| `templateType` | string | Sí | Categoría de plantilla |
-| `data` | array | Sí | Lista de destinatarios, máximo 1000 por solicitud |
-| `templateId` | string | No | ID de plantilla de Meta |
-| `globalTemplateParams` | string[] | No | Variables predeterminadas usadas cuando no se proporcionan parámetros a nivel de destinatario |
+| Campo                  | Tipo     | Requerido | Descripción                                                                                   |
+| ---------------------- | -------- | --------- | --------------------------------------------------------------------------------------------- |
+| `broadcastName`        | string   | Sí        | Nombre único de campaña                                                                       |
+| `templateName`         | string   | Sí        | Nombre de plantilla de WhatsApp aprobada                                                      |
+| `templateLanguage`     | string   | Sí        | Código de idioma de plantilla                                                                 |
+| `templateType`         | string   | Sí        | Categoría de plantilla                                                                        |
+| `data`                 | array    | Sí        | Lista de destinatarios, máximo 1000 por solicitud                                             |
+| `templateId`           | string   | No        | ID de plantilla de Meta                                                                       |
+| `globalTemplateParams` | string[] | No        | Variables predeterminadas usadas cuando no se proporcionan parámetros a nivel de destinatario |
 
 ### Objeto de Destinatario en `data`
 
-| Campo | Tipo | Requerido | Descripción |
-|---|---|---|---|
-| `countryCode` | string | Sí | Código de país del destinatario sin `+` |
-| `toPhoneNumber` | string | Sí | Número móvil del destinatario |
-| `templateParams` | string[] | No | Variables a nivel de destinatario que sobrescriben los valores globales |
+| Campo            | Tipo     | Requerido | Descripción                                                             |
+| ---------------- | -------- | --------- | ----------------------------------------------------------------------- |
+| `countryCode`    | string   | Sí        | Código de país del destinatario sin `+`                                 |
+| `toPhoneNumber`  | string   | Sí        | Número móvil del destinatario                                           |
+| `templateParams` | string[] | No        | Variables a nivel de destinatario que sobrescriben los valores globales |
 
 ### Solicitud de Ejemplo
 
@@ -282,12 +294,19 @@ curl -X POST https://cerberus.eazybe.com/prod/api/v2/broadcast/public/send-bulk 
 <Warning>
   <ul>
     <li>Una solicitud masiva no puede exceder 1000 destinatarios.</li>
-    <li>Los nombres de transmisión deben ser únicos; de lo contrario, la solicitud falla.</li>
+    <li>
+      Los nombres de transmisión deben ser únicos; de lo contrario, la solicitud
+      falla.
+    </li>
   </ul>
 </Warning>
 
 <Note>
-  Los números no válidos pueden crear fallos parciales. Los contactos fallidos se cuentan por separado y no se deducen créditos para esos contactos no válidos. Los contactos fallidos pueden almacenarse con <code>failure_reason_code: "INVALID_PHONE_NUMBER"</code> para seguimiento descendente.
+  Los números no válidos pueden crear fallos parciales. Los contactos fallidos
+  se cuentan por separado y no se deducen créditos para esos contactos no
+  válidos. Los contactos fallidos pueden almacenarse con{" "}
+  <code>failure_reason_code: "INVALID_PHONE_NUMBER"</code> para seguimiento
+  descendente.
 </Note>
 
 ---
@@ -301,6 +320,7 @@ La API admite parámetros tanto a nivel de destinatario como globales.
 Use `templateParams` dentro de cada objeto de destinatario cuando cada contacto deba recibir diferentes valores de variables.
 
 **Casos de uso de ejemplo:**
+
 - ID de pedido por cliente
 - Hora de cita por cliente
 - Nombre personalizado por destinatario
@@ -314,7 +334,8 @@ Esto reduce datos de carga repetidos y es útil para valores comunes de toda la 
 ### Regla de Precedencia
 
 <Info>
-  Cuando se proporcionan <code>templateParams</code> a nivel de destinatario, sobrescriben los valores globales para ese destinatario.
+  Cuando se proporcionan <code>templateParams</code> a nivel de destinatario,
+  sobrescriben los valores globales para ese destinatario.
 </Info>
 
 ---
@@ -355,40 +376,45 @@ curl -X GET https://cerberus.eazybe.com/prod/api/v2/broadcast/public/health
 
 ## Referencia de Manejo de Errores
 
-| Código de Estado | Error | Significado |
-|---|---|---|
-| `400` | `User is not signed up yet` | La clave API no es válida o el número de teléfono no está registrado |
-| `400` | `No subscriptions available` | No hay una suscripción activa disponible para transmisiones |
-| `400` | `Insufficient credits` | El saldo del monedero no es suficiente |
-| `400` | `Template does not exist` | La plantilla no existe o no está aprobada |
-| `400` | `Invalid template language` | La variante de idioma de plantilla solicitada no está aprobada |
-| `400` | `Invalid phone number format` | El formato del código de país o teléfono no es válido |
-| `400` | `Pricing not available` | El envío no es compatible con el código de país de destino |
-| `400` | `Recipient limit exceeded` | La solicitud masiva contiene más de 1000 destinatarios |
-| `400` | `Broadcast with same name exists` | El nombre de la campaña debe ser único |
-| `500` | `Internal Server Error` | Error inesperado del lado del servidor |
+| Código de Estado | Error                             | Significado                                                          |
+| ---------------- | --------------------------------- | -------------------------------------------------------------------- |
+| `400`            | `User is not signed up yet`       | La clave API no es válida o el número de teléfono no está registrado |
+| `400`            | `No subscriptions available`      | No hay una suscripción activa disponible para transmisiones          |
+| `400`            | `Insufficient credits`            | El saldo del monedero no es suficiente                               |
+| `400`            | `Template does not exist`         | La plantilla no existe o no está aprobada                            |
+| `400`            | `Invalid template language`       | La variante de idioma de plantilla solicitada no está aprobada       |
+| `400`            | `Invalid phone number format`     | El formato del código de país o teléfono no es válido                |
+| `400`            | `Pricing not available`           | El envío no es compatible con el código de país de destino           |
+| `400`            | `Recipient limit exceeded`        | La solicitud masiva contiene más de 1000 destinatarios               |
+| `400`            | `Broadcast with same name exists` | El nombre de la campaña debe ser único                               |
+| `500`            | `Internal Server Error`           | Error inesperado del lado del servidor                               |
 
 ## Códigos de Razón de Fallo
 
-| Código | Significado | Notas |
-|---|---|---|
-| `INVALID_PHONE_NUMBER` | Número de destinatario no válido | Verifique el formato del código de país y número |
-| `UNSUPPORTED_COUNTRY_CODE` | Precios de país no disponibles | Destino no admitido |
-| `TEMPLATE_SEND_FAILED` | Fallo en el envío de plantilla | Revise la respuesta de error de API sin procesar |
-| `131014` | Parámetro no válido | Problema con el parámetro de plantilla |
-| `131051` | Límite de tasa excedido | Demasiadas solicitudes enviadas en un intervalo corto |
-| `WORKER_ERROR` | Fallo de procesamiento de trabajador | Revise la respuesta de error de trabajador |
+| Código                     | Significado                          | Notas                                                 |
+| -------------------------- | ------------------------------------ | ----------------------------------------------------- |
+| `INVALID_PHONE_NUMBER`     | Número de destinatario no válido     | Verifique el formato del código de país y número      |
+| `UNSUPPORTED_COUNTRY_CODE` | Precios de país no disponibles       | Destino no admitido                                   |
+| `TEMPLATE_SEND_FAILED`     | Fallo en el envío de plantilla       | Revise la respuesta de error de API sin procesar      |
+| `131014`                   | Parámetro no válido                  | Problema con el parámetro de plantilla                |
+| `131051`                   | Límite de tasa excedido              | Demasiadas solicitudes enviadas en un intervalo corto |
+| `WORKER_ERROR`             | Fallo de procesamiento de trabajador | Revise la respuesta de error de trabajador            |
 
 ---
 
 ## Límites de Tasa y Restricciones de Plataforma
 
 <Warning>
-  Meta tiene una tasa de envío aproximada de alrededor de 30 mensajes por segundo por WABA. La API incluye reintentos automáticos con retroceso exponencial para errores de límite de tasa como <code>429</code>, <code>80007</code> y <code>130429</code>.
+  Meta tiene una tasa de envío aproximada de alrededor de 30 mensajes por
+  segundo por WABA. La API incluye reintentos automáticos con retroceso
+  exponencial para errores de límite de tasa como <code>429</code>,{" "}
+  <code>80007</code> y <code>130429</code>.
 </Warning>
 
 <Tip>
-  Procese por lotes de manera responsable y divida cargas grandes en múltiples solicitudes una vez que se acerque al límite de 1000 destinatarios por solicitud.
+  Procese por lotes de manera responsable y divida cargas grandes en múltiples
+  solicitudes una vez que se acerque al límite de 1000 destinatarios por
+  solicitud.
 </Tip>
 
 ---
@@ -398,7 +424,10 @@ curl -X GET https://cerberus.eazybe.com/prod/api/v2/broadcast/public/health
 <Steps>
   <Step>
     <h3>Integrar y Verificar</h3>
-    <p>Integre y verifique el número de remitente en Eazybe antes de cualquier uso de la API.</p>
+    <p>
+      Integre y verifique el número de remitente en Eazybe antes de cualquier
+      uso de la API.
+    </p>
   </Step>
   <Step>
     <h3>Generar Clave API</h3>
@@ -406,19 +435,31 @@ curl -X GET https://cerberus.eazybe.com/prod/api/v2/broadcast/public/health
   </Step>
   <Step>
     <h3>Verificar Plantillas</h3>
-    <p>Asegúrese de que la plantilla de WhatsApp esté aprobada en Meta y que la variante de idioma esté disponible.</p>
+    <p>
+      Asegúrese de que la plantilla de WhatsApp esté aprobada en Meta y que la
+      variante de idioma esté disponible.
+    </p>
   </Step>
   <Step>
     <h3>Validar Datos</h3>
-    <p>Valide códigos de país de destinatarios, números de teléfono y recuento de variables de plantilla antes de enviar.</p>
+    <p>
+      Valide códigos de país de destinatarios, números de teléfono y recuento de
+      variables de plantilla antes de enviar.
+    </p>
   </Step>
   <Step>
     <h3>Enviar Transmisión</h3>
-    <p>Use el punto final único para pruebas únicas y el punto final masivo para campañas.</p>
+    <p>
+      Use el punto final único para pruebas únicas y el punto final masivo para
+      campañas.
+    </p>
   </Step>
   <Step>
     <h3>Monitorear Respuesta</h3>
-    <p>Monitoree la respuesta para <code>failed_contacts</code>, cambios de saldo y estado de cola.</p>
+    <p>
+      Monitoree la respuesta para <code>failed_contacts</code>, cambios de saldo
+      y estado de cola.
+    </p>
   </Step>
   <Step>
     <h3>Usar Nombres Únicos</h3>

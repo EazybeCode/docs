@@ -17,21 +17,25 @@ API, HTTPS üzerinden JSON istekleri kullanır ve `x-api-key` başlığı aracı
 
 ## Temel Yapılandırma
 
-| Ayar | Değer |
-|---------|-------|
-| **Temel URL** | `https://cerberus.eazybe.com/prod/api/v2` |
-| **Kimlik Doğrulama** | `x-api-key` başlığı |
-| **Content-Type** | `application/json` |
+| Ayar                     | Değer                                                                  |
+| ------------------------ | ---------------------------------------------------------------------- |
+| **Temel URL**            | `https://cerberus.eazybe.com/prod/api/v2`                              |
+| **Kimlik Doğrulama**     | `x-api-key` başlığı                                                    |
+| **Content-Type**         | `application/json`                                                     |
 | **Desteklenen İşlemler** | Anahtar oluştur, tek yayın gönder, toplu yayın gönder, sağlık kontrolü |
 
 ## Başlamadan Önce
 
 <Warning>
-  Gönderen telefon numarasının Eazybe'de zaten entegre edildiğinden ve aktif bir WABA kurulumuna bağlı olduğundan emin olun. Gönderilen numara için WABA hesabı bulunamazsa API anahtarı oluşturma başarısız olur.
+  Gönderen telefon numarasının Eazybe'de zaten entegre edildiğinden ve aktif bir
+  WABA kurulumuna bağlı olduğundan emin olun. Gönderilen numara için WABA hesabı
+  bulunamazsa API anahtarı oluşturma başarısız olur.
 </Warning>
 
 <Tip>
-  Göndermeye çalışmadan önce gerekli WhatsApp şablonlarının Meta'da onaylandığını doğrulayın. Onaylanmamış veya eksik şablonlar istek hataları döndürür.
+  Göndermeye çalışmadan önce gerekli WhatsApp şablonlarının Meta'da
+  onaylandığını doğrulayın. Onaylanmamış veya eksik şablonlar istek hataları
+  döndürür.
 </Tip>
 
 ---
@@ -68,42 +72,46 @@ API, HTTPS üzerinden JSON istekleri kullanır ve `x-api-key` başlığı aracı
 
     <h4>Örnek İstek</h4>
     ```bash
+
 curl -X POST https://cerberus.eazybe.com/prod/api/v2/broadcast/public/generate-key \
-  -H "Content-Type: application/json" \
-  -d '{
-    "phoneNumber": "919876543210"
-  }'
-    ```
+ -H "Content-Type: application/json" \
+ -d '{
+"phoneNumber": "919876543210"
+}'
+```
 
     <h4>Başarılı Yanıt</h4>
     ```json
+
 {
-  "status": true,
-  "message": "API key generated successfully",
-  "data": {
-    "apiKey": "9548e0f4ea0ab360ac9eeaf69f9754d72c6b606353037125d21842b9364ca8"
-  }
+"status": true,
+"message": "API key generated successfully",
+"data": {
+"apiKey": "9548e0f4ea0ab360ac9eeaf69f9754d72c6b606353037125d21842b9364ca8"
 }
-    ```
+}
+```
 
     <h4>Hata Örneği</h4>
     ```json
+
 {
-  "statusCode": 400,
-  "timestamp": "2026-04-14T07:13:33.289Z",
-  "path": "/broadcast/public/generate-key",
-  "method": "POST",
-  "requestId": "9c57a355c364f07060335e348902c9b8",
-  "message": "Failed to generate API key",
-  "status": false,
-  "status_code": 400,
-  "data": {
-    "error": {
-      "message": "Phone number not found or not connected to WABA."
-    }
-  }
+"statusCode": 400,
+"timestamp": "2026-04-14T07:13:33.289Z",
+"path": "/broadcast/public/generate-key",
+"method": "POST",
+"requestId": "9c57a355c364f07060335e348902c9b8",
+"message": "Failed to generate API key",
+"status": false,
+"status_code": 400,
+"data": {
+"error": {
+"message": "Phone number not found or not connected to WABA."
 }
-    ```
+}
+}
+```
+
   </Step>
 
   <Step>
@@ -111,12 +119,14 @@ curl -X POST https://cerberus.eazybe.com/prod/api/v2/broadcast/public/generate-k
     <p>Tüm yayın uç noktaları, oluşturulan API anahtarını <code>x-api-key</code> başlığında gerektirir.</p>
 
     ```http
+
 x-api-key: YOUR_API_KEY
-    ```
+```
 
     <Note>
       API anahtarınızı güvenli bir şekilde saklayın. Gereksiz yere yeniden oluşturmaktan kaçının.
     </Note>
+
   </Step>
 </Steps>
 
@@ -134,16 +144,16 @@ POST /broadcast/public/send-single
 
 ### Gerekli İstek Yapısı
 
-| Alan | Tür | Zorunlu | Açıklama |
-|---|---|---|---|
-| `templateName` | string | Evet | Onaylanmış WhatsApp şablon adı |
-| `templateLanguage` | string | Evet | Şablon dil kodu, örneğin `en` |
-| `templateType` | string | Evet | Şablon kategorisi: `MARKETING`, `UTILITY` |
-| `countryCode` | string | Evet | `+` olmadan alıcı ülke kodu |
-| `toPhoneNumber` | string | Evet | Alıcı mobil numarası |
-| `templateId` | string | Hayır | Meta şablon kimliği |
-| `templateParams` | string[] | Hayır | Sırayla şablon değişken değerleri {Yalnızca değişken bazlı şablonlar için gereklidir} |
-| `broadcastName` | string | Hayır | Bu gönderim için isteğe bağlı etiket |
+| Alan               | Tür      | Zorunlu | Açıklama                                                                              |
+| ------------------ | -------- | ------- | ------------------------------------------------------------------------------------- |
+| `templateName`     | string   | Evet    | Onaylanmış WhatsApp şablon adı                                                        |
+| `templateLanguage` | string   | Evet    | Şablon dil kodu, örneğin `en`                                                         |
+| `templateType`     | string   | Evet    | Şablon kategorisi: `MARKETING`, `UTILITY`                                             |
+| `countryCode`      | string   | Evet    | `+` olmadan alıcı ülke kodu                                                           |
+| `toPhoneNumber`    | string   | Evet    | Alıcı mobil numarası                                                                  |
+| `templateId`       | string   | Hayır   | Meta şablon kimliği                                                                   |
+| `templateParams`   | string[] | Hayır   | Sırayla şablon değişken değerleri - Yalnızca değişken bazlı şablonlar için gereklidir |
+| `broadcastName`    | string   | Hayır   | Bu gönderim için isteğe bağlı etiket                                                  |
 
 ### Örnek İstek
 
@@ -187,7 +197,8 @@ curl -X POST https://cerberus.eazybe.com/prod/api/v2/broadcast/public/send-singl
 
 <Accordion>
   <AccordionItem title="Geçersiz API anahtarı veya kayıtsız numara">
-    İstek, API anahtarı geçerli bir kayıtlı gönderenle eşleşmediğinde başarısız olur.
+    İstek, API anahtarı geçerli bir kayıtlı gönderenle eşleşmediğinde başarısız
+    olur.
   </AccordionItem>
   <AccordionItem title="Yetersiz kredi">
     Cüzdan kredileri gönderim için yeterli olmadığında istek başarısız olur.
@@ -211,23 +222,23 @@ POST /broadcast/public/send-bulk
 
 ### Gerekli İstek Yapısı
 
-| Alan | Tür | Zorunlu | Açıklama |
-|---|---|---|---|
-| `broadcastName` | string | Evet | Benzersiz kampanya adı |
-| `templateName` | string | Evet | Onaylanmış WhatsApp şablon adı |
-| `templateLanguage` | string | Evet | Şablon dil kodu |
-| `templateType` | string | Evet | Şablon kategorisi |
-| `data` | array | Evet | Alıcı listesi, istek başına maksimum 1000 |
-| `templateId` | string | Hayır | Meta şablon kimliği |
-| `globalTemplateParams` | string[] | Hayır | Alıcı düzeyinde parametreler sağlanmadığında kullanılan varsayılan değişkenler |
+| Alan                   | Tür      | Zorunlu | Açıklama                                                                       |
+| ---------------------- | -------- | ------- | ------------------------------------------------------------------------------ |
+| `broadcastName`        | string   | Evet    | Benzersiz kampanya adı                                                         |
+| `templateName`         | string   | Evet    | Onaylanmış WhatsApp şablon adı                                                 |
+| `templateLanguage`     | string   | Evet    | Şablon dil kodu                                                                |
+| `templateType`         | string   | Evet    | Şablon kategorisi                                                              |
+| `data`                 | array    | Evet    | Alıcı listesi, istek başına maksimum 1000                                      |
+| `templateId`           | string   | Hayır   | Meta şablon kimliği                                                            |
+| `globalTemplateParams` | string[] | Hayır   | Alıcı düzeyinde parametreler sağlanmadığında kullanılan varsayılan değişkenler |
 
 ### `data` İçindeki Alıcı Nesnesi
 
-| Alan | Tür | Zorunlu | Açıklama |
-|---|---|---|---|
-| `countryCode` | string | Evet | `+` olmadan alıcı ülke kodu |
-| `toPhoneNumber` | string | Evet | Alıcı mobil numarası |
-| `templateParams` | string[] | Hayır | Genel değerleri geçersiz kılan alıcı düzeyinde değişkenler |
+| Alan             | Tür      | Zorunlu | Açıklama                                                   |
+| ---------------- | -------- | ------- | ---------------------------------------------------------- |
+| `countryCode`    | string   | Evet    | `+` olmadan alıcı ülke kodu                                |
+| `toPhoneNumber`  | string   | Evet    | Alıcı mobil numarası                                       |
+| `templateParams` | string[] | Hayır   | Genel değerleri geçersiz kılan alıcı düzeyinde değişkenler |
 
 ### Örnek İstek
 
@@ -282,12 +293,17 @@ curl -X POST https://cerberus.eazybe.com/prod/api/v2/broadcast/public/send-bulk 
 <Warning>
   <ul>
     <li>Toplu bir istek 1000 alıcıyı aşamaz.</li>
-    <li>Yayın adları benzersiz olmalıdır, aksi takdirde istek başarısız olur.</li>
+    <li>
+      Yayın adları benzersiz olmalıdır, aksi takdirde istek başarısız olur.
+    </li>
   </ul>
 </Warning>
 
 <Note>
-  Geçersiz numaralar kısmi başarısızlıklar oluşturabilir. Başarısız kontaklar ayrı olarak sayılır ve bu geçersiz kontaklar için kredi düşülmez. Başarısız kontaklar aşağı akış takibi için <code>failure_reason_code: "INVALID_PHONE_NUMBER"</code> ile saklanabilir.
+  Geçersiz numaralar kısmi başarısızlıklar oluşturabilir. Başarısız kontaklar
+  ayrı olarak sayılır ve bu geçersiz kontaklar için kredi düşülmez. Başarısız
+  kontaklar aşağı akış takibi için{" "}
+  <code>failure_reason_code: "INVALID_PHONE_NUMBER"</code> ile saklanabilir.
 </Note>
 
 ---
@@ -301,6 +317,7 @@ API hem alıcı düzeyinde hem de genel parametreleri destekler.
 Her kontakın farklı değişken değerleri alması gerektiğinde her alıcı nesnesi içinde `templateParams` kullanın.
 
 **Örnek kullanım durumları:**
+
 - Müşteri başına sipariş kimliği
 - Müşteri başına randevu saati
 - Alıcı başına kişiselleştirilmiş ad
@@ -314,7 +331,8 @@ Bu, tekrarlanan yük verilerini azaltır ve marka adı, kupon kodu veya teklif y
 ### Öncelik Kuralı
 
 <Info>
-  Alıcı düzeyinde <code>templateParams</code> sağlandığında, bu alıcı için genel değerleri geçersiz kılar.
+  Alıcı düzeyinde <code>templateParams</code> sağlandığında, bu alıcı için genel
+  değerleri geçersiz kılar.
 </Info>
 
 ---
@@ -355,40 +373,43 @@ curl -X GET https://cerberus.eazybe.com/prod/api/v2/broadcast/public/health
 
 ## Hata İşleme Referansı
 
-| Durum Kodu | Hata | Anlamı |
-|---|---|---|
-| `400` | `User is not signed up yet` | API anahtarı geçersiz veya telefon numarası kayıtlı değil |
-| `400` | `No subscriptions available` | Yayınlar için aktif bir abonelik mevcut değil |
-| `400` | `Insufficient credits` | Cüzdan bakiyesi yeterli değil |
-| `400` | `Template does not exist` | Şablon eksik veya onaylanmamış |
-| `400` | `Invalid template language` | İstenen şablon dil varyasyonu onaylanmamış |
-| `400` | `Invalid phone number format` | Ülke kodu veya telefon biçimi geçersiz |
-| `400` | `Pricing not available` | Hedef ülke kodu için gönderim desteklenmiyor |
-| `400` | `Recipient limit exceeded` | Toplu istek 1000'den fazla alıcı içeriyor |
-| `400` | `Broadcast with same name exists` | Kampanya adı benzersiz olmalı |
-| `500` | `Internal Server Error` | Beklenmeyen sunucu tarafı hata |
+| Durum Kodu | Hata                              | Anlamı                                                    |
+| ---------- | --------------------------------- | --------------------------------------------------------- |
+| `400`      | `User is not signed up yet`       | API anahtarı geçersiz veya telefon numarası kayıtlı değil |
+| `400`      | `No subscriptions available`      | Yayınlar için aktif bir abonelik mevcut değil             |
+| `400`      | `Insufficient credits`            | Cüzdan bakiyesi yeterli değil                             |
+| `400`      | `Template does not exist`         | Şablon eksik veya onaylanmamış                            |
+| `400`      | `Invalid template language`       | İstenen şablon dil varyasyonu onaylanmamış                |
+| `400`      | `Invalid phone number format`     | Ülke kodu veya telefon biçimi geçersiz                    |
+| `400`      | `Pricing not available`           | Hedef ülke kodu için gönderim desteklenmiyor              |
+| `400`      | `Recipient limit exceeded`        | Toplu istek 1000'den fazla alıcı içeriyor                 |
+| `400`      | `Broadcast with same name exists` | Kampanya adı benzersiz olmalı                             |
+| `500`      | `Internal Server Error`           | Beklenmeyen sunucu tarafı hata                            |
 
 ## Hata Nedeni Kodları
 
-| Kod | Anlamı | Notlar |
-|---|---|---|
-| `INVALID_PHONE_NUMBER` | Geçersiz alıcı numarası | Ülke kodu ve numara biçimini kontrol edin |
-| `UNSUPPORTED_COUNTRY_CODE` | Ülke fiyatlandırması mevcut değil | Hedef desteklenmiyor |
-| `TEMPLATE_SEND_FAILED` | Şablon gönderimi başarısız oldu | Ham API hata yanıtını inceleyin |
-| `131014` | Geçersiz parametre | Şablon parametre sorunu |
-| `131051` | Hız sınırı aşıldı | Kısa bir süre içinde çok fazla istek gönderildi |
-| `WORKER_ERROR` | İşçi işleme hatası | İşçi hata yanıtını inceleyin |
+| Kod                        | Anlamı                            | Notlar                                          |
+| -------------------------- | --------------------------------- | ----------------------------------------------- |
+| `INVALID_PHONE_NUMBER`     | Geçersiz alıcı numarası           | Ülke kodu ve numara biçimini kontrol edin       |
+| `UNSUPPORTED_COUNTRY_CODE` | Ülke fiyatlandırması mevcut değil | Hedef desteklenmiyor                            |
+| `TEMPLATE_SEND_FAILED`     | Şablon gönderimi başarısız oldu   | Ham API hata yanıtını inceleyin                 |
+| `131014`                   | Geçersiz parametre                | Şablon parametre sorunu                         |
+| `131051`                   | Hız sınırı aşıldı                 | Kısa bir süre içinde çok fazla istek gönderildi |
+| `WORKER_ERROR`             | İşçi işleme hatası                | İşçi hata yanıtını inceleyin                    |
 
 ---
 
 ## Hız Sınırları ve Platform Kısıtlamaları
 
 <Warning>
-  Meta'nın WABA başına saniyede yaklaşık 30 mesaj gönderim oranı vardır. API, <code>429</code>, <code>80007</code> ve <code>130429</code> gibi hız sınırlama hataları için otomatik yeniden deneme ve üstel geri çekme içerir.
+  Meta'nın WABA başına saniyede yaklaşık 30 mesaj gönderim oranı vardır. API,{" "}
+  <code>429</code>, <code>80007</code> ve <code>130429</code> gibi hız sınırlama
+  hataları için otomatik yeniden deneme ve üstel geri çekme içerir.
 </Warning>
 
 <Tip>
-  İstek başına 1000 alıcı sınırına yaklaştığınızda, büyük yüklemeleri birden fazla istek için sorumlu bir şekilde bölün ve bölün.
+  İstek başına 1000 alıcı sınırına yaklaştığınızda, büyük yüklemeleri birden
+  fazla istek için sorumlu bir şekilde bölün ve bölün.
 </Tip>
 
 ---
@@ -398,7 +419,10 @@ curl -X GET https://cerberus.eazybe.com/prod/api/v2/broadcast/public/health
 <Steps>
   <Step>
     <h3>Entegre Edin ve Doğrulayın</h3>
-    <p>Herhangi bir API kullanımından önce gönderen numarasını Eazybe'de entegre edin ve doğrulayın.</p>
+    <p>
+      Herhangi bir API kullanımından önce gönderen numarasını Eazybe'de entegre
+      edin ve doğrulayın.
+    </p>
   </Step>
   <Step>
     <h3>API Anahtarı Oluşturun</h3>
@@ -406,19 +430,31 @@ curl -X GET https://cerberus.eazybe.com/prod/api/v2/broadcast/public/health
   </Step>
   <Step>
     <h3>Şablonları Doğrulayın</h3>
-    <p>WhatsApp şablonunun Meta'da onaylandığından ve dil varyasyonunun mevcut olduğundan emin olun.</p>
+    <p>
+      WhatsApp şablonunun Meta'da onaylandığından ve dil varyasyonunun mevcut
+      olduğundan emin olun.
+    </p>
   </Step>
   <Step>
     <h3>Verileri Doğrulayın</h3>
-    <p>Göndermeden önce alıcı ülke kodlarını, telefon numaralarını ve şablon değişken sayısını doğrulayın.</p>
+    <p>
+      Göndermeden önce alıcı ülke kodlarını, telefon numaralarını ve şablon
+      değişken sayısını doğrulayın.
+    </p>
   </Step>
   <Step>
     <h3>Yayın Gönderin</h3>
-    <p>Tek seferlik testler için tek uç noktayı, kampanyalar için toplu uç noktayı kullanın.</p>
+    <p>
+      Tek seferlik testler için tek uç noktayı, kampanyalar için toplu uç
+      noktayı kullanın.
+    </p>
   </Step>
   <Step>
     <h3>Yanıtı İzleyin</h3>
-    <p><code>failed_contacts</code>, bakiye değişiklikleri ve kuyruk durumu için yanıtı izleyin.</p>
+    <p>
+      <code>failed_contacts</code>, bakiye değişiklikleri ve kuyruk durumu için
+      yanıtı izleyin.
+    </p>
   </Step>
   <Step>
     <h3>Benzersiz Adlar Kullanın</h3>

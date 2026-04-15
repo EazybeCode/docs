@@ -17,21 +17,25 @@ A API usa solicitações JSON sobre HTTPS e autentica através do cabeçalho `x-
 
 ## Configuração Base
 
-| Configuração | Valor |
-|---------|-------|
-| **URL Base** | `https://cerberus.eazybe.com/prod/api/v2` |
-| **Autenticação** | Cabeçalho `x-api-key` |
-| **Content-Type** | `application/json` |
+| Configuração             | Valor                                                                                    |
+| ------------------------ | ---------------------------------------------------------------------------------------- |
+| **URL Base**             | `https://cerberus.eazybe.com/prod/api/v2`                                                |
+| **Autenticação**         | Cabeçalho `x-api-key`                                                                    |
+| **Content-Type**         | `application/json`                                                                       |
 | **Operações Suportadas** | Gerar chave, enviar transmissão única, enviar transmissão em massa, verificação de saúde |
 
 ## Antes de Começar
 
 <Warning>
-  Certifique-se de que o número de telefone remetente já esteja integrado na Eazybe e vinculado a uma configuração WABA ativa. A geração da chave API falhará se nenhuma conta WABA for encontrada para o número enviado.
+  Certifique-se de que o número de telefone remetente já esteja integrado na
+  Eazybe e vinculado a uma configuração WABA ativa. A geração da chave API
+  falhará se nenhuma conta WABA for encontrada para o número enviado.
 </Warning>
 
 <Tip>
-  Confirme que os modelos de WhatsApp necessários estão aprovados no Meta antes de tentar enviar. Modelos não aprovados ou ausentes retornarão falhas na solicitação.
+  Confirme que os modelos de WhatsApp necessários estão aprovados no Meta antes
+  de tentar enviar. Modelos não aprovados ou ausentes retornarão falhas na
+  solicitação.
 </Tip>
 
 ---
@@ -68,42 +72,46 @@ A API usa solicitações JSON sobre HTTPS e autentica através do cabeçalho `x-
 
     <h4>Solicitação de Exemplo</h4>
     ```bash
+
 curl -X POST https://cerberus.eazybe.com/prod/api/v2/broadcast/public/generate-key \
-  -H "Content-Type: application/json" \
-  -d '{
-    "phoneNumber": "919876543210"
-  }'
-    ```
+ -H "Content-Type: application/json" \
+ -d '{
+"phoneNumber": "919876543210"
+}'
+```
 
     <h4>Resposta de Sucesso</h4>
     ```json
+
 {
-  "status": true,
-  "message": "API key generated successfully",
-  "data": {
-    "apiKey": "9548e0f4ea0ab360ac9eeaf69f9754d72c6b606353037125d21842b9364ca8"
-  }
+"status": true,
+"message": "API key generated successfully",
+"data": {
+"apiKey": "9548e0f4ea0ab360ac9eeaf69f9754d72c6b606353037125d21842b9364ca8"
 }
-    ```
+}
+```
 
     <h4>Exemplo de Falha</h4>
     ```json
+
 {
-  "statusCode": 400,
-  "timestamp": "2026-04-14T07:13:33.289Z",
-  "path": "/broadcast/public/generate-key",
-  "method": "POST",
-  "requestId": "9c57a355c364f07060335e348902c9b8",
-  "message": "Failed to generate API key",
-  "status": false,
-  "status_code": 400,
-  "data": {
-    "error": {
-      "message": "Phone number not found or not connected to WABA."
-    }
-  }
+"statusCode": 400,
+"timestamp": "2026-04-14T07:13:33.289Z",
+"path": "/broadcast/public/generate-key",
+"method": "POST",
+"requestId": "9c57a355c364f07060335e348902c9b8",
+"message": "Failed to generate API key",
+"status": false,
+"status_code": 400,
+"data": {
+"error": {
+"message": "Phone number not found or not connected to WABA."
 }
-    ```
+}
+}
+```
+
   </Step>
 
   <Step>
@@ -111,12 +119,14 @@ curl -X POST https://cerberus.eazybe.com/prod/api/v2/broadcast/public/generate-k
     <p>Todos os pontos finais de transmissão requerem a chave API gerada no cabeçalho <code>x-api-key</code>.</p>
 
     ```http
+
 x-api-key: YOUR_API_KEY
-    ```
+```
 
     <Note>
       Armazene sua chave API com segurança. Evite regenerá-la desnecessariamente.
     </Note>
+
   </Step>
 </Steps>
 
@@ -134,16 +144,16 @@ POST /broadcast/public/send-single
 
 ### Estrutura de Solicitação Obrigatória
 
-| Campo | Tipo | Obrigatório | Descrição |
-|---|---|---|---|
-| `templateName` | string | Sim | Nome do modelo de WhatsApp aprovado |
-| `templateLanguage` | string | Sim | Código de idioma do modelo, por exemplo `en` |
-| `templateType` | string | Sim | Categoria do modelo: `MARKETING`, `UTILITY` |
-| `countryCode` | string | Sim | Código de país do destinatário sem `+` |
-| `toPhoneNumber` | string | Sim | Número móvel do destinatário |
-| `templateId` | string | Não | ID do modelo Meta |
-| `templateParams` | string[] | Não | Valores das variáveis do modelo em ordem {Necessário apenas para modelos baseados em variáveis} |
-| `broadcastName` | string | Não | Rótulo opcional para este envio |
+| Campo              | Tipo     | Obrigatório | Descrição                                                                                       |
+| ------------------ | -------- | ----------- | ----------------------------------------------------------------------------------------------- |
+| `templateName`     | string   | Sim         | Nome do modelo de WhatsApp aprovado                                                             |
+| `templateLanguage` | string   | Sim         | Código de idioma do modelo, por exemplo `en`                                                    |
+| `templateType`     | string   | Sim         | Categoria do modelo: `MARKETING`, `UTILITY`                                                     |
+| `countryCode`      | string   | Sim         | Código de país do destinatário sem `+`                                                          |
+| `toPhoneNumber`    | string   | Sim         | Número móvel do destinatário                                                                    |
+| `templateId`       | string   | Não         | ID do modelo Meta                                                                               |
+| `templateParams`   | string[] | Não         | Valores das variáveis do modelo em ordem - Necessário apenas para modelos baseados em variáveis |
+| `broadcastName`    | string   | Não         | Rótulo opcional para este envio                                                                 |
 
 ### Solicitação de Exemplo
 
@@ -187,10 +197,12 @@ curl -X POST https://cerberus.eazybe.com/prod/api/v2/broadcast/public/send-singl
 
 <Accordion>
   <AccordionItem title="Chave API inválida ou número não registrado">
-    A solicitação falha quando a chave API não corresponde a um remetente registrado válido.
+    A solicitação falha quando a chave API não corresponde a um remetente
+    registrado válido.
   </AccordionItem>
   <AccordionItem title="Créditos insuficientes">
-    A solicitação falha quando os créditos da carteira não são suficientes para o envio.
+    A solicitação falha quando os créditos da carteira não são suficientes para
+    o envio.
   </AccordionItem>
   <AccordionItem title="Modelo inválido ou não aprovado">
     A solicitação falha se o modelo não existir ou não estiver aprovado.
@@ -211,23 +223,23 @@ POST /broadcast/public/send-bulk
 
 ### Estrutura de Solicitação Obrigatória
 
-| Campo | Tipo | Obrigatório | Descrição |
-|---|---|---|---|
-| `broadcastName` | string | Sim | Nome exclusivo de campanha |
-| `templateName` | string | Sim | Nome do modelo de WhatsApp aprovado |
-| `templateLanguage` | string | Sim | Código de idioma do modelo |
-| `templateType` | string | Sim | Categoria do modelo |
-| `data` | array | Sim | Lista de destinatários, máximo 1000 por solicitação |
-| `templateId` | string | Não | ID do modelo Meta |
-| `globalTemplateParams` | string[] | Não | Variáveis padrão usadas quando parâmetros no nível do destinatário não são fornecidos |
+| Campo                  | Tipo     | Obrigatório | Descrição                                                                             |
+| ---------------------- | -------- | ----------- | ------------------------------------------------------------------------------------- |
+| `broadcastName`        | string   | Sim         | Nome exclusivo de campanha                                                            |
+| `templateName`         | string   | Sim         | Nome do modelo de WhatsApp aprovado                                                   |
+| `templateLanguage`     | string   | Sim         | Código de idioma do modelo                                                            |
+| `templateType`         | string   | Sim         | Categoria do modelo                                                                   |
+| `data`                 | array    | Sim         | Lista de destinatários, máximo 1000 por solicitação                                   |
+| `templateId`           | string   | Não         | ID do modelo Meta                                                                     |
+| `globalTemplateParams` | string[] | Não         | Variáveis padrão usadas quando parâmetros no nível do destinatário não são fornecidos |
 
 ### Objeto de Destinatário em `data`
 
-| Campo | Tipo | Obrigatório | Descrição |
-|---|---|---|---|
-| `countryCode` | string | Sim | Código de país do destinatário sem `+` |
-| `toPhoneNumber` | string | Sim | Número móvel do destinatário |
-| `templateParams` | string[] | Não | Variáveis no nível do destinatário que substituem valores globais |
+| Campo            | Tipo     | Obrigatório | Descrição                                                         |
+| ---------------- | -------- | ----------- | ----------------------------------------------------------------- |
+| `countryCode`    | string   | Sim         | Código de país do destinatário sem `+`                            |
+| `toPhoneNumber`  | string   | Sim         | Número móvel do destinatário                                      |
+| `templateParams` | string[] | Não         | Variáveis no nível do destinatário que substituem valores globais |
 
 ### Solicitação de Exemplo
 
@@ -282,12 +294,19 @@ curl -X POST https://cerberus.eazybe.com/prod/api/v2/broadcast/public/send-bulk 
 <Warning>
   <ul>
     <li>Uma solicitação em massa não pode exceder 1000 destinatários.</li>
-    <li>Os nomes de transmissão devem ser exclusivos; caso contrário, a solicitação falha.</li>
+    <li>
+      Os nomes de transmissão devem ser exclusivos; caso contrário, a
+      solicitação falha.
+    </li>
   </ul>
 </Warning>
 
 <Note>
-  Números inválidos podem criar falhas parciais. Contatos com falha são contados separadamente e créditos não são deduzidos para esses contatos inválidos. Contatos com falha podem ser armazenados com <code>failure_reason_code: "INVALID_PHONE_NUMBER"</code> para rastreamento downstream.
+  Números inválidos podem criar falhas parciais. Contatos com falha são contados
+  separadamente e créditos não são deduzidos para esses contatos inválidos.
+  Contatos com falha podem ser armazenados com{" "}
+  <code>failure_reason_code: "INVALID_PHONE_NUMBER"</code> para rastreamento
+  downstream.
 </Note>
 
 ---
@@ -301,6 +320,7 @@ A API suporta parâmetros tanto no nível do destinatário quanto globais.
 Use `templateParams` dentro de cada objeto de destinatário quando cada contato deve receber diferentes valores de variáveis.
 
 **Casos de uso de exemplo:**
+
 - ID do pedido por cliente
 - Horário de compromisso por cliente
 - Nome personalizado por destinatário
@@ -314,7 +334,8 @@ Isso reduz dados de carga repetidos e é útil para valores comuns em toda a cam
 ### Regra de Precedência
 
 <Info>
-  Quando <code>templateParams</code> no nível do destinatário são fornecidos, eles substituem os valores globais para aquele destinatário.
+  Quando <code>templateParams</code> no nível do destinatário são fornecidos,
+  eles substituem os valores globais para aquele destinatário.
 </Info>
 
 ---
@@ -355,40 +376,45 @@ curl -X GET https://cerberus.eazybe.com/prod/api/v2/broadcast/public/health
 
 ## Referência de Tratamento de Erros
 
-| Código de Status | Erro | Significado |
-|---|---|---|
-| `400` | `User is not signed up yet` | A chave API é inválida ou o número de telefone não está registrado |
-| `400` | `No subscriptions available` | Nenhuma assinatura ativa está disponível para transmissões |
-| `400` | `Insufficient credits` | O saldo da carteira não é suficiente |
-| `400` | `Template does not exist` | O modelo está ausente ou não aprovado |
-| `400` | `Invalid template language` | A variante de idioma de modelo solicitada não está aprovada |
-| `400` | `Invalid phone number format` | O formato do código de país ou telefone é inválido |
-| `400` | `Pricing not available` | O envio não é suportado para o código de país de destino |
-| `400` | `Recipient limit exceeded` | A solicitação em massa contém mais de 1000 destinatários |
-| `400` | `Broadcast with same name exists` | O nome da campanha deve ser exclusivo |
-| `500` | `Internal Server Error` | Erro inesperado do lado do servidor |
+| Código de Status | Erro                              | Significado                                                        |
+| ---------------- | --------------------------------- | ------------------------------------------------------------------ |
+| `400`            | `User is not signed up yet`       | A chave API é inválida ou o número de telefone não está registrado |
+| `400`            | `No subscriptions available`      | Nenhuma assinatura ativa está disponível para transmissões         |
+| `400`            | `Insufficient credits`            | O saldo da carteira não é suficiente                               |
+| `400`            | `Template does not exist`         | O modelo está ausente ou não aprovado                              |
+| `400`            | `Invalid template language`       | A variante de idioma de modelo solicitada não está aprovada        |
+| `400`            | `Invalid phone number format`     | O formato do código de país ou telefone é inválido                 |
+| `400`            | `Pricing not available`           | O envio não é suportado para o código de país de destino           |
+| `400`            | `Recipient limit exceeded`        | A solicitação em massa contém mais de 1000 destinatários           |
+| `400`            | `Broadcast with same name exists` | O nome da campanha deve ser exclusivo                              |
+| `500`            | `Internal Server Error`           | Erro inesperado do lado do servidor                                |
 
 ## Códigos de Razão de Falha
 
-| Código | Significado | Notas |
-|---|---|---|
-| `INVALID_PHONE_NUMBER` | Número de destinatário inválido | Verifique a formatação do código de país e número |
-| `UNSUPPORTED_COUNTRY_CODE` | Preços de país indisponíveis | Destino não suportado |
-| `TEMPLATE_SEND_FAILED` | Falha no envio do modelo | Revise a resposta de erro da API bruta |
-| `131014` | Parâmetro inválido | Problema com o parâmetro do modelo |
-| `131051` | Limite de taxa excedido | Muitas solicitações enviadas em um intervalo curto |
-| `WORKER_ERROR` | Falha de processamento do trabalhador | Revise a resposta de erro do trabalhador |
+| Código                     | Significado                           | Notas                                              |
+| -------------------------- | ------------------------------------- | -------------------------------------------------- |
+| `INVALID_PHONE_NUMBER`     | Número de destinatário inválido       | Verifique a formatação do código de país e número  |
+| `UNSUPPORTED_COUNTRY_CODE` | Preços de país indisponíveis          | Destino não suportado                              |
+| `TEMPLATE_SEND_FAILED`     | Falha no envio do modelo              | Revise a resposta de erro da API bruta             |
+| `131014`                   | Parâmetro inválido                    | Problema com o parâmetro do modelo                 |
+| `131051`                   | Limite de taxa excedido               | Muitas solicitações enviadas em um intervalo curto |
+| `WORKER_ERROR`             | Falha de processamento do trabalhador | Revise a resposta de erro do trabalhador           |
 
 ---
 
 ## Limites de Taxa e Restrições da Plataforma
 
 <Warning>
-  Meta tem uma taxa de envio aproximada de cerca de 30 mensagens por segundo por WABA. A API inclui novas tentativas automáticas com retrocesso exponencial para erros de limite de taxa como <code>429</code>, <code>80007</code> e <code>130429</code>.
+  Meta tem uma taxa de envio aproximada de cerca de 30 mensagens por segundo por
+  WABA. A API inclui novas tentativas automáticas com retrocesso exponencial
+  para erros de limite de taxa como <code>429</code>, <code>80007</code> e{" "}
+  <code>130429</code>.
 </Warning>
 
 <Tip>
-  Processe em lotes com responsabilidade e divida uploads grandes em múltiplas solicitações uma vez que se aproxime do limite de 1000 destinatários por solicitação.
+  Processe em lotes com responsabilidade e divida uploads grandes em múltiplas
+  solicitações uma vez que se aproxime do limite de 1000 destinatários por
+  solicitação.
 </Tip>
 
 ---
@@ -398,7 +424,10 @@ curl -X GET https://cerberus.eazybe.com/prod/api/v2/broadcast/public/health
 <Steps>
   <Step>
     <h3>Integrar e Verificar</h3>
-    <p>Integre e verifique o número do remetente na Eazybe antes de qualquer uso da API.</p>
+    <p>
+      Integre e verifique o número do remetente na Eazybe antes de qualquer uso
+      da API.
+    </p>
   </Step>
   <Step>
     <h3>Gerar Chave API</h3>
@@ -406,19 +435,31 @@ curl -X GET https://cerberus.eazybe.com/prod/api/v2/broadcast/public/health
   </Step>
   <Step>
     <h3>Verificar Modelos</h3>
-    <p>Certifique-se de que o modelo de WhatsApp esteja aprovado no Meta e que a variante de idioma esteja disponível.</p>
+    <p>
+      Certifique-se de que o modelo de WhatsApp esteja aprovado no Meta e que a
+      variante de idioma esteja disponível.
+    </p>
   </Step>
   <Step>
     <h3>Validar Dados</h3>
-    <p>Valide códigos de país de destinatários, números de telefone e contagem de variáveis do modelo antes de enviar.</p>
+    <p>
+      Valide códigos de país de destinatários, números de telefone e contagem de
+      variáveis do modelo antes de enviar.
+    </p>
   </Step>
   <Step>
     <h3>Enviar Transmissão</h3>
-    <p>Use o ponto final único para testes únicos e o ponto final em massa para campanhas.</p>
+    <p>
+      Use o ponto final único para testes únicos e o ponto final em massa para
+      campanhas.
+    </p>
   </Step>
   <Step>
     <h3>Monitorar Resposta</h3>
-    <p>Monitore a resposta para <code>failed_contacts</code>, alterações de saldo e status da fila.</p>
+    <p>
+      Monitore a resposta para <code>failed_contacts</code>, alterações de saldo
+      e status da fila.
+    </p>
   </Step>
   <Step>
     <h3>Usar Nomes Exclusivos</h3>
