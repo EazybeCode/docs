@@ -79,10 +79,9 @@ curl -X POST https://cerberus.eazybe.com/prod/api/v2/broadcast/public/generate-k
     ```json
 {
   "status": true,
-  "status_code": 200,
   "message": "API key generated successfully",
   "data": {
-    "apiKey": "15558044483"
+    "apiKey": "9548e0f4ea0ab360ac9eeaf69f9754d72c6b606353037125d21842b9364ca8"
   }
 }
     ```
@@ -90,12 +89,17 @@ curl -X POST https://cerberus.eazybe.com/prod/api/v2/broadcast/public/generate-k
     <h4>Failure Example</h4>
     ```json
 {
+  "statusCode": 400,
+  "timestamp": "2026-04-14T07:13:33.289Z",
+  "path": "/broadcast/public/generate-key",
+  "method": "POST",
+  "requestId": "9c57a355c364f07060335e348902c9b8",
+  "message": "Failed to generate API key",
   "status": false,
   "status_code": 400,
-  "message": "User is not signed up yet.",
   "data": {
     "error": {
-      "message": "No WABA account found for this phone number"
+      "message": "Phone number not found or not connected to WABA."
     }
   }
 }
@@ -134,11 +138,11 @@ POST /broadcast/public/send-single
 |---|---|---|---|
 | `templateName` | string | Yes | Approved WhatsApp template name |
 | `templateLanguage` | string | Yes | Template language code, for example `en` |
-| `templateType` | string | Yes | Template category: `MARKETING`, `UTILITY`, or `AUTHENTICATION` |
+| `templateType` | string | Yes | Template category: `MARKETING`, `UTILITY` |
 | `countryCode` | string | Yes | Recipient country code without `+` |
 | `toPhoneNumber` | string | Yes | Recipient mobile number |
 | `templateId` | string | No | Meta template ID |
-| `templateParams` | string[] | No | Template variable values in order |
+| `templateParams` | string[] | No | Template variable values in order {Required for the variable based templates only} |
 | `broadcastName` | string | No | Optional label for this send |
 
 ### Example Request
@@ -164,11 +168,17 @@ curl -X POST https://cerberus.eazybe.com/prod/api/v2/broadcast/public/send-singl
 ```json
 {
   "status": true,
-  "message": "Single broadcast queued successfully",
+  "message": "Broadcast sent successfully",
   "data": {
-    "broadcastId": "6789abcdef123456",
-    "campaign_id": "abc123xyz456",
-    "status": "PENDING_SEND"
+    "status": true,
+    "message": "Broadcast is being processed",
+    "data": {
+      "total_contacts": 1,
+      "failed_contacts": 0,
+      "estimated_cost": 0.94937,
+      "oldBalance": 1860.0995179999998,
+      "newEstimatedBalance": 1859.1501479999997
+    }
   }
 }
 ```
@@ -252,13 +262,17 @@ curl -X POST https://cerberus.eazybe.com/prod/api/v2/broadcast/public/send-bulk 
 ```json
 {
   "status": true,
-  "message": "Broadcast is being processed",
+  "message": "Bulk broadcast queued successfully",
   "data": {
-    "total_contacts": 2,
-    "failed_contacts": 0,
-    "estimated_cost": 0.15,
-    "oldBalance": 100.5,
-    "newEstimatedBalance": 100.35
+    "status": true,
+    "message": "Broadcast is being processed",
+    "data": {
+      "total_contacts": 2,
+      "failed_contacts": 0,
+      "estimated_cost": 1.89874,
+      "oldBalance": 1851.5995179999998,
+      "newEstimatedBalance": 1849.7007779999997
+    }
   }
 }
 ```
