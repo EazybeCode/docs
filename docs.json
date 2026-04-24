@@ -220,6 +220,7 @@
                   "en/integrations/hubspot/disconnect",
                   "en/integrations/hubspot/invite-team",
                   "en/integrations/hubspot/link-whatsapp-contacts",
+                  "en/integrations/hubspot/waba-api-number-integration",
                   {
                     "group": "Chat Backup",
                     "pages": [
@@ -815,6 +816,7 @@
                   "es/integrations/hubspot/disconnect",
                   "es/integrations/hubspot/invite-team",
                   "es/integrations/hubspot/link-whatsapp-contacts",
+                  "es/integrations/hubspot/integracion-de-numero-api-waba",
                   "es/integrations/hubspot/setup",
                   "es/integrations/hubspot/contact-sync",
                   "es/integrations/hubspot/chat-backup",
@@ -1365,6 +1367,7 @@
                   "pt/integrations/hubspot/disconnect",
                   "pt/integrations/hubspot/invite-team",
                   "pt/integrations/hubspot/link-whatsapp-contacts",
+                  "pt/integrations/hubspot/integracao-de-numero-api-waba",
                   "pt/integrations/hubspot/setup",
                   "pt/integrations/hubspot/contact-sync",
                   "pt/integrations/hubspot/chat-backup",
@@ -1915,6 +1918,7 @@
                   "tr/integrations/hubspot/disconnect",
                   "tr/integrations/hubspot/invite-team",
                   "tr/integrations/hubspot/link-whatsapp-contacts",
+                  "tr/integrations/hubspot/waba-api-numara-entegrasyonu",
                   "tr/integrations/hubspot/setup",
                   "tr/integrations/hubspot/contact-sync",
                   "tr/integrations/hubspot/chat-backup",
