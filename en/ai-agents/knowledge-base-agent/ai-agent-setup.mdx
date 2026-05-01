@@ -1,0 +1,222 @@
+---
+title: "AI Agent Setup"
+description: "Learn how to create and configure AI agents on Eazybe for automated customer responses"
+---
+
+## Overview
+
+This guide provides step-by-step instructions on how to create a new AI agent, define its purpose, and configure various aspects like tools, communication channels, and billing preferences. Customize your agent to best suit your specific operational needs.
+
+![AI Agents Overview](/images/ai-agent-1.png)
+
+<Note>
+Before you begin, ensure you have **Admin permissions** to create and manage AI agents in your workspace.
+</Note>
+
+---
+
+## Step-by-Step Guide
+
+<Steps>
+  <Step title="Access the Agent Gallery">
+    Navigate to the **AI Agents** section in your Eazybe dashboard to access the Agent Gallery.
+
+    ![Agent Gallery](/images/ai-agent-3.png)
+
+    ![Agent Gallery View](/images/ai-agent-4.png)
+
+    <Tip>
+    The Agent Gallery shows all your existing agents and templates you can use.
+    </Tip>
+  </Step>
+
+  <Step title="Start Custom Agent Creation">
+    Click on **Create Agent** to begin creating your custom AI agent.
+
+    ![Create Agent](/images/ai-agent-5.png)
+
+    ![Custom Agent Creation](/images/ai-agent-6.png)
+  </Step>
+
+  <Step title="Describe Your Agent">
+    Enter a description for your agent. This is the most important step — tell the system what you want your agent to do.
+
+    ![Describe Agent](/images/ai-agent-7.png)
+
+    ![Agent Description Interface](/images/ai-agent-8.png)
+
+    <Info>
+    You can describe your agent however you want:
+    - **Single line**: "Reply to my WhatsApp customer inquiries about pricing"
+    - **Bullet points**: "Greet the customer, ask what they need, share pricing, collect their email"
+    - **Detailed**: "When a customer asks about pricing, share our rate card. If they ask for a discount, tell them to talk to the sales team."
+    - **Any language**: Hindi, English, Hinglish, Spanish — whatever works for you
+
+    The better your description, the smarter your agent will be.
+    </Info>
+  </Step>
+
+  <Step title="Click Create Agent">
+    Click **Create Agent** when you're ready. The system will build your agent based on your description.
+
+    ![Click Create Agent Button](/images/ai-agent-9.png)
+
+    ![Create Agent Confirmation](/images/ai-agent-10.png)
+
+    <Info>
+    The system automatically generates:
+    - **Role** — who the agent is (e.g., "You are a sales assistant for XYZ company")
+    - **Goal** — what it should achieve (e.g., "Convert inquiries into booked demos")
+    - **Flow** — step-by-step conversation flow
+    - **Tools** — actions the agent can take
+
+    You don't need to write any of this yourself — it's all generated from your description.
+    </Info>
+  </Step>
+
+  <Step title="Engage with Ace (Optional)">
+    On the left side of the screen, you'll find **Ace** — your personal agent builder assistant.
+
+    ![Ace Assistant](/images/ai-agent-11.png)
+
+    ![Ace Interface](/images/ai-agent-12.png)
+
+    <Tip>
+    Think of Ace as your co-pilot. You can tell Ace things like:
+    - "Add a step where the agent asks for the customer's email"
+    - "Make the tone more professional"
+    - "Add the follow-up tool so the agent can send reminders"
+    - "If the customer is angry, transfer to a human"
+
+    Ace understands plain language — no coding or technical knowledge needed.
+    </Tip>
+  </Step>
+
+  <Step title="Review Agent Building Progress">
+    Review the agent that the system has built for you. Provide additional details if the system asks for clarification.
+
+    ![Agent Progress](/images/ai-agent-13.png)
+
+    ![Agent Review](/images/ai-agent-14.png)
+
+    <Warning>
+    If the system needs more clarity on something, it will ask you before finalizing the agent configuration.
+    </Warning>
+  </Step>
+
+  <Step title="Submit Agent Details">
+    Click on **"Add"** to submit your agent details and proceed to the next step.
+
+    ![Add Details](/images/ai-agent-15.png)
+
+    ![Submit Details](/images/ai-agent-16.png)
+  </Step>
+
+  <Step title="Configure Agent Access">
+    Submit agent access details for workflows and integrations.
+
+    ![Agent Access](/images/ai-agent-17.png)
+
+    ![Access Configuration](/images/ai-agent-18.png)
+  </Step>
+
+  <Step title="Proceed to Agent Configuration">
+    Navigate to the configuration section to customize your agent further.
+
+    ![Agent Configuration](/images/ai-agent-19.png)
+
+    <Note>
+    From here, you can configure tools, knowledge base, WhatsApp integration, and billing preferences.
+    </Note>
+  </Step>
+</Steps>
+
+---
+
+## Configure Your Agent
+
+After creating your agent, configure its capabilities:
+
+### Tools
+
+Choose what your agent can actually do. Each tool is a capability you can turn on or off:
+
+| Tool | Description |
+|------|-------------|
+| **Search Knowledge Base** | Agent can look up answers from your uploaded docs and website |
+| **Send WhatsApp Messages** | Agent can reply to customers |
+| **Schedule Follow-ups** | Agent can set reminders and send follow-up messages automatically |
+| **Transfer to Human** | Agent hands over to your team when needed, and stops replying |
+| **Create/Update CRM Contacts** | Agent can save customer details to your CRM |
+| **Google Sheets, Calendar, Gmail** | Connect external apps for tasks like booking appointments or logging data |
+
+<Tip>
+Turn on the tools you need, configure them (e.g., set who gets notified on handoff), and your agent is ready to use them.
+</Tip>
+
+### Knowledge Base
+
+Teach your agent about your business. The more knowledge you give, the better it answers.
+
+You can add:
+- **Documents** — Upload PDFs, brochures, price lists, FAQs, product catalogs
+- **Website URLs** — Paste your website link, help docs, product pages. The system reads and learns from them automatically
+- **WhatsApp Chat Sync** — Turn this on to train the agent on your existing WhatsApp conversations. It learns your tone, your style, and how you talk to customers
+
+<Info>
+Your agent will use this knowledge to answer customer questions accurately — instead of making things up.
+</Info>
+
+### WhatsApp Integration
+
+Connect your agent to a WhatsApp number so it can start replying to customers.
+
+- Choose any WhatsApp Business API or Coexistence number
+- Your WhatsApp Business app keeps working exactly as before — nothing changes
+- Both you and the agent can reply to the same customer at the same time
+- Your customers won't know they're talking to an AI
+- Takes about 2 minutes to connect
+
+<Warning>
+Once connected, every incoming message on that number goes through your agent first.
+</Warning>
+
+### Billing Preferences
+
+See exactly what each AI action costs and control your spending.
+
+| Option | Best For |
+|--------|----------|
+| **Light LLM** | Simple Q&A, FAQs, straightforward conversations — faster responses, lower cost |
+| **Heavy LLM** | Complex conversations, negotiations, tasks needing deeper understanding — smarter responses, higher cost |
+
+You can switch between Light and Heavy anytime. The billing dashboard shows you cost per message, total spend, and usage breakdown.
+
+---
+
+## Test Your Agent
+
+Before going live, test your agent to ensure it responds correctly:
+
+1. Navigate to the **Test** tab
+2. Input a test query
+3. Review the agent's response
+4. Adjust the prompt or knowledge base if needed
+
+---
+
+## Publish Your Agent
+
+When you're satisfied with your agent configuration:
+
+1. Click on **Publish** to finish the setup
+2. Activate the AI Agent
+3. Your agent is now ready to handle customer conversations
+
+---
+
+## Need Help?
+
+<Card title="Contact Support" icon="envelope">
+  If you have any questions or need further assistance, reach out to us at **hey@eazybe.com**. We're happy to help!
+</Card>
