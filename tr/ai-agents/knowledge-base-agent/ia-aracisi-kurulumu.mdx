@@ -19,203 +19,215 @@ Başlamadan önce, çalışma alanınızda IA aracıları oluşturmak ve yönetm
 
 <Steps>
   <Step title="Aracı Galerisine Erişin">
-    Aracı Galerisine erişmek için Eazybe panelinizdeki **IA Aracıları** bölümüne gidin.
+    Aracı Galerisine erişmek için Eazybe panelinizdeki **IA Aracıları** bölümüne gidin. Akıllı otomatik yanıtlar oluşturmak için bu sizin başlangıç noktanızdır.
 
     ![Aracı Galerisi](/images/ai-agent-3.png)
 
-    ![Aracı Galerisi Görünümü](/images/ai-agent-4.png)
-
-    <Tip>
-    Aracı Galerisi mevcut tüm aracılarınızı ve kullanabileceğiniz şablonları gösterir.
-    </Tip>
-  </Step>
-
-  <Step title="Özel Aracı Oluşturmayı Başlatın">
-    Özel IA aracınızı oluşturmaya başlamak için **Aracı Oluştur** üzerine tıklayın.
-
-    ![Aracı Oluştur](/images/ai-agent-5.png)
-
-    ![Özel Aracı Oluşturma](/images/ai-agent-6.png)
-  </Step>
-
-  <Step title="Aracınızı Tanımlayın">
-    Aracınız için bir açıklama girin. Bu en önemli adım — sisteme aracınızın ne yapmasını istediğinizi belirtin.
-
-    ![Aracıyı Tanımla](/images/ai-agent-7.png)
-
-    ![Aracı Açıklama Arayüzü](/images/ai-agent-8.png)
-
     <Info>
-    Aracınızı istediğiniz gibi tanımlayabilirsiniz:
-    - **Tek satır**: "WhatsApp müşterilerimin fiyat sorgularına yanıt verin"
-    - **Madde işaretleri**: "Müşteriyi selamla, ihtiyacını sor, fiyatları paylaş, e-postasını al"
-    - **Detaylı**: "Müşteri fiyat sorduğunda fiyat listemizi paylaşın. İndirim istediğinde satış ekibiyle konuşmalarını söylüyin"
-    - **Herhangi bir dil**: Hintçe, İngilizce, Hinglish, İspanyolca — sizin için ne çalışıyorsa
-
-    Açıklamanız ne kadar iyiyse, aracınız o kadar akıllı olacaktır.
+    Aracı Galerisi mevcut tüm aracılarınızı görüntüler ve yeni ones oluşturmak veya önceden yapılandırılmış şablonları kullanmak için seçenekler sunar.
     </Info>
   </Step>
 
-  <Step title="Aracı Oluştur'a Tıklayın">
-    Hazır olduğunuzda **Aracı Oluştur** üzerine tıklayın. Sistem açıklamanıza dayanarak aracınızı oluşturacaktır.
+  <Step title="Özel Aracı Oluşturmayı Başlatın">
+    Özel IA aracınızı oluşturmaya başlamak için **Aracı Oluştur** üzerine tıklayın. Bu, aracınızın yeteneklerini tanımlayacağınız aracı oluşturma arayüzünü açar.
 
-    ![Aracı Oluştur Butonu](/images/ai-agent-9.png)
+    ![Aracı Oluştur](/images/ai-agent-5.png)
 
-    ![Aracı Oluşturma Onayı](/images/ai-agent-10.png)
+    <Tip>
+    Şablondan seçim yapabilir veya belirli gereksinimlerinize dayanarak sıfırdan tamamen özel bir aracı oluşturabilirsiniz.
+    </Tip>
+  </Step>
 
-    <Info>
-    Sistem otomatik olarak oluşturur:
+  <Step title="Aracınızı Tanımlayın">
+    Aracınız için kapsamlı bir açıklama girin. Bu en kritik adım — açıklamanızın kalitesi doğrudan aracınızın performansını etkiler.
+
+    ![Aracıyı Tanımla](/images/ai-agent-7.png)
+
+    **Aracınızı istediğiniz gibi tanımlayın:**
+
+    - **Tek satır**: *"WhatsApp müşterilerimin fiyat sorgularına yanıt ver"*
+    - **Madde işaretleri**:
+      * Müşteriyi selamla
+      * Neye ihtiyaçları olduğunu sor
+      * Fiyatları paylaş
+      * E-postalarını topla
+    - **Detaylı talimatlar**: *"Bir müşteri fiyat sorduğunda fiyat listemizi paylaşın. İndirim isterlerse satış ekibiyle konuşmalarını söyleyin."*
+    - **Herhangi bir dil**: Hintçe, İngilizce, Hinglish, İspanyolca — size ne uygunsa kullanın
+
+    <Warning>
+    Açıklamanız ne kadar iyi ve spesifik olursa, aracınız o kadar akıllı olur. Şunlar hakkında detaylar ekleyin:
+    - İşletme bağlamınız
+    - Aracınızın nasıl yanıt vermesini istediğiniz
+    - Hangi eylemleri alması gerektiği
+    - Kaçınılması gereken spesifik davranışlar
+    </Warning>
+  </Step>
+
+  <Step title="Aracınızı Oluşturun">
+    Hazır olduğunuzda **Aracı Oluştur** üzerine tıklayın. Sistem açıklamanıza dayanarak otomatik olarak tam bir aracı yapılandırması oluşturacaktır.
+
+    ![Aracı Oluştur'a Tıklayın](/images/ai-agent-9.png)
+
+    Sistem akıllıca şunları oluşturur:
     - **Rol** — aracının kim olduğu (örn., "XYZ şirketi için bir satış asistanısınız")
     - **Hedef** — ne başarması gerektiği (örn., "Sorguları planlanmış demolara dönüştürün")
-    - **Akış** — adım adım konuşma akışı
-    - **Araçlar** — aracının gerçekleştirebileceği eylemler
+    - **Akış** — adım adım konuşma akışı (örn., "Önce selamla, sonra ihtiyacı sor, sonra fiyatları paylaş")
+    - **Araçlar** — aracının gerçekleştirebileceği eylemler (örn., "Bilgi tabanında ara, takip planla")
 
-    Bunlardan hiçbirini kendiniz yazmanıza gerek yok — hepsi açıklamanızdan oluşturulur.
+    <Info>
+    Bunlardan hiçbirini kendiniz yazmanıza gerek yok. Sistem bir şey hakkında daha fazla netliğe ihtiyaç duyarsa, sonlandırmadan önce size soracaktır.
     </Info>
   </Step>
 
   <Step title="Ace ile Etkileşime Geçin (İsteğe Bağlı)">
-    Ekranın sol tarafında **Ace** — kişisel aracı oluşturma asistanınızı bulacaksınız.
+    Ekranın sol tarafında **Ace** — IA destekli aracı oluşturma asistanınızı bulacaksınız. Ace'i aracınızı iyileştirmek için yardımcı pilotunuz olarak düşünün.
 
     ![Ace Asistanı](/images/ai-agent-11.png)
 
-    ![Ace Arayüzü](/images/ai-agent-12.png)
+    Ace'e değiştirmek istediğinizi söylemek için düz bir dil kullanın:
+    - *"Aracının müşterinin e-postasını sorduğu bir adım ekleyin"*
+    - *"Tonu daha profesyonel yapın"*
+    - *"Aracı hatırlatıcılar gönderebilsin diye takip aracını ekleyin"*
+    - *"Müşteri kızgınsa bir insana aktarın"*
+    - *"Selamlama mesajını değiştirin"*
 
     <Tip>
-    Ace'i yardımcı pilotunuz olarak düşünün. Ace'e şunları söyleyebilirsiniz:
-    - "Aracının müşterinin e-postasını sorduğu bir adım ekleyin"
-    - "Tonu daha profesyonel yapın"
-    - "Aracı anımsamalar gönderebilsin diye takip aracı ekleyin"
-    - "Müşteri kızgınsa bir insana aktarın"
-
-    Ace düz dili anlar — kodlama veya teknik bilgi gerekmez.
+    Ace doğal dili anlar — kodlama veya teknik bilgi gerekmez. Aracınızın davranışı hakkında ne değiştirmek isterseniz, sadece Ace'e söyleyin ve o mesajı, araçları ve akışı sizin için güncelleyecektir.
     </Tip>
   </Step>
 
-  <Step title="Aracı Oluşturma İlerlemesini Gözden Geçirin">
-    Sizin için oluşturulan aracını inceleyin. Sistem açıklama isterse ek detaylar sağlayın.
+  <Step title="Gözden Geçirin ve İyileştirin">
+    Sizin için sistem tarafından oluşturulan aracıyı gözden geçirin. Sistem aracının davranışı veya yetenekleri hakkında herhangi bir açıklama isterse ek detaylar sağlayın.
 
-    ![Aracı İlerlemesi](/images/ai-agent-13.png)
+    ![İlerlemeyi Gözden Geçirin](/images/ai-agent-13.png)
 
-    ![Aracı İncelemesi](/images/ai-agent-14.png)
-
-    <Warning>
-    Sistem bir şey hakkında daha fazla netliğe ihtiyaç duyarsa, aracı yapılandırmasını sonlandırmadan önce soracaktır.
-    </Warning>
+    <Info>
+    Bu, dağıtımdan önce aracıyı ince ayar yapmak için fırsatınızdır. Oluşturulan rolü, hedefleri, konuşma akışını ve mevcut araçları gözden geçirin.
+    </Info>
   </Step>
 
   <Step title="Aracı Detaylarını Gönderin">
-    Aracı detaylarınızı göndermek ve sonraki adıma geçmek için **"Ekle"** üzerine tıklayın.
+    Aracı detaylarınızı onaylamak ve bir sonraki yapılandırma aşamasına ilerlemek için **"Ekle"** üzerine tıklayın.
 
     ![Detay Ekle](/images/ai-agent-15.png)
 
-    ![Detayları Gönder](/images/ai-agent-16.png)
+    <Warning>
+    İlerlemeden önce tüm ayarları gözden geçirdiğinizden emin olun. Aracınızı daha sonra değiştirebilirsiniz, ama baştan doğru yapmak zaman kazandırır.
+    </Warning>
   </Step>
 
   <Step title="Aracı Erişimini Yapılandırın">
-    İş akışları ve entegrasyonlar için aracı erişim detaylarını gönderin.
+    İş akışları ve entegrasyonlar için aracı erişim detaylarını gönderin. Bu, aracınızın hangi sistemlerle ve verilerle etkileşimde bulunabileceğini belirler.
 
     ![Aracı Erişimi](/images/ai-agent-17.png)
 
-    ![Erişim Yapılandırması](/images/ai-agent-18.png)
+    <Tip>
+    İzinleri dikkatli şekilde yapılandırın — aracınızın düzgün çalışması için gerçekten ihtiyaç duyduğu araçlara ve veri kaynaklarına sadece erişim verin.
+    </Tip>
   </Step>
 
-  <Step title="Aracı Yapılandırmasına İlerleyin">
-    Aracınızı daha fazla özelleştirmek için yapılandırma bölümüne gidin.
+  <Step title="Yapılandırmaya İlerleyin">
+    Aracınızın araçlarını, bilgi tabanını, iletişim kanallarını ve faturalandırma tercihlerini özelleştirmek için yapılandırma bölümüne gidin.
 
     ![Aracı Yapılandırması](/images/ai-agent-19.png)
 
-    <Note>
-    Buradan araçları, bilgi tabanını, WhatsApp entegrasyonunu ve faturalandırma tercihlerini yapılandırabilirsiniz.
-    </Note>
+    <Info>
+    Canlıya gitmeden önce aracınızın yeteneklerini burada ince ayar yapacaksınız.
+    </Info>
   </Step>
 </Steps>
 
 ---
 
-## Aracınızı Yapılandırın
+## Yapılandırma Seçenekleri
 
-Aracınızı oluşturduktan sonra yeteneklerini yapılandırın:
+Aracınızı oluşturduktan sonra, bu temel bileşenleri yapılandırın:
 
 ### Araçlar
 
-Aracınızın gerçekten ne yapabileceğini seçin. Her araç açıp kapatabileceğiniz bir yetenektir:
+Aracınızın gerçekten ne yapabileceğini seçin. Her araç etkinleştirebileceğiniz bir yetenektir:
 
 | Araç | Açıklama |
 |------|----------|
-| **Bilgi Tabanı Ara** | Aracı yüklediğiniz belgelerden ve web sitesinden yanıtları arayabilir |
-| **WhatsApp Mesaj Gönder** | Aracı müşterilere yanıt verebilir |
-| **Takip Planla** | Aracı hatırlayıcılar ayarlayabilir ve otomatik takip mesajları gönderebilir |
+| **Bilgi Tabanında Ara** | Aracı yüklediğiniz belgelerden ve web sitesinden yanıtları arar |
+| **WhatsApp Mesaj Gönder** | Aracı müşterilere doğrudan yanıt verir |
+| **Takip Planla** | Aracı hatırlayıcılar ayarlar ve otomatik takip mesajları gönderir |
 | **İnsana Aktar** | Aracı gerektiğinde ekibinize devreder ve yanıtı durdurur |
-| **CRM İletişimi Oluştur/Güncelle** | Aracı müşteri detaylarını CRM'inize kaydedebilir |
+| **CRM İletişimi Oluştur/Güncelle** | Aracı müşteri bilgilerini CRM sisteminize kaydeder |
 | **Google Sheets, Calendar, Gmail** | Randevu rezervasyonu veya veri kaydetme gibi görevler için dış uygulamaları bağlayın |
 
 <Tip>
-    İhtiyacınız olan araçları etkinleştirin, bunları yapılandırın (örn., devralda kimin bilgilendirileceğini ayarlayın) ve aracınız bunları kullanmaya hazır olur.
+    Sadece belirli kullanım durumunuz için ihtiyaç duyduğunuz araçları etkinleştirin. Her etkinleştirilen araç aracınıza daha fazla yetenek kazandırır ama aynı zamanda daha fazla sorumluluk verir.
 </Tip>
 
 ### Bilgi Tabanı
-    Aracınıza işletmeniz hakkında öğretin. Verdiğiniz bilgi ne kadar çoksa, o kadar iyi yanıtlar.
 
-Ekleyebilirsiniz:
-- **Belgeler** — PDF'ler, broşürler, fiyat listeleri, SSS, ürün katalogları yükleyin
-- **Web Sitesi URL'leri**    - Web sitenizi bağlayın, yardım dokümanlarını, ürün sayfalarını. Sistem bunlardan otomatik olarak okur ve öğrenir
-- **WhatsApp Sohbet Senkronizasyonu**    - Mevcut WhatsApp konuşmalarınızda aracı eğitmek için bunu açın. Sizin tonunuzu, tarzınızı ve müşterilerle nasıl konuştuğunuzu öğrenir
+Aracınıza işletmeniz hakkında öğretin. Ne kadar çok bilgi sağlarsanız, o kadar iyi yanıt verecektir:
 
-<Info>
-    Aracınız bu bilgiyi müşteri sorularını doğru yanıtlamak için kullanacak — şeyler uydurmak yerine.
-</Info>
+- **Belgeler** — PDF'ler, broşürler, fiyat listeleri, SSS'ler, ürün katalogları yükleyin
+- **Web Sitesi URL'leri** — Web sitenizin bağlantısını, yardım dokümanlarını veya ürün sayfalarını yapıştırın. Sistem otomatik olarak bunlardan okur ve öğrenir
+- **WhatsApp Sohbet Senkronizasyonu** — Aracınızı mevcut WhatsApp konuşmalarınızla eğitmek için bunu etkinleştirin. Tonunuzu, tarzınızı ve müşterilerle nasıl konuştuğunuzu öğrenir
+
+<Warning>
+    Aracınız bu bilgiyi müşteri sorularına doğru yanıtlar vermek için kullanır. Sağladığınız bilginin güncel ve doğru olduğundan emin olun.
+</Warning>
 
 ### WhatsApp Entegrasyonu
 
-Aracınızın müşterilere yanıt vermesine başlaması için bir WhatsApp numarasına bağlayın.
+Aracınızı müşterilere yanıt vermeye başlaması için bir WhatsApp numarasına bağlayın:
 
-    - Herhangi bir WhatsApp Business API veya Eşzamanlılık numarası seçin
-- WhatsApp Business uygulamanız tam olarak önceki gibi çalışmaya devam eder — hiçbir şey değişmez
-    - Siz ve aracınız aynı anda aynı müşteriye yanıt verebilir
-- Müşterileriniz bir IA ile konuştuğunu bilmeyecektir
-    - Bağlanmak yaklaşık 2 dakika sürer
+- Herhangi bir WhatsApp Business API veya Eşzamanlılık numarası seçin
+- WhatsApp Business uygulamanız normal çalışmaya devam eder — mevcut iş akışınızda değişiklik yok
+- Hem siz hem aracınız aynı müşteriye aynı anda yanıt verebilir
+- Müşteriler bir IA ile konuştuklarını bilmeyecektir
+- Bağlantı yaklaşık 2 dakika sürer
 
-<Warning>
-    Bağlandıktan sonra, bu numaradaki her gelen mesaj ilk olarak aracınızdan geçer.
-</Warning>
+<Info>
+    Bağlandıktan sonra, bu numaradaki her gelen mesaj önce aracınızdan geçer. Herhangi bir konuşmada her zaman geçersiz kılabilir veya müdahale edebilirsiniz.
+</Info>
 
 ### Faturalandırma Tercihleri
 
-Her IA eyleminin ne kadara malolduğunu görün ve harcamanızı kontrol edin.
+Uygun LLM modelini seçerek harcamalarınızı kontrol edin:
 
-| Seçenek | İçin En İyi |
-|--------|-------------|
-| **Hafif LLM** | Basit soru-cevap, SSS, doğrudan konuşmalar — daha hızlı yanıtlar, daha düşük maliyet |
-| **Ağır LLM** | Karmaşık konuşmalar, müzakereler, daha derin anlayış gerektiren görevler — daha akıllı yanıtlar, daha yüksek maliyet |
+| Model | En İyi For | Maliyet | Hız |
+|-------|-----------|--------|------|
+| **Hafif LLM** | Basit soru-cevap, SSS'ler, doğrudan konuşmalar | Daha düşük | Daha hızlı yanıtlar |
+| **Ağır LLM** | Karmaşık konuşmalar, müzakereler, nüanslı anlayış | Daha yüksek | Daha akıllı yanıtlar |
 
-Hafif ve Ağır arasında istediğiniz zaman geçiş yapabilirsiniz. Faturalandırma paneli mesaj başına maliyeti, toplam harcama ve kullanım ayrıntısını gösterir.
+<Tip>
+    Hafif ve Ağır arasında istediğiniz zaman geçiş yapabilirsiniz. Faturalandırma paneli mesaj başına maliyeti, toplam harcamayı ve kullanım ayrıntısını gösterir.
+</Tip>
 
 ---
 
-## Aracınızı Test Edin
+## Yayınlamadan Önce Test Edin
 
-Canlıya geçmeden önce aracınızın doğru yanıt verdiğinden emin olun:
+Canlıya gitmeden önce aracınızı test edin:
 
 1. **Test** sekmesine gidin
-2. Bir test sorgusu girin
-3. Aracının yanıtını inceleyin
-4. Gerekirse mesajı veya bilgi tabanını ayarlayın
+2. Gerçekçi test sorguları girin
+3. Aracının yanıtlarını gözden geçirin
+4. Gerekirse mesajı, bilgi tabanını veya araçları ayarlayın
+
+<Warning>
+    Kapsamlı testler, aracınızın gerçek müşteri senaryolarında beklendiği gibi davranmasını sağlar.
+</Warning>
 
 ---
 
-## Aracınızı Yayınlayın
+## Yayınlayın ve Etkinleştirin
 
 Aracı yapılandırmasından memnun kaldığınızda:
 
 1. Kurulumu bitirmek için **Yayınla** üzerine tıklayın
 2. IA Aracını etkinleştirin
-3. Aracınız artık müşteri conversationslarını yönetmeye hazır
+3. Aracınız artık canlı ve müşteri konuşmalarını yönetmeye hazır
 
 ---
 
 ## Yardıma Mı İhtiyacınız Var?
 
 <Card title="Destek ile İletişime Geçin" icon="envelope">
-    Herhangi bir sorunuz varsa veya daha fazla yardıma ihtiyacınız varsa, **hey@eazybe.com** adresinden bize ulaşın. Yardımcı olmaktan mutluluk duyarız!
-  </Card>
+  Herhangi bir sorunuz varsa veya daha fazla yardıma ihtiyacınız varsa, **hey@eazybe.com** adresinden bize ulaşın. Yardımcı olmaktan mutluluk duyarız!
+</Card>

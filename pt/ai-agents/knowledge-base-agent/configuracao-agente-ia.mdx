@@ -5,7 +5,7 @@ description: "Aprenda a criar e configurar agentes de IA no Eazybe para resposta
 
 ## Visão Geral
 
-Este guia fornece instruções passo a passo sobre como criar um novo agente de IA, definir seu propósito e configurar vários aspectos como ferramentas, canais de comunicação e preferências de cobrança. Personalize seu agente para melhor atender às suas necessidades operacionais específicas.
+Este guia fornece instruções passo a passo sobre como criar um novo agente de IA, definir seu propósito e configurar vários aspectos como ferramentas, canais de comunicação e preferências de cobrança. Aprenda a personalizar seu agente para melhor atender às suas necessidades operacionais específicas.
 
 ![Visão Geral de Agentes IA](/images/ai-agent-1.png)
 
@@ -19,199 +19,210 @@ Antes de começar, certifique-se de ter **permissões de administrador** para cr
 
 <Steps>
   <Step title="Acesse a Galeria de Agentes">
-    Navegue até a seção de **Agentes IA** no seu painel Eazybe para acessar a Galeria de Agentes.
+    Navegue até a seção de **Agentes IA** no seu painel Eazybe para acessar a Galeria de Agentes. Este é seu ponto de partida para criar respostas automatizadas inteligentes.
 
     ![Galeria de Agentes](/images/ai-agent-3.png)
 
-    ![Vista da Galeria de Agentes](/images/ai-agent-4.png)
-
-    <Tip>
-    A Galeria de Agentes mostra todos os seus agentes existentes e modelos que você pode usar.
-    </Tip>
-  </Step>
-
-  <Step title="Inicie a Criação de Agente Personalizado">
-    Clique em **Criar Agente** para começar a criar seu agente de IA personalizado.
-
-    ![Criar Agente](/images/ai-agent-5.png)
-
-    ![Criação de Agente Personalizado](/images/ai-agent-6.png)
-  </Step>
-
-  <Step title="Descreva Seu Agente">
-    Insira uma descrição para seu agente. Esta é a etapa mais importante — diga ao sistema o que você quer que seu agente faça.
-
-    ![Descrever Agente](/images/ai-agent-7.png)
-
-    ![Interface de Descrição do Agente](/images/ai-agent-8.png)
-
     <Info>
-    Você pode descrever seu agente como quiser:
-    - **Uma única linha**: "Responda às consultas de meus clientes do WhatsApp sobre preços"
-    - **Tópicos**: "Cumprimente o cliente, pergunte o que precisa, compartilhe os preços, colete o e-mail dele"
-    - **Detalhado**: "Quando um cliente perguntar sobre preços, compartilhe nossa tabela. Pedir desconto, diga para falar com a equipe de vendas"
-    - **Qualquer idioma**: Hindi, inglês, Hinglish, espanhol — o que funcionar para você
-
-    Quanto melhor for sua descrição, mais inteligente será seu agente.
+    A Galeria de Agentes exibe todos os seus agentes existentes e fornece opções para criar novos ou usar modelos predefinidos.
     </Info>
   </Step>
 
-  <Step title="Clique em Criar Agente">
-    Clique em **Criar Agente** quando estiver pronto. O sistema construirá seu agente com base na sua descrição.
+  <Step title="Inicie a Criação de Agente Personalizado">
+    Clique em **Criar Agente** para começar a criar seu agente de IA personalizado. Isso abre a interface de criação onde você definirá as capacidades do seu agente.
 
-    ![Botão Criar Agente](/images/ai-agent-9.png)
+    ![Criar Agente](/images/ai-agent-5.png)
 
-    ![Confirmação de Criar Agente](/images/ai-agent-10.png)
+    <Tip>
+    Você pode escolher entre modelos ou criar um agente completamente personalizado do zero com base nos seus requisitos específicos.
+    </Tip>
+  </Step>
 
-    <Info>
-    O sistema gera automaticamente:
+  <Step title="Descreva Seu Agente">
+    Insira uma descrição abrangente para seu agente. Esta é a etapa mais crítica — a qualidade da sua descrição impacta diretamente o desempenho do seu agente.
+
+    ![Descrever Agente](/images/ai-agent-7.png)
+
+    **Descreva seu agente como preferir:**
+
+    - **Uma única linha**: *"Responda às consultas dos meus clientes do WhatsApp sobre preços"*
+    - **Pontos**:
+      * Cumprimente o cliente
+      * Pergunte o que precisam
+      * Compartilhe os preços
+      * Colete o e-mail deles
+    - **Instruções detalhadas**: *"Quando um cliente perguntar sobre preços, compartilhe nossa tabela. Se pedir desconto, diga para falar com a equipe de vendas."*
+    - **Qualquer idioma**: Hindi, inglês, Hinglish, espanhol — use o idioma com que se sentir confortável
+
+    <Warning>
+    Quanto melhor e mais específica for sua descrição, mais inteligente será seu agente. Inclua detalhes sobre:
+    - O contexto do seu negócio
+    - Como você quer que o agente responda
+    - Quais ações ele deve tomar
+    - Comportamentos específicos a evitar
+    </Warning>
+  </Step>
+
+  <Step title="Crie Seu Agente">
+    Clique em **Criar Agente** quando estiver pronto. O sistema gerará automaticamente uma configuração completa do agente com base na sua descrição.
+
+    ![Clique Criar Agente](/images/ai-agent-9.png)
+
+    O sistema gera inteligentemente:
     - **Papel** — quem é o agente (ex., "Você é um assistente de vendas da empresa XYZ")
     - **Objetivo** — o que deve alcançar (ex., "Converter consultas em demos agendadas")
-    - **Fluxo** — fluxo conversacional passo a passo
-    - **Ferramentas** — ações que o agente pode realizar
+    - **Fluxo** — fluxo conversacional passo a passo (ex., "Primeiro cumprimenta, depois pergunta a necessidade, depois compartilha preços")
+    - **Ferramentas** — ações que o agente pode realizar (ex., "Buscar na base de conhecimento, agendar acompanhamentos")
 
-    Você não precisa escrever nada disso — tudo é gerado a partir da sua descrição.
+    <Info>
+    Você não precisa escrever nada disso você mesmo. Se o sistema precisar de mais clareza sobre algo, perguntará antes de finalizar.
     </Info>
   </Step>
 
   <Step title="Interaja com o Ace (Opcional)">
-    No lado esquerdo da tela, você encontrará o **Ace** — seu assistente de construção de agentes.
+    No lado esquerdo da tela, você encontrará o **Ace** — seu assistente de construção de agentes com IA. Pense no Ace como seu copiloto para refinar seu agente.
 
     ![Assistente Ace](/images/ai-agent-11.png)
 
-    ![Interface do Ace](/images/ai-agent-12.png)
+    Use linguagem natural para dizer ao Ace o que você quer mudar:
+    - *"Adicione uma etapa onde o agente pergunte o e-mail do cliente"*
+    - *"Torne o tom mais profissional"*
+    - *"Adicione a ferramenta de acompanhamento para que o agente possa enviar lembretes"*
+    - *"Se o cliente estiver com raiva, transfira para um humano"*
+    - *"Mude a mensagem de saudação"*
 
     <Tip>
-    Pense no Ace como seu co-piloto. Você pode dizer ao Ace coisas como:
-    - "Adicione uma etapa onde o agente pergunte o e-mail do cliente"
-    - "Torne o tom mais profissional"
-    - "Adicione a ferramenta de acompanhamento para que o agente possa enviar lembretes"
-    - "Se o cliente estiver com raiva, transfira para um humano"
-
-    O Ace entende linguagem natural — não é necessário codificação ou conhecimento técnico.
+    Ace entende linguagem natural — não é necessária codificação ou conhecimento técnico. Qualquer alteração que você quiser fazer no comportamento do seu agente, apenas diga ao Ace e ele atualizará a mensagem, ferramentas e fluxo para você.
     </Tip>
   </Step>
 
-  <Step title="Revise o Progresso de Construção do Agente">
-    Revise o agente que o sistema construiu para você. Forneca detalhes adicionais se o sistema solicitar esclarecimento.
+  <Step title="Revise e Refine">
+    Revise o agente que o sistema construiu para você. Forneca detalhes adicionais se o sistema solicitar esclarecimento sobre algum aspecto do comportamento ou capacidades do agente.
 
-    ![Progresso do Agente](/images/ai-agent-13.png)
+    ![Revisar Progresso](/images/ai-agent-13.png)
 
-    ![Revisão do Agente](/images/ai-agent-14.png)
-
-    <Warning>
-    Se o system precisar de mais clareza sobre algo, perguntará antes de finalizar a configuração do agente.
-    </Warning>
+    <Info>
+      Esta é sua oportunidade de ajustar finamente o agente antes da implantação. Revise o papel gerado, objetivos, fluxo conversacional e ferramentas disponíveis.
+    </Info>
   </Step>
 
   <Step title="Envie Detalhes do Agente">
-    Clique em **"Adicionar"** para enviar os detalhes do seu agente e passar para a próxima etapa.
+    Clique em **"Adicionar"** para confirmar os detalhes do seu agente e prosseguir para a próxima etapa de configuração.
 
     ![Adicionar Detalhes](/images/ai-agent-15.png)
 
-    ![Enviar Detalhes](/images/ai-agent-16.png)
+    <Warning>
+      Certifique-se de ter revisado todas as configurações antes de prosseguir. Você sempre pode modificar seu agente depois, mas fazer corretamente desde o início economiza tempo.
+    </Warning>
   </Step>
 
   <Step title="Configure o Acesso do Agente">
-    Envie detalhes de acesso do agente para fluxos de trabalho e integrações.
+    Envie detalhes de acesso do agente para fluxos de trabalho e integrações. Isso determina quais sistemas e dados seu agente pode interagir.
 
     ![Acesso do Agente](/images/ai-agent-17.png)
 
-    ![Configuração de Acesso](/images/ai-agent-18.png)
+    <Tip>
+    Configure as permissões cuidadosamente — conceda acesso apenas às ferramentas e fontes de dados que seu agente legitimamente precisa para funcionar corretamente.
+    </Tip>
   </Step>
 
-  <Step title="Prossiga para a Configuração do Agente">
-    Navegue até a seção de configuração para personalizar seu agente ainda mais.
+  <Step title="Prossiga para a Configuração">
+    Navegue até a seção de configuração para personalizar as ferramentas, base de conhecimento, canais de comunicação e preferências de cobrança do seu agente.
 
     ![Configuração do Agente](/images/ai-agent-19.png)
 
-    <Note>
-    A partir daqui, você pode configurar ferramentas, base de conhecimento, integração do WhatsApp e preferências de cobrança.
-    </Note>
+    <Info>
+    Aqui é onde você ajustará finamente as capacidades do seu agente antes de colocá-lo em produção.
+    </Info>
   </Step>
 </Steps>
 
 ---
 
-## Configure Seu Agente
+## Opções de Configuração
 
-Depois de criar seu agente, configure suas capacidades:
+Depois de criar seu agente, configure estes componentes essenciais:
 
 ### Ferramentas
 
-Escolha o que seu agente pode realmente fazer. Cada ferramenta é uma capacidade que você pode ativar ou desativar:
+Escolha o que seu agente pode realmente fazer. Cada ferramenta é uma capacidade que você pode habilitar:
 
 | Ferramenta | Descrição |
-|-----------|------------|
-| **Pesquisar Base de Conhecimento** | O agente pode procurar respostas em seus documentos e site carregados |
-| **Enviar Mensagens do WhatsApp** | O agente pode responder aos clientes |
-| **Agendar Acompanhamentos** | O agente pode definir lembretes e enviar mensagens de acompanhamento automaticamente |
+|-------------|------------|
+| **Pesquisar Base de Conhecimento** | O agente busca respostas em seus documentos e site carregado |
+| **Enviar Mensagens do WhatsApp** | O agente responde diretamente aos clientes |
+| **Agendar Acompanhamentos** | O agente estabelece lembretes e envia mensagens de acompanhamento automaticamente |
 | **Transferir para Humano** | O agente entrega para sua equipe quando necessário e para de responder |
-| **Criar/Atualizar Contatos CRM** | O agente pode salvar detalhes do cliente em seu CRM |
-| **Google Sheets, Calendar, Gmail** | Conecte aplicativos externos para tarefas como agendar compromissos ou registrar dados |
+| **Criar/Atualizar Contatos CRM** | O agente salva informações do cliente em seu sistema CRM |
+| **Google Sheets, Calendar, Gmail** | Conecta aplicativos externos para tarefas como agendar compromissos ou registrar dados |
 
 <Tip>
-Ative as ferramentas que você precisa, configure-as (ex., defina quem recebe notificações ao transferir) e seu agente estará pronto para usá-las.
+    Habilite apenas as ferramentas que você precisa para seu caso de uso específico. Cada ferramenta habilitada dá ao seu agente mais capacidades mas também mais responsabilidade.
 </Tip>
 
 ### Base de Conhecimento
 
-Ensine seu agente sobre seu negócio. Quanto mais conhecimento você der, melhor ele responderá.
+Ensine ao seu agente sobre seu negócio. Quanto mais conhecimento você fornecer, melhor ele responderá:
 
-Você pode adicionar:
 - **Documentos** — Carregue PDFs, folhetos, listas de preços, perguntas frequentes, catálogos de produtos
-- **URLs de Site** — Cole o link do seu site, documentos de ajuda, páginas de produtos. O sistema lê e aprende com eles automaticamente
-- **Sincronização de Chat do WhatsApp** — Ative isso para treinar o agente em suas conversas existentes do WhatsApp. Ele aprende seu tom, seu estilo e como você fala com os clientes
+- **URLs de Site** — Cole o link do seu site, documentos de ajuda ou páginas de produtos. O sistema automaticamente lê e aprende com eles
+- **Sincronização de Chat do WhatsApp** — Habilite isso para treinar o agente em suas conversas existentes do WhatsApp. Aprende seu tom, estilo e como você fala com os clientes
 
-<Info>
-Seu agente usará esse conhecimento para responder às perguntas dos clientes com precisão — em vez de inventar coisas.
-</Info>
+<Warning>
+    Seu agente usa esse conhecimento para responder às perguntas dos clientes com precisão. Certifique-se de que a informação que você fornece esteja atualizada e precisa.
+</Warning>
 
 ### Integração do WhatsApp
 
-Conecte seu agente a um número do WhatsApp para que ele possa começar a responder aos clientes.
+Conecte seu agente a um número do WhatsApp para que ele possa começar a responder aos clientes:
 
 - Escolha qualquer número de WhatsApp Business API ou Coexistência
-- Seu aplicativo WhatsApp Business continua funcionando exatamente como antes — nada muda
-- Tanto você quanto o agente podem responder ao mesmo cliente ao mesmo tempo
-- Seus clientes não saberão que estão falando com uma IA
-- Leva cerca de 2 minutos para conectar
+- Seu aplicativo WhatsApp Business continua funcionando normalmente — sem mudanças em seu fluxo de trabalho existente
+- Tanto você quanto o agente podem responder ao mesmo cliente simultaneamente
+- Os clientes não saberão que estão falando com uma IA
+- A conexão leva aproximadamente 2 minutos
 
-<Warning>
-Uma vez conectado, cada mensagem recebida nesse número passa primeiro pelo seu agente.
-</Warning>
+<Info>
+    Uma vez conectado, cada mensagem recebida nesse número passa primeiro através do seu agente. Você pode substituir ou intervir em qualquer conversa a qualquer momento.
+</Info>
 
 ### Preferências de Cobrança
 
-Veja exatamente o que cada ação de IA custa e controle seus gastos.
+Controle seus gastos escolhendo o modelo LLM apropriado para cada caso de uso:
 
-| Opção | Melhor Para |
-|-------|-----------|
-| **LLM Leve** | Perguntas e respostas simples, FAQs, conversas diretas — respostas mais rápidas, menor custo |
-| **LLM Pesado** | Conversas complexas, negociações, tarefas que precisam de compreensão mais profunda — respostas mais inteligentes, maior custo |
+| Modelo | Melhor Para | Custo | Velocidade |
+|-------|-----------|-------|-----------|
+| **LLM Leve** | Perguntas e respostas simples, FAQs, conversas diretas | Menor | Respostas mais rápidas |
+| **LLM Pesado** | Conversas complexas, negociações, compreensão nuances | Maior | Respostas mais inteligentes |
 
-Você pode alternar entre Leve e Pesado a qualquer momento. O painel de cobrança mostra custo por mensagem, gasto total e detalhamento de uso.
+<Tip>
+    Você pode alternar entre Leve e Pesado a qualquer momento. O painel de cobrança mostra o custo por mensagem, gasto total e detalhamento de uso.
+</Tip>
 
 ---
 
-## Teste Seu Agente
+## Teste Antes de Publicar
 
-Antes de ir ao vivo, teste seu agente para garantir que ele responda corretamente:
+Antes de ir ao vivo, teste seu agente:
 
 1. Navegue até a aba **Testar**
-2. Insira uma consulta de teste
-3. Revise a resposta do agente
-4. Ajuste o prompt ou base de conhecimento se necessário
+2. Insira consultas de teste realistas
+3. Revise as respostas do agente
+4. Ajuste a mensagem, base de conhecimento ou ferramentas conforme necessário
+
+<Warning>
+    Testes exhaustivos garantem que seu agente se comporte como esperado em cenários reais com clientes.
+</Warning>
 
 ---
 
-## Publique Seu Agente
+## Publique e Ative
 
 Quando estiver satisfeito com a configuração do seu agente:
 
 1. Clique em **Publicar** para finalizar a configuração
 2. Ative o Agente IA
-3. Seu agente agora está pronto para lidar com conversas com clientes
+3. Seu agente agora está ao vivo e pronto para lidar com conversas com clientes
 
 ---
 
