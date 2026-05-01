@@ -21,7 +21,7 @@ Before you begin, ensure you have **Admin permissions** to create and manage AI 
   <Step title="Access the Agent Gallery">
     Navigate to the **AI Agents** section in your Eazybe dashboard to access the Agent Gallery. This is your starting point for creating intelligent automated responses.
 
-    ![Agent Gallery](/images/ai-agent-3.png)
+    ![Agent Gallery](/images/ai-agent-2.png)
 
     <Info>
     The Agent Gallery displays all your existing agents and provides options to create new ones or use pre-built templates.
@@ -31,17 +31,17 @@ Before you begin, ensure you have **Admin permissions** to create and manage AI 
   <Step title="Start Custom Agent Creation">
     Click on **Create Agent** to begin creating your custom AI agent. This opens the agent creation interface where you'll define your agent's capabilities.
 
-    ![Create Agent](/images/ai-agent-5.png)
+    ![Create Agent](/images/ai-agent-3.png)
 
     <Tip>
     You can choose from templates or create a completely custom agent from scratch based on your specific requirements.
     </Tip>
   </Step>
 
-  <Step title="Describe Your Agent">
+  <Step title="Describe Your Agent's Purpose and Instructions">
     Enter a comprehensive description for your agent. This is the most critical step — the quality of your description directly impacts your agent's performance.
 
-    ![Describe Agent](/images/ai-agent-7.png)
+    ![Describe Agent](/images/ai-agent-4.png)
 
     **Describe your agent however you prefer:**
 
@@ -63,10 +63,10 @@ Before you begin, ensure you have **Admin permissions** to create and manage AI 
     </Warning>
   </Step>
 
-  <Step title="Create Your Agent">
+  <Step title="Click on Create Agent to Initiate Agent Build">
     Click **Create Agent** when ready. The system will automatically generate a complete agent configuration based on your description.
 
-    ![Click Create Agent](/images/ai-agent-9.png)
+    ![Click Create Agent](/images/ai-agent-5.png)
 
     The system intelligently generates:
     - **Role** — who the agent is (e.g., "You are a sales assistant for XYZ company")
@@ -82,7 +82,7 @@ Before you begin, ensure you have **Admin permissions** to create and manage AI 
   <Step title="Engage with Ace (Optional)">
     On the left side of the screen, you'll find **Ace** — your AI-powered agent builder assistant. Think of Ace as your co-pilot for refining your agent.
 
-    ![Ace Assistant](/images/ai-agent-11.png)
+    ![Ace Assistant](/images/ai-agent-6.png)
 
     Use plain language to tell Ace what you want to change:
     - *"Add a step where the agent asks for the customer's email"*
@@ -96,56 +96,163 @@ Before you begin, ensure you have **Admin permissions** to create and manage AI 
     </Tip>
   </Step>
 
-  <Step title="Review and Refine">
+  <Step title="Review Agent Building Progress">
     Review the agent that the system has built for you. Provide additional details if the system asks for clarification on any aspect of the agent's behavior or capabilities.
 
-    ![Review Progress](/images/ai-agent-13.png)
+    ![Review Progress](/images/ai-agent-7.png)
 
     <Info>
     This is your opportunity to fine-tune the agent before deployment. Review the generated role, goals, conversation flow, and available tools.
     </Info>
   </Step>
 
-  <Step title="Submit Agent Details">
+  <Step title="Click on Add to Submit">
     Click on **"Add"** to confirm your agent details and proceed to the next configuration stage.
 
-    ![Add Details](/images/ai-agent-15.png)
+    ![Add Details](/images/ai-agent-8.png)
 
     <Warning>
     Ensure you've reviewed all settings before proceeding. You can always modify your agent later, but getting it right initially saves time.
     </Warning>
   </Step>
 
-  <Step title="Configure Agent Access">
+  <Step title="Submit Agent Access Details for Workflows">
     Submit agent access details for workflows and integrations. This determines what systems and data your agent can interact with.
 
-    ![Agent Access](/images/ai-agent-17.png)
+    ![Agent Access](/images/ai-agent-9.png)
 
     <Tip>
     Configure permissions carefully — only grant access to the tools and data sources that your agent legitimately needs to function properly.
     </Tip>
   </Step>
 
-  <Step title="Proceed to Configuration">
+  <Step title="Proceed to Agent Configuration">
     Navigate to the configuration section to customize your agent's tools, knowledge base, communication channels, and billing preferences.
 
-    ![Agent Configuration](/images/ai-agent-19.png)
+    ![Agent Configuration](/images/ai-agent-10.png)
 
     <Info>
     This is where you'll fine-tune your agent's capabilities before going live.
     </Info>
   </Step>
+
+  <Step title="Navigate to the Test Tab and Input Test Query">
+    Before going live, test your agent by navigating to the **Test** tab and entering realistic test queries.
+
+    ![Test Agent](/images/ai-agent-11.png)
+
+    <Warning>
+    Thorough testing ensures your agent behaves as expected in real customer scenarios.
+    </Warning>
+  </Step>
+
+  <Step title="View Agent Conversations">
+    Monitor your agent's conversations to review how it's interacting with customers and identify areas for improvement.
+
+    ![View Conversations](/images/ai-agent-12.png)
+
+    <Info>
+    Regularly reviewing conversations helps you understand your agent's performance and make necessary adjustments.
+    </Info>
+  </Step>
+
+  <Step title="Go to Learning Tab and Add Learnings">
+    Navigate to the **Learning** tab and click on **"Add Learning"** to teach your agent new information or correct its responses.
+
+    ![Add Learning](/images/ai-agent-13.png)
+
+    <Tip>
+    Continuously adding learnings helps your agent improve over time and provide more accurate responses.
+    </Tip>
+  </Step>
+
+  <Step title="Click on Tools and Review Configured Agent Tools">
+    Click on **Tools** to review what your agent can actually do. Each tool is a capability you can enable or disable.
+
+    ![Review Tools](/images/ai-agent-14.png)
+
+    Available tools include:
+    - **Search Knowledge Base** — Agent looks up answers from your uploaded documents and website
+    - **Send WhatsApp Messages** — Agent replies directly to customers
+    - **Schedule Follow-ups** — Agent sets reminders and sends follow-up messages automatically
+    - **Transfer to Human** — Agent hands off to your team when needed and stops responding
+    - **Create/Update CRM Contacts** — Agent saves customer information to your CRM system
+    - **Google Sheets, Calendar, Gmail** — Connect external apps for tasks like booking appointments or logging data
+
+    <Info>
+    Enable only the tools you need for your specific use case. Each enabled tool gives your agent more capabilities but also more responsibility.
+    </Info>
+  </Step>
+
+  <Step title="Examine Enabled and Available Tools">
+    Review which tools are currently enabled and see what additional tools are available for your agent to use.
+
+    ![Examine Tools](/images/ai-agent-15.png)
+
+    <Warning>
+    Configure each tool carefully — for tools like handoff, specify who should be notified when a customer is transferred.
+    </Warning>
+  </Step>
+
+  <Step title="Access WhatsApp Integration">
+    Connect your agent to a WhatsApp number so it can start responding to customers.
+
+    ![WhatsApp Integration](/images/ai-agent-16.png)
+
+    - Choose any WhatsApp Business API or Coexistence number
+    - Your WhatsApp Business app continues working normally — no changes to your existing workflow
+    - Both you and the agent can reply to the same customer simultaneously
+    - Customers won't know they're talking to an AI
+    - Connection takes approximately 2 minutes
+
+    <Info>
+    Once connected, every incoming message on that number goes through your agent first. You can override or intervene in any conversation at any time.
+    </Info>
+  </Step>
+
+  <Step title="Navigate to Billing Preferences">
+    Control your spending by choosing the appropriate LLM model for each use case.
+
+    ![Billing Preferences](/images/ai-agent-17.png)
+
+    <Tip>
+    You can switch between Light and Heavy anytime. The billing dashboard shows cost per message, total spend, and usage breakdown.
+    </Tip>
+  </Step>
+
+  <Step title="Select LLM Model Type">
+    Choose between Light and Heavy LLM models based on your requirements:
+
+    | Model | Best For | Cost | Speed |
+    |-------|----------|------|-------|
+    | **Light LLM** | Simple Q&A, FAQs, straightforward conversations | Lower | Faster responses |
+    | **Heavy LLM** | Complex conversations, negotiations, nuanced understanding | Higher | Smarter responses |
+
+    ![Select LLM Model](/images/ai-agent-18.png)
+
+    <Info>
+    Start with Light for simple use cases and switch to Heavy only when you need more sophisticated understanding.
+    </Info>
+  </Step>
+
+  <Step title="Save Agent Configuration and Publish">
+    When satisfied with your agent configuration, click on **Publish** to finalize the setup, then **Activate** the AI Agent.
+
+    ![Publish Agent](/images/ai-agent-19.png)
+
+    <Warning>
+    Make sure you've tested your agent thoroughly before activating it. Once live, it will start responding to real customer messages.
+    </Warning>
+  </Step>
 </Steps>
 
 ---
 
-## Configuration Options
+## Configuration Options Reference
 
-After creating your agent, configure these essential components:
+After creating your agent, here's a quick reference for the key configuration areas:
 
 ### Tools
-
-Choose what your agent can actually do. Each tool is a capability you can enable:
 
 | Tool | Description |
 |------|-------------|
@@ -156,10 +263,6 @@ Choose what your agent can actually do. Each tool is a capability you can enable
 | **Create/Update CRM Contacts** | Agent saves customer information to your CRM system |
 | **Google Sheets, Calendar, Gmail** | Connect external apps for tasks like booking appointments or logging data |
 
-<Tip>
-    Enable only the tools you need for your specific use case. Each enabled tool gives your agent more capabilities but also more responsibility.
-</Tip>
-
 ### Knowledge Base
 
 Teach your agent about your business. The more knowledge you provide, the better it will respond:
@@ -167,62 +270,6 @@ Teach your agent about your business. The more knowledge you provide, the better
 - **Documents** — Upload PDFs, brochures, price lists, FAQs, product catalogs
 - **Website URLs** — Paste your website link, help docs, or product pages. The system automatically reads and learns from them
 - **WhatsApp Chat Sync** — Enable this to train the agent on your existing WhatsApp conversations. It learns your tone, style, and how you talk to customers
-
-<Warning>
-    Your agent uses this knowledge to answer customer questions accurately. Ensure the information you provide is current and accurate.
-</Warning>
-
-### WhatsApp Integration
-
-Connect your agent to a WhatsApp number so it can start responding to customers:
-
-- Choose any WhatsApp Business API or Coexistence number
-- Your WhatsApp Business app continues working normally — no changes to your existing workflow
-- Both you and the agent can reply to the same customer simultaneously
-- Customers won't know they're talking to an AI
-- Connection takes approximately 2 minutes
-
-<Info>
-    Once connected, every incoming message on that number goes through your agent first. You can override or intervene in any conversation at any time.
-</Info>
-
-### Billing Preferences
-
-Control your spending by choosing the appropriate LLM model for each use case:
-
-| Model | Best For | Cost | Speed |
-|-------|----------|------|-------|
-| **Light LLM** | Simple Q&A, FAQs, straightforward conversations | Lower | Faster responses |
-| **Heavy LLM** | Complex conversations, negotiations, nuanced understanding | Higher | Smarter responses |
-
-<Tip>
-    You can switch between Light and Heavy anytime. The billing dashboard shows cost per message, total spend, and usage breakdown.
-</Tip>
-
----
-
-## Test Before Publishing
-
-Before going live, test your agent:
-
-1. Navigate to the **Test** tab
-2. Input realistic test queries
-3. Review the agent's responses
-4. Adjust the prompt, knowledge base, or tools as needed
-
-<Warning>
-    Thorough testing ensures your agent behaves as expected in real customer scenarios.
-</Warning>
-
----
-
-## Publish and Activate
-
-When satisfied with your agent configuration:
-
-1. Click **Publish** to finalize the setup
-2. Activate the AI Agent
-3. Your agent is now live and ready to handle customer conversations
 
 ---
 
