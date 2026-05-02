@@ -51,7 +51,32 @@ Respalda las conversaciones importantes antes de comenzar. La Coexistencia de Wh
   </Accordion>
 </AccordionGroup>
 
-### 2. País o Región No Soportado
+### 2. Forzar Reincorporación para Números Atascados
+
+**Objetivo:** Forzar una reincorporación de un número de teléfono que está actualmente atascado o vinculado incorrectamente a la Aplicación WhatsApp Business, omitiendo el período de enfriamiento estándar de Meta.
+
+<Steps>
+    <Step>
+        <h3>Fase 1: Meta Business Suite (El Lado de la Nube)</h3>
+        <p><strong>Navegar:</strong> Abre Meta Business Suite → WhatsApp Manager</p>
+        <p><strong>Localizar Número:</strong> Ve a la pestaña Números de Teléfono</p>
+        <p><strong>Configuración:</strong> Haz clic en el icono de Configuración/Engranaje en el lado derecho del número de teléfono específico</p>
+        <p><strong>Desactivar 2FA:</strong> Selecciona la opción para Desactivar la Verificación de Dos Pasos</p>
+        <p><strong>Verificación:</strong> Meta enviará un enlace de restablecimiento/desactivación al correo electrónico del administrador registrado. Abre el correo, haz clic en el enlace y confirma mediante el OTP proporcionado.</p>
+    </Step>
+    <Step>
+        <h3>Fase 2: Dispositivo del Cliente (El Lado Local)</h3>
+        <p><strong>Desconectar:</strong> En la Aplicación WhatsApp Business en el teléfono del cliente, usa la función "Toca para Desconectar" (si es accesible)</p>
+        <p><strong>Desinstalación Completa:</strong> Desinstala completamente la Aplicación WhatsApp Business del dispositivo móvil. Esto borra el caché local y los tokens de registro que a menudo causan bucles de incorporación.</p>
+    </Step>
+    <Step>
+        <h3>Fase 3: Reincorporación</h3>
+        <p><strong>Reinstalar:</strong> Descarga una versión fresca de la Aplicación WhatsApp Business</p>
+        <p><strong>Volver a Registrarse:</strong> Sigue el flujo de incorporación estándar para reconectar tu número</p>
+    </Step>
+</Steps>
+
+### 3. País o Región No Soportado
 
 **Causas Raíz:**
 - Cumplimiento de Meta y restricciones regulatorias en regiones específicas

@@ -51,7 +51,32 @@ Back up important conversations before starting. WhatsApp Coexistence supports u
   </Accordion>
 </AccordionGroup>
 
-### 2. Country or Region Not Supported
+### 2. Forcing Re-Onboarding for Stuck Numbers
+
+**Objective:** Force a re-onboarding of a phone number that is currently stuck or improperly linked to the WhatsApp Business App, bypassing Meta's standard cooling-off period.
+
+<Steps>
+    <Step>
+        <h3>Phase 1: Meta Business Suite (The Cloud Side)</h3>
+        <p><strong>Navigate:</strong> Open Meta Business Suite → WhatsApp Manager</p>
+        <p><strong>Locate Number:</strong> Go to the Phone Numbers tab</p>
+        <p><strong>Settings:</strong> Click the Settings/Gear icon on the right side of the specific phone number</p>
+        <p><strong>Disable 2FA:</strong> Select the option to Turn off Two-Step Verification</p>
+        <p><strong>Verification:</strong> Meta will send a reset/disable link to the registered admin email. Open the email, click the link, and confirm via the OTP provided.</p>
+    </Step>
+    <Step>
+        <h3>Phase 2: Client Device (The Local Side)</h3>
+        <p><strong>Disconnect:</strong> In the WhatsApp Business App on the client's phone, use the "Tap to Disconnect" feature (if accessible)</p>
+        <p><strong>Hard Uninstall:</strong> Completely Uninstall the WhatsApp Business App from the mobile device. This clears local cache and registration tokens that often cause onboarding loops.</p>
+    </Step>
+    <Step>
+        <h3>Phase 3: Re-Onboarding</h3>
+        <p><strong>Reinstall:</strong> Download a fresh version of the WhatsApp Business App</p>
+        <p><strong>Re-register:</strong> Follow the standard onboarding flow to reconnect your number</p>
+    </Step>
+</Steps>
+
+### 3. Country or Region Not Supported
 
 **Root Causes:**
 - Meta compliance and regulatory restrictions in specific regions

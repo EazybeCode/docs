@@ -51,7 +51,32 @@ Faça backup das conversas importantes antes de começar. A Coexistência do Wha
   </Accordion>
 </AccordionGroup>
 
-### 2. País ou Região Não Suportado
+### 2. Forçar Reonboarding para Números Presos
+
+**Objetivo:** Forçar um reonboarding de um número de telefone que está atualmente preso ou vinculado incorretamente ao Aplicativo WhatsApp Business, contornando o período de resfriamento padrão da Meta.
+
+<Steps>
+    <Step>
+        <h3>Fase 1: Meta Business Suite (O Lado da Nuvem)</h3>
+        <p><strong>Navegar:</strong> Abra Meta Business Suite → WhatsApp Manager</p>
+        <p><strong>Localizar Número:</strong> Vá para a aba Números de Telefone</p>
+        <p><strong>Configurações:</strong> Clique no ícone de Configurações/Engrenagem no lado direito do número de telefone específico</p>
+        <p><strong>Desativar 2FA:</strong> Selecione a opção para Desativar a Verificação em Duas Etapas</p>
+        <p><strong>Verificação:</strong> Meta enviará um link de redefinição/desativação para o e-mail do administrador registrado. Abra o e-mail, clique no link e confirme via OTP fornecido.</p>
+    </Step>
+    <Step>
+        <h3>Fase 2: Dispositivo do Cliente (O Lado Local)</h3>
+        <p><strong>Desconectar:</strong> No Aplicativo WhatsApp Business no telefone do cliente, use o recurso "Toque para Desconectar" (se acessível)</p>
+        <p><strong>Desinstalação Completa:</strong> Desinstale completamente o Aplicativo WhatsApp Business do dispositivo móvel. Isso limpa o cache local e os tokens de registro que muitas vezes causam loops de onboarding.</p>
+    </Step>
+    <Step>
+        <h3>Fase 3: Reonboarding</h3>
+        <p><strong>Reinstalar:</strong> Baixe uma versão nova do Aplicativo WhatsApp Business</p>
+        <p><strong>Registrar Novamente:</strong> Siga o fluxo de onboarding padrão para reconectar seu número</p>
+    </Step>
+</Steps>
+
+### 3. País ou Região Não Suportado
 
 **Causas Raiz:**
 - Conformidade da Meta e restrições regulatórias em regiões específicas
