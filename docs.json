@@ -596,7 +596,8 @@
                 "icon": "database",
                 "pages": [
                   "en/ai-agents/knowledge-base-agent/agent-info",
-                  "en/ai-agents/knowledge-base-agent/setup-and-details"
+                  "en/ai-agents/knowledge-base-agent/setup-and-details",
+                  "en/ai-agents/knowledge-base-agent/ai-agent-setup"
                 ]
               },
               {
@@ -1174,7 +1175,8 @@
                 "icon": "database",
                 "pages": [
                   "es/ai-agents/knowledge-base-agent/agent-info",
-                  "es/ai-agents/knowledge-base-agent/setup-and-details"
+                  "es/ai-agents/knowledge-base-agent/setup-and-details",
+                  "es/ai-agents/knowledge-base-agent/ai-agent-setup"
                 ]
               }
             ]
@@ -1729,7 +1731,8 @@
                 "icon": "database",
                 "pages": [
                   "pt/ai-agents/knowledge-base-agent/agent-info",
-                  "pt/ai-agents/knowledge-base-agent/setup-and-details"
+                  "pt/ai-agents/knowledge-base-agent/setup-and-details",
+                  "pt/ai-agents/knowledge-base-agent/ai-agent-setup"
                 ]
               }
             ]
@@ -2284,7 +2287,8 @@
                 "icon": "database",
                 "pages": [
                   "tr/ai-agents/knowledge-base-agent/agent-info",
-                  "tr/ai-agents/knowledge-base-agent/setup-and-details"
+                  "tr/ai-agents/knowledge-base-agent/setup-and-details",
+                  "tr/ai-agents/knowledge-base-agent/ai-agent-setup"
                 ]
               }
             ]
