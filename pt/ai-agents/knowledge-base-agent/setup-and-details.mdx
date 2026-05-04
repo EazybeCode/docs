@@ -1,14 +1,8 @@
 ---
 title: "Configuração e Detalhes"
 description: "Guia passo a passo para criar, configurar e implantar seu Agente de Base de Conhecimento IA no WhatsApp"
-import:
-  - Steps
-  - Step
-  - Note
-  - Warning
-  - Tip
-  - Accordion
-  - AccordionItem
+import: ["Steps", "Step", "Note", "Warning", "Tip", "Accordion", "AccordionItem"]
+hidden: true
 ---
 
 # Configuração e Detalhes
@@ -35,19 +29,24 @@ Estes agentes são projetados para:
 Ao contrário dos chatbots tradicionais, os Agentes IA da Eazybe são:
 
 ### Conscientes do Contexto
+
 Eles aprendem com:
+
 - Seu site ou base de conhecimento
 - Suas conversas reais do WhatsApp
 
 ### Nativo do WhatsApp
+
 - Construído especificamente para comunicação por WhatsApp
 - Não precisa de ferramentas de chat externas
 - Integração direta com seu fluxo de trabalho existente
 
 ### Rápido de Implantar
+
 - Criar → Treinar → Implantar em menos de 5 minutos
 
 ### Continuamente Escalável
+
 - Comece de forma simples
 - Atualize para agentes completamente personalizados com integrações mais profundas
 
@@ -55,33 +54,36 @@ Eles aprendem com:
 
 <Accordion>
   <AccordionItem title="Suporte ao Cliente">
-    <ul>
-      <li>Consultas sobre status de pedidos</li>
-      <li>Respostas a perguntas frequentes</li>
-      <li>Resolução de problemas</li>
-    </ul>
-  </AccordionItem>
+  <ul>
+    <li>Consultas sobre status de pedidos</li>
+    <li>Respostas a perguntas frequentes</li>
+    <li>Resolução de problemas</li>
+  </ul>
+</AccordionItem>
+
   <AccordionItem title="Vendas">
-    <ul>
-      <li>Qualificação de leads</li>
-      <li>Recomendações de produtos</li>
-      <li>Follow-ups</li>
-    </ul>
-  </AccordionItem>
+  <ul>
+    <li>Qualificação de leads</li>
+    <li>Recomendações de produtos</li>
+    <li>Follow-ups</li>
+  </ul>
+</AccordionItem>
+
   <AccordionItem title="Híbrido">
-    Suporte de primeiro nível + conversão de vendas
-  </AccordionItem>
+  Suporte de primeiro nível + conversão de vendas
+</AccordionItem>
 </Accordion>
 
 ## Limitações (Versão Inicial)
 
 <Note>
   Esta é uma versão inicial com as seguintes considerações:
+
   <ul>
-    <li>Personalização profunda limitada (disponível na versão avançada)</li>
-    <li>O desempenho depende da qualidade dos dados de treinamento</li>
-    <li>Requer número de API do WhatsApp para implantação</li>
-  </ul>
+  <li>Personalização profunda limitada (disponível na versão avançada)</li>
+  <li>O desempenho depende da qualidade dos dados de treinamento</li>
+  <li>Requer número de API do WhatsApp para implantação</li>
+</ul>
 </Note>
 
 ## Passo a Passo: Crie Seu Agente IA
@@ -94,83 +96,76 @@ Siga estes passos para configurar e implantar seu Agente de Base de Conhecimento
 
     ![Link do painel de Agentes IA](/images/ai-agents/image1.png)
   </Step>
-
   <Step title="Adicionar Agente">
     Clique em <strong>Adicionar Agente</strong> no seu painel para começar a criar seu agente IA.
 
     ![Botão Adicionar Agente](/images/ai-agents/image2.png)
   </Step>
-
   <Step title="Adicionar Fonte de Conhecimento">
     Escolha um dos seguintes métodos para treinar seu agente:
-    <ul>
-      <li><strong>URL do site</strong> – Insira a URL do seu site para extrair conteúdo</li>
-      <li><strong>Fazer upload da base de conhecimento</strong> – Carregue documentos (PDF, DOCX, TXT, CSV)</li>
-      <li><strong>Conectar base de conhecimento existente</strong> – Vincule aos seus recursos atuais</li>
-    </ul>
 
-    ![Opções de adicionar fonte de conhecimento](/images/ai-agents/image3.png)
-    ![Fazer upload ou conectar base de conhecimento](/images/ai-agents/image4.png)
+    <ul>
+  <li><strong>URL do site</strong> – Insira a URL do seu site para extrair conteúdo</li>
+  <li><strong>Fazer upload da base de conhecimento</strong> – Carregue documentos (PDF, DOCX, TXT, CSV)</li>
+  <li><strong>Conectar base de conhecimento existente</strong> – Vincule aos seus recursos atuais</li>
+</ul>
+
+    <img src="/images/ai-agents/image3.png" alt="Opções de adicionar fonte de conhecimento" /> <img src="/images/ai-agents/image4.png" alt="Fazer upload ou conectar base de conhecimento" />
 
     <Tip>
       Isso ajuda o agente a entender o seu negócio e fornecer respostas precisas.
     </Tip>
   </Step>
-
   <Step title="Selecionar Caso de Uso">
     Escolha o propósito principal do seu agente:
+
     <ul>
-      <li><strong>Suporte ao Cliente (CS)</strong> – Lida com consultas, reclamações, perguntas frequentes</li>
-      <li><strong>Agente de Vendas</strong> – Converte leads, compartilha informações do produto, faz follow-ups</li>
-    </ul>
+  <li><strong>Suporte ao Cliente (CS)</strong> – Lida com consultas, reclamações, perguntas frequentes</li>
+  <li><strong>Agente de Vendas</strong> – Converte leads, compartilha informações do produto, faz follow-ups</li>
+</ul>
 
     ![Opções de selecionar caso de uso](/images/ai-agents/image5.png)
 
     Clique em <strong>Próximo Passo</strong> para continuar.
   </Step>
-
   <Step title="Sincronizar Chats do WhatsApp (Mais Importante)">
     Ative <strong>Sincronizar Chats do WhatsApp</strong> para permitir que o agente aprenda com suas conversas históricas. Esta é uma etapa crítica que permite ao agente:
-    <ul>
-      <li>Aprender o tom real do cliente</li>
-      <li>Compreender as perguntas frequentes</li>
-      <li>Replicar o estilo de comunicação da sua equipe</li>
-    </ul>
 
-    ![Opção de sincronizar chats do WhatsApp](/images/ai-agents/image6.png)
-    ![Selecionar conversas para aprender](/images/ai-agents/image7.png)
+    <ul>
+  <li>Aprender o tom real do cliente</li>
+  <li>Compreender as perguntas frequentes</li>
+  <li>Replicar o estilo de comunicação da sua equipe</li>
+</ul>
+
+    <img src="/images/ai-agents/image6.png" alt="Opção de sincronizar chats do WhatsApp" /> <img src="/images/ai-agents/image7.png" alt="Selecionar conversas para aprender" />
 
     Selecione as conversas das quais deseja que o agente aprenda e clique em <strong>Continuar</strong>.
   </Step>
-
   <Step title="Configurar Modelo IA">
     Clique em <strong>Cérebro IA</strong> e selecione seu modelo de agente IA. Escolha o modelo apropriado com base nos seus requisitos e volume de conversações esperado.
 
     ![Seleção de modelo Cérebro IA](/images/ai-agents/image8.png)
   </Step>
-
   <Step title="Selecionar Tipo de Agente">
     Confirme a função do seu agente:
+
     <ul>
-      <li><strong>Suporte ao Cliente (CS)</strong> – Lida com consultas, reclamações, perguntas frequentes</li>
-      <li><strong>Agente de Vendas</strong> – Converte leads, compartilha informações do produto, faz follow-ups</li>
-    </ul>
+  <li><strong>Suporte ao Cliente (CS)</strong> – Lida com consultas, reclamações, perguntas frequentes</li>
+  <li><strong>Agente de Vendas</strong> – Converte leads, compartilha informações do produto, faz follow-ups</li>
+</ul>
 
     ![Seleção de tipo de agente](/images/ai-agents/image9.png)
   </Step>
-
   <Step title="Selecionar Número de Implantação">
     Escolha o número do WhatsApp no qual deseja implantar o agente IA. Deve ser um número de WhatsApp Business API (WABA) conectado.
 
     ![Selecionar número de implantação](/images/ai-agents/image10.png)
   </Step>
-
   <Step title="Personalizar Instruções do Sistema">
     Edite as <strong>Instruções do Sistema</strong> com base nos seus casos de uso específicos. Isso define como o agente se comporta e responde às consultas dos clientes.
 
     ![Editor de instruções do sistema](/images/ai-agents/image11.png)
   </Step>
-
   <Step title="Finalizar Treinamento">
     Confirme suas fontes de dados selecionadas e clique em <strong>Lançar Agente</strong>. O sistema treinará automaticamente seu agente.
 
@@ -180,31 +175,27 @@ Siga estes passos para configurar e implantar seu Agente de Base de Conhecimento
       O treinamento geralmente leva apenas alguns minutos. Não feche o navegador durante este processo.
     </Warning>
   </Step>
-
   <Step title="Testar no Playground">
     Clique em <strong>Playground</strong> para interagir com seu agente antes de colocá-lo ao vivo. Use esta oportunidade para:
+
     <ul>
-      <li>Validar a qualidade das respostas</li>
-      <li>Testar casos extremos</li>
-      <li>Fazer ajustes nas instruções do sistema se necessário</li>
-    </ul>
+  <li>Validar a qualidade das respostas</li>
+  <li>Testar casos extremos</li>
+  <li>Fazer ajustes nas instruções do sistema se necessário</li>
+</ul>
 
-    ![Interface de testes do Playground](/images/ai-agents/image13.png)
-    ![Revisão de conhecimentos de fontes](/images/ai-agents/image14.png)
+    <img src="/images/ai-agents/image13.png" alt="Interface de testes do Playground" /> <img src="/images/ai-agents/image14.png" alt="Revisão de conhecimentos de fontes" />
   </Step>
-
   <Step title="Revisar Número do WhatsApp">
     Clique em <strong>WhatsApp</strong> para verificar o número conectado.
 
     ![Número de WhatsApp conectado](/images/ai-agents/image15.png)
   </Step>
-
   <Step title="Revisar Cobrança">
     Clique em <strong>Cobrança</strong> para revisar seu plano.
 
     ![Informações de cobrança](/images/ai-agents/image16.png)
   </Step>
-
   <Step title="Publicar Seu Agente">
     Clique em <strong>Publicar</strong> para colocar seu agente IA no ar.
 
@@ -236,12 +227,14 @@ Para empresas que precisam de personalização mais profunda, oferecemos agentes
 
 <Note>
   Agentes personalizados avançados incluem:
+
   <ul>
-    <li>Construídos usando seus dados de CRM</li>
-    <li>Personalizados de acordo com seus fluxos de trabalho específicos</li>
-    <li>Projetados com sua equipe de liderança</li>
-    <li>Entregues em 4 semanas</li>
-  </ul>
+  <li>Construídos usando seus dados de CRM</li>
+  <li>Personalizados de acordo com seus fluxos de trabalho específicos</li>
+  <li>Projetados com sua equipe de liderança</li>
+  <li>Entregues em 4 semanas</li>
+</ul>
+
   Os recursos incluem personalização profunda, lógica específica do negócio e fluxos de automação avançados.
 </Note>
 

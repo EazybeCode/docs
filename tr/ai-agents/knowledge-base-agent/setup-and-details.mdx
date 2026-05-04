@@ -1,14 +1,8 @@
 ---
 title: "Kurulum ve Detaylar"
 description: "WhatsApp'ta AI Bilgi Tabanı Aracınızı oluşturma, yapılandırma ve dağıtma konusunda adım adım kılavuz"
-import:
-  - Steps
-  - Step
-  - Note
-  - Warning
-  - Tip
-  - Accordion
-  - AccordionItem
+import: ["Steps", "Step", "Note", "Warning", "Tip", "Accordion", "AccordionItem"]
+hidden: true
 ---
 
 # Kurulum ve Detaylar
@@ -35,19 +29,24 @@ Bu aracılar şunları yapmak için tasarlanmıştır:
 Geleneksel sohbot robotlarının aksine, Eazybe AI Aracıları şunlardır:
 
 ### Bağlam Farkındalığı
+
 Şunlardan öğrenirler:
+
 - Web siteniz veya bilgi tabanınız
 - Gerçek WhatsApp sohbetleriniz
 
 ### WhatsApp Yerlisi
+
 - WhatsApp iletişimi için özel olarak üretilmiş
 - Harici sohbet araçlarına gerek yok
 - Mevcut iş akışınızla doğrudan entegrasyon
 
 ### Hızlı Dağıtım
+
 - Oluştur → Eğit → Dağıt 5 dakikanın altında
 
 ### Sürekli Ölçeklenebilir
+
 - Basitçe başlayın
 - Daha derin entegrasyonlarla tamamen özel aracılara yükseltin
 
@@ -55,33 +54,36 @@ Geleneksel sohbot robotlarının aksine, Eazybe AI Aracıları şunlardır:
 
 <Accordion>
   <AccordionItem title="Müşteri Desteği">
-    <ul>
-      <li>Sipariş durumu sorguları</li>
-      <li>SSS yanıtları</li>
-      <li>Sorun çözümü</li>
-    </ul>
-  </AccordionItem>
+  <ul>
+    <li>Sipariş durumu sorguları</li>
+    <li>SSS yanıtları</li>
+    <li>Sorun çözümü</li>
+  </ul>
+</AccordionItem>
+
   <AccordionItem title="Satış">
-    <ul>
-      <li>Lead eleme</li>
-      <li>Ürün önerileri</li>
-      <li>Takipler</li>
-    </ul>
-  </AccordionItem>
+  <ul>
+    <li>Lead eleme</li>
+    <li>Ürün önerileri</li>
+    <li>Takipler</li>
+  </ul>
+</AccordionItem>
+
   <AccordionItem title="Hibrit">
-    Birinci seviye destek + satış dönüşümü
-  </AccordionItem>
+  Birinci seviye destek + satış dönüşümü
+</AccordionItem>
 </Accordion>
 
 ## Sınırlamalar (İlk Sürüm)
 
 <Note>
   Bu ilk sürüm aşağıdakileri göz önünde bulundurur:
+
   <ul>
-    <li>Derin kişiselleştirme sınırlıdır (gelişmiş sürümde mevcuttur)</li>
-    <li>Performans eğitim verilerinin kalitesine bağlıdır</li>
-    <li>Dağıtım için WhatsApp API numarası gerektirir</li>
-  </ul>
+  <li>Derin kişiselleştirme sınırlıdır (gelişmiş sürümde mevcuttur)</li>
+  <li>Performans eğitim verilerinin kalitesine bağlıdır</li>
+  <li>Dağıtım için WhatsApp API numarası gerektirir</li>
+</ul>
 </Note>
 
 ## Adım Adım: AI Aracınızı Oluşturun
@@ -94,83 +96,76 @@ AI Bilgi Tabanı Aracınızı kurmak ve dağıtmak için şu adımları izleyin:
 
     ![AI Aracıları panel bağlantısı](/images/ai-agents/image1.png)
   </Step>
-
   <Step title="Aracı Ekle">
     AI aracınızı oluşturmaya başlamak için kontrol panelinizdeki <strong>Aracı Ekle</strong> seçeneğine tıklayın.
 
     ![Aracı Ekle butonu](/images/ai-agents/image2.png)
   </Step>
-
   <Step title="Bilgi Kaynağı Ekleyin">
     Aracınızı eğitmek için aşağıdaki yöntemlerden birini seçin:
-    <ul>
-      <li><strong>Web Sitesi URL'si</strong> – İçerik ayıklamak için web sitenizin URL'sini girin</li>
-      <li><strong>Bilgi Tabanı Yükle</strong> – Belgeler yükleyin (PDF, DOCX, TXT, CSV)</li>
-      <li><strong>Mevcut Bilgi Tabanını Bağla</strong> – Mevcut kaynaklarınıza bağlantı verin</li>
-    </ul>
 
-    ![Bilgi kaynağı ekleme seçenekleri](/images/ai-agents/image3.png)
-    ![Bilgi tabanı yükleme veya bağlama](/images/ai-agents/image4.png)
+    <ul>
+  <li><strong>Web Sitesi URL'si</strong> – İçerik ayıklamak için web sitenizin URL'sini girin</li>
+  <li><strong>Bilgi Tabanı Yükle</strong> – Belgeler yükleyin (PDF, DOCX, TXT, CSV)</li>
+  <li><strong>Mevcut Bilgi Tabanını Bağla</strong> – Mevcut kaynaklarınıza bağlantı verin</li>
+</ul>
+
+    <img src="/images/ai-agents/image3.png" alt="Bilgi kaynağı ekleme seçenekleri" /> <img src="/images/ai-agents/image4.png" alt="Bilgi tabanı yükleme veya bağlama" />
 
     <Tip>
       Bu, aracınızın işinizi anlamasına ve doğru yanıtlar vermesine yardımcı olur.
     </Tip>
   </Step>
-
   <Step title="Kullanım Durumunu Seçin">
     Aracınızın birincil amacını seçin:
+
     <ul>
-      <li><strong>Müşteri Desteği (CS)</strong> – Sorguları, şikayetleri, SSS'leri ele alır</li>
-      <li><strong>Satış Aracısı</strong> – Lead'leri dönüştürür, ürün bilgisi paylaşır, takip yapar</li>
-    </ul>
+  <li><strong>Müşteri Desteği (CS)</strong> – Sorguları, şikayetleri, SSS'leri ele alır</li>
+  <li><strong>Satış Aracısı</strong> – Lead'leri dönüştürür, ürün bilgisi paylaşır, takip yapar</li>
+</ul>
 
     ![Kullanım durumu seçme seçenekleri](/images/ai-agents/image5.png)
 
     Devam etmek için <strong>Sonraki Adım</strong> seçeneğine tıklayın.
   </Step>
-
   <Step title="WhatsApp Sohbetlerini Senkronize Edin (En Önemli)">
     Aracınızın geçmiş sohbetlerden öğrenmesini sağlamak için <strong>WhatsApp Sohbetlerini Senkronize Et</strong> seçeneğini etkinleştirin. Bu, aracının şu şeyleri yapmasını sağlayan kritik bir adımdır:
-    <ul>
-      <li>Gerçek müşteri tonunu öğrenmek</li>
-      <li>Sık sorulan soruları anlamak</li>
-      <li>Ekibinizin iletişim tarzını taklit etmek</li>
-    </ul>
 
-    ![WhatsApp sohbetlerini senkronize etme seçeneği](/images/ai-agents/image6.png)
-    ![Öğrenilecek sohbetleri seçin](/images/ai-agents/image7.png)
+    <ul>
+  <li>Gerçek müşteri tonunu öğrenmek</li>
+  <li>Sık sorulan soruları anlamak</li>
+  <li>Ekibinizin iletişim tarzını taklit etmek</li>
+</ul>
+
+    <img src="/images/ai-agents/image6.png" alt="WhatsApp sohbetlerini senkronize etme seçeneği" /> <img src="/images/ai-agents/image7.png" alt="Öğrenilecek sohbetleri seçin" />
 
     Aracınızın öğrenmesini istediğiniz sohbetleri seçin ve <strong>Devam Et</strong> seçeneğine tıklayın.
   </Step>
-
   <Step title="AI Modelini Yapılandırın">
     <strong>AI Beyni</strong> seçeneğine tıklayın ve AI aracı modelinizi seçin. Beklenen görüşme hacmine göre uygun modeli seçin.
 
     ![AI Beyni model seçimi](/images/ai-agents/image8.png)
   </Step>
-
   <Step title="Aracı Türünü Seçin">
     Aracınızın rolünü onaylayın:
+
     <ul>
-      <li><strong>Müşteri Desteği (CS)</strong> – Sorguları, şikayetleri, SSS'leri ele alır</li>
-      <li><strong>Satış Aracısı</strong> – Lead'leri dönüştürür, ürün bilgisi paylaşır, takip yapar</li>
-    </ul>
+  <li><strong>Müşteri Desteği (CS)</strong> – Sorguları, şikayetleri, SSS'leri ele alır</li>
+  <li><strong>Satış Aracısı</strong> – Lead'leri dönüştürür, ürün bilgisi paylaşır, takip yapar</li>
+</ul>
 
     ![Aracı türü seçimi](/images/ai-agents/image9.png)
   </Step>
-
   <Step title="Dağıtım Numarasını Seçin">
     AI aracını dağıtmak istediğiniz WhatsApp numarasını seçin. Bu, bağlı bir WhatsApp Business API (WABA) numarası olmalıdır.
 
     ![Dağıtım numarası seçin](/images/ai-agents/image10.png)
   </Step>
-
   <Step title="Sistem Talimatlarını Özelleştirin">
     Özel kullanım durumlarınıza göre <strong>Sistem Talimatlarını</strong> düzenleyin. Bu, aracının nasıl davranacağını ve müşteri sorgularına nasıl yanıt vereceğini tanımlar.
 
     ![Sistem talimatları düzenleyici](/images/ai-agents/image11.png)
   </Step>
-
   <Step title="Eğitimi Tamamlayın">
     Seçili veri kaynaklarını onaylayın ve <strong>Aracı Başlat</strong> seçeneğine tıklayın. Sistem aracınızı otomatik olarak eğitecektir.
 
@@ -180,31 +175,27 @@ AI Bilgi Tabanı Aracınızı kurmak ve dağıtmak için şu adımları izleyin:
       Eğitim genellikle sadece birkaç dakika sürer. Bu süre boyunca tarayıcıyı kapatmayın.
     </Warning>
   </Step>
-
   <Step title="Test Alanında Test Edin">
     Canlıya geçmeden önce aracınızla etkileşim kurmak için <strong>Test Alanı</strong> seçeneğine tıklayın. Bu fırsatı şunlar için kullanın:
+
     <ul>
-      <li>Yanıt kalitesini doğrulamak</li>
-      <li>Kenar durumları test etmek</li>
-      <li>Gerekirse sistem talimatlarında ayarlamalar yapmak</li>
-    </ul>
+  <li>Yanıt kalitesini doğrulamak</li>
+  <li>Kenar durumları test etmek</li>
+  <li>Gerekirse sistem talimatlarında ayarlamalar yapmak</li>
+</ul>
 
-    ![Test Alanı test arayüzü](/images/ai-agents/image13.png)
-    ![Kaynak bilgi incelemesi](/images/ai-agents/image14.png)
+    <img src="/images/ai-agents/image13.png" alt="Test Alanı test arayüzü" /> <img src="/images/ai-agents/image14.png" alt="Kaynak bilgi incelemesi" />
   </Step>
-
   <Step title="WhatsApp Numarasını Gözden Geçirin">
     Bağlı numarayı görmek için <strong>WhatsApp</strong> seçeneğine tıklayın.
 
     ![Bağlı WhatsApp numarası](/images/ai-agents/image15.png)
   </Step>
-
   <Step title="Faturalandırmayı Gözden Geçirin">
     Planınızı gözden geçirmek için <strong>Faturalandırma</strong> seçeneğine tıklayın.
 
     ![Faturalandırma bilgileri](/images/ai-agents/image16.png)
   </Step>
-
   <Step title="Aracınızı Yayınlayın">
     AI aracınızı canlıya almak için <strong>Yayınla</strong> seçeneğine tıklayın.
 
@@ -236,12 +227,14 @@ Daha derin kişiselleştirme ihtiyacı duyan işletmeler için tamamen özel AI 
 
 <Note>
   Gelişmiş özel aracılar şunları içerir:
+
   <ul>
-    <li>CRM verileriniz kullanılarak oluşturulmuştur</li>
-    <li>İş akışlarınıza göre özelleştirilmiştir</li>
-    <li>Liderlik ekibinizle tasarlanmıştır</li>
-    <li>4 hafta içinde teslim edilir</li>
-  </ul>
+  <li>CRM verileriniz kullanılarak oluşturulmuştur</li>
+  <li>İş akışlarınıza göre özelleştirilmiştir</li>
+  <li>Liderlik ekibinizle tasarlanmıştır</li>
+  <li>4 hafta içinde teslim edilir</li>
+</ul>
+
   Özellikler arasında derin kişiselleştirme, işe özel mantık ve gelişmiş otomasyon akışları bulunur.
 </Note>
 
