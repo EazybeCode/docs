@@ -83,6 +83,13 @@
                 ]
               },
               {
+                "group": "Team Inbox",
+                "icon": "users",
+                "pages": [
+                  "en/team-inbox-hd/team-inbox-hd-en"
+                ]
+              },
+              {
                 "group": "Revenue Inbox",
                 "icon": "inbox",
                 "pages": [
@@ -703,6 +710,13 @@
                 ]
               },
               {
+                "group": "Buzón de Equipo",
+                "icon": "users",
+                "pages": [
+                  "es/team-inbox-hd/team-inbox-hd-sp"
+                ]
+              },
+              {
                 "group": "Bandeja de Ingresos",
                 "icon": "inbox",
                 "pages": [
@@ -1251,6 +1265,13 @@
                       }
                     ]
                   }
+                ]
+              },
+              {
+                "group": "Caixa de Entrada da Equipe",
+                "icon": "users",
+                "pages": [
+                  "pt/team-inbox-hd/team-inbox-hd-pt"
                 ]
               },
               {
@@ -1807,6 +1828,13 @@
                       }
                     ]
                   }
+                ]
+              },
+              {
+                "group": "Takım Gelen Kutusu",
+                "icon": "users",
+                "pages": [
+                  "tr/team-inbox-hd/team-inbox-hd-tr"
                 ]
               },
               {
