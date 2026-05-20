@@ -56,7 +56,10 @@
                   {
                     "group": "Setup",
                     "pages": [
-                      "en/getting-started/eazybe-onboarding-en",
+                      {
+                        "title": "Eazybe Onboarding",
+                        "page": "en/getting-started/eazybe-onboarding-en"
+                      },
                       "en/getting-started/onboarding-to-coexistence"
                     ]
                   },
@@ -684,7 +687,10 @@
                   {
                     "group": "Configuración",
                     "pages": [
-                      "es/getting-started/eazybe-onboarding-sp",
+                      {
+                        "title": "Incorporación a Eazybe",
+                        "page": "es/getting-started/eazybe-onboarding-sp"
+                      },
                       "es/getting-started/onboarding-to-coexistence"
                     ]
                   },
@@ -1235,7 +1241,10 @@
                       "pt/getting-started/installation",
                       "pt/getting-started/system-requirements",
                       "pt/getting-started/connect-whatsapp",
-                      "pt/getting-started/eazybe-onboarding-pt",
+                      {
+                        "title": "Onboarding Eazybe",
+                        "page": "pt/getting-started/eazybe-onboarding-pt"
+                      },
                       "pt/getting-started/onboarding-to-coexistence"
                     ]
                   },
@@ -1799,7 +1808,10 @@
                       "tr/getting-started/installation",
                       "tr/getting-started/system-requirements",
                       "tr/getting-started/connect-whatsapp",
-                      "tr/getting-started/eazybe-onboarding-tr",
+                      {
+                        "title": "Eazybe Onboarding",
+                        "page": "tr/getting-started/eazybe-onboarding-tr"
+                      },
                       "tr/getting-started/onboarding-to-coexistence"
                     ]
                   },
