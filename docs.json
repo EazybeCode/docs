@@ -680,10 +680,7 @@
                   {
                     "group": "Configuración",
                     "pages": [
-                      {
-                        "title": "Incorporación a Eazybe",
-                        "page": "es/getting-started/eazybe-onboarding-sp"
-                      },
+                      "es/getting-started/eazybe-onboarding-sp",
                       "es/getting-started/onboarding-to-coexistence"
                     ]
                   },
@@ -1226,10 +1223,7 @@
                       "pt/getting-started/installation",
                       "pt/getting-started/system-requirements",
                       "pt/getting-started/connect-whatsapp",
-                      {
-                        "title": "Onboarding Eazybe",
-                        "page": "pt/getting-started/eazybe-onboarding-pt"
-                      },
+                      "pt/getting-started/eazybe-onboarding-pt",
                       "pt/getting-started/onboarding-to-coexistence"
                     ]
                   },
@@ -1787,10 +1781,7 @@
                       "tr/getting-started/installation",
                       "tr/getting-started/system-requirements",
                       "tr/getting-started/connect-whatsapp",
-                      {
-                        "title": "Eazybe Onboarding",
-                        "page": "tr/getting-started/eazybe-onboarding-tr"
-                      },
+                      "tr/getting-started/eazybe-onboarding-tr",
                       "tr/getting-started/onboarding-to-coexistence"
                     ]
                   },
