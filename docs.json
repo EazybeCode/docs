@@ -292,6 +292,17 @@
                 ]
               },
               {
+                "group": "Pipedrive",
+                "icon": "pipedrive",
+                "pages": [
+                  "en/integrations/pipedrive/overview",
+                  "en/integrations/pipedrive/prerequisites",
+                  "en/integrations/pipedrive/account-connection",
+                  "en/integrations/pipedrive/mini-crm",
+                  "en/integrations/pipedrive/disconnect"
+                ]
+              },
+              {
                 "group": "Zoho CRM",
                 "icon": "circle-nodes",
                 "pages": [
@@ -896,6 +907,17 @@
                 ]
               },
               {
+                "group": "Pipedrive",
+                "icon": "pipedrive",
+                "pages": [
+                  "en/integrations/pipedrive/overview",
+                  "en/integrations/pipedrive/prerequisites",
+                  "en/integrations/pipedrive/account-connection",
+                  "en/integrations/pipedrive/mini-crm",
+                  "en/integrations/pipedrive/disconnect"
+                ]
+              },
+              {
                 "group": "Zoho CRM",
                 "icon": "circle-nodes",
                 "pages": [
@@ -1454,6 +1476,17 @@
                 ]
               },
               {
+                "group": "Pipedrive",
+                "icon": "pipedrive",
+                "pages": [
+                  "en/integrations/pipedrive/overview",
+                  "en/integrations/pipedrive/prerequisites",
+                  "en/integrations/pipedrive/account-connection",
+                  "en/integrations/pipedrive/mini-crm",
+                  "en/integrations/pipedrive/disconnect"
+                ]
+              },
+              {
                 "group": "Zoho CRM",
                 "icon": "circle-nodes",
                 "pages": [
@@ -2009,6 +2042,17 @@
                     ]
                   },
                   "tr/integrations/hubspot/compliance-and-privacy"
+                ]
+              },
+              {
+                "group": "Pipedrive",
+                "icon": "pipedrive",
+                "pages": [
+                  "en/integrations/pipedrive/overview",
+                  "en/integrations/pipedrive/prerequisites",
+                  "en/integrations/pipedrive/account-connection",
+                  "en/integrations/pipedrive/mini-crm",
+                  "en/integrations/pipedrive/disconnect"
                 ]
               },
               {
