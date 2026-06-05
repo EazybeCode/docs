@@ -293,7 +293,7 @@
               },
               {
                 "group": "Pipedrive",
-                "icon": "pipedrive",
+                "icon": "briefcase",
                 "pages": [
                   "en/integrations/pipedrive/overview",
                   "en/integrations/pipedrive/prerequisites",
@@ -427,7 +427,7 @@
               },
               {
                 "group": "Pipedrive",
-                "icon": "pipe-section",
+                "icon": "briefcase",
                 "pages": [
                   {
                     "group": "Playbooks",
@@ -908,7 +908,7 @@
               },
               {
                 "group": "Pipedrive",
-                "icon": "pipedrive",
+                "icon": "briefcase",
                 "pages": [
                   "en/integrations/pipedrive/overview",
                   "en/integrations/pipedrive/prerequisites",
@@ -1477,7 +1477,7 @@
               },
               {
                 "group": "Pipedrive",
-                "icon": "pipedrive",
+                "icon": "briefcase",
                 "pages": [
                   "en/integrations/pipedrive/overview",
                   "en/integrations/pipedrive/prerequisites",
@@ -2046,7 +2046,7 @@
               },
               {
                 "group": "Pipedrive",
-                "icon": "pipedrive",
+                "icon": "briefcase",
                 "pages": [
                   "en/integrations/pipedrive/overview",
                   "en/integrations/pipedrive/prerequisites",
