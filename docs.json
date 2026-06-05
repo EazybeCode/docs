@@ -425,21 +425,7 @@
                   }
                 ]
               },
-              {
-                "group": "Pipedrive",
-                "icon": "briefcase",
-                "pages": [
-                  {
-                    "group": "Playbooks",
-                    "pages": [
-                      "integrations/pipedrive/playbooks/overview",
-                      "integrations/pipedrive/playbooks/contact-capture",
-                      "integrations/pipedrive/playbooks/chat-backup",
-                      "integrations/pipedrive/playbooks/deal-alerts"
-                    ]
-                  }
-                ]
-              },
+
               {
                 "group": "LeadSquared",
                 "icon": "bullseye",
