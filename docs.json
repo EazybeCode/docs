@@ -896,11 +896,11 @@
                 "group": "Pipedrive",
                 "icon": "briefcase",
                 "pages": [
-                  "en/integrations/pipedrive/overview",
-                  "en/integrations/pipedrive/prerequisites",
-                  "en/integrations/pipedrive/account-connection",
-                  "en/integrations/pipedrive/mini-crm",
-                  "en/integrations/pipedrive/disconnect"
+                  "es/integrations/pipedrive/overview",
+                  "es/integrations/pipedrive/prerequisites",
+                  "es/integrations/pipedrive/account-connection",
+                  "es/integrations/pipedrive/mini-crm",
+                  "es/integrations/pipedrive/disconnect"
                 ]
               },
               {
@@ -1465,11 +1465,11 @@
                 "group": "Pipedrive",
                 "icon": "briefcase",
                 "pages": [
-                  "en/integrations/pipedrive/overview",
-                  "en/integrations/pipedrive/prerequisites",
-                  "en/integrations/pipedrive/account-connection",
-                  "en/integrations/pipedrive/mini-crm",
-                  "en/integrations/pipedrive/disconnect"
+                  "pt/integrations/pipedrive/overview",
+                  "pt/integrations/pipedrive/prerequisites",
+                  "pt/integrations/pipedrive/account-connection",
+                  "pt/integrations/pipedrive/mini-crm",
+                  "pt/integrations/pipedrive/disconnect"
                 ]
               },
               {
@@ -2034,11 +2034,11 @@
                 "group": "Pipedrive",
                 "icon": "briefcase",
                 "pages": [
-                  "en/integrations/pipedrive/overview",
-                  "en/integrations/pipedrive/prerequisites",
-                  "en/integrations/pipedrive/account-connection",
-                  "en/integrations/pipedrive/mini-crm",
-                  "en/integrations/pipedrive/disconnect"
+                  "tr/integrations/pipedrive/overview",
+                  "tr/integrations/pipedrive/prerequisites",
+                  "tr/integrations/pipedrive/account-connection",
+                  "tr/integrations/pipedrive/mini-crm",
+                  "tr/integrations/pipedrive/disconnect"
                 ]
               },
               {
