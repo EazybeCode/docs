@@ -1,0 +1,102 @@
+---
+title: "Prerequisites for Odoo Integration"
+description: "Learn how to generate an API key from your Odoo instance"
+---
+
+## Overview
+
+Before connecting Eazybe to Odoo, you need to generate an API key from your Odoo instance. This key will allow Eazybe to securely access your Odoo data.
+
+---
+
+## Requirements
+
+<CardGroup cols={2}>
+  <Card title="Odoo Account" icon="user">
+    Active Odoo account with administrator or user access
+  </Card>
+  <Card title="Odoo Instance" icon="server">
+    Access to your Odoo instance URL
+  </Card>
+  <Card title="API Access" icon="key">
+    Permission to generate API keys in Odoo
+  </Card>
+  <Card title="Eazybe Extension" icon="chrome">
+    Eazybe Chrome extension installed
+  </Card>
+</CardGroup>
+
+---
+
+## Generating Your Odoo API Key
+
+<Steps>
+  <Step title="Open Odoo Settings">
+    Log in to your Odoo instance and click on **Settings** in the top menu.
+    <img src="/images/odoo-04.png" alt="Odoo Settings" />
+  </Step>
+
+  <Step title="Go to Users & Companies">
+    In the Settings menu, navigate to **Users & Companies** and then click on **Users**.
+  </Step>
+
+  <Step title="Select Your User">
+    Find and click on your user account from the list.
+    <img src="/images/odoo-05.png" alt="Select User" />
+  </Step>
+
+  <Step title="Access Security Settings">
+    Click on the **Security** tab in the user details page.
+    <img src="/images/odoo-06.png" alt="Security Tab" />
+  </Step>
+
+  <Step title="Generate API Key">
+    Under the **API Keys** section, click on **Add API Key**.
+    <img src="/images/odoo-07.png" alt="Add API Key" />
+
+    <Note>
+    Give your API key a recognizable name like "Eazybe Integration" so you can identify it later.
+    </Note>
+
+    Click **Generate** to create the key.
+  </Step>
+
+  <Step title="Copy Your API Key">
+    <Check>
+    Your API key will be displayed. Copy it immediately as you won't be able to see it again.
+    </Check>
+    <Warning>
+    Keep your API key secure and don't share it with unauthorized users.
+    </Warning>
+  </Step>
+</Steps>
+
+---
+
+## What You'll Need for Connection
+
+Once you have your API key, you'll also need:
+
+| Item | Description |
+|------|-------------|
+| **Odoo Instance URL** | Your company's Odoo URL (e.g., `https://yourcompany.odoo.com`) |
+| **API Key** | The key you just generated |
+
+---
+
+## Next Steps
+
+<Steps>
+  <Step title="Connect Your Account">
+    Now that you have your API key, proceed to [Account Connection](/en/integrations/odoo/account-connection) to complete the setup.
+  </Step>
+</Steps>
+
+---
+
+## Need Help?
+
+<Card title="Contact Support" icon="envelope">
+  If you have any questions or need further assistance, reach out to us at
+  **hey@eazybe.com**. We're happy to help!
+</Card>

@@ -1,0 +1,102 @@
+---
+title: "Requisitos Previos para la Integración con Odoo"
+description: "Aprende a generar una clave API desde tu instancia de Odoo"
+---
+
+## Resumen
+
+Antes de conectar Eazybe con Odoo, necesitas generar una clave API desde tu instancia de Odoo. Esta clave permitirá a Eazybe acceder de forma segura a tus datos de Odoo.
+
+---
+
+## Requisitos
+
+<CardGroup cols={2}>
+  <Card title="Cuenta de Odoo" icon="user">
+    Cuenta de Odoo activa con acceso de administrador o usuario
+  </Card>
+  <Card title="Instancia de Odoo" icon="server">
+    Acceso a la URL de tu instancia de Odoo
+  </Card>
+  <Card title="Acceso API" icon="key">
+    Permiso para generar claves API en Odoo
+  </Card>
+  <Card title="Extensión Eazybe" icon="chrome">
+    Extensión de Chrome de Eazybe instalada
+  </Card>
+</CardGroup>
+
+---
+
+## Generando Tu Clave API de Odoo
+
+<Steps>
+  <Step title="Abre Configuración de Odoo">
+    Inicia sesión en tu instancia de Odoo y haz clic en **Configuración** en el menú superior.
+    <img src="/images/odoo-04.png" alt="Configuración de Odoo" />
+  </Step>
+
+  <Step title="Ve a Usuarios y Compañías">
+    En el menú Configuración, navega a **Usuarios y Compañías** y luego haz clic en **Usuarios**.
+  </Step>
+
+  <Step title="Selecciona Tu Usuario">
+    Busca y haz clic en tu cuenta de usuario de la lista.
+    <img src="/images/odoo-05.png" alt="Seleccionar Usuario" />
+  </Step>
+
+  <Step title="Accede a la Configuración de Seguridad">
+    Haz clic en la pestaña **Seguridad** en la página de detalles del usuario.
+    <img src="/images/odoo-06.png" alt="Pestaña Seguridad" />
+  </Step>
+
+  <Step title="Genera Clave API">
+    En la sección **Claves API**, haz clic en **Agregar Clave API**.
+    <img src="/images/odoo-07.png" alt="Agregar Clave API" />
+
+    <Note>
+    Dale a tu clave API un nombre reconocible como "Integración Eazybe" para que puedas identificarla más tarde.
+    </Note>
+
+    Haz clic en **Generar** para crear la clave.
+  </Step>
+
+  <Step title="Copia Tu Clave API">
+    <Check>
+    Tu clave API se mostrará. Cópiala inmediatamente ya que no podrás verla de nuevo.
+    </Check>
+    <Warning>
+    Mantén tu clave API segura y no la compartas con usuarios no autorizados.
+    </Warning>
+  </Step>
+</Steps>
+
+---
+
+## Lo Que Necesitarás Para la Conexión
+
+Una vez que tengas tu clave API, también necesitarás:
+
+| Artículo | Descripción |
+|---------|-------------|
+| **URL de Instancia de Odoo** | La URL de Odoo de tu empresa (ej. `https://tuempresa.odoo.com`) |
+| **Clave API** | La clave que acabas de generar |
+
+---
+
+## Próximos Pasos
+
+<Steps>
+  <Step title="Conecta Tu Cuenta">
+    Ahora que tienes tu clave API, procede a [Conexión de Cuenta](/es/integrations/odoo/account-connection) para completar la configuración.
+  </Step>
+</Steps>
+
+---
+
+## ¿Necesitas Ayuda?
+
+<Card title="Contactar Soporte" icon="envelope">
+  Si tienes alguna pregunta o necesitas más ayuda, contáctanos en
+  **hey@eazybe.com**. ¡Estamos felices de ayudar!
+</Card>

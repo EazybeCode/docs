@@ -303,6 +303,17 @@
                 ]
               },
               {
+                "group": "Odoo",
+                "icon": "elephant",
+                "pages": [
+                  "en/integrations/odoo/overview",
+                  "en/integrations/odoo/prerequisites",
+                  "en/integrations/odoo/account-connection",
+                  "en/integrations/odoo/mini-crm",
+                  "en/integrations/odoo/disconnect"
+                ]
+              },
+              {
                 "group": "Zoho CRM",
                 "icon": "circle-nodes",
                 "pages": [
@@ -904,6 +915,17 @@
                 ]
               },
               {
+                "group": "Odoo",
+                "icon": "elephant",
+                "pages": [
+                  "es/integrations/odoo/overview",
+                  "es/integrations/odoo/prerequisites",
+                  "es/integrations/odoo/account-connection",
+                  "es/integrations/odoo/mini-crm",
+                  "es/integrations/odoo/disconnect"
+                ]
+              },
+              {
                 "group": "Zoho CRM",
                 "icon": "circle-nodes",
                 "pages": [
@@ -1473,6 +1495,17 @@
                 ]
               },
               {
+                "group": "Odoo",
+                "icon": "elephant",
+                "pages": [
+                  "pt/integrations/odoo/overview",
+                  "pt/integrations/odoo/prerequisites",
+                  "pt/integrations/odoo/account-connection",
+                  "pt/integrations/odoo/mini-crm",
+                  "pt/integrations/odoo/disconnect"
+                ]
+              },
+              {
                 "group": "Zoho CRM",
                 "icon": "circle-nodes",
                 "pages": [
@@ -2039,6 +2072,17 @@
                   "tr/integrations/pipedrive/account-connection",
                   "tr/integrations/pipedrive/mini-crm",
                   "tr/integrations/pipedrive/disconnect"
+                ]
+              },
+              {
+                "group": "Odoo",
+                "icon": "elephant",
+                "pages": [
+                  "tr/integrations/odoo/overview",
+                  "tr/integrations/odoo/prerequisites",
+                  "tr/integrations/odoo/account-connection",
+                  "tr/integrations/odoo/mini-crm",
+                  "tr/integrations/odoo/disconnect"
                 ]
               },
               {

@@ -1,0 +1,103 @@
+---
+title: "Odoo Entegrasyonu İçin Ön Koşullar"
+description: "Odoo instance'ınızdan nasıl API anahtarı oluşturacağınızı öğrenin"
+---
+
+## Genel Bakış
+
+Eazybe'yi Odoo'ya bağlamadan önce, Odoo instance'ınızdan bir API anahtarı oluşturmanız gerekir. Bu anahtar, Eazybe'nin Odoo verilerinize güvenli bir şekilde erişmesine izin verecektir.
+
+---
+
+## Gereksinimler
+
+<CardGroup cols={2}>
+  <Card title="Odoo Hesabı" icon="user">
+    Yönetici veya kullanıcı erişimiyle aktif Odoo hesabı
+  </Card>
+  <Card title="Odoo Instance" icon="server">
+    Odoo instance URL'nize erişim
+  </Card>
+  <Card title="API Erişimi" icon="key">
+    Odoo'da API anahtarı oluşturma izni
+  </Card>
+  <Card title="Eazybe Uzantısı" icon="chrome">
+    Eazybe Chrome uzantısı yüklü
+  </Card>
+</CardGroup>
+
+---
+
+## Odoo API Anahtarı Oluşturma
+
+<Steps>
+  <Step title="Odoo Ayarlarını Açın">
+    Odoo instance'ınıza giriş yapın ve üst menüden **Ayarlar**'a tıklayın.
+    <img src="/images/odoo-04.png" alt="Odoo Ayarları" />
+  </Step>
+
+  <Step title="Kullanıcılar ve Şirketler'e Gidin">
+    Ayarlar menüsünde, **Kullanıcılar ve Şirketler**'e ve ardından **Kullanıcılar**'a tıklayın.
+  </Step>
+
+  <Step title="Kullanıcınızı Seçin">
+    Listeden kullanıcı hesabınızı bulun ve tıklayın.
+    <img src="/images/odoo-05.png" alt="Kullanıcı Seç" />
+  </Step>
+
+  <Step title="Güvenlik Ayarlarına Erişin">
+    Kullanıcı detayları sayfasında **Güvenlik** sekmesine tıklayın.
+    <img src="/images/odoo-06.png" alt="Güvenlik Sekmesi" />
+  </Step>
+
+  <Step title="API Anahtarı Oluşturun">
+    **API Anahtarları** bölümünde, **API Anahtarı Ekle**'ye tıklayın.
+    <img src="/images/odoo-07.png" alt="API Anahtarı Ekle" />
+
+    <Note>
+    Daha sonra tanıyabilmeniz için API anahtarınıza "Eazybe Entegrasyonu" gibi tanınabilir bir ad verin.
+    </Note>
+
+    Oluşturmak için **Oluştur**'a tıklayın.
+  </Step>
+
+  <Step title="API Anahtarınızı Kopyalayın">
+    <Check>
+    API anahtarınız görüntülenecektir. Tekrar göremeyeceğiniz için hemen kopyalayın.
+    </Check>
+    <Warning>
+    API anahtarınızı güvende tutun ve yetkisiz kullanıcılarla paylaşmayın.
+    </Warning>
+  </Step>
+</Steps>
+
+---
+
+## Bağlantı İçin Gerekenler
+
+API anahtarınıza sahip olduktan sonra, şunlara da ihtiyacınız olacak:
+
+| Öğe | Açıklama |
+|------|----------|
+| **Odoo Instance URL'si** | Şirketinizin Odoo URL'si (ör. `https://sirketiniz.odoo.com`) |
+| **API Anahtarı** | Az önce oluşturduğunuz anahtar |
+
+---
+
+## Sonraki Adımlar
+
+<Steps>
+  <Step title="Hesabınızı Bağlayın">
+    API anahtarınıza sahip olduğunuza göre, kurulumu tamamlamak için [Hesap Bağlantısı](/tr/integrations/odoo/account-connection)
+    sayfasına ilerleyin.
+  </Step>
+</Steps>
+
+---
+
+## Yardıma mı ihtiyacınız var?
+
+<Card title="Destek İle İletişime Geçin" icon="envelope">
+  Herhangi bir sorunuz varsa veya daha fazla yardıma ihtiyacınız olursa,
+  **hey@eazybe.com** adresinden bizimle iletişime geçin. Yardımcı olmaktan mutluluk duyarız!
+</Card>
