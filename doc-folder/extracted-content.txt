@@ -1,0 +1,116 @@
+=== EXTRACTED TEXT CONTENT ===
+
+AI Agents by Eazybe — Complete Help Guide
+1. Overview
+AI Agents by Eazybe enable businesses to build intelligent, automated agents that operate directly on WhatsApp, trained using your own business data.
+These agents are designed to:
+Handle customer conversations automatically
+Assist in sales and support workflows
+Learn from your existing knowledge and chat history
+Deliver human-like responses based on real interactions
+This feature represents the foundation of advanced AI agents, where businesses can later unlock deeper personalization, CRM integrations, and fully customized automation systems.
+2. What Makes This Powerful
+Unlike traditional chatbots, Eazybe AI Agents are:
+Context-Aware
+They learn from:
+Your website or knowledge base
+Your actual WhatsApp conversations
+WhatsApp-Native
+Built specifically for WhatsApp communication
+No need for external chat tools
+Fast to Launch
+Create → Train → Deploy in under 5 minutes
+Continuously Scalable
+Start simple
+Upgrade to fully customized agents with deeper integrations
+9. Common Use Cases
+Customer Support
+Order status
+FAQs
+Issue resolution
+Sales
+Lead qualification
+Product recommendations
+Follow-ups
+Hybrid
+First-level support + sales conversion
+10. Limitations (Initial Version)
+Since this is an early version:
+Limited deep customization (available in advanced version)
+Performance depends on quality of training data
+Requires WhatsApp API number for deployment
+Step-by-Step: Create Your AI Agent
+Click on the link "AI Agents"
+Click on "Create another agent "
+Go to “Add Agent”
+Click on “Add Agent” in your dashboard
+Enter the Website URL
+Add Knowledge Source
+Choose one:
+Enter your website URL
+Upload or connect your knowledge base
+This helps the agent understand your business.
+Select your use case
+Click on the button "Next Step"
+Upload the file to train your agent on
+Turn on " Whatsapp Chats sync all " for the AI agent training
+: Sync WhatsApp Chats (Most Important)
+Select “Sync WhatsApp Chats”
+Choose conversations you want the agent to learn from
+This allows the agent to:
+Learn real customer tone
+Understand FAQs
+Replicate your team’s communication style
+Click on the "Continue"
+Click on " AI Brain " and select your AI agent model.
+Select Agent Type
+Choose the role of your agent:
+Customer Support (CS) → Handles queries, complaints, FAQs
+Sales Agent → Converts leads, shares product info, follows up
+Untitled Activity
+Select the number to deploy the AI agent on
+Edit the System Instructions based on your usages
+Finalize Training
+Confirm selected data sources
+The system will automatically train your agent
+Training takes just a few minutes
+Click on the "Launch Agent"
+Click on "Playground" to explore Agent follow up
+Click on the button "Sources"
+Click on the "WhatsApp" to see the WhatsApp number.
+Click on the "Billing" to see the billing info
+Untitled Activity
+Click on "Publish" to publish your AI agent
+Step 5: Finalize Training
+Confirm selected data sources
+The system will automatically train your agent
+⏱ Training takes just a few minutes
+Step 6: Test Your Agent
+Before deployment:
+Chat with your agent internally
+Validate responses
+Make adjustments if needed
+Step 7: Deploy to WhatsApp
+Select your WhatsApp API number
+Click Deploy
+Your AI agent is now live
+Deployment time: ~5 minutes
+5. After Deployment
+Once deployed:
+Customers can chat with your AI agent
+Your team can also interact with it internally
+The agent responds instantly using trained knowledge
+6. Advanced Custom AI Agents (Coming Next)
+For businesses needing deeper customization:
+We offer fully tailored AI agents:
+Built using your CRM data
+Customized to your workflows
+Designed with your leadership team (Manager/CEO)
+Delivered within 4 weeks
+Includes:
+Deep personalization
+Business-specific logic
+Advanced automation flows
+You can connect with our team to build this.
+
+=== TABLES ===
