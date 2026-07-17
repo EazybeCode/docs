@@ -145,7 +145,13 @@
                     "pages": [
                       "en/waba/broadcasting/send-broadcast",
                       "en/waba/broadcasting/create-broadcast-with-extension",
-                      "en/waba/broadcasting/hubspot-workflow",
+                      {
+                        "group": "HubSpot Workflow for WhatsApp Campaigns",
+                        "pages": [
+                          "en/waba/broadcasting/hubspot-workflow/send-ready-to-use-template",
+                          "en/waba/broadcasting/hubspot-workflow/send-wait-and-reply-template"
+                        ]
+                      },
                       "en/waba/broadcasting/template-based-chatbot"
                     ]
                   },
