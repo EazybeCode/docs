@@ -33,18 +33,26 @@ Genel Yayın API'si, harici sistemlerin kuruluşunuza ait WhatsApp Business numa
 
 ---
 
-## Kimlik Doğrulama
+## Kimlik Doğrulama Akışı
 
-Durum denetimi dışındaki her istekte kuruluşunuzun kimlik doğrulama anahtarını `x-api-key` başlığına iletin. `auth_key`, çalışma alanındaki Staff bölümünde bulunur.
+<Steps>
+  <Step>
+    <h3>İstek Başlıklarında Kimlik Doğrulama Anahtarını Kullanın</h3>
+    <p>Tüm yayın uç noktaları, oluşturulan kimlik doğrulama anahtarının <strong>x-api-key</strong> başlığında gönderilmesini gerektirir. Anahtarı Workspace → Staff bölümünde bulabilirsiniz.</p>
 
-```
-x-api-key: your-organization-auth-key
-Content-Type: application/json
-```
+    ```http
+    x-api-key: YOUR_API_KEY
+    ```
 
-<Frame>
-  ![Kuruluş kimlik doğrulama anahtarınızı Staff bölümünde bulun](/images/public-broadcast-api-auth-key.png)
-</Frame>
+    <Note>
+      API anahtarınızı güvenli bir şekilde saklayın. Gereksiz yere yeniden oluşturmayın.
+    </Note>
+
+    <Frame>
+      ![Kuruluş kimlik doğrulama anahtarınızı Staff bölümünde bulun](/images/public-broadcast-api-auth-key.png)
+    </Frame>
+  </Step>
+</Steps>
 
 ### Anahtar neyi çözüyor?
 
@@ -65,37 +73,6 @@ Anahtar kuruluşunuzu tanımlar. `fromPhoneNumber` veya `phone_number` alan uç 
 
 ---
 
-## İstek sınırları
-
-Limitler sabit 60 saniyelik bir pencerede sayılır. Çoğunun kapsamı API anahtarınız **ve** istekteki telefon numarasına göre belirlenir; dolayısıyla iki farklı gönderme numarası aynı bütçe için rekabet etmez.
-
-| Uç nokta | Sınırı | Başına sayıldı |
-| --- | --- | --- |
-| `send-template-broadcast` | 10 / dak | tuşu + fromPhoneNumber |
-| `send-freeform` | 20 / dak | tuşu + fromPhoneNumber |
-| `templates` | 20 / dak | tuşu + phone_number |
-| `phone-numbers` | 30 / dak | anahtar |
-| `status` | 30 / dak | anahtar |
-
-### Limitin aşılması
-
-```json
-{
-  "status": false,
-  "status_code": 429,
-  "message": "Rate limit exceeded",
-  "data": {
-    "error": {
-      "message": "Rate limit exceeded. Try again in 43 seconds."
-    }
-  }
-}
-```
-
-Mesaj size pencerede tam olarak kaç saniye kaldığını söyler. Hemen yeniden denemek yerine bu kadar bekleyin; hemen yeniden denemek hiçbir şey tüketmez ancak aynı hatayı döndürür.
-
----
-
 ## Telefon numaralarını listele
 
 Kuruluşunuza kayıtlı tüm WhatsApp Business numaralarını listeler. Gönderilen uç noktalarında döndürülen `phone_number`'i `fromPhoneNumber` olarak kullanın.
@@ -109,7 +86,7 @@ GET /broadcast/public/phone-numbers
 ### İstek
 
 ```bash
-curl "$BASE_URL/broadcast/public/phone-numbers" \
+curl "https://cerberus.eazybe.com/prod/api/v2/broadcast/public/phone-numbers" \
   -H "x-api-key: $API_KEY"
 ```
 
@@ -155,7 +132,7 @@ GET /broadcast/public/templates
 ### İstek
 
 ```bash
-curl "$BASE_URL/broadcast/public/templates?phone_number=14844634680" \
+curl "https://cerberus.eazybe.com/prod/api/v2/broadcast/public/templates?phone_number=14844634680" \
   -H "x-api-key: $API_KEY"
 ```
 
@@ -228,7 +205,7 @@ POST /broadcast/public/send-template-broadcast
 ### İstek
 
 ```bash
-curl -X POST "$BASE_URL/broadcast/public/send-template-broadcast" \
+curl -X POST "https://cerberus.eazybe.com/prod/api/v2/broadcast/public/send-template-broadcast" \
   -H "x-api-key: $API_KEY" \
   -H "Content-Type: application/json" \
   -H "Idempotency-Key: festive-run-1" \
@@ -526,7 +503,7 @@ GET /broadcast/public/status/:jobId
 ### İstek
 
 ```bash
-curl "$BASE_URL/broadcast/public/status/pub_4f8c2a1e9b7d43c6a5e0f2b18d3c9a67" \
+curl "https://cerberus.eazybe.com/prod/api/v2/broadcast/public/status/pub_4f8c2a1e9b7d43c6a5e0f2b18d3c9a67" \
   -H "x-api-key: $API_KEY"
 ```
 
@@ -610,7 +587,38 @@ Bunlar, herhangi bir şey WhatsApp'a ulaşmadan önce çalışır, dolayısıyla
 
 ---
 
-## Hatalar
+## İstek sınırları
+
+Limitler sabit 60 saniyelik bir pencerede sayılır. Çoğunun kapsamı API anahtarınız **ve** istekteki telefon numarasına göre belirlenir; dolayısıyla iki farklı gönderme numarası aynı bütçe için rekabet etmez.
+
+| Uç nokta | Sınırı | Başına sayıldı |
+| --- | --- | --- |
+| `send-template-broadcast` | 10 / dak | tuşu + fromPhoneNumber |
+| `send-freeform` | 20 / dak | tuşu + fromPhoneNumber |
+| `templates` | 20 / dak | tuşu + phone_number |
+| `phone-numbers` | 30 / dak | anahtar |
+| `status` | 30 / dak | anahtar |
+
+### Limitin aşılması
+
+```json
+{
+  "status": false,
+  "status_code": 429,
+  "message": "Rate limit exceeded",
+  "data": {
+    "error": {
+      "message": "Rate limit exceeded. Try again in 43 seconds."
+    }
+  }
+}
+```
+
+Mesaj size pencerede tam olarak kaç saniye kaldığını söyler. Hemen yeniden denemek yerine bu kadar bekleyin; hemen yeniden denemek hiçbir şey tüketmez ancak aynı hatayı döndürür.
+
+---
+
+## Hata Yönetimi
 
 Her hata aynı zarfı kullanır:
 

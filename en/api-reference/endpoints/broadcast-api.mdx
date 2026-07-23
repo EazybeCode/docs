@@ -33,18 +33,26 @@ Two families of endpoints exist on `/broadcast/public`:
 
 ---
 
-## Authentication
+## Authentication Flow
 
-Pass your organization auth key in the `x-api-key` header on every request except Health check. The key is the `auth_key` inside Workspace Staff.
+<Steps>
+  <Step>
+    <h3>Use Auth Key in Request Headers</h3>
+    <p>All broadcast endpoints require the generated Auth key in the <strong>x-api-key</strong> header, and you can find it inside the Workspace → Staff section.</p>
 
-```
-x-api-key: your-organization-auth-key
-Content-Type: application/json
-```
+    ```http
+    x-api-key: YOUR_API_KEY
+    ```
 
-<Frame>
-  ![Find your organization authentication key in the Staff section](/images/public-broadcast-api-auth-key.png)
-</Frame>
+    <Note>
+      Store your API key securely. Avoid regenerating it unnecessarily.
+    </Note>
+
+    <Frame>
+      ![Find your organization authentication key in the Staff section](/images/public-broadcast-api-auth-key.png)
+    </Frame>
+  </Step>
+</Steps>
 
 ### What the key resolves to
 
@@ -65,37 +73,6 @@ The key identifies your organization. On endpoints that take a `fromPhoneNumber`
 
 ---
 
-## Rate limits
-
-Limits are counted in a fixed 60-second window. Most are scoped to your API key **and** the phone number in the request, so two different sending numbers do not compete for the same budget.
-
-| Endpoint | Limit | Counted per |
-| --- | --- | --- |
-| `send-template-broadcast` | 10 / min | key + fromPhoneNumber |
-| `send-freeform` | 20 / min | key + fromPhoneNumber |
-| `templates` | 20 / min | key + phone_number |
-| `phone-numbers` | 30 / min | key |
-| `status` | 30 / min | key |
-
-### Exceeding a limit
-
-```json
-{
-  "status": false,
-  "status_code": 429,
-  "message": "Rate limit exceeded",
-  "data": {
-    "error": {
-      "message": "Rate limit exceeded. Try again in 43 seconds."
-    }
-  }
-}
-```
-
-The message tells you exactly how many seconds remain in the window. Wait that long rather than retrying immediately — an immediate retry consumes nothing but returns the same error.
-
----
-
 ## Get phone numbers
 
 Lists every WhatsApp Business number registered to your organization. Use the returned `phone_number` as `fromPhoneNumber` on the send endpoints.
@@ -109,7 +86,7 @@ GET /broadcast/public/phone-numbers
 ### Request
 
 ```bash
-curl "$BASE_URL/broadcast/public/phone-numbers" \
+curl "https://cerberus.eazybe.com/prod/api/v2/broadcast/public/phone-numbers" \
   -H "x-api-key: $API_KEY"
 ```
 
@@ -155,7 +132,7 @@ GET /broadcast/public/templates
 ### Request
 
 ```bash
-curl "$BASE_URL/broadcast/public/templates?phone_number=14844634680" \
+curl "https://cerberus.eazybe.com/prod/api/v2/broadcast/public/templates?phone_number=14844634680" \
   -H "x-api-key: $API_KEY"
 ```
 
@@ -228,7 +205,7 @@ POST /broadcast/public/send-template-broadcast
 ### Request
 
 ```bash
-curl -X POST "$BASE_URL/broadcast/public/send-template-broadcast" \
+curl -X POST "https://cerberus.eazybe.com/prod/api/v2/broadcast/public/send-template-broadcast" \
   -H "x-api-key: $API_KEY" \
   -H "Content-Type: application/json" \
   -H "Idempotency-Key: festive-run-1" \
@@ -526,7 +503,7 @@ GET /broadcast/public/status/:jobId
 ### Request
 
 ```bash
-curl "$BASE_URL/broadcast/public/status/pub_4f8c2a1e9b7d43c6a5e0f2b18d3c9a67" \
+curl "https://cerberus.eazybe.com/prod/api/v2/broadcast/public/status/pub_4f8c2a1e9b7d43c6a5e0f2b18d3c9a67" \
   -H "x-api-key: $API_KEY"
 ```
 
@@ -610,7 +587,38 @@ These run before anything reaches WhatsApp, so a rejection here costs no message
 
 ---
 
-## Errors
+## Rate limits
+
+Limits are counted in a fixed 60-second window. Most are scoped to your API key **and** the phone number in the request, so two different sending numbers do not compete for the same budget.
+
+| Endpoint | Limit | Counted per |
+| --- | --- | --- |
+| `send-template-broadcast` | 10 / min | key + fromPhoneNumber |
+| `send-freeform` | 20 / min | key + fromPhoneNumber |
+| `templates` | 20 / min | key + phone_number |
+| `phone-numbers` | 30 / min | key |
+| `status` | 30 / min | key |
+
+### Exceeding a limit
+
+```json
+{
+  "status": false,
+  "status_code": 429,
+  "message": "Rate limit exceeded",
+  "data": {
+    "error": {
+      "message": "Rate limit exceeded. Try again in 43 seconds."
+    }
+  }
+}
+```
+
+The message tells you exactly how many seconds remain in the window. Wait that long rather than retrying immediately — an immediate retry consumes nothing but returns the same error.
+
+---
+
+## Error Handling
 
 Every error uses the same envelope:
 

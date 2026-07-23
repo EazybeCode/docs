@@ -33,18 +33,26 @@ Existen dos familias de endpoints en `/broadcast/public`:
 
 ---
 
-## Autenticación
+## Flujo de autenticación
 
-Incluya la clave de autenticación de su organización en el encabezado `x-api-key` en cada solicitud, excepto en la verificación de estado. La clave `auth_key` se encuentra en Personal del espacio de trabajo.
+<Steps>
+  <Step>
+    <h3>Usar la clave de autenticación en los encabezados de solicitud</h3>
+    <p>Todos los endpoints de difusión requieren la clave de autenticación generada en el encabezado <strong>x-api-key</strong>, que puede encontrar en Espacio de trabajo → Personal.</p>
 
-```
-x-api-key: your-organization-auth-key
-Content-Type: application/json
-```
+    ```http
+    x-api-key: YOUR_API_KEY
+    ```
 
-<Frame>
-  ![Busque la clave de autenticación de su organización en la sección Personal](/images/public-broadcast-api-auth-key.png)
-</Frame>
+    <Note>
+      Guarde su clave API de forma segura. Evite regenerarla innecesariamente.
+    </Note>
+
+    <Frame>
+      ![Busque la clave de autenticación de su organización en la sección Personal](/images/public-broadcast-api-auth-key.png)
+    </Frame>
+  </Step>
+</Steps>
 
 ### Qué identifica la clave
 
@@ -65,37 +73,6 @@ La clave identifica a su organización. En los endpoints que aceptan un `fromPho
 
 ---
 
-## Límites de solicitudes
-
-Los límites se cuentan en una ventana fija de 60 segundos. La mayoría tiene como alcance su clave API **y** el número de teléfono en la solicitud, por lo que dos números de envío diferentes no compiten por el mismo presupuesto.
-
-| Punto final | Límite | Contado por |
-| --- | --- | --- |
-| `send-template-broadcast` | 10/minuto | clave + fromPhoneNumber |
-| `send-freeform` | 20/minuto | clave + fromPhoneNumber |
-| `templates` | 20/minuto | clave + phone_number |
-| `phone-numbers` | 30/minuto | clave |
-| `status` | 30/minuto | clave |
-
-### Al superar un límite
-
-```json
-{
-  "status": false,
-  "status_code": 429,
-  "message": "Rate limit exceeded",
-  "data": {
-    "error": {
-      "message": "Rate limit exceeded. Try again in 43 seconds."
-    }
-  }
-}
-```
-
-El mensaje le indica exactamente cuántos segundos quedan en la ventana. Espere tanto tiempo en lugar de volver a intentarlo inmediatamente: un reintento inmediato no consume nada pero devuelve el mismo error.
-
----
-
 ## Obtener números de teléfono
 
 Enumera todos los números de WhatsApp Business registrados en su organización. Utilice el `phone_number` devuelto como `fromPhoneNumber` en los endpoints de envío.
@@ -109,7 +86,7 @@ GET /broadcast/public/phone-numbers
 ### Solicitud
 
 ```bash
-curl "$BASE_URL/broadcast/public/phone-numbers" \
+curl "https://cerberus.eazybe.com/prod/api/v2/broadcast/public/phone-numbers" \
   -H "x-api-key: $API_KEY"
 ```
 
@@ -155,7 +132,7 @@ GET /broadcast/public/templates
 ### Solicitud
 
 ```bash
-curl "$BASE_URL/broadcast/public/templates?phone_number=14844634680" \
+curl "https://cerberus.eazybe.com/prod/api/v2/broadcast/public/templates?phone_number=14844634680" \
   -H "x-api-key: $API_KEY"
 ```
 
@@ -228,7 +205,7 @@ POST /broadcast/public/send-template-broadcast
 ### Solicitud
 
 ```bash
-curl -X POST "$BASE_URL/broadcast/public/send-template-broadcast" \
+curl -X POST "https://cerberus.eazybe.com/prod/api/v2/broadcast/public/send-template-broadcast" \
   -H "x-api-key: $API_KEY" \
   -H "Content-Type: application/json" \
   -H "Idempotency-Key: festive-run-1" \
@@ -526,7 +503,7 @@ GET /broadcast/public/status/:jobId
 ### Solicitud
 
 ```bash
-curl "$BASE_URL/broadcast/public/status/pub_4f8c2a1e9b7d43c6a5e0f2b18d3c9a67" \
+curl "https://cerberus.eazybe.com/prod/api/v2/broadcast/public/status/pub_4f8c2a1e9b7d43c6a5e0f2b18d3c9a67" \
   -H "x-api-key: $API_KEY"
 ```
 
@@ -610,7 +587,38 @@ Estos se ejecutan antes de que algo llegue a WhatsApp, por lo que un rechazo aqu
 
 ---
 
-## Errores
+## Límites de solicitudes
+
+Los límites se cuentan en una ventana fija de 60 segundos. La mayoría tiene como alcance su clave API **y** el número de teléfono en la solicitud, por lo que dos números de envío diferentes no compiten por el mismo presupuesto.
+
+| Punto final | Límite | Contado por |
+| --- | --- | --- |
+| `send-template-broadcast` | 10/minuto | clave + fromPhoneNumber |
+| `send-freeform` | 20/minuto | clave + fromPhoneNumber |
+| `templates` | 20/minuto | clave + phone_number |
+| `phone-numbers` | 30/minuto | clave |
+| `status` | 30/minuto | clave |
+
+### Al superar un límite
+
+```json
+{
+  "status": false,
+  "status_code": 429,
+  "message": "Rate limit exceeded",
+  "data": {
+    "error": {
+      "message": "Rate limit exceeded. Try again in 43 seconds."
+    }
+  }
+}
+```
+
+El mensaje le indica exactamente cuántos segundos quedan en la ventana. Espere tanto tiempo en lugar de volver a intentarlo inmediatamente: un reintento inmediato no consume nada pero devuelve el mismo error.
+
+---
+
+## Manejo de errores
 
 Cada error utiliza el mismo sobre:
 
