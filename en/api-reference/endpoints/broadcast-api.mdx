@@ -1,343 +1,565 @@
 ---
-title: "Broadcast API"
-description: "Learn how to use Eazybe's Public Broadcast API for Meta WABA-related broadcast operations including API key generation, single and bulk template broadcasts, health checks, and error handling."
+title: "Public Broadcast API"
+description: "Send WhatsApp templates and free-form messages over REST with Eazybe's organization-scoped Public Broadcast API v2."
 ---
 
 ## Overview
 
-This document explains how clients can use Eazybe's Public Broadcast API for Meta WABA-related broadcast operations. The API supports:
+The Public Broadcast API gives external systems access to your organization's WhatsApp Business numbers. Every request is scoped to one organization by the API key, and every WABA phone number you reference must belong to that organization — a key from one organization cannot send from another organization's number.
 
-- API key generation
-- Single-recipient template broadcasts
-- Bulk template broadcasts
-- Health checks
-- Operational error handling
+Two families of endpoints exist on `/broadcast/public`:
 
-The API uses JSON requests over HTTPS and authenticates through the `x-api-key` header. It is intended for approved WhatsApp template-based outbound messaging through the Eazybe platform.
+- **v2 endpoints** authenticate with your organization auth key. These are the ones documented here.
+- **Legacy endpoints** still authenticate with the older per-number WABA key and are unchanged. See Legacy endpoints.
 
 ## Base Configuration
 
-| Setting                  | Value                                                                  |
-| ------------------------ | ---------------------------------------------------------------------- |
-| **Base URL**             | `https://cerberus.eazybe.com/prod/api/v2`                              |
-| **Authentication**       | `x-api-key` header                                                     |
-| **Content-Type**         | `application/json`                                                     |
-| **Supported Operations** | Generate key, send single broadcast, send bulk broadcast, health check |
+| Setting | Value |
+| --- | --- |
+| **URL** | `https://cerberus.eazybe.com/prod/api/v2` |
+| **Base path** | `/broadcast/public` |
+| **Authentication** | `x-api-key` header |
+| **Content-Type** | `application/json` |
 
 ## Before You Start
 
 <Warning>
-  Ensure the sending phone number is already onboarded on Eazybe and linked to
-  an active WABA setup. API key generation will fail if no WABA account is found
-  for the submitted number.
+  **Keep the key server-side.** It grants send access to every WhatsApp number your organization owns. Store it in environment variables or a secrets manager, never in browser or mobile code, and use separate keys per environment.
 </Warning>
 
 <Tip>
-  Confirm that your required WhatsApp templates are approved in Meta before
-  attempting sends. Unapproved or missing templates will return request
-  failures.
+  **Start here.** Call Get phone numbers to discover which WABA numbers your key can send from, then Get templates to confirm a template is approved. Both are cheap, read-only, and confirm your key works before you send anything.
 </Tip>
 
 ---
 
-## Authentication Flow
+## Authentication
 
-<Steps>
-  <Step>
-    <h3>Generate API Key</h3>
-    <p>Use this endpoint once for a registered sender number and securely store the returned API key for future requests.</p>
+Pass your organization auth key in the `x-api-key` header on every request except Health check. The key is the `auth_key` inside Workspace Staff.
 
-    <h4>Endpoint</h4>
-    <code>POST /broadcast/public/generate-key</code>
-
-    <h4>Request Body</h4>
-    <table>
-      <thead>
-        <tr>
-          <th>Field</th>
-          <th>Type</th>
-          <th>Required</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><code>phoneNumber</code></td>
-          <td>string</td>
-          <td>Yes</td>
-          <td>Sender phone number with country code, without spaces or <code>+</code></td>
-        </tr>
-      </tbody>
-    </table>
-
-    <h4>Example Request</h4>
-    ```bash
-
-curl -X POST https://cerberus.eazybe.com/prod/api/v2/broadcast/public/generate-key \
- -H "Content-Type: application/json" \
- -d '{
-"phoneNumber": "919876543210"
-}'
+```
+x-api-key: your-organization-auth-key
+Content-Type: application/json
 ```
 
-    <h4>Success Response</h4>
-    ```json
+<Frame>
+  ![Find your organization authentication key in the Staff section](/images/public-broadcast-api-auth-key.png)
+</Frame>
 
-{
-"status": true,
-"message": "API key generated successfully",
-"data": {
-"apiKey": "9548e0f4ea0ab360ac9eeaf69f9754d72c6b606353037125d21842b9364ca8"
-}
-}
-```
+### What the key resolves to
 
-    <h4>Failure Example</h4>
-    ```json
-
-{
-"statusCode": 400,
-"timestamp": "2026-04-14T07:13:33.289Z",
-"path": "/broadcast/public/generate-key",
-"method": "POST",
-"requestId": "9c57a355c364f07060335e348902c9b8",
-"message": "Failed to generate API key",
-"status": false,
-"status_code": 400,
-"data": {
-"error": {
-"message": "Phone number not found or not connected to WABA."
-}
-}
-}
-```
-
-  </Step>
-
-  <Step>
-    <h3>Use API Key in Request Headers</h3>
-    <p>All broadcast endpoints require the generated API key in the <code>x-api-key</code> header.</p>
-
-    ```http
-
-x-api-key: YOUR_API_KEY
-```
-
-    <Note>
-      Store your API key securely. Avoid regenerating it unnecessarily.
-    </Note>
-
-  </Step>
-</Steps>
+The key identifies your organization. On endpoints that take a `fromPhoneNumber` or `phone_number`, the API additionally verifies that the number is registered to that organization and that its WABA record is complete — `waba_id`, `phone_number_id`, `phone_number`, and `access_token` must all be present. A mismatch returns `401`, not `403`.
 
 ---
 
-## Send Single Broadcast
+## Endpoint index
 
-Use the single broadcast endpoint to send one template message to one recipient.
+| Method | Endpoint | Purpose | Auth |
+| --- | --- | --- | --- |
+| `GET` | `/broadcast/public/phone-numbers` | List WABA numbers on your organization | Required |
+| `GET` | `/broadcast/public/templates` | List approved templates for a number | Required |
+| `POST` | `/broadcast/public/send-template-broadcast` | Send a template to many recipients | Required |
+| `POST` | `/broadcast/public/send-freeform` | Send one free-form message | Required |
+| `GET` | `/broadcast/public/status/:jobId` | Poll a large broadcast job | Required |
+| `GET` | `/broadcast/public/health` | Service status and endpoint list | None |
 
-### Endpoint
+---
 
-```http
-POST /broadcast/public/send-single
-```
+## Rate limits
 
-### Required Request Structure
+Limits are counted in a fixed 60-second window. Most are scoped to your API key **and** the phone number in the request, so two different sending numbers do not compete for the same budget.
 
-| Field              | Type     | Required | Description                                                                        |
-| ------------------ | -------- | -------- | ---------------------------------------------------------------------------------- |
-| `templateName`     | string   | Yes      | Approved WhatsApp template name                                                    |
-| `templateLanguage` | string   | Yes      | Template language code, for example `en`                                           |
-| `templateType`     | string   | Yes      | Template category: `MARKETING`, `UTILITY`                                          |
-| `countryCode`      | string   | Yes      | Recipient country code without `+`                                                 |
-| `toPhoneNumber`    | string   | Yes      | Recipient mobile number                                                            |
-| `templateId`       | string   | No       | Meta template ID                                                                   |
-| `templateParams`   | string[] | No       | Template variable values in order - Required for the variable based templates only |
-| `broadcastName`    | string   | No       | Optional label for this send                                                       |
+| Endpoint | Limit | Counted per |
+| --- | --- | --- |
+| `send-template-broadcast` | 10 / min | key + fromPhoneNumber |
+| `send-freeform` | 20 / min | key + fromPhoneNumber |
+| `templates` | 20 / min | key + phone_number |
+| `phone-numbers` | 30 / min | key |
+| `status` | 30 / min | key |
 
-### Example Request
-
-```bash
-curl -X POST https://cerberus.eazybe.com/prod/api/v2/broadcast/public/send-single \
-  -H "Content-Type: application/json" \
-  -H "x-api-key: YOUR_API_KEY" \
-  -d '{
-    "templateName": "christmas_template",
-    "templateLanguage": "en",
-    "templateType": "MARKETING",
-    "templateId": "768465685803110",
-    "countryCode": "91",
-    "toPhoneNumber": "8077378155",
-    "templateParams": ["John", "100"],
-    "broadcastName": "Single Broadcast Test"
-  }'
-```
-
-### Success Response
+### Exceeding a limit
 
 ```json
 {
-  "status": true,
-  "message": "Broadcast sent successfully",
+  "status": false,
+  "status_code": 429,
+  "message": "Rate limit exceeded",
   "data": {
-    "status": true,
-    "message": "Broadcast is being processed",
-    "data": {
-      "total_contacts": 1,
-      "failed_contacts": 0,
-      "estimated_cost": 0.94937,
-      "oldBalance": 1860.0995179999998,
-      "newEstimatedBalance": 1859.1501479999997
+    "error": {
+      "message": "Rate limit exceeded. Try again in 43 seconds."
     }
   }
 }
 ```
 
-### Common Failure Responses
-
-<Accordion>
-  <AccordionItem title="Invalid API key or unregistered number">
-    Request fails when the API key does not match a valid signed-up sender.
-  </AccordionItem>
-  <AccordionItem title="Insufficient credits">
-    Request fails when wallet credits are not enough for the send.
-  </AccordionItem>
-  <AccordionItem title="Invalid or unapproved template">
-    Request fails if the template does not exist or is not approved.
-  </AccordionItem>
-</Accordion>
+The message tells you exactly how many seconds remain in the window. Wait that long rather than retrying immediately — an immediate retry consumes nothing but returns the same error.
 
 ---
 
-## Send Bulk Broadcast
+## Get phone numbers
 
-Use the bulk endpoint to send the same approved template to multiple recipients in one request. A single request can include up to **1000 recipients**.
+Lists every WhatsApp Business number registered to your organization. Use the returned `phone_number` as `fromPhoneNumber` on the send endpoints.
 
 ### Endpoint
 
 ```http
-POST /broadcast/public/send-bulk
+GET /broadcast/public/phone-numbers
 ```
 
-### Required Request Structure
-
-| Field                  | Type     | Required | Description                                                         |
-| ---------------------- | -------- | -------- | ------------------------------------------------------------------- |
-| `broadcastName`        | string   | Yes      | Unique campaign name                                                |
-| `templateName`         | string   | Yes      | Approved WhatsApp template name                                     |
-| `templateLanguage`     | string   | Yes      | Template language code                                              |
-| `templateType`         | string   | Yes      | Template category                                                   |
-| `data`                 | array    | Yes      | Recipient list, maximum 1000 per request                            |
-| `templateId`           | string   | No       | Meta template ID                                                    |
-| `globalTemplateParams` | string[] | No       | Default variables used when recipient-level params are not provided |
-
-### Recipient Object in `data`
-
-| Field            | Type     | Required | Description                                           |
-| ---------------- | -------- | -------- | ----------------------------------------------------- |
-| `countryCode`    | string   | Yes      | Recipient country code without `+`                    |
-| `toPhoneNumber`  | string   | Yes      | Recipient mobile number                               |
-| `templateParams` | string[] | No       | Recipient-level variables that override global values |
-
-### Example Request
+### Request
 
 ```bash
-curl -X POST https://cerberus.eazybe.com/prod/api/v2/broadcast/public/send-bulk \
+curl "$BASE_URL/broadcast/public/phone-numbers" \
+  -H "x-api-key: $API_KEY"
+```
+
+### Response
+
+**200 — Phone numbers fetched successfully**
+
+```json
+{
+  "status": true,
+  "status_code": 200,
+  "message": "Phone numbers fetched successfully",
+  "data": [
+    {
+      "phone_number": "14844634680",
+      "waba_id": "1099052972334241",
+      "phone_number_id": "894234333763517"
+    }
+  ]
+}
+```
+
+An empty `data` array means the key is valid but no WABA number is connected to the organization yet. That is a configuration state, not an error.
+
+---
+
+## Get templates
+
+Returns the approved WhatsApp templates available to one of your numbers. Call this before a broadcast — sending an unapproved or misspelled template name fails the whole request.
+
+### Endpoint
+
+```http
+GET /broadcast/public/templates
+```
+
+### Query parameters
+
+| Parameter | Type | Required | Description |
+| --- | --- | --- | --- |
+| `phone_number` | string | Required | A WABA number belonging to your organization, digits only |
+
+### Request
+
+```bash
+curl "$BASE_URL/broadcast/public/templates?phone_number=14844634680" \
+  -H "x-api-key: $API_KEY"
+```
+
+### Response
+
+**200 — Templates fetched successfully**
+
+```json
+{
+  "status": true,
+  "status_code": 200,
+  "message": "Templates fetched successfully",
+  "data": [
+    {
+      "name": "eazybe_temp",
+      "status": "APPROVED",
+      "category": "MARKETING",
+      "language": "en",
+      "components": [
+        { "type": "BODY", "text": "Hello {{1}}, your code is {{2}}." }
+      ]
+    }
+  ]
+}
+```
+
+Count the `{{n}}` placeholders in the body — that is exactly how many values each recipient's `templateParams` array must supply.
+
+---
+
+## Send template broadcast
+
+Sends an approved template to a list of recipients. Behavior changes with list size: up to 1,000 recipients the broadcast is queued synchronously; above that it is split into chunks and processed as a background job you poll for status.
+
+### Endpoint
+
+```http
+POST /broadcast/public/send-template-broadcast
+```
+
+### Headers
+
+| Header | Required | Description |
+| --- | --- | --- |
+| `x-api-key` | Required | Organization auth key |
+| `Content-Type` | Required | `application/json` |
+| `Idempotency-Key` | Optional | Unique string, safe to retry with |
+
+### Body
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `broadcastName` | string | Required | Campaign label shown in reporting |
+| `fromPhoneNumber` | string | Required | Your WABA number, from Get phone numbers |
+| `templateName` | string | Required | Approved template name |
+| `templateLanguage` | string | Required | Language code, e.g. `en` |
+| `templateType` | string | Required | `MARKETING`, `UTILITY`, and so on |
+| `templateId` | string | Optional | WhatsApp template ID |
+| `globalTemplateParams` | string[] | Optional | Defaults applied to recipients without their own params |
+| `data` | object[] | Required | Recipients, 1 to 10,000 |
+
+### Recipient object
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `countryCode` | string | Required | Digits only, no `+`. e.g. `91` |
+| `toPhoneNumber` | string | Required | Digits only, without country code |
+| `templateParams` | string[] | Optional | Values for `{{1}}`, `{{2}}`… Overrides globals. |
+
+### Request
+
+```bash
+curl -X POST "$BASE_URL/broadcast/public/send-template-broadcast" \
+  -H "x-api-key: $API_KEY" \
   -H "Content-Type: application/json" \
-  -H "x-api-key: YOUR_API_KEY" \
+  -H "Idempotency-Key: festive-run-1" \
   -d '{
-    "broadcastName": "Festival Campaign 2024",
-    "templateName": "festive_offer_promo",
+    "broadcastName": "Festive Offer Campaign",
+    "fromPhoneNumber": "14844634680",
+    "templateName": "eazybe_temp",
     "templateLanguage": "en",
     "templateType": "MARKETING",
-    "templateId": "1172528374418691",
+    "templateId": "1530766784804741",
+    "globalTemplateParams": ["Valued customer", "FESTIVE10"],
     "data": [
       {
         "countryCode": "91",
-        "toPhoneNumber": "9897964421",
-        "templateParams": ["John Doe", "212812790", "16-02-2026"]
+        "toPhoneNumber": "9675360316",
+        "templateParams": ["Vineet", "VIP20"]
       },
       {
         "countryCode": "91",
-        "toPhoneNumber": "8077378155",
-        "templateParams": ["Vineet", "122878278", "14-02-2026"]
+        "toPhoneNumber": "8077378155"
       }
-    ],
-    "globalTemplateParams": ["Default Company", "Test date"]
+    ]
   }'
 ```
 
-### Success Response
+In this example the first recipient gets their own values and the second falls back to `globalTemplateParams`.
+
+### Responses
+
+**200 — Queued (1,000 recipients or fewer)**
 
 ```json
 {
   "status": true,
+  "status_code": 200,
   "message": "Bulk broadcast queued successfully",
+  "data": { }
+}
+```
+
+**202 — Accepted for background processing (more than 1,000 recipients)**
+
+```json
+{
+  "status": true,
+  "status_code": 202,
+  "message": "Broadcast accepted for background processing",
   "data": {
-    "status": true,
-    "message": "Broadcast is being processed",
-    "data": {
-      "total_contacts": 2,
-      "failed_contacts": 0,
-      "estimated_cost": 1.89874,
-      "oldBalance": 1851.5995179999998,
-      "newEstimatedBalance": 1849.7007779999997
+    "jobId": "pub_4f8c2a1e9b7d43c6a5e0f2b18d3c9a67",
+    "status": "PROCESSING",
+    "totalRecipients": 1001,
+    "chunkSize": 1000,
+    "totalChunks": 2
+  }
+}
+```
+
+Keep the `jobId` — it is the only way to check how the broadcast finished. Poll Get broadcast status with it.
+
+**400 — Recipient limit exceeded**
+
+```json
+{
+  "status": false,
+  "status_code": 400,
+  "message": "Recipient limit exceeded",
+  "data": {
+    "error": {
+      "message": "Template broadcast cannot exceed 10000 recipients per request."
     }
   }
 }
 ```
 
-### Operational Notes
+**400 — Template not approved**
+
+```json
+{
+  "status": false,
+  "status_code": 400,
+  "message": "Template is not approved or not found",
+  "data": {
+    "error": {
+      "message": "Template is not approved or not found for this WABA phone number."
+    }
+  }
+}
+```
 
 <Warning>
-  <ul>
-    <li>A bulk request cannot exceed 1000 recipients.</li>
-    <li>Broadcast names must be unique, otherwise the request fails.</li>
-  </ul>
+  **Duplicate recipients are rejected, not merged.** If the same `countryCode` + `toPhoneNumber` pair appears twice, the entire request fails with a `400` naming the index of the duplicate. Deduplicate your list before sending.
 </Warning>
 
-<Note>
-  Invalid numbers can create partial failures. Failed contacts are counted
-  separately and credits are not deducted for those invalid contacts. Failed
-  contacts may be stored with{" "}
-  <code>failure_reason_code: "INVALID_PHONE_NUMBER"</code> for downstream
-  tracking.
-</Note>
+---
+
+## Send free-form message
+
+Sends a single message to one recipient. All eight content types share this endpoint — the `type` field decides which other fields are required.
+
+### Endpoint
+
+```http
+POST /broadcast/public/send-freeform
+```
+
+### Common fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `fromPhoneNumber` | string | Required | Your WABA number |
+| `toPhoneNumber` | string | Required | Recipient with country code, digits only |
+| `type` | string | Required | One of the eight types below |
+
+### Type-specific fields
+
+| `type` | Required | Optional | Accepted file extensions |
+| --- | --- | --- | --- |
+| `text` | `text` | — | — |
+| `image` | `url` | `caption` | jpg, jpeg, png |
+| `document` | `url` | `name`, `caption` | pdf, txt, doc, docx, ppt, pptx, xls, xlsx |
+| `audio` | `url` | — | aac, amr, mp3, m4a, mp4, ogg, opus |
+| `video` | `url` | `caption` | mp4, 3gp |
+| `sticker` | `url` | — | webp |
+| `location` | `latitude`, `longitude` | `name`, `address` | — |
+| `interactive` | `interactive` | — | — |
+
+<Warning>
+  **The extension is read from the URL path, not the file.** A real PNG served from a URL ending in `.webp` is rejected for `image`, and a URL with no extension at all is rejected for every media type. Query strings are ignored, so `…/photo.png?v=2` is fine.
+</Warning>
+
+### Text
+
+```json
+{
+  "fromPhoneNumber": "14844634680",
+  "toPhoneNumber": "919675360316",
+  "type": "text",
+  "text": "Your order #4821 has shipped."
+}
+```
+
+### Image
+
+```json
+{
+  "fromPhoneNumber": "14844634680",
+  "toPhoneNumber": "919675360316",
+  "type": "image",
+  "url": "https://cdn.example.com/offer.jpg",
+  "caption": "This week only"
+}
+```
+
+### Document
+
+```json
+{
+  "fromPhoneNumber": "14844634680",
+  "toPhoneNumber": "919675360316",
+  "type": "document",
+  "url": "https://cdn.example.com/invoice-4821.pdf",
+  "name": "Invoice_4821.pdf",
+  "caption": "Your invoice is ready"
+}
+```
+
+### Audio
+
+```json
+{
+  "fromPhoneNumber": "14844634680",
+  "toPhoneNumber": "919675360316",
+  "type": "audio",
+  "url": "https://cdn.example.com/voice-note.mp3"
+}
+```
+
+### Video
+
+```json
+{
+  "fromPhoneNumber": "14844634680",
+  "toPhoneNumber": "919675360316",
+  "type": "video",
+  "url": "https://cdn.example.com/demo.mp4",
+  "caption": "60-second walkthrough"
+}
+```
+
+### Sticker
+
+```json
+{
+  "fromPhoneNumber": "14844634680",
+  "toPhoneNumber": "919675360316",
+  "type": "sticker",
+  "url": "https://cdn.example.com/thumbs-up.webp"
+}
+```
+
+### Location
+
+`latitude` and `longitude` must be JSON numbers, not strings. Latitude accepts −90 to 90, longitude −180 to 180.
+
+```json
+{
+  "fromPhoneNumber": "14844634680",
+  "toPhoneNumber": "919675360316",
+  "type": "location",
+  "latitude": 28.4595,
+  "longitude": 77.0266,
+  "name": "Eazybe HQ",
+  "address": "Sector 44, Gurugram, Haryana 122003"
+}
+```
+
+### Interactive — buttons
+
+Up to **3** reply buttons. More than three is rejected.
+
+```json
+{
+  "fromPhoneNumber": "14844634680",
+  "toPhoneNumber": "919675360316",
+  "type": "interactive",
+  "interactive": {
+    "type": "button",
+    "header": { "type": "text", "text": "Renew your plan" },
+    "body": { "text": "Your subscription ends in 3 days. Renew now?" },
+    "footer": { "text": "Reply STOP to opt out" },
+    "action": {
+      "buttons": [
+        { "type": "reply", "reply": { "id": "renew_yes", "title": "Renew now" } },
+        { "type": "reply", "reply": { "id": "renew_later", "title": "Remind me later" } }
+      ]
+    }
+  }
+}
+```
+
+### Interactive — list
+
+Up to **10** rows counted across *all* sections combined, not per section.
+
+```json
+{
+  "fromPhoneNumber": "14844634680",
+  "toPhoneNumber": "919675360316",
+  "type": "interactive",
+  "interactive": {
+    "type": "list",
+    "header": { "type": "text", "text": "Pick a plan" },
+    "body": { "text": "Choose the plan that fits your team." },
+    "action": {
+      "button": "View plans",
+      "sections": [
+        {
+          "title": "Monthly",
+          "rows": [
+            { "id": "starter_m", "title": "Starter", "description": "3 seats included" },
+            { "id": "growth_m", "title": "Growth", "description": "10 seats included" }
+          ]
+        }
+      ]
+    }
+  }
+}
+```
+
+### Response
+
+**200 — same shape for all eight types**
+
+```json
+{
+  "status": true,
+  "status_code": 200,
+  "message": "Free-form message queued successfully",
+  "data": { }
+}
+```
 
 ---
 
-## Template Parameter Handling
+## Get broadcast status
 
-The API supports both recipient-level parameters and global parameters.
+Returns the progress of a large broadcast job — the ones that returned `202` and a `jobId`. Broadcasts of 1,000 recipients or fewer do not create a job and have nothing to poll.
 
-### Recipient-Level Parameters
+### Endpoint
 
-Use `templateParams` inside each recipient object when every contact should receive different variable values.
+```http
+GET /broadcast/public/status/:jobId
+```
 
-**Example use cases:**
+### Request
 
-- Order ID per customer
-- Appointment time per customer
-- Personalized name per recipient
+```bash
+curl "$BASE_URL/broadcast/public/status/pub_4f8c2a1e9b7d43c6a5e0f2b18d3c9a67" \
+  -H "x-api-key: $API_KEY"
+```
 
-### Global Parameters
+### Responses
 
-Use `globalTemplateParams` when the same variable values apply to all recipients in a bulk campaign.
+**200 — job record plus a summary of chunk progress**
 
-This reduces repeated payload data and is useful for common campaign-wide values such as brand name, coupon code, or offer percentage.
+```json
+{
+  "status": true,
+  "status_code": 200,
+  "message": "Broadcast status fetched successfully",
+  "data": {
+    "jobId": "pub_4f8c2a1e9b7d43c6a5e0f2b18d3c9a67",
+    "status": "QUEUED_FOR_PROCESSING",
+    "totalRecipients": 1001,
+    "totalChunks": 2,
+    "summary": { }
+  }
+}
+```
 
-### Rule of Precedence
+**404** — Broadcast job not found
 
-<Info>
-  When recipient-level <code>templateParams</code> are provided, they override
-  the global values for that recipient.
-</Info>
+**401** — Job belongs to a different organization
+
+A job created by another organization returns `401` rather than `404` — job IDs are not enumerable across organizations.
 
 ---
 
-## Health Check
+## Health check
 
-Use the health endpoint to verify whether the Public Broadcast API service is operational.
+Confirms the service is up and lists the routes it currently exposes. No API key needed.
 
 ### Endpoint
 
@@ -345,23 +567,21 @@ Use the health endpoint to verify whether the Public Broadcast API service is op
 GET /broadcast/public/health
 ```
 
-### Example Request
-
-```bash
-curl -X GET https://cerberus.eazybe.com/prod/api/v2/broadcast/public/health
-```
-
-### Sample Response
-
 ```json
 {
   "status": "ok",
-  "timestamp": "2024-01-15T10:30:00.000Z",
+  "timestamp": "2026-07-22T11:04:33.812Z",
   "service": "Public Broadcast API",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "endpoints": {
+    "generate-key": "POST /broadcast/public/generate-key",
+    "template-broadcast": "POST /broadcast/public/send-template-broadcast",
+    "freeform": "POST /broadcast/public/send-freeform",
+    "templates": "GET /broadcast/public/templates",
+    "phone-numbers": "GET /broadcast/public/phone-numbers",
+    "status": "GET /broadcast/public/status/:jobId",
     "single": "POST /broadcast/public/send-single",
-    "bulk-standard": "POST /broadcast/public/send-bulk-standard",
+    "bulk-standard": "POST /broadcast/public/send-bulk",
     "health": "GET /broadcast/public/health"
   }
 }
@@ -369,163 +589,99 @@ curl -X GET https://cerberus.eazybe.com/prod/api/v2/broadcast/public/health
 
 ---
 
-## Error Handling Reference
+## Validation rules
 
-| Status Code | Error                             | Meaning                                                  |
-| ----------- | --------------------------------- | -------------------------------------------------------- |
-| `400`       | `User is not signed up yet`       | API key is invalid or the phone number is not registered |
-| `400`       | `No subscriptions available`      | No active subscription is available for broadcasts       |
-| `400`       | `Insufficient credits`            | Wallet balance is not enough                             |
-| `400`       | `Template does not exist`         | Template is missing or not approved                      |
-| `400`       | `Invalid template language`       | Requested template language variant is not approved      |
-| `400`       | `Invalid phone number format`     | Country code or phone format is invalid                  |
-| `400`       | `Pricing not available`           | Sending is not supported for the target country code     |
-| `400`       | `Recipient limit exceeded`        | Bulk request contains more than 1000 recipients          |
-| `400`       | `Broadcast with same name exists` | Campaign name must be unique                             |
-| `500`       | `Internal Server Error`           | Unexpected server-side error                             |
+These run before anything reaches WhatsApp, so a rejection here costs no message quota. Every failure returns `400` with `message: "Validation error"` and a specific reason.
 
-## Failure Reason Codes
-
-| Code                       | Meaning                     | Notes                                      |
-| -------------------------- | --------------------------- | ------------------------------------------ |
-| `INVALID_PHONE_NUMBER`     | Invalid recipient number    | Check country code and number formatting   |
-| `UNSUPPORTED_COUNTRY_CODE` | Country pricing unavailable | Destination not supported                  |
-| `TEMPLATE_SEND_FAILED`     | Template send failed        | Review raw API error response              |
-| `131014`                   | Invalid parameter           | Template parameter issue                   |
-| `131051`                   | Rate limit exceeded         | Too many requests sent in a short interval |
-| `WORKER_ERROR`             | Worker processing failure   | Review worker error response               |
+| Rule | Applies to | On failure |
+| --- | --- | --- |
+| Phone numbers must be digits only — no `+`, spaces, or dashes | Both send endpoints | Invalid `toPhoneNumber` / `countryCode` |
+| At least one recipient | Template broadcast | Recipient list is required |
+| No duplicate `countryCode`  • `toPhoneNumber` | Template broadcast | Duplicate recipient found at index *n* |
+| Maximum 10,000 recipients | Template broadcast | Recipient limit exceeded |
+| Template must exist and be approved for that number | Template broadcast | Template is not approved or not found |
+| `text` must be a non-empty string | Free-form, type `text` | text is required for text messages |
+| `url` must be http or https | Free-form media types | url must be a valid http or https URL |
+| URL extension must be on the allowed list | Free-form media types | Lists the accepted extensions |
+| Latitude −90 to 90, longitude −180 to 180, both numbers | Free-form, type `location` | Names the offending coordinate |
+| Interactive type must be `button` or `list` | Free-form, type `interactive` | interactive type must be button or list |
+| 1 to 3 buttons | Interactive buttons | Cannot exceed 3 buttons |
+| 1 to 10 rows across all sections | Interactive list | Cannot exceed 10 rows |
 
 ---
 
-## Rate Limits and Platform Constraints
+## Errors
+
+Every error uses the same envelope:
+
+```json
+{
+  "status": false,
+  "status_code": 400,
+  "message": "Short summary",
+  "data": {
+    "error": {
+      "message": "Specific detail about what to fix"
+    }
+  }
+}
+```
+
+### Status codes
+
+| Code | Meaning | What to do |
+| --- | --- | --- |
+| `200` | Queued or fetched | — |
+| `202` | Large broadcast accepted | Poll status with the `jobId` |
+| `400` | Validation or limit failure | Read `data.error.message` and fix the payload |
+| `401` | Key, number, or job ownership problem | See the table below |
+| `404` | Broadcast job not found | Check the `jobId` |
+| `409` | Same `Idempotency-Key` still processing | Wait and poll; do not resend |
+| `429` | Rate limit exceeded | Wait the seconds named in the message |
+| `500` | Send failed downstream | Retry with the same `Idempotency-Key` |
+| `503` | Auth database timed out | Retry with backoff |
+
+### The four 401s
+
+All four return `401` but mean different things:
+
+| Message | Cause | Fix |
+| --- | --- | --- |
+| API key is required | No `x-api-key` header | Add the header |
+| Invalid API key. Organization not found. | No organization has that `auth_key` | Check the key, and that you are on the right environment |
+| No WABA account found for this organization. | The number is not registered to your organization | Use a number from Get phone numbers |
+| WABA account is incomplete. Missing fields: … | The WABA record is missing `waba_id`, `phone_number_id`, `phone_number`, or `access_token` | Finish WABA onboarding for that number |
+
+<Note>
+  **Retry policy.** Retry `500` and `503` with exponential backoff. Never retry `400` or `401` — the same request will fail identically. On `429`, wait the interval the response names. Always send an `Idempotency-Key` on requests you intend to retry.
+</Note>
+
+---
+
+## Legacy endpoints
 
 <Warning>
-  Meta has an approximate sending rate of around 30 messages per second per
-  WABA. The API includes automatic retry with exponential backoff for rate-limit
-  errors such as <code>429</code>, <code>80007</code>, and <code>130429</code>.
+  **Different authentication.** These three predate v2 and still use the older per-number WABA key, not your organization `auth_key`. They are unchanged and remain supported, but new integrations should use the v2 endpoints above.
 </Warning>
 
-<Tip>
-  Batch responsibly and split large uploads into multiple requests once you
-  approach the 1000-recipient per-request limit.
-</Tip>
-
----
-
-## Recommended Client Workflow
-
-<Steps>
-  <Step>
-    <h3>Onboard and Verify</h3>
-    <p>Onboard and verify the sender number on Eazybe before any API use.</p>
-  </Step>
-  <Step>
-    <h3>Generate API Key</h3>
-    <p>Generate the API key once and store it securely.</p>
-  </Step>
-  <Step>
-    <h3>Verify Templates</h3>
-    <p>
-      Ensure the WhatsApp template is approved in Meta and the language variant
-      is available.
-    </p>
-  </Step>
-  <Step>
-    <h3>Validate Data</h3>
-    <p>
-      Validate recipient country codes, phone numbers, and template variable
-      count before sending.
-    </p>
-  </Step>
-  <Step>
-    <h3>Send Broadcast</h3>
-    <p>
-      Use the single endpoint for one-off tests and the bulk endpoint for
-      campaigns.
-    </p>
-  </Step>
-  <Step>
-    <h3>Monitor Response</h3>
-    <p>
-      Monitor the response for <code>failed_contacts</code>, balance changes,
-      and queue status.
-    </p>
-  </Step>
-  <Step>
-    <h3>Use Unique Names</h3>
-    <p>Use unique broadcast names for every campaign.</p>
-  </Step>
-</Steps>
-
----
-
-## Best Practices for Clients
-
-- Store the API key securely and avoid regenerating it unnecessarily
-- Pre-validate numbers to reduce failures and operational cleanup
-- Match the number of template variables exactly with the approved template placeholders
-- Use `globalTemplateParams` for shared values and recipient-level params only when personalization is required
-- Check credits before large broadcast requests
-- Start with a small test batch before sending full-volume campaigns
-
----
-
-## Example Payload Patterns
-
-### Single Send with Variables
-
-```json
-{
-  "templateName": "order_shipped",
-  "templateLanguage": "en",
-  "templateType": "MARKETING",
-  "countryCode": "91",
-  "toPhoneNumber": "9876543210",
-  "templateParams": ["John", "ORD12345", "17-02-2024"]
-}
+```
+POST /broadcast/public/generate-key      no auth · 5/min
 ```
 
-### Bulk Send with Recipient-Level Variables
+Generates a legacy API key for a phone number. Takes `phoneNumber`, not an organization ID.
 
 ```json
-{
-  "broadcastName": "Appointment Reminders",
-  "templateName": "appointment_reminder",
-  "templateLanguage": "en",
-  "templateType": "UTILITY",
-  "data": [
-    {
-      "countryCode": "1",
-      "toPhoneNumber": "5551234567",
-      "templateParams": ["Alice", "2024-01-20", "10:00 AM"]
-    },
-    {
-      "countryCode": "1",
-      "toPhoneNumber": "5559876543",
-      "templateParams": ["Bob", "2024-01-20", "2:30 PM"]
-    }
-  ]
-}
+{ "phoneNumber": "919876543210" }
 ```
 
-### Bulk Send with Global Variables
-
-```json
-{
-  "broadcastName": "Global Promo",
-  "templateName": "promo_offer",
-  "templateLanguage": "en",
-  "templateType": "MARKETING",
-  "data": [
-    {
-      "countryCode": "91",
-      "toPhoneNumber": "9876543210"
-    },
-    {
-      "countryCode": "91",
-      "toPhoneNumber": "9876543211"
-    }
-  ],
-  "globalTemplateParams": ["MyStore", "SAVE20", "20"]
-}
 ```
+POST /broadcast/public/send-single       legacy key · 30/min
+```
+
+Sends one template message. Recipient fields sit at the top level rather than in a `data` array.
+
+```
+POST /broadcast/public/send-bulk         legacy key · 10/min
+```
+
+Bulk template send, capped at **1,000** recipients — there is no chunking and no job ID. Exceeding the cap returns `400` in the response body with an HTTP 200 status line, unlike the v2 endpoint which throws.
