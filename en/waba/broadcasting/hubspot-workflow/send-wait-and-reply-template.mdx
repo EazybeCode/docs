@@ -24,52 +24,52 @@ Before setting up your workflow, ensure you have:
   <Step title="Access Your HubSpot Account">
     Log in to your HubSpot account to begin setting up the workflow.
 
-    ![Access HubSpot](/images/1933597310.png)
+    ![Access HubSpot](/images/hubspot-wait-reply-access-account.png)
   </Step>
   <Step title="Navigate to Automation">
     Click on the **Automation** button in the main navigation menu.
 
-    ![Navigate to Automation](/images/1933597303.png)
+    ![Navigate to Automation](/images/1933597310.png)
   </Step>
   <Step title="Select Workflows">
     From the automation menu, select **Workflows** to access the workflow builder.
 
-    ![Select Workflows](/images/1933597307.png)
+    ![Select Workflows](/images/1933597303.png)
   </Step>
   <Step title="Create New Workflow">
     Click **Create workflow** to start building a new automation.
 
-    ![Create Workflow](/images/1933597320.png)
+    ![Create Workflow](/images/1933597307.png)
   </Step>
   <Step title="Choose From Scratch">
     Select **From scratch** to create a custom workflow tailored to your needs.
 
-    ![From Scratch](/images/1933597313.png)
+    ![From Scratch](/images/1933597320.png)
   </Step>
   <Step title="Set Filter Criteria">
     Click **Met filter criteria** to define the conditions for workflow enrollment.
 
-    ![Filter Criteria](/images/1933597309.png)
+    ![Filter Criteria](/images/1933597313.png)
   </Step>
-  <Step title="Select Contact as Trigger">
-    Choose **Contact** as the object type that will trigger this workflow.
+  <Step title="Select a Workflow Object">
+    Choose **Contacts**, **Deals**, or **Leads** as the object type for your workflow.
 
-    ![Select Contact](/images/1933597302.png)
+    ![Select a workflow object](/images/1933597309.png)
   </Step>
   <Step title="Access Contact Properties">
     Click on **Contact properties** to configure specific enrollment criteria.
 
-    ![Contact Properties](/images/1933597316.png)
+    ![Contact Properties](/images/1933597302.png)
   </Step>
   <Step title="Search for Property">
     Search for the contact property you want to use as the enrollment trigger.
 
-    ![Search Property](/images/1933597306.png)
+    ![Search Property](/images/1933597316.png)
   </Step>
   <Step title="Choose Property Name">
     Select your desired property (for example, "Company name") from the list.
 
-    ![Choose Property](/images/1933597299.png)
+    ![Choose Property](/images/1933597306.png)
 
     <Info>
       You can use any contact property such as lifecycle stage, lead status, or custom properties you've created.
@@ -78,17 +78,17 @@ Before setting up your workflow, ensure you have:
   <Step title="Configure Conditions">
     Set the condition (e.g., "is equal to any of") and add the matching values under **Add values**.
 
-    ![Configure Conditions](/images/1933597301.png)
+    ![Configure Conditions](/images/1933597299.png)
   </Step>
   <Step title="Proceed to Next Step">
     Click **Next** to continue to the re-enrollment settings.
 
-    ![Click Next](/images/1933597311.png)
+    ![Click Next](/images/1933597301.png)
   </Step>
   <Step title="Enable Re-enrollment">
     Toggle **Re-enroll** if you want contacts who already met the criteria to enter the workflow again.
 
-    ![Re-enrollment](/images/1933597304.png)
+    ![Re-enrollment](/images/1933597311.png)
 
     <Warning>
       Be cautious with re-enrollment settings to avoid sending duplicate messages to the same contacts.
@@ -97,51 +97,91 @@ Before setting up your workflow, ensure you have:
   <Step title="Save Enrollment Settings">
     Click **Save and continue** to preserve your enrollment configuration.
 
-    ![Save Settings](/images/1933597323.png)
+    ![Save Settings](/images/1933597304.png)
   </Step>
   <Step title="Add WhatsApp Integration">
     Scroll down in the actions panel and select **WhatsApp Integration by Eazybe**.
 
-    ![WhatsApp Integration](/images/1933597315.png)
+    ![WhatsApp Integration](/images/1933597323.png)
   </Step>
   <Step title="Select Template Action">
-    Click **Send Ready-to-Use WhatsApp Template** to choose a pre-approved message template.
+    Click **Send WhatsApp & Wait for Reply** to choose a pre-approved message template.
 
-    ![Select Template Action](/images/1933597312.png)
+    ![Select the Send WhatsApp and Wait for Reply action](/images/hubspot-wait-reply-select-action.png)
   </Step>
-  <Step title="Specify Phone Number Field">
-    Choose which contact property field contains the recipient's phone number.
+  <Step title="Recipient Phone Number">
+    Click **Recipient Phone Number** and choose which HubSpot contact property to use: **Mobile phone number**, **Phone number**, or **WhatsApp phone number**.
 
-    ![Phone Number Field](/images/1933597300.png)
+    ![Recipient Phone Number field](/images/hubspot-wait-reply-recipient-phone-number.png)
 
     <Tip>
       Ensure phone numbers are stored in international format (e.g., +1234567890) for successful delivery.
     </Tip>
   </Step>
-  <Step title="Choose WhatsApp Template">
-    Select an approved WhatsApp template from the available options.
+  <Step title="Select a Phone Number Property">
+    Choose one of the available properties: **Mobile phone number**, **Phone number**, or **WhatsApp phone number**.
 
-    ![Choose Template](/images/1933597314.png)
+    ![Select a phone number property](/images/hubspot-wait-reply-select-phone-property.png)
+  </Step>
+  <Step title="Choose WABA Number">
+    Select a WABA user from the available options.
+
+    ![Choose a WABA number](/images/hubspot-wait-reply-choose-whatsapp-template.png)
+  </Step>
+  <Step title="Choose Button Template">
+    Select an approved button template from the available options for creating a condition branch.
+
+    ![Choose button template](/images/hubspot-wait-reply-select-whatsapp-template.png)
   </Step>
   <Step title="Save Template Selection">
     Click **Save** to confirm your template selection.
 
-    ![Save Template](/images/1933597308.png)
+    ![Save template selection](/images/hubspot-wait-reply-save-template-selection.png)
   </Step>
-  <Step title="Review Workflow">
-    Click **Review and turn on** to access the final review screen.
+  <Step title="Create New Branch">
+    Click the **+** button and create a new branch.
 
-    ![Review Workflow](/images/1933597318.png)
+    ![Create a new branch](/images/hubspot-wait-reply-create-new-branch.png)
   </Step>
-  <Step title="Set Enrollment Preferences">
-    Configure your enrollment preference settings based on your campaign requirements.
+  <Step title="Select Branch">
+    Choose a branch type to **send contacts to branches**.
 
-    ![Enrollment Preferences](/images/1933597322.png)
+    ![Select a branch type](/images/hubspot-wait-reply-select-branch.png)
+  </Step>
+  <Step title="Select Property Value">
+    Choose the **User WhatsApp Reply** property from **1. Eazybe: Send WhatsApp & Wait for Reply** for this branch.
+
+    ![Select the User WhatsApp Reply property](/images/hubspot-wait-reply-select-property-value.png)
+  </Step>
+  <Step title="Branch Condition Value">
+    Add a branch condition value based on the template button name.
+
+    ![Add a branch condition value](/images/hubspot-wait-reply-branch-condition-value.png)
+  </Step>
+  <Step title="Save Branch Values">
+    Click **Save** after adding the branch values.
+
+    ![Save the branch values](/images/hubspot-wait-reply-save-branch-values.png)
+  </Step>
+  <Step title="Add Template in Condition Branch">
+    Click the **+** button to add templates for each branch value. When a user clicks one of the template buttons, the corresponding template is triggered.
+
+    ![Add a template to a condition branch](/images/hubspot-wait-reply-add-template-condition-branch.png)
+  </Step>
+  <Step title="Save the Template">
+    Click **Save** to save the template for the branch value.
+
+    ![Save the template for a branch value](/images/hubspot-wait-reply-save-branch-template.png)
+  </Step>
+  <Step title="Review and Turn On">
+    Click **Review and turn on** after adding templates for all branch values.
+
+    ![Review and turn on the workflow](/images/hubspot-wait-reply-review-and-turn-on.png)
   </Step>
   <Step title="Final Review">
     Either click **Skip to turn on** or click **Next** to perform additional validation checks.
 
-    ![Final Review](/images/1933597317.png)
+    ![Final Review](/images/1933597322.png)
   </Step>
   <Step title="Activate Workflow">
     Click **Turn on workflow** to activate your WhatsApp campaign automation.
@@ -178,4 +218,3 @@ Congratulations! Your HubSpot workflow is now configured to automatically send W
 ## Need Help?
 
 If you have any questions or need further assistance, feel free to reach out to us at [support@eazybe.com](mailto:hey@eazybe.com). We're happy to help!
-

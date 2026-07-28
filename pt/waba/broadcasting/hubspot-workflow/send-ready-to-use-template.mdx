@@ -1,0 +1,179 @@
+---
+title: "Enviar um Modelo Pronto para Uso"
+description: "Saiba como enviar um modelo de WhatsApp pronto para uso em um fluxo de trabalho do HubSpot com a integração do Eazybe."
+---
+
+Use este guia para configurar um fluxo de trabalho do HubSpot que envia um modelo de WhatsApp pré-aprovado pela integração do Eazybe.
+
+## Pré-requisitos
+
+<CardGroup cols={2}>
+  <Card title="Conta do HubSpot" icon="hubspot">
+    Uma conta ativa do HubSpot com acesso a fluxos de trabalho
+  </Card>
+  <Card title="Integração do Eazybe" icon="plug">
+    WhatsApp Integration by Eazybe instalada no HubSpot
+  </Card>
+</CardGroup>
+
+## Crie seu fluxo de trabalho do HubSpot
+
+<Steps>
+  <Step title="Acesse sua conta do HubSpot">
+    Entre no HubSpot para começar a configurar o fluxo de trabalho.
+
+    ![Acessar o HubSpot](/images/1933597310.png)
+  </Step>
+  <Step title="Acesse Automação">
+    Clique em **Automation** no menu principal.
+
+    ![Acessar Automação](/images/1933597303.png)
+  </Step>
+  <Step title="Selecione Fluxos de trabalho">
+    Selecione **Workflows** para abrir o editor.
+
+    ![Selecionar Fluxos de trabalho](/images/1933597307.png)
+  </Step>
+  <Step title="Crie um novo fluxo de trabalho">
+    Clique em **Create workflow** para iniciar uma nova automação.
+
+    ![Criar fluxo de trabalho](/images/1933597320.png)
+  </Step>
+  <Step title="Escolha Do zero">
+    Selecione **From scratch** para criar um fluxo personalizado.
+
+    ![Escolher Do zero](/images/1933597313.png)
+  </Step>
+  <Step title="Defina os critérios de filtro">
+    Clique em **Met filter criteria** para definir as condições de inscrição.
+
+    ![Definir critérios](/images/1933597309.png)
+  </Step>
+  <Step title="Selecione Contato como gatilho">
+    Escolha **Contact** como o tipo de objeto que ativará o fluxo.
+
+    ![Selecionar Contato](/images/1933597302.png)
+  </Step>
+  <Step title="Acesse as propriedades do contato">
+    Clique em **Contact properties** para configurar os critérios.
+
+    ![Propriedades do contato](/images/1933597316.png)
+  </Step>
+  <Step title="Pesquise uma propriedade">
+    Pesquise a propriedade que deseja usar como gatilho.
+
+    ![Pesquisar propriedade](/images/1933597306.png)
+  </Step>
+  <Step title="Escolha o nome da propriedade">
+    Selecione a propriedade desejada; por exemplo, **Company name**.
+
+    ![Escolher propriedade](/images/1933597299.png)
+
+    <Info>
+      Você pode usar qualquer propriedade do contato, como estágio do ciclo de vida, status do lead ou uma propriedade personalizada.
+    </Info>
+  </Step>
+  <Step title="Configure as condições">
+    Defina a condição, como **is equal to any of**, e adicione os valores em **Add values**.
+
+    ![Configurar condições](/images/1933597301.png)
+  </Step>
+  <Step title="Avance para a próxima etapa">
+    Clique em **Next** para configurar a reinscrição.
+
+    ![Clicar em Avançar](/images/1933597311.png)
+  </Step>
+  <Step title="Ative a reinscrição">
+    Ative **Re-enroll** se os contatos puderem entrar novamente no fluxo.
+
+    ![Ativar reinscrição](/images/1933597304.png)
+
+    <Warning>
+      Configure a reinscrição com cuidado para evitar mensagens duplicadas.
+    </Warning>
+  </Step>
+  <Step title="Salve as configurações de inscrição">
+    Clique em **Save and continue** para salvar.
+
+    ![Salvar configurações](/images/1933597323.png)
+  </Step>
+  <Step title="Adicione a integração do WhatsApp">
+    Selecione **WhatsApp Integration by Eazybe** no painel de ações.
+
+    ![Integração do WhatsApp](/images/1933597315.png)
+  </Step>
+  <Step title="Número de telefone do destinatário">
+    Clique em **Recipient Phone Number** e escolha **Mobile phone number**, **Phone number** ou **WhatsApp phone number**.
+
+    ![Número de telefone do destinatário](/images/hubspot-ready-to-use-recipient-phone-number.png)
+  </Step>
+  <Step title="Selecione uma propriedade de telefone">
+    Escolha **Mobile phone number**, **Phone number** ou **WhatsApp phone number**.
+
+    ![Propriedades de telefone](/images/hubspot-ready-to-use-select-phone-property.png)
+  </Step>
+  <Step title="Selecione o usuário WABA">
+    Selecione o **WABA User** cujo número enviará o modelo.
+
+    ![Selecionar usuário WABA](/images/hubspot-ready-to-use-select-waba-user.png)
+  </Step>
+  <Step title="Selecione o modelo">
+    Clique em **Select Template** e escolha um modelo pré-aprovado.
+
+    ![Selecionar modelo](/images/hubspot-ready-to-use-select-template.png)
+  </Step>
+  <Step title="Salve a ação">
+    Clique em **Save** para salvar os detalhes da ação.
+
+    ![Salvar ação](/images/hubspot-ready-to-use-save-action.png)
+  </Step>
+  <Step title="Revise e ative">
+    Clique em **Review and turn on** para abrir a revisão final.
+
+    ![Revisar e ativar](/images/1933597308.png)
+  </Step>
+  <Step title="Defina as preferências de inscrição">
+    Configure as preferências conforme os requisitos da campanha.
+
+    ![Preferências de inscrição](/images/1933597318.png)
+  </Step>
+  <Step title="Revisão final">
+    Clique em **Skip to turn on** ou em **Next** para realizar verificações adicionais.
+
+    ![Revisão final](/images/1933597322.png)
+  </Step>
+  <Step title="Ative o fluxo de trabalho">
+    Clique em **Turn on workflow** para ativar a automação.
+
+    ![Ativar fluxo de trabalho](/images/1933597317.png)
+  </Step>
+</Steps>
+
+## Seu fluxo de trabalho está pronto
+
+Seu fluxo de trabalho está configurado para enviar mensagens de WhatsApp aos contatos que atenderem aos critérios.
+
+<Check>
+  As mensagens serão acionadas automaticamente quando um contato atender aos critérios de inscrição.
+</Check>
+
+## Recursos relacionados
+
+<CardGroup cols={2}>
+  <Card title="Enviar WhatsApp por fluxos de trabalho" icon="paper-plane" href="/pt/integrations/hubspot/create-workflow">
+    Saiba mais sobre mensagens de WhatsApp no HubSpot
+  </Card>
+  <Card title="Solucionar problemas do fluxo" icon="wrench" href="/pt/integrations/hubspot/workflow-troubleshoot">
+    Problemas comuns e soluções
+  </Card>
+  <Card title="Criar modelos com variáveis do HubSpot" icon="file-code" href="/pt/waba/templates/how-to-create-template-with-hubspot-variables">
+    Use propriedades do HubSpot em seus modelos
+  </Card>
+  <Card title="Campanhas de transmissão" icon="bullhorn" href="/pt/waba/broadcasting/send-broadcast">
+    Envie mensagens em massa pelo WhatsApp
+  </Card>
+</CardGroup>
+
+## Precisa de ajuda?
+
+Se tiver dúvidas ou precisar de ajuda, escreva para [support@eazybe.com](mailto:hey@eazybe.com).

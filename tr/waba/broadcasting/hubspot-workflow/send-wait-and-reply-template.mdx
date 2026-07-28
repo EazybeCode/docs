@@ -1,0 +1,218 @@
+---
+title: "Şablon Gönderme ve Yanıt Bekleme"
+description: "Eazybe ile HubSpot iş akışından WhatsApp şablonu göndermeyi, yanıt beklemeyi ve koşullu dallar oluşturmayı öğrenin."
+---
+
+Bu kılavuzla WhatsApp şablonu gönderen ve kullanıcının yanıtına göre devam eden bir HubSpot iş akışı oluşturabilirsiniz.
+
+## Ön koşullar
+
+<CardGroup cols={2}>
+  <Card title="HubSpot Hesabı" icon="hubspot">
+    İş akışı erişimi olan etkin bir HubSpot hesabı
+  </Card>
+  <Card title="Eazybe Entegrasyonu" icon="plug">
+    HubSpot'ta yüklü WhatsApp Integration by Eazybe
+  </Card>
+</CardGroup>
+
+## HubSpot iş akışınızı oluşturun
+
+<Steps>
+  <Step title="HubSpot hesabınıza erişin">
+    HubSpot hesabınıza giriş yapın.
+
+    ![HubSpot'a erişin](/images/hubspot-wait-reply-access-account.png)
+  </Step>
+  <Step title="Otomasyona gidin">
+    Ana menüde **Automation** seçeneğine tıklayın.
+
+    ![Otomasyona gidin](/images/1933597310.png)
+  </Step>
+  <Step title="İş akışlarını seçin">
+    **Workflows** seçeneğini seçin.
+
+    ![İş akışlarını seçin](/images/1933597303.png)
+  </Step>
+  <Step title="Yeni iş akışı oluşturun">
+    **Create workflow** seçeneğine tıklayın.
+
+    ![İş akışı oluşturun](/images/1933597307.png)
+  </Step>
+  <Step title="Sıfırdan oluşturmayı seçin">
+    **From scratch** seçeneğini seçin.
+
+    ![Sıfırdan oluşturun](/images/1933597320.png)
+  </Step>
+  <Step title="Filtre ölçütlerini belirleyin">
+    **Met filter criteria** ile kayıt koşullarını tanımlayın.
+
+    ![Filtre ölçütleri](/images/1933597313.png)
+  </Step>
+  <Step title="İş akışı nesnesini seçin">
+    Nesne türü olarak **Contacts**, **Deals** veya **Leads** seçin.
+
+    ![İş akışı nesnesi](/images/1933597309.png)
+  </Step>
+  <Step title="Kişi özelliklerine erişin">
+    **Contact properties** seçeneğine tıklayın.
+
+    ![Kişi özellikleri](/images/1933597302.png)
+  </Step>
+  <Step title="Bir özellik arayın">
+    Tetikleyici olarak kullanacağınız özelliği arayın.
+
+    ![Özellik arayın](/images/1933597316.png)
+  </Step>
+  <Step title="Özellik adını seçin">
+    İstediğiniz özelliği seçin; örneğin **Company name**.
+
+    ![Özellik seçin](/images/1933597306.png)
+
+    <Info>
+      Yaşam döngüsü aşaması, lead durumu veya özel bir kişi özelliği kullanabilirsiniz.
+    </Info>
+  </Step>
+  <Step title="Koşulları yapılandırın">
+    **is equal to any of** gibi bir koşul seçip değerleri **Add values** alanına ekleyin.
+
+    ![Koşulları yapılandırın](/images/1933597299.png)
+  </Step>
+  <Step title="Sonraki adıma geçin">
+    **Next** seçeneğine tıklayın.
+
+    ![Sonraki adım](/images/1933597301.png)
+  </Step>
+  <Step title="Yeniden kaydı etkinleştirin">
+    Kişilerin yeniden girmesi için **Re-enroll** seçeneğini açın.
+
+    ![Yeniden kayıt](/images/1933597311.png)
+
+    <Warning>
+      Yinelenen mesajları önlemek için bu ayarı dikkatle yapılandırın.
+    </Warning>
+  </Step>
+  <Step title="Kayıt ayarlarını kaydedin">
+    **Save and continue** seçeneğine tıklayın.
+
+    ![Kayıt ayarlarını kaydedin](/images/1933597304.png)
+  </Step>
+  <Step title="WhatsApp entegrasyonunu ekleyin">
+    **WhatsApp Integration by Eazybe** seçeneğini seçin.
+
+    ![WhatsApp entegrasyonu](/images/1933597323.png)
+  </Step>
+  <Step title="Şablon eylemini seçin">
+    Onaylı bir şablon seçmek için **Send WhatsApp & Wait for Reply** eylemine tıklayın.
+
+    ![WhatsApp gönder ve yanıt bekle](/images/hubspot-wait-reply-select-action.png)
+  </Step>
+  <Step title="Alıcı telefon numarası">
+    **Recipient Phone Number** alanında **Mobile phone number**, **Phone number** veya **WhatsApp phone number** özelliğini seçin.
+
+    ![Alıcı telefon numarası](/images/hubspot-wait-reply-recipient-phone-number.png)
+
+    <Tip>
+      Numaraları +1234567890 gibi uluslararası biçimde kaydedin.
+    </Tip>
+  </Step>
+  <Step title="Telefon numarası özelliğini seçin">
+    Kullanılabilir telefon özelliklerinden birini seçin.
+
+    ![Telefon özelliği seçin](/images/hubspot-wait-reply-select-phone-property.png)
+  </Step>
+  <Step title="WABA numarasını seçin">
+    Kullanılabilir seçeneklerden bir WABA kullanıcısı seçin.
+
+    ![WABA numarası seçin](/images/hubspot-wait-reply-choose-whatsapp-template.png)
+  </Step>
+  <Step title="Düğmeli şablonu seçin">
+    Koşullu dal oluşturmak için onaylı bir düğmeli şablon seçin.
+
+    ![Düğmeli şablon seçin](/images/hubspot-wait-reply-select-whatsapp-template.png)
+  </Step>
+  <Step title="Şablon seçimini kaydedin">
+    Seçimi onaylamak için **Save** seçeneğine tıklayın.
+
+    ![Şablon seçimini kaydedin](/images/hubspot-wait-reply-save-template-selection.png)
+  </Step>
+  <Step title="Yeni dal oluşturun">
+    **+** düğmesine tıklayıp yeni bir dal oluşturun.
+
+    ![Yeni dal oluşturun](/images/hubspot-wait-reply-create-new-branch.png)
+  </Step>
+  <Step title="Dal seçin">
+    **Kişileri dallara göndermek** için bir dal türü seçin.
+
+    ![Dal türü seçin](/images/hubspot-wait-reply-select-branch.png)
+  </Step>
+  <Step title="Özellik değerini seçin">
+    **1. Eazybe: Send WhatsApp & Wait for Reply** eylemindeki **User WhatsApp Reply** özelliğini seçin.
+
+    ![Yanıt özelliğini seçin](/images/hubspot-wait-reply-select-property-value.png)
+  </Step>
+  <Step title="Dal koşulu değerini belirleyin">
+    Şablon düğmesinin adına göre bir dal koşulu değeri ekleyin.
+
+    ![Dal koşulu değeri](/images/hubspot-wait-reply-branch-condition-value.png)
+  </Step>
+  <Step title="Dal değerlerini kaydedin">
+    Değerleri ekledikten sonra **Save** seçeneğine tıklayın.
+
+    ![Dal değerlerini kaydedin](/images/hubspot-wait-reply-save-branch-values.png)
+  </Step>
+  <Step title="Koşullu dala şablon ekleyin">
+    Her dal değerine şablon eklemek için **+** düğmesine tıklayın. Kullanıcı bir düğmeye tıkladığında ilgili şablon tetiklenir.
+
+    ![Koşullu dala şablon ekleyin](/images/hubspot-wait-reply-add-template-condition-branch.png)
+  </Step>
+  <Step title="Şablonu kaydedin">
+    Dal değerinin şablonunu kaydetmek için **Save** seçeneğine tıklayın.
+
+    ![Şablonu kaydedin](/images/hubspot-wait-reply-save-branch-template.png)
+  </Step>
+  <Step title="İnceleyin ve etkinleştirin">
+    Tüm dal değerlerine şablon ekledikten sonra **Review and turn on** seçeneğine tıklayın.
+
+    ![İnceleyin ve etkinleştirin](/images/hubspot-wait-reply-review-and-turn-on.png)
+  </Step>
+  <Step title="Son incelemeyi yapın">
+    **Skip to turn on** veya ek kontroller için **Next** seçeneğine tıklayın.
+
+    ![Son inceleme](/images/1933597322.png)
+  </Step>
+  <Step title="İş akışını etkinleştirin">
+    **Turn on workflow** seçeneğine tıklayın.
+
+    ![İş akışını etkinleştirin](/images/1933597319.png)
+  </Step>
+</Steps>
+
+## İş akışınız hazır
+
+İş akışınız WhatsApp mesajları gönderebilir ve kişileri seçtikleri düğmeye göre yönlendirebilir.
+
+<Check>
+  Bir kişi kayıt ölçütlerini karşıladığında iş akışı tetiklenir ve yanıta karşılık gelen dalda devam eder.
+</Check>
+
+## İlgili kaynaklar
+
+<CardGroup cols={2}>
+  <Card title="İş akışlarıyla WhatsApp gönderme" icon="paper-plane" href="/tr/integrations/hubspot/create-workflow">
+    HubSpot'ta WhatsApp mesajları gönderme
+  </Card>
+  <Card title="İş akışı sorunlarını giderme" icon="wrench" href="/tr/integrations/hubspot/workflow-troubleshoot">
+    Yaygın sorunlar ve çözümleri
+  </Card>
+  <Card title="HubSpot değişkenleriyle şablon oluşturma" icon="file-code" href="/tr/waba/templates/how-to-create-template-with-hubspot-variables">
+    Şablonlarda HubSpot özelliklerini kullanma
+  </Card>
+  <Card title="Yayın kampanyaları" icon="bullhorn" href="/tr/waba/broadcasting/create-campaign">
+    Birden çok alıcıya WhatsApp mesajı gönderme
+  </Card>
+</CardGroup>
+
+## Yardıma mı ihtiyacınız var?
+
+Sorularınız için [support@eazybe.com](mailto:hey@eazybe.com) adresine yazabilirsiniz.

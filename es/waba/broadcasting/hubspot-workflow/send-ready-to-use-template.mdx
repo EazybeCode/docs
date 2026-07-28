@@ -1,0 +1,181 @@
+---
+title: "Enviar una Plantilla Lista para Usar"
+description: "Aprende a enviar una plantilla de WhatsApp lista para usar desde un flujo de trabajo de HubSpot mediante la integración de Eazybe."
+---
+
+Usa esta guía para configurar un flujo de trabajo de HubSpot que envíe una plantilla de WhatsApp preaprobada mediante la integración de Eazybe.
+
+## Requisitos previos
+
+Antes de configurar el flujo de trabajo, asegúrate de tener:
+
+<CardGroup cols={2}>
+  <Card title="Cuenta de HubSpot" icon="hubspot">
+    Una cuenta activa de HubSpot con acceso a flujos de trabajo
+  </Card>
+  <Card title="Integración de Eazybe" icon="plug">
+    WhatsApp Integration by Eazybe instalada en HubSpot
+  </Card>
+</CardGroup>
+
+## Crea tu flujo de trabajo de HubSpot
+
+<Steps>
+  <Step title="Accede a tu cuenta de HubSpot">
+    Inicia sesión en HubSpot para comenzar a configurar el flujo de trabajo.
+
+    ![Acceder a HubSpot](/images/1933597310.png)
+  </Step>
+  <Step title="Ve a Automatización">
+    Haz clic en **Automation** en el menú de navegación principal.
+
+    ![Ir a Automatización](/images/1933597303.png)
+  </Step>
+  <Step title="Selecciona Flujos de trabajo">
+    En el menú de automatización, selecciona **Workflows** para abrir el generador.
+
+    ![Seleccionar Flujos de trabajo](/images/1933597307.png)
+  </Step>
+  <Step title="Crea un nuevo flujo de trabajo">
+    Haz clic en **Create workflow** para comenzar una nueva automatización.
+
+    ![Crear flujo de trabajo](/images/1933597320.png)
+  </Step>
+  <Step title="Elige Desde cero">
+    Selecciona **From scratch** para crear un flujo de trabajo personalizado.
+
+    ![Elegir Desde cero](/images/1933597313.png)
+  </Step>
+  <Step title="Configura los criterios de filtro">
+    Haz clic en **Met filter criteria** para definir las condiciones de inscripción.
+
+    ![Configurar criterios de filtro](/images/1933597309.png)
+  </Step>
+  <Step title="Selecciona Contacto como activador">
+    Elige **Contact** como el tipo de objeto que activará el flujo de trabajo.
+
+    ![Seleccionar Contacto](/images/1933597302.png)
+  </Step>
+  <Step title="Accede a las propiedades del contacto">
+    Haz clic en **Contact properties** para configurar los criterios de inscripción.
+
+    ![Propiedades del contacto](/images/1933597316.png)
+  </Step>
+  <Step title="Busca una propiedad">
+    Busca la propiedad del contacto que deseas usar como activador.
+
+    ![Buscar una propiedad](/images/1933597306.png)
+  </Step>
+  <Step title="Elige el nombre de la propiedad">
+    Selecciona la propiedad que quieras usar; por ejemplo, **Company name**.
+
+    ![Elegir una propiedad](/images/1933597299.png)
+
+    <Info>
+      Puedes usar cualquier propiedad del contacto, como etapa del ciclo de vida, estado del lead o una propiedad personalizada.
+    </Info>
+  </Step>
+  <Step title="Configura las condiciones">
+    Define la condición, por ejemplo **is equal to any of**, y añade los valores en **Add values**.
+
+    ![Configurar condiciones](/images/1933597301.png)
+  </Step>
+  <Step title="Continúa al siguiente paso">
+    Haz clic en **Next** para continuar con la configuración de reinscripción.
+
+    ![Hacer clic en Siguiente](/images/1933597311.png)
+  </Step>
+  <Step title="Activa la reinscripción">
+    Activa **Re-enroll** si quieres que los contactos que ya cumplieron los criterios vuelvan a entrar.
+
+    ![Activar reinscripción](/images/1933597304.png)
+
+    <Warning>
+      Configura la reinscripción con cuidado para evitar enviar mensajes duplicados.
+    </Warning>
+  </Step>
+  <Step title="Guarda la configuración de inscripción">
+    Haz clic en **Save and continue** para guardar la configuración.
+
+    ![Guardar configuración](/images/1933597323.png)
+  </Step>
+  <Step title="Añade la integración de WhatsApp">
+    En el panel de acciones, selecciona **WhatsApp Integration by Eazybe**.
+
+    ![Integración de WhatsApp](/images/1933597315.png)
+  </Step>
+  <Step title="Número de teléfono del destinatario">
+    Haz clic en **Recipient Phone Number** y elige la propiedad de HubSpot que quieras usar: **Mobile phone number**, **Phone number** o **WhatsApp phone number**.
+
+    ![Campo Número de teléfono del destinatario](/images/hubspot-ready-to-use-recipient-phone-number.png)
+  </Step>
+  <Step title="Selecciona una propiedad de teléfono">
+    Elige **Mobile phone number**, **Phone number** o **WhatsApp phone number**.
+
+    ![Propiedades de teléfono disponibles](/images/hubspot-ready-to-use-select-phone-property.png)
+  </Step>
+  <Step title="Selecciona el usuario de WABA">
+    Selecciona el **WABA User** cuyo número de WhatsApp se usará para enviar la plantilla.
+
+    ![Selector de usuario de WABA](/images/hubspot-ready-to-use-select-waba-user.png)
+  </Step>
+  <Step title="Selecciona la plantilla">
+    Haz clic en **Select Template** y elige una plantilla de mensaje preaprobada.
+
+    ![Selector de plantillas](/images/hubspot-ready-to-use-select-template.png)
+  </Step>
+  <Step title="Guarda la acción">
+    Haz clic en **Save** para guardar los detalles de la acción.
+
+    ![Guardar la acción](/images/hubspot-ready-to-use-save-action.png)
+  </Step>
+  <Step title="Revisa y activa">
+    Haz clic en **Review and turn on** para abrir la revisión final.
+
+    ![Revisar y activar](/images/1933597308.png)
+  </Step>
+  <Step title="Configura las preferencias de inscripción">
+    Configura las preferencias de inscripción según los requisitos de tu campaña.
+
+    ![Preferencias de inscripción](/images/1933597318.png)
+  </Step>
+  <Step title="Revisión final">
+    Haz clic en **Skip to turn on** o en **Next** para realizar comprobaciones adicionales.
+
+    ![Revisión final](/images/1933597322.png)
+  </Step>
+  <Step title="Activa el flujo de trabajo">
+    Haz clic en **Turn on workflow** para activar la automatización.
+
+    ![Activar el flujo de trabajo](/images/1933597317.png)
+  </Step>
+</Steps>
+
+## Tu flujo de trabajo está listo
+
+Tu flujo de trabajo de HubSpot ya está configurado para enviar automáticamente mensajes de WhatsApp a los contactos que cumplan los criterios definidos.
+
+<Check>
+  Los mensajes de WhatsApp se activarán automáticamente cuando un contacto cumpla los criterios de inscripción.
+</Check>
+
+## Recursos relacionados
+
+<CardGroup cols={2}>
+  <Card title="Enviar WhatsApp mediante flujos de trabajo" icon="paper-plane" href="/es/integrations/hubspot/create-workflow">
+    Obtén más información sobre el envío de mensajes de WhatsApp mediante HubSpot
+  </Card>
+  <Card title="Solucionar problemas del flujo de trabajo" icon="wrench" href="/es/integrations/hubspot/workflow-troubleshoot">
+    Problemas comunes y sus soluciones
+  </Card>
+  <Card title="Crear plantillas con variables de HubSpot" icon="file-code" href="/es/waba/templates/how-to-create-template-with-hubspot-variables">
+    Usa propiedades de contactos de HubSpot en tus plantillas
+  </Card>
+  <Card title="Campañas de difusión" icon="bullhorn" href="/es/waba/broadcasting/send-broadcast">
+    Envía mensajes masivos de WhatsApp
+  </Card>
+</CardGroup>
+
+## ¿Necesitas ayuda?
+
+Si tienes alguna pregunta o necesitas ayuda, escribe a [support@eazybe.com](mailto:hey@eazybe.com).

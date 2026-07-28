@@ -779,7 +779,13 @@
                       "es/waba/broadcasting/create-campaign",
                       "es/waba/broadcasting/send-broadcast",
                       "es/waba/broadcasting/create-broadcast-with-extension",
-                      "es/waba/broadcasting/hubspot-workflow",
+                      {
+                        "group": "Flujos de Trabajo de HubSpot para Campañas de WhatsApp",
+                        "pages": [
+                          "es/waba/broadcasting/hubspot-workflow/send-ready-to-use-template",
+                          "es/waba/broadcasting/hubspot-workflow/send-wait-and-reply-template"
+                        ]
+                      },
                       "es/waba/broadcasting/analytics",
                       "es/waba/broadcasting/template-based-chatbot"
                     ]
@@ -1352,7 +1358,13 @@
                       "pt/waba/broadcasting/create-campaign",
                       "pt/waba/broadcasting/send-broadcast",
                       "pt/waba/broadcasting/create-broadcast-with-extension",
-                      "pt/waba/broadcasting/hubspot-workflow",
+                      {
+                        "group": "Fluxos de Trabalho do HubSpot para Campanhas de WhatsApp",
+                        "pages": [
+                          "pt/waba/broadcasting/hubspot-workflow/send-ready-to-use-template",
+                          "pt/waba/broadcasting/hubspot-workflow/send-wait-and-reply-template"
+                        ]
+                      },
                       "pt/waba/broadcasting/analytics",
                       "pt/waba/broadcasting/template-based-chatbot"
                     ]
@@ -1932,7 +1944,13 @@
                       "tr/waba/broadcasting/create-campaign",
                       "tr/waba/broadcasting/send-broadcast",
                       "tr/waba/broadcasting/create-broadcast-with-extension",
-                      "tr/waba/broadcasting/hubspot-workflow",
+                      {
+                        "group": "WhatsApp Kampanyaları için HubSpot İş Akışları",
+                        "pages": [
+                          "tr/waba/broadcasting/hubspot-workflow/send-ready-to-use-template",
+                          "tr/waba/broadcasting/hubspot-workflow/send-wait-and-reply-template"
+                        ]
+                      },
                       "tr/waba/broadcasting/analytics",
                       "tr/waba/broadcasting/template-based-chatbot"
                     ]

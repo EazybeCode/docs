@@ -1,0 +1,220 @@
+---
+title: "Enviar una Plantilla y Esperar una Respuesta"
+description: "Aprende a enviar una plantilla de WhatsApp, esperar una respuesta y crear ramas condicionales desde un flujo de trabajo de HubSpot mediante Eazybe."
+---
+
+Usa esta guía para configurar un flujo de trabajo de HubSpot que envíe una plantilla de WhatsApp y continúe según la respuesta del usuario.
+
+## Requisitos previos
+
+Antes de configurar el flujo de trabajo, asegúrate de tener:
+
+<CardGroup cols={2}>
+  <Card title="Cuenta de HubSpot" icon="hubspot">
+    Una cuenta activa de HubSpot con acceso a flujos de trabajo
+  </Card>
+  <Card title="Integración de Eazybe" icon="plug">
+    WhatsApp Integration by Eazybe instalada en HubSpot
+  </Card>
+</CardGroup>
+
+## Crea tu flujo de trabajo de HubSpot
+
+<Steps>
+  <Step title="Accede a tu cuenta de HubSpot">
+    Inicia sesión en HubSpot para comenzar a configurar el flujo de trabajo.
+
+    ![Acceder a HubSpot](/images/hubspot-wait-reply-access-account.png)
+  </Step>
+  <Step title="Ve a Automatización">
+    Haz clic en **Automation** en el menú principal.
+
+    ![Ir a Automatización](/images/1933597310.png)
+  </Step>
+  <Step title="Selecciona Flujos de trabajo">
+    Selecciona **Workflows** para abrir el generador.
+
+    ![Seleccionar Flujos de trabajo](/images/1933597303.png)
+  </Step>
+  <Step title="Crea un nuevo flujo de trabajo">
+    Haz clic en **Create workflow** para comenzar una nueva automatización.
+
+    ![Crear flujo de trabajo](/images/1933597307.png)
+  </Step>
+  <Step title="Elige Desde cero">
+    Selecciona **From scratch** para crear un flujo de trabajo personalizado.
+
+    ![Elegir Desde cero](/images/1933597320.png)
+  </Step>
+  <Step title="Configura los criterios de filtro">
+    Haz clic en **Met filter criteria** para definir las condiciones de inscripción.
+
+    ![Configurar criterios de filtro](/images/1933597313.png)
+  </Step>
+  <Step title="Selecciona un objeto del flujo de trabajo">
+    Elige **Contacts**, **Deals** o **Leads** como tipo de objeto.
+
+    ![Seleccionar un objeto](/images/1933597309.png)
+  </Step>
+  <Step title="Accede a las propiedades del contacto">
+    Haz clic en **Contact properties** para configurar los criterios de inscripción.
+
+    ![Propiedades del contacto](/images/1933597302.png)
+  </Step>
+  <Step title="Busca una propiedad">
+    Busca la propiedad que deseas usar como activador.
+
+    ![Buscar una propiedad](/images/1933597316.png)
+  </Step>
+  <Step title="Elige el nombre de la propiedad">
+    Selecciona la propiedad que quieras usar; por ejemplo, **Company name**.
+
+    ![Elegir una propiedad](/images/1933597306.png)
+
+    <Info>
+      Puedes usar cualquier propiedad del contacto, como etapa del ciclo de vida, estado del lead o una propiedad personalizada.
+    </Info>
+  </Step>
+  <Step title="Configura las condiciones">
+    Define la condición, por ejemplo **is equal to any of**, y añade los valores en **Add values**.
+
+    ![Configurar condiciones](/images/1933597299.png)
+  </Step>
+  <Step title="Continúa al siguiente paso">
+    Haz clic en **Next** para continuar con la configuración de reinscripción.
+
+    ![Hacer clic en Siguiente](/images/1933597301.png)
+  </Step>
+  <Step title="Activa la reinscripción">
+    Activa **Re-enroll** si quieres que los contactos vuelvan a entrar en el flujo.
+
+    ![Activar reinscripción](/images/1933597311.png)
+
+    <Warning>
+      Configura la reinscripción con cuidado para evitar mensajes duplicados.
+    </Warning>
+  </Step>
+  <Step title="Guarda la configuración de inscripción">
+    Haz clic en **Save and continue** para guardar la configuración.
+
+    ![Guardar configuración](/images/1933597304.png)
+  </Step>
+  <Step title="Añade la integración de WhatsApp">
+    Selecciona **WhatsApp Integration by Eazybe** en el panel de acciones.
+
+    ![Integración de WhatsApp](/images/1933597323.png)
+  </Step>
+  <Step title="Selecciona la acción de plantilla">
+    Haz clic en **Send WhatsApp & Wait for Reply** para elegir una plantilla preaprobada.
+
+    ![Seleccionar Enviar WhatsApp y esperar respuesta](/images/hubspot-wait-reply-select-action.png)
+  </Step>
+  <Step title="Número de teléfono del destinatario">
+    Haz clic en **Recipient Phone Number** y elige **Mobile phone number**, **Phone number** o **WhatsApp phone number**.
+
+    ![Número de teléfono del destinatario](/images/hubspot-wait-reply-recipient-phone-number.png)
+
+    <Tip>
+      Guarda los números en formato internacional; por ejemplo, +1234567890.
+    </Tip>
+  </Step>
+  <Step title="Selecciona una propiedad de teléfono">
+    Elige **Mobile phone number**, **Phone number** o **WhatsApp phone number**.
+
+    ![Seleccionar una propiedad de teléfono](/images/hubspot-wait-reply-select-phone-property.png)
+  </Step>
+  <Step title="Elige el número de WABA">
+    Selecciona un usuario de WABA entre las opciones disponibles.
+
+    ![Elegir un número de WABA](/images/hubspot-wait-reply-choose-whatsapp-template.png)
+  </Step>
+  <Step title="Elige una plantilla con botones">
+    Selecciona una plantilla con botones aprobada para crear una rama condicional.
+
+    ![Elegir una plantilla con botones](/images/hubspot-wait-reply-select-whatsapp-template.png)
+  </Step>
+  <Step title="Guarda la selección de plantilla">
+    Haz clic en **Save** para confirmar la selección.
+
+    ![Guardar la selección de plantilla](/images/hubspot-wait-reply-save-template-selection.png)
+  </Step>
+  <Step title="Crea una nueva rama">
+    Haz clic en **+** y crea una nueva rama.
+
+    ![Crear una nueva rama](/images/hubspot-wait-reply-create-new-branch.png)
+  </Step>
+  <Step title="Selecciona una rama">
+    Elige un tipo de rama para **enviar contactos a ramas**.
+
+    ![Seleccionar un tipo de rama](/images/hubspot-wait-reply-select-branch.png)
+  </Step>
+  <Step title="Selecciona el valor de la propiedad">
+    Elige la propiedad **User WhatsApp Reply** de **1. Eazybe: Send WhatsApp & Wait for Reply**.
+
+    ![Seleccionar la propiedad de respuesta](/images/hubspot-wait-reply-select-property-value.png)
+  </Step>
+  <Step title="Define el valor de la condición">
+    Añade un valor de condición de rama basado en el nombre del botón de la plantilla.
+
+    ![Añadir un valor de condición](/images/hubspot-wait-reply-branch-condition-value.png)
+  </Step>
+  <Step title="Guarda los valores de la rama">
+    Haz clic en **Save** después de añadir los valores.
+
+    ![Guardar los valores de la rama](/images/hubspot-wait-reply-save-branch-values.png)
+  </Step>
+  <Step title="Añade una plantilla a la rama condicional">
+    Haz clic en **+** para añadir una plantilla a cada valor. Cuando el usuario pulsa un botón, se activa la plantilla correspondiente.
+
+    ![Añadir una plantilla a la rama](/images/hubspot-wait-reply-add-template-condition-branch.png)
+  </Step>
+  <Step title="Guarda la plantilla">
+    Haz clic en **Save** para guardar la plantilla del valor de rama.
+
+    ![Guardar la plantilla](/images/hubspot-wait-reply-save-branch-template.png)
+  </Step>
+  <Step title="Revisa y activa">
+    Haz clic en **Review and turn on** después de añadir plantillas para todos los valores.
+
+    ![Revisar y activar el flujo de trabajo](/images/hubspot-wait-reply-review-and-turn-on.png)
+  </Step>
+  <Step title="Revisión final">
+    Haz clic en **Skip to turn on** o en **Next** para realizar comprobaciones adicionales.
+
+    ![Revisión final](/images/1933597322.png)
+  </Step>
+  <Step title="Activa el flujo de trabajo">
+    Haz clic en **Turn on workflow** para activar la automatización.
+
+    ![Activar el flujo de trabajo](/images/1933597319.png)
+  </Step>
+</Steps>
+
+## Tu flujo de trabajo está listo
+
+Tu flujo de trabajo de HubSpot ya puede enviar mensajes de WhatsApp y dirigir a los contactos según el botón que pulsen.
+
+<Check>
+  El flujo se activará cuando un contacto cumpla los criterios y continuará por la rama correspondiente a su respuesta.
+</Check>
+
+## Recursos relacionados
+
+<CardGroup cols={2}>
+  <Card title="Enviar WhatsApp mediante flujos de trabajo" icon="paper-plane" href="/es/integrations/hubspot/create-workflow">
+    Obtén más información sobre los mensajes de WhatsApp en HubSpot
+  </Card>
+  <Card title="Solucionar problemas del flujo de trabajo" icon="wrench" href="/es/integrations/hubspot/workflow-troubleshoot">
+    Problemas comunes y sus soluciones
+  </Card>
+  <Card title="Crear plantillas con variables de HubSpot" icon="file-code" href="/es/waba/templates/how-to-create-template-with-hubspot-variables">
+    Usa propiedades de HubSpot en tus plantillas
+  </Card>
+  <Card title="Campañas de difusión" icon="bullhorn" href="/es/waba/broadcasting/send-broadcast">
+    Envía mensajes masivos de WhatsApp
+  </Card>
+</CardGroup>
+
+## ¿Necesitas ayuda?
+
+Si tienes alguna pregunta o necesitas ayuda, escribe a [support@eazybe.com](mailto:hey@eazybe.com).
