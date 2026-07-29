@@ -1,0 +1,19 @@
+/* Meta Wrapper pages document failure handling in the response table itself. */
+html[data-current-path*="/api-reference/meta/operations/"]
+  .api-section-heading-title
+  + .flex.items-center {
+  display: none;
+}
+
+/*
+ * JSON and multipart request bodies are documented as code inside the root
+ * object description. Keep that code block and hide its generated field list.
+ */
+html[data-current-path*="/api-reference/meta/operations/"]
+  .api-section
+  > .object-param-field
+  > div
+  > div:has(> div pre)
+  > div:not(:has(pre)) {
+  display: none;
+}

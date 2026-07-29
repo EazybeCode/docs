@@ -646,7 +646,7 @@
                 ]
               },
               {
-                "group": "Endpoints",
+                "group": "API Documentation",
                 "icon": "server",
                 "pages": [
                   "en/api-reference/endpoints/broadcast-api",
@@ -654,6 +654,134 @@
                   "api-reference/endpoints/contacts",
                   "api-reference/endpoints/conversations",
                   "api-reference/endpoints/templates"
+                ]
+              },
+              {
+                "group": "Meta API Wrapper",
+                "icon": "whatsapp",
+                "openapi": "/api-reference/meta/openapi.yaml",
+                "pages": [
+                  "api-reference/meta/overview",
+                  "api-reference/meta/quickstart",
+                  {
+                    "group": "Phone numbers",
+                    "pages": [
+                      "GET /meta/phone-numbers",
+                      "GET /meta/phone-numbers/{phoneNumberId}/details",
+                      "GET /meta/wabas/{wabaId}/details"
+                    ]
+                  },
+                  {
+                    "group": "Messaging",
+                    "pages": [
+                      "POST /meta/phone-numbers/{phoneNumberId}/messages/template",
+                      "POST /meta/phone-numbers/{phoneNumberId}/messages/marketing-template",
+                      "POST /meta/phone-numbers/{phoneNumberId}/messages/template/bulk",
+                      "POST /meta/phone-numbers/{phoneNumberId}/messages/free-form",
+                      "POST /meta/phone-numbers/{phoneNumberId}/messages",
+                      "POST /meta/phone-numbers/{phoneNumberId}/messages/read",
+                      "POST /meta/phone-numbers/{phoneNumberId}/messages/typing-indicator",
+                      "POST /meta/phone-numbers/{phoneNumberId}/messages/reaction",
+                      "POST /meta/phone-numbers/{phoneNumberId}/messages/contacts"
+                    ]
+                  },
+                  {
+                    "group": "Templates",
+                    "pages": [
+                      "GET /meta/wabas/{wabaId}/templates",
+                      "GET /meta/wabas/{wabaId}/templates/all",
+                      "POST /meta/wabas/{wabaId}/templates",
+                      "POST /meta/wabas/{wabaId}/templates/library",
+                      "POST /meta/wabas/{wabaId}/templates/migrate",
+                      "POST /meta/wabas/{wabaId}/templates/{templateIdOrName}",
+                      "DELETE /meta/wabas/{wabaId}/templates/{templateIdOrName}",
+                      "GET /meta/wabas/{wabaId}/templates/compare"
+                    ]
+                  },
+                  {
+                    "group": "Media",
+                    "pages": [
+                      "POST /meta/phone-numbers/{phoneNumberId}/media",
+                      "GET /meta/media/{mediaId}",
+                      "DELETE /meta/media/{mediaId}"
+                    ]
+                  },
+                  {
+                    "group": "Webhooks",
+                    "pages": [
+                      "GET /meta/wabas/{wabaId}/webhook-subscriptions",
+                      "POST /meta/wabas/{wabaId}/webhook-subscriptions",
+                      "DELETE /meta/wabas/{wabaId}/webhook-subscriptions"
+                    ]
+                  },
+                  {
+                    "group": "Analytics",
+                    "pages": [
+                      "GET /meta/wabas/{wabaId}/analytics",
+                      "GET /meta/wabas/{wabaId}/template-analytics",
+                      "GET /meta/wabas/{wabaId}/conversation-analytics",
+                      "GET /meta/wabas/{wabaId}/pricing-analytics"
+                    ]
+                  },
+                  {
+                    "group": "Profiles & settings",
+                    "pages": [
+                      "GET /meta/phone-numbers/{phoneNumberId}/business-profile",
+                      "POST /meta/phone-numbers/{phoneNumberId}/business-profile",
+                      "GET /meta/phone-numbers/{phoneNumberId}/settings",
+                      "POST /meta/phone-numbers/{phoneNumberId}/settings"
+                    ]
+                  },
+                  {
+                    "group": "Automation",
+                    "pages": [
+                      "GET /meta/phone-numbers/{phoneNumberId}/conversational-automation",
+                      "POST /meta/phone-numbers/{phoneNumberId}/conversational-automation"
+                    ]
+                  },
+                  {
+                    "group": "QR codes",
+                    "pages": [
+                      "GET /meta/phone-numbers/{phoneNumberId}/qr-codes",
+                      "POST /meta/phone-numbers/{phoneNumberId}/qr-codes",
+                      "POST /meta/phone-numbers/{phoneNumberId}/qr-codes/{code}",
+                      "DELETE /meta/phone-numbers/{phoneNumberId}/qr-codes/{code}"
+                    ]
+                  },
+                  {
+                    "group": "Flows",
+                    "pages": [
+                      "GET /meta/wabas/{wabaId}/flows",
+                      "POST /meta/wabas/{wabaId}/flows",
+                      "GET /meta/wabas/{wabaId}/flows/{flowId}",
+                      "POST /meta/wabas/{wabaId}/flows/{flowId}",
+                      "POST /meta/wabas/{wabaId}/flows/{flowId}/assets",
+                      "POST /meta/wabas/{wabaId}/flows/{flowId}/publish",
+                      "POST /meta/wabas/{wabaId}/flows/{flowId}/deprecate",
+                      "DELETE /meta/wabas/{wabaId}/flows/{flowId}"
+                    ]
+                  },
+                  {
+                    "group": "Number administration",
+                    "pages": [
+                      "POST /meta/phone-numbers/{phoneNumberId}/request-code",
+                      "POST /meta/phone-numbers/{phoneNumberId}/verify-code",
+                      "POST /meta/phone-numbers/{phoneNumberId}/register",
+                      "POST /meta/phone-numbers/{phoneNumberId}/deregister",
+                      "POST /meta/phone-numbers/{phoneNumberId}/two-step-verification",
+                      "DELETE /meta/phone-numbers/{phoneNumberId}/two-step-verification",
+                      "POST /meta/phone-numbers/{phoneNumberId}/coexistence/contacts-sync",
+                      "POST /meta/phone-numbers/{phoneNumberId}/coexistence/history-sync"
+                    ]
+                  },
+                  {
+                    "group": "Block list",
+                    "pages": [
+                      "GET /meta/phone-numbers/{phoneNumberId}/blocked-users",
+                      "POST /meta/phone-numbers/{phoneNumberId}/blocked-users",
+                      "DELETE /meta/phone-numbers/{phoneNumberId}/blocked-users"
+                    ]
+                  }
                 ]
               },
               {
@@ -1239,9 +1367,137 @@
                 "pages": ["es/api-reference/employees-bulk-remove"]
               },
               {
-                "group": "Endpoints",
+                "group": "API Documentation",
                 "icon": "server",
                 "pages": ["es/api-reference/api-de-transmision"]
+              },
+              {
+                "group": "Wrapper de API Meta",
+                "icon": "whatsapp",
+                "openapi": "/es/api-reference/meta/openapi.json",
+                "pages": [
+                  "es/api-reference/meta/overview",
+                  "es/api-reference/meta/quickstart",
+                  {
+                    "group": "Números de teléfono",
+                    "pages": [
+                      "es/api-reference/meta/operations/get-phone-numbers",
+                      "es/api-reference/meta/operations/get-phone-number-details",
+                      "es/api-reference/meta/operations/get-waba-details"
+                    ]
+                  },
+                  {
+                    "group": "Mensajería",
+                    "pages": [
+                      "es/api-reference/meta/operations/send-template-message",
+                      "es/api-reference/meta/operations/send-marketing-template",
+                      "es/api-reference/meta/operations/send-bulk-template",
+                      "es/api-reference/meta/operations/send-free-form-message",
+                      "es/api-reference/meta/operations/send-message",
+                      "es/api-reference/meta/operations/mark-message-read",
+                      "es/api-reference/meta/operations/show-typing-indicator",
+                      "es/api-reference/meta/operations/react-to-message",
+                      "es/api-reference/meta/operations/send-contact-card"
+                    ]
+                  },
+                  {
+                    "group": "Plantillas",
+                    "pages": [
+                      "es/api-reference/meta/operations/list-templates",
+                      "es/api-reference/meta/operations/list-all-templates",
+                      "es/api-reference/meta/operations/create-template",
+                      "es/api-reference/meta/operations/create-template-from-library",
+                      "es/api-reference/meta/operations/migrate-templates",
+                      "es/api-reference/meta/operations/edit-template",
+                      "es/api-reference/meta/operations/delete-template",
+                      "es/api-reference/meta/operations/compare-templates"
+                    ]
+                  },
+                  {
+                    "group": "Archivos multimedia",
+                    "pages": [
+                      "es/api-reference/meta/operations/upload-media",
+                      "es/api-reference/meta/operations/get-media",
+                      "es/api-reference/meta/operations/delete-media"
+                    ]
+                  },
+                  {
+                    "group": "Webhooks",
+                    "pages": [
+                      "es/api-reference/meta/operations/list-webhook-subscriptions",
+                      "es/api-reference/meta/operations/create-webhook-subscription",
+                      "es/api-reference/meta/operations/delete-webhook-subscription"
+                    ]
+                  },
+                  {
+                    "group": "Analíticas",
+                    "pages": [
+                      "es/api-reference/meta/operations/get-messaging-analytics",
+                      "es/api-reference/meta/operations/get-template-analytics",
+                      "es/api-reference/meta/operations/get-conversation-analytics",
+                      "es/api-reference/meta/operations/get-pricing-analytics"
+                    ]
+                  },
+                  {
+                    "group": "Perfiles y configuración",
+                    "pages": [
+                      "es/api-reference/meta/operations/get-business-profile",
+                      "es/api-reference/meta/operations/update-business-profile",
+                      "es/api-reference/meta/operations/get-phone-number-settings",
+                      "es/api-reference/meta/operations/update-phone-number-settings"
+                    ]
+                  },
+                  {
+                    "group": "Automatización",
+                    "pages": [
+                      "es/api-reference/meta/operations/get-conversational-automation",
+                      "es/api-reference/meta/operations/update-conversational-automation"
+                    ]
+                  },
+                  {
+                    "group": "Códigos QR",
+                    "pages": [
+                      "es/api-reference/meta/operations/list-qr-codes",
+                      "es/api-reference/meta/operations/create-qr-code",
+                      "es/api-reference/meta/operations/update-qr-code",
+                      "es/api-reference/meta/operations/delete-qr-code"
+                    ]
+                  },
+                  {
+                    "group": "Flows",
+                    "pages": [
+                      "es/api-reference/meta/operations/list-flows",
+                      "es/api-reference/meta/operations/create-flow",
+                      "es/api-reference/meta/operations/get-flow",
+                      "es/api-reference/meta/operations/update-flow",
+                      "es/api-reference/meta/operations/upload-flow-asset",
+                      "es/api-reference/meta/operations/publish-flow",
+                      "es/api-reference/meta/operations/deprecate-flow",
+                      "es/api-reference/meta/operations/delete-flow"
+                    ]
+                  },
+                  {
+                    "group": "Administración de números",
+                    "pages": [
+                      "es/api-reference/meta/operations/request-verification-code",
+                      "es/api-reference/meta/operations/verify-phone-number-code",
+                      "es/api-reference/meta/operations/register-phone-number",
+                      "es/api-reference/meta/operations/deregister-phone-number",
+                      "es/api-reference/meta/operations/set-two-step-verification",
+                      "es/api-reference/meta/operations/remove-two-step-verification",
+                      "es/api-reference/meta/operations/sync-coexistence-contacts",
+                      "es/api-reference/meta/operations/sync-coexistence-history"
+                    ]
+                  },
+                  {
+                    "group": "Lista de bloqueados",
+                    "pages": [
+                      "es/api-reference/meta/operations/list-blocked-users",
+                      "es/api-reference/meta/operations/block-users",
+                      "es/api-reference/meta/operations/unblock-users"
+                    ]
+                  }
+                ]
               }
             ]
           }
@@ -1825,9 +2081,137 @@
                 "pages": ["pt/api-reference/employees-bulk-remove"]
               },
               {
-                "group": "Endpoints",
+                "group": "API Documentation",
                 "icon": "server",
                 "pages": ["pt/api-reference/api-de-transmissao"]
+              },
+              {
+                "group": "Wrapper da API Meta",
+                "icon": "whatsapp",
+                "openapi": "/pt/api-reference/meta/openapi.json",
+                "pages": [
+                  "pt/api-reference/meta/overview",
+                  "pt/api-reference/meta/quickstart",
+                  {
+                    "group": "Números de telefone",
+                    "pages": [
+                      "pt/api-reference/meta/operations/get-phone-numbers",
+                      "pt/api-reference/meta/operations/get-phone-number-details",
+                      "pt/api-reference/meta/operations/get-waba-details"
+                    ]
+                  },
+                  {
+                    "group": "Mensagens",
+                    "pages": [
+                      "pt/api-reference/meta/operations/send-template-message",
+                      "pt/api-reference/meta/operations/send-marketing-template",
+                      "pt/api-reference/meta/operations/send-bulk-template",
+                      "pt/api-reference/meta/operations/send-free-form-message",
+                      "pt/api-reference/meta/operations/send-message",
+                      "pt/api-reference/meta/operations/mark-message-read",
+                      "pt/api-reference/meta/operations/show-typing-indicator",
+                      "pt/api-reference/meta/operations/react-to-message",
+                      "pt/api-reference/meta/operations/send-contact-card"
+                    ]
+                  },
+                  {
+                    "group": "Modelos",
+                    "pages": [
+                      "pt/api-reference/meta/operations/list-templates",
+                      "pt/api-reference/meta/operations/list-all-templates",
+                      "pt/api-reference/meta/operations/create-template",
+                      "pt/api-reference/meta/operations/create-template-from-library",
+                      "pt/api-reference/meta/operations/migrate-templates",
+                      "pt/api-reference/meta/operations/edit-template",
+                      "pt/api-reference/meta/operations/delete-template",
+                      "pt/api-reference/meta/operations/compare-templates"
+                    ]
+                  },
+                  {
+                    "group": "Mídia",
+                    "pages": [
+                      "pt/api-reference/meta/operations/upload-media",
+                      "pt/api-reference/meta/operations/get-media",
+                      "pt/api-reference/meta/operations/delete-media"
+                    ]
+                  },
+                  {
+                    "group": "Webhooks",
+                    "pages": [
+                      "pt/api-reference/meta/operations/list-webhook-subscriptions",
+                      "pt/api-reference/meta/operations/create-webhook-subscription",
+                      "pt/api-reference/meta/operations/delete-webhook-subscription"
+                    ]
+                  },
+                  {
+                    "group": "Análises",
+                    "pages": [
+                      "pt/api-reference/meta/operations/get-messaging-analytics",
+                      "pt/api-reference/meta/operations/get-template-analytics",
+                      "pt/api-reference/meta/operations/get-conversation-analytics",
+                      "pt/api-reference/meta/operations/get-pricing-analytics"
+                    ]
+                  },
+                  {
+                    "group": "Perfis e configurações",
+                    "pages": [
+                      "pt/api-reference/meta/operations/get-business-profile",
+                      "pt/api-reference/meta/operations/update-business-profile",
+                      "pt/api-reference/meta/operations/get-phone-number-settings",
+                      "pt/api-reference/meta/operations/update-phone-number-settings"
+                    ]
+                  },
+                  {
+                    "group": "Automação",
+                    "pages": [
+                      "pt/api-reference/meta/operations/get-conversational-automation",
+                      "pt/api-reference/meta/operations/update-conversational-automation"
+                    ]
+                  },
+                  {
+                    "group": "Códigos QR",
+                    "pages": [
+                      "pt/api-reference/meta/operations/list-qr-codes",
+                      "pt/api-reference/meta/operations/create-qr-code",
+                      "pt/api-reference/meta/operations/update-qr-code",
+                      "pt/api-reference/meta/operations/delete-qr-code"
+                    ]
+                  },
+                  {
+                    "group": "Flows",
+                    "pages": [
+                      "pt/api-reference/meta/operations/list-flows",
+                      "pt/api-reference/meta/operations/create-flow",
+                      "pt/api-reference/meta/operations/get-flow",
+                      "pt/api-reference/meta/operations/update-flow",
+                      "pt/api-reference/meta/operations/upload-flow-asset",
+                      "pt/api-reference/meta/operations/publish-flow",
+                      "pt/api-reference/meta/operations/deprecate-flow",
+                      "pt/api-reference/meta/operations/delete-flow"
+                    ]
+                  },
+                  {
+                    "group": "Administração de números",
+                    "pages": [
+                      "pt/api-reference/meta/operations/request-verification-code",
+                      "pt/api-reference/meta/operations/verify-phone-number-code",
+                      "pt/api-reference/meta/operations/register-phone-number",
+                      "pt/api-reference/meta/operations/deregister-phone-number",
+                      "pt/api-reference/meta/operations/set-two-step-verification",
+                      "pt/api-reference/meta/operations/remove-two-step-verification",
+                      "pt/api-reference/meta/operations/sync-coexistence-contacts",
+                      "pt/api-reference/meta/operations/sync-coexistence-history"
+                    ]
+                  },
+                  {
+                    "group": "Lista de bloqueados",
+                    "pages": [
+                      "pt/api-reference/meta/operations/list-blocked-users",
+                      "pt/api-reference/meta/operations/block-users",
+                      "pt/api-reference/meta/operations/unblock-users"
+                    ]
+                  }
+                ]
               }
             ]
           }
@@ -2411,15 +2795,153 @@
                 "pages": ["tr/api-reference/employees-bulk-remove"]
               },
               {
-                "group": "Endpoints",
+                "group": "API Documentation",
                 "icon": "server",
                 "pages": ["tr/api-reference/yayin-api-si"]
+              },
+              {
+                "group": "Meta API Katmanı",
+                "icon": "whatsapp",
+                "openapi": "/tr/api-reference/meta/openapi.json",
+                "pages": [
+                  "tr/api-reference/meta/overview",
+                  "tr/api-reference/meta/quickstart",
+                  {
+                    "group": "Telefon numaraları",
+                    "pages": [
+                      "tr/api-reference/meta/operations/get-phone-numbers",
+                      "tr/api-reference/meta/operations/get-phone-number-details",
+                      "tr/api-reference/meta/operations/get-waba-details"
+                    ]
+                  },
+                  {
+                    "group": "Mesajlaşma",
+                    "pages": [
+                      "tr/api-reference/meta/operations/send-template-message",
+                      "tr/api-reference/meta/operations/send-marketing-template",
+                      "tr/api-reference/meta/operations/send-bulk-template",
+                      "tr/api-reference/meta/operations/send-free-form-message",
+                      "tr/api-reference/meta/operations/send-message",
+                      "tr/api-reference/meta/operations/mark-message-read",
+                      "tr/api-reference/meta/operations/show-typing-indicator",
+                      "tr/api-reference/meta/operations/react-to-message",
+                      "tr/api-reference/meta/operations/send-contact-card"
+                    ]
+                  },
+                  {
+                    "group": "Şablonlar",
+                    "pages": [
+                      "tr/api-reference/meta/operations/list-templates",
+                      "tr/api-reference/meta/operations/list-all-templates",
+                      "tr/api-reference/meta/operations/create-template",
+                      "tr/api-reference/meta/operations/create-template-from-library",
+                      "tr/api-reference/meta/operations/migrate-templates",
+                      "tr/api-reference/meta/operations/edit-template",
+                      "tr/api-reference/meta/operations/delete-template",
+                      "tr/api-reference/meta/operations/compare-templates"
+                    ]
+                  },
+                  {
+                    "group": "Medya",
+                    "pages": [
+                      "tr/api-reference/meta/operations/upload-media",
+                      "tr/api-reference/meta/operations/get-media",
+                      "tr/api-reference/meta/operations/delete-media"
+                    ]
+                  },
+                  {
+                    "group": "Webhook'lar",
+                    "pages": [
+                      "tr/api-reference/meta/operations/list-webhook-subscriptions",
+                      "tr/api-reference/meta/operations/create-webhook-subscription",
+                      "tr/api-reference/meta/operations/delete-webhook-subscription"
+                    ]
+                  },
+                  {
+                    "group": "Analizler",
+                    "pages": [
+                      "tr/api-reference/meta/operations/get-messaging-analytics",
+                      "tr/api-reference/meta/operations/get-template-analytics",
+                      "tr/api-reference/meta/operations/get-conversation-analytics",
+                      "tr/api-reference/meta/operations/get-pricing-analytics"
+                    ]
+                  },
+                  {
+                    "group": "Profiller ve ayarlar",
+                    "pages": [
+                      "tr/api-reference/meta/operations/get-business-profile",
+                      "tr/api-reference/meta/operations/update-business-profile",
+                      "tr/api-reference/meta/operations/get-phone-number-settings",
+                      "tr/api-reference/meta/operations/update-phone-number-settings"
+                    ]
+                  },
+                  {
+                    "group": "Otomasyon",
+                    "pages": [
+                      "tr/api-reference/meta/operations/get-conversational-automation",
+                      "tr/api-reference/meta/operations/update-conversational-automation"
+                    ]
+                  },
+                  {
+                    "group": "QR kodları",
+                    "pages": [
+                      "tr/api-reference/meta/operations/list-qr-codes",
+                      "tr/api-reference/meta/operations/create-qr-code",
+                      "tr/api-reference/meta/operations/update-qr-code",
+                      "tr/api-reference/meta/operations/delete-qr-code"
+                    ]
+                  },
+                  {
+                    "group": "Flows",
+                    "pages": [
+                      "tr/api-reference/meta/operations/list-flows",
+                      "tr/api-reference/meta/operations/create-flow",
+                      "tr/api-reference/meta/operations/get-flow",
+                      "tr/api-reference/meta/operations/update-flow",
+                      "tr/api-reference/meta/operations/upload-flow-asset",
+                      "tr/api-reference/meta/operations/publish-flow",
+                      "tr/api-reference/meta/operations/deprecate-flow",
+                      "tr/api-reference/meta/operations/delete-flow"
+                    ]
+                  },
+                  {
+                    "group": "Numara yönetimi",
+                    "pages": [
+                      "tr/api-reference/meta/operations/request-verification-code",
+                      "tr/api-reference/meta/operations/verify-phone-number-code",
+                      "tr/api-reference/meta/operations/register-phone-number",
+                      "tr/api-reference/meta/operations/deregister-phone-number",
+                      "tr/api-reference/meta/operations/set-two-step-verification",
+                      "tr/api-reference/meta/operations/remove-two-step-verification",
+                      "tr/api-reference/meta/operations/sync-coexistence-contacts",
+                      "tr/api-reference/meta/operations/sync-coexistence-history"
+                    ]
+                  },
+                  {
+                    "group": "Engellenenler listesi",
+                    "pages": [
+                      "tr/api-reference/meta/operations/list-blocked-users",
+                      "tr/api-reference/meta/operations/block-users",
+                      "tr/api-reference/meta/operations/unblock-users"
+                    ]
+                  }
+                ]
               }
             ]
           }
         ]
       }
     ]
+  },
+  "api": {
+    "playground": {
+      "display": "simple"
+    },
+    "examples": {
+      "languages": [
+        "curl"
+      ]
+    }
   },
   "footerSocials": {
     "linkedin": "https://linkedin.com/company/eazybe",

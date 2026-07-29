@@ -1,0 +1,82 @@
+---
+title: "Meta API Katmanı"
+description: "WhatsApp Business Cloud API kaynaklarıyla çalışmak için kimlik doğrulamalı Eazybe REST API'sini kullanın."
+---
+
+Meta API Katmanı, backend sisteminize WhatsApp Business Cloud API işlemleri için tek bir REST yüzeyi sunar. WhatsApp Business hesabınızı (WABA) Eazybe'ye bir kez bağlayın; mesajları, şablonları, medyayı, analizleri ve telefon numaralarını Eazybe kimlik bilgileriyle yönetin.
+
+Meta erişim tokenı göndermeniz, Graph API sürümü seçmeniz veya token yenileme işlemi geliştirmeniz gerekmez.
+
+<CardGroup cols={2}>
+  <Card title="Hızlı başlangıç" icon="rocket" href="/tr/api-reference/meta/quickstart">
+    Kimliklerinizi bulun ve ilk şablon mesajınızı gönderin.
+  </Card>
+  <Card title="Telefon numaralarını listele" icon="phone" href="/tr/api-reference/meta/operations/get-phone-numbers">
+    WABA ve telefon numarası kimliklerini alın.
+  </Card>
+</CardGroup>
+
+## Temel yol
+
+```text
+https://cerberus.eazybe.com/staging/api/v2/meta
+```
+
+Katman şu anda WhatsApp Cloud API Graph `v25.0` sürümünü kullanır.
+
+## Kimlik doğrulama
+
+Her istekte Eazybe bearer tokenınızı gönderin:
+
+```http
+Authorization: Bearer EAZYBE_TOKENINIZ
+Content-Type: application/json
+```
+
+<Warning>
+  Tokenı sunucuda güvenli tutun. İstemci uygulamalarında, herkese açık
+  depolarda, destek kayıtlarında veya günlüklerde paylaşmayın.
+</Warning>
+
+Kuruluş token üzerinden belirlenir. Bir `phoneNumberId` veya `wabaId` bu kuruluşa bağlı değilse API `404` döndürür.
+
+## Kullanılabilir özellikler
+
+| Alan | Kullanılabilir işlemler |
+| --- | --- |
+| Numaralar | Bağlı numaraları listeleme; durum, kalite ve doğrulama bilgilerini görüntüleme |
+| Mesajlaşma | Şablon, serbest metin, medya, kişi kartı, tepki ve okundu bilgisi gönderme |
+| Şablonlar | Şablonları listeleme, oluşturma, düzenleme, silme, taşıma ve karşılaştırma |
+| Medya | Dosya yükleme, meta verileri görüntüleme ve dosya silme |
+| İşletme profili | Herkese açık profili ve numara ayarlarını görüntüleme ve güncelleme |
+| Analizler | Mesajlaşma, konuşma, fiyatlandırma ve şablon analizlerini görüntüleme |
+| Flows ve QR | WhatsApp Flows ve sohbete yönlendiren QR kodlarını yönetme |
+| Yönetim | Numara kaydı, PIN, webhook, engelleme ve birlikte kullanım işlemleri |
+
+## Kaynak kimlikleri
+
+Önce `GET /meta/phone-numbers` isteğini çalıştırın:
+
+| Kimlik | Kullanım |
+| --- | --- |
+| `phone_numbers[].id` | Mesaj, medya, profil, QR, otomasyon ve numara yönetimi yolları |
+| `accounts[].waba_id` | Şablon, analiz, Flow, webhook ve WABA ayrıntı yolları |
+
+## Kurallar
+
+- Alıcı numaralarını `+`, boşluk veya noktalama olmadan uluslararası biçimde kullanın: `919900000001`.
+- Eazybe, `messaging_product: whatsapp` alanını otomatik olarak ekler.
+- Medya ve Flow dosyası yüklemeleri dışındaki isteklerde JSON kullanın. Dosya yüklemeleri `multipart/form-data` gerektirir.
+- Meta istekleri 15 saniye sonra zaman aşımına uğrar.
+- Serbest biçimli mesajlar yalnızca müşterinin son mesajından sonraki 24 saat içinde gönderilebilir.
+- Gönderme işlemleri idempotent değildir; döndürülen `wamid` değerini kaydedin ve tekrarları uygulamanızda önleyin.
+
+## Hatalar
+
+| Durum | Anlamı | Yapılacak işlem |
+| --- | --- | --- |
+| `400` | Meta isteği reddetti | `error.message` ve `error.code` ile isteği düzeltin |
+| `401` | Token eksik, geçersiz veya süresi dolmuş | Geçerli bir token alın |
+| `404` | WABA veya numara kuruluşa bağlı değil | Numaraları yeniden listeleyin ve gerekirse WABA'yı yeniden bağlayın |
+| `429` | Bir Meta sınırına ulaşıldı | Üstel geri çekilme ile yeniden deneyin |
+| `502` | Meta'ya ulaşılamadı veya istek zaman aşımına uğradı | Gönderimi tekrarlamadan önce webhook olaylarını kontrol edin |

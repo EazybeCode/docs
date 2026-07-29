@@ -1,0 +1,162 @@
+---
+title: "Meta API quickstart"
+description: "Discover your connected WhatsApp IDs and send an approved template through Eazybe."
+---
+
+This quickstart verifies your credentials and sends a WhatsApp template message through the Meta API Wrapper.
+
+## Prerequisites
+
+- An Eazybe organization with a connected WhatsApp Business Account
+- An Eazybe bearer token
+- An approved WhatsApp message template
+- A recipient who has opted in to receive messages
+
+<Steps>
+  <Step title="Set your API host and token">
+    Set the Eazybe staging API v2 base URL and your bearer token.
+
+    ```bash
+    export EAZYBE_API_HOST="https://cerberus.eazybe.com/staging/api/v2"
+    export EAZYBE_TOKEN="YOUR_EAZYBE_TOKEN"
+    ```
+
+    Keep both values in server-side environment variables or a secrets manager.
+  </Step>
+
+  <Step title="Discover your WABA and phone-number IDs">
+    ```bash
+    curl "$EAZYBE_API_HOST/meta/phone-numbers" \
+      -H "Authorization: Bearer $EAZYBE_TOKEN"
+    ```
+
+    ```json
+    {
+      "status": true,
+      "status_code": 200,
+      "message": "Meta phone numbers fetched successfully",
+      "data": {
+        "total_wabas": 1,
+        "successful": 1,
+        "failed": 0,
+        "accounts": [
+          {
+            "waba_id": "1029384756",
+            "status": true,
+            "phone_numbers": [
+              {
+                "id": "5647382910",
+                "display_phone_number": "+91 99000 00000",
+                "verified_name": "Acme Support",
+                "quality_rating": "GREEN",
+                "code_verification_status": "VERIFIED",
+                "status": "CONNECTED"
+              }
+            ]
+          }
+        ]
+      }
+    }
+    ```
+
+    Save:
+
+    - `accounts[].waba_id` as your `wabaId`
+    - `accounts[].phone_numbers[].id` as your `phoneNumberId`
+
+    <Note>
+      A WABA with `status: false` needs to be reconnected. Other connected WABAs
+      can still be used.
+    </Note>
+  </Step>
+
+  <Step title="Confirm that your template is approved">
+    List all templates connected to the WABA:
+
+    ```bash
+    curl "$EAZYBE_API_HOST/meta/wabas/1029384756/templates/all" \
+      -H "Authorization: Bearer $EAZYBE_TOKEN"
+    ```
+
+    Find the template you want to send and confirm that its status is `APPROVED`.
+  </Step>
+
+  <Step title="Send the template">
+    Replace the path ID, recipient, template name, language, and parameters with your values.
+
+    ```bash
+    curl -X POST \
+      "$EAZYBE_API_HOST/meta/phone-numbers/5647382910/messages/template" \
+      -H "Authorization: Bearer $EAZYBE_TOKEN" \
+      -H "Content-Type: application/json" \
+      -d '{
+        "to": "919900000001",
+        "template": {
+          "name": "order_update",
+          "language": {
+            "code": "en"
+          },
+          "components": [
+            {
+              "type": "body",
+              "parameters": [
+                {
+                  "type": "text",
+                  "text": "Ravi"
+                }
+              ]
+            }
+          ]
+        }
+      }'
+    ```
+
+    ```json
+    {
+      "messaging_product": "whatsapp",
+      "contacts": [
+        {
+          "input": "919900000001",
+          "wa_id": "919900000001"
+        }
+      ],
+      "messages": [
+        {
+          "id": "wamid.HBgMOTE5OTAwMDAwMDAxFQIAERgS..."
+        }
+      ]
+    }
+    ```
+
+    Store `messages[0].id`. You will use this `wamid` for read receipts, reactions, typing indicators, and delivery reconciliation.
+  </Step>
+
+  <Step title="Subscribe to inbound events">
+    Subscribe the WABA to your callback:
+
+    ```bash
+    curl -X POST \
+      "$EAZYBE_API_HOST/meta/wabas/1029384756/webhook-subscriptions" \
+      -H "Authorization: Bearer $EAZYBE_TOKEN" \
+      -H "Content-Type: application/json" \
+      -d '{
+        "overrideCallbackUri": "https://your-app.com/webhooks/whatsapp",
+        "verifyToken": "YOUR_SHARED_VERIFY_TOKEN"
+      }'
+    ```
+
+    Your callback must answer Meta's verification request with the supplied
+    `hub.challenge`, then process standard WhatsApp webhook payloads.
+  </Step>
+</Steps>
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Send messages" icon="message" href="/api-reference/meta/operations/send-template-message">
+    Explore template, free-form, bulk, media, contact, and interaction operations.
+  </Card>
+  <Card title="Manage templates" icon="file-lines" href="/api-reference/meta/operations/list-templates">
+    List, create, edit, migrate, compare, and delete templates.
+  </Card>
+</CardGroup>

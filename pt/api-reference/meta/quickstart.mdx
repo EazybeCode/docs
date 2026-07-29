@@ -1,0 +1,114 @@
+---
+title: "Início rápido da API Meta"
+description: "Descubra seus IDs do WhatsApp e envie um modelo aprovado pela Eazybe."
+---
+
+Este início rápido verifica suas credenciais e envia uma mensagem de modelo pelo Wrapper da API Meta.
+
+## Pré-requisitos
+
+- Uma organização da Eazybe com uma conta do WhatsApp Business conectada
+- Um token bearer da Eazybe
+- Um modelo do WhatsApp aprovado
+- Um destinatário que aceitou receber mensagens
+
+<Steps>
+  <Step title="Configure o host e o token">
+    Configure a URL base da API v2 de staging da Eazybe e seu token:
+
+    ```bash
+    export EAZYBE_API_HOST="https://cerberus.eazybe.com/staging/api/v2"
+    export EAZYBE_TOKEN="SEU_TOKEN_EAZYBE"
+    ```
+  </Step>
+
+  <Step title="Descubra seus IDs">
+    ```bash
+    curl "$EAZYBE_API_HOST/meta/phone-numbers" \
+      -H "Authorization: Bearer $EAZYBE_TOKEN"
+    ```
+
+    ```json
+    {
+      "status": true,
+      "status_code": 200,
+      "message": "Meta phone numbers fetched successfully",
+      "data": {
+        "accounts": [
+          {
+            "waba_id": "1029384756",
+            "status": true,
+            "phone_numbers": [
+              {
+                "id": "5647382910",
+                "display_phone_number": "+91 99000 00000",
+                "quality_rating": "GREEN",
+                "status": "CONNECTED"
+              }
+            ]
+          }
+        ]
+      }
+    }
+    ```
+
+    Salve `waba_id` como `wabaId` e `phone_numbers[].id` como `phoneNumberId`.
+  </Step>
+
+  <Step title="Confirme o modelo">
+    ```bash
+    curl "$EAZYBE_API_HOST/meta/wabas/1029384756/templates/all" \
+      -H "Authorization: Bearer $EAZYBE_TOKEN"
+    ```
+
+    Confirme que o modelo que você deseja enviar está com o status `APPROVED`.
+  </Step>
+
+  <Step title="Envie o modelo">
+    ```bash
+    curl -X POST \
+      "$EAZYBE_API_HOST/meta/phone-numbers/5647382910/messages/template" \
+      -H "Authorization: Bearer $EAZYBE_TOKEN" \
+      -H "Content-Type: application/json" \
+      -d '{
+        "to": "919900000001",
+        "template": {
+          "name": "order_update",
+          "language": { "code": "pt_BR" },
+          "components": [
+            {
+              "type": "body",
+              "parameters": [{ "type": "text", "text": "Ravi" }]
+            }
+          ]
+        }
+      }'
+    ```
+
+    Salve `messages[0].id` (`wamid`) para confirmações de leitura, reações e conciliação de entregas.
+  </Step>
+
+  <Step title="Assine os eventos recebidos">
+    ```bash
+    curl -X POST \
+      "$EAZYBE_API_HOST/meta/wabas/1029384756/webhook-subscriptions" \
+      -H "Authorization: Bearer $EAZYBE_TOKEN" \
+      -H "Content-Type: application/json" \
+      -d '{
+        "overrideCallbackUri": "https://seu-app.com/webhooks/whatsapp",
+        "verifyToken": "SEU_TOKEN_DE_VERIFICACAO"
+      }'
+    ```
+
+    Seu callback deve responder à verificação da Meta com `hub.challenge`.
+  </Step>
+</Steps>
+
+<CardGroup cols={2}>
+  <Card title="Enviar mensagens" icon="message" href="/pt/api-reference/meta/operations/send-template-message">
+    Consulte todas as operações de mensagens.
+  </Card>
+  <Card title="Gerenciar modelos" icon="file-lines" href="/pt/api-reference/meta/operations/list-templates">
+    Liste, crie, edite, migre, compare e exclua modelos.
+  </Card>
+</CardGroup>

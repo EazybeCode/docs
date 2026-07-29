@@ -1,0 +1,114 @@
+---
+title: "Meta API hızlı başlangıç"
+description: "WhatsApp kimliklerinizi bulun ve Eazybe üzerinden onaylanmış bir şablon gönderin."
+---
+
+Bu hızlı başlangıç, kimlik bilgilerinizi doğrular ve Meta API Katmanı üzerinden bir şablon mesajı gönderir.
+
+## Ön koşullar
+
+- WhatsApp Business hesabı bağlı bir Eazybe kuruluşu
+- Eazybe bearer tokenı
+- Onaylanmış bir WhatsApp mesaj şablonu
+- Mesaj almayı kabul etmiş bir alıcı
+
+<Steps>
+  <Step title="API sunucusunu ve tokenı ayarlayın">
+    Eazybe staging API v2 temel URL'sini ve tokenınızı ayarlayın:
+
+    ```bash
+    export EAZYBE_API_HOST="https://cerberus.eazybe.com/staging/api/v2"
+    export EAZYBE_TOKEN="EAZYBE_TOKENINIZ"
+    ```
+  </Step>
+
+  <Step title="Kimliklerinizi bulun">
+    ```bash
+    curl "$EAZYBE_API_HOST/meta/phone-numbers" \
+      -H "Authorization: Bearer $EAZYBE_TOKEN"
+    ```
+
+    ```json
+    {
+      "status": true,
+      "status_code": 200,
+      "message": "Meta phone numbers fetched successfully",
+      "data": {
+        "accounts": [
+          {
+            "waba_id": "1029384756",
+            "status": true,
+            "phone_numbers": [
+              {
+                "id": "5647382910",
+                "display_phone_number": "+91 99000 00000",
+                "quality_rating": "GREEN",
+                "status": "CONNECTED"
+              }
+            ]
+          }
+        ]
+      }
+    }
+    ```
+
+    `waba_id` değerini `wabaId`, `phone_numbers[].id` değerini `phoneNumberId` olarak kaydedin.
+  </Step>
+
+  <Step title="Şablonu doğrulayın">
+    ```bash
+    curl "$EAZYBE_API_HOST/meta/wabas/1029384756/templates/all" \
+      -H "Authorization: Bearer $EAZYBE_TOKEN"
+    ```
+
+    Göndermek istediğiniz şablonun durumunun `APPROVED` olduğunu doğrulayın.
+  </Step>
+
+  <Step title="Şablonu gönderin">
+    ```bash
+    curl -X POST \
+      "$EAZYBE_API_HOST/meta/phone-numbers/5647382910/messages/template" \
+      -H "Authorization: Bearer $EAZYBE_TOKEN" \
+      -H "Content-Type: application/json" \
+      -d '{
+        "to": "919900000001",
+        "template": {
+          "name": "order_update",
+          "language": { "code": "tr" },
+          "components": [
+            {
+              "type": "body",
+              "parameters": [{ "type": "text", "text": "Ravi" }]
+            }
+          ]
+        }
+      }'
+    ```
+
+    Okundu bilgileri, tepkiler ve teslimat takibi için `messages[0].id` (`wamid`) değerini kaydedin.
+  </Step>
+
+  <Step title="Gelen olaylara abone olun">
+    ```bash
+    curl -X POST \
+      "$EAZYBE_API_HOST/meta/wabas/1029384756/webhook-subscriptions" \
+      -H "Authorization: Bearer $EAZYBE_TOKEN" \
+      -H "Content-Type: application/json" \
+      -d '{
+        "overrideCallbackUri": "https://uygulamaniz.com/webhooks/whatsapp",
+        "verifyToken": "DOGRULAMA_TOKENINIZ"
+      }'
+    ```
+
+    Callback adresiniz Meta doğrulamasına `hub.challenge` değeriyle yanıt vermelidir.
+  </Step>
+</Steps>
+
+<CardGroup cols={2}>
+  <Card title="Mesaj gönderme" icon="message" href="/tr/api-reference/meta/operations/send-template-message">
+    Tüm mesajlaşma işlemlerini inceleyin.
+  </Card>
+  <Card title="Şablon yönetimi" icon="file-lines" href="/tr/api-reference/meta/operations/list-templates">
+    Şablonları listeleyin, oluşturun, düzenleyin, taşıyın, karşılaştırın ve silin.
+  </Card>
+</CardGroup>

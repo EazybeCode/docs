@@ -1,0 +1,114 @@
+---
+title: "Inicio rápido de la API de Meta"
+description: "Descubre tus identificadores de WhatsApp y envía una plantilla aprobada mediante Eazybe."
+---
+
+Este inicio rápido verifica tus credenciales y envía un mensaje de plantilla mediante el API Wrapper de Meta.
+
+## Requisitos previos
+
+- Una organización de Eazybe con una cuenta de WhatsApp Business conectada
+- Un token bearer de Eazybe
+- Una plantilla de WhatsApp aprobada
+- Un destinatario que haya aceptado recibir mensajes
+
+<Steps>
+  <Step title="Configura el host y el token">
+    Configura la URL base de la API v2 de staging de Eazybe y tu token:
+
+    ```bash
+    export EAZYBE_API_HOST="https://cerberus.eazybe.com/staging/api/v2"
+    export EAZYBE_TOKEN="TU_TOKEN_EAZYBE"
+    ```
+  </Step>
+
+  <Step title="Descubre tus identificadores">
+    ```bash
+    curl "$EAZYBE_API_HOST/meta/phone-numbers" \
+      -H "Authorization: Bearer $EAZYBE_TOKEN"
+    ```
+
+    ```json
+    {
+      "status": true,
+      "status_code": 200,
+      "message": "Meta phone numbers fetched successfully",
+      "data": {
+        "accounts": [
+          {
+            "waba_id": "1029384756",
+            "status": true,
+            "phone_numbers": [
+              {
+                "id": "5647382910",
+                "display_phone_number": "+91 99000 00000",
+                "quality_rating": "GREEN",
+                "status": "CONNECTED"
+              }
+            ]
+          }
+        ]
+      }
+    }
+    ```
+
+    Guarda `waba_id` como `wabaId` y `phone_numbers[].id` como `phoneNumberId`.
+  </Step>
+
+  <Step title="Comprueba la plantilla">
+    ```bash
+    curl "$EAZYBE_API_HOST/meta/wabas/1029384756/templates/all" \
+      -H "Authorization: Bearer $EAZYBE_TOKEN"
+    ```
+
+    Confirma que la plantilla que quieres enviar tiene el estado `APPROVED`.
+  </Step>
+
+  <Step title="Envía la plantilla">
+    ```bash
+    curl -X POST \
+      "$EAZYBE_API_HOST/meta/phone-numbers/5647382910/messages/template" \
+      -H "Authorization: Bearer $EAZYBE_TOKEN" \
+      -H "Content-Type: application/json" \
+      -d '{
+        "to": "919900000001",
+        "template": {
+          "name": "order_update",
+          "language": { "code": "es" },
+          "components": [
+            {
+              "type": "body",
+              "parameters": [{ "type": "text", "text": "Ravi" }]
+            }
+          ]
+        }
+      }'
+    ```
+
+    Guarda `messages[0].id` (`wamid`) para confirmaciones de lectura, reacciones y conciliación de entregas.
+  </Step>
+
+  <Step title="Suscríbete a eventos entrantes">
+    ```bash
+    curl -X POST \
+      "$EAZYBE_API_HOST/meta/wabas/1029384756/webhook-subscriptions" \
+      -H "Authorization: Bearer $EAZYBE_TOKEN" \
+      -H "Content-Type: application/json" \
+      -d '{
+        "overrideCallbackUri": "https://tu-app.com/webhooks/whatsapp",
+        "verifyToken": "TU_TOKEN_DE_VERIFICACION"
+      }'
+    ```
+
+    Tu callback debe responder a la verificación de Meta con `hub.challenge`.
+  </Step>
+</Steps>
+
+<CardGroup cols={2}>
+  <Card title="Enviar mensajes" icon="message" href="/es/api-reference/meta/operations/send-template-message">
+    Consulta todas las operaciones de mensajería.
+  </Card>
+  <Card title="Administrar plantillas" icon="file-lines" href="/es/api-reference/meta/operations/list-templates">
+    Lista, crea, edita, migra, compara y elimina plantillas.
+  </Card>
+</CardGroup>

@@ -1,0 +1,82 @@
+---
+title: "Wrapper da API Meta"
+description: "Use uma API REST autenticada da Eazybe para trabalhar com recursos do WhatsApp Business Cloud API."
+---
+
+O Wrapper da API Meta oferece ao seu backend uma única superfície REST para operações do WhatsApp Business Cloud API. Conecte uma conta do WhatsApp Business (WABA) à Eazybe uma vez e use as credenciais da Eazybe para gerenciar mensagens, modelos, mídia, análises e números de telefone.
+
+Você não precisa enviar um token de acesso da Meta, escolher uma versão da Graph API nem implementar a renovação de tokens.
+
+<CardGroup cols={2}>
+  <Card title="Início rápido" icon="rocket" href="/pt/api-reference/meta/quickstart">
+    Descubra seus IDs e envie o primeiro modelo.
+  </Card>
+  <Card title="Listar números de telefone" icon="phone" href="/pt/api-reference/meta/operations/get-phone-numbers">
+    Obtenha os IDs da WABA e do número de telefone.
+  </Card>
+</CardGroup>
+
+## Caminho base
+
+```text
+https://cerberus.eazybe.com/staging/api/v2/meta
+```
+
+O wrapper usa atualmente o WhatsApp Cloud API Graph `v25.0`.
+
+## Autenticação
+
+Envie seu token bearer da Eazybe em todas as solicitações:
+
+```http
+Authorization: Bearer SEU_TOKEN_EAZYBE
+Content-Type: application/json
+```
+
+<Warning>
+  Mantenha o token no servidor. Não o exponha em aplicativos cliente,
+  repositórios públicos, chamados de suporte ou logs.
+</Warning>
+
+A organização é identificada pelo token. Se um `phoneNumberId` ou `wabaId` não pertencer a essa organização, a API retornará `404`.
+
+## Recursos disponíveis
+
+| Área | Operações disponíveis |
+| --- | --- |
+| Números | Listar números conectados e consultar estado, qualidade e verificação |
+| Mensagens | Enviar modelos, texto livre, mídia, contatos, reações e confirmações de leitura |
+| Modelos | Listar, criar, editar, excluir, migrar e comparar modelos |
+| Mídia | Enviar arquivos, consultar metadados e excluir arquivos |
+| Perfil comercial | Consultar e atualizar o perfil público e as configurações do número |
+| Análises | Consultar análises de mensagens, conversas, preços e modelos |
+| Flows e QR | Gerenciar WhatsApp Flows e códigos QR de clique para conversar |
+| Administração | Registrar números, gerenciar PIN, webhooks, bloqueios e coexistência |
+
+## IDs de recursos
+
+Execute primeiro `GET /meta/phone-numbers`:
+
+| Identificador | Uso |
+| --- | --- |
+| `phone_numbers[].id` | Rotas de mensagens, mídia, perfil, QR, automação e administração |
+| `accounts[].waba_id` | Rotas de modelos, análises, Flows, webhooks e detalhes da WABA |
+
+## Convenções
+
+- Use números de destinatários no formato internacional, sem `+`, espaços ou pontuação: `919900000001`.
+- A Eazybe adiciona `messaging_product: whatsapp` automaticamente.
+- Use JSON, exceto para uploads de mídia e arquivos de Flow, que exigem `multipart/form-data`.
+- As solicitações à Meta têm tempo limite de 15 segundos.
+- Mensagens livres só funcionam durante as 24 horas após a última mensagem do cliente.
+- Os envios não são idempotentes; armazene o `wamid` retornado e controle as novas tentativas.
+
+## Erros
+
+| Status | Significado | Ação |
+| --- | --- | --- |
+| `400` | A Meta rejeitou a solicitação | Corrija a solicitação usando `error.message` e `error.code` |
+| `401` | O token está ausente, é inválido ou expirou | Obtenha um token válido |
+| `404` | A WABA ou o número não pertence à organização | Liste os números novamente e reconecte a WABA se necessário |
+| `429` | Um limite da Meta foi atingido | Tente novamente com espera exponencial |
+| `502` | A Meta estava indisponível ou atingiu o tempo limite | Verifique os webhooks antes de repetir um envio |
