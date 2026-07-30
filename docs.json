@@ -657,7 +657,7 @@
                 ]
               },
               {
-                "group": "Meta API Wrapper",
+                "group": "Meta API Documentation",
                 "icon": "whatsapp",
                 "openapi": "/api-reference/meta/openapi.yaml",
                 "pages": [

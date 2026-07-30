@@ -1,9 +1,9 @@
 ---
-title: "Meta API Wrapper"
+title: "Introduction"
 description: "Use one authenticated Eazybe REST API to work with WhatsApp Business Cloud API resources."
 ---
 
-The Meta API Wrapper gives your backend a single REST surface for WhatsApp Business Cloud API operations. Connect a WhatsApp Business Account (WABA) to Eazybe once, then use Eazybe credentials to manage messages, templates, media, analytics, phone numbers, and related Meta resources.
+The Eazybe Meta API gives your backend a single REST surface for WhatsApp Business Cloud API operations. Connect a WhatsApp Business Account (WABA) to Eazybe once, then use Eazybe credentials to manage messages, templates, media, analytics, phone numbers, and related Meta resources.
 
 You do not need to send a Meta access token, select a Graph API version, or implement Meta token refresh. Eazybe resolves the connected WABA and its credentials for each request.
 
@@ -26,17 +26,35 @@ The wrapper currently targets WhatsApp Cloud API Graph `v25.0`.
 
 ## Authentication
 
-Send your Eazybe bearer token with every request:
+<Steps>
+  <Step>
+    <h3>Use your bearer token</h3>
+    <p>Send your Eazybe bearer token with every request:</p>
 
-```http
+    ```http
 Authorization: Bearer YOUR_EAZYBE_TOKEN
 Content-Type: application/json
-```
+    ```
 
-<Warning>
-  Keep bearer tokens on your server. Do not expose them in browser code, mobile
-  applications, public repositories, support tickets, or client-side logs.
-</Warning>
+    <Warning>
+      Keep bearer tokens on your server. Do not expose them in browser code, mobile
+      applications, public repositories, support tickets, or client-side logs.
+    </Warning>
+  </Step>
+
+  <Step>
+    <h3>Find your bearer token</h3>
+
+    1. Sign in to the [Eazybe Workspace](https://app.eazybe.com/organization/employees).
+    2. In the left sidebar, go to **Workspace** → **Staff**.
+    3. In **Organization Details**, find **Access code** and click the copy icon. This Access code is your Eazybe bearer token.
+    4. Store the token securely on your server.
+
+    <Frame>
+      ![Find your bearer token under Workspace, Staff, and Access code](/images/meta-api-access-code.png)
+    </Frame>
+  </Step>
+</Steps>
 
 Your organization is derived from the token. A `phoneNumberId` or `wabaId` that is not connected to that organization returns `404` instead of exposing another organization's data.
 

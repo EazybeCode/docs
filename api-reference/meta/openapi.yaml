@@ -1,7 +1,7 @@
 ---
 openapi: 3.1.0
 info:
-  title: Eazybe Meta API Wrapper
+  title: Eazybe Meta API Documentation
   version: 1.0.0
   description: |
     A single authenticated Eazybe REST surface over WhatsApp Business Cloud API.
