@@ -253,7 +253,7 @@ SPEC_PATHS.each do |locale, path|
   end
 
   server_urls = Array(spec["servers"]).map { |server| server["url"] }
-  unless server_urls == ["https://cerberus.eazybe.com/staging/api/v2"]
+  unless server_urls == ["https://cerberus.eazybe.com/prod/api/v2"]
     failures << "#{locale}: unexpected server URLs #{server_urls.inspect}"
   end
 

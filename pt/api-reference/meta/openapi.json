@@ -7,7 +7,7 @@
   },
   "servers": [
     {
-      "url": "https://cerberus.eazybe.com/staging/api/v2",
+      "url": "https://cerberus.eazybe.com/prod/api/v2",
       "description": "Substitua este marcador pelo host da API da Eazybe atribuído ao seu ambiente."
     }
   ],
