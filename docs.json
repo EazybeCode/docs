@@ -86,10 +86,7 @@
               {
                 "group": "Team Inbox",
                 "icon": "users",
-                "pages": [
-                  "en/team-inbox-hd/team-inbox-hd-en",
-                  "en/bea-radar/bea-radar-en"
-                ]
+                "pages": ["en/team-inbox-hd/team-inbox-hd-en"]
               },
               {
                 "group": "Revenue Inbox",
@@ -631,6 +628,16 @@
                   "en/ai-agents/chatbots/variables",
                   "en/ai-agents/chatbots/human-handoff",
                   "en/ai-agents/chatbots/analytics"
+                ]
+              },
+              {
+                "group": "BEA Radar",
+                "icon": "radar",
+                "pages": [
+                  "en/ai-agents/bea-radar/overview",
+                  "en/ai-agents/bea-radar/ai-insights",
+                  "en/ai-agents/bea-radar/ai-properties",
+                  "en/ai-agents/bea-radar/ai-filters"
                 ]
               }
             ]
