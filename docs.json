@@ -863,10 +863,7 @@
               {
                 "group": "Buzón de Equipo",
                 "icon": "users",
-                "pages": [
-                  "es/team-inbox-hd/team-inbox-hd-sp",
-                  "es/bea-radar/bea-radar-sp"
-                ]
+                "pages": ["es/team-inbox-hd/team-inbox-hd-sp"]
               },
               {
                 "group": "Bandeja de Ingresos",
@@ -1371,6 +1368,16 @@
                   "es/ai-agents/knowledge-base-agent/setup-and-details",
                   "es/ai-agents/knowledge-base-agent/ai-agent-setup"
                 ]
+              },
+              {
+                "group": "BEA Radar",
+                "icon": "radar",
+                "pages": [
+                  "es/ai-agents/bea-radar/overview",
+                  "es/ai-agents/bea-radar/ai-insights",
+                  "es/ai-agents/bea-radar/ai-properties",
+                  "es/ai-agents/bea-radar/ai-filters"
+                ]
               }
             ]
           },
@@ -1579,10 +1586,7 @@
               {
                 "group": "Caixa de Entrada da Equipe",
                 "icon": "users",
-                "pages": [
-                  "pt/team-inbox-hd/team-inbox-hd-pt",
-                  "pt/bea-radar/bea-radar-pt"
-                ]
+                "pages": ["pt/team-inbox-hd/team-inbox-hd-pt"]
               },
               {
                 "group": "Caixa de Entrada de Receita",
@@ -2092,6 +2096,16 @@
                   "pt/ai-agents/knowledge-base-agent/setup-and-details",
                   "pt/ai-agents/knowledge-base-agent/ai-agent-setup"
                 ]
+              },
+              {
+                "group": "BEA Radar",
+                "icon": "radar",
+                "pages": [
+                  "pt/ai-agents/bea-radar/overview",
+                  "pt/ai-agents/bea-radar/ai-insights",
+                  "pt/ai-agents/bea-radar/ai-properties",
+                  "pt/ai-agents/bea-radar/ai-filters"
+                ]
               }
             ]
           },
@@ -2300,10 +2314,7 @@
               {
                 "group": "Takım Gelen Kutusu",
                 "icon": "users",
-                "pages": [
-                  "tr/team-inbox-hd/team-inbox-hd-tr",
-                  "tr/bea-radar/bea-radar-tr"
-                ]
+                "pages": ["tr/team-inbox-hd/team-inbox-hd-tr"]
               },
               {
                 "group": "Gelir Gelen Kutusu",
@@ -2812,6 +2823,16 @@
                   "tr/ai-agents/knowledge-base-agent/agent-info",
                   "tr/ai-agents/knowledge-base-agent/setup-and-details",
                   "tr/ai-agents/knowledge-base-agent/ai-agent-setup"
+                ]
+              },
+              {
+                "group": "BEA Radar",
+                "icon": "radar",
+                "pages": [
+                  "tr/ai-agents/bea-radar/overview",
+                  "tr/ai-agents/bea-radar/ai-insights",
+                  "tr/ai-agents/bea-radar/ai-properties",
+                  "tr/ai-agents/bea-radar/ai-filters"
                 ]
               }
             ]
