@@ -1,0 +1,221 @@
+---
+title: "Filtros en el Buzón de Equipo"
+description: "Aprende a buscar, filtrar, combinar condiciones y guardar vistas en el Buzón de Equipo."
+---
+
+Los filtros te ayudan a centrarte en las conversaciones que requieren atención sin modificar ni eliminar ningún chat. Úsalos para encontrar conversaciones por canal o responsable, controlar las ventanas de mensajería de WhatsApp, segmentar contactos mediante propiedades de IA y guardar combinaciones frecuentes como vistas.
+
+<Note>
+  Los filtros solo cambian las conversaciones que ves. No eliminan, mueven ni modifican ningún chat.
+</Note>
+
+## ¿Por qué usar filtros?
+
+- **Prioriza conversaciones urgentes:** Encuentra chats cuya ventana de mensajería de WhatsApp caducará pronto.
+- **Distribuye la carga de trabajo:** Revisa las conversaciones asignadas a miembros concretos del equipo.
+- **Separa los canales:** Céntrate en chats de uno o varios números de WhatsApp conectados.
+- **Crea segmentos útiles:** Combina filtros estándar con propiedades de contacto generadas por IA.
+- **Repite flujos de trabajo:** Guarda una combinación de filtros como vista personal o compartida.
+
+<CardGroup cols={2}>
+  <Card title="Channels" icon="hashtag">
+    Muestra conversaciones de números de WhatsApp APP, API o COEX.
+  </Card>
+  <Card title="Assignee" icon="user-check">
+    Encuentra conversaciones asignadas a uno o varios miembros del equipo.
+  </Card>
+  <Card title="Expire time" icon="clock">
+    Prioriza chats cuya ventana de mensajería cerrará pronto.
+  </Card>
+  <Card title="Propiedades de IA" icon="sparkles">
+    Segmenta conversaciones mediante información generada por IA.
+  </Card>
+</CardGroup>
+
+<Frame>
+  <img src="/images/team-inbox-filters-overview.png" alt="Controles de búsqueda, Channels, Assignee y All filters en el Buzón de Equipo" />
+</Frame>
+
+## Buscar conversaciones
+
+Introduce el nombre o el número de teléfono de un contacto en **Search conversations**. La búsqueda funciona junto con los filtros activos. Selecciona la **x** del campo para borrar solo el texto de búsqueda; los demás filtros seguirán activos.
+
+## Filtrar por canal
+
+Usa **Channels** para mostrar conversaciones de uno o varios números de WhatsApp conectados. La lista incluye todos los números a los que tienes acceso y muestra el tipo de canal:
+
+| Tipo | Qué significa | Cuándo usarlo |
+|---|---|---|
+| **APP** | Número de WhatsApp o WhatsApp Business App conectado mediante Eazybe | Separar conversaciones sincronizadas desde los números de aplicación del equipo |
+| **API** | Número oficial de WhatsApp Business API | Revisar conversaciones de soporte, ventas o automatizaciones gestionadas mediante WABA |
+| **COEX** | Número de coexistencia utilizado con WhatsApp Business App y Cloud API | Consultar conversaciones de números que funcionan en modo coexistencia |
+
+Al principio de la lista aparecen los números COEX y API:
+
+<Frame>
+  <img src="/images/team-inbox-filter-channels.png" alt="Filtro Channels con números COEX y API" />
+</Frame>
+
+Desplázate hacia abajo para ver los números APP:
+
+<Frame>
+  <img src="/images/team-inbox-filter-channels-app.png" alt="Filtro Channels con números APP" />
+</Frame>
+
+Busca por nombre o número, selecciona uno o varios canales y haz clic en **Done**. Si seleccionas varios, verás las conversaciones de cualquiera de esos números.
+
+<Tip>
+  Si falta un número, pide a un administrador que confirme que tienes acceso a ese canal.
+</Tip>
+
+## Filtrar por responsable
+
+Usa **Assignee** para encontrar conversaciones asignadas a miembros concretos del espacio de trabajo. Es útil para revisar la carga de trabajo, supervisar una cola o localizar conversaciones sin propietario.
+
+<Frame>
+  <img src="/images/team-inbox-filter-assignee.png" alt="Filtro Assignee con miembros del espacio de trabajo" />
+</Frame>
+
+- Selecciona una persona para revisar su cola.
+- Selecciona varias personas para revisar la carga combinada del equipo.
+- Usa **is known** para mostrar conversaciones asignadas.
+- Usa **is unknown** para encontrar conversaciones sin responsable.
+
+## Filtrar por caducidad de la ventana
+
+Usa **Expire time** para priorizar conversaciones antes de que cierre la ventana de mensajería de WhatsApp.
+
+<Frame>
+  <img src="/images/team-inbox-filter-expire-time.png" alt="Filtro Expire time con opciones de 3h, 6h y 12h" />
+</Frame>
+
+- **3h:** Atiende primero las conversaciones más urgentes.
+- **6h:** Organiza el turno actual de soporte o ventas.
+- **12h:** Revisa chats que pueden requerir atención más tarde.
+
+<Warning>
+  Cuando la ventana caduca, una conversación API puede requerir una plantilla de WhatsApp aprobada para enviar un nuevo mensaje.
+</Warning>
+
+## Filtrar por propiedades de IA
+
+Las propiedades de IA son datos del cliente extraídos o mantenidos por Eazybe AI, como **Urgency Level**, **Conversation State**, categoría del problema o etapa comercial. Las propiedades disponibles dependen de la configuración del espacio de trabajo.
+
+<Frame>
+  <img src="/images/team-inbox-filter-ai-properties.png" alt="Editor All filters con la propiedad de IA Urgency Level" />
+</Frame>
+
+Úsalas para encontrar conversaciones urgentes, clientes en una etapa concreta, chats con una categoría conocida o contactos cuya información todavía es desconocida.
+
+## Propiedades de filtro disponibles
+
+| Propiedad | Permite encontrar | Valores disponibles |
+|---|---|---|
+| **Expire time** | Conversaciones cuya ventana de mensajería de WhatsApp caduca dentro del periodo seleccionado | `3h`, `6h` o `12h` |
+| **Assignee** | Conversaciones asignadas a miembros seleccionados | Uno o varios responsables |
+| **Channels** | Conversaciones recibidas mediante los números conectados seleccionados | Uno o varios canales APP, API o COEX |
+| **Propiedades de IA** | Conversaciones que coinciden con una propiedad de contacto generada por IA | Valores definidos para esa propiedad |
+
+Las propiedades de IA aparecen por su nombre en el menú de propiedades. Las propiedades y los valores disponibles dependen de la configuración del espacio de trabajo.
+
+## Operadores de filtro
+
+| Operador | Significado |
+|---|---|
+| **is any of** | Coincide con al menos uno de los valores seleccionados |
+| **is none of** | Excluye todos los valores seleccionados |
+| **is known** | Coincide cuando la propiedad tiene un valor |
+| **is unknown** | Coincide cuando la propiedad no tiene ningún valor |
+
+<Note>
+  **Expire time** y **Channels** admiten **is any of** e **is none of**. Assignee y las propiedades de IA también pueden admitir **is known** e **is unknown**.
+</Note>
+
+## Usar All filters y aplicar filtros
+
+Haz clic en **All filters** para ver todas las condiciones activas, cambiar operadores, añadir condiciones o crear grupos OR.
+
+<Steps>
+  <Step title="Abre el editor de filtros">
+    Haz clic en **All filters** sobre la lista de conversaciones.
+
+    <Frame>
+      <img src="/images/team-inbox-all-filters.png" alt="Editor All filters con condiciones y la opción de añadir un grupo OR" />
+    </Frame>
+  </Step>
+  <Step title="Elige una propiedad y un operador">
+    Selecciona la propiedad y después un operador, como **is any of** o **is unknown**.
+  </Step>
+  <Step title="Selecciona los valores">
+    Elige uno o varios valores cuando el operador los requiera. Añade más condiciones o un grupo OR si es necesario.
+  </Step>
+  <Step title="Aplica el filtro">
+    Haz clic en **Done**. La lista y el contador se actualizarán para mostrar las coincidencias.
+  </Step>
+</Steps>
+
+Después de aplicar un filtro, los controles activos aparecen resaltados y el distintivo de **All filters** muestra las condiciones adicionales:
+
+<Frame>
+  <img src="/images/team-inbox-filter-applied.png" alt="Barra del Buzón de Equipo después de aplicar un filtro de canal" />
+</Frame>
+
+Abre **All filters** de nuevo para comprobar todas las condiciones y el número de coincidencias:
+
+<Frame>
+  <img src="/images/team-inbox-filter-applied-details.png" alt="Filtros aplicados de Urgency Level y Channels con dos coincidencias" />
+</Frame>
+
+## Combinar condiciones
+
+Las condiciones de un mismo grupo utilizan la lógica **AND**. Una conversación debe cumplir todas las condiciones del grupo.
+
+Por ejemplo, **Expire time is any of 3h AND Assignee is any of Alicia** muestra las conversaciones de Alicia cuya ventana de mensajería caduca en un plazo de tres horas.
+
+Haz clic en **+ Add OR group** cuando pueda cumplirse cualquiera de los conjuntos de condiciones. Por ejemplo, **Assignee is any of Alicia OR Channels is any of Support API** muestra las conversaciones asignadas a Alicia junto con las recibidas por el canal Support API.
+
+<Tip>
+  Si no hay coincidencias, comprueba si las condiciones del mismo grupo son demasiado restrictivas. Coloca las alternativas en grupos OR distintos.
+</Tip>
+
+## Entender los resultados
+
+- La barra de resultados muestra las coincidencias frente al total disponible, por ejemplo, **2 of 14 conversations**.
+- La fila superior muestra hasta dos filtros. Las demás condiciones siguen activas y se reflejan en el contador de **All filters**.
+- Al aplicar un filtro se abre **All conversations**. Si seleccionas otra lista, como **Assigned**, **Unassigned**, **Assign to me** o **Closing window**, saldrás del resultado filtrado actual.
+- Haz clic en **Clear filters** en el editor o en **Clear** en la barra de resultados para volver a **All conversations** sin filtros.
+
+## Guardar un filtro como vista
+
+Después de aplicar al menos un filtro, haz clic en **Save as view** en la barra de resultados.
+
+<Steps>
+  <Step title="Asigna un nombre">
+    Introduce o edita el nombre sugerido para la vista.
+  </Step>
+  <Step title="Elige la visibilidad">
+    Selecciona **Only me** para guardarla en **My views**, o **Everyone** para guardarla en **Shared views**.
+  </Step>
+  <Step title="Guarda la vista">
+    Haz clic en **Save view**. Se guardarán todas las condiciones, operadores, valores y la estructura AND/OR.
+  </Step>
+</Steps>
+
+Selecciona una vista guardada en la barra lateral izquierda para restaurar sus filtros. Si modificas una vista activa, haz clic en **Update view** para reemplazar su configuración guardada.
+
+## Solución de problemas
+
+<AccordionGroup>
+  <Accordion title="No hay conversaciones coincidentes">
+    Elimina una condición, amplía los valores seleccionados o mueve las alternativas a grupos OR distintos.
+  </Accordion>
+  <Accordion title="Falta un canal o un responsable">
+    Las opciones dependen de tus permisos. Pide a un administrador que confirme que el número o el miembro esté disponible para ti.
+  </Accordion>
+  <Accordion title="La lista no cambia mientras selecciono valores">
+    Es el comportamiento esperado. Haz clic en **Done** para aplicar la selección provisional.
+  </Accordion>
+  <Accordion title="El contador de All filters es mayor que los filtros visibles">
+    La fila de filtros rápidos solo muestra dos filtros. Las condiciones adicionales siguen activas y se incluyen en el contador.
+  </Accordion>
+</AccordionGroup>

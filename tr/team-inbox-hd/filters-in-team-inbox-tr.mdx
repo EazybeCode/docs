@@ -1,0 +1,221 @@
+---
+title: "Takım Gelen Kutusunda Filtreler"
+description: "Takım Gelen Kutusunda konuşmaları aramayı, filtrelemeyi, koşulları birleştirmeyi ve görünümleri kaydetmeyi öğrenin."
+---
+
+Filtreler, hiçbir sohbeti değiştirmeden veya silmeden ilgilenmeniz gereken konuşmalara odaklanmanızı sağlar. Konuşmaları kanal ya da atanan kişi üzerinden bulmak, WhatsApp mesajlaşma pencerelerini takip etmek, kişileri yapay zekâ özellikleriyle gruplandırmak ve sık kullandığınız kombinasyonları görünüm olarak kaydetmek için filtreleri kullanın.
+
+<Note>
+  Filtreler yalnızca size gösterilen konuşmaları değiştirir. Sohbetleri silmez, taşımaz veya düzenlemez.
+</Note>
+
+## Filtreler neden kullanılır?
+
+- **Acil konuşmalara öncelik verin:** WhatsApp mesajlaşma penceresi yakında sona erecek sohbetleri bulun.
+- **İş yükünü dengeleyin:** Belirli ekip üyelerine atanmış konuşmaları inceleyin.
+- **Kanalları ayırın:** Bağlı bir veya daha fazla WhatsApp numarasından gelen sohbetlere odaklanın.
+- **Yararlı segmentler oluşturun:** Standart filtreleri yapay zekâ tarafından oluşturulan kişi özellikleriyle birleştirin.
+- **İş akışlarını tekrarlayın:** Bir filtre kombinasyonunu kişisel veya paylaşılan görünüm olarak kaydedin.
+
+<CardGroup cols={2}>
+  <Card title="Channels" icon="hashtag">
+    Seçilen APP, API veya COEX WhatsApp numaralarından gelen konuşmaları görüntüleyin.
+  </Card>
+  <Card title="Assignee" icon="user-check">
+    Bir veya daha fazla ekip üyesine atanmış konuşmaları bulun.
+  </Card>
+  <Card title="Expire time" icon="clock">
+    Mesajlaşma penceresi yakında kapanacak sohbetlere öncelik verin.
+  </Card>
+  <Card title="Yapay zekâ özellikleri" icon="sparkles">
+    Yapay zekâ tarafından oluşturulan bilgilerle konuşmaları segmentlere ayırın.
+  </Card>
+</CardGroup>
+
+<Frame>
+  <img src="/images/team-inbox-filters-overview.png" alt="Takım Gelen Kutusundaki Search conversations, Channels, Assignee ve All filters kontrolleri" />
+</Frame>
+
+## Konuşmaları arama
+
+**Search conversations** alanına kişi adı veya telefon numarası girin. Arama, etkin filtrelerle birlikte çalışır. Yalnızca arama metnini kaldırmak için alandaki **x** simgesini seçin; diğer filtreler etkin kalır.
+
+## Kanala göre filtreleme
+
+Bir veya daha fazla bağlı WhatsApp numarasından gelen konuşmaları göstermek için **Channels** filtresini kullanın. Liste, erişebildiğiniz tüm numaraları ve kanal türlerini gösterir:
+
+| Tür | Anlamı | Ne zaman kullanılır |
+|---|---|---|
+| **APP** | Eazybe üzerinden bağlanan WhatsApp veya WhatsApp Business App numarası | Ekip üyelerinin uygulama numaralarından senkronize edilen konuşmaları ayırmak için |
+| **API** | Resmî WhatsApp Business API numarası | WABA üzerinden yürütülen destek, satış veya otomasyon konuşmalarına odaklanmak için |
+| **COEX** | WhatsApp Business App ve Cloud API ile kullanılan bir birlikte çalışma numarası | Birlikte çalışma modundaki numaraların konuşmalarını görüntülemek için |
+
+Listenin başında COEX ve API numaraları gösterilir:
+
+<Frame>
+  <img src="/images/team-inbox-filter-channels.png" alt="COEX ve API numaralarını gösteren Channels filtresi" />
+</Frame>
+
+APP numaralarını görmek için aşağı kaydırın:
+
+<Frame>
+  <img src="/images/team-inbox-filter-channels-app.png" alt="APP numaralarını gösteren Channels filtresi" />
+</Frame>
+
+Kanal adı veya numarasıyla arayın, bir ya da daha fazla kanal seçin ve **Done** düğmesine tıklayın. Birden fazla kanal seçtiğinizde bunlardan herhangi birine ait konuşmalar gösterilir.
+
+<Tip>
+  Bir numara görünmüyorsa çalışma alanı yöneticinizden o kanala erişiminizi doğrulamasını isteyin.
+</Tip>
+
+## Atanan kişiye göre filtreleme
+
+Belirli çalışma alanı üyelerine ait konuşmaları bulmak için **Assignee** filtresini kullanın. Bu filtre, iş yükünü incelemeyi, bir kuyruğu takip etmeyi veya sahibi olmayan konuşmaları bulmayı kolaylaştırır.
+
+<Frame>
+  <img src="/images/team-inbox-filter-assignee.png" alt="Çalışma alanı üyelerini gösteren Assignee filtresi" />
+</Frame>
+
+- Bir kişinin kuyruğunu incelemek için o kişiyi seçin.
+- Ekibin birleşik iş yükünü görmek için birden fazla kişi seçin.
+- Atanmış konuşmalar için **is known** operatörünü kullanın.
+- Sahibi olmayan konuşmalar için **is unknown** operatörünü kullanın.
+
+## Mesajlaşma penceresinin bitişine göre filtreleme
+
+WhatsApp mesajlaşma penceresi kapanmadan önce konuşmalara öncelik vermek için **Expire time** filtresini kullanın.
+
+<Frame>
+  <img src="/images/team-inbox-filter-expire-time.png" alt="3h, 6h ve 12h seçeneklerini gösteren Expire time filtresi" />
+</Frame>
+
+- **3h:** En acil konuşmalara önce yanıt verin.
+- **6h:** Mevcut destek veya satış vardiyasını planlayın.
+- **12h:** Günün ilerleyen saatlerinde ilgi gerektirebilecek sohbetleri inceleyin.
+
+<Warning>
+  Mesajlaşma penceresi sona erdiğinde, bir API konuşmasında yeni mesaj göndermek için onaylı WhatsApp şablonu gerekebilir.
+</Warning>
+
+## Yapay zekâ özelliklerine göre filtreleme
+
+Yapay zekâ özellikleri; **Urgency Level**, **Conversation State**, sorun kategorisi veya satış aşaması gibi Eazybe AI tarafından çıkarılan ya da güncel tutulan müşteri bilgileridir. Kullanılabilir özellikler çalışma alanı yapılandırmasına bağlıdır.
+
+<Frame>
+  <img src="/images/team-inbox-filter-ai-properties.png" alt="Urgency Level yapay zekâ özelliği seçili All filters düzenleyicisi" />
+</Frame>
+
+Bu filtreleri acil konuşmaları, belirli bir aşamadaki müşterileri, bilinen kategoriye sahip sohbetleri veya bilgisi henüz bilinmeyen kişileri bulmak için kullanın.
+
+## Kullanılabilir filtre özellikleri
+
+| Özellik | Bulmanızı sağlar | Kullanılabilir değerler |
+|---|---|---|
+| **Expire time** | WhatsApp mesajlaşma penceresi seçilen süre içinde sona erecek konuşmalar | `3h`, `6h` veya `12h` |
+| **Assignee** | Seçilen çalışma alanı üyelerine atanmış konuşmalar | Bir veya daha fazla atanan kişi |
+| **Channels** | Seçilen bağlı numaralar üzerinden alınan konuşmalar | Bir veya daha fazla APP, API veya COEX kanalı |
+| **Yapay zekâ özellikleri** | Yapay zekâ tarafından oluşturulan bir kişi özelliğiyle eşleşen konuşmalar | İlgili özellik için tanımlanan değerler |
+
+Yapay zekâ özellikleri, özellik menüsünde adlarıyla görünür. Kullanılabilir özellikler ve değerler çalışma alanı yapılandırmasına bağlıdır.
+
+## Filtre operatörleri
+
+| Operatör | Anlamı |
+|---|---|
+| **is any of** | Seçilen değerlerden en az biriyle eşleşir |
+| **is none of** | Seçilen değerlerin tümünü hariç tutar |
+| **is known** | Özelliğin bir değeri olduğu konuşmalarla eşleşir |
+| **is unknown** | Özelliğin değeri olmadığı konuşmalarla eşleşir |
+
+<Note>
+  **Expire time** ve **Channels**, **is any of** ile **is none of** operatörlerini destekler. Assignee ve yapay zekâ özellikleri ayrıca **is known** ile **is unknown** operatörlerini de destekleyebilir.
+</Note>
+
+## All filters ile filtreleri uygulama
+
+Tüm etkin koşulları görmek, operatörleri değiştirmek, koşul eklemek veya OR grupları oluşturmak için **All filters** düğmesine tıklayın.
+
+<Steps>
+  <Step title="Filtre düzenleyicisini açın">
+    Konuşma listesinin üzerindeki **All filters** düğmesine tıklayın.
+
+    <Frame>
+      <img src="/images/team-inbox-all-filters.png" alt="Koşullar ve OR grubu ekleme seçeneği içeren All filters düzenleyicisi" />
+    </Frame>
+  </Step>
+  <Step title="Özellik ve operatör seçin">
+    Filtrelenecek özelliği, ardından **is any of** veya **is unknown** gibi bir operatörü seçin.
+  </Step>
+  <Step title="Değerleri seçin">
+    Operatör gerektiriyorsa bir veya daha fazla değer seçin. Gerekirse başka koşullar veya bir OR grubu ekleyin.
+  </Step>
+  <Step title="Filtreyi uygulayın">
+    **Done** düğmesine tıklayın. Konuşma listesi ve sonuç sayısı eşleşmeleri gösterecek şekilde güncellenir.
+  </Step>
+</Steps>
+
+Filtre uygulandıktan sonra etkin kontroller vurgulanır ve **All filters** üzerindeki rozet ek koşulları gösterir:
+
+<Frame>
+  <img src="/images/team-inbox-filter-applied.png" alt="Kanal filtresi uygulandıktan sonra Takım Gelen Kutusu araç çubuğu" />
+</Frame>
+
+Tüm koşulları ve eşleşme sayısını kontrol etmek için **All filters** bölümünü yeniden açın:
+
+<Frame>
+  <img src="/images/team-inbox-filter-applied-details.png" alt="İki eşleşmeyle uygulanan Urgency Level ve Channels filtreleri" />
+</Frame>
+
+## Koşulları birleştirme
+
+Aynı gruptaki koşullar **AND** mantığını kullanır. Bir konuşmanın gruptaki tüm koşullarla eşleşmesi gerekir.
+
+Örneğin, **Expire time is any of 3h AND Assignee is any of Ayşe**, mesajlaşma penceresi üç saat içinde sona erecek ve Ayşe'ye atanmış konuşmaları gösterir.
+
+Koşul kümelerinden herhangi biri eşleşebiliyorsa **+ Add OR group** düğmesine tıklayın. Örneğin, **Assignee is any of Ayşe OR Channels is any of Support API**, Ayşe'ye atanmış konuşmalarla Support API kanalından alınan konuşmaları birlikte gösterir.
+
+<Tip>
+  Hiçbir konuşma eşleşmiyorsa aynı gruptaki koşulların fazla kısıtlayıcı olup olmadığını kontrol edin. Alternatifleri ayrı OR gruplarına taşıyın.
+</Tip>
+
+## Filtre sonuçlarını anlama
+
+- Sonuç çubuğu, eşleşen konuşma sayısını mevcut toplamla karşılaştırarak gösterir; örneğin **2 of 14 conversations**.
+- Üst satırda en fazla iki filtre gösterilir. Diğer etkin koşullar uygulanmaya devam eder ve **All filters** sayacına dahil edilir.
+- Filtre uygulandığında **All conversations** açılır. **Assigned**, **Unassigned**, **Assign to me** veya **Closing window** gibi başka bir gelen kutusu listesi seçildiğinde mevcut filtrelenmiş sonuçtan çıkılır.
+- Filtresiz **All conversations** listesine dönmek için düzenleyicide **Clear filters** veya sonuç çubuğunda **Clear** düğmesine tıklayın.
+
+## Filtreyi görünüm olarak kaydetme
+
+En az bir filtre uyguladıktan sonra sonuç çubuğundaki **Save as view** seçeneğine tıklayın.
+
+<Steps>
+  <Step title="Görünümü adlandırın">
+    Önerilen görünüm adını girin veya düzenleyin.
+  </Step>
+  <Step title="Görünürlüğü seçin">
+    **My views** altında göstermek için **Only me**, **Shared views** altında göstermek için **Everyone** seçeneğini belirleyin.
+  </Step>
+  <Step title="Görünümü kaydedin">
+    **Save view** düğmesine tıklayın. Tüm koşullar, operatörler, değerler ve AND/OR grup yapısı kaydedilir.
+  </Step>
+</Steps>
+
+Filtreleri geri yüklemek için sol kenar çubuğundan kaydedilmiş bir görünüm seçin. Etkin bir görünümü değiştirirseniz kayıtlı yapılandırmayı yenisiyle değiştirmek için **Update view** düğmesine tıklayın.
+
+## Sorun giderme
+
+<AccordionGroup>
+  <Accordion title="Hiçbir konuşma eşleşmiyor">
+    Bir koşulu kaldırın, seçilen değerleri genişletin veya alternatifleri ayrı OR gruplarına taşıyın.
+  </Accordion>
+  <Accordion title="Bir kanal veya atanan kişi görünmüyor">
+    Seçenekler erişim izinlerinize bağlıdır. Numaranın veya üyenin size açık olduğunu çalışma alanı yöneticinizden doğrulamasını isteyin.
+  </Accordion>
+  <Accordion title="Değerleri seçerken liste değişmiyor">
+    Bu beklenen davranıştır. Taslak seçimi uygulamak için **Done** düğmesine tıklayın.
+  </Accordion>
+  <Accordion title="All filters sayısı görünür hızlı filtrelerden daha yüksek">
+    Hızlı filtre satırında yalnızca iki filtre gösterilir. Ek koşullar etkin kalır ve sayaca dahil edilir.
+  </Accordion>
+</AccordionGroup>
