@@ -1,16 +1,16 @@
 ---
 title: "Deal Analysis"
-description: "BEA Radar reads your HubSpot deal record and the real conversations behind it, then writes AI properties straight onto the deal — who owes the next reply, what the risk is, and when it is likely to close."
+description: "BEA Radar reads your HubSpot deals and the real conversations behind them, then writes its analysis straight onto the deal — so you can see which deals are really moving, which are quietly dying, and which need you today."
 ---
 
 ## What It Is
 
-**BEA Radar — Deal Analysis** reads everything that has actually happened on a deal — your CRM record *and* the real conversations with the contacts on it — and writes a set of AI properties directly onto the HubSpot deal.
+**BEA Radar — Deal Analysis** reads everything that has actually happened on a deal: your CRM record *and* the real conversations with the people on it. It then writes its analysis straight onto the deal.
 
-You don't leave HubSpot. You don't open another dashboard. You open a deal, and the AI properties are sitting there next to your own fields, telling you whether the deal is really moving, who owes the next reply, what the risk is, and when it is likely to close.
+You don't leave HubSpot. You don't open another dashboard. You open a deal and the analysis is already sitting there beside your own fields — telling you whether the deal is really moving, who owes the next reply, what could stop it closing, and when it is likely to land.
 
 <Note>
-  Deal Analysis works on **HubSpot deal records** and requires a connected HubSpot account. The values are written as standard HubSpot deal properties, so you can filter, sort, and report on them like any other field in your portal.
+  Deal Analysis works on **HubSpot deals** and needs a connected HubSpot account. Everything it writes lands as normal deal fields, so you can filter, sort, build list views, and report on it exactly like anything else in your portal.
 </Note>
 
 ## Where the Data Comes From
@@ -18,185 +18,126 @@ You don't leave HubSpot. You don't open another dashboard. You open a deal, and 
 Every analysis is built from two sides.
 
 <CardGroup cols={2}>
-  <Card title="From HubSpot" icon="hubspot">
-    The deal record and its properties (stage, amount, owner, close date, pipeline), all logged activities — calls, meetings, tasks — emails logged against the deal and its contacts, notes, and the associated contacts and companies.
+  <Card title="Your CRM" icon="hubspot">
+    The deal itself — stage, amount, owner, close date, pipeline — plus every activity logged against it: calls, meetings, tasks, emails, notes, and the contacts and companies attached to it.
   </Card>
-  <Card title="From the conversation" icon="comments">
-    Chat conversations (for example WhatsApp) with the contacts on the deal, email threads with those contacts, and the full back-and-forth — who sent what, when, and how long each side took to reply.
+  <Card title="The real conversation" icon="comments">
+    The actual chats (for example WhatsApp) and email threads with the people on that deal — the full back-and-forth, including who said what, when, and how long each side took to reply.
   </Card>
 </CardGroup>
 
-The AI then combines both. **This is where most of the value is:** the two sides often disagree. The CRM says one thing, the conversation says another — and catching that gap is the whole point of the feature.
+The two are then read together. **This is where most of the value sits:** the CRM and the conversation often tell different stories, and the gap between them is exactly what usually goes unnoticed.
 
 ## When It Runs
 
-BEA Radar runs as a **scheduled batch on a fixed interval**. Each run picks up the deals that have had new activity since they were last analysed and refreshes their properties.
+The analysis runs automatically on a regular schedule. Each run picks up the deals that have had new activity since they were last looked at and refreshes them.
 
-You don't trigger anything. You open a deal and the analysis is already there. The **AI Last Analysed At** property on every deal tells you exactly how fresh its values are.
+You never trigger anything. You open a deal and it's already there — and every deal records when it was last analysed, so you always know how current the picture is.
 
 ## What You Get on Every Deal
 
-Fifteen properties land on the deal, covering five things you'd otherwise have to read the whole thread to work out.
+Instead of reading a whole thread to work out where a deal stands, you get the answers waiting for you.
 
 <CardGroup cols={2}>
-  <Card title="Momentum" icon="gauge-high">
-    Whose court the ball is in, whether engagement is warming or cooling, and whether they've stopped replying altogether.
+  <Card title="Who owes the next move" icon="arrow-right-arrow-left">
+    Whether the ball is in your court or theirs. Pull up everything where the customer is waiting on you and you have the fastest revenue list of your day.
   </Card>
-  <Card title="Qualification" icon="user-check">
-    How close they are to buying, whether you're talking to someone who can say yes, and whether your CRM stage matches reality.
+  <Card title="Whether it's warming or cooling" icon="gauge-high">
+    Not just how the conversation looks today, but how it compares to how it was running before — replies getting slower and thinner, or faster and richer. And whether they've gone quiet altogether.
   </Card>
-  <Card title="Risk" icon="triangle-exclamation">
-    What could stop this deal closing, and what the prospect is actually pushing back on — in their own words.
+  <Card title="How close they are to buying" icon="user-check">
+    The difference between someone describing their own problem, someone weighing up what you do, and someone negotiating price and terms — plus whether the person you're talking to can actually approve it, or has to go get permission.
   </Card>
-  <Card title="Commercials & timing" icon="calendar-check">
-    The amount actually discussed with the customer, and when they've said they intend to close.
+  <Card title="Whether your stage is honest" icon="scale-balanced">
+    Where the conversation has clearly moved further than your pipeline says — or where a deal was pushed forward more optimistically than the conversation supports.
   </Card>
-  <Card title="Context & action" icon="list-check">
-    A plain-language summary of the whole deal, plus concrete recommended next steps.
+  <Card title="What could stop it closing" icon="triangle-exclamation">
+    Competitor pressure, pushback on price, silence after a quote, a requirement you can't meet, a timeline that keeps slipping, or an account resting on a single contact. Plus what they're actually objecting to, in their own words.
   </Card>
-  <Card title="Provenance" icon="shield-check">
-    The evidence behind every value, how many conversations it was built on, and when it was last refreshed.
+  <Card title="Timing and real numbers" icon="calendar-check">
+    When the customer has said they intend to close, and the amount actually discussed with them — which is often not the figure sitting in your CRM.
   </Card>
 </CardGroup>
 
-### The full property list
+Alongside these you get a plain-language summary of the whole deal — who's involved, what they need, where it stands, what happened most recently — and concrete suggested next steps for that specific deal. The summary is what you read when you're picking up a colleague's pipeline or walking into a call in two minutes.
 
-| Property | Type | Values |
-|:---------|:-----|:-------|
-| **AI Waiting On** | Dropdown | Prospect · Us |
-| **AI Engagement Trend** | Dropdown | Steady · Warming · Cooling · Gone dark |
-| **AI Ghosted** | Checkbox | Yes · No |
-| **AI Buying Intent** | Dropdown | High · Medium · Low |
-| **AI Decision Maker Involved** | Dropdown | Yes · No · Unknown |
-| **AI Stage Signal** | Dropdown | Ahead of stage · Aligned · Behind stage |
-| **AI Risk Flag** | Multi-select | See the risk list below |
-| **AI Objection Raised** | Text | The latest objection, in free text |
-| **AI Deal Summary** | Long text | Narrative summary of the deal |
-| **AI Expected Closure Timeline** | Text | One of seven normalised phrases |
-| **AI Actual Deal Amount** | Number | Amount found in conversation, else the CRM amount |
-| **AI Suggested Next Steps** | Long text | Recommended actions |
-| **AI Evidence** | Long text | Quotes and references backing each property |
-| **AI Chats Analysed** | Number | How many conversations were read |
-| **AI Last Analysed At** | Date/time | When the analysis last ran |
-
-### Risks it flags
-
-**AI Risk Flag** is multi-select — a deal can carry more than one risk at once.
-
-| Flag | Meaning |
-|:-----|:--------|
-| **Competitor** | The prospect mentions another company, or says someone else is offering a better deal |
-| **Pricing** | The prospect says your price is too high, or pushes back on cost |
-| **Went cold after pricing** | Price was shared and there has been no response since |
-| **Requirement gap** | What they need is more than, or different from, what you're offering |
-| **No response / ghosted** | The thread has gone silent — a loss risk in its own right |
-| **Timeline slip** | Their stated timeline keeps moving further out |
-| **Single threaded** | Only one contact is engaged; if they go quiet, the deal goes quiet |
-| **None** | No risk signal found |
-
-<Tip>
-  This list is intentionally open-ended and will keep growing. The AI isn't restricted to a fixed menu — where a genuine risk pattern shows up in the conversation, it gets flagged.
-</Tip>
-
-## Key Behaviours to Know
+## What You Can Rely On
 
 <AccordionGroup>
-  <Accordion title="Nothing is guessed — blank means no signal">
-    Every value written to a deal comes from something that actually happened in the CRM or the conversation. Where there is no real signal for a property, it is left **blank** rather than filled with an assumption.
+  <Accordion title="Nothing is guessed">
+    Everything written to a deal comes from something that actually happened — in the CRM or in the conversation — and carries the evidence behind it. You can see the exact message or activity a conclusion came from, so nothing is asserted that can't be traced back to something real.
 
-    A blank field is information, not a gap. Filter for it and you get the list of deals where that signal genuinely doesn't exist yet.
+    Where there's no genuine signal, the deal is left empty rather than filled with an assumption. An empty field is information in its own right: filter for it and you have the deals where that signal doesn't exist yet.
   </Accordion>
-  <Accordion title="Ghosted needs two days of silence">
-    **AI Ghosted** turns Yes only when the last message came from your side, the reply is pending on the prospect's side, and **at least 2 days** have passed.
+  <Accordion title="Silence has to be real before it's flagged">
+    A deal isn't marked as gone quiet the moment a reply is late. The customer has to have been sitting on your last message for a couple of days first.
 
-    The threshold is day-based on purpose. If a message goes out and the analysis runs 12 hours later, the prospect may simply not have got to it yet — so the flag would mean nothing. Two days makes it mean something real when it fires.
+    If a message goes out in the morning and the analysis runs that evening, they may simply not have got to it. Waiting means that when the flag does fire, it means something — and the list it produces is genuinely worth working.
   </Accordion>
-  <Accordion title="Closure timeline uses seven fixed values">
-    Whatever the prospect says is normalised against today's date into one of seven phrases:
+  <Accordion title="Timelines are made consistent so you can actually use them">
+    Customers say things like "give us a few weeks" or "after the security review". Those get translated into a consistent set of timeframes, worked out against today's date rather than taken literally.
 
-    `This week` · `Next week` · `2–3 weeks` · `This month` · `Next month` · `Next quarter` · `Beyond next quarter`
-
-    Because the vocabulary is fixed, you can filter and report on it like a dropdown — *"show me everything closing this month"* works across your whole pipeline. Note this captures **closure** signals only: *"we'll sign next month"* counts, *"let's do the demo Friday"* does not.
+    Because everyone's phrasing ends up in the same vocabulary, *"show me everything closing this month"* works across your whole pipeline. Only genuine closing signals count — *"we'll sign next month"* does, *"let's do the demo Friday"* doesn't.
   </Accordion>
-  <Accordion title="Actual amount falls back to your CRM amount">
-    If a deal amount is found in the conversations — a quote sent, a price agreed, a negotiated number — that value is used. If none is found, **AI Actual Deal Amount** falls back to the existing HubSpot deal amount.
+  <Accordion title="It never touches your own fields">
+    Everything is written into its own separate fields. Your deal stage, amount, close date and everything else your team maintains are never edited or overwritten.
 
-    Your original HubSpot Amount field is left untouched. You keep both, and the difference between them is itself worth looking at — the CRM value is often a first estimate nobody went back and updated.
+    Where the analysis disagrees with your CRM — a stage that looks wrong, an amount that doesn't match what was quoted — it says so in its own field and leaves yours exactly as your team left it. You decide what to do about the difference.
   </Accordion>
-  <Accordion title="Stage Signal never overrides your CRM stage">
-    **AI Stage Signal** compares the stage your conversation implies against the stage the deal actually sits in, and flags where they disagree. It is a flag only — your pipeline stays exactly where your team put it.
-
-    *Ahead of stage* usually means the rep hasn't updated the CRM and your forecast is understated. *Behind stage* means the deal was moved forward optimistically and your forecast is overstated — usually the more expensive of the two.
+  <Accordion title="You can see how much it's standing on">
+    Each deal shows how many conversations went into the analysis. A confident-looking read built on two messages deserves different weight from one built on sixty — so you always know how much material is behind the conclusion.
   </Accordion>
 </AccordionGroup>
 
-## Evidence and Verification
+## Reading It Together
 
-Every AI property is backed by evidence.
+The signals are meant to be read as a set. A few patterns worth recognising:
 
-- **AI Evidence** — the message, quote, or activity that led to each conclusion. If the AI says *Buying Intent = High*, you can see the pricing question it read. Nothing is asserted without something to point at.
-- **AI Chats Analysed** — how many conversations were fetched and analysed for that run. A confident-looking result built on two messages should be read differently from one built on sixty.
-- **AI Last Analysed At** — the timestamp of the most recent run, so you always know how fresh the values are.
+### The deal that's ahead of you
 
-An internal integrity record of exactly what data went into each analysis is also kept, so a given result can be traced back to its inputs after the fact. It isn't something you need to read or act on.
+The customer owes you a reply, engagement is picking up, they're asking commercial questions, the person you're talking to can approve it, and the conversation has clearly moved past where your pipeline says the deal is.
 
-## Reading the Signals Together
+This one is real and moving faster than your CRM knows. Update the stage and push for the close.
 
-The properties are designed to be read as a set, not one at a time.
+### The deal that's quietly dying
 
-### A healthy deal
+Nothing looks alarming. They still owe you a reply, they haven't gone silent, and they're still engaged on paper — but replies are getting slower, price landed badly, your contact can't approve it anyway, and the conversation is actually behind where the pipeline claims.
 
-> Waiting On: **Prospect** · Trend: **Warming** · Ghosted: **No** · Intent: **High** · Decision Maker: **Yes** · Stage Signal: **Ahead of stage** · Risk: **None**
+Nothing here is on fire, and that's the point. This deal still looks fine in your forecast. It isn't. Intervene now, not at month end.
 
-A commercial conversation with the right person, moving faster than your CRM knows. Update the stage and push to close.
+### The deal that needs you today
 
-### A quietly dying deal
-
-> Waiting On: **Prospect** · Trend: **Cooling** · Ghosted: **No** · Intent: **Medium** · Decision Maker: **No** · Stage Signal: **Behind stage** · Risk: **Went cold after pricing**
-
-Nothing here is on fire, and that's the point — this deal still looks fine in the pipeline. It isn't. Price landed badly, your contact can't approve it anyway, and engagement is falling. Intervene now, not at month-end.
-
-### Needs you today
-
-> Waiting On: **Us**
-
-Whatever else is true, the prospect is waiting on you. Start here.
+Whatever else is true — the customer is waiting on you.
 
 <Tip>
-  Filter your pipeline for `AI Waiting On = Us` — that list is the fastest revenue action of your day. Then check `AI Engagement Trend = Cooling`, which fires while a deal still looks fine on paper, before the stage slips or the close date moves.
+  Start every day with the deals where the customer is waiting on a reply from your side, then look at the ones that are cooling. Cooling fires while a deal still looks healthy in the pipeline — before the stage slips and before the close date moves.
 </Tip>
 
 ## FAQ
 
 <AccordionGroup>
   <Accordion title="Does this change my CRM data?">
-    No. Every piece of analysis is written into its own dedicated property. Your existing fields — Deal Stage, Amount, Close Date, and everything else your team maintains — are never edited or overwritten. Where BEA Radar disagrees with your CRM, it says so in its own field and leaves yours alone.
+    No. Everything is written into its own dedicated fields. Your deal stage, amount, close date, and everything else your team maintains are never edited or overwritten. Where the analysis disagrees with your CRM, it records that in its own field and leaves yours alone.
   </Accordion>
   <Accordion title="How often does it run?">
-    It runs as a scheduled batch on a fixed interval. Each run refreshes the deals that have had new activity since they were last analysed, so active deals stay current without you triggering anything. Check **AI Last Analysed At** on any deal to see when its values were last written.
+    On a regular automatic schedule. Each run refreshes the deals that have had new activity since they were last analysed, so active deals stay current without you doing anything. Every deal records when it was last looked at.
   </Accordion>
-  <Accordion title="Why did a property change without new messages?">
-    Because some properties measure time and silence, not just messages.
+  <Accordion title="Why did something change when there were no new messages?">
+    Because some of it measures time and silence, not just messages.
 
-    **AI Ghosted** turns Yes the moment the 2-day threshold is crossed with no reply — nothing new has to arrive for that to happen.
-
-    **AI Engagement Trend** is a comparison property: it measures how the conversation is running *now* against how it was running *before*. When messages stop, the comparison itself changes — the same deal that was *Steady* last week becomes *Cooling*, then *Gone dark*, purely because the pattern has shifted. The absence is the signal.
-
-    **AI Risk Flag** follows from this too — once a deal is ghosted, *No response / ghosted* appears as a risk.
+    A deal tips into "gone quiet" purely because enough days have passed with no reply — nothing new has to arrive for that to happen. And because warming and cooling are measured against how the conversation *used to* run, the same deal that looked steady last week drifts to cooling and then to silent simply because the pattern changed. The absence is the signal.
   </Accordion>
-  <Accordion title="Can I filter and build views on these?">
-    Yes. They're standard HubSpot deal properties, so you can filter on them, build your own list views, and create dashboards and reports using them — exactly like any other field in your portal.
+  <Accordion title="Can I filter and build views on this?">
+    Yes. It all lands as normal HubSpot deal fields, so you can filter on it, build your own list views, and create dashboards and reports — exactly like any other field in your portal.
   </Accordion>
-  <Accordion title="What if the conversation data is thin?">
-    BEA Radar will not guess. Every property reflects only what genuinely happened in the data available — if the evidence isn't there, the value isn't written. **AI Chats Analysed** tells you how many conversations the conclusion was built on, so you always know how much material is behind it.
-
-    Where there's no signal at all the property stays blank, except **AI Decision Maker Involved**, which records this explicitly as *Unknown*.
+  <Accordion title="What if there isn't much conversation data?">
+    It won't guess. Everything reflects only what genuinely happened in the data available — if the evidence isn't there, nothing is written. Each deal shows how many conversations the analysis was built on, so you always know how much is behind it.
   </Accordion>
-  <Accordion title="Is the AI ever wrong?">
-    Accuracy is high, because no analysis stands on its own — every value is verified against an evidence record showing the exact message or activity it came from. Nothing is asserted that can't be traced back to something real in the conversation or the CRM.
+  <Accordion title="Is it ever wrong?">
+    Accuracy is high because nothing stands on its own — every conclusion is backed by the exact message or activity it came from. Nothing is claimed that can't be traced to something real in the conversation or the CRM.
   </Accordion>
-  <Accordion title="Can I edit an AI property myself?">
-    You can type over it in HubSpot, but the next scheduled run will overwrite it. If you want to record your own judgement permanently, use your own fields or a note on the deal.
+  <Accordion title="Can I overwrite it myself?">
+    You can type over it in HubSpot, but the next scheduled run will replace what you wrote. If you want to record your own judgement permanently, use your own fields or a note on the deal.
   </Accordion>
 </AccordionGroup>
 
@@ -204,9 +145,9 @@ Whatever else is true, the prospect is waiting on you. Start here.
 
 <CardGroup cols={2}>
   <Card title="BEA Radar Overview" icon="radar" href="/en/ai-agents/bea-radar/overview">
-    The WhatsApp side of BEA Radar — AI properties written on every chat
+    The WhatsApp side of BEA Radar — AI analysis written on every chat
   </Card>
   <Card title="AI Filters" icon="filter" href="/en/ai-agents/bea-radar/ai-filters">
-    Filter your Team Inbox by any AI property
+    Filter your Team Inbox by anything the AI has worked out
   </Card>
 </CardGroup>

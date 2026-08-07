@@ -1,16 +1,16 @@
 ---
 title: "Anlaşma Analizi"
-description: "BEA Radar, HubSpot anlaşma kaydınızı ve arkasındaki gerçek sohbetleri okur, ardından yapay zekâ özelliklerini doğrudan anlaşmaya yazar: sırada kim var, risk nedir ve anlaşmanın ne zaman kapanması bekleniyor."
+description: "BEA Radar, HubSpot anlaşmalarınızı ve arkasındaki gerçek sohbetleri okur ve analizini doğrudan anlaşmaya yazar — böylece hangi anlaşmaların gerçekten ilerlediğini, hangilerinin sessizce söndüğünü ve hangilerinin bugün sizi beklediğini görürsünüz."
 ---
 
 ## Nedir?
 
-**BEA Radar — Anlaşma Analizi**, bir anlaşmada gerçekten olan her şeyi okur — CRM kaydınızı *ve* anlaşmadaki kişilerle yapılan gerçek sohbetleri — ve bir dizi yapay zekâ özelliğini doğrudan HubSpot anlaşmasına yazar.
+**BEA Radar — Anlaşma Analizi**, bir anlaşmada gerçekten olan her şeyi okur: CRM kaydınızı *ve* ilgili kişilerle yapılan gerçek sohbetleri. Ardından analizini doğrudan anlaşmaya yazar.
 
-HubSpot'tan çıkmanız gerekmez. Başka bir panel açmanız gerekmez. Bir anlaşmayı açarsınız ve yapay zekâ özellikleri kendi alanlarınızın yanında hazır bekler; anlaşmanın gerçekten ilerleyip ilerlemediğini, sıradaki yanıtın kimde olduğunu, riskin ne olduğunu ve ne zaman kapanmasının beklendiğini söyler.
+HubSpot'tan çıkmanız gerekmez. Başka bir panel açmanız gerekmez. Bir anlaşmayı açarsınız ve analiz kendi alanlarınızın yanında hazır bekler; anlaşmanın gerçekten ilerleyip ilerlemediğini, sıradaki yanıtın kimde olduğunu, kapanışı neyin engelleyebileceğini ve ne zaman gerçekleşmesinin muhtemel olduğunu söyler.
 
 <Note>
-  Anlaşma Analizi **HubSpot anlaşma kayıtları** üzerinde çalışır ve bağlı bir HubSpot hesabı gerektirir. Değerler standart HubSpot anlaşma özellikleri olarak yazılır; böylece portalınızdaki diğer alanlar gibi filtreleyebilir, sıralayabilir ve raporlayabilirsiniz.
+  Anlaşma Analizi **HubSpot anlaşmaları** üzerinde çalışır ve bağlı bir HubSpot hesabı gerektirir. Yazdığı her şey normal anlaşma alanı olarak kaydedilir; böylece portalınızdaki diğer her şey gibi filtreleyebilir, sıralayabilir, liste görünümleri oluşturabilir ve raporlayabilirsiniz.
 </Note>
 
 ## Veriler Nereden Gelir
@@ -18,185 +18,126 @@ HubSpot'tan çıkmanız gerekmez. Başka bir panel açmanız gerekmez. Bir anla�
 Her analiz iki kaynaktan oluşturulur.
 
 <CardGroup cols={2}>
-  <Card title="HubSpot tarafından" icon="hubspot">
-    Anlaşma kaydı ve özellikleri (aşama, tutar, sahip, kapanış tarihi, pipeline), kaydedilen tüm etkinlikler — aramalar, toplantılar, görevler —, anlaşmaya ve kişilerine kaydedilen e-postalar, notlar ve ilişkili kişiler ile şirketler.
+  <Card title="CRM'iniz" icon="hubspot">
+    Anlaşmanın kendisi — aşama, tutar, sahip, kapanış tarihi, pipeline — ve üzerine kaydedilen tüm etkinlikler: aramalar, toplantılar, görevler, e-postalar, notlar ve ilişkili kişiler ile şirketler.
   </Card>
-  <Card title="Sohbet tarafından" icon="comments">
-    Anlaşmadaki kişilerle yapılan sohbetler (örneğin WhatsApp), bu kişilerle olan e-posta yazışmaları ve tüm karşılıklı akış: kim ne gönderdi, ne zaman ve her taraf yanıt vermek için ne kadar bekledi.
+  <Card title="Gerçek sohbet" icon="comments">
+    O anlaşmadaki kişilerle yapılan gerçek sohbetler (örneğin WhatsApp) ve e-posta yazışmaları — kimin ne söylediği, ne zaman söylediği ve her tarafın yanıt vermek için ne kadar beklediği dâhil, tüm karşılıklı akış.
   </Card>
 </CardGroup>
 
-Yapay zekâ sonra ikisini birleştirir. **Değerin büyük kısmı tam burada:** iki taraf çoğu zaman birbirini tutmaz. CRM bir şey söyler, sohbet başka bir şey — ve bu farkı yakalamak özelliğin bütün amacıdır.
+Sonra ikisi birlikte okunur. **Değerin büyük kısmı burada:** CRM ile sohbet çoğu zaman farklı hikâyeler anlatır ve aradaki bu fark, normalde gözden kaçan şeyin ta kendisidir.
 
 ## Ne Zaman Çalışır
 
-BEA Radar, **sabit aralıklarla çalışan zamanlanmış bir toplu işlem** olarak yürütülür. Her çalıştırma, son analizden bu yana yeni etkinlik almış anlaşmaları alır ve özelliklerini günceller.
+Analiz düzenli aralıklarla otomatik olarak çalışır. Her çalıştırma, son bakılan zamandan bu yana yeni etkinlik almış anlaşmaları alır ve günceller.
 
-Hiçbir şeyi tetiklemeniz gerekmez. Anlaşmayı açarsınız ve analiz zaten oradadır. Her anlaşmadaki **AI Last Analysed At** özelliği, değerlerin ne kadar güncel olduğunu tam olarak gösterir.
+Hiçbir şeyi tetiklemeniz gerekmez. Anlaşmayı açarsınız, analiz zaten oradadır — ve her anlaşma en son ne zaman analiz edildiğini kaydeder, böylece tablonun ne kadar güncel olduğunu her zaman bilirsiniz.
 
 ## Her Anlaşmada Ne Elde Edersiniz
 
-Anlaşmaya on beş özellik gelir; bunlar, aksi hâlde tüm yazışmayı okuyarak çıkarmanız gereken beş konuyu kapsar.
+Bir anlaşmanın nerede olduğunu anlamak için tüm yazışmayı okumak yerine, yanıtlar sizi bekliyor olur.
 
 <CardGroup cols={2}>
-  <Card title="İvme" icon="gauge-high">
-    Sıranın kimde olduğu, ilginin ısınıp ısınmadığı ya da soğuduğu ve tamamen yanıt vermeyi bırakıp bırakmadıkları.
+  <Card title="Sıra kimde" icon="arrow-right-arrow-left">
+    Top sizde mi yoksa onlarda mı. Müşterinin sizi beklediği her şeyi listeleyin; gününüzün en hızlı gelir listesi elinizde olsun.
   </Card>
-  <Card title="Nitelendirme" icon="user-check">
-    Satın almaya ne kadar yakın oldukları, evet diyebilecek biriyle konuşup konuşmadığınız ve CRM aşamanızın gerçekle örtüşüp örtüşmediği.
+  <Card title="Isınıyor mu, soğuyor mu" icon="gauge-high">
+    Sadece sohbetin bugün nasıl göründüğü değil, önceden nasıl ilerlediğiyle karşılaştırması: yanıtlar yavaşlayıp kısalıyor mu, yoksa hızlanıp zenginleşiyor mu. Ve tamamen sessizleşip sessizleşmedikleri.
   </Card>
-  <Card title="Risk" icon="triangle-exclamation">
-    Bu anlaşmanın kapanmasını ne engelleyebilir ve potansiyel müşterinin kendi ifadeleriyle gerçekte neye itiraz ettiği.
+  <Card title="Satın almaya ne kadar yakınlar" icon="user-check">
+    Kendi sorununu anlatan biriyle, sizin ne yaptığınızı değerlendiren biri ve fiyat ile koşulları pazarlık eden biri arasındaki fark. Ayrıca konuştuğunuz kişinin onaylama yetkisi mi var, yoksa izin almak zorunda mı.
   </Card>
-  <Card title="Tutar ve zamanlama" icon="calendar-check">
-    Müşteriyle gerçekten konuşulan tutar ve ne zaman kapatmayı düşündüğünü söylediği.
+  <Card title="Aşamanız dürüst mü" icon="scale-balanced">
+    Sohbetin, pipeline'ınızın söylediğinden belirgin biçimde ileri gittiği yerler — ya da bir anlaşmanın sohbetin desteklediğinden daha iyimser biçimde öne taşındığı yerler.
   </Card>
-  <Card title="Bağlam ve aksiyon" icon="list-check">
-    Tüm anlaşmanın sade bir dille özeti ve önerilen somut sonraki adımlar.
+  <Card title="Kapanışı ne engelleyebilir" icon="triangle-exclamation">
+    Rakip baskısı, fiyata direnç, teklif sonrası sessizlik, karşılayamadığınız bir gereksinim, sürekli ertelenen bir takvim ya da tek bir kişiye dayanan bir hesap. Ve kendi ifadeleriyle gerçekte neye itiraz ettikleri.
   </Card>
-  <Card title="İzlenebilirlik" icon="shield-check">
-    Her değerin arkasındaki kanıt, kaç sohbet üzerine kurulduğu ve en son ne zaman yenilendiği.
+  <Card title="Zamanlama ve gerçek rakamlar" icon="calendar-check">
+    Müşterinin ne zaman kapatmayı düşündüğünü söylediği ve onunla gerçekten konuşulan tutar — ki bu çoğu zaman CRM'inizdeki rakam değildir.
   </Card>
 </CardGroup>
 
-### Özelliklerin tam listesi
+Bunların yanında tüm anlaşmanın sade bir dille özetini alırsınız — kimler var, neye ihtiyaçları var, durum ne, en son ne oldu — ve o anlaşmaya özel somut sonraki adım önerileri. Bu özet, bir meslektaşınızın pipeline'ını devraldığınızda ya da iki dakika sonra bir görüşmeye gireceğiniz zaman okuyacağınız şeydir.
 
-| Özellik | Tür | Değerler |
-|:--------|:----|:---------|
-| **AI Waiting On** | Açılır liste | Prospect · Us |
-| **AI Engagement Trend** | Açılır liste | Steady · Warming · Cooling · Gone dark |
-| **AI Ghosted** | Onay kutusu | Yes · No |
-| **AI Buying Intent** | Açılır liste | High · Medium · Low |
-| **AI Decision Maker Involved** | Açılır liste | Yes · No · Unknown |
-| **AI Stage Signal** | Açılır liste | Ahead of stage · Aligned · Behind stage |
-| **AI Risk Flag** | Çoklu seçim | Aşağıdaki risk listesine bakın |
-| **AI Objection Raised** | Metin | En son itiraz, serbest metin olarak |
-| **AI Deal Summary** | Uzun metin | Anlaşmanın anlatı biçiminde özeti |
-| **AI Expected Closure Timeline** | Metin | Yedi standart ifadeden biri |
-| **AI Actual Deal Amount** | Sayı | Sohbette bulunan tutar; yoksa CRM'deki tutar |
-| **AI Suggested Next Steps** | Uzun metin | Önerilen aksiyonlar |
-| **AI Evidence** | Uzun metin | Her özelliği destekleyen alıntılar ve referanslar |
-| **AI Chats Analysed** | Sayı | Kaç sohbetin okunduğu |
-| **AI Last Analysed At** | Tarih/saat | Analizin en son ne zaman çalıştığı |
-
-### İşaretlediği riskler
-
-**AI Risk Flag** çoklu seçimdir: bir anlaşma aynı anda birden fazla risk taşıyabilir.
-
-| İşaret | Anlamı |
-|:-------|:-------|
-| **Competitor** | Potansiyel müşteri başka bir şirketten söz eder ya da birinin daha iyi teklif verdiğini söyler |
-| **Pricing** | Potansiyel müşteri fiyatınızın çok yüksek olduğunu söyler ya da maliyete direnir |
-| **Went cold after pricing** | Fiyat paylaşıldı ve o zamandan beri yanıt gelmedi |
-| **Requirement gap** | İhtiyaç duydukları şey sunduğunuzdan fazla ya da farklı |
-| **No response / ghosted** | Yazışma sessizliğe gömüldü — kendi başına bir kayıp riski |
-| **Timeline slip** | Belirttikleri zaman çizelgesi sürekli ileriye kayıyor |
-| **Single threaded** | Hesapta yalnızca tek bir kişi ilgili; o susarsa anlaşma da susar |
-| **None** | Hiçbir risk sinyali bulunamadı |
-
-<Tip>
-  Bu liste bilinçli olarak açık uçludur ve büyümeye devam edecektir. Yapay zekâ sabit bir menüyle sınırlı değildir: sohbette gerçek bir risk örüntüsü belirdiğinde işaretlenir.
-</Tip>
-
-## Bilinmesi Gereken Temel Davranışlar
+## Neye Güvenebilirsiniz
 
 <AccordionGroup>
-  <Accordion title="Hiçbir şey tahmin edilmez — boş, sinyal yok demektir">
-    Bir anlaşmaya yazılan her değer, CRM'de ya da sohbette gerçekten olan bir şeyden gelir. Bir özellik için gerçek bir sinyal yoksa, varsayımla doldurulmak yerine **boş** bırakılır.
+  <Accordion title="Hiçbir şey tahmin edilmez">
+    Bir anlaşmaya yazılan her şey, CRM'de ya da sohbette gerçekten olan bir şeyden gelir ve arkasındaki kanıtı taşır. Bir sonucun hangi mesaj ya da etkinlikten çıktığını görebilirsiniz; dolayısıyla gerçek bir şeye kadar izlenemeyecek hiçbir iddia ortaya konmaz.
 
-    Boş bir alan bir eksiklik değil, bilgidir. Ona göre filtreleyin; o sinyalin henüz oluşmadığı anlaşmaların listesini elde edersiniz.
+    Gerçek bir sinyal yoksa alan, varsayımla doldurulmak yerine boş bırakılır. Boş bir alan başlı başına bilgidir: ona göre filtreleyin, o sinyalin henüz oluşmadığı anlaşmaları elde edersiniz.
   </Accordion>
-  <Accordion title="Ghosted için iki gün sessizlik gerekir">
-    **AI Ghosted** yalnızca son mesaj sizin tarafınızdan gittiğinde, yanıt potansiyel müşteri tarafında beklerken ve **en az 2 gün** geçmişse Yes olarak işaretlenir.
+  <Accordion title="Sessizliğin işaretlenmesi için gerçek olması gerekir">
+    Bir anlaşma, yanıt geciktiği anda "sessizleşti" olarak işaretlenmez. Müşterinin son mesajınızın üzerine birkaç gün yanıtsız oturmuş olması gerekir.
 
-    Eşik bilinçli olarak gün bazlıdır. Bir mesaj gittikten 12 saat sonra analiz çalışırsa, potansiyel müşteri henüz mesaja bakmamış olabilir — bu durumda işaret hiçbir şey ifade etmezdi. İki gün, işaret devreye girdiğinde gerçekten bir anlam taşımasını sağlar.
+    Bir mesaj sabah gidip analiz akşam çalışırsa, karşı taraf henüz bakmamış olabilir. Beklemek, uyarı devreye girdiğinde bunun bir anlam taşımasını sağlar — ve ürettiği listenin gerçekten üzerinde çalışmaya değer olmasını.
   </Accordion>
-  <Accordion title="Kapanış zaman çizelgesi yedi sabit değer kullanır">
-    Potansiyel müşteri ne söylerse söylesin, bugünün tarihine göre yedi ifadeden birine normalleştirilir:
+  <Accordion title="Takvimler kullanılabilir olsun diye standartlaştırılır">
+    Müşteriler "bize birkaç hafta verin" ya da "güvenlik incelemesinden sonra" gibi şeyler söyler. Bunlar, harfiyen alınmak yerine bugünün tarihine göre hesaplanarak tutarlı bir zaman aralığı kümesine çevrilir.
 
-    `This week` · `Next week` · `2–3 weeks` · `This month` · `Next month` · `Next quarter` · `Beyond next quarter`
-
-    Sözcük dağarcığı sabit olduğu için bunu bir açılır liste gibi filtreleyip raporlayabilirsiniz: *"bu ay kapanacak her şeyi göster"* tüm pipeline'ınızda çalışır. Yalnızca **kapanış** sinyallerinin sayıldığını unutmayın: *"gelecek ay imzalarız"* sayılır, *"demoyu cuma yapalım"* sayılmaz.
+    Herkesin ifadesi aynı sözcük dağarcığında toplandığı için *"bu ay kapanacak her şeyi göster"* tüm pipeline'ınızda çalışır. Yalnızca gerçek kapanış sinyalleri sayılır: *"gelecek ay imzalarız"* sayılır, *"demoyu cuma yapalım"* sayılmaz.
   </Accordion>
-  <Accordion title="Gerçek tutar, CRM tutarınıza geri döner">
-    Sohbetlerde bir tutar bulunursa — gönderilen bir teklif, anlaşılan bir fiyat, pazarlık edilmiş bir rakam — o değer kullanılır. Hiçbiri bulunamazsa **AI Actual Deal Amount**, HubSpot'taki mevcut anlaşma tutarına geri döner.
+  <Accordion title="Kendi alanlarınıza asla dokunmaz">
+    Her şey kendi ayrı alanlarına yazılır. Aşamanız, tutarınız, kapanış tarihiniz ve ekibinizin sürdürdüğü diğer her şey asla düzenlenmez veya üzerine yazılmaz.
 
-    Orijinal HubSpot Tutar alanınıza dokunulmaz. İkisi de sizde kalır ve aradaki fark başlı başına incelemeye değer bir sinyaldir: CRM'deki değer çoğu zaman kimsenin dönüp güncellemediği ilk tahmindir.
+    Analiz CRM'inizle aynı fikirde olmadığında — yanlış görünen bir aşama, verilen teklifle uyuşmayan bir tutar — bunu kendi alanında söyler ve sizinkini ekibinizin bıraktığı gibi bırakır. Bu farkla ne yapacağınıza siz karar verirsiniz.
   </Accordion>
-  <Accordion title="Stage Signal, CRM aşamanızı asla geçersiz kılmaz">
-    **AI Stage Signal**, sohbetin işaret ettiği aşamayı anlaşmanın gerçekte bulunduğu aşamayla karşılaştırır ve uyuşmadıkları yeri işaretler. Yalnızca bir işarettir: pipeline'ınız tam olarak ekibinizin bıraktığı yerde kalır.
-
-    *Ahead of stage* genellikle temsilcinin CRM'i güncellemediği ve tahmininizin olduğundan düşük göründüğü anlamına gelir. *Behind stage* ise anlaşmanın iyimserlikle ileri taşındığı ve tahmininizin şişkin olduğu anlamına gelir — ikisinden genellikle daha pahalı olanı budur.
+  <Accordion title="Neyin üzerine dayandığını görebilirsiniz">
+    Her anlaşma, analize kaç sohbetin girdiğini gösterir. İki mesaja dayanan kendinden emin görünen bir okuma ile altmış mesaja dayanan bir okuma farklı ağırlık hak eder — böylece sonucun arkasında ne kadar malzeme olduğunu her zaman bilirsiniz.
   </Accordion>
 </AccordionGroup>
 
-## Kanıt ve Doğrulama
+## Bunları Birlikte Okumak
 
-Her yapay zekâ özelliği bir kanıtla desteklenir.
+Sinyaller bir bütün olarak okunmak üzere tasarlanmıştır. Tanımaya değer birkaç örüntü:
 
-- **AI Evidence** — her sonuca götüren mesaj, alıntı ya da etkinlik. Yapay zekâ *Buying Intent = High* diyorsa, okuduğu fiyat sorusunu görebilirsiniz. Gösterilecek bir dayanağı olmadan hiçbir şey iddia edilmez.
-- **AI Chats Analysed** — o çalıştırmada kaç sohbetin getirilip analiz edildiği. İki mesaj üzerine kurulmuş kendinden emin görünen bir sonuç, altmış mesaj üzerine kurulmuş olandan farklı okunmalıdır.
-- **AI Last Analysed At** — en son çalıştırmanın zaman damgası; böylece değerlerin ne kadar güncel olduğunu her zaman bilirsiniz.
+### Sizin önünüzde giden anlaşma
 
-Ayrıca her analize tam olarak hangi verilerin girdiğine dair dahilî bir bütünlük kaydı tutulur; böylece bir sonuç sonradan kaynaklarına kadar izlenebilir. Bu, okumanız ya da üzerinde aksiyon almanız gereken bir şey değildir.
+Müşteri size bir yanıt borçlu, ilgi artıyor, ticari sorular soruyor, konuştuğunuz kişi onaylayabiliyor ve sohbet, pipeline'ınızın anlaşmayı koyduğu yerin belirgin biçimde ötesine geçmiş.
 
-## Sinyalleri Birlikte Okumak
+Bu gerçek ve CRM'inizin bildiğinden daha hızlı ilerliyor. Aşamayı güncelleyin ve kapanışa doğru itin.
 
-Özellikler tek tek değil, bir bütün olarak okunmak üzere tasarlanmıştır.
+### Sessizce sönen anlaşma
 
-### Sağlıklı bir anlaşma
+Hiçbir şey endişe verici görünmüyor. Hâlâ size bir yanıt borçlular, ortadan kaybolmadılar ve kâğıt üzerinde ilgililer — ama yanıtlar yavaşlıyor, fiyat kötü karşılandı, temasta olduğunuz kişi zaten onaylayamıyor ve sohbet aslında pipeline'ın iddia ettiğinin gerisinde.
 
-> Waiting On: **Prospect** · Trend: **Warming** · Ghosted: **No** · Intent: **High** · Decision Maker: **Yes** · Stage Signal: **Ahead of stage** · Risk: **None**
+Burada alarm veren hiçbir şey yok ve asıl mesele de bu. Bu anlaşma tahmininizde hâlâ iyi görünüyor. Değil. Ay sonunda değil, şimdi müdahale edin.
 
-Doğru kişiyle yürüyen ticari bir konuşma; CRM'inizin bildiğinden daha hızlı ilerliyor. Aşamayı güncelleyin ve kapanışa doğru itin.
+### Bugün sizi bekleyen anlaşma
 
-### Sessizce ölen bir anlaşma
-
-> Waiting On: **Prospect** · Trend: **Cooling** · Ghosted: **No** · Intent: **Medium** · Decision Maker: **No** · Stage Signal: **Behind stage** · Risk: **Went cold after pricing**
-
-Burada alarm veren hiçbir şey yok ve asıl mesele de bu: bu anlaşma pipeline'da hâlâ iyi görünüyor. Değil. Fiyat kötü karşılandı, temasta olduğunuz kişi zaten onaylayamaz ve ilgi düşüyor. Ay sonunda değil, şimdi müdahale edin.
-
-### Bugün sizi bekliyor
-
-> Waiting On: **Us**
-
-Başka her şey ne olursa olsun, potansiyel müşteri sizi bekliyor. Buradan başlayın.
+Başka her şey ne olursa olsun — müşteri sizi bekliyor.
 
 <Tip>
-  Pipeline'ınızı `AI Waiting On = Us` ile filtreleyin — bu liste gününüzün en hızlı gelir aksiyonudur. Ardından `AI Engagement Trend = Cooling` değerine bakın; bu, anlaşma kâğıt üzerinde hâlâ iyi görünürken, aşama kaymadan ve kapanış tarihi değişmeden önce devreye girer.
+  Her güne, müşterinin sizden yanıt beklediği anlaşmalarla başlayın; ardından soğuyanlara bakın. Soğuma, anlaşma pipeline'da hâlâ sağlıklı görünürken devreye girer; aşama kaymadan ve kapanış tarihi değişmeden önce.
 </Tip>
 
 ## Sıkça Sorulan Sorular
 
 <AccordionGroup>
   <Accordion title="Bu, CRM verilerimi değiştirir mi?">
-    Hayır. Her analiz kendi özel özelliğine yazılır. Mevcut alanlarınız — Anlaşma Aşaması, Tutar, Kapanış Tarihi ve ekibinizin sürdürdüğü diğer her şey — asla düzenlenmez veya üzerine yazılmaz. BEA Radar CRM'inizle aynı fikirde olmadığında bunu kendi alanında söyler ve sizinkine dokunmaz.
+    Hayır. Her şey kendi özel alanlarına yazılır. Aşamanız, tutarınız, kapanış tarihiniz ve ekibinizin sürdürdüğü diğer her şey asla düzenlenmez veya üzerine yazılmaz. Analiz CRM'inizle aynı fikirde olmadığında bunu kendi alanına kaydeder ve sizinkine dokunmaz.
   </Accordion>
   <Accordion title="Ne sıklıkla çalışır?">
-    Sabit aralıklarla çalışan zamanlanmış bir toplu işlem olarak yürütülür. Her çalıştırma, son analizden bu yana yeni etkinlik almış anlaşmaları yeniler; böylece aktif anlaşmalar siz hiçbir şey tetiklemeden güncel kalır. Değerlerin en son ne zaman yazıldığını görmek için herhangi bir anlaşmada **AI Last Analysed At** alanına bakın.
+    Düzenli aralıklarla, otomatik olarak. Her çalıştırma, son analizden bu yana yeni etkinlik almış anlaşmaları yeniler; böylece aktif anlaşmalar siz hiçbir şey yapmadan güncel kalır. Her anlaşma en son ne zaman incelendiğini kaydeder.
   </Accordion>
-  <Accordion title="Neden yeni mesaj olmadan bir özellik değişti?">
-    Çünkü bazı özellikler yalnızca mesajları değil, zamanı ve sessizliği ölçer.
+  <Accordion title="Yeni mesaj yokken neden bir şey değişti?">
+    Çünkü bunun bir kısmı yalnızca mesajları değil, zamanı ve sessizliği ölçer.
 
-    **AI Ghosted**, yanıt gelmeden 2 günlük eşik aşıldığı anda Yes'e döner — bunun gerçekleşmesi için yeni bir şeyin gelmesi gerekmez.
-
-    **AI Engagement Trend** karşılaştırmalı bir özelliktir: sohbetin *şu anda* nasıl ilerlediğini *önceden* nasıl ilerlediğiyle karşılaştırır. Mesajlar durduğunda karşılaştırmanın kendisi değişir — geçen hafta *Steady* olan aynı anlaşma, yalnızca örüntü değiştiği için *Cooling*, ardından *Gone dark* olur. Sinyal, yokluğun kendisidir.
-
-    **AI Risk Flag** de bunu izler: bir anlaşma yanıtsız kaldığında risk olarak *No response / ghosted* görünür.
+    Bir anlaşma, yalnızca yanıt gelmeden yeterince gün geçtiği için "sessizleşti" durumuna geçer — bunun için yeni bir şeyin gelmesi gerekmez. Ve ısınma ile soğuma, sohbetin *eskiden* nasıl ilerlediğine göre ölçüldüğü için, geçen hafta istikrarlı görünen aynı anlaşma yalnızca örüntü değiştiği için önce soğumaya, sonra sessizliğe kayar. Sinyal, yokluğun kendisidir.
   </Accordion>
-  <Accordion title="Bunlarla filtreleyip görünüm oluşturabilir miyim?">
-    Evet. Bunlar standart HubSpot anlaşma özellikleridir; portalınızdaki diğer alanlar gibi filtreleyebilir, kendi liste görünümlerinizi oluşturabilir ve bunlarla panolar ile raporlar hazırlayabilirsiniz.
+  <Accordion title="Bununla filtreleyip görünüm oluşturabilir miyim?">
+    Evet. Her şey normal HubSpot anlaşma alanı olarak kaydedilir; portalınızdaki diğer alanlar gibi filtreleyebilir, kendi liste görünümlerinizi oluşturabilir ve panolar ile raporlar hazırlayabilirsiniz.
   </Accordion>
   <Accordion title="Sohbet verisi azsa ne olur?">
-    BEA Radar tahmin yürütmez. Her özellik yalnızca mevcut veride gerçekten olanı yansıtır: kanıt yoksa değer yazılmaz. **AI Chats Analysed**, sonucun kaç sohbet üzerine kurulduğunu söyler; böylece arkasında ne kadar malzeme olduğunu her zaman bilirsiniz.
-
-    Hiç sinyal yoksa özellik boş kalır; tek istisna, bunu açıkça *Unknown* olarak kaydeden **AI Decision Maker Involved**'dır.
+    Tahmin yürütmez. Her şey yalnızca mevcut veride gerçekten olanı yansıtır: kanıt yoksa hiçbir şey yazılmaz. Her anlaşma, analizin kaç sohbet üzerine kurulduğunu gösterir; böylece arkasında ne kadar şey olduğunu her zaman bilirsiniz.
   </Accordion>
-  <Accordion title="Yapay zekâ hiç yanılır mı?">
-    Doğruluk yüksektir, çünkü hiçbir analiz tek başına durmaz: her değer, geldiği tam mesajı veya etkinliği gösteren bir kanıt kaydına karşı doğrulanır. Sohbette ya da CRM'de gerçek bir şeye kadar izlenemeyecek hiçbir iddia ortaya konmaz.
+  <Accordion title="Hiç yanılır mı?">
+    Doğruluk yüksektir, çünkü hiçbir şey tek başına durmaz: her sonuç, geldiği tam mesaj ya da etkinlikle desteklenir. Sohbette ya da CRM'de gerçek bir şeye kadar izlenemeyecek hiçbir iddiada bulunulmaz.
   </Accordion>
-  <Accordion title="Bir yapay zekâ özelliğini kendim düzenleyebilir miyim?">
-    HubSpot'ta üzerine yazabilirsiniz, ancak bir sonraki zamanlanmış çalıştırma bunu geçersiz kılar. Kendi değerlendirmenizi kalıcı olarak kaydetmek istiyorsanız kendi alanlarınızı ya da anlaşmadaki bir notu kullanın.
+  <Accordion title="Üzerine kendim yazabilir miyim?">
+    HubSpot'ta üzerine yazabilirsiniz, ancak bir sonraki zamanlanmış çalıştırma yazdığınızı değiştirir. Kendi değerlendirmenizi kalıcı olarak kaydetmek istiyorsanız kendi alanlarınızı ya da anlaşmadaki bir notu kullanın.
   </Accordion>
 </AccordionGroup>
 
@@ -204,9 +145,9 @@ Başka her şey ne olursa olsun, potansiyel müşteri sizi bekliyor. Buradan ba�
 
 <CardGroup cols={2}>
   <Card title="BEA Radar Genel Bakış" icon="radar" href="/tr/ai-agents/bea-radar/overview">
-    BEA Radar'ın WhatsApp tarafı: her sohbete yazılan yapay zekâ özellikleri
+    BEA Radar'ın WhatsApp tarafı: her sohbete yazılan yapay zekâ analizi
   </Card>
   <Card title="AI Filtreleri" icon="filter" href="/tr/ai-agents/bea-radar/ai-filters">
-    Takım Gelen Kutunuzu herhangi bir yapay zekâ özelliğine göre filtreleyin
+    Takım Gelen Kutunuzu yapay zekânın çıkardığı her şeye göre filtreleyin
   </Card>
 </CardGroup>
