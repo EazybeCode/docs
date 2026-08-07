@@ -1,0 +1,212 @@
+---
+title: "Análise de Negócios"
+description: "O BEA Radar lê o registro de negócio no HubSpot e as conversas reais por trás dele, e então escreve propriedades de IA diretamente no negócio: quem deve a próxima resposta, qual é o risco e quando é provável que ele feche."
+---
+
+## O Que É
+
+O **BEA Radar — Análise de Negócios** lê tudo o que realmente aconteceu em um negócio — o seu registro no CRM *e* as conversas reais com os contatos associados — e escreve um conjunto de propriedades de IA diretamente no negócio do HubSpot.
+
+Você não sai do HubSpot. Não abre outro painel. Você abre um negócio e as propriedades de IA já estão lá, ao lado dos seus próprios campos, dizendo se o negócio está realmente avançando, quem deve a próxima resposta, qual é o risco e quando é provável que ele feche.
+
+<Note>
+  A Análise de Negócios funciona em **registros de negócio do HubSpot** e exige uma conta do HubSpot conectada. Os valores são gravados como propriedades padrão de negócio, então você pode filtrar, ordenar e criar relatórios com eles como com qualquer outro campo do seu portal.
+</Note>
+
+## De Onde Vêm os Dados
+
+Cada análise é construída a partir de dois lados.
+
+<CardGroup cols={2}>
+  <Card title="Do HubSpot" icon="hubspot">
+    O registro do negócio e suas propriedades (etapa, valor, proprietário, data de fechamento, pipeline), todas as atividades registradas — chamadas, reuniões, tarefas —, os e-mails registrados no negócio e em seus contatos, as anotações e os contatos e empresas associados.
+  </Card>
+  <Card title="Do lado da conversa" icon="comments">
+    As conversas de chat (por exemplo, WhatsApp) com os contatos do negócio, as trocas de e-mail com esses contatos e todo o vai e vem: quem enviou o quê, quando e quanto tempo cada lado levou para responder.
+  </Card>
+</CardGroup>
+
+A IA então combina os dois. **É aqui que está a maior parte do valor:** os dois lados costumam divergir. O CRM diz uma coisa e a conversa diz outra — e capturar essa diferença é justamente o objetivo do recurso.
+
+## Quando Ele É Executado
+
+O BEA Radar é executado como um **processamento em lote agendado, em intervalos fixos**. Cada execução pega os negócios que tiveram nova atividade desde a última análise e atualiza suas propriedades.
+
+Você não precisa acionar nada. Você abre um negócio e a análise já está pronta. A propriedade **AI Last Analysed At** em cada negócio informa exatamente o quão recentes são os valores.
+
+## O Que Você Recebe em Cada Negócio
+
+Quinze propriedades chegam ao negócio, cobrindo cinco coisas que, de outra forma, você teria que descobrir lendo a conversa inteira.
+
+<CardGroup cols={2}>
+  <Card title="Momento" icon="gauge-high">
+    De quem é a vez, se o engajamento está esquentando ou esfriando, e se pararam de responder por completo.
+  </Card>
+  <Card title="Qualificação" icon="user-check">
+    Quão perto estão de comprar, se você está falando com alguém que pode dizer sim, e se a etapa do seu CRM corresponde à realidade.
+  </Card>
+  <Card title="Risco" icon="triangle-exclamation">
+    O que pode impedir o fechamento deste negócio e no que o prospect está realmente resistindo, nas palavras dele.
+  </Card>
+  <Card title="Valores e prazos" icon="calendar-check">
+    O valor realmente discutido com o cliente e quando ele disse que pretende fechar.
+  </Card>
+  <Card title="Contexto e ação" icon="list-check">
+    Um resumo em linguagem simples de todo o negócio, mais os próximos passos recomendados.
+  </Card>
+  <Card title="Rastreabilidade" icon="shield-check">
+    A evidência por trás de cada valor, sobre quantas conversas ele foi construído e quando foi atualizado pela última vez.
+  </Card>
+</CardGroup>
+
+### Lista completa de propriedades
+
+| Propriedade | Tipo | Valores |
+|:------------|:-----|:--------|
+| **AI Waiting On** | Lista suspensa | Prospect · Us |
+| **AI Engagement Trend** | Lista suspensa | Steady · Warming · Cooling · Gone dark |
+| **AI Ghosted** | Caixa de seleção | Yes · No |
+| **AI Buying Intent** | Lista suspensa | High · Medium · Low |
+| **AI Decision Maker Involved** | Lista suspensa | Yes · No · Unknown |
+| **AI Stage Signal** | Lista suspensa | Ahead of stage · Aligned · Behind stage |
+| **AI Risk Flag** | Seleção múltipla | Veja a lista de riscos abaixo |
+| **AI Objection Raised** | Texto | A objeção mais recente, em texto livre |
+| **AI Deal Summary** | Texto longo | Resumo narrativo do negócio |
+| **AI Expected Closure Timeline** | Texto | Uma de sete expressões normalizadas |
+| **AI Actual Deal Amount** | Número | Valor encontrado na conversa; senão, o do CRM |
+| **AI Suggested Next Steps** | Texto longo | Ações recomendadas |
+| **AI Evidence** | Texto longo | Citações e referências que sustentam cada propriedade |
+| **AI Chats Analysed** | Número | Quantas conversas foram lidas |
+| **AI Last Analysed At** | Data/hora | Quando a última análise foi executada |
+
+### Riscos que ele sinaliza
+
+**AI Risk Flag** é de seleção múltipla: um negócio pode carregar mais de um risco ao mesmo tempo.
+
+| Sinalizador | Significado |
+|:------------|:------------|
+| **Competitor** | O prospect menciona outra empresa ou diz que alguém está oferecendo uma proposta melhor |
+| **Pricing** | O prospect diz que o seu preço está alto demais ou resiste ao custo |
+| **Went cold after pricing** | O preço foi compartilhado e não houve resposta desde então |
+| **Requirement gap** | O que ele precisa é maior do que, ou diferente do que, você oferece |
+| **No response / ghosted** | A conversa ficou em silêncio — um risco de perda por si só |
+| **Timeline slip** | O prazo informado por ele fica sendo adiado repetidamente |
+| **Single threaded** | Apenas um contato está engajado; se ele silenciar, o negócio para |
+| **None** | Nenhum sinal de risco encontrado |
+
+<Tip>
+  Esta lista é propositalmente aberta e continuará crescendo. A IA não está limitada a um menu fixo: quando um padrão de risco real aparece na conversa, ele é sinalizado.
+</Tip>
+
+## Comportamentos Importantes a Conhecer
+
+<AccordionGroup>
+  <Accordion title="Nada é adivinhado — em branco significa que não há sinal">
+    Cada valor gravado em um negócio vem de algo que realmente aconteceu no CRM ou na conversa. Quando não há um sinal real para uma propriedade, ela fica **em branco** em vez de ser preenchida com uma suposição.
+
+    Um campo em branco é informação, não uma lacuna. Filtre por ele e você terá a lista de negócios em que aquele sinal ainda não existe.
+  </Accordion>
+  <Accordion title="Ghosted exige dois dias de silêncio">
+    **AI Ghosted** só é marcado como Yes quando a última mensagem partiu do seu lado, a resposta está pendente do lado do prospect e já se passaram **pelo menos 2 dias**.
+
+    O limite é medido em dias de propósito. Se uma mensagem sai e a análise roda 12 horas depois, o prospect pode simplesmente ainda não ter visto — então o sinalizador não significaria nada. Dois dias fazem com que ele signifique algo real quando dispara.
+  </Accordion>
+  <Accordion title="O prazo de fechamento usa sete valores fixos">
+    O que o prospect disser é normalizado em relação à data atual em uma de sete expressões:
+
+    `This week` · `Next week` · `2–3 weeks` · `This month` · `Next month` · `Next quarter` · `Beyond next quarter`
+
+    Como o vocabulário é fixo, você pode filtrar e criar relatórios como em uma lista suspensa: *"mostre tudo que fecha este mês"* funciona em todo o seu pipeline. Note que apenas sinais de **fechamento** contam: *"assinamos no mês que vem"* conta; *"vamos fazer a demo na sexta"* não.
+  </Accordion>
+  <Accordion title="O valor real recorre ao valor do seu CRM">
+    Se um valor for encontrado nas conversas — um orçamento enviado, um preço acordado, um número negociado —, esse valor é usado. Se nenhum for encontrado, **AI Actual Deal Amount** recorre ao valor existente do negócio no HubSpot.
+
+    Seu campo Valor original do HubSpot não é tocado. Você mantém os dois, e a diferença entre eles já é um sinal que vale a pena observar: o valor do CRM costuma ser uma primeira estimativa que ninguém voltou para atualizar.
+  </Accordion>
+  <Accordion title="O Stage Signal nunca sobrescreve a etapa do seu CRM">
+    **AI Stage Signal** compara a etapa que a conversa sugere com a etapa em que o negócio realmente está e sinaliza onde elas divergem. É apenas um sinalizador: seu pipeline permanece exatamente onde sua equipe o colocou.
+
+    *Ahead of stage* geralmente significa que o representante não atualizou o CRM e sua previsão está subestimada. *Behind stage* significa que o negócio foi movido adiante com otimismo e sua previsão está superestimada — normalmente o mais caro dos dois.
+  </Accordion>
+</AccordionGroup>
+
+## Evidência e Verificação
+
+Cada propriedade de IA é sustentada por evidência.
+
+- **AI Evidence** — a mensagem, citação ou atividade que levou a cada conclusão. Se a IA diz *Buying Intent = High*, você pode ver a pergunta sobre preço que ela leu. Nada é afirmado sem algo para apontar.
+- **AI Chats Analysed** — quantas conversas foram buscadas e analisadas naquela execução. Um resultado que parece confiante mas foi construído sobre duas mensagens deve ser lido de forma diferente de um construído sobre sessenta.
+- **AI Last Analysed At** — o carimbo de data/hora da execução mais recente, para que você sempre saiba o quão recentes são os valores.
+
+Também é mantido um registro interno de integridade com exatamente quais dados entraram em cada análise, de modo que um resultado pode ser rastreado até suas origens depois do fato. Não é algo que você precise ler ou sobre o qual precise agir.
+
+## Como Ler os Sinais em Conjunto
+
+As propriedades foram feitas para serem lidas como um conjunto, não uma de cada vez.
+
+### Um negócio saudável
+
+> Waiting On: **Prospect** · Trend: **Warming** · Ghosted: **No** · Intent: **High** · Decision Maker: **Yes** · Stage Signal: **Ahead of stage** · Risk: **None**
+
+Uma conversa comercial com a pessoa certa, avançando mais rápido do que o seu CRM sabe. Atualize a etapa e empurre para o fechamento.
+
+### Um negócio morrendo em silêncio
+
+> Waiting On: **Prospect** · Trend: **Cooling** · Ghosted: **No** · Intent: **Medium** · Decision Maker: **No** · Stage Signal: **Behind stage** · Risk: **Went cold after pricing**
+
+Nada aqui está pegando fogo, e esse é exatamente o problema: este negócio ainda parece bem no pipeline. Ele não está. O preço caiu mal, seu contato não pode aprovar de qualquer forma e o engajamento está caindo. Intervenha agora, não no fim do mês.
+
+### Precisa de você hoje
+
+> Waiting On: **Us**
+
+Seja o que for o resto, o prospect está esperando por você. Comece por aqui.
+
+<Tip>
+  Filtre seu pipeline por `AI Waiting On = Us` — essa lista é a ação de receita mais rápida do seu dia. Depois confira `AI Engagement Trend = Cooling`, que dispara enquanto o negócio ainda parece bem no papel, antes de a etapa escorregar ou a data de fechamento mudar.
+</Tip>
+
+## Perguntas Frequentes
+
+<AccordionGroup>
+  <Accordion title="Isso altera os dados do meu CRM?">
+    Não. Cada análise é gravada em sua própria propriedade dedicada. Seus campos existentes — Etapa do negócio, Valor, Data de fechamento e tudo o mais que sua equipe mantém — nunca são editados ou sobrescritos. Quando o BEA Radar discorda do seu CRM, ele diz isso no próprio campo e deixa o seu intacto.
+  </Accordion>
+  <Accordion title="Com que frequência ele é executado?">
+    Ele roda como um processamento em lote agendado, em intervalos fixos. Cada execução atualiza os negócios que tiveram nova atividade desde a última análise, então os negócios ativos se mantêm em dia sem que você acione nada. Confira **AI Last Analysed At** em qualquer negócio para ver quando seus valores foram gravados pela última vez.
+  </Accordion>
+  <Accordion title="Por que uma propriedade mudou sem mensagens novas?">
+    Porque algumas propriedades medem tempo e silêncio, não apenas mensagens.
+
+    **AI Ghosted** passa para Yes assim que o limite de 2 dias é cruzado sem resposta — nada de novo precisa chegar para que isso aconteça.
+
+    **AI Engagement Trend** é uma propriedade comparativa: mede como a conversa está indo *agora* em relação a como ia *antes*. Quando as mensagens param, a própria comparação muda — o mesmo negócio que era *Steady* na semana passada vira *Cooling* e depois *Gone dark*, apenas porque o padrão mudou. A ausência é o sinal.
+
+    **AI Risk Flag** decorre disso também: assim que um negócio fica sem resposta, *No response / ghosted* aparece como risco.
+  </Accordion>
+  <Accordion title="Posso filtrar e criar visualizações com essas propriedades?">
+    Sim. São propriedades padrão de negócio do HubSpot, então você pode filtrar por elas, criar suas próprias visualizações de lista e montar painéis e relatórios com elas — exatamente como com qualquer outro campo do seu portal.
+  </Accordion>
+  <Accordion title="E se houver poucos dados de conversa?">
+    O BEA Radar não adivinha. Cada propriedade reflete apenas o que realmente aconteceu nos dados disponíveis: se a evidência não está lá, o valor não é gravado. **AI Chats Analysed** informa sobre quantas conversas a conclusão foi construída, para que você sempre saiba quanto material há por trás.
+
+    Quando não há sinal algum, a propriedade fica em branco, exceto **AI Decision Maker Involved**, que registra isso explicitamente como *Unknown*.
+  </Accordion>
+  <Accordion title="A IA às vezes erra?">
+    A precisão é alta, porque nenhuma análise se sustenta sozinha: cada valor é verificado contra um registro de evidência que mostra a mensagem ou atividade exata de onde ele veio. Nada é afirmado que não possa ser rastreado até algo real na conversa ou no CRM.
+  </Accordion>
+  <Accordion title="Posso editar uma propriedade de IA eu mesmo?">
+    Você pode sobrescrevê-la no HubSpot, mas a próxima execução agendada vai substituí-la. Se quiser registrar seu próprio julgamento de forma permanente, use seus próprios campos ou uma anotação no negócio.
+  </Accordion>
+</AccordionGroup>
+
+## Relacionado
+
+<CardGroup cols={2}>
+  <Card title="Visão Geral do BEA Radar" icon="radar" href="/pt/ai-agents/bea-radar/overview">
+    O lado WhatsApp do BEA Radar: propriedades de IA escritas em cada conversa
+  </Card>
+  <Card title="Filtros de IA" icon="filter" href="/pt/ai-agents/bea-radar/ai-filters">
+    Filtre sua Caixa de Entrada da Equipe por qualquer propriedade de IA
+  </Card>
+</CardGroup>

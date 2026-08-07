@@ -621,18 +621,7 @@
                   "en/ai-agents/knowledge-base-agent/ai-agent-setup"
                 ]
               },
-              {
-                "group": "Chatbots",
-                "icon": "message-bot",
-                "pages": [
-                  "en/ai-agents/chatbots/overview",
-                  "en/ai-agents/chatbots/creating-chatbot",
-                  "en/ai-agents/chatbots/flow-builder",
-                  "en/ai-agents/chatbots/variables",
-                  "en/ai-agents/chatbots/human-handoff",
-                  "en/ai-agents/chatbots/analytics"
-                ]
-              },
+          
               {
                 "group": "BEA Radar",
                 "icon": "radar",
@@ -640,7 +629,8 @@
                   "en/ai-agents/bea-radar/overview",
                   "en/ai-agents/bea-radar/ai-insights",
                   "en/ai-agents/bea-radar/ai-properties",
-                  "en/ai-agents/bea-radar/ai-filters"
+                  "en/ai-agents/bea-radar/ai-filters",
+                  "en/ai-agents/bea-radar/deal-analysis"
                 ]
               }
             ]
@@ -1382,7 +1372,8 @@
                   "es/ai-agents/bea-radar/overview",
                   "es/ai-agents/bea-radar/ai-insights",
                   "es/ai-agents/bea-radar/ai-properties",
-                  "es/ai-agents/bea-radar/ai-filters"
+                  "es/ai-agents/bea-radar/ai-filters",
+                  "es/ai-agents/bea-radar/deal-analysis"
                 ]
               }
             ]
@@ -2113,7 +2104,8 @@
                   "pt/ai-agents/bea-radar/overview",
                   "pt/ai-agents/bea-radar/ai-insights",
                   "pt/ai-agents/bea-radar/ai-properties",
-                  "pt/ai-agents/bea-radar/ai-filters"
+                  "pt/ai-agents/bea-radar/ai-filters",
+                  "pt/ai-agents/bea-radar/deal-analysis"
                 ]
               }
             ]
@@ -2844,7 +2836,8 @@
                   "tr/ai-agents/bea-radar/overview",
                   "tr/ai-agents/bea-radar/ai-insights",
                   "tr/ai-agents/bea-radar/ai-properties",
-                  "tr/ai-agents/bea-radar/ai-filters"
+                  "tr/ai-agents/bea-radar/ai-filters",
+                  "tr/ai-agents/bea-radar/deal-analysis"
                 ]
               }
             ]
