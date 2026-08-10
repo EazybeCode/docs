@@ -1,143 +1,164 @@
 ---
 title: "Anlaşma Analizi"
-description: "BEA Radar, HubSpot anlaşmalarınızı ve arkasındaki gerçek sohbetleri okur ve analizini doğrudan anlaşmaya yazar — böylece hangi anlaşmaların gerçekten ilerlediğini, hangilerinin sessizce söndüğünü ve hangilerinin bugün sizi beklediğini görürsünüz."
+description: "Her HubSpot anlaşmasını, CRM kaydınızla arkasındaki gerçek sohbetleri birleştirerek otomatik analiz eder; böylece hangi anlaşmaların ilerlediğini, hangilerinin risk altında olduğunu ve hangilerinin bugün ilgi beklediğini görürsünüz."
 ---
 
-## Nedir?
+Anlaşma Analizi, HubSpot anlaşmalarınızın her birini kendisine bağlı gerçek sohbetlerle birlikte inceler ve bulduklarını anlaşma kaydına yazar.
 
-**BEA Radar — Anlaşma Analizi**, bir anlaşmada gerçekten olan her şeyi okur: CRM kaydınızı *ve* ilgili kişilerle yapılan gerçek sohbetleri. Ardından analizini doğrudan anlaşmaya yazar.
+Kendi programına göre arka planda çalışır. Açtığınız her anlaşma, durumun gerçekte nerede olduğuna dair güncel bir okumayı hazır taşır — kontrol edilecek bir panel yok, tetiklenecek bir şey yok.
 
-HubSpot'tan çıkmanız gerekmez. Başka bir panel açmanız gerekmez. Bir anlaşmayı açarsınız ve analiz kendi alanlarınızın yanında hazır bekler; anlaşmanın gerçekten ilerleyip ilerlemediğini, sıradaki yanıtın kimde olduğunu, kapanışı neyin engelleyebileceğini ve ne zaman gerçekleşmesinin muhtemel olduğunu söyler.
+## Başlamadan Önce
+
+<Steps>
+  <Step title="HubSpot'u Eazybe'ye bağlayın">
+    Anlaşma Analizi yalnızca HubSpot anlaşmalarında çalışır. Hesabınız bağlandıktan sonra anlaşmalar otomatik olarak alınır.
+  </Step>
+  <Step title="Anlaşmalarınıza kişilerin bağlı olduğundan emin olun">
+    Analiz, her anlaşmaya bağlı kişilere ait sohbetleri okur. Hiçbir kişinin bağlı olmadığı bir anlaşma yalnızca CRM verisinden analiz edilebilir.
+  </Step>
+  <Step title="sales-email-read izninin verildiğini doğrulayın">
+    Anlaşmalarınızdaki e-posta etkinliği, yalnızca HubSpot bağlantınız **sales-email-read** iznini içeriyorsa okunabilir. Entegrasyonun en son sürümü bu izni otomatik olarak ister.
+
+    Kontrol etmek için **Integration page → HubSpot settings → Scopes and permissions** yolunu izleyin. İzin listede yoksa HubSpot hesabınızı yeniden bağlayın — yeniden entegrasyon bu izni verir.
+  </Step>
+  <Step title="Hepsi bu — anlaşma başına kurulum yoktur">
+    Tek tek anlaşmalarda bir şey etkinleştirmeniz ya da alan yapılandırmanız gerekmez. Analiz otomatik olarak başlar ve kendini güncel tutar.
+  </Step>
+</Steps>
+
+## Nasıl Çalışır
+
+Analiz iki kaynağı okur ve karşılaştırır.
+
+| Kaynak | Ne okur |
+|:-------|:--------|
+| **CRM'iniz** | Anlaşmanın kendisi — aşama, tutar, sahip, kapanış tarihi, pipeline — ile kaydedilen aramalar, toplantılar, görevler, e-postalar, notlar ve bağlı kişiler ile şirketler |
+| **Sohbetleriniz** | O anlaşmadaki kişilerle yapılan gerçek sohbetler ve e-posta yazışmaları; kimin ne söylediği, ne zaman söylediği ve her tarafın yanıt vermek için ne kadar beklediği dâhil |
+
+Asıl mesele ikisini birlikte okumaktır. CRM'iniz ekibinizin girdiğini kaydeder; sohbet ise gerçekte olanı. İkisi uyuşmadığında, aradaki bu fark genellikle kimsenin fark etmediği şeydir.
 
 <Note>
-  Anlaşma Analizi **HubSpot anlaşmaları** üzerinde çalışır ve bağlı bir HubSpot hesabı gerektirir. Yazdığı her şey normal anlaşma alanı olarak kaydedilir; böylece portalınızdaki diğer her şey gibi filtreleyebilir, sıralayabilir, liste görünümleri oluşturabilir ve raporlayabilirsiniz.
+  Sonuçlar anlaşmadaki kendi ayrı alanlarına yazılır. Aşamanız, tutarınız, kapanış tarihiniz ve ekibinizin sürdürdüğü diğer tüm alanlar asla düzenlenmez veya üzerine yazılmaz.
 </Note>
 
-## Veriler Nereden Gelir
+## Nerede Bulunur
 
-Her analiz iki kaynaktan oluşturulur.
+HubSpot'ta herhangi bir anlaşmayı açın. Analiz, kaydın üzerinde mevcut anlaşma özelliklerinizin yanında yer alır — ayrıca açılacak bir şey yoktur.
 
-<CardGroup cols={2}>
-  <Card title="CRM'iniz" icon="hubspot">
-    Anlaşmanın kendisi — aşama, tutar, sahip, kapanış tarihi, pipeline — ve üzerine kaydedilen tüm etkinlikler: aramalar, toplantılar, görevler, e-postalar, notlar ve ilişkili kişiler ile şirketler.
-  </Card>
-  <Card title="Gerçek sohbet" icon="comments">
-    O anlaşmadaki kişilerle yapılan gerçek sohbetler (örneğin WhatsApp) ve e-posta yazışmaları — kimin ne söylediği, ne zaman söylediği ve her tarafın yanıt vermek için ne kadar beklediği dâhil, tüm karşılıklı akış.
-  </Card>
-</CardGroup>
+Her anlaşma ayrıca en son ne zaman analiz edildiğini kaydeder; böylece bilginin ne kadar güncel olduğunu her zaman anlayabilirsiniz.
 
-Sonra ikisi birlikte okunur. **Değerin büyük kısmı burada:** CRM ile sohbet çoğu zaman farklı hikâyeler anlatır ve aradaki bu fark, normalde gözden kaçan şeyin ta kendisidir.
+## Analiz Size Ne Söyler
 
-## Ne Zaman Çalışır
+| Ne bileceksiniz | Ayrıntılar |
+|:----------------|:-----------|
+| **Sıradaki yanıt kimde** | Anlaşmanın ekibinizi mi yoksa müşteriyi mi beklediği |
+| **İvme artıyor mu, azalıyor mu** | Sohbetin şu anki gidişatının öncekiyle karşılaştırması: yanıtlar hızlanıp zenginleşiyor mu, yoksa yavaşlayıp kısalıyor mu |
+| **Müşteri sessizleşti mi** | Yalnızca sessizlik gerçekten yerleştiğinde işaretlenir; bir yanıt geciktiği anda değil |
+| **Alıcı ne kadar hazır** | Kendi sorununu mu anlatıyor, sunduğunuzu mu değerlendiriyor, yoksa fiyat ve koşulları mı pazarlık ediyor |
+| **Karar vericiye ulaştınız mı** | Temasta olduğunuz kişi satın almayı onaylayabiliyor mu, yoksa başka birinden onay alması mı gerekiyor |
+| **Pipeline aşamanız doğru mu** | Sohbetin kayıtlı aşamanın ötesine geçtiği ya da henüz oraya ulaşmadığı yerler |
+| **Kapanışı ne engelleyebilir** | Rakip baskısı, fiyata direnç, teklif sonrası sessizlik, karşılanmayan bir gereksinim, kayan bir takvim ya da tek bir kişiye dayanan bir hesap |
+| **Neye itiraz ediyor** | Müşterinin en son itirazı, kendi ifadeleriyle |
+| **Ne zaman kapatmayı bekliyor** | Müşterinin belirttiği zamanlama; filtreleyip raporlayabilmeniz için standartlaştırılmış hâlde |
+| **Gerçekten konuşulan tutar** | Sohbette teklif edilen ya da anlaşılan tutar; bu çoğu zaman CRM'inizdeki rakam değildir |
+| **Özet ve sonraki adımlar** | Tüm anlaşmanın sade bir dille özeti ve önerilen aksiyonlar |
+| **Arkasındaki kanıt** | Her sonucun geldiği belirli mesaj ve etkinlikler ile kaç sohbetin okunduğu |
 
-Analiz düzenli aralıklarla otomatik olarak çalışır. Her çalıştırma, son bakılan zamandan bu yana yeni etkinlik almış anlaşmaları alır ve günceller.
-
-Hiçbir şeyi tetiklemeniz gerekmez. Anlaşmayı açarsınız, analiz zaten oradadır — ve her anlaşma en son ne zaman analiz edildiğini kaydeder, böylece tablonun ne kadar güncel olduğunu her zaman bilirsiniz.
-
-## Her Anlaşmada Ne Elde Edersiniz
-
-Bir anlaşmanın nerede olduğunu anlamak için tüm yazışmayı okumak yerine, yanıtlar sizi bekliyor olur.
-
-<CardGroup cols={2}>
-  <Card title="Sıra kimde" icon="arrow-right-arrow-left">
-    Top sizde mi yoksa onlarda mı. Müşterinin sizi beklediği her şeyi listeleyin; gününüzün en hızlı gelir listesi elinizde olsun.
-  </Card>
-  <Card title="Isınıyor mu, soğuyor mu" icon="gauge-high">
-    Sadece sohbetin bugün nasıl göründüğü değil, önceden nasıl ilerlediğiyle karşılaştırması: yanıtlar yavaşlayıp kısalıyor mu, yoksa hızlanıp zenginleşiyor mu. Ve tamamen sessizleşip sessizleşmedikleri.
-  </Card>
-  <Card title="Satın almaya ne kadar yakınlar" icon="user-check">
-    Kendi sorununu anlatan biriyle, sizin ne yaptığınızı değerlendiren biri ve fiyat ile koşulları pazarlık eden biri arasındaki fark. Ayrıca konuştuğunuz kişinin onaylama yetkisi mi var, yoksa izin almak zorunda mı.
-  </Card>
-  <Card title="Aşamanız dürüst mü" icon="scale-balanced">
-    Sohbetin, pipeline'ınızın söylediğinden belirgin biçimde ileri gittiği yerler — ya da bir anlaşmanın sohbetin desteklediğinden daha iyimser biçimde öne taşındığı yerler.
-  </Card>
-  <Card title="Kapanışı ne engelleyebilir" icon="triangle-exclamation">
-    Rakip baskısı, fiyata direnç, teklif sonrası sessizlik, karşılayamadığınız bir gereksinim, sürekli ertelenen bir takvim ya da tek bir kişiye dayanan bir hesap. Ve kendi ifadeleriyle gerçekte neye itiraz ettikleri.
-  </Card>
-  <Card title="Zamanlama ve gerçek rakamlar" icon="calendar-check">
-    Müşterinin ne zaman kapatmayı düşündüğünü söylediği ve onunla gerçekten konuşulan tutar — ki bu çoğu zaman CRM'inizdeki rakam değildir.
-  </Card>
-</CardGroup>
-
-Bunların yanında tüm anlaşmanın sade bir dille özetini alırsınız — kimler var, neye ihtiyaçları var, durum ne, en son ne oldu — ve o anlaşmaya özel somut sonraki adım önerileri. Bu özet, bir meslektaşınızın pipeline'ını devraldığınızda ya da iki dakika sonra bir görüşmeye gireceğiniz zaman okuyacağınız şeydir.
-
-## Neye Güvenebilirsiniz
+## Günlük Kullanım
 
 <AccordionGroup>
-  <Accordion title="Hiçbir şey tahmin edilmez">
-    Bir anlaşmaya yazılan her şey, CRM'de ya da sohbette gerçekten olan bir şeyden gelir ve arkasındaki kanıtı taşır. Bir sonucun hangi mesaj ya da etkinlikten çıktığını görebilirsiniz; dolayısıyla gerçek bir şeye kadar izlenemeyecek hiçbir iddia ortaya konmaz.
+  <Accordion title="Önce yanıt kuyruğunuzla başlayın">
+    Anlaşmalarınızı, ekibinizden yanıt bekleyenlere göre filtreleyin.
 
-    Gerçek bir sinyal yoksa alan, varsayımla doldurulmak yerine boş bırakılır. Boş bir alan başlı başına bilgidir: ona göre filtreleyin, o sinyalin henüz oluşmadığı anlaşmaları elde edersiniz.
+    Bu, oluşturacağınız en değerli listedir. Listedeki her anlaşmada, halihazırda ilgi göstermiş ve şimdi bekleyen bir müşteri vardır — arama yapmaya gerek yok, yalnızca yanıt vermeye. Bu listeyi her gün eritmek, genellikle bir temsilcinin elindeki en hızlı gelir aksiyonudur.
   </Accordion>
-  <Accordion title="Sessizliğin işaretlenmesi için gerçek olması gerekir">
-    Bir anlaşma, yanıt geciktiği anda "sessizleşti" olarak işaretlenmez. Müşterinin son mesajınızın üzerine birkaç gün yanıtsız oturmuş olması gerekir.
+  <Accordion title="Anlaşmaları soğumadan yakalayın">
+    İvmesi azalan anlaşmaları filtreleyin.
 
-    Bir mesaj sabah gidip analiz akşam çalışırsa, karşı taraf henüz bakmamış olabilir. Beklemek, uyarı devreye girdiğinde bunun bir anlam taşımasını sağlar — ve ürettiği listenin gerçekten üzerinde çalışmaya değer olmasını.
-  </Accordion>
-  <Accordion title="Takvimler kullanılabilir olsun diye standartlaştırılır">
-    Müşteriler "bize birkaç hafta verin" ya da "güvenlik incelemesinden sonra" gibi şeyler söyler. Bunlar, harfiyen alınmak yerine bugünün tarihine göre hesaplanarak tutarlı bir zaman aralığı kümesine çevrilir.
+    Bu, anlaşma pipeline'ınızda hâlâ sağlıklı görünürken devreye girer: aşama kaymamıştır, kapanış tarihi değişmemiştir ve panoda yanlış görünen bir şey yoktur. İvme kaybı alacağınız en erken uyarıdır; bu yüzden müdahale için en ucuz andır.
 
-    Herkesin ifadesi aynı sözcük dağarcığında toplandığı için *"bu ay kapanacak her şeyi göster"* tüm pipeline'ınızda çalışır. Yalnızca gerçek kapanış sinyalleri sayılır: *"gelecek ay imzalarız"* sayılır, *"demoyu cuma yapalım"* sayılmaz.
+    Yalnızca tekrar takip etmek yerine *nasıl* yeniden temas kuracağınıza karar vermek için bunu engel ve itiraz bilgileriyle birlikte değerlendirin.
   </Accordion>
-  <Accordion title="Kendi alanlarınıza asla dokunmaz">
-    Her şey kendi ayrı alanlarına yazılır. Aşamanız, tutarınız, kapanış tarihiniz ve ekibinizin sürdürdüğü diğer her şey asla düzenlenmez veya üzerine yazılmaz.
+  <Accordion title="Tahminlerinizi dürüst tutun">
+    Sohbet ile pipeline aşamasının uyuşmadığı anlaşmaları filtreleyin.
 
-    Analiz CRM'inizle aynı fikirde olmadığında — yanlış görünen bir aşama, verilen teklifle uyuşmayan bir tutar — bunu kendi alanında söyler ve sizinkini ekibinizin bıraktığı gibi bırakır. Bu farkla ne yapacağınıza siz karar verirsiniz.
+    Aşamasının ilerisinde giden anlaşmalar, CRM'in güncellenmediğini ve tahmininizin olduğundan düşük göründüğünü gösterir. Gerisinde kalanlar ise birinin onları iyimserlikle öne taşıdığını ve tahmininizin şişkin olduğunu gösterir — genellikle ikisinden daha pahalı olan hata budur.
+
+    Bu, yöneticiler için faydalı bir haftalık gözden geçirme ve her tahmin toplantısı öncesi iyi bir pipeline temizliğidir.
   </Accordion>
-  <Accordion title="Neyin üzerine dayandığını görebilirsiniz">
-    Her anlaşma, analize kaç sohbetin girdiğini gösterir. İki mesaja dayanan kendinden emin görünen bir okuma ile altmış mesaja dayanan bir okuma farklı ağırlık hak eder — böylece sonucun arkasında ne kadar malzeme olduğunu her zaman bilirsiniz.
+  <Accordion title="Bir görüşmeye iki dakikada hazırlanın">
+    Anlaşmayı açın ve özeti okuyun.
+
+    Kimlerin dâhil olduğunu, neye ihtiyaç duyduklarını, nelerin konuşulduğunu ve en son ne olduğunu kapsar; böylece aylarca geçmişi taramadan bir görüşmeye girebilir ya da bir meslektaşınızın pipeline'ını devralabilirsiniz.
+  </Accordion>
+  <Accordion title="İhmal edilen fırsatlarınızı bulun">
+    Satın almaya güçlü şekilde hazır görünen ama hâlâ erken bir pipeline aşamasında duran anlaşmaları arayın.
+
+    Bunlar, sizin sürecinizden daha hızlı ilerleyen müşterilerdir. Genellikle pipeline'daki en kazanılabilir anlaşmalardır ve daha erken yanıt veren bir rakibe kaptırılması en kolay olanlardır.
+  </Accordion>
+  <Accordion title="Kendi görünümlerinizi ve raporlarınızı oluşturun">
+    Her şey standart HubSpot anlaşma alanı olarak kaydedilir; portalınızdaki diğer alanlarda olduğu gibi filtreleyebilir, liste görünümleri kaydedebilir ve panolar ile raporlar oluşturabilirsiniz.
+
+    Sık kullanılan kayıtlı görünümler: *bizi bekleyenler*, *ivmesi düşenler*, *aşama uyuşmazlığı* ve *bu ay kapananlar*.
   </Accordion>
 </AccordionGroup>
 
-## Bunları Birlikte Okumak
+## Bilmekte Fayda Var
 
-Sinyaller bir bütün olarak okunmak üzere tasarlanmıştır. Tanımaya değer birkaç örüntü:
+<AccordionGroup>
+  <Accordion title="Boş bir alan sinyal olmadığı anlamına gelir — hata değil">
+    Hiçbir şey tahmin edilmez. Bir şeyin kanıtı CRM'inizde ya da sohbetlerinizde yoksa, alan varsayımla doldurulmak yerine boş bırakılır.
 
-### Sizin önünüzde giden anlaşma
+    Bu, boş alanları başlı başına kullanışlı kılar. Örneğin belirtilmiş kapanış zamanı olmayan anlaşmaları filtrelemek, müşterinin hiçbir zaman bir tarih taahhüt etmediği tüm anlaşmaları verir.
+  </Accordion>
+  <Accordion title="Sessizlik kaçırılan yanıtlarla değil, günlerle ölçülür">
+    Bir anlaşma, yanıt geciktiği anda hareketsiz olarak işaretlenmez. Müşterinin son mesajınızın üzerine birkaç gün yanıtsız oturmuş olması gerekir.
 
-Müşteri size bir yanıt borçlu, ilgi artıyor, ticari sorular soruyor, konuştuğunuz kişi onaylayabiliyor ve sohbet, pipeline'ınızın anlaşmayı koyduğu yerin belirgin biçimde ötesine geçmiş.
+    Sabah mesaj atıp analiz akşam çalışırsa, karşı taraf mesajı henüz açmamış bile olabilir. Bu bekleme, uyarı ortaya çıktığında ürettiği listenin üzerinde çalışmaya değer olmasını sağlar.
+  </Accordion>
+  <Accordion title="Bazı şeyler yeni mesaj gelmeden değişir">
+    Analizin bir kısmı mesaj içeriğini değil, zamanı ve sessizliği ölçer.
 
-Bu gerçek ve CRM'inizin bildiğinden daha hızlı ilerliyor. Aşamayı güncelleyin ve kapanışa doğru itin.
+    Bir anlaşma yalnızca yeterince gün geçtiği için "sessizleşti" durumuna geçebilir. İvme, sohbetin eskiden nasıl ilerlediğine göre ölçüldüğü için, geçen hafta istikrarlı görünen bir anlaşma yeni hiçbir şey söylenmeden önce düşüşe, sonra sessizliğe kayabilir. Sinyalin kendisi, yokluğudur.
+  </Accordion>
+  <Accordion title="Müşteri zamanlamaları standartlaştırılır">
+    Müşteriler "bize birkaç hafta verin" ya da "güvenlik incelemesinden sonra" gibi şeyler söyler. Bunlar, harfiyen alınmak yerine bugünün tarihine göre hesaplanarak tutarlı bir zaman aralığı kümesine dönüştürülür.
 
-### Sessizce sönen anlaşma
-
-Hiçbir şey endişe verici görünmüyor. Hâlâ size bir yanıt borçlular, ortadan kaybolmadılar ve kâğıt üzerinde ilgililer — ama yanıtlar yavaşlıyor, fiyat kötü karşılandı, temasta olduğunuz kişi zaten onaylayamıyor ve sohbet aslında pipeline'ın iddia ettiğinin gerisinde.
-
-Burada alarm veren hiçbir şey yok ve asıl mesele de bu. Bu anlaşma tahmininizde hâlâ iyi görünüyor. Değil. Ay sonunda değil, şimdi müdahale edin.
-
-### Bugün sizi bekleyen anlaşma
-
-Başka her şey ne olursa olsun — müşteri sizi bekliyor.
-
-<Tip>
-  Her güne, müşterinin sizden yanıt beklediği anlaşmalarla başlayın; ardından soğuyanlara bakın. Soğuma, anlaşma pipeline'da hâlâ sağlıklı görünürken devreye girer; aşama kaymadan ve kapanış tarihi değişmeden önce.
-</Tip>
+    Her ifade aynı sözcük dağarcığında toplandığı için *bu ay kapanıyor* gibi bir filtre tüm pipeline'ınızda çalışır. Yalnızca gerçek kapanış sinyalleri sayılır: "gelecek ay imzalarız" sayılır, "demoyu cuma yapalım" sayılmaz.
+  </Accordion>
+  <Accordion title="Elle yapılan düzenlemeler bir sonraki çalıştırmada değiştirilir">
+    HubSpot'ta bir analiz alanının üzerine yazabilirsiniz, ancak bir sonraki zamanlanmış çalıştırma bunu değiştirir. Kendi değerlendirmenizi kalıcı olarak kaydetmek için kendi alanlarınızdan birini kullanın ya da anlaşmaya bir not ekleyin.
+  </Accordion>
+  <Accordion title="Bir sonucun neye dayandığını kontrol edin">
+    Her anlaşma, kendisi için kaç sohbetin okunduğunu gösterir. İki mesaja dayanan kendinden emin görünen bir sonuç, altmış mesaja dayanan bir sonuçtan daha az ağırlık hak eder; ilgili kanıt ise her sonucu hangi mesaj veya etkinliğin ürettiğini tam olarak gösterir.
+  </Accordion>
+</AccordionGroup>
 
 ## Sıkça Sorulan Sorular
 
 <AccordionGroup>
-  <Accordion title="Bu, CRM verilerimi değiştirir mi?">
-    Hayır. Her şey kendi özel alanlarına yazılır. Aşamanız, tutarınız, kapanış tarihiniz ve ekibinizin sürdürdüğü diğer her şey asla düzenlenmez veya üzerine yazılmaz. Analiz CRM'inizle aynı fikirde olmadığında bunu kendi alanına kaydeder ve sizinkine dokunmaz.
+  <Accordion title="Bu, mevcut CRM verilerimi değiştirir mi?">
+    Hayır. Her şey kendi özel alanlarına yazılır. Anlaşma aşamanız, tutarınız, kapanış tarihiniz ve ekibinizin sürdürdüğü diğer tüm alanlar asla düzenlenmez veya üzerine yazılmaz. Analiz CRM'inizle aynı fikirde olmadığında bunu kendi alanına kaydeder ve sizinkine dokunmaz — farkla ne yapacağınıza siz karar verirsiniz.
   </Accordion>
-  <Accordion title="Ne sıklıkla çalışır?">
-    Düzenli aralıklarla, otomatik olarak. Her çalıştırma, son analizden bu yana yeni etkinlik almış anlaşmaları yeniler; böylece aktif anlaşmalar siz hiçbir şey yapmadan güncel kalır. Her anlaşma en son ne zaman incelendiğini kaydeder.
+  <Accordion title="Ne sıklıkla güncellenir?">
+    Düzenli aralıklarla otomatik olarak çalışır ve son analizden bu yana yeni etkinlik almış anlaşmaları yeniler. Aktif anlaşmalar sizden hiçbir işlem gerektirmeden güncel kalır ve her anlaşma en son ne zaman incelendiğini gösterir.
   </Accordion>
-  <Accordion title="Yeni mesaj yokken neden bir şey değişti?">
-    Çünkü bunun bir kısmı yalnızca mesajları değil, zamanı ve sessizliği ölçer.
+  <Accordion title="Çok az sohbet geçmişi varsa çalışır mı?">
+    Evet, ama daha az dayanakla. Analiz yalnızca mevcut veride gerçekten olanı yansıtır — kanıt olmadığı yerde hiçbir şey yazılmaz. Her anlaşma kaç sohbetin okunduğunu bildirir; böylece bir sonucun arkasında ne kadar malzeme olduğunu her zaman bilirsiniz.
+  </Accordion>
+  <Accordion title="Ne kadar doğru?">
+    Her sonuç, geldiği belirli mesaj ya da etkinliğe bağlıdır; dolayısıyla sohbette veya CRM'de gerçek bir şeye kadar izlenemeyecek hiçbir iddia ortaya konmaz. Bir sonuçtan emin değilseniz anlaşmadaki ilgili kanıta bakın.
+  </Accordion>
+  <Accordion title="Bunu normal HubSpot verisi gibi filtreleyip raporlayabilir miyim?">
+    Evet. Standart anlaşma alanları olarak saklanır; filtreler, kayıtlı liste görünümleri, panolar ve raporlar portalınızdaki diğer alanlarda olduğu gibi çalışır.
+  </Accordion>
+  <Accordion title="Her anlaşma için bir şey ayarlamam gerekir mi?">
+    Hayır. HubSpot bağlandıktan sonra anlaşmalar otomatik olarak analiz edilir. Anlaşma başına etkinleştirilecek, yapılandırılacak ya da sürdürülecek hiçbir şey yoktur.
+  </Accordion>
+  <Accordion title="Anlaşmalarımdaki e-postalar neden dâhil edilmiyor?">
+    E-posta etkinliğini okumak, HubSpot bağlantınızda **sales-email-read** iznini gerektirir. Bu izin eklenmeden önce kurulmuş entegrasyonlarda bu izin bulunmaz.
 
-    Bir anlaşma, yalnızca yanıt gelmeden yeterince gün geçtiği için "sessizleşti" durumuna geçer — bunun için yeni bir şeyin gelmesi gerekmez. Ve ısınma ile soğuma, sohbetin *eskiden* nasıl ilerlediğine göre ölçüldüğü için, geçen hafta istikrarlı görünen aynı anlaşma yalnızca örüntü değiştiği için önce soğumaya, sonra sessizliğe kayar. Sinyal, yokluğun kendisidir.
-  </Accordion>
-  <Accordion title="Bununla filtreleyip görünüm oluşturabilir miyim?">
-    Evet. Her şey normal HubSpot anlaşma alanı olarak kaydedilir; portalınızdaki diğer alanlar gibi filtreleyebilir, kendi liste görünümlerinizi oluşturabilir ve panolar ile raporlar hazırlayabilirsiniz.
-  </Accordion>
-  <Accordion title="Sohbet verisi azsa ne olur?">
-    Tahmin yürütmez. Her şey yalnızca mevcut veride gerçekten olanı yansıtır: kanıt yoksa hiçbir şey yazılmaz. Her anlaşma, analizin kaç sohbet üzerine kurulduğunu gösterir; böylece arkasında ne kadar şey olduğunu her zaman bilirsiniz.
-  </Accordion>
-  <Accordion title="Hiç yanılır mı?">
-    Doğruluk yüksektir, çünkü hiçbir şey tek başına durmaz: her sonuç, geldiği tam mesaj ya da etkinlikle desteklenir. Sohbette ya da CRM'de gerçek bir şeye kadar izlenemeyecek hiçbir iddiada bulunulmaz.
-  </Accordion>
-  <Accordion title="Üzerine kendim yazabilir miyim?">
-    HubSpot'ta üzerine yazabilirsiniz, ancak bir sonraki zamanlanmış çalıştırma yazdığınızı değiştirir. Kendi değerlendirmenizi kalıcı olarak kaydetmek istiyorsanız kendi alanlarınızı ya da anlaşmadaki bir notu kullanın.
+    **Integration page → HubSpot settings → Scopes and permissions** altından kontrol edin. Eksikse HubSpot hesabınızı yeniden bağlayın — en son entegrasyon bu izni içerir ve e-posta etkinliği bir sonraki analiz çalıştırmasından itibaren dikkate alınır.
   </Accordion>
 </AccordionGroup>
 
@@ -145,9 +166,9 @@ Başka her şey ne olursa olsun — müşteri sizi bekliyor.
 
 <CardGroup cols={2}>
   <Card title="BEA Radar Genel Bakış" icon="radar" href="/tr/ai-agents/bea-radar/overview">
-    BEA Radar'ın WhatsApp tarafı: her sohbete yazılan yapay zekâ analizi
+    BEA Radar'ın WhatsApp tarafı: her sohbete yazılan analiz
   </Card>
   <Card title="AI Filtreleri" icon="filter" href="/tr/ai-agents/bea-radar/ai-filters">
-    Takım Gelen Kutunuzu yapay zekânın çıkardığı her şeye göre filtreleyin
+    Takım Gelen Kutunuzu yapay zekânın belirlediklerine göre filtreleyin
   </Card>
 </CardGroup>

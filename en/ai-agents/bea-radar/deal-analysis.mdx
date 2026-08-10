@@ -16,6 +16,11 @@ It runs in the background on its own schedule. Every deal you open already carri
   <Step title="Make sure your deals have contacts attached">
     The analysis reads conversations belonging to the contacts associated with each deal. A deal with no contacts attached can only be analysed from its CRM data.
   </Step>
+  <Step title="Confirm the sales-email-read scope is granted">
+    Email activity on your deals can only be read if your HubSpot connection includes the **sales-email-read** scope. The latest version of the integration requests it automatically.
+
+    To check, go to **Integration page → HubSpot settings → Scopes and permissions**. If the scope isn't listed, reconnect your HubSpot account — reintegrating grants it.
+  </Step>
   <Step title="That's it — there is no per-deal setup">
     You don't enable anything on individual deals, and you don't configure fields. Analysis begins automatically and keeps itself current.
   </Step>
@@ -149,6 +154,11 @@ Each deal also records when it was last analysed, so you can always tell how cur
   </Accordion>
   <Accordion title="Do I need to set anything up for each deal?">
     No. Once HubSpot is connected, deals are analysed automatically. There's nothing to enable, configure, or maintain per deal.
+  </Accordion>
+  <Accordion title="Why aren't emails from my deals being included?">
+    Reading email activity requires the **sales-email-read** scope on your HubSpot connection. Integrations set up before this scope was added won't have it.
+
+    Check under **Integration page → HubSpot settings → Scopes and permissions**. If it's missing, reconnect your HubSpot account — the latest integration includes the scope, and email activity will be picked up from the next analysis run onwards.
   </Accordion>
 </AccordionGroup>
 
