@@ -1,0 +1,197 @@
+---
+title: "Criar relatórios de transmissão da Eazybe no HubSpot"
+description: "Crie relatórios de sucesso, motivos de falha e transmissão completa usando as propriedades de contato da Eazybe."
+---
+
+Use este guia para criar três relatórios do HubSpot prontos para compartilhar com clientes a partir destas propriedades de contato da Eazybe:
+
+- **Eazybe Last Broadcast Status**
+- **Eazybe Last Broadcast Name**
+- **Eazybe Last Broadcast Failure Reason**
+- **Eazybe Last Broadcast At**
+
+## Abrir o construtor de relatórios do HubSpot
+
+<Steps>
+  <Step title="Abrir Relatórios">
+    Na sua conta do HubSpot, clique no ícone **Reporting** (Relatórios) na navegação à esquerda e selecione **Reports** (Relatórios).
+
+    <Frame caption="Página de Relatórios do HubSpot">
+      <img src="/images/hubspot-broadcast-reports-page.png" alt="Página de Relatórios do HubSpot com o botão Create" />
+    </Frame>
+  </Step>
+
+  <Step title="Criar um relatório">
+    Clique em **Create** (Criar) no canto superior direito e selecione **Create report** (Criar relatório).
+
+    <Frame caption="Criar um relatório na página de Relatórios do HubSpot">
+      <img src="/images/hubspot-broadcast-create-report.png" alt="Página de Relatórios do HubSpot com o menu Create aberto e a opção Create report destacada" />
+    </Frame>
+  </Step>
+
+  <Step title="Escolher o construtor de relatórios personalizados">
+    Selecione **Custom report builder** (Construtor de relatórios personalizados) e clique em **Next** (Próximo).
+
+    <Frame caption="Escolher o construtor de relatórios personalizados do HubSpot">
+      <img src="/images/hubspot-broadcast-custom-report-builder.png" alt="Página Create report do HubSpot com a opção Custom report selecionada" />
+    </Frame>
+  </Step>
+
+  <Step title="Selecionar a fonte de dados">
+    Selecione **Contacts** (Contatos) como fonte de dados principal e clique em **Next** (Próximo).
+
+    <Frame caption="Selecionar Contacts como fonte de dados principal">
+      <img src="/images/hubspot-broadcast-select-data-source.png" alt="Página Choose data sources do HubSpot com Contacts selecionado como fonte de dados principal" />
+    </Frame>
+  </Step>
+
+  <Step title="Localizar as propriedades da Eazybe">
+    No campo de pesquisa, digite **Eazybe Last Broadcast**. As quatro propriedades da Eazybe aparecerão na lista de campos.
+
+    <Frame caption="Propriedades da Eazybe no construtor de relatórios do HubSpot">
+      <img src="/images/hubspot-broadcast-report-builder.png" alt="Construtor de relatórios personalizados do HubSpot mostrando as propriedades de transmissão da Eazybe" />
+    </Frame>
+  </Step>
+</Steps>
+
+## Relatório 1: Sucesso das transmissões por mês
+
+Este relatório mostra quantos contatos tiveram um resultado de transmissão bem-sucedido em cada mês.
+
+<Steps>
+  <Step title="Escolher o gráfico">
+    Em **Visualization** (Visualização), selecione **Vertical bar** (Barras verticais).
+
+    <Frame caption="Escolher a visualização de barras verticais">
+      <img src="/images/hubspot-broadcast-choose-vertical-bar-chart.png" alt="Construtor de relatórios do HubSpot com o menu Visualization aberto e Vertical bar destacado" />
+    </Frame>
+  </Step>
+
+  <Step title="Configurar o eixo X">
+    Arraste **Eazybe Last Broadcast At** para o **X-axis** (Eixo X). Clique no ícone de edição ao lado do campo e selecione **Monthly** (Mensal) como frequência.
+
+    <Frame caption="Configurar Eazybe Last Broadcast At como eixo X mensal">
+      <img src="/images/hubspot-broadcast-set-x-axis.png" alt="Construtor de relatórios do HubSpot com Eazybe Last Broadcast At configurado como eixo X mensal" />
+    </Frame>
+  </Step>
+
+  <Step title="Configurar o eixo Y">
+    Pesquise **Count of contacts** (Contagem de contatos) e arraste-o para o **Y-axis** (Eixo Y).
+
+    <Frame caption="Configurar Count of contacts como eixo Y">
+      <img src="/images/hubspot-broadcast-set-y-axis.png" alt="Construtor de relatórios do HubSpot com Count of contacts configurado como eixo Y" />
+    </Frame>
+  </Step>
+
+  <Step title="Adicionar o detalhamento por status">
+    Arraste **Eazybe Last Broadcast Status** para **Break down by** (Detalhar por).
+
+    <Frame caption="Detalhar o gráfico por status da transmissão">
+      <img src="/images/hubspot-broadcast-add-status-breakdown.png" alt="Construtor de relatórios do HubSpot com Eazybe Last Broadcast Status configurado como detalhamento do gráfico" />
+    </Frame>
+  </Step>
+
+  <Step title="Aplicar os filtros de sucesso">
+    Abra **Filters** (Filtros) e adicione todos os itens a seguir:
+
+    - **Eazybe Last Broadcast At** tem um valor conhecido
+    - **Eazybe Last Broadcast Status** é qualquer um de **Delivered** ou **Read**
+
+    <Frame caption="Filtrar o relatório por transmissões bem-sucedidas">
+      <img src="/images/hubspot-broadcast-apply-success-filters.png" alt="Filtros do relatório do HubSpot com Eazybe Last Broadcast At e os status Delivered e Read selecionados" />
+    </Frame>
+  </Step>
+
+  <Step title="Salvar o relatório">
+    Clique em **Save report** (Salvar relatório) e use o nome **Sucesso das transmissões da Eazybe por mês**.
+  </Step>
+</Steps>
+
+<Frame caption="Exemplo de relatório salvo sobre o status das transmissões">
+  <img src="/images/hubspot-broadcast-success-chart.png" alt="Gráfico do HubSpot mostrando a contagem de contatos por status da transmissão" />
+</Frame>
+
+## Relatório 2: Motivos de falha das transmissões por mês
+
+Este relatório mostra por que as transmissões falharam e com que frequência cada motivo ocorreu.
+
+<Steps>
+  <Step title="Criar outro relatório personalizado">
+    Volte para **Reports** (Relatórios), clique em **Create** (Criar), selecione **Create report** (Criar relatório), escolha **Custom report builder** (Construtor de relatórios personalizados) e use **Contacts** (Contatos) como fonte de dados principal.
+  </Step>
+
+  <Step title="Escolher o gráfico">
+    Em **Visualization** (Visualização), selecione **Vertical bar** (Barras verticais).
+  </Step>
+
+  <Step title="Configurar o eixo X">
+    Arraste **Eazybe Last Broadcast At** para o **X-axis** (Eixo X) e defina a frequência como **Monthly** (Mensal).
+  </Step>
+
+  <Step title="Configurar o eixo Y">
+    Arraste **Count of contacts** (Contagem de contatos) para o **Y-axis** (Eixo Y).
+  </Step>
+
+  <Step title="Adicionar o detalhamento por motivo da falha">
+    Arraste **Eazybe Last Broadcast Failure Reason** para **Break down by** (Detalhar por).
+  </Step>
+
+  <Step title="Aplicar os filtros de falha">
+    Abra **Filters** (Filtros) e adicione todos os itens a seguir:
+
+    - **Eazybe Last Broadcast Status** é igual a **Failed**
+    - **Eazybe Last Broadcast At** tem um valor conhecido
+    - **Eazybe Last Broadcast Failure Reason** tem um valor conhecido
+  </Step>
+
+  <Step title="Salvar o relatório">
+    Clique em **Save report** (Salvar relatório) e use o nome **Motivos de falha das transmissões da Eazybe por mês**.
+  </Step>
+</Steps>
+
+## Relatório 3: Relatório completo de transmissões
+
+Este relatório exibe as quatro propriedades de transmissão da Eazybe em uma única tabela fácil de consultar para os clientes.
+
+<Steps>
+  <Step title="Criar outro relatório personalizado">
+    Volte para **Reports** (Relatórios), clique em **Create** (Criar), selecione **Create report** (Criar relatório), escolha **Custom report builder** (Construtor de relatórios personalizados) e use **Contacts** (Contatos) como fonte de dados principal.
+  </Step>
+
+  <Step title="Escolher a visualização de tabela">
+    Em **Visualization** (Visualização), selecione **Table** (Tabela).
+  </Step>
+
+  <Step title="Adicionar as colunas do relatório">
+    Adicione estes campos a **Columns** (Colunas) nesta ordem:
+
+    1. **Eazybe Last Broadcast At**
+    2. **Eazybe Last Broadcast Name**
+    3. **Eazybe Last Broadcast Status**
+    4. **Eazybe Last Broadcast Failure Reason**
+  </Step>
+
+  <Step title="Mostrar detalhes de cada contato">
+    Selecione **Unsummarized data** (Dados não resumidos) para que os detalhes da transmissão mais recente de cada contato apareçam em uma linha separada.
+  </Step>
+
+  <Step title="Aplicar os filtros">
+    Abra **Filters** (Filtros) e adicione:
+
+    - **Eazybe Last Broadcast At** tem um valor conhecido
+    - **Eazybe Last Broadcast Name** tem um valor conhecido
+    - **Eazybe Last Broadcast Status** tem um valor conhecido
+  </Step>
+
+  <Step title="Salvar o relatório">
+    Clique em **Save report** (Salvar relatório) e use o nome **Relatório completo de transmissões da Eazybe**.
+  </Step>
+</Steps>
+
+<Note>
+Se o relatório não exibir dados, confirme se **Count of contacts** (Contagem de contatos) está no eixo Y dos relatórios com gráficos e se os contatos selecionados têm valores nas propriedades da Eazybe.
+</Note>
+
+## Adicionar os relatórios a um painel
+
+Ao salvar cada relatório, selecione um painel existente ou crie um novo chamado **Desempenho das transmissões da Eazybe**. Adicione os três relatórios para que os clientes possam analisar em um só lugar as tendências de sucesso, os motivos de falha e todos os detalhes das transmissões.

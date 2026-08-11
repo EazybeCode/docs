@@ -1,0 +1,197 @@
+---
+title: "HubSpot'ta Eazybe yayın raporları oluşturma"
+description: "Eazybe kişi özelliklerini kullanarak başarı, hata nedeni ve eksiksiz yayın raporları oluşturun."
+---
+
+Bu kılavuzu kullanarak aşağıdaki Eazybe kişi özelliklerinden müşterilerle paylaşmaya hazır üç HubSpot raporu oluşturabilirsiniz:
+
+- **Eazybe Last Broadcast Status**
+- **Eazybe Last Broadcast Name**
+- **Eazybe Last Broadcast Failure Reason**
+- **Eazybe Last Broadcast At**
+
+## HubSpot rapor oluşturucusunu açma
+
+<Steps>
+  <Step title="Raporları açın">
+    HubSpot hesabınızda sol gezinme menüsündeki **Reporting** (Raporlama) simgesine tıklayın ve ardından **Reports** (Raporlar) seçeneğini belirleyin.
+
+    <Frame caption="HubSpot Raporlar sayfası">
+      <img src="/images/hubspot-broadcast-reports-page.png" alt="Create düğmesinin bulunduğu HubSpot Raporlar sayfası" />
+    </Frame>
+  </Step>
+
+  <Step title="Bir rapor oluşturun">
+    Sağ üst köşedeki **Create** (Oluştur) seçeneğine tıklayın ve ardından **Create report** (Rapor oluştur) seçeneğini belirleyin.
+
+    <Frame caption="HubSpot Raporlar sayfasından bir rapor oluşturma">
+      <img src="/images/hubspot-broadcast-create-report.png" alt="Create menüsü açık ve Create report seçeneği vurgulanmış HubSpot Raporlar sayfası" />
+    </Frame>
+  </Step>
+
+  <Step title="Özel rapor oluşturucuyu seçin">
+    **Custom report builder** (Özel rapor oluşturucu) seçeneğini belirleyin ve **Next** (İleri) düğmesine tıklayın.
+
+    <Frame caption="HubSpot özel rapor oluşturucusunu seçme">
+      <img src="/images/hubspot-broadcast-custom-report-builder.png" alt="Custom report seçeneği belirlenmiş HubSpot Create report sayfası" />
+    </Frame>
+  </Step>
+
+  <Step title="Veri kaynağını seçin">
+    Birincil veri kaynağı olarak **Contacts** (Kişiler) seçeneğini belirleyin ve **Next** (İleri) düğmesine tıklayın.
+
+    <Frame caption="Birincil veri kaynağı olarak Contacts seçme">
+      <img src="/images/hubspot-broadcast-select-data-source.png" alt="Birincil veri kaynağı olarak Contacts seçilmiş HubSpot Choose data sources sayfası" />
+    </Frame>
+  </Step>
+
+  <Step title="Eazybe özelliklerini bulun">
+    Arama alanına **Eazybe Last Broadcast** yazın. Dört Eazybe özelliği alan listesinde görüntülenir.
+
+    <Frame caption="HubSpot rapor oluşturucusundaki Eazybe özellikleri">
+      <img src="/images/hubspot-broadcast-report-builder.png" alt="Eazybe yayın özelliklerini gösteren HubSpot özel rapor oluşturucusu" />
+    </Frame>
+  </Step>
+</Steps>
+
+## Rapor 1: Aya göre başarılı yayınlar
+
+Bu rapor, her ay kaç kişinin başarılı bir yayın sonucu aldığını gösterir.
+
+<Steps>
+  <Step title="Grafiği seçin">
+    **Visualization** (Görselleştirme) altında **Vertical bar** (Dikey çubuk) seçeneğini belirleyin.
+
+    <Frame caption="Dikey çubuk grafik görselleştirmesini seçme">
+      <img src="/images/hubspot-broadcast-choose-vertical-bar-chart.png" alt="Visualization menüsü açık ve Vertical bar seçeneği vurgulanmış HubSpot rapor oluşturucusu" />
+    </Frame>
+  </Step>
+
+  <Step title="X eksenini ayarlayın">
+    **Eazybe Last Broadcast At** alanını **X-axis** (X ekseni) bölümüne sürükleyin. Alanın yanındaki düzenleme simgesine tıklayın ve sıklık olarak **Monthly** (Aylık) seçeneğini belirleyin.
+
+    <Frame caption="Eazybe Last Broadcast At alanını aylık X ekseni olarak ayarlama">
+      <img src="/images/hubspot-broadcast-set-x-axis.png" alt="Eazybe Last Broadcast At alanı aylık X ekseni olarak yapılandırılmış HubSpot rapor oluşturucusu" />
+    </Frame>
+  </Step>
+
+  <Step title="Y eksenini ayarlayın">
+    **Count of contacts** (Kişi sayısı) alanını arayın ve **Y-axis** (Y ekseni) bölümüne sürükleyin.
+
+    <Frame caption="Count of contacts alanını Y ekseni olarak ayarlama">
+      <img src="/images/hubspot-broadcast-set-y-axis.png" alt="Count of contacts alanı Y ekseni olarak yapılandırılmış HubSpot rapor oluşturucusu" />
+    </Frame>
+  </Step>
+
+  <Step title="Durum kırılımını ekleyin">
+    **Eazybe Last Broadcast Status** alanını **Break down by** (Kırılım ölçütü) bölümüne sürükleyin.
+
+    <Frame caption="Grafiği yayın durumuna göre ayırma">
+      <img src="/images/hubspot-broadcast-add-status-breakdown.png" alt="Eazybe Last Broadcast Status alanı grafik kırılımı olarak yapılandırılmış HubSpot rapor oluşturucusu" />
+    </Frame>
+  </Step>
+
+  <Step title="Başarı filtrelerini uygulayın">
+    **Filters** (Filtreler) bölümünü açın ve aşağıdakilerin tümünü ekleyin:
+
+    - **Eazybe Last Broadcast At** değeri biliniyor
+    - **Eazybe Last Broadcast Status**, **Delivered** veya **Read** değerlerinden biri
+
+    <Frame caption="Raporu başarılı yayınlara göre filtreleme">
+      <img src="/images/hubspot-broadcast-apply-success-filters.png" alt="Eazybe Last Broadcast At ile Delivered ve Read yayın durumları seçilmiş HubSpot rapor filtreleri" />
+    </Frame>
+  </Step>
+
+  <Step title="Raporu kaydedin">
+    **Save report** (Raporu kaydet) düğmesine tıklayın ve **Aya Göre Eazybe Yayın Başarısı** adını kullanın.
+  </Step>
+</Steps>
+
+<Frame caption="Kaydedilmiş yayın durumu raporu örneği">
+  <img src="/images/hubspot-broadcast-success-chart.png" alt="Yayın durumuna göre kişi sayılarını gösteren HubSpot grafiği" />
+</Frame>
+
+## Rapor 2: Aya göre yayın hata nedenleri
+
+Bu rapor, yayınların neden başarısız olduğunu ve her nedenin ne sıklıkta gerçekleştiğini gösterir.
+
+<Steps>
+  <Step title="Başka bir özel rapor oluşturun">
+    **Reports** (Raporlar) bölümüne dönün, **Create** (Oluştur) seçeneğine tıklayın, **Create report** (Rapor oluştur) seçeneğini belirleyin, **Custom report builder** (Özel rapor oluşturucu) seçeneğini seçin ve birincil veri kaynağı olarak **Contacts** (Kişiler) kullanın.
+  </Step>
+
+  <Step title="Grafiği seçin">
+    **Visualization** (Görselleştirme) altında **Vertical bar** (Dikey çubuk) seçeneğini belirleyin.
+  </Step>
+
+  <Step title="X eksenini ayarlayın">
+    **Eazybe Last Broadcast At** alanını **X-axis** (X ekseni) bölümüne sürükleyin ve sıklığını **Monthly** (Aylık) olarak ayarlayın.
+  </Step>
+
+  <Step title="Y eksenini ayarlayın">
+    **Count of contacts** (Kişi sayısı) alanını **Y-axis** (Y ekseni) bölümüne sürükleyin.
+  </Step>
+
+  <Step title="Hata nedeni kırılımını ekleyin">
+    **Eazybe Last Broadcast Failure Reason** alanını **Break down by** (Kırılım ölçütü) bölümüne sürükleyin.
+  </Step>
+
+  <Step title="Hata filtrelerini uygulayın">
+    **Filters** (Filtreler) bölümünü açın ve aşağıdakilerin tümünü ekleyin:
+
+    - **Eazybe Last Broadcast Status**, **Failed** değerine eşit
+    - **Eazybe Last Broadcast At** değeri biliniyor
+    - **Eazybe Last Broadcast Failure Reason** değeri biliniyor
+  </Step>
+
+  <Step title="Raporu kaydedin">
+    **Save report** (Raporu kaydet) düğmesine tıklayın ve **Aya Göre Eazybe Yayın Hata Nedenleri** adını kullanın.
+  </Step>
+</Steps>
+
+## Rapor 3: Eksiksiz yayın raporu
+
+Bu rapor, dört Eazybe yayın özelliğinin tamamını müşterilerin kolayca inceleyebileceği tek bir tabloda gösterir.
+
+<Steps>
+  <Step title="Başka bir özel rapor oluşturun">
+    **Reports** (Raporlar) bölümüne dönün, **Create** (Oluştur) seçeneğine tıklayın, **Create report** (Rapor oluştur) seçeneğini belirleyin, **Custom report builder** (Özel rapor oluşturucu) seçeneğini seçin ve birincil veri kaynağı olarak **Contacts** (Kişiler) kullanın.
+  </Step>
+
+  <Step title="Tablo görselleştirmesini seçin">
+    **Visualization** (Görselleştirme) altında **Table** (Tablo) seçeneğini belirleyin.
+  </Step>
+
+  <Step title="Rapor sütunlarını ekleyin">
+    Aşağıdaki alanları bu sırayla **Columns** (Sütunlar) bölümüne ekleyin:
+
+    1. **Eazybe Last Broadcast At**
+    2. **Eazybe Last Broadcast Name**
+    3. **Eazybe Last Broadcast Status**
+    4. **Eazybe Last Broadcast Failure Reason**
+  </Step>
+
+  <Step title="Kişi düzeyindeki ayrıntıları gösterin">
+    Her kişinin en son yayın ayrıntılarının ayrı bir satırda görünmesi için **Unsummarized data** (Özetlenmemiş veriler) seçeneğini belirleyin.
+  </Step>
+
+  <Step title="Filtreleri uygulayın">
+    **Filters** (Filtreler) bölümünü açın ve şunları ekleyin:
+
+    - **Eazybe Last Broadcast At** değeri biliniyor
+    - **Eazybe Last Broadcast Name** değeri biliniyor
+    - **Eazybe Last Broadcast Status** değeri biliniyor
+  </Step>
+
+  <Step title="Raporu kaydedin">
+    **Save report** (Raporu kaydet) düğmesine tıklayın ve **Eksiksiz Eazybe Yayın Raporu** adını kullanın.
+  </Step>
+</Steps>
+
+<Note>
+Rapor veri göstermiyorsa grafik raporlarında **Count of contacts** (Kişi sayısı) alanının Y ekseninde olduğunu ve seçilen kişilerin Eazybe özelliklerinde değer bulunduğunu doğrulayın.
+</Note>
+
+## Raporları bir panele ekleme
+
+Her raporu kaydederken mevcut bir paneli seçin veya **Eazybe Yayın Performansı** adlı yeni bir panel oluşturun. Müşterilerin başarı eğilimlerini, hata nedenlerini ve tüm yayın ayrıntılarını tek bir yerde inceleyebilmesi için üç raporun tamamını ekleyin.

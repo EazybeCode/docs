@@ -1,0 +1,197 @@
+---
+title: "Create Eazybe Broadcast Reports in HubSpot"
+description: "Create success, failure-reason, and complete broadcast reports using Eazybe contact properties."
+---
+
+Use this guide to create three client-ready HubSpot reports from these Eazybe contact properties:
+
+- **Eazybe Last Broadcast Status**
+- **Eazybe Last Broadcast Name**
+- **Eazybe Last Broadcast Failure Reason**
+- **Eazybe Last Broadcast At**
+
+## Open the HubSpot report builder
+
+<Steps>
+  <Step title="Open Reports">
+    In your HubSpot account, click the **Reporting** icon in the left navigation, then select **Reports**.
+
+    <Frame caption="HubSpot Reports page">
+      <img src="/images/hubspot-broadcast-reports-page.png" alt="HubSpot Reports page with the Create button" />
+    </Frame>
+  </Step>
+
+  <Step title="Create a report">
+    Click **Create** in the upper-right corner, then select **Create report**.
+
+    <Frame caption="Create a report from the HubSpot Reports page">
+      <img src="/images/hubspot-broadcast-create-report.png" alt="HubSpot Reports page with the Create menu open and Create report highlighted" />
+    </Frame>
+  </Step>
+
+  <Step title="Choose the custom report builder">
+    Select **Custom report builder**, then click **Next**.
+
+    <Frame caption="Choose the HubSpot custom report builder">
+      <img src="/images/hubspot-broadcast-custom-report-builder.png" alt="HubSpot Create report page with the Custom report option selected" />
+    </Frame>
+  </Step>
+
+  <Step title="Select the data source">
+    Select **Contacts** as the primary data source, then click **Next**.
+
+    <Frame caption="Select Contacts as the primary data source">
+      <img src="/images/hubspot-broadcast-select-data-source.png" alt="HubSpot Choose data sources page with Contacts selected as the primary data source" />
+    </Frame>
+  </Step>
+
+  <Step title="Find the Eazybe properties">
+    In the search field, enter **Eazybe Last Broadcast**. The four Eazybe properties will appear in the field list.
+
+    <Frame caption="Eazybe properties in the HubSpot report builder">
+      <img src="/images/hubspot-broadcast-report-builder.png" alt="HubSpot custom report builder showing Eazybe broadcast properties" />
+    </Frame>
+  </Step>
+</Steps>
+
+## Report 1: Broadcast success by month
+
+This report shows how many contacts had a successful broadcast result each month.
+
+<Steps>
+  <Step title="Choose the chart">
+    Under **Visualization**, select **Vertical bar**.
+
+    <Frame caption="Choose the vertical bar chart visualization">
+      <img src="/images/hubspot-broadcast-choose-vertical-bar-chart.png" alt="HubSpot custom report builder with the Visualization menu open and Vertical bar highlighted" />
+    </Frame>
+  </Step>
+
+  <Step title="Set the X-axis">
+    Drag **Eazybe Last Broadcast At** to the **X-axis**. Click the edit icon beside the field and select **Monthly** as the frequency.
+
+    <Frame caption="Set Eazybe Last Broadcast At as the monthly X-axis">
+      <img src="/images/hubspot-broadcast-set-x-axis.png" alt="HubSpot custom report builder with Eazybe Last Broadcast At configured as the monthly X-axis" />
+    </Frame>
+  </Step>
+
+  <Step title="Set the Y-axis">
+    Search for **Count of contacts** and drag it to the **Y-axis**.
+
+    <Frame caption="Set Count of contacts as the Y-axis">
+      <img src="/images/hubspot-broadcast-set-y-axis.png" alt="HubSpot custom report builder with Count of contacts configured as the Y-axis" />
+    </Frame>
+  </Step>
+
+  <Step title="Add the status breakdown">
+    Drag **Eazybe Last Broadcast Status** to **Break down by**.
+
+    <Frame caption="Break down the chart by broadcast status">
+      <img src="/images/hubspot-broadcast-add-status-breakdown.png" alt="HubSpot custom report builder with Eazybe Last Broadcast Status configured as the chart breakdown" />
+    </Frame>
+  </Step>
+
+  <Step title="Apply the success filters">
+    Open **Filters** and add all of the following:
+
+    - **Eazybe Last Broadcast At** is known
+    - **Eazybe Last Broadcast Status** is any of **Delivered** or **Read**
+
+    <Frame caption="Filter the report for successful broadcasts">
+      <img src="/images/hubspot-broadcast-apply-success-filters.png" alt="HubSpot report filters with Eazybe Last Broadcast At and the Delivered and Read broadcast statuses selected" />
+    </Frame>
+  </Step>
+
+  <Step title="Save the report">
+    Click **Save report** and use the name **Eazybe Broadcast Success by Month**.
+  </Step>
+</Steps>
+
+<Frame caption="Example of a saved broadcast status report">
+  <img src="/images/hubspot-broadcast-success-chart.png" alt="HubSpot chart showing contact counts by broadcast status" />
+</Frame>
+
+## Report 2: Broadcast failure reasons by month
+
+This report shows why broadcasts failed and how frequently each reason occurred.
+
+<Steps>
+  <Step title="Create another custom report">
+    Return to **Reports**, click **Create**, select **Create report**, choose **Custom report builder**, and use **Contacts** as the primary data source.
+  </Step>
+
+  <Step title="Choose the chart">
+    Under **Visualization**, select **Vertical bar**.
+  </Step>
+
+  <Step title="Set the X-axis">
+    Drag **Eazybe Last Broadcast At** to the **X-axis**, then set its frequency to **Monthly**.
+  </Step>
+
+  <Step title="Set the Y-axis">
+    Drag **Count of contacts** to the **Y-axis**.
+  </Step>
+
+  <Step title="Add the failure-reason breakdown">
+    Drag **Eazybe Last Broadcast Failure Reason** to **Break down by**.
+  </Step>
+
+  <Step title="Apply the failure filters">
+    Open **Filters** and add all of the following:
+
+    - **Eazybe Last Broadcast Status** is equal to **Failed**
+    - **Eazybe Last Broadcast At** is known
+    - **Eazybe Last Broadcast Failure Reason** is known
+  </Step>
+
+  <Step title="Save the report">
+    Click **Save report** and use the name **Eazybe Broadcast Failure Reasons by Month**.
+  </Step>
+</Steps>
+
+## Report 3: Complete broadcast report
+
+This report displays all four Eazybe broadcast properties in one client-friendly table.
+
+<Steps>
+  <Step title="Create another custom report">
+    Return to **Reports**, click **Create**, select **Create report**, choose **Custom report builder**, and use **Contacts** as the primary data source.
+  </Step>
+
+  <Step title="Choose the table visualization">
+    Under **Visualization**, select **Table**.
+  </Step>
+
+  <Step title="Add the report columns">
+    Add these fields to **Columns** in this order:
+
+    1. **Eazybe Last Broadcast At**
+    2. **Eazybe Last Broadcast Name**
+    3. **Eazybe Last Broadcast Status**
+    4. **Eazybe Last Broadcast Failure Reason**
+  </Step>
+
+  <Step title="Show contact-level details">
+    Select **Unsummarized data** so each contact's latest broadcast details appear as an individual row.
+  </Step>
+
+  <Step title="Apply the filters">
+    Open **Filters** and add:
+
+    - **Eazybe Last Broadcast At** is known
+    - **Eazybe Last Broadcast Name** is known
+    - **Eazybe Last Broadcast Status** is known
+  </Step>
+
+  <Step title="Save the report">
+    Click **Save report** and use the name **Eazybe Complete Broadcast Report**.
+  </Step>
+</Steps>
+
+<Note>
+If the report displays no data, confirm that **Count of contacts** is on the Y-axis for chart reports and that the selected contacts have values in the Eazybe properties.
+</Note>
+
+## Add the reports to a dashboard
+
+When saving each report, select an existing dashboard or create a new dashboard named **Eazybe Broadcast Performance**. Add all three reports so clients can review success trends, failure reasons, and complete broadcast details from one place.

@@ -1,0 +1,197 @@
+---
+title: "Crear informes de difusión de Eazybe en HubSpot"
+description: "Crea informes de éxito, motivos de error y difusión completa con las propiedades de contacto de Eazybe."
+---
+
+Usa esta guía para crear tres informes de HubSpot listos para compartir con clientes a partir de estas propiedades de contacto de Eazybe:
+
+- **Eazybe Last Broadcast Status**
+- **Eazybe Last Broadcast Name**
+- **Eazybe Last Broadcast Failure Reason**
+- **Eazybe Last Broadcast At**
+
+## Abrir el generador de informes de HubSpot
+
+<Steps>
+  <Step title="Abrir Reportes">
+    En tu cuenta de HubSpot, haz clic en el icono **Reporting** (Informes) de la navegación izquierda y selecciona **Reports** (Reportes).
+
+    <Frame caption="Página de Reportes de HubSpot">
+      <img src="/images/hubspot-broadcast-reports-page.png" alt="Página de Reportes de HubSpot con el botón Create" />
+    </Frame>
+  </Step>
+
+  <Step title="Crear un informe">
+    Haz clic en **Create** (Crear) en la esquina superior derecha y selecciona **Create report** (Crear informe).
+
+    <Frame caption="Crear un informe desde la página de Reportes de HubSpot">
+      <img src="/images/hubspot-broadcast-create-report.png" alt="Página de Reportes de HubSpot con el menú Create abierto y la opción Create report resaltada" />
+    </Frame>
+  </Step>
+
+  <Step title="Elegir el generador de informes personalizados">
+    Selecciona **Custom report builder** (Generador de informes personalizados) y haz clic en **Next** (Siguiente).
+
+    <Frame caption="Elegir el generador de informes personalizados de HubSpot">
+      <img src="/images/hubspot-broadcast-custom-report-builder.png" alt="Página Create report de HubSpot con la opción Custom report seleccionada" />
+    </Frame>
+  </Step>
+
+  <Step title="Seleccionar la fuente de datos">
+    Selecciona **Contacts** (Contactos) como fuente de datos principal y haz clic en **Next** (Siguiente).
+
+    <Frame caption="Seleccionar Contacts como fuente de datos principal">
+      <img src="/images/hubspot-broadcast-select-data-source.png" alt="Página Choose data sources de HubSpot con Contacts seleccionado como fuente de datos principal" />
+    </Frame>
+  </Step>
+
+  <Step title="Buscar las propiedades de Eazybe">
+    En el campo de búsqueda, escribe **Eazybe Last Broadcast**. Las cuatro propiedades de Eazybe aparecerán en la lista de campos.
+
+    <Frame caption="Propiedades de Eazybe en el generador de informes de HubSpot">
+      <img src="/images/hubspot-broadcast-report-builder.png" alt="Generador de informes personalizados de HubSpot con las propiedades de difusión de Eazybe" />
+    </Frame>
+  </Step>
+</Steps>
+
+## Informe 1: Difusiones exitosas por mes
+
+Este informe muestra cuántos contactos tuvieron un resultado de difusión exitoso cada mes.
+
+<Steps>
+  <Step title="Elegir el gráfico">
+    En **Visualization** (Visualización), selecciona **Vertical bar** (Barras verticales).
+
+    <Frame caption="Elegir la visualización de barras verticales">
+      <img src="/images/hubspot-broadcast-choose-vertical-bar-chart.png" alt="Generador de informes de HubSpot con el menú Visualization abierto y Vertical bar resaltado" />
+    </Frame>
+  </Step>
+
+  <Step title="Configurar el eje X">
+    Arrastra **Eazybe Last Broadcast At** al **X-axis** (Eje X). Haz clic en el icono de edición junto al campo y selecciona **Monthly** (Mensual) como frecuencia.
+
+    <Frame caption="Configurar Eazybe Last Broadcast At como eje X mensual">
+      <img src="/images/hubspot-broadcast-set-x-axis.png" alt="Generador de informes de HubSpot con Eazybe Last Broadcast At configurado como eje X mensual" />
+    </Frame>
+  </Step>
+
+  <Step title="Configurar el eje Y">
+    Busca **Count of contacts** (Cantidad de contactos) y arrástralo al **Y-axis** (Eje Y).
+
+    <Frame caption="Configurar Count of contacts como eje Y">
+      <img src="/images/hubspot-broadcast-set-y-axis.png" alt="Generador de informes de HubSpot con Count of contacts configurado como eje Y" />
+    </Frame>
+  </Step>
+
+  <Step title="Añadir el desglose por estado">
+    Arrastra **Eazybe Last Broadcast Status** a **Break down by** (Desglosar por).
+
+    <Frame caption="Desglosar el gráfico por estado de difusión">
+      <img src="/images/hubspot-broadcast-add-status-breakdown.png" alt="Generador de informes de HubSpot con Eazybe Last Broadcast Status configurado como desglose del gráfico" />
+    </Frame>
+  </Step>
+
+  <Step title="Aplicar los filtros de éxito">
+    Abre **Filters** (Filtros) y añade todo lo siguiente:
+
+    - **Eazybe Last Broadcast At** tiene un valor conocido
+    - **Eazybe Last Broadcast Status** es cualquiera de **Delivered** o **Read**
+
+    <Frame caption="Filtrar el informe por difusiones exitosas">
+      <img src="/images/hubspot-broadcast-apply-success-filters.png" alt="Filtros del informe de HubSpot con Eazybe Last Broadcast At y los estados Delivered y Read seleccionados" />
+    </Frame>
+  </Step>
+
+  <Step title="Guardar el informe">
+    Haz clic en **Save report** (Guardar informe) y usa el nombre **Éxito de difusiones de Eazybe por mes**.
+  </Step>
+</Steps>
+
+<Frame caption="Ejemplo de un informe guardado sobre el estado de las difusiones">
+  <img src="/images/hubspot-broadcast-success-chart.png" alt="Gráfico de HubSpot con la cantidad de contactos por estado de difusión" />
+</Frame>
+
+## Informe 2: Motivos de error de las difusiones por mes
+
+Este informe muestra por qué fallaron las difusiones y con qué frecuencia ocurrió cada motivo.
+
+<Steps>
+  <Step title="Crear otro informe personalizado">
+    Vuelve a **Reports** (Reportes), haz clic en **Create** (Crear), selecciona **Create report** (Crear informe), elige **Custom report builder** (Generador de informes personalizados) y usa **Contacts** (Contactos) como fuente de datos principal.
+  </Step>
+
+  <Step title="Elegir el gráfico">
+    En **Visualization** (Visualización), selecciona **Vertical bar** (Barras verticales).
+  </Step>
+
+  <Step title="Configurar el eje X">
+    Arrastra **Eazybe Last Broadcast At** al **X-axis** (Eje X) y configura la frecuencia como **Monthly** (Mensual).
+  </Step>
+
+  <Step title="Configurar el eje Y">
+    Arrastra **Count of contacts** (Cantidad de contactos) al **Y-axis** (Eje Y).
+  </Step>
+
+  <Step title="Añadir el desglose por motivo del error">
+    Arrastra **Eazybe Last Broadcast Failure Reason** a **Break down by** (Desglosar por).
+  </Step>
+
+  <Step title="Aplicar los filtros de error">
+    Abre **Filters** (Filtros) y añade todo lo siguiente:
+
+    - **Eazybe Last Broadcast Status** es igual a **Failed**
+    - **Eazybe Last Broadcast At** tiene un valor conocido
+    - **Eazybe Last Broadcast Failure Reason** tiene un valor conocido
+  </Step>
+
+  <Step title="Guardar el informe">
+    Haz clic en **Save report** (Guardar informe) y usa el nombre **Motivos de error de las difusiones de Eazybe por mes**.
+  </Step>
+</Steps>
+
+## Informe 3: Informe completo de difusiones
+
+Este informe muestra las cuatro propiedades de difusión de Eazybe en una única tabla fácil de consultar para los clientes.
+
+<Steps>
+  <Step title="Crear otro informe personalizado">
+    Vuelve a **Reports** (Reportes), haz clic en **Create** (Crear), selecciona **Create report** (Crear informe), elige **Custom report builder** (Generador de informes personalizados) y usa **Contacts** (Contactos) como fuente de datos principal.
+  </Step>
+
+  <Step title="Elegir la visualización de tabla">
+    En **Visualization** (Visualización), selecciona **Table** (Tabla).
+  </Step>
+
+  <Step title="Añadir las columnas del informe">
+    Añade estos campos a **Columns** (Columnas) en este orden:
+
+    1. **Eazybe Last Broadcast At**
+    2. **Eazybe Last Broadcast Name**
+    3. **Eazybe Last Broadcast Status**
+    4. **Eazybe Last Broadcast Failure Reason**
+  </Step>
+
+  <Step title="Mostrar los detalles de cada contacto">
+    Selecciona **Unsummarized data** (Datos sin resumir) para que los detalles de la última difusión de cada contacto aparezcan en una fila independiente.
+  </Step>
+
+  <Step title="Aplicar los filtros">
+    Abre **Filters** (Filtros) y añade:
+
+    - **Eazybe Last Broadcast At** tiene un valor conocido
+    - **Eazybe Last Broadcast Name** tiene un valor conocido
+    - **Eazybe Last Broadcast Status** tiene un valor conocido
+  </Step>
+
+  <Step title="Guardar el informe">
+    Haz clic en **Save report** (Guardar informe) y usa el nombre **Informe completo de difusiones de Eazybe**.
+  </Step>
+</Steps>
+
+<Note>
+Si el informe no muestra datos, confirma que **Count of contacts** (Cantidad de contactos) esté en el eje Y de los informes con gráficos y que los contactos seleccionados tengan valores en las propiedades de Eazybe.
+</Note>
+
+## Añadir los informes a un panel
+
+Al guardar cada informe, selecciona un panel existente o crea uno nuevo llamado **Rendimiento de difusiones de Eazybe**. Añade los tres informes para que los clientes puedan revisar en un solo lugar las tendencias de éxito, los motivos de error y todos los detalles de las difusiones.
