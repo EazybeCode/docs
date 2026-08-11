@@ -587,26 +587,6 @@
                     ]
                   }
                 ]
-              },
-              {
-                "group": "Webhooks & Custom",
-                "icon": "code",
-                "pages": [
-                  "en/integrations/webhooks-custom/scheduler-api",
-                  "en/integrations/webhooks-custom/add-chat-id",
-                  "en/integrations/webhooks-custom/webhooks",
-                  "en/integrations/webhooks-custom/create-group-and-add-chat-id",
-                  "en/integrations/webhooks-custom/active-user-api",
-                  "en/integrations/webhooks-custom/compliance-and-privacy",
-                  {
-                    "group": "FAQ",
-                    "pages": [
-                      "en/integrations/webhooks-custom/faq/available-apis",
-                      "en/integrations/webhooks-custom/faq/custom-apis",
-                      "en/integrations/webhooks-custom/faq/create-webhook"
-                    ]
-                  }
-                ]
               }
             ]
           },
@@ -787,12 +767,23 @@
                 ]
               },
               {
-                "group": "Webhooks",
-                "icon": "bolt",
+                "group": "Scheduled Webhooks and Custom",
+                "icon": "code",
                 "pages": [
-                  "api-reference/webhooks/overview",
-                  "api-reference/webhooks/events",
-                  "api-reference/webhooks/payload-reference"
+                  "en/integrations/webhooks-custom/scheduler-api",
+                  "en/integrations/webhooks-custom/add-chat-id",
+                  "en/integrations/webhooks-custom/webhooks",
+                  "en/integrations/webhooks-custom/create-group-and-add-chat-id",
+                  "en/integrations/webhooks-custom/active-user-api",
+                  "en/integrations/webhooks-custom/compliance-and-privacy",
+                  {
+                    "group": "FAQ",
+                    "pages": [
+                      "en/integrations/webhooks-custom/faq/available-apis",
+                      "en/integrations/webhooks-custom/faq/custom-apis",
+                      "en/integrations/webhooks-custom/faq/create-webhook"
+                    ]
+                  }
                 ]
               }
             ]
@@ -1322,26 +1313,6 @@
                     ]
                   }
                 ]
-              },
-              {
-                "group": "Webhooks & Custom",
-                "icon": "code",
-                "pages": [
-                  "es/integrations/webhooks-custom/scheduler-api",
-                  "es/integrations/webhooks-custom/add-chat-id",
-                  "es/integrations/webhooks-custom/webhooks",
-                  "es/integrations/webhooks-custom/create-group-and-add-chat-id",
-                  "es/integrations/webhooks-custom/active-user-api",
-                  "es/integrations/webhooks-custom/compliance-and-privacy",
-                  {
-                    "group": "FAQ",
-                    "pages": [
-                      "es/integrations/webhooks-custom/faq/available-apis",
-                      "es/integrations/webhooks-custom/faq/custom-apis",
-                      "es/integrations/webhooks-custom/faq/create-webhook"
-                    ]
-                  }
-                ]
               }
             ]
           },
@@ -1519,6 +1490,26 @@
                       "es/api-reference/meta/operations/list-blocked-users",
                       "es/api-reference/meta/operations/block-users",
                       "es/api-reference/meta/operations/unblock-users"
+                    ]
+                  }
+                ]
+              },
+              {
+                "group": "Scheduled Webhooks and Custom",
+                "icon": "code",
+                "pages": [
+                  "es/integrations/webhooks-custom/scheduler-api",
+                  "es/integrations/webhooks-custom/add-chat-id",
+                  "es/integrations/webhooks-custom/webhooks",
+                  "es/integrations/webhooks-custom/create-group-and-add-chat-id",
+                  "es/integrations/webhooks-custom/active-user-api",
+                  "es/integrations/webhooks-custom/compliance-and-privacy",
+                  {
+                    "group": "FAQ",
+                    "pages": [
+                      "es/integrations/webhooks-custom/faq/available-apis",
+                      "es/integrations/webhooks-custom/faq/custom-apis",
+                      "es/integrations/webhooks-custom/faq/create-webhook"
                     ]
                   }
                 ]
@@ -2054,26 +2045,6 @@
                     ]
                   }
                 ]
-              },
-              {
-                "group": "Webhooks & Custom",
-                "icon": "code",
-                "pages": [
-                  "pt/integrations/webhooks-custom/scheduler-api",
-                  "pt/integrations/webhooks-custom/add-chat-id",
-                  "pt/integrations/webhooks-custom/webhooks",
-                  "pt/integrations/webhooks-custom/create-group-and-add-chat-id",
-                  "pt/integrations/webhooks-custom/active-user-api",
-                  "pt/integrations/webhooks-custom/compliance-and-privacy",
-                  {
-                    "group": "FAQ",
-                    "pages": [
-                      "pt/integrations/webhooks-custom/faq/available-apis",
-                      "pt/integrations/webhooks-custom/faq/custom-apis",
-                      "pt/integrations/webhooks-custom/faq/create-webhook"
-                    ]
-                  }
-                ]
               }
             ]
           },
@@ -2251,6 +2222,26 @@
                       "pt/api-reference/meta/operations/list-blocked-users",
                       "pt/api-reference/meta/operations/block-users",
                       "pt/api-reference/meta/operations/unblock-users"
+                    ]
+                  }
+                ]
+              },
+              {
+                "group": "Scheduled Webhooks and Custom",
+                "icon": "code",
+                "pages": [
+                  "pt/integrations/webhooks-custom/scheduler-api",
+                  "pt/integrations/webhooks-custom/add-chat-id",
+                  "pt/integrations/webhooks-custom/webhooks",
+                  "pt/integrations/webhooks-custom/create-group-and-add-chat-id",
+                  "pt/integrations/webhooks-custom/active-user-api",
+                  "pt/integrations/webhooks-custom/compliance-and-privacy",
+                  {
+                    "group": "FAQ",
+                    "pages": [
+                      "pt/integrations/webhooks-custom/faq/available-apis",
+                      "pt/integrations/webhooks-custom/faq/custom-apis",
+                      "pt/integrations/webhooks-custom/faq/create-webhook"
                     ]
                   }
                 ]
@@ -2786,26 +2777,6 @@
                     ]
                   }
                 ]
-              },
-              {
-                "group": "Webhooks & Custom",
-                "icon": "code",
-                "pages": [
-                  "tr/integrations/webhooks-custom/scheduler-api",
-                  "tr/integrations/webhooks-custom/add-chat-id",
-                  "tr/integrations/webhooks-custom/webhooks",
-                  "tr/integrations/webhooks-custom/create-group-and-add-chat-id",
-                  "tr/integrations/webhooks-custom/active-user-api",
-                  "tr/integrations/webhooks-custom/compliance-and-privacy",
-                  {
-                    "group": "FAQ",
-                    "pages": [
-                      "tr/integrations/webhooks-custom/faq/available-apis",
-                      "tr/integrations/webhooks-custom/faq/custom-apis",
-                      "tr/integrations/webhooks-custom/faq/create-webhook"
-                    ]
-                  }
-                ]
               }
             ]
           },
@@ -2983,6 +2954,26 @@
                       "tr/api-reference/meta/operations/list-blocked-users",
                       "tr/api-reference/meta/operations/block-users",
                       "tr/api-reference/meta/operations/unblock-users"
+                    ]
+                  }
+                ]
+              },
+              {
+                "group": "Scheduled Webhooks and Custom",
+                "icon": "code",
+                "pages": [
+                  "tr/integrations/webhooks-custom/scheduler-api",
+                  "tr/integrations/webhooks-custom/add-chat-id",
+                  "tr/integrations/webhooks-custom/webhooks",
+                  "tr/integrations/webhooks-custom/create-group-and-add-chat-id",
+                  "tr/integrations/webhooks-custom/active-user-api",
+                  "tr/integrations/webhooks-custom/compliance-and-privacy",
+                  {
+                    "group": "FAQ",
+                    "pages": [
+                      "tr/integrations/webhooks-custom/faq/available-apis",
+                      "tr/integrations/webhooks-custom/faq/custom-apis",
+                      "tr/integrations/webhooks-custom/faq/create-webhook"
                     ]
                   }
                 ]
