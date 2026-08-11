@@ -588,26 +588,6 @@
                     ]
                   }
                 ]
-              },
-              {
-                "group": "Webhooks & Custom",
-                "icon": "code",
-                "pages": [
-                  "en/integrations/webhooks-custom/scheduler-api",
-                  "en/integrations/webhooks-custom/add-chat-id",
-                  "en/integrations/webhooks-custom/webhooks",
-                  "en/integrations/webhooks-custom/create-group-and-add-chat-id",
-                  "en/integrations/webhooks-custom/active-user-api",
-                  "en/integrations/webhooks-custom/compliance-and-privacy",
-                  {
-                    "group": "FAQ",
-                    "pages": [
-                      "en/integrations/webhooks-custom/faq/available-apis",
-                      "en/integrations/webhooks-custom/faq/custom-apis",
-                      "en/integrations/webhooks-custom/faq/create-webhook"
-                    ]
-                  }
-                ]
               }
             ]
           },
@@ -622,18 +602,7 @@
                   "en/ai-agents/knowledge-base-agent/ai-agent-setup"
                 ]
               },
-              {
-                "group": "Chatbots",
-                "icon": "message-bot",
-                "pages": [
-                  "en/ai-agents/chatbots/overview",
-                  "en/ai-agents/chatbots/creating-chatbot",
-                  "en/ai-agents/chatbots/flow-builder",
-                  "en/ai-agents/chatbots/variables",
-                  "en/ai-agents/chatbots/human-handoff",
-                  "en/ai-agents/chatbots/analytics"
-                ]
-              },
+          
               {
                 "group": "BEA Radar",
                 "icon": "radar",
@@ -641,7 +610,8 @@
                   "en/ai-agents/bea-radar/overview",
                   "en/ai-agents/bea-radar/ai-insights",
                   "en/ai-agents/bea-radar/ai-properties",
-                  "en/ai-agents/bea-radar/ai-filters"
+                  "en/ai-agents/bea-radar/ai-filters",
+                  "en/ai-agents/bea-radar/deal-analysis"
                 ]
               }
             ]
@@ -798,12 +768,23 @@
                 ]
               },
               {
-                "group": "Webhooks",
-                "icon": "bolt",
+                "group": "Scheduled Webhooks and Custom",
+                "icon": "code",
                 "pages": [
-                  "api-reference/webhooks/overview",
-                  "api-reference/webhooks/events",
-                  "api-reference/webhooks/payload-reference"
+                  "en/integrations/webhooks-custom/scheduler-api",
+                  "en/integrations/webhooks-custom/add-chat-id",
+                  "en/integrations/webhooks-custom/webhooks",
+                  "en/integrations/webhooks-custom/create-group-and-add-chat-id",
+                  "en/integrations/webhooks-custom/active-user-api",
+                  "en/integrations/webhooks-custom/compliance-and-privacy",
+                  {
+                    "group": "FAQ",
+                    "pages": [
+                      "en/integrations/webhooks-custom/faq/available-apis",
+                      "en/integrations/webhooks-custom/faq/custom-apis",
+                      "en/integrations/webhooks-custom/faq/create-webhook"
+                    ]
+                  }
                 ]
               }
             ]
@@ -1334,26 +1315,6 @@
                     ]
                   }
                 ]
-              },
-              {
-                "group": "Webhooks & Custom",
-                "icon": "code",
-                "pages": [
-                  "es/integrations/webhooks-custom/scheduler-api",
-                  "es/integrations/webhooks-custom/add-chat-id",
-                  "es/integrations/webhooks-custom/webhooks",
-                  "es/integrations/webhooks-custom/create-group-and-add-chat-id",
-                  "es/integrations/webhooks-custom/active-user-api",
-                  "es/integrations/webhooks-custom/compliance-and-privacy",
-                  {
-                    "group": "FAQ",
-                    "pages": [
-                      "es/integrations/webhooks-custom/faq/available-apis",
-                      "es/integrations/webhooks-custom/faq/custom-apis",
-                      "es/integrations/webhooks-custom/faq/create-webhook"
-                    ]
-                  }
-                ]
               }
             ]
           },
@@ -1384,7 +1345,8 @@
                   "es/ai-agents/bea-radar/overview",
                   "es/ai-agents/bea-radar/ai-insights",
                   "es/ai-agents/bea-radar/ai-properties",
-                  "es/ai-agents/bea-radar/ai-filters"
+                  "es/ai-agents/bea-radar/ai-filters",
+                  "es/ai-agents/bea-radar/deal-analysis"
                 ]
               }
             ]
@@ -1530,6 +1492,26 @@
                       "es/api-reference/meta/operations/list-blocked-users",
                       "es/api-reference/meta/operations/block-users",
                       "es/api-reference/meta/operations/unblock-users"
+                    ]
+                  }
+                ]
+              },
+              {
+                "group": "Scheduled Webhooks and Custom",
+                "icon": "code",
+                "pages": [
+                  "es/integrations/webhooks-custom/scheduler-api",
+                  "es/integrations/webhooks-custom/add-chat-id",
+                  "es/integrations/webhooks-custom/webhooks",
+                  "es/integrations/webhooks-custom/create-group-and-add-chat-id",
+                  "es/integrations/webhooks-custom/active-user-api",
+                  "es/integrations/webhooks-custom/compliance-and-privacy",
+                  {
+                    "group": "FAQ",
+                    "pages": [
+                      "es/integrations/webhooks-custom/faq/available-apis",
+                      "es/integrations/webhooks-custom/faq/custom-apis",
+                      "es/integrations/webhooks-custom/faq/create-webhook"
                     ]
                   }
                 ]
@@ -2066,26 +2048,6 @@
                     ]
                   }
                 ]
-              },
-              {
-                "group": "Webhooks & Custom",
-                "icon": "code",
-                "pages": [
-                  "pt/integrations/webhooks-custom/scheduler-api",
-                  "pt/integrations/webhooks-custom/add-chat-id",
-                  "pt/integrations/webhooks-custom/webhooks",
-                  "pt/integrations/webhooks-custom/create-group-and-add-chat-id",
-                  "pt/integrations/webhooks-custom/active-user-api",
-                  "pt/integrations/webhooks-custom/compliance-and-privacy",
-                  {
-                    "group": "FAQ",
-                    "pages": [
-                      "pt/integrations/webhooks-custom/faq/available-apis",
-                      "pt/integrations/webhooks-custom/faq/custom-apis",
-                      "pt/integrations/webhooks-custom/faq/create-webhook"
-                    ]
-                  }
-                ]
               }
             ]
           },
@@ -2116,7 +2078,8 @@
                   "pt/ai-agents/bea-radar/overview",
                   "pt/ai-agents/bea-radar/ai-insights",
                   "pt/ai-agents/bea-radar/ai-properties",
-                  "pt/ai-agents/bea-radar/ai-filters"
+                  "pt/ai-agents/bea-radar/ai-filters",
+                  "pt/ai-agents/bea-radar/deal-analysis"
                 ]
               }
             ]
@@ -2262,6 +2225,26 @@
                       "pt/api-reference/meta/operations/list-blocked-users",
                       "pt/api-reference/meta/operations/block-users",
                       "pt/api-reference/meta/operations/unblock-users"
+                    ]
+                  }
+                ]
+              },
+              {
+                "group": "Scheduled Webhooks and Custom",
+                "icon": "code",
+                "pages": [
+                  "pt/integrations/webhooks-custom/scheduler-api",
+                  "pt/integrations/webhooks-custom/add-chat-id",
+                  "pt/integrations/webhooks-custom/webhooks",
+                  "pt/integrations/webhooks-custom/create-group-and-add-chat-id",
+                  "pt/integrations/webhooks-custom/active-user-api",
+                  "pt/integrations/webhooks-custom/compliance-and-privacy",
+                  {
+                    "group": "FAQ",
+                    "pages": [
+                      "pt/integrations/webhooks-custom/faq/available-apis",
+                      "pt/integrations/webhooks-custom/faq/custom-apis",
+                      "pt/integrations/webhooks-custom/faq/create-webhook"
                     ]
                   }
                 ]
@@ -2798,26 +2781,6 @@
                     ]
                   }
                 ]
-              },
-              {
-                "group": "Webhooks & Custom",
-                "icon": "code",
-                "pages": [
-                  "tr/integrations/webhooks-custom/scheduler-api",
-                  "tr/integrations/webhooks-custom/add-chat-id",
-                  "tr/integrations/webhooks-custom/webhooks",
-                  "tr/integrations/webhooks-custom/create-group-and-add-chat-id",
-                  "tr/integrations/webhooks-custom/active-user-api",
-                  "tr/integrations/webhooks-custom/compliance-and-privacy",
-                  {
-                    "group": "FAQ",
-                    "pages": [
-                      "tr/integrations/webhooks-custom/faq/available-apis",
-                      "tr/integrations/webhooks-custom/faq/custom-apis",
-                      "tr/integrations/webhooks-custom/faq/create-webhook"
-                    ]
-                  }
-                ]
               }
             ]
           },
@@ -2848,7 +2811,8 @@
                   "tr/ai-agents/bea-radar/overview",
                   "tr/ai-agents/bea-radar/ai-insights",
                   "tr/ai-agents/bea-radar/ai-properties",
-                  "tr/ai-agents/bea-radar/ai-filters"
+                  "tr/ai-agents/bea-radar/ai-filters",
+                  "tr/ai-agents/bea-radar/deal-analysis"
                 ]
               }
             ]
@@ -2994,6 +2958,26 @@
                       "tr/api-reference/meta/operations/list-blocked-users",
                       "tr/api-reference/meta/operations/block-users",
                       "tr/api-reference/meta/operations/unblock-users"
+                    ]
+                  }
+                ]
+              },
+              {
+                "group": "Scheduled Webhooks and Custom",
+                "icon": "code",
+                "pages": [
+                  "tr/integrations/webhooks-custom/scheduler-api",
+                  "tr/integrations/webhooks-custom/add-chat-id",
+                  "tr/integrations/webhooks-custom/webhooks",
+                  "tr/integrations/webhooks-custom/create-group-and-add-chat-id",
+                  "tr/integrations/webhooks-custom/active-user-api",
+                  "tr/integrations/webhooks-custom/compliance-and-privacy",
+                  {
+                    "group": "FAQ",
+                    "pages": [
+                      "tr/integrations/webhooks-custom/faq/available-apis",
+                      "tr/integrations/webhooks-custom/faq/custom-apis",
+                      "tr/integrations/webhooks-custom/faq/create-webhook"
                     ]
                   }
                 ]

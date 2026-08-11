@@ -1,0 +1,174 @@
+---
+title: "Deal Analysis"
+description: "Automatically analyse every HubSpot deal using both your CRM record and the real conversations behind it, so you can see which deals are moving, which are at risk, and which need attention today."
+---
+
+Deal Analysis reviews each of your HubSpot deals together with the actual conversations tied to it, then writes what it finds onto the deal record.
+
+It runs in the background on its own schedule. Every deal you open already carries an up-to-date read on where it really stands — no dashboard to check, nothing to trigger.
+
+## Before You Start
+
+<Steps>
+  <Step title="Connect HubSpot to Eazybe">
+    Deal Analysis only works on HubSpot deals. Once your account is connected, deals are picked up automatically.
+  </Step>
+  <Step title="Make sure your deals have contacts attached">
+    The analysis reads conversations belonging to the contacts associated with each deal. A deal with no contacts attached can only be analysed from its CRM data.
+  </Step>
+  <Step title="Confirm the sales-email-read scope is granted">
+    Email activity on your deals can only be read if your HubSpot connection includes the **sales-email-read** scope. The latest version of the integration requests it automatically.
+
+    To check, go to **Integration page → HubSpot settings → Scopes and permissions**. If the scope isn't listed, reconnect your HubSpot account — reintegrating grants it.
+  </Step>
+  <Step title="That's it — there is no per-deal setup">
+    You don't enable anything on individual deals, and you don't configure fields. Analysis begins automatically and keeps itself current.
+  </Step>
+</Steps>
+
+## How It Works
+
+The analysis reads two sources and compares them.
+
+| Source | What it reads |
+|:-------|:--------------|
+| **Your CRM** | The deal itself — stage, amount, owner, close date, pipeline — plus logged calls, meetings, tasks, emails, notes, and the contacts and companies attached to it |
+| **Your conversations** | The real chats and email threads with the people on that deal, including who said what, when, and how long each side took to reply |
+
+Reading both is the point. Your CRM records what your team entered; the conversation records what actually happened. When those two disagree, that gap is usually the thing nobody noticed.
+
+<Note>
+  Results are written into their own separate fields on the deal. Your stage, amount, close date, and every other field your team maintains are never edited or overwritten.
+</Note>
+
+## Where to Find It
+
+Open any deal in HubSpot. The analysis sits alongside your existing deal properties on the record — there is nothing separate to open.
+
+Each deal also records when it was last analysed, so you can always tell how current the information is.
+
+## What the Analysis Tells You
+
+| What you'll know | Details |
+|:-----------------|:--------|
+| **Who owes the next reply** | Whether the deal is waiting on your team or on the customer |
+| **Whether momentum is building or fading** | How the conversation is running now compared with how it ran before — replies speeding up and getting richer, or slowing and thinning out |
+| **Whether the customer has gone quiet** | Flagged only once silence has genuinely set in, not the moment a reply runs late |
+| **How ready the buyer is** | Whether they're describing their own problem, evaluating what you offer, or negotiating price and terms |
+| **Whether you have the decision maker** | Whether your contact can approve the purchase, or has to get sign-off elsewhere |
+| **Whether your pipeline stage is accurate** | Where the conversation has moved past the stage on record, or hasn't yet reached it |
+| **What could block the close** | Competitor pressure, price resistance, silence after a quote, an unmet requirement, a slipping timeline, or an account resting on one contact |
+| **What they're objecting to** | The customer's most recent pushback, in their own words |
+| **When they expect to close** | The customer's stated timing, standardised so you can filter and report on it |
+| **The value actually discussed** | The amount quoted or agreed in conversation, which is often not the figure in your CRM |
+| **A summary and next steps** | A plain-language recap of the whole deal, plus recommended actions for it |
+| **The evidence behind it** | The specific messages and activities each conclusion came from, and how many conversations were read |
+
+## Using It Day to Day
+
+<AccordionGroup>
+  <Accordion title="Work your response queue first">
+    Filter your deals for those waiting on a reply from your team.
+
+    This is the highest-value list you'll build. Every deal on it has a customer who has already engaged and is now waiting — no prospecting required, just a reply. Clearing this list daily is usually the single fastest revenue action available to a rep.
+  </Accordion>
+  <Accordion title="Catch deals before they go cold">
+    Filter for deals whose momentum is fading.
+
+    This fires while a deal still looks healthy in your pipeline — the stage hasn't slipped, the close date hasn't moved, and nothing looks wrong on the board. Fading momentum is the earliest warning you'll get, which makes it the cheapest point to intervene.
+
+    Pair it with the blocker and objection information to decide *how* to re-engage rather than simply following up again.
+  </Accordion>
+  <Accordion title="Keep your forecast honest">
+    Filter for deals where the conversation and the pipeline stage disagree.
+
+    Deals running ahead of their stage mean the CRM hasn't been updated and your forecast is understated. Deals running behind mean someone advanced them optimistically and your forecast is overstated — usually the more expensive error of the two.
+
+    This is a useful weekly review for managers and a good pipeline-hygiene pass before any forecast call.
+  </Accordion>
+  <Accordion title="Prepare for a call in two minutes">
+    Open the deal and read the summary.
+
+    It covers who's involved, what they need, what's been discussed, and what happened most recently — so you can walk into a call, or pick up a colleague's pipeline, without scrolling months of history.
+  </Accordion>
+  <Accordion title="Find your under-served opportunities">
+    Look for deals showing strong buying readiness that are still sitting in an early pipeline stage.
+
+    These are customers moving faster than your process is. They're usually the most winnable deals in the pipeline and the easiest to lose to a competitor who replies sooner.
+  </Accordion>
+  <Accordion title="Build your own views and reports">
+    Everything lands as standard HubSpot deal fields, so you can filter on it, save list views, and build dashboards and reports exactly as you would with any other field in your portal.
+
+    Common saved views: *waiting on us*, *momentum fading*, *stage mismatch*, and *closing this month*.
+  </Accordion>
+</AccordionGroup>
+
+## Good to Know
+
+<AccordionGroup>
+  <Accordion title="A blank field means there's no signal — not an error">
+    Nothing is guessed. If the evidence for something isn't in your CRM or your conversations, the field is left empty rather than filled with an assumption.
+
+    That makes blanks useful in their own right. Filtering for deals with no stated closing timeline, for example, gives you every deal where the customer has never actually committed to a date.
+  </Accordion>
+  <Accordion title="Silence is measured in days, not missed replies">
+    A deal isn't marked as gone quiet the moment a response is late. The customer has to have been sitting on your last message for a couple of days first.
+
+    If you message in the morning and the analysis runs that evening, they may simply not have opened it yet. The delay means that when the flag does appear, the list it produces is worth working.
+  </Accordion>
+  <Accordion title="Some things change without new messages arriving">
+    Parts of the analysis measure time and silence rather than message content.
+
+    A deal can tip into "gone quiet" purely because enough days have passed. And because momentum is measured against how the conversation used to run, a deal that looked steady last week can drift to fading and then to silent without anything new being said. The absence is itself the signal.
+  </Accordion>
+  <Accordion title="Customer timings are standardised">
+    Customers say things like "give us a few weeks" or "after the security review". These are converted into a consistent set of timeframes, calculated against today's date rather than taken literally.
+
+    Because every phrasing ends up in the same vocabulary, a filter like *closing this month* works across your entire pipeline. Only genuine closing signals are counted — "we'll sign next month" qualifies, "let's do the demo Friday" doesn't.
+  </Accordion>
+  <Accordion title="Manual edits are replaced on the next run">
+    You can type over an analysis field in HubSpot, but the next scheduled run will overwrite it. To record your own judgement permanently, use one of your own fields or add a note to the deal.
+  </Accordion>
+  <Accordion title="Check how much a conclusion is standing on">
+    Each deal shows how many conversations were read for it. A confident-looking result built on two messages deserves less weight than one built on sixty, and the supporting evidence shows exactly which messages or activities produced each conclusion.
+  </Accordion>
+</AccordionGroup>
+
+## FAQ
+
+<AccordionGroup>
+  <Accordion title="Will this change my existing CRM data?">
+    No. Everything is written into its own dedicated fields. Your deal stage, amount, close date, and all other fields your team maintains are never edited or overwritten. Where the analysis disagrees with your CRM, it records that in its own field and leaves yours untouched — you decide what to do about the difference.
+  </Accordion>
+  <Accordion title="How often does it update?">
+    It runs automatically on a regular schedule, refreshing deals that have had new activity since they were last analysed. Active deals stay current without any action from you, and each deal shows when it was last reviewed.
+  </Accordion>
+  <Accordion title="Does it work if there's very little conversation history?">
+    Yes, but with less to go on. The analysis reflects only what genuinely happened in the available data — where there's no evidence, nothing is written. Each deal reports how many conversations were read, so you always know how much material is behind a conclusion.
+  </Accordion>
+  <Accordion title="How accurate is it?">
+    Every conclusion is tied to the specific message or activity it came from, so nothing is asserted that can't be traced back to something real in the conversation or the CRM. If you're unsure about a result, check the supporting evidence on the deal.
+  </Accordion>
+  <Accordion title="Can I filter and report on this like normal HubSpot data?">
+    Yes. It's stored as standard deal fields, so filters, saved list views, dashboards, and reports all work exactly as they do for any other field in your portal.
+  </Accordion>
+  <Accordion title="Do I need to set anything up for each deal?">
+    No. Once HubSpot is connected, deals are analysed automatically. There's nothing to enable, configure, or maintain per deal.
+  </Accordion>
+  <Accordion title="Why aren't emails from my deals being included?">
+    Reading email activity requires the **sales-email-read** scope on your HubSpot connection. Integrations set up before this scope was added won't have it.
+
+    Check under **Integration page → HubSpot settings → Scopes and permissions**. If it's missing, reconnect your HubSpot account — the latest integration includes the scope, and email activity will be picked up from the next analysis run onwards.
+  </Accordion>
+</AccordionGroup>
+
+## Related
+
+<CardGroup cols={2}>
+  <Card title="BEA Radar Overview" icon="radar" href="/en/ai-agents/bea-radar/overview">
+    The WhatsApp side of BEA Radar — analysis written on every chat
+  </Card>
+  <Card title="AI Filters" icon="filter" href="/en/ai-agents/bea-radar/ai-filters">
+    Filter your Team Inbox by what the AI has identified
+  </Card>
+</CardGroup>
