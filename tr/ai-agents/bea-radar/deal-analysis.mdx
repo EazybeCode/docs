@@ -1,23 +1,23 @@
 ---
 title: "Anlaşma Analizi"
-description: "Her HubSpot anlaşmasını, CRM kaydınızla arkasındaki gerçek sohbetleri birleştirerek otomatik analiz eder; böylece hangi anlaşmaların ilerlediğini, hangilerinin risk altında olduğunu ve hangilerinin bugün ilgi beklediğini görürsünüz."
+description: "Bağlı CRM'inizdeki her anlaşmayı, CRM kaydınızla arkasındaki gerçek sohbetleri birleştirerek otomatik analiz eder; böylece hangi anlaşmaların ilerlediğini, hangilerinin risk altında olduğunu ve hangilerinin bugün ilgi beklediğini görürsünüz."
 ---
 
-Anlaşma Analizi, HubSpot anlaşmalarınızın her birini kendisine bağlı gerçek sohbetlerle birlikte inceler ve bulduklarını anlaşma kaydına yazar.
+Anlaşma Analizi, bağlı CRM'inizdeki her anlaşmayı (ya da fırsatı) kendisine bağlı gerçek sohbetlerle birlikte inceler ve bulduklarını anlaşma kaydına yazar.
 
 Kendi programına göre arka planda çalışır. Açtığınız her anlaşma, durumun gerçekte nerede olduğuna dair güncel bir okumayı hazır taşır — kontrol edilecek bir panel yok, tetiklenecek bir şey yok.
 
 ## Başlamadan Önce
 
 <Steps>
-  <Step title="HubSpot'u Eazybe'ye bağlayın">
-    Anlaşma Analizi yalnızca HubSpot anlaşmalarında çalışır. Hesabınız bağlandıktan sonra anlaşmalar otomatik olarak alınır.
+  <Step title="CRM'inizi Eazybe'ye bağlayın">
+    Anlaşma Analizi, bağlı CRM'inizdeki anlaşmalar üzerinde çalışır. Hesabınız bağlandıktan sonra anlaşmalar otomatik olarak alınır — etkinleştirmeniz gereken bir şey yoktur.
   </Step>
   <Step title="Anlaşmalarınıza kişilerin bağlı olduğundan emin olun">
     Analiz, her anlaşmaya bağlı kişilere ait sohbetleri okur. Hiçbir kişinin bağlı olmadığı bir anlaşma yalnızca CRM verisinden analiz edilebilir.
   </Step>
-  <Step title="sales-email-read izninin verildiğini doğrulayın">
-    Anlaşmalarınızdaki e-posta etkinliği, yalnızca HubSpot bağlantınız **sales-email-read** iznini içeriyorsa okunabilir. Entegrasyonun en son sürümü bu izni otomatik olarak ister.
+  <Step title="sales-email-read izninin verildiğini doğrulayın (yalnızca HubSpot)">
+    HubSpot kullanıyorsanız, anlaşmalarınızdaki e-posta etkinliği yalnızca bağlantınız **sales-email-read** iznini içeriyorsa okunabilir. Entegrasyonun en son sürümü bu izni otomatik olarak ister.
 
     Kontrol etmek için **Integration page → HubSpot settings → Scopes and permissions** yolunu izleyin. İzin listede yoksa HubSpot hesabınızı yeniden bağlayın — yeniden entegrasyon bu izni verir.
   </Step>
@@ -43,11 +43,13 @@ Asıl mesele ikisini birlikte okumaktır. CRM'iniz ekibinizin girdiğini kaydede
 
 ## Nerede Bulunur
 
-HubSpot'ta herhangi bir anlaşmayı açın. Analiz, kaydın üzerinde mevcut anlaşma özelliklerinizin yanında yer alır — ayrıca açılacak bir şey yoktur.
+CRM'inizde herhangi bir anlaşmayı (ya da fırsatı) açın. Analiz, kaydın üzerinde mevcut anlaşma alanlarınızın yanında yer alır — ayrıca açılacak bir şey yoktur.
 
 Her anlaşma ayrıca en son ne zaman analiz edildiğini kaydeder; böylece bilginin ne kadar güncel olduğunu her zaman anlayabilirsiniz.
 
 ## Analiz Size Ne Söyler
+
+Pipeline'ınızdaki her anlaşma ya da fırsat için şunları bileceksiniz:
 
 | Ne bileceksiniz | Ayrıntılar |
 |:----------------|:-----------|
@@ -97,7 +99,7 @@ Her anlaşma ayrıca en son ne zaman analiz edildiğini kaydeder; böylece bilgi
     Bunlar, sizin sürecinizden daha hızlı ilerleyen müşterilerdir. Genellikle pipeline'daki en kazanılabilir anlaşmalardır ve daha erken yanıt veren bir rakibe kaptırılması en kolay olanlardır.
   </Accordion>
   <Accordion title="Kendi görünümlerinizi ve raporlarınızı oluşturun">
-    Her şey standart HubSpot anlaşma alanı olarak kaydedilir; portalınızdaki diğer alanlarda olduğu gibi filtreleyebilir, liste görünümleri kaydedebilir ve panolar ile raporlar oluşturabilirsiniz.
+    Her şey anlaşma kaydında standart alanlar olarak kaydedilir; CRM'inizdeki diğer alanlarda olduğu gibi filtreleyebilir, liste görünümleri kaydedebilir ve panolar ile raporlar oluşturabilirsiniz.
 
     Sık kullanılan kayıtlı görünümler: *bizi bekleyenler*, *ivmesi düşenler*, *aşama uyuşmazlığı* ve *bu ay kapananlar*.
   </Accordion>
@@ -127,7 +129,7 @@ Her anlaşma ayrıca en son ne zaman analiz edildiğini kaydeder; böylece bilgi
     Her ifade aynı sözcük dağarcığında toplandığı için *bu ay kapanıyor* gibi bir filtre tüm pipeline'ınızda çalışır. Yalnızca gerçek kapanış sinyalleri sayılır: "gelecek ay imzalarız" sayılır, "demoyu cuma yapalım" sayılmaz.
   </Accordion>
   <Accordion title="Elle yapılan düzenlemeler bir sonraki çalıştırmada değiştirilir">
-    HubSpot'ta bir analiz alanının üzerine yazabilirsiniz, ancak bir sonraki zamanlanmış çalıştırma bunu değiştirir. Kendi değerlendirmenizi kalıcı olarak kaydetmek için kendi alanlarınızdan birini kullanın ya da anlaşmaya bir not ekleyin.
+    CRM'inizde bir analiz alanının üzerine yazabilirsiniz, ancak bir sonraki zamanlanmış çalıştırma bunu değiştirir. Kendi değerlendirmenizi kalıcı olarak kaydetmek için kendi alanlarınızdan birini kullanın ya da anlaşmaya bir not ekleyin.
   </Accordion>
   <Accordion title="Bir sonucun neye dayandığını kontrol edin">
     Her anlaşma, kendisi için kaç sohbetin okunduğunu gösterir. İki mesaja dayanan kendinden emin görünen bir sonuç, altmış mesaja dayanan bir sonuçtan daha az ağırlık hak eder; ilgili kanıt ise her sonucu hangi mesaj veya etkinliğin ürettiğini tam olarak gösterir.
@@ -149,14 +151,14 @@ Her anlaşma ayrıca en son ne zaman analiz edildiğini kaydeder; böylece bilgi
   <Accordion title="Ne kadar doğru?">
     Her sonuç, geldiği belirli mesaj ya da etkinliğe bağlıdır; dolayısıyla sohbette veya CRM'de gerçek bir şeye kadar izlenemeyecek hiçbir iddia ortaya konmaz. Bir sonuçtan emin değilseniz anlaşmadaki ilgili kanıta bakın.
   </Accordion>
-  <Accordion title="Bunu normal HubSpot verisi gibi filtreleyip raporlayabilir miyim?">
-    Evet. Standart anlaşma alanları olarak saklanır; filtreler, kayıtlı liste görünümleri, panolar ve raporlar portalınızdaki diğer alanlarda olduğu gibi çalışır.
+  <Accordion title="Bunu normal CRM verisi gibi filtreleyip raporlayabilir miyim?">
+    Evet. Standart anlaşma alanları olarak saklanır; filtreler, kayıtlı liste görünümleri, panolar ve raporlar CRM'inizdeki diğer alanlarda olduğu gibi çalışır.
   </Accordion>
   <Accordion title="Her anlaşma için bir şey ayarlamam gerekir mi?">
-    Hayır. HubSpot bağlandıktan sonra anlaşmalar otomatik olarak analiz edilir. Anlaşma başına etkinleştirilecek, yapılandırılacak ya da sürdürülecek hiçbir şey yoktur.
+    Hayır. CRM'iniz bağlandıktan sonra anlaşmalar otomatik olarak analiz edilir. Anlaşma başına etkinleştirilecek, yapılandırılacak ya da sürdürülecek hiçbir şey yoktur.
   </Accordion>
-  <Accordion title="Anlaşmalarımdaki e-postalar neden dâhil edilmiyor?">
-    E-posta etkinliğini okumak, HubSpot bağlantınızda **sales-email-read** iznini gerektirir. Bu izin eklenmeden önce kurulmuş entegrasyonlarda bu izin bulunmaz.
+  <Accordion title="HubSpot anlaşmalarımdaki e-postalar neden dâhil edilmiyor?">
+    HubSpot kullanıyorsanız, e-posta etkinliğini okumak bağlantınızda **sales-email-read** iznini gerektirir. Bu izin eklenmeden önce kurulmuş entegrasyonlarda bu izin bulunmaz.
 
     **Integration page → HubSpot settings → Scopes and permissions** altından kontrol edin. Eksikse HubSpot hesabınızı yeniden bağlayın — en son entegrasyon bu izni içerir ve e-posta etkinliği bir sonraki analiz çalıştırmasından itibaren dikkate alınır.
   </Accordion>
