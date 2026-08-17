@@ -1,0 +1,5 @@
+scripts/bin/
+*.mp3
+.mint-dev.log
+.DS_Store
+**/.DS_Store
