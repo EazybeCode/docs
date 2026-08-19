@@ -1,0 +1,54 @@
+---
+title: "Broadcast troubleshooting"
+description: "Resolve common contact upload, HubSpot, template, cost, and delivery issues."
+---
+
+## HubSpot contact list is not visible
+
+The tab appears only when HubSpot is connected to the current workspace.
+
+**Fix:** Connect HubSpot, then reopen **New broadcast**.
+
+## HubSpot lists cannot be loaded
+
+If Eazybe reports that `crm.lists.read` is missing, reconnect HubSpot and approve list access.
+
+<Note>
+  **Add image:** Missing HubSpot list permission message with the reconnect action.
+</Note>
+
+## HubSpot is still updating the segment
+
+This can happen after a HubSpot list is edited.
+
+**Fix:** Wait a moment, refresh the Eazybe page, and select the list again. You do not need to log out.
+
+## No valid contacts were found
+
+Check that:
+
+- Every phone number includes a country code
+- CSV country code and phone values use separate columns
+- Excel contains the full international phone number
+- Phone cells are not empty
+
+## Estimated cost is not displayed
+
+Confirm that a template and at least one recipient are selected. Wait while **Calculating...** is displayed.
+
+## Template parameter error `#132000`
+
+The supplied values do not match the number of variables in the approved template.
+
+**Fix:**
+
+- For uploaded contacts, include a populated column for every variable.
+- For HubSpot lists, complete every property mapping and fallback value.
+
+## A message failed after sending
+
+Open **View Analytics**, select **Failed**, and review the failure reason. Export the Failed list when you need to correct or share the affected contacts.
+
+<Tip>
+  If the issue continues, contact [support@eazybe.com](mailto:support@eazybe.com) and include the campaign name, sending number, and a screenshot of the error.
+</Tip>

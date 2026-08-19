@@ -1,0 +1,85 @@
+---
+title: "Broadcast to a HubSpot contact list"
+description: "Select a HubSpot list, personalize the template, and send a WhatsApp broadcast."
+---
+
+Use **HubSpot contact list** to send a broadcast to contacts from a HubSpot list.
+
+<Info>
+  This tab appears only when HubSpot is connected to the current Eazybe workspace.
+</Info>
+
+<Frame caption="Search for and select a synced HubSpot contact list">
+  <img
+    src="/images/broadcasts/hubspot-contact-list-selection.jpeg"
+    alt="HubSpot contact list tab showing search, list cards, and pagination"
+  />
+</Frame>
+
+## What is a HubSpot segment?
+
+A HubSpot segment—previously called a list—is a saved group of contacts. You can build a segment using contact properties such as lifecycle stage, country, lead status, or any custom property.
+
+- **Active segments** update automatically when contacts match or stop matching the filters.
+- **Static segments** keep a fixed group of contacts unless you add or remove them manually.
+
+<Card title="Create a HubSpot segment" icon="filter" href="/en/integrations/hubspot/create-segment">
+  Learn how to create and prepare a contact segment in HubSpot before selecting it for a broadcast.
+</Card>
+
+## Requirements
+
+- HubSpot is connected to Eazybe
+- The connection includes the `crm.lists.read` permission
+- The selected list contains contacts with valid WhatsApp phone numbers
+
+If list access is missing, reconnect HubSpot and grant the requested permission.
+
+## Select a list
+
+<Steps>
+  <Step title="Open HubSpot contact list">
+    In **Choose recipients**, select the **HubSpot contact list** tab.
+  </Step>
+  <Step title="Find a list">
+    Search by list name or move through the available pages.
+  </Step>
+  <Step title="Select the list">
+    Select one HubSpot list. Selecting another list replaces the current selection.
+  </Step>
+  <Step title="Review the estimate">
+    Wait for Eazybe to validate recipients and calculate the estimated cost.
+  </Step>
+</Steps>
+
+<Frame caption="Select a HubSpot list and review the recipient count and estimated cost">
+  <img
+    src="/images/broadcasts/hubspot-selected-list.jpeg"
+    alt="HubSpot contact list tab showing a selected list, recipient count, estimated cost, and Send broadcast button"
+  />
+</Frame>
+
+## List types
+
+| Label in Eazybe | HubSpot list type |
+| --- | --- |
+| **Static segment** | Membership changes only when contacts are manually added or removed |
+| **Active segment** | HubSpot updates membership automatically using the list filters |
+
+## Phone properties
+
+Eazybe checks HubSpot phone properties in this order:
+
+1. `mobilephone`
+2. `phone`
+
+Contacts without a valid phone value are excluded from sending.
+
+## Template personalization
+
+- **HubSpot property template:** Existing HubSpot mappings are used automatically.
+- **Workspace or Zoho variable template:** Map each template variable to a HubSpot property and provide a fallback value.
+
+The mapping is used for this HubSpot list broadcast only; it does not change the original template type.
+
+See [Template variables and personalization](/en/broadcasts/template-variables).

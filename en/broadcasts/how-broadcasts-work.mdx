@@ -1,0 +1,81 @@
+---
+title: "How broadcasts work"
+description: "A quick explanation of templates, recipients, cost, sending, and delivery tracking."
+---
+
+Every broadcast follows five simple stages.
+
+<Steps>
+  <Step title="Choose the message">
+    Enter an internal broadcast name, select a connected WhatsApp number, and choose an approved template.
+
+    <Frame caption="Enter a broadcast name, choose the sending number, and select an approved template">
+      <img
+        src="/images/broadcasts/choose-broadcast-message.jpeg"
+        alt="Create broadcast page showing the broadcast name, sending WhatsApp number, template selector, and message preview"
+      />
+    </Frame>
+  </Step>
+  <Step title="Choose recipients">
+    Upload a CSV or Excel contact file, or select a HubSpot contact list.
+
+    <Frame caption="Upload a contact list or select a HubSpot contact list">
+      <img
+        src="/images/broadcasts/choose-broadcast-recipients.jpeg"
+        alt="Choose recipients section showing the CSV or Excel upload area and Choose file button"
+      />
+    </Frame>
+  </Step>
+  <Step title="Prepare variables">
+    Add per-contact values for variable templates. HubSpot list broadcasts can map eligible template variables to HubSpot properties.
+
+    <Frame caption="Add a column for each template variable and enter a value for every contact">
+      <img
+        src="/images/broadcasts/prepare-broadcast-variables.jpeg"
+        alt="Spreadsheet showing contact names, phone numbers, and columns for three template variables"
+      />
+    </Frame>
+  </Step>
+  <Step title="Review and send">
+    Wait for the recipient count and estimated cost, then select **Send broadcast**.
+
+    <Frame caption="Review the recipient count and estimated cost before sending the broadcast">
+      <img
+        src="/images/broadcasts/review-and-send-broadcast.jpeg"
+        alt="Broadcast review showing a selected recipient, estimated cost, and Send broadcast button"
+      />
+    </Frame>
+  </Step>
+  <Step title="Monitor delivery">
+    Open **View Analytics** to review Sent, Delivered, Read, Failed, message time, and failure reasons.
+
+    <Frame caption="Monitor delivery totals and open View Analytics for detailed results">
+      <img
+        src="/images/broadcasts/monitor-broadcast-delivery.jpeg"
+        alt="Broadcast list showing delivery totals, completed status, and View Analytics button"
+      />
+    </Frame>
+  </Step>
+</Steps>
+
+## Before you begin
+
+You need:
+
+- A connected WhatsApp Business number
+- Sufficient wallet balance
+- At least one approved WhatsApp template
+- A valid contact file or a connected HubSpot account
+
+<Warning>
+  WhatsApp does not send templates that are pending, rejected, or missing required variable values.
+</Warning>
+
+## Recipient sources
+
+| Source | Use it when |
+| --- | --- |
+| **Upload a list** | You have recipient data in a CSV or Excel file |
+| **HubSpot contact list** | HubSpot is connected and you want to send to a HubSpot list |
+
+Only one recipient source can be used for a broadcast at a time.

@@ -1,0 +1,78 @@
+---
+title: "Upload contacts for a broadcast"
+description: "Prepare a CSV or Excel contact list and select the recipients for your campaign."
+---
+
+Use **Upload a list** when your recipients are stored in a CSV or Excel file.
+
+<Frame caption="Upload a CSV or Excel contact list by selecting Choose file">
+  <img
+    src="/images/broadcasts/upload-contacts-choose-file.jpeg"
+    alt="Upload a list tab showing sample downloads, the Choose file button, and the contact table"
+  />
+</Frame>
+
+## Supported files
+
+- `.csv`
+- `.xls`
+- `.xlsx`
+
+Download the **Sample CSV** or **Sample Excel** file from the upload panel for the correct structure.
+
+## Required phone format
+
+<Tabs>
+  <Tab title="CSV">
+    Keep **Country Code** and **Phone** in separate columns.
+
+    | Name | Country Code | Phone |
+    | --- | --- | --- |
+    | Aisha | 91 | 9876543210 |
+  </Tab>
+  <Tab title="Excel">
+    Add the full international number in the **Phone** column.
+
+    | Name | Phone |
+    | --- | --- |
+    | Aisha | 919876543210 |
+  </Tab>
+</Tabs>
+
+<Warning>
+  Include the country code and do not add spaces or special characters. Using the sample file helps Excel preserve long phone numbers correctly.
+</Warning>
+
+## Upload and select contacts
+
+<Steps>
+  <Step title="Choose a file">
+    Select **Choose file** and upload your CSV or Excel file.
+  </Step>
+  <Step title="Review contacts">
+    Eazybe validates and normalizes phone numbers. Empty, invalid, and duplicate rows are not added twice.
+  </Step>
+  <Step title="Select recipients">
+    Select individual contacts or use **Select all**.
+  </Step>
+  <Step title="Review the footer">
+    Confirm the selected recipient count and estimated cost before sending.
+  </Step>
+</Steps>
+
+<Frame caption="Review uploaded contacts and select the recipients for your broadcast">
+  <img
+    src="/images/broadcasts/upload-contacts-select-recipients.png"
+    alt="Uploaded contact table showing search, contact selection, phone numbers, pagination, and estimated cost"
+  />
+</Frame>
+
+## Variable templates
+
+If the selected template contains variables such as `{{1}}`, include one matching column for every variable.
+
+| Name | Phone | &#123;&#123;1&#125;&#125; | &#123;&#123;2&#125;&#125; |
+| --- | --- | --- | --- |
+| Aisha | 919876543210 | Aisha | Premium |
+
+Every selected contact must have the required values. Learn more in [Template variables and personalization](/en/broadcasts/template-variables).

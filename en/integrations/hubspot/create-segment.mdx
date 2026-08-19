@@ -1,0 +1,69 @@
+---
+title: "Create segment"
+description: "Create an active or static contact segment in HubSpot for use in Eazybe broadcasts."
+---
+
+HubSpot segments—previously called lists—help you group contacts using properties and filter criteria. After the segment finishes processing, you can select it from **New broadcast → HubSpot contact list** in Eazybe.
+
+<Note>
+  **Add image:** HubSpot navigation showing **More → CRM → Segments**.
+</Note>
+
+## Before you begin
+
+- Your HubSpot user needs **Write segments** permission.
+- Contacts should have a valid number in **Mobile phone number** or **Phone number**.
+- HubSpot must be connected to the same Eazybe workspace used for the broadcast.
+
+## Create the segment
+
+<Steps>
+  <Step title="Open Segments">
+    In HubSpot, select **More → CRM → Segments**. If **More** is not displayed, open **CRM → Segments** directly.
+  </Step>
+  <Step title="Create a segment">
+    Select **Create segment**, choose **Contacts**, and then select **Next**.
+  </Step>
+  <Step title="Name the segment">
+    Enter a clear name that your team can identify later, such as **India renewal customers**.
+  </Step>
+  <Step title="Add filters">
+    Select **Add filter** and define which contacts should be included. You can filter using standard or custom HubSpot contact properties.
+  </Step>
+  <Step title="Choose the segment type">
+    Select **Next**, then choose **Active** or **Static** based on how membership should be managed.
+  </Step>
+  <Step title="Save and process">
+    Review the details and select **Save and process segment**. Wait until HubSpot finishes processing before using it in Eazybe.
+  </Step>
+</Steps>
+
+<Note>
+  **Add image:** HubSpot segment editor showing contact filters and the Active or Static type selection.
+</Note>
+
+## Choose the right segment type
+
+| Type | Best for |
+| --- | --- |
+| **Active segment** | Recurring campaigns where contacts should enter or leave automatically when their data changes |
+| **Static segment** | One-time campaigns or a fixed group of contacts |
+
+## Prepare the segment for an Eazybe broadcast
+
+Before selecting the segment in Eazybe:
+
+1. Confirm that HubSpot has finished processing it.
+2. Check that contacts have valid international phone numbers.
+3. Open **Eazybe → Broadcasts → New broadcast**.
+4. Select **HubSpot contact list** and choose the segment.
+
+<Warning>
+  If you edit a segment immediately before using it, HubSpot may still be updating its membership. Wait a moment, refresh the Eazybe page, and try again.
+</Warning>
+
+<Card title="Broadcast to a HubSpot contact list" icon="paper-plane" href="/en/broadcasts/hubspot-contact-list">
+  Return to the broadcast guide and select your completed segment.
+</Card>
+
+For more details, see [HubSpot's official segment guide](https://knowledge.hubspot.com/segments/create-active-or-static-lists).

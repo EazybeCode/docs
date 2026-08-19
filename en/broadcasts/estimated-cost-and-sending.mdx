@@ -1,0 +1,48 @@
+---
+title: "Estimated cost and sending"
+description: "Understand recipient validation, cost calculation, and checks performed before sending."
+---
+
+The broadcast footer helps you review the campaign before it is submitted.
+
+<Note>
+  **Add image:** Broadcast footer showing recipient count, estimated cost, Cancel, and Send broadcast.
+</Note>
+
+## When the estimate appears
+
+Eazybe calculates the estimate after you select:
+
+- A WhatsApp Business number
+- An approved template
+- At least one valid recipient
+
+While the request is processing, the footer displays **Calculating...**. When complete, it shows the valid recipient count and estimated cost.
+
+<Info>
+  The displayed value is an estimate. The final charge can depend on the template category, recipient country, and WhatsApp pricing.
+</Info>
+
+## HubSpot estimate fallback
+
+Eazybe normally validates contacts in the selected HubSpot list. If HubSpot temporarily applies a rate limit, Eazybe can show an approximate estimate based on:
+
+`Segment size × unit price`
+
+The interface identifies an approximate estimate when exact recipient validation is unavailable.
+
+## Checks before sending
+
+Eazybe confirms that:
+
+- A broadcast name is entered
+- A number and approved template are selected
+- At least one valid recipient is available
+- Required variables or HubSpot mappings are complete
+- The wallet has sufficient balance
+
+Select **Send broadcast** only after the recipient count and estimate are ready.
+
+<Warning>
+  Do not close or refresh the page while the send request is being submitted.
+</Warning>

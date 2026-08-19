@@ -1,0 +1,66 @@
+---
+title: "Template variables and personalization"
+description: "Personalize uploaded contacts or map template variables to HubSpot properties."
+---
+
+Variables personalize the same approved WhatsApp template for each recipient.
+
+For example, `Hello {{1}}, your appointment is on {{2}}.` requires two values for every contact.
+
+<Frame caption="Preview HubSpot property variables in the selected WhatsApp template">
+  <img
+    src="/images/broadcasts/template-variables-message-preview.jpeg"
+    alt="Create broadcast page showing a WhatsApp message preview with firstname, city, and country property variables"
+  />
+</Frame>
+
+## Uploaded contact list
+
+Add a column for every numbered variable in your CSV or Excel file.
+
+| Name | Phone | &#123;&#123;1&#125;&#125; | &#123;&#123;2&#125;&#125; |
+| --- | --- | --- | --- |
+| Aisha | 919876543210 | Aisha | 20 August |
+
+The column names must match the variables exactly.
+
+## HubSpot contact list
+
+How variables work depends on the selected template:
+
+<AccordionGroup>
+  <Accordion title="HubSpot property template">
+    The template is already mapped to HubSpot properties. Eazybe uses those mappings automatically, so no additional mapping panel is shown.
+  </Accordion>
+  <Accordion title="Workspace variable template">
+    Map each numbered template variable to a HubSpot contact property before sending.
+  </Accordion>
+  <Accordion title="Zoho variable template">
+    Map each numbered template variable to a HubSpot contact property before sending from a HubSpot list.
+  </Accordion>
+</AccordionGroup>
+
+## Map a variable to HubSpot
+
+<Steps>
+  <Step title="Select a variable template">
+    Choose a Workspace or Zoho template that contains variables.
+  </Step>
+  <Step title="Select a HubSpot list">
+    The HubSpot property mapping panel appears below the list.
+  </Step>
+  <Step title="Choose a property">
+    Map each variable to the correct HubSpot property, such as **First name** or **Company name**.
+  </Step>
+  <Step title="Add a fallback value">
+    Enter a value to use when the selected property is empty for a contact.
+  </Step>
+</Steps>
+
+<Note>
+  **Add image:** HubSpot property mapping panel showing template variables, property selectors, and fallback fields.
+</Note>
+
+<Warning>
+  Every template variable must have a value. Meta error `#132000` means the number of supplied parameters does not match the approved template.
+</Warning>

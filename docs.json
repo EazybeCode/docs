@@ -92,6 +92,32 @@
                 ]
               },
               {
+                "group": "Broadcasts",
+                "icon": "bullhorn",
+                "pages": [
+                  "en/broadcasts/overview",
+                  "en/broadcasts/how-broadcasts-work",
+                  {
+                    "group": "Analytics",
+                    "pages": [
+                      "en/broadcasts/broadcast-home",
+                      "en/broadcasts/view-analytics"
+                    ]
+                  },
+                  {
+                    "group": "Create a broadcast",
+                    "pages": [
+                      "en/broadcasts/create-broadcast",
+                      "en/broadcasts/upload-contacts",
+                      "en/broadcasts/hubspot-contact-list",
+                      "en/broadcasts/template-variables",
+                      "en/broadcasts/estimated-cost-and-sending"
+                    ]
+                  },
+                  "en/broadcasts/troubleshooting"
+                ]
+              },
+              {
                 "group": "Revenue Inbox",
                 "icon": "inbox",
                 "pages": [
@@ -238,6 +264,7 @@
                   "en/integrations/hubspot/invite-team",
                   "en/integrations/hubspot/link-whatsapp-contacts",
                   "en/integrations/hubspot/waba-api-number-integration",
+                  "en/integrations/hubspot/create-segment",
                   {
                     "group": "Chat Backup",
                     "pages": [
