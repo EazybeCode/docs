@@ -1,23 +1,23 @@
 ---
-title: "Análise de Negócios"
-description: "Analisa automaticamente cada negócio do seu CRM conectado combinando o registro do CRM com as conversas reais por trás dele, para você ver quais negócios avançam, quais estão em risco e quais precisam de atenção hoje."
+title: "Análise de Negócios do HubSpot"
+description: "Analisa automaticamente cada negócio do HubSpot combinando o registro do HubSpot com as conversas reais por trás dele, para você ver quais negócios avançam, quais estão em risco e quais precisam de atenção hoje."
 ---
 
-A Análise de Negócios revisa cada negócio (ou oportunidade) do seu CRM conectado junto com as conversas reais associadas a ele e grava o que encontra no registro do negócio.
+A Análise de Negócios do HubSpot revisa cada um dos seus negócios do HubSpot junto com as conversas reais associadas a ele e grava o que encontra no registro do negócio.
 
 Ela roda em segundo plano na própria programação. Todo negócio que você abrir já traz uma leitura atualizada de como a situação realmente está — nenhum painel para consultar, nada para acionar.
 
 ## Antes de Começar
 
 <Steps>
-  <Step title="Conecte seu CRM ao Eazybe">
-    A Análise de Negócios funciona com os negócios do seu CRM conectado. Assim que sua conta estiver conectada, os negócios são capturados automaticamente — não há nada para ativar.
+  <Step title="Conecte o HubSpot ao Eazybe">
+    A Análise de Negócios funciona com os seus negócios do HubSpot. Assim que sua conta do HubSpot estiver conectada, os negócios são capturados automaticamente — não há nada para ativar.
   </Step>
   <Step title="Garanta que seus negócios tenham contatos associados">
-    A análise lê as conversas dos contatos associados a cada negócio. Um negócio sem contatos associados só pode ser analisado a partir dos dados do CRM.
+    A análise lê as conversas dos contatos associados a cada negócio. Um negócio sem contatos associados só pode ser analisado a partir dos dados do HubSpot.
   </Step>
-  <Step title="Confirme que o escopo sales-email-read foi concedido (apenas HubSpot)">
-    Se você usa o HubSpot, a atividade de e-mail dos seus negócios só pode ser lida se a sua conexão incluir o escopo **sales-email-read**. A versão mais recente da integração o solicita automaticamente.
+  <Step title="Confirme que o escopo sales-email-read foi concedido">
+    A atividade de e-mail dos seus negócios só pode ser lida se a sua conexão com o HubSpot incluir o escopo **sales-email-read**. A versão mais recente da integração o solicita automaticamente.
 
     Para verificar, acesse **Integration page → HubSpot settings → Scopes and permissions**. Se o escopo não aparecer, reconecte sua conta do HubSpot — ao reintegrar, ele é concedido.
   </Step>
@@ -32,10 +32,10 @@ A análise lê duas fontes e as compara.
 
 | Fonte | O que ela lê |
 |:------|:-------------|
-| **Seu CRM** | O próprio negócio — etapa, valor, proprietário, data de fechamento, pipeline — além de chamadas, reuniões, tarefas, e-mails e anotações registrados, e os contatos e empresas associados |
+| **HubSpot** | O próprio negócio — etapa, valor, proprietário, data de fechamento, pipeline — além de chamadas, reuniões, tarefas, e-mails e anotações registrados, e os contatos e empresas associados |
 | **Suas conversas** | Os chats e as trocas de e-mail reais com as pessoas daquele negócio, incluindo quem disse o quê, quando e quanto tempo cada lado levou para responder |
 
-Ler as duas é o ponto central. Seu CRM registra o que sua equipe digitou; a conversa registra o que realmente aconteceu. Quando as duas divergem, essa diferença costuma ser justamente o que ninguém percebeu.
+Ler as duas é o ponto central. O HubSpot registra o que sua equipe digitou; a conversa registra o que realmente aconteceu. Quando as duas divergem, essa diferença costuma ser justamente o que ninguém percebeu.
 
 <Note>
   Os resultados são gravados em campos próprios e separados no negócio. Sua etapa, valor, data de fechamento e todos os outros campos que sua equipe mantém nunca são editados ou sobrescritos.
@@ -43,13 +43,13 @@ Ler as duas é o ponto central. Seu CRM registra o que sua equipe digitou; a con
 
 ## Onde Encontrar
 
-Abra qualquer negócio (ou oportunidade) no seu CRM. A análise aparece ao lado dos campos habituais do negócio, no próprio registro — não há nada separado para abrir.
+Abra qualquer negócio no HubSpot. A análise aparece ao lado das propriedades habituais do negócio, no próprio registro — não há nada separado para abrir.
 
 Cada negócio também registra quando foi analisado pela última vez, então você sempre sabe o quão atual é a informação.
 
 ## O Que a Análise Informa
 
-Para cada negócio ou oportunidade do seu pipeline, você vai saber:
+Para cada negócio do seu pipeline, você vai saber:
 
 | O que você vai saber | Detalhes |
 |:---------------------|:---------|
@@ -62,7 +62,7 @@ Para cada negócio ou oportunidade do seu pipeline, você vai saber:
 | **O que pode bloquear o fechamento** | Pressão de concorrente, resistência ao preço, silêncio após um orçamento, um requisito não atendido, um prazo que escorrega ou uma conta apoiada em um único contato |
 | **No que ele está resistindo** | A objeção mais recente do cliente, nas palavras dele |
 | **Quando ele espera fechar** | O prazo informado pelo cliente, padronizado para você filtrar e gerar relatórios |
-| **O valor realmente discutido** | O montante orçado ou acordado na conversa, que muitas vezes não é o do seu CRM |
+| **O valor realmente discutido** | O montante orçado ou acordado na conversa, que muitas vezes não é o do HubSpot |
 | **Um resumo e os próximos passos** | Uma recapitulação em linguagem simples de todo o negócio, além das ações recomendadas |
 | **A evidência por trás** | As mensagens e atividades específicas de onde cada conclusão veio, e quantas conversas foram lidas |
 
@@ -84,7 +84,7 @@ Para cada negócio ou oportunidade do seu pipeline, você vai saber:
   <Accordion title="Mantenha sua previsão honesta">
     Filtre pelos negócios em que a conversa e a etapa do pipeline divergem.
 
-    Negócios adiantados em relação à etapa indicam que o CRM não foi atualizado e que sua previsão está subestimada. Os atrasados indicam que alguém os empurrou adiante com otimismo e que sua previsão está superestimada — normalmente o erro mais caro dos dois.
+    Negócios adiantados em relação à etapa indicam que o HubSpot não foi atualizado e que sua previsão está subestimada. Os atrasados indicam que alguém os empurrou adiante com otimismo e que sua previsão está superestimada — normalmente o erro mais caro dos dois.
 
     É uma revisão semanal útil para gestores e uma boa limpeza de pipeline antes de qualquer reunião de previsão.
   </Accordion>
@@ -99,7 +99,7 @@ Para cada negócio ou oportunidade do seu pipeline, você vai saber:
     São clientes avançando mais rápido do que o seu processo. Costumam ser os negócios mais ganháveis do pipeline e os mais fáceis de perder para um concorrente que responda antes.
   </Accordion>
   <Accordion title="Monte suas próprias visualizações e relatórios">
-    Tudo fica como campos padrão no registro do negócio, então você pode filtrar, salvar visualizações de lista e criar painéis e relatórios exatamente como faria com qualquer outro campo do seu CRM.
+    Tudo fica como propriedades padrão de negócio do HubSpot, então você pode filtrar, salvar visualizações de lista e criar painéis e relatórios exatamente como faria com qualquer outro campo do seu portal.
 
     Visualizações salvas comuns: *aguardando nós*, *ritmo em queda*, *etapa divergente* e *fechando este mês*.
   </Accordion>
@@ -109,7 +109,7 @@ Para cada negócio ou oportunidade do seu pipeline, você vai saber:
 
 <AccordionGroup>
   <Accordion title="Um campo vazio significa que não há sinal — não que houve erro">
-    Nada é adivinhado. Se a evidência de algo não está no seu CRM nem nas suas conversas, o campo fica vazio em vez de ser preenchido com uma suposição.
+    Nada é adivinhado. Se a evidência de algo não está no HubSpot nem nas suas conversas, o campo fica vazio em vez de ser preenchido com uma suposição.
 
     Isso torna os campos vazios úteis por si só. Filtrar por negócios sem prazo de fechamento informado, por exemplo, dá a você todos aqueles em que o cliente nunca se comprometeu com uma data.
   </Accordion>
@@ -129,7 +129,7 @@ Para cada negócio ou oportunidade do seu pipeline, você vai saber:
     Como todas as formas de dizer acabam no mesmo vocabulário, um filtro como *fecha este mês* funciona em todo o seu pipeline. Só sinais reais de fechamento são contados: "assinamos no mês que vem" conta, "vamos fazer a demo na sexta" não.
   </Accordion>
   <Accordion title="Edições manuais são substituídas na próxima execução">
-    Você pode digitar por cima de um campo da análise no seu CRM, mas a próxima execução agendada vai sobrescrevê-lo. Para registrar seu próprio julgamento de forma permanente, use um dos seus campos ou adicione uma anotação ao negócio.
+    Você pode digitar por cima de um campo da análise no HubSpot, mas a próxima execução agendada vai sobrescrevê-lo. Para registrar seu próprio julgamento de forma permanente, use um dos seus campos ou adicione uma anotação ao negócio.
   </Accordion>
   <Accordion title="Veja sobre quanto uma conclusão se apoia">
     Cada negócio mostra quantas conversas foram lidas. Um resultado que parece confiante mas se apoia em duas mensagens merece menos peso do que um construído sobre sessenta, e a evidência associada mostra exatamente quais mensagens ou atividades produziram cada conclusão.
@@ -139,8 +139,8 @@ Para cada negócio ou oportunidade do seu pipeline, você vai saber:
 ## Perguntas Frequentes
 
 <AccordionGroup>
-  <Accordion title="Isso vai alterar os dados que já tenho no CRM?">
-    Não. Tudo é gravado em campos próprios e dedicados. Sua etapa, valor, data de fechamento e os demais campos que sua equipe mantém nunca são editados ou sobrescritos. Quando a análise discorda do seu CRM, ela registra isso no próprio campo e deixa o seu intacto — você decide o que fazer com a diferença.
+  <Accordion title="Isso vai alterar os dados que já tenho no HubSpot?">
+    Não. Tudo é gravado em campos próprios e dedicados. Sua etapa, valor, data de fechamento e os demais campos que sua equipe mantém nunca são editados ou sobrescritos. Quando a análise discorda do HubSpot, ela registra isso no próprio campo e deixa o seu intacto — você decide o que fazer com a diferença.
   </Accordion>
   <Accordion title="Com que frequência ela atualiza?">
     Roda automaticamente em intervalos regulares, atualizando os negócios que tiveram nova atividade desde a última análise. Negócios ativos se mantêm em dia sem nenhuma ação sua, e cada negócio mostra quando foi revisado pela última vez.
@@ -149,16 +149,16 @@ Para cada negócio ou oportunidade do seu pipeline, você vai saber:
     Sim, mas com menos base. A análise reflete apenas o que realmente aconteceu nos dados disponíveis — onde não há evidência, nada é gravado. Cada negócio informa quantas conversas foram lidas, então você sempre sabe quanto material há por trás de uma conclusão.
   </Accordion>
   <Accordion title="Qual é a precisão?">
-    Cada conclusão está ligada à mensagem ou atividade específica de onde veio, então nada é afirmado que não possa ser rastreado até algo real na conversa ou no CRM. Se estiver em dúvida sobre um resultado, confira a evidência associada no negócio.
+    Cada conclusão está ligada à mensagem ou atividade específica de onde veio, então nada é afirmado que não possa ser rastreado até algo real na conversa ou no HubSpot. Se estiver em dúvida sobre um resultado, confira a evidência associada no negócio.
   </Accordion>
-  <Accordion title="Posso filtrar e gerar relatórios como com dados normais do CRM?">
-    Sim. Fica armazenado como campos padrão de negócio, então filtros, visualizações de lista salvas, painéis e relatórios funcionam exatamente como para qualquer outro campo do seu CRM.
+  <Accordion title="Posso filtrar e gerar relatórios como com dados normais do HubSpot?">
+    Sim. Fica armazenado como propriedades padrão de negócio do HubSpot, então filtros, visualizações de lista salvas, painéis e relatórios funcionam exatamente como para qualquer outro campo do seu portal.
   </Accordion>
   <Accordion title="Preciso configurar algo em cada negócio?">
-    Não. Assim que o seu CRM estiver conectado, os negócios são analisados automaticamente. Não há nada para ativar, configurar ou manter negócio a negócio.
+    Não. Assim que o HubSpot estiver conectado, os negócios são analisados automaticamente. Não há nada para ativar, configurar ou manter negócio a negócio.
   </Accordion>
-  <Accordion title="Por que os e-mails dos meus negócios do HubSpot não estão sendo incluídos?">
-    Se você usa o HubSpot, ler a atividade de e-mail exige o escopo **sales-email-read** na sua conexão. Integrações criadas antes de esse escopo ser adicionado não o possuem.
+  <Accordion title="Por que os e-mails dos meus negócios não estão sendo incluídos?">
+    Ler a atividade de e-mail exige o escopo **sales-email-read** na sua conexão com o HubSpot. Integrações criadas antes de esse escopo ser adicionado não o possuem.
 
     Verifique em **Integration page → HubSpot settings → Scopes and permissions**. Se estiver faltando, reconecte sua conta do HubSpot — a integração mais recente inclui o escopo, e a atividade de e-mail passará a ser considerada a partir da próxima execução da análise.
   </Accordion>
