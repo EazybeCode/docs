@@ -219,6 +219,23 @@
                 ]
               },
               {
+                "group": "Billing & Payment",
+                "icon": "credit-card",
+                "pages": [
+                  "en/billing/plan-purchase",
+                  {
+                    "group": "Credits",
+                    "pages": [
+                      "en/billing/credits-overview",
+                      "en/billing/wallet-recharge",
+                      "en/billing/auto-payment"
+                    ]
+                  },
+                  "en/billing/billing-taxation",
+                  "en/billing/wallet-history"
+                ]
+              },
+              {
                 "group": "Account & Settings",
                 "icon": "gear",
                 "pages": [
@@ -879,6 +896,32 @@
                 "pages": [
                   "es/team-inbox-hd/team-inbox-hd-sp",
                   "es/team-inbox-hd/filters-in-team-inbox-sp"
+                ]
+              },
+              {
+                "group": "Difusiones",
+                "icon": "bullhorn",
+                "pages": [
+                  "es/broadcasts/overview",
+                  "es/broadcasts/how-broadcasts-work",
+                  {
+                    "group": "Análisis",
+                    "pages": [
+                      "es/broadcasts/broadcast-home",
+                      "es/broadcasts/view-analytics"
+                    ]
+                  },
+                  {
+                    "group": "Crear una difusión",
+                    "pages": [
+                      "es/broadcasts/create-broadcast",
+                      "es/broadcasts/upload-contacts",
+                      "es/broadcasts/hubspot-contact-list",
+                      "es/broadcasts/template-variables",
+                      "es/broadcasts/estimated-cost-and-sending"
+                    ]
+                  },
+                  "es/broadcasts/troubleshooting"
                 ]
               },
               {
@@ -1608,6 +1651,32 @@
                 "pages": [
                   "pt/team-inbox-hd/team-inbox-hd-pt",
                   "pt/team-inbox-hd/filters-in-team-inbox-pt"
+                ]
+              },
+              {
+                "group": "Transmissões",
+                "icon": "bullhorn",
+                "pages": [
+                  "pt/broadcasts/overview",
+                  "pt/broadcasts/how-broadcasts-work",
+                  {
+                    "group": "Análises",
+                    "pages": [
+                      "pt/broadcasts/broadcast-home",
+                      "pt/broadcasts/view-analytics"
+                    ]
+                  },
+                  {
+                    "group": "Criar uma transmissão",
+                    "pages": [
+                      "pt/broadcasts/create-broadcast",
+                      "pt/broadcasts/upload-contacts",
+                      "pt/broadcasts/hubspot-contact-list",
+                      "pt/broadcasts/template-variables",
+                      "pt/broadcasts/estimated-cost-and-sending"
+                    ]
+                  },
+                  "pt/broadcasts/troubleshooting"
                 ]
               },
               {
@@ -2342,6 +2411,32 @@
                 "pages": [
                   "tr/team-inbox-hd/team-inbox-hd-tr",
                   "tr/team-inbox-hd/filters-in-team-inbox-tr"
+                ]
+              },
+              {
+                "group": "Yayınlar",
+                "icon": "bullhorn",
+                "pages": [
+                  "tr/broadcasts/overview",
+                  "tr/broadcasts/how-broadcasts-work",
+                  {
+                    "group": "Analizler",
+                    "pages": [
+                      "tr/broadcasts/broadcast-home",
+                      "tr/broadcasts/view-analytics"
+                    ]
+                  },
+                  {
+                    "group": "Yayın oluşturma",
+                    "pages": [
+                      "tr/broadcasts/create-broadcast",
+                      "tr/broadcasts/upload-contacts",
+                      "tr/broadcasts/hubspot-contact-list",
+                      "tr/broadcasts/template-variables",
+                      "tr/broadcasts/estimated-cost-and-sending"
+                    ]
+                  },
+                  "tr/broadcasts/troubleshooting"
                 ]
               },
               {
