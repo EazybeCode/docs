@@ -1,0 +1,60 @@
+---
+title: "Şablon değişkenleri ve kişiselleştirme"
+description: "Yüklenen kişileri kişiselleştirin veya şablon değişkenlerini HubSpot özellikleriyle eşleyin."
+---
+
+Değişkenler aynı onaylanmış WhatsApp şablonunu her alıcı için kişiselleştirir.
+
+Örneğin, `Merhaba {{1}}, randevunuz {{2}} tarihinde.` ifadesi her kişi için iki değer gerektirir.
+
+<Frame caption="Seçilen WhatsApp şablonunda HubSpot özellik değişkenlerini önizleyin">
+  <img
+    src="/images/broadcasts/template-variables-message-preview.jpeg"
+    alt="firstname, city ve country özellik değişkenlerini gösteren WhatsApp mesaj önizlemeli Yayın oluştur sayfası"
+  />
+</Frame>
+
+## Yüklenen kişi listesi
+
+CSV veya Excel dosyanızdaki her numaralı değişken için bir sütun ekleyin.
+
+| Ad | Telefon | &#123;&#123;1&#125;&#125; | &#123;&#123;2&#125;&#125; |
+| --- | --- | --- | --- |
+| Aisha | 919876543210 | Aisha | 20 Ağustos |
+
+Sütun adları değişkenlerle tam olarak eşleşmelidir.
+
+## HubSpot kişi listesi
+
+Değişkenlerin çalışma biçimi seçilen şablona bağlıdır:
+
+| Şablon türü | Nasıl çalışır? |
+| --- | --- |
+| **HubSpot özellik şablonu** | Şablon HubSpot özellikleriyle önceden eşlenmiştir. Eazybe bu eşlemeleri otomatik kullanır; ek bir eşleme paneli gösterilmez. |
+| **Workspace değişken şablonu** | Göndermeden önce her numaralı değişkeni bir HubSpot kişi özelliğiyle eşleyin. |
+| **Zoho değişken şablonu** | HubSpot listesinden göndermeden önce her numaralı değişkeni bir HubSpot kişi özelliğiyle eşleyin. |
+
+## Bir değişkeni HubSpot ile eşleme
+
+<Steps>
+  <Step title="Değişkenli bir şablon seçin">
+    Değişken içeren bir Workspace veya Zoho şablonu seçin.
+  </Step>
+  <Step title="Bir HubSpot listesi seçin">
+    HubSpot özellik eşleme paneli listenin altında görünür.
+  </Step>
+  <Step title="Bir özellik seçin">
+    Her değişkeni **Ad** veya **Şirket adı** gibi doğru HubSpot özelliğiyle eşleyin.
+  </Step>
+  <Step title="Yedek değer ekleyin">
+    Seçilen özellik bir kişi için boş olduğunda kullanılacak değeri girin.
+  </Step>
+</Steps>
+
+<Note>
+  Eşleme paneli şablon değişkenlerini, özellik seçicileri ve yedek değer alanlarını gösterir.
+</Note>
+
+<Warning>
+  Her şablon değişkeninin bir değeri olmalıdır. Meta `#132000` hatası, sağlanan parametre sayısının onaylanmış şablonla eşleşmediğini gösterir.
+</Warning>

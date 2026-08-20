@@ -1,0 +1,85 @@
+---
+title: "Enviar una difusión a una lista de contactos de HubSpot"
+description: "Selecciona una lista de HubSpot, personaliza la plantilla y envía una difusión de WhatsApp."
+---
+
+Usa **Lista de contactos de HubSpot** para enviar una difusión a los contactos de una lista de HubSpot.
+
+<Info>
+  Esta pestaña solo aparece cuando HubSpot está conectado al espacio de trabajo actual de Eazybe.
+</Info>
+
+<Frame caption="Busca y selecciona una lista de contactos sincronizada de HubSpot">
+  <img
+    src="/images/broadcasts/hubspot-contact-list-selection.jpeg"
+    alt="Pestaña Lista de contactos de HubSpot con búsqueda, tarjetas de listas y paginación"
+  />
+</Frame>
+
+## ¿Qué es un segmento de HubSpot?
+
+Un segmento de HubSpot, antes llamado lista, es un grupo de contactos guardado. Puedes crear un segmento mediante propiedades como etapa del ciclo de vida, país, estado del cliente potencial o cualquier propiedad personalizada.
+
+- Los **segmentos activos** se actualizan automáticamente cuando los contactos cumplen o dejan de cumplir los filtros.
+- Los **segmentos estáticos** mantienen un grupo fijo hasta que añades o eliminas contactos manualmente.
+
+<Card title="Crear un segmento de HubSpot" icon="filter" href="/en/integrations/hubspot/create-segment">
+  Aprende a crear y preparar un segmento de contactos en HubSpot antes de seleccionarlo para una difusión.
+</Card>
+
+## Requisitos
+
+- HubSpot está conectado a Eazybe
+- La conexión incluye el permiso `crm.lists.read`
+- La lista seleccionada contiene contactos con números de WhatsApp válidos
+
+Si falta el acceso a listas, vuelve a conectar HubSpot y concede el permiso solicitado.
+
+## Seleccionar una lista
+
+<Steps>
+  <Step title="Abre Lista de contactos de HubSpot">
+    En **Elegir destinatarios**, selecciona la pestaña **Lista de contactos de HubSpot**.
+  </Step>
+  <Step title="Busca una lista">
+    Busca por nombre o recorre las páginas disponibles.
+  </Step>
+  <Step title="Selecciona la lista">
+    Selecciona una lista de HubSpot. Si seleccionas otra, reemplazará la selección actual.
+  </Step>
+  <Step title="Revisa la estimación">
+    Espera a que Eazybe valide los destinatarios y calcule el coste estimado.
+  </Step>
+</Steps>
+
+<Frame caption="Selecciona una lista de HubSpot y revisa los destinatarios y el coste estimado">
+  <img
+    src="/images/broadcasts/hubspot-selected-list.jpeg"
+    alt="Pestaña Lista de contactos de HubSpot con una lista seleccionada, destinatarios, coste estimado y botón Enviar difusión"
+  />
+</Frame>
+
+## Tipos de lista
+
+| Etiqueta en Eazybe | Tipo de lista de HubSpot |
+| --- | --- |
+| **Segmento estático** | La pertenencia solo cambia al añadir o eliminar contactos manualmente |
+| **Segmento activo** | HubSpot actualiza la pertenencia automáticamente mediante los filtros |
+
+## Propiedades de teléfono
+
+Eazybe comprueba las propiedades de teléfono de HubSpot en este orden:
+
+1. `mobilephone`
+2. `phone`
+
+Los contactos sin un teléfono válido se excluyen del envío.
+
+## Personalización de plantillas
+
+- **Plantilla de propiedades de HubSpot:** se usan automáticamente las asignaciones existentes.
+- **Plantilla con variables de Workspace o Zoho:** asigna cada variable a una propiedad de HubSpot e introduce un valor alternativo.
+
+La asignación solo se usa para esta difusión a una lista de HubSpot; no cambia el tipo de plantilla original.
+
+Consulta [Variables de plantilla y personalización](/es/broadcasts/template-variables).

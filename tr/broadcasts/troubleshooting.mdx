@@ -1,0 +1,54 @@
+---
+title: "Yayın sorunlarını giderme"
+description: "Kişi yükleme, HubSpot, şablon, maliyet ve teslimatla ilgili yaygın sorunları çözün."
+---
+
+## HubSpot kişi listesi görünmüyor
+
+Sekme yalnızca HubSpot mevcut çalışma alanına bağlı olduğunda görünür.
+
+**Çözüm:** HubSpot'u bağlayın ve **Yeni yayın** sayfasını yeniden açın.
+
+## HubSpot listeleri yüklenemiyor
+
+Eazybe `crm.lists.read` izninin eksik olduğunu bildirirse HubSpot'u yeniden bağlayın ve liste erişimini onaylayın.
+
+<Note>
+  Yeniden bağlama eylemi, eksik HubSpot liste izni mesajının yanında görünür.
+</Note>
+
+## HubSpot segmenti hâlâ güncelliyor
+
+Bu durum bir HubSpot listesi düzenlendikten sonra oluşabilir.
+
+**Çözüm:** Bir süre bekleyin, Eazybe sayfasını yenileyin ve listeyi tekrar seçin. Oturumu kapatmanız gerekmez.
+
+## Geçerli kişi bulunamadı
+
+Şunları kontrol edin:
+
+- Her telefon numarası ülke kodunu içerir
+- CSV'de ülke kodu ve telefon ayrı sütunlardadır
+- Excel tam uluslararası telefon numarasını içerir
+- Telefon hücreleri boş değildir
+
+## Tahmini maliyet görünmüyor
+
+Bir şablonun ve en az bir alıcının seçili olduğunu doğrulayın. **Hesaplanıyor...** görüntülenirken bekleyin.
+
+## Şablon parametresi hatası `#132000`
+
+Sağlanan değerler onaylanmış şablondaki değişken sayısıyla eşleşmiyor.
+
+**Çözüm:**
+
+- Yüklenen kişiler için her değişken adına dolu bir sütun ekleyin.
+- HubSpot listeleri için tüm özellik eşlemelerini ve yedek değerleri tamamlayın.
+
+## Gönderimden sonra bir mesaj başarısız oldu
+
+**Analizleri görüntüle** sayfasını açın, **Başarısız** sekmesini seçin ve hata nedenini inceleyin. Etkilenen kişileri düzeltmeniz veya paylaşmanız gerektiğinde Başarısız listesini dışa aktarın.
+
+<Tip>
+  Sorun devam ederse [support@eazybe.com](mailto:support@eazybe.com) adresine kampanya adını, gönderen numarayı ve hatanın ekran görüntüsünü iletin.
+</Tip>

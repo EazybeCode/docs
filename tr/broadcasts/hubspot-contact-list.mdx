@@ -1,0 +1,85 @@
+---
+title: "HubSpot kişi listesine yayın gönderme"
+description: "Bir HubSpot listesi seçin, şablonu kişiselleştirin ve WhatsApp yayını gönderin."
+---
+
+HubSpot listesindeki kişilere yayın göndermek için **HubSpot kişi listesi** seçeneğini kullanın.
+
+<Info>
+  Bu sekme yalnızca HubSpot mevcut Eazybe çalışma alanına bağlı olduğunda görünür.
+</Info>
+
+<Frame caption="Senkronize edilmiş bir HubSpot kişi listesi arayın ve seçin">
+  <img
+    src="/images/broadcasts/hubspot-contact-list-selection.jpeg"
+    alt="Arama, liste kartları ve sayfalama bulunan HubSpot kişi listesi sekmesi"
+  />
+</Frame>
+
+## HubSpot segmenti nedir?
+
+Önceden liste olarak adlandırılan HubSpot segmenti, kaydedilmiş bir kişi grubudur. Yaşam döngüsü aşaması, ülke, müşteri adayı durumu veya özel özellikler gibi kişi özellikleriyle segment oluşturabilirsiniz.
+
+- **Etkin segmentler**, kişiler filtrelere uyduğunda veya uymayı bıraktığında otomatik olarak güncellenir.
+- **Statik segmentler**, siz kişileri manuel olarak ekleyene veya kaldırana kadar sabit kalır.
+
+<Card title="HubSpot segmenti oluşturma" icon="filter" href="/en/integrations/hubspot/create-segment">
+  Bir yayın için seçmeden önce HubSpot'ta kişi segmentini nasıl oluşturacağınızı ve hazırlayacağınızı öğrenin.
+</Card>
+
+## Gereksinimler
+
+- HubSpot Eazybe'ye bağlıdır
+- Bağlantı `crm.lists.read` iznini içerir
+- Seçilen listede geçerli WhatsApp numarası olan kişiler bulunur
+
+Liste erişimi eksikse HubSpot'u yeniden bağlayın ve istenen izni verin.
+
+## Liste seçme
+
+<Steps>
+  <Step title="HubSpot kişi listesini açın">
+    **Alıcıları seçin** bölümünde **HubSpot kişi listesi** sekmesini seçin.
+  </Step>
+  <Step title="Bir liste bulun">
+    Liste adına göre arama yapın veya kullanılabilir sayfalarda gezinin.
+  </Step>
+  <Step title="Listeyi seçin">
+    Bir HubSpot listesi seçin. Başka bir liste seçmek mevcut seçimin yerini alır.
+  </Step>
+  <Step title="Tahmini inceleyin">
+    Eazybe'nin alıcıları doğrulamasını ve tahmini maliyeti hesaplamasını bekleyin.
+  </Step>
+</Steps>
+
+<Frame caption="Bir HubSpot listesi seçin ve alıcı sayısı ile tahmini maliyeti inceleyin">
+  <img
+    src="/images/broadcasts/hubspot-selected-list.jpeg"
+    alt="Seçilen liste, alıcı sayısı, tahmini maliyet ve Yayını gönder düğmesi bulunan HubSpot kişi listesi sekmesi"
+  />
+</Frame>
+
+## Liste türleri
+
+| Eazybe'deki etiket | HubSpot liste türü |
+| --- | --- |
+| **Statik segment** | Üyelik yalnızca kişiler manuel olarak eklendiğinde veya kaldırıldığında değişir |
+| **Etkin segment** | HubSpot üyeliği filtrelerle otomatik olarak günceller |
+
+## Telefon özellikleri
+
+Eazybe HubSpot telefon özelliklerini şu sırayla kontrol eder:
+
+1. `mobilephone`
+2. `phone`
+
+Geçerli telefon değeri olmayan kişiler gönderimden çıkarılır.
+
+## Şablon kişiselleştirme
+
+- **HubSpot özellik şablonu:** mevcut HubSpot eşlemeleri otomatik olarak kullanılır.
+- **Workspace veya Zoho değişken şablonu:** her şablon değişkenini bir HubSpot özelliğiyle eşleyin ve yedek değer girin.
+
+Eşleme yalnızca bu HubSpot listesi yayını için kullanılır; özgün şablon türünü değiştirmez.
+
+[Şablon değişkenleri ve kişiselleştirme](/tr/broadcasts/template-variables) bölümüne bakın.

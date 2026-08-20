@@ -1,0 +1,78 @@
+---
+title: "Subir contactos para una difusión"
+description: "Prepara una lista de contactos CSV o Excel y selecciona los destinatarios de tu campaña."
+---
+
+Usa **Subir una lista** cuando tus destinatarios estén guardados en un archivo CSV o Excel.
+
+<Frame caption="Sube una lista CSV o Excel seleccionando Elegir archivo">
+  <img
+    src="/images/broadcasts/upload-contacts-choose-file.jpeg"
+    alt="Pestaña Subir una lista con descargas de ejemplo, botón Elegir archivo y tabla de contactos"
+  />
+</Frame>
+
+## Archivos compatibles
+
+- `.csv`
+- `.xls`
+- `.xlsx`
+
+Descarga el **CSV de ejemplo** o el **Excel de ejemplo** desde el panel de carga para usar la estructura correcta.
+
+## Formato de teléfono requerido
+
+<Tabs>
+  <Tab title="CSV">
+    Mantén **Código de país** y **Teléfono** en columnas separadas.
+
+    | Nombre | Código de país | Teléfono |
+    | --- | --- | --- |
+    | Aisha | 91 | 9876543210 |
+  </Tab>
+  <Tab title="Excel">
+    Añade el número internacional completo en la columna **Teléfono**.
+
+    | Nombre | Teléfono |
+    | --- | --- |
+    | Aisha | 919876543210 |
+  </Tab>
+</Tabs>
+
+<Warning>
+  Incluye el código de país y no añadas espacios ni caracteres especiales. Usar el archivo de ejemplo ayuda a que Excel conserve correctamente los números largos.
+</Warning>
+
+## Subir y seleccionar contactos
+
+<Steps>
+  <Step title="Elige un archivo">
+    Selecciona **Elegir archivo** y sube tu archivo CSV o Excel.
+  </Step>
+  <Step title="Revisa los contactos">
+    Eazybe valida y normaliza los teléfonos. Las filas vacías, no válidas o duplicadas no se añaden dos veces.
+  </Step>
+  <Step title="Selecciona los destinatarios">
+    Selecciona contactos individuales o usa **Seleccionar todos**.
+  </Step>
+  <Step title="Revisa el pie">
+    Confirma el número de destinatarios y el coste estimado antes de enviar.
+  </Step>
+</Steps>
+
+<Frame caption="Revisa los contactos subidos y selecciona los destinatarios de la difusión">
+  <img
+    src="/images/broadcasts/upload-contacts-select-recipients.png"
+    alt="Tabla de contactos subidos con búsqueda, selección, teléfonos, paginación y coste estimado"
+  />
+</Frame>
+
+## Plantillas con variables
+
+Si la plantilla seleccionada contiene variables como `{{1}}`, incluye una columna correspondiente para cada variable.
+
+| Nombre | Teléfono | &#123;&#123;1&#125;&#125; | &#123;&#123;2&#125;&#125; |
+| --- | --- | --- | --- |
+| Aisha | 919876543210 | Aisha | Premium |
+
+Cada contacto seleccionado debe tener los valores requeridos. Consulta [Variables de plantilla y personalización](/es/broadcasts/template-variables).

@@ -1,0 +1,89 @@
+---
+title: "Auto payment"
+description: "Automatically add credits when your Eazybe wallet balance becomes low."
+---
+
+Auto payment keeps your wallet funded by charging a saved card when your balance reaches the threshold you set.
+
+<Note>
+Auto payment is currently available for **USD wallets**.
+</Note>
+
+## Turn on auto payment for the first time
+
+<Steps>
+  <Step title="Open Auto payment">
+    Go to **Settings → Billing → Credits** and expand **Auto payment** if it is collapsed.
+  </Step>
+  <Step title="Turn on the toggle">
+    Switch **Auto payment** on. If you do not have an existing auto-payment setup, Eazybe connects it to the card already saved for your Eazybe subscription.
+  </Step>
+  <Step title="Review the settings">
+    Confirm **Top up when below** and **Amount to add**. The status changes to **Auto payment active** when setup is ready.
+  </Step>
+</Steps>
+
+Add image here: Auto payment before first-time setup, showing the inactive status and toggle.
+
+<Warning>
+If Eazybe cannot find a usable subscription card, auto payment will not be enabled. Update the subscription payment method or contact Eazybe Support, then try again.
+</Warning>
+
+## How it works
+
+- **Top up when below** is the wallet balance that triggers auto payment.
+- **Amount to add** is the amount charged to your saved card and added to the wallet.
+- The threshold must be lower than the amount to add.
+
+For example, set the threshold to USD 5 and the amount to add to USD 50. Eazybe starts auto payment when the balance reaches USD 5 or less. After a successful payment, the balance increases by USD 50.
+
+## Change the amounts
+
+1. Click either amount box or its pencil icon.
+2. Update the threshold and amount to add.
+3. Click **Save changes**.
+
+For USD wallets, the threshold must be at least USD 1, the amount to add must be at least USD 5, and each value can be up to USD 10,000.
+
+Add image here: Active auto payment showing both amount fields, Save changes, and the summary message.
+
+## Change the payment card
+
+<Steps>
+  <Step title="Select Change card">
+    In the Auto payment panel, click **Change card** beside the saved card details.
+  </Step>
+  <Step title="Add the card in Stripe">
+    Enter the new card details on the secure Stripe page and complete the setup.
+  </Step>
+  <Step title="Confirm the card">
+    Return to Billing and confirm that the last four digits shown in Auto payment match the new card.
+  </Step>
+</Steps>
+
+Eazybe displays only the card brand and last four digits in the workspace.
+
+Add image here: The saved payment card and Change card button.
+
+Add video here: A complete auto-payment walkthrough covering first-time setup, changing amounts, changing the card, and disabling auto payment.
+
+## Turn auto payment off or on again
+
+- To stop automatic charges, turn off the toggle and confirm **Disable auto payment**.
+- Disabling stops future automatic top-ups but keeps the saved configuration, so it can be turned on again later.
+- The status on the Billing page always shows whether auto payment is active.
+
+## Emails and notifications
+
+Auto-payment updates are sent to the email address of the workspace account. Eazybe also creates an in-app notification for these events.
+
+| Event | What you receive |
+| --- | --- |
+| Payment started | An email with the amount and transaction ID |
+| Payment successful | An email with the amount, transaction ID, and updated balance when available |
+| Payment failed | An email with the failure reason, retry timing, and a link or instruction to update the payment method |
+| Repeated failures | After three failed attempts, auto payment is disabled and a final email is sent |
+
+<Note>
+Manually turning auto payment on or off updates the status in Billing. Activity emails are sent for payment attempts and for automatic disabling after repeated failures.
+</Note>

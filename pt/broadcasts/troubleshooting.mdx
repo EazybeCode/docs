@@ -1,0 +1,54 @@
+---
+title: "Solução de problemas de transmissões"
+description: "Resolva problemas comuns de upload de contatos, HubSpot, modelos, custos e entregas."
+---
+
+## A lista de contatos do HubSpot não aparece
+
+A guia aparece somente quando o HubSpot está conectado ao espaço de trabalho atual.
+
+**Solução:** conecte o HubSpot e reabra **Nova transmissão**.
+
+## As listas do HubSpot não podem ser carregadas
+
+Se a Eazybe informar que `crm.lists.read` está ausente, reconecte o HubSpot e aprove o acesso às listas.
+
+<Note>
+  A ação de reconexão aparece junto da mensagem de permissão de listas do HubSpot ausente.
+</Note>
+
+## O HubSpot ainda está atualizando o segmento
+
+Isso pode ocorrer depois que uma lista do HubSpot é editada.
+
+**Solução:** aguarde um momento, atualize a página da Eazybe e selecione a lista novamente. Não é necessário sair da conta.
+
+## Nenhum contato válido foi encontrado
+
+Confira se:
+
+- Todo telefone inclui o código do país
+- No CSV, código do país e telefone estão em colunas separadas
+- O Excel contém o número internacional completo
+- As células de telefone não estão vazias
+
+## O custo estimado não aparece
+
+Confirme que um modelo e pelo menos um destinatário estão selecionados. Aguarde enquanto **Calculando...** é exibido.
+
+## Erro de parâmetros do modelo `#132000`
+
+Os valores fornecidos não correspondem ao número de variáveis do modelo aprovado.
+
+**Solução:**
+
+- Para contatos carregados, inclua uma coluna preenchida para cada variável.
+- Para listas do HubSpot, complete todos os mapeamentos de propriedades e valores alternativos.
+
+## Uma mensagem falhou após o envio
+
+Abra **Ver análises**, selecione **Falhas** e revise o motivo. Exporte a lista de Falhas quando precisar corrigir ou compartilhar os contatos afetados.
+
+<Tip>
+  Se o problema continuar, entre em contato com [support@eazybe.com](mailto:support@eazybe.com) e inclua o nome da campanha, o número de envio e uma captura do erro.
+</Tip>

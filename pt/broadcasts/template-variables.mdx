@@ -1,0 +1,60 @@
+---
+title: "Variáveis de modelo e personalização"
+description: "Personalize contatos carregados ou mapeie variáveis do modelo para propriedades do HubSpot."
+---
+
+As variáveis personalizam o mesmo modelo aprovado do WhatsApp para cada destinatário.
+
+Por exemplo, `Olá {{1}}, seu compromisso é em {{2}}.` exige dois valores para cada contato.
+
+<Frame caption="Visualize as variáveis de propriedades do HubSpot no modelo do WhatsApp selecionado">
+  <img
+    src="/images/broadcasts/template-variables-message-preview.jpeg"
+    alt="Página Criar transmissão com prévia do WhatsApp mostrando as variáveis firstname, city e country"
+  />
+</Frame>
+
+## Lista de contatos carregada
+
+Adicione uma coluna para cada variável numerada no arquivo CSV ou Excel.
+
+| Nome | Telefone | &#123;&#123;1&#125;&#125; | &#123;&#123;2&#125;&#125; |
+| --- | --- | --- | --- |
+| Aisha | 919876543210 | Aisha | 20 de agosto |
+
+Os nomes das colunas devem corresponder exatamente às variáveis.
+
+## Lista de contatos do HubSpot
+
+O funcionamento das variáveis depende do modelo selecionado:
+
+| Tipo de modelo | Como funciona |
+| --- | --- |
+| **Modelo de propriedades do HubSpot** | O modelo já está mapeado para propriedades do HubSpot. A Eazybe usa esses mapeamentos automaticamente e não exibe outro painel. |
+| **Modelo com variáveis do Workspace** | Mapeie cada variável numerada para uma propriedade de contato do HubSpot antes do envio. |
+| **Modelo com variáveis do Zoho** | Mapeie cada variável numerada para uma propriedade de contato do HubSpot antes de enviar por uma lista do HubSpot. |
+
+## Mapear uma variável para o HubSpot
+
+<Steps>
+  <Step title="Selecione um modelo com variáveis">
+    Escolha um modelo do Workspace ou Zoho que contenha variáveis.
+  </Step>
+  <Step title="Selecione uma lista do HubSpot">
+    O painel de mapeamento de propriedades aparece abaixo da lista.
+  </Step>
+  <Step title="Escolha uma propriedade">
+    Mapeie cada variável para a propriedade correta do HubSpot, como **Nome** ou **Nome da empresa**.
+  </Step>
+  <Step title="Adicione um valor alternativo">
+    Informe o valor usado quando a propriedade selecionada estiver vazia para um contato.
+  </Step>
+</Steps>
+
+<Note>
+  O painel de mapeamento mostra as variáveis do modelo, os seletores de propriedades e os campos de valores alternativos.
+</Note>
+
+<Warning>
+  Toda variável deve ter um valor. O erro da Meta `#132000` indica que o número de parâmetros fornecidos não corresponde ao modelo aprovado.
+</Warning>

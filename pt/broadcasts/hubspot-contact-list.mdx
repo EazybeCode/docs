@@ -1,0 +1,85 @@
+---
+title: "Transmitir para uma lista de contatos do HubSpot"
+description: "Selecione uma lista do HubSpot, personalize o modelo e envie uma transmissão do WhatsApp."
+---
+
+Use **Lista de contatos do HubSpot** para enviar uma transmissão aos contatos de uma lista do HubSpot.
+
+<Info>
+  Esta guia aparece somente quando o HubSpot está conectado ao espaço de trabalho atual da Eazybe.
+</Info>
+
+<Frame caption="Busque e selecione uma lista de contatos sincronizada do HubSpot">
+  <img
+    src="/images/broadcasts/hubspot-contact-list-selection.jpeg"
+    alt="Guia Lista de contatos do HubSpot com busca, cartões de listas e paginação"
+  />
+</Frame>
+
+## O que é um segmento do HubSpot?
+
+Um segmento do HubSpot, anteriormente chamado de lista, é um grupo salvo de contatos. Você pode criar um segmento usando propriedades como estágio do ciclo de vida, país, status do lead ou qualquer propriedade personalizada.
+
+- **Segmentos ativos** são atualizados automaticamente quando os contatos atendem ou deixam de atender aos filtros.
+- **Segmentos estáticos** mantêm um grupo fixo até que você adicione ou remova contatos manualmente.
+
+<Card title="Criar um segmento do HubSpot" icon="filter" href="/en/integrations/hubspot/create-segment">
+  Saiba como criar e preparar um segmento de contatos no HubSpot antes de selecioná-lo para uma transmissão.
+</Card>
+
+## Requisitos
+
+- O HubSpot está conectado à Eazybe
+- A conexão inclui a permissão `crm.lists.read`
+- A lista selecionada contém contatos com números válidos do WhatsApp
+
+Se o acesso às listas estiver ausente, reconecte o HubSpot e conceda a permissão solicitada.
+
+## Selecionar uma lista
+
+<Steps>
+  <Step title="Abra Lista de contatos do HubSpot">
+    Em **Escolher destinatários**, selecione a guia **Lista de contatos do HubSpot**.
+  </Step>
+  <Step title="Encontre uma lista">
+    Busque pelo nome ou navegue pelas páginas disponíveis.
+  </Step>
+  <Step title="Selecione a lista">
+    Selecione uma lista do HubSpot. A seleção de outra lista substitui a atual.
+  </Step>
+  <Step title="Revise a estimativa">
+    Aguarde a Eazybe validar os destinatários e calcular o custo estimado.
+  </Step>
+</Steps>
+
+<Frame caption="Selecione uma lista do HubSpot e revise os destinatários e o custo estimado">
+  <img
+    src="/images/broadcasts/hubspot-selected-list.jpeg"
+    alt="Guia Lista de contatos do HubSpot com lista selecionada, destinatários, custo estimado e botão Enviar transmissão"
+  />
+</Frame>
+
+## Tipos de lista
+
+| Rótulo na Eazybe | Tipo de lista do HubSpot |
+| --- | --- |
+| **Segmento estático** | A associação muda somente quando os contatos são adicionados ou removidos manualmente |
+| **Segmento ativo** | O HubSpot atualiza a associação automaticamente usando os filtros |
+
+## Propriedades de telefone
+
+A Eazybe verifica as propriedades de telefone do HubSpot nesta ordem:
+
+1. `mobilephone`
+2. `phone`
+
+Contatos sem um telefone válido são excluídos do envio.
+
+## Personalização do modelo
+
+- **Modelo de propriedades do HubSpot:** os mapeamentos existentes são usados automaticamente.
+- **Modelo com variáveis do Workspace ou Zoho:** mapeie cada variável para uma propriedade do HubSpot e informe um valor alternativo.
+
+O mapeamento é usado somente nesta transmissão para uma lista do HubSpot; ele não altera o tipo do modelo original.
+
+Consulte [Variáveis de modelo e personalização](/pt/broadcasts/template-variables).

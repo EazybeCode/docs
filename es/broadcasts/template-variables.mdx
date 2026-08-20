@@ -1,0 +1,60 @@
+---
+title: "Variables de plantilla y personalización"
+description: "Personaliza contactos subidos o asigna variables de plantilla a propiedades de HubSpot."
+---
+
+Las variables personalizan la misma plantilla aprobada de WhatsApp para cada destinatario.
+
+Por ejemplo, `Hola {{1}}, tu cita es el {{2}}.` requiere dos valores para cada contacto.
+
+<Frame caption="Previsualiza las variables de propiedades de HubSpot en la plantilla de WhatsApp seleccionada">
+  <img
+    src="/images/broadcasts/template-variables-message-preview.jpeg"
+    alt="Página Crear difusión con una vista previa de WhatsApp que muestra las variables firstname, city y country"
+  />
+</Frame>
+
+## Lista de contactos subida
+
+Añade una columna por cada variable numerada en tu archivo CSV o Excel.
+
+| Nombre | Teléfono | &#123;&#123;1&#125;&#125; | &#123;&#123;2&#125;&#125; |
+| --- | --- | --- | --- |
+| Aisha | 919876543210 | Aisha | 20 de agosto |
+
+Los nombres de las columnas deben coincidir exactamente con las variables.
+
+## Lista de contactos de HubSpot
+
+El funcionamiento de las variables depende de la plantilla seleccionada:
+
+| Tipo de plantilla | Cómo funciona |
+| --- | --- |
+| **Plantilla de propiedades de HubSpot** | La plantilla ya está asignada a propiedades de HubSpot. Eazybe usa esas asignaciones automáticamente y no muestra ningún panel adicional. |
+| **Plantilla con variables de Workspace** | Asigna cada variable numerada a una propiedad de contacto de HubSpot antes de enviar. |
+| **Plantilla con variables de Zoho** | Asigna cada variable numerada a una propiedad de contacto de HubSpot antes de enviar desde una lista de HubSpot. |
+
+## Asignar una variable a HubSpot
+
+<Steps>
+  <Step title="Selecciona una plantilla con variables">
+    Elige una plantilla de Workspace o Zoho que contenga variables.
+  </Step>
+  <Step title="Selecciona una lista de HubSpot">
+    El panel de asignación de propiedades aparece debajo de la lista.
+  </Step>
+  <Step title="Elige una propiedad">
+    Asigna cada variable a la propiedad correcta de HubSpot, como **Nombre** o **Nombre de empresa**.
+  </Step>
+  <Step title="Añade un valor alternativo">
+    Introduce el valor que se usará cuando la propiedad seleccionada esté vacía para un contacto.
+  </Step>
+</Steps>
+
+<Note>
+  El panel de asignación muestra las variables de plantilla, los selectores de propiedades y los campos de valores alternativos.
+</Note>
+
+<Warning>
+  Cada variable debe tener un valor. El error de Meta `#132000` indica que el número de parámetros proporcionados no coincide con la plantilla aprobada.
+</Warning>

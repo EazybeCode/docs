@@ -1,0 +1,78 @@
+---
+title: "Yayın için kişi yükleme"
+description: "CSV veya Excel kişi listesi hazırlayın ve kampanyanızın alıcılarını seçin."
+---
+
+Alıcılarınız bir CSV veya Excel dosyasında bulunuyorsa **Liste yükle** seçeneğini kullanın.
+
+<Frame caption="Dosya seç seçeneğiyle CSV veya Excel kişi listesi yükleyin">
+  <img
+    src="/images/broadcasts/upload-contacts-choose-file.jpeg"
+    alt="Örnek indirmeler, Dosya seç düğmesi ve kişi tablosu bulunan Liste yükle sekmesi"
+  />
+</Frame>
+
+## Desteklenen dosyalar
+
+- `.csv`
+- `.xls`
+- `.xlsx`
+
+Doğru yapıyı kullanmak için yükleme panelinden **Örnek CSV** veya **Örnek Excel** dosyasını indirin.
+
+## Gerekli telefon biçimi
+
+<Tabs>
+  <Tab title="CSV">
+    **Ülke kodu** ve **Telefon** değerlerini ayrı sütunlarda tutun.
+
+    | Ad | Ülke kodu | Telefon |
+    | --- | --- | --- |
+    | Aisha | 91 | 9876543210 |
+  </Tab>
+  <Tab title="Excel">
+    Tam uluslararası numarayı **Telefon** sütununa ekleyin.
+
+    | Ad | Telefon |
+    | --- | --- |
+    | Aisha | 919876543210 |
+  </Tab>
+</Tabs>
+
+<Warning>
+  Ülke kodunu ekleyin ve boşluk ya da özel karakter kullanmayın. Örnek dosya, Excel'in uzun telefon numaralarını doğru şekilde korumasına yardımcı olur.
+</Warning>
+
+## Kişileri yükleme ve seçme
+
+<Steps>
+  <Step title="Bir dosya seçin">
+    **Dosya seç** seçeneğini kullanın ve CSV veya Excel dosyanızı yükleyin.
+  </Step>
+  <Step title="Kişileri inceleyin">
+    Eazybe telefon numaralarını doğrular ve standartlaştırır. Boş, geçersiz ve yinelenen satırlar iki kez eklenmez.
+  </Step>
+  <Step title="Alıcıları seçin">
+    Kişileri tek tek seçin veya **Tümünü seç** seçeneğini kullanın.
+  </Step>
+  <Step title="Alt bilgiyi inceleyin">
+    Göndermeden önce seçilen alıcı sayısını ve tahmini maliyeti doğrulayın.
+  </Step>
+</Steps>
+
+<Frame caption="Yüklenen kişileri inceleyin ve yayın alıcılarını seçin">
+  <img
+    src="/images/broadcasts/upload-contacts-select-recipients.png"
+    alt="Arama, seçim, telefon numaraları, sayfalama ve tahmini maliyet bulunan yüklenen kişiler tablosu"
+  />
+</Frame>
+
+## Değişkenli şablonlar
+
+Seçilen şablon `{{1}}` gibi değişkenler içeriyorsa her değişken için eşleşen bir sütun ekleyin.
+
+| Ad | Telefon | &#123;&#123;1&#125;&#125; | &#123;&#123;2&#125;&#125; |
+| --- | --- | --- | --- |
+| Aisha | 919876543210 | Aisha | Premium |
+
+Seçilen her kişi gerekli değerlere sahip olmalıdır. [Şablon değişkenleri ve kişiselleştirme](/tr/broadcasts/template-variables) bölümünden daha fazla bilgi edinin.

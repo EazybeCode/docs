@@ -1,0 +1,78 @@
+---
+title: "Carregar contatos para uma transmissão"
+description: "Prepare uma lista de contatos CSV ou Excel e selecione os destinatários da campanha."
+---
+
+Use **Carregar uma lista** quando os destinatários estiverem armazenados em um arquivo CSV ou Excel.
+
+<Frame caption="Carregue uma lista CSV ou Excel selecionando Escolher arquivo">
+  <img
+    src="/images/broadcasts/upload-contacts-choose-file.jpeg"
+    alt="Guia Carregar uma lista com downloads de exemplo, botão Escolher arquivo e tabela de contatos"
+  />
+</Frame>
+
+## Arquivos compatíveis
+
+- `.csv`
+- `.xls`
+- `.xlsx`
+
+Baixe o **CSV de exemplo** ou o **Excel de exemplo** no painel de upload para usar a estrutura correta.
+
+## Formato de telefone obrigatório
+
+<Tabs>
+  <Tab title="CSV">
+    Mantenha **Código do país** e **Telefone** em colunas separadas.
+
+    | Nome | Código do país | Telefone |
+    | --- | --- | --- |
+    | Aisha | 91 | 9876543210 |
+  </Tab>
+  <Tab title="Excel">
+    Adicione o número internacional completo na coluna **Telefone**.
+
+    | Nome | Telefone |
+    | --- | --- |
+    | Aisha | 919876543210 |
+  </Tab>
+</Tabs>
+
+<Warning>
+  Inclua o código do país e não use espaços nem caracteres especiais. O arquivo de exemplo ajuda o Excel a preservar números longos corretamente.
+</Warning>
+
+## Carregar e selecionar contatos
+
+<Steps>
+  <Step title="Escolha um arquivo">
+    Selecione **Escolher arquivo** e carregue seu arquivo CSV ou Excel.
+  </Step>
+  <Step title="Revise os contatos">
+    A Eazybe valida e normaliza os telefones. Linhas vazias, inválidas ou duplicadas não são adicionadas duas vezes.
+  </Step>
+  <Step title="Selecione os destinatários">
+    Selecione contatos individuais ou use **Selecionar todos**.
+  </Step>
+  <Step title="Revise o rodapé">
+    Confirme o número de destinatários e o custo estimado antes do envio.
+  </Step>
+</Steps>
+
+<Frame caption="Revise os contatos carregados e selecione os destinatários da transmissão">
+  <img
+    src="/images/broadcasts/upload-contacts-select-recipients.png"
+    alt="Tabela de contatos carregados com busca, seleção, telefones, paginação e custo estimado"
+  />
+</Frame>
+
+## Modelos com variáveis
+
+Se o modelo selecionado contém variáveis como `{{1}}`, inclua uma coluna correspondente para cada variável.
+
+| Nome | Telefone | &#123;&#123;1&#125;&#125; | &#123;&#123;2&#125;&#125; |
+| --- | --- | --- | --- |
+| Aisha | 919876543210 | Aisha | Premium |
+
+Todo contato selecionado deve ter os valores obrigatórios. Saiba mais em [Variáveis de modelo e personalização](/pt/broadcasts/template-variables).

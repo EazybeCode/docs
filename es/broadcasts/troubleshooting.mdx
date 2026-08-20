@@ -1,0 +1,54 @@
+---
+title: "Solución de problemas de difusiones"
+description: "Resuelve problemas habituales de carga de contactos, HubSpot, plantillas, costes y entregas."
+---
+
+## La lista de contactos de HubSpot no aparece
+
+La pestaña solo aparece cuando HubSpot está conectado al espacio de trabajo actual.
+
+**Solución:** conecta HubSpot y vuelve a abrir **Nueva difusión**.
+
+## No se pueden cargar las listas de HubSpot
+
+Si Eazybe indica que falta `crm.lists.read`, vuelve a conectar HubSpot y aprueba el acceso a las listas.
+
+<Note>
+  La acción para volver a conectar aparece junto al mensaje de permiso de listas de HubSpot ausente.
+</Note>
+
+## HubSpot sigue actualizando el segmento
+
+Esto puede ocurrir después de editar una lista de HubSpot.
+
+**Solución:** espera un momento, actualiza la página de Eazybe y vuelve a seleccionar la lista. No necesitas cerrar sesión.
+
+## No se encontraron contactos válidos
+
+Comprueba que:
+
+- Cada número de teléfono incluye el código de país
+- En CSV, el código de país y el teléfono están en columnas separadas
+- Excel contiene el número internacional completo
+- Las celdas de teléfono no están vacías
+
+## No aparece el coste estimado
+
+Confirma que hay una plantilla y al menos un destinatario seleccionados. Espera mientras se muestra **Calculando...**.
+
+## Error de parámetros de plantilla `#132000`
+
+Los valores proporcionados no coinciden con el número de variables de la plantilla aprobada.
+
+**Solución:**
+
+- Para contactos subidos, incluye una columna completa por cada variable.
+- Para listas de HubSpot, completa todas las asignaciones de propiedades y los valores alternativos.
+
+## Un mensaje falló después del envío
+
+Abre **Ver análisis**, selecciona **Fallidos** y revisa el motivo. Exporta la lista de Fallidos cuando necesites corregir o compartir los contactos afectados.
+
+<Tip>
+  Si el problema continúa, contacta con [support@eazybe.com](mailto:support@eazybe.com) e incluye el nombre de la campaña, el número de envío y una captura del error.
+</Tip>
