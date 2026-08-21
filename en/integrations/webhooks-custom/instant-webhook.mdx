@@ -1,39 +1,254 @@
 ---
 title: "Instant Webhook"
-description: "Receive WhatsApp Business events at your HTTPS callback by subscribing a WABA through the Eazybe API."
+description: "Get incoming WhatsApp messages and delivery updates pushed to your own server in real time."
 ---
 
-Instant Webhook connects a WhatsApp Business Account (WABA) to an HTTPS callback so your system can receive inbound message and delivery events as they occur. Use the webhook-subscription endpoints in **Waba Api Documentation** to create and manage this connection.
+Instant Webhook pushes every incoming WhatsApp message and delivery update from your WhatsApp Business Account (WABA) to a URL on your server, the moment it happens. Use it to feed your CRM, database, chatbot, or any internal tool — no polling required.
 
 <Info>
-  This page is an overview. Request fields, response schemas, authentication, and error handling are maintained in the linked Waba API reference pages.
+  There is no third-party platform in between. You call the Eazybe API with your token, and events are delivered straight from WhatsApp to your URL.
 </Info>
+
+## What you need
+
+| # | Requirement | Where to get it |
+| --- | --- | --- |
+| 1 | **Eazybe API token** | [Eazybe Workspace](https://app.eazybe.com/organization/employees) → **Workspace** → **Staff** → **Organization Details** → copy the **Access code** |
+| 2 | **Your WABA ID** | One API call — shown in [Step 2](#step-2-find-your-waba-id) below |
+| 3 | **A callback URL** | An HTTPS endpoint on your server that receives the events — ready-to-use code in [Step 3](#step-3-build-your-callback-endpoint) |
 
 ## How it works
 
-1. Your callback URL must be available over HTTPS.
-2. When you create the subscription, Meta sends a verification request to the callback.
-3. Your callback must validate the shared verify token and return `hub.challenge`.
-4. After verification, the WABA sends supported inbound and delivery events to the callback.
+1. You build a small HTTPS endpoint on your server (your **callback URL**).
+2. You call the create-subscription API with your callback URL and a secret **verify token** of your choice.
+3. WhatsApp (Meta) verifies your URL once with a simple handshake.
+4. From then on, every incoming message and delivery update for that WABA is sent to your URL as a JSON `POST` — instantly.
+
+## Set up in 4 steps
+
+<Steps>
+  <Step title="Get your API token">
+    1. Sign in to the [Eazybe Workspace](https://app.eazybe.com/organization/employees).
+    2. In the left sidebar, go to **Workspace** → **Staff**.
+    3. In **Organization Details**, copy the **Access code**. This is your bearer token for all API calls below.
+
+    ```bash
+    export EAZYBE_TOKEN="YOUR_EAZYBE_TOKEN"
+    ```
+
+    <Warning>
+      Keep the token on your server only. Never expose it in browser code, mobile apps, or public repositories.
+    </Warning>
+  </Step>
+
+  <Step title="Find your WABA ID">
+    Call the phone-numbers endpoint — it returns every WABA connected to your organization:
+
+    ```bash
+    curl "https://cerberus.eazybe.com/prod/api/v2/meta/phone-numbers" \
+      -H "Authorization: Bearer $EAZYBE_TOKEN"
+    ```
+
+    In the response, copy `accounts[].waba_id` — that is the `wabaId` used in the next steps:
+
+    ```json
+    {
+      "status": true,
+      "data": {
+        "accounts": [
+          {
+            "waba_id": "1029384756",
+            "status": true,
+            "phone_numbers": [
+              { "id": "5647382910", "display_phone_number": "+91 99000 00000" }
+            ]
+          }
+        ]
+      }
+    }
+    ```
+
+    <Note>
+      If this call returns no accounts, your WhatsApp Business Account is not yet connected to Eazybe. Connect it first from your Eazybe Workspace.
+    </Note>
+  </Step>
+
+  <Step title="Build your callback endpoint">
+    Your endpoint has two jobs:
+
+    - **Answer the one-time verification handshake.** When you create the subscription, Meta sends a `GET` request to your URL with three query parameters: `hub.mode`, `hub.verify_token`, and `hub.challenge`. If `hub.verify_token` matches the secret you chose, respond `200` with the raw `hub.challenge` value.
+    - **Receive events.** After verification, events arrive as `POST` requests with a JSON body. Respond `200` quickly and process the payload asynchronously.
+
+    Copy-paste starter code:
+
+    <CodeGroup>
+
+    ```javascript Node.js (Express)
+    const express = require("express");
+    const app = express();
+    app.use(express.json());
+
+    const VERIFY_TOKEN = "my-secret-token"; // same value you send as verifyToken in Step 4
+
+    // 1. Verification handshake — Meta calls this once when you subscribe
+    app.get("/webhooks/whatsapp", (req, res) => {
+      if (
+        req.query["hub.mode"] === "subscribe" &&
+        req.query["hub.verify_token"] === VERIFY_TOKEN
+      ) {
+        return res.status(200).send(req.query["hub.challenge"]);
+      }
+      res.sendStatus(403);
+    });
+
+    // 2. Events — every incoming message and delivery update arrives here
+    app.post("/webhooks/whatsapp", (req, res) => {
+      res.sendStatus(200); // acknowledge immediately
+      console.log(JSON.stringify(req.body, null, 2)); // process asynchronously
+    });
+
+    app.listen(3000);
+    ```
+
+    ```python Python (Flask)
+    from flask import Flask, request
+
+    app = Flask(__name__)
+    VERIFY_TOKEN = "my-secret-token"  # same value you send as verifyToken in Step 4
+
+    # 1. Verification handshake — Meta calls this once when you subscribe
+    @app.get("/webhooks/whatsapp")
+    def verify():
+        if (request.args.get("hub.mode") == "subscribe"
+                and request.args.get("hub.verify_token") == VERIFY_TOKEN):
+            return request.args.get("hub.challenge"), 200
+        return "Forbidden", 403
+
+    # 2. Events — every incoming message and delivery update arrives here
+    @app.post("/webhooks/whatsapp")
+    def receive():
+        event = request.get_json(silent=True)
+        print(event)  # process asynchronously
+        return "OK", 200
+    ```
+
+    </CodeGroup>
+
+    <Warning>
+      The endpoint must be publicly reachable over **HTTPS** and live **before** you create the subscription — the handshake happens during the create call. For local testing, use a tunnel such as ngrok or Cloudflare Tunnel.
+    </Warning>
+  </Step>
+
+  <Step title="Create the subscription">
+    One API call — pass your callback URL and the verify token you used in your code:
+
+    ```bash
+    curl -X POST \
+      "https://cerberus.eazybe.com/prod/api/v2/meta/wabas/1029384756/webhook-subscriptions" \
+      -H "Authorization: Bearer $EAZYBE_TOKEN" \
+      -H "Content-Type: application/json" \
+      -d '{
+        "overrideCallbackUri": "https://your-app.com/webhooks/whatsapp",
+        "verifyToken": "my-secret-token"
+      }'
+    ```
+
+    ```json
+    { "success": true }
+    ```
+
+    That's it — you are subscribed.
+  </Step>
+</Steps>
+
+## Test it
+
+Send a WhatsApp message to your business number. Within seconds, your callback receives a `POST` like this:
+
+```json
+{
+  "object": "whatsapp_business_account",
+  "entry": [
+    {
+      "id": "1029384756",
+      "changes": [
+        {
+          "field": "messages",
+          "value": {
+            "messaging_product": "whatsapp",
+            "metadata": {
+              "display_phone_number": "+91 99000 00000",
+              "phone_number_id": "5647382910"
+            },
+            "contacts": [
+              { "profile": { "name": "Ravi" }, "wa_id": "919900000001" }
+            ],
+            "messages": [
+              {
+                "from": "919900000001",
+                "id": "wamid.HBgMOTE5OTAwMDAwMDAxFQIAERgS...",
+                "timestamp": "1755750000",
+                "type": "text",
+                "text": { "body": "Hi, I need help with my order" }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
+```
+
+Delivery updates (sent, delivered, read) arrive in the same format with a `statuses` array instead of `messages`. These are standard WhatsApp Cloud API webhook payloads.
+
+## Manage your subscription
+
+**Check whether a WABA is subscribed** and which callback URL it uses:
+
+```bash
+curl "https://cerberus.eazybe.com/prod/api/v2/meta/wabas/1029384756/webhook-subscriptions" \
+  -H "Authorization: Bearer $EAZYBE_TOKEN"
+```
+
+An empty `data` array means the WABA is not subscribed.
+
+**Stop receiving events:**
+
+```bash
+curl -X DELETE \
+  "https://cerberus.eazybe.com/prod/api/v2/meta/wabas/1029384756/webhook-subscriptions" \
+  -H "Authorization: Bearer $EAZYBE_TOKEN"
+```
 
 <Warning>
-  Removing the subscription stops inbound message and delivery events for that WABA. Confirm the WABA ID and callback before changing a production subscription.
+  Deleting the subscription stops all inbound message and delivery events for that WABA immediately. You can re-subscribe at any time with the create call.
 </Warning>
 
-## Webhook API reference
+## Troubleshooting
+
+| Problem | Likely cause | Fix |
+| --- | --- | --- |
+| Create returns `400` | Your callback failed the verification handshake, or the URL is not HTTPS | Make sure the endpoint is live, uses HTTPS, and responds `200` with the raw `hub.challenge` value when `hub.verify_token` matches |
+| Any call returns `401` | Token missing, invalid, or expired | Re-copy the **Access code** from your Eazybe Workspace |
+| Any call returns `404` | The `wabaId` is not connected to your organization | Run `GET /meta/phone-numbers` again and use the returned `waba_id` |
+| Subscription exists but no events arrive | Your endpoint is down, slow, or returning errors | Confirm the subscription with the list call, then check that your endpoint returns `200` within a few seconds |
+| Any call returns `502` | Meta was temporarily unreachable | Retry with backoff |
+
+## API reference
 
 <CardGroup cols={1}>
   <Card title="List webhook subscriptions" icon="list" href="/api-reference/meta/operations/list-webhook-subscriptions">
     Check whether a WABA is subscribed and review its configured callback.
   </Card>
   <Card title="Create webhook subscription" icon="webhook" href="/api-reference/meta/operations/create-webhook-subscription">
-    Subscribe a WABA to the default Eazybe callback or your custom HTTPS callback.
+    Subscribe a WABA to your HTTPS callback.
   </Card>
   <Card title="Delete webhook subscription" icon="trash" href="/api-reference/meta/operations/delete-webhook-subscription">
-    Remove the WABA subscription when you no longer want to receive events.
+    Remove the subscription when you no longer want to receive events.
   </Card>
 </CardGroup>
 
 <Note>
-  For WhatsApp Web extension events and chat-backup workflows, use [Chat Backup Webhooks](/en/integrations/webhooks-custom/webhooks). Instant Webhook uses the WABA webhook-subscription API.
+  Instant Webhook covers **WhatsApp Business API (WABA)** events. For WhatsApp Web extension events and chat-backup workflows, use [Chat Backup Webhooks](/en/integrations/webhooks-custom/webhooks) instead.
 </Note>

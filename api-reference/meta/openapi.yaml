@@ -2716,11 +2716,17 @@ paths:
     get:
       operationId: listWebhookSubscriptions
       summary: List webhook subscriptions
-      description: Returns the webhook subscriptions configured for a WABA.
+      description: |-
+        Returns the webhook subscriptions configured for a WABA. Use it to check
+        whether the WABA is subscribed and which callback URL currently receives
+        its events. An empty `data` array means the WABA is not subscribed.
       tags:
       - Webhooks
       x-mint:
         href: "/api-reference/meta/operations/list-webhook-subscriptions"
+        content: "<Note>New to webhooks? Follow the step-by-step [Instant Webhook
+          guide](/en/integrations/webhooks-custom/instant-webhook) — it covers the
+          full setup, including ready-to-use callback code.</Note>\n"
       responses:
         '200':
           description: |-
@@ -2750,6 +2756,7 @@ paths:
                       properties:
                         whatsapp_business_api_data:
                           type: object
+                          description: The app subscribed to this WABA's events.
                           required:
                           - id
                           - link
@@ -2757,12 +2764,17 @@ paths:
                           properties:
                             id:
                               type: string
+                              description: App id of the subscription.
                             link:
                               type: string
+                              description: Link to the subscribed app.
                             name:
                               type: string
+                              description: Name of the subscribed app.
                         override_callback_uri:
                           type: string
+                          description: The HTTPS callback URL that receives this
+                            WABA's events.
               example:
                 data:
                 - whatsapp_business_api_data:
@@ -2774,12 +2786,22 @@ paths:
       operationId: createWebhookSubscription
       summary: Subscribe a WABA to webhooks
       description: |
-        Subscribes the WABA to the default Eazybe callback or a custom callback.
-        The callback must answer Meta's verification handshake with `hub.challenge`.
+        Subscribes a WABA so that incoming WhatsApp messages and delivery updates
+        are pushed to your HTTPS callback URL in real time.
+
+        Your callback must be live **before** you call this endpoint. During this
+        request, Meta verifies the URL once by sending
+        `GET <overrideCallbackUri>?hub.mode=subscribe&hub.verify_token=<verifyToken>&hub.challenge=<random>`.
+        Your endpoint must confirm that `hub.verify_token` matches your secret and
+        respond `200` with the raw `hub.challenge` value — otherwise this request
+        fails with `400`.
       tags:
       - Webhooks
       x-mint:
         href: "/api-reference/meta/operations/create-webhook-subscription"
+        content: "<Note>The [Instant Webhook guide](/en/integrations/webhooks-custom/instant-webhook)
+          walks through this setup step by step, with ready-to-use callback code
+          in Node.js and Python.</Note>\n"
       requestBody:
         required: true
         content:
@@ -2792,15 +2814,14 @@ paths:
               properties:
                 overrideCallbackUri:
                   type: string
+                  description: Public HTTPS URL on your server that receives the
+                    webhook events. It must be reachable when this request is made,
+                    because Meta runs the verification handshake against it.
                 verifyToken:
                   type: string
-              description: |-
-                ```json
-                {
-                  "overrideCallbackUri": "https://your-app.com/webhooks/whatsapp",
-                  "verifyToken": "shared-secret"
-                }
-                ```
+                  description: A secret string you choose. Meta sends it back as
+                    `hub.verify_token` during the verification handshake so your
+                    endpoint can confirm the request is genuine.
             example:
               overrideCallbackUri: https://your-app.com/webhooks/whatsapp
               verifyToken: shared-secret
@@ -2831,7 +2852,10 @@ paths:
     delete:
       operationId: deleteWebhookSubscription
       summary: Unsubscribe a WABA from webhooks
-      description: Removes the WABA's webhook subscription.
+      description: |-
+        Removes the WABA's webhook subscription. Event delivery to the callback
+        stops immediately. You can subscribe again at any time with the create
+        endpoint.
       tags:
       - Webhooks
       x-mint:
