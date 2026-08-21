@@ -1,27 +1,15 @@
 ---
 title: "HubSpot Deal Analysis"
-description: "Deal Analysis reviews each of your HubSpot deals together with its related conversations and records the results on the deal record."
+description: "See who owes the next reply, which deals are losing momentum, and what could block the close, recorded automatically on every HubSpot deal."
 ---
 
-Deal Analysis reviews each of your HubSpot deals together with the conversations linked to it, then records what it finds on the deal record.
+Deal Analysis reads the conversations behind each of your HubSpot deals, including WhatsApp chats and email threads with the deal's contacts, and records what it finds on the deal record: who owes the next reply, whether engagement is fading, what could block the close, and when the customer expects to sign.
 
-It runs automatically every 6 hours. There is nothing to trigger, no per-deal setup, and no separate dashboard to open.
+It runs automatically every 6 hours, so every deal you open is already current. There is nothing to set up or trigger.
 
-## Before You Start
-
-<Steps>
-  <Step title="Connect HubSpot to Eazybe">
-    Once the connection is active, your deals are picked up automatically.
-  </Step>
-  <Step title="Attach contacts to your deals">
-    Conversations are matched to a deal through its associated contacts. A deal with no contacts attached is analysed from HubSpot data only.
-  </Step>
-  <Step title="Grant the required scopes">
-    Writing results to your deals requires the **crm.schemas.deals.write** and **crm.objects.deals.write** scopes. Reading email activity additionally requires **sales-email-read**. Recent versions of the integration request all three automatically.
-
-    To check, go to **Integration page → HubSpot settings → Scopes and permissions**. If any are missing, reconnect your HubSpot account.
-  </Step>
-</Steps>
+<Note>
+  **Requirements:** a connected HubSpot account, with contacts associated with your deals, and the **crm.schemas.deals.write**, **crm.objects.deals.write** and **sales-email-read** scopes granted. A deal with no contacts attached is analysed from HubSpot data only.
+</Note>
 
 ## How It Works
 

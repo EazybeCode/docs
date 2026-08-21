@@ -1,27 +1,15 @@
 ---
 title: "Anlaşma Analizi"
-description: "Anlaşma Analizi, bağlı CRM'inizdeki her anlaşmayı ilgili sohbetlerle birlikte inceler ve sonuçları anlaşma kaydına yazar."
+description: "Sıradaki yanıtın kimde olduğunu, hangi anlaşmaların ivme kaybettiğini ve kapanışı neyin engelleyebileceğini görün; hepsi CRM'inizdeki her anlaşmaya otomatik olarak kaydedilir."
 ---
 
-Anlaşma Analizi, bağlı CRM'inizdeki her anlaşmayı kendisine bağlı sohbetlerle birlikte inceler ve bulduklarını anlaşma kaydına yazar.
+Anlaşma Analizi, CRM'inizdeki her anlaşmanın arkasındaki sohbetleri (anlaşmadaki kişilerle yapılan WhatsApp sohbetleri ve e-posta yazışmaları dâhil) okur ve bulduklarını anlaşma kaydına yazar: sıradaki yanıtın kimde olduğu, etkileşimin azalıp azalmadığı, kapanışı neyin engelleyebileceği ve müşterinin ne zaman imzalamayı beklediği.
 
-Otomatik olarak her 6 saatte bir çalışır. Tetiklenecek bir şey, anlaşma başına kurulum ya da ayrıca açılacak bir panel yoktur.
+Otomatik olarak her 6 saatte bir çalışır; böylece açtığınız her anlaşma zaten günceldir. Kurulacak ya da tetiklenecek bir şey yoktur.
 
-## Başlamadan Önce
-
-<Steps>
-  <Step title="CRM'inizi bağlayın">
-    Anlaşma Analizi, bağlı bir CRM'deki anlaşmalar üzerinde çalışır. Bağlantı etkinleştiğinde anlaşmalar otomatik olarak alınır.
-  </Step>
-  <Step title="Anlaşmalarınıza kişileri bağlayın">
-    Sohbetler, anlaşmaya bağlı kişiler üzerinden eşleştirilir. Hiçbir kişinin bağlı olmadığı bir anlaşma yalnızca CRM verisinden analiz edilir.
-  </Step>
-  <Step title="sales-email-read iznini verin (yalnızca HubSpot)">
-    E-posta etkinliği yalnızca HubSpot bağlantınız **sales-email-read** iznini içeriyorsa okunur. Entegrasyonun güncel sürümleri bu izni otomatik olarak ister.
-
-    Kontrol etmek için **Integration page → HubSpot settings → Scopes and permissions** yolunu izleyin. İzin listede yoksa HubSpot hesabınızı yeniden bağlayın.
-  </Step>
-</Steps>
+<Note>
+  **Gereksinimler:** bağlı bir CRM ve anlaşmalarınıza bağlı kişiler. Hiçbir kişinin bağlı olmadığı bir anlaşma yalnızca CRM verisinden analiz edilir. HubSpot'ta e-posta etkinliğinin okunması için ayrıca **sales-email-read** izni gerekir.
+</Note>
 
 ## Nasıl Çalışır
 

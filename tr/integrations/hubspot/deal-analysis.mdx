@@ -1,27 +1,15 @@
 ---
 title: "HubSpot Anlaşma Analizi"
-description: "Anlaşma Analizi, HubSpot anlaşmalarınızın her birini ilgili sohbetlerle birlikte inceler ve sonuçları anlaşma kaydına yazar."
+description: "Sıradaki yanıtın kimde olduğunu, hangi anlaşmaların ivme kaybettiğini ve kapanışı neyin engelleyebileceğini görün; hepsi her HubSpot anlaşmasına otomatik olarak kaydedilir."
 ---
 
-Anlaşma Analizi, HubSpot anlaşmalarınızın her birini kendisine bağlı sohbetlerle birlikte inceler ve bulduklarını anlaşma kaydına yazar.
+Anlaşma Analizi, HubSpot anlaşmalarınızın her birinin arkasındaki sohbetleri (anlaşmadaki kişilerle yapılan WhatsApp sohbetleri ve e-posta yazışmaları dâhil) okur ve bulduklarını anlaşma kaydına yazar: sıradaki yanıtın kimde olduğu, etkileşimin azalıp azalmadığı, kapanışı neyin engelleyebileceği ve müşterinin ne zaman imzalamayı beklediği.
 
-Otomatik olarak her 6 saatte bir çalışır. Tetiklenecek bir şey, anlaşma başına kurulum ya da ayrıca açılacak bir panel yoktur.
+Otomatik olarak her 6 saatte bir çalışır; böylece açtığınız her anlaşma zaten günceldir. Kurulacak ya da tetiklenecek bir şey yoktur.
 
-## Başlamadan Önce
-
-<Steps>
-  <Step title="HubSpot'u Eazybe'ye bağlayın">
-    Bağlantı etkinleştiğinde anlaşmalarınız otomatik olarak alınır.
-  </Step>
-  <Step title="Anlaşmalarınıza kişileri bağlayın">
-    Sohbetler, anlaşmaya bağlı kişiler üzerinden eşleştirilir. Hiçbir kişinin bağlı olmadığı bir anlaşma yalnızca HubSpot verisinden analiz edilir.
-  </Step>
-  <Step title="Gerekli izinleri verin">
-    Sonuçların anlaşmalarınıza yazılabilmesi için **crm.schemas.deals.write** ve **crm.objects.deals.write** izinleri gerekir. E-posta etkinliğinin okunması için ayrıca **sales-email-read** gerekir. Entegrasyonun güncel sürümleri üçünü de otomatik olarak ister.
-
-    Kontrol etmek için **Integration page → HubSpot settings → Scopes and permissions** yolunu izleyin. Eksik olan varsa HubSpot hesabınızı yeniden bağlayın.
-  </Step>
-</Steps>
+<Note>
+  **Gereksinimler:** bağlı bir HubSpot hesabı, anlaşmalarınıza bağlı kişiler ve **crm.schemas.deals.write**, **crm.objects.deals.write** ile **sales-email-read** izinlerinin verilmiş olması. Hiçbir kişinin bağlı olmadığı bir anlaşma yalnızca HubSpot verisinden analiz edilir.
+</Note>
 
 ## Nasıl Çalışır
 

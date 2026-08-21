@@ -1,27 +1,15 @@
 ---
 title: "Análise de Negócios do HubSpot"
-description: "A Análise de Negócios revisa cada um dos seus negócios do HubSpot junto com as conversas relacionadas e registra os resultados no próprio registro do negócio."
+description: "Veja quem deve a próxima resposta, quais negócios estão perdendo ritmo e o que pode bloquear o fechamento, registrado automaticamente em cada negócio do HubSpot."
 ---
 
-A Análise de Negócios revisa cada um dos seus negócios do HubSpot junto com as conversas associadas a ele e registra o que encontra no registro do negócio.
+A Análise de Negócios lê as conversas por trás de cada um dos seus negócios do HubSpot, incluindo os chats do WhatsApp e as trocas de e-mail com os contatos do negócio, e registra o que encontra no registro do negócio: quem deve a próxima resposta, se o engajamento está caindo, o que pode bloquear o fechamento e quando o cliente espera assinar.
 
-Ela roda automaticamente a cada 6 horas. Não há nada para acionar, nenhuma configuração por negócio e nenhum painel separado para abrir.
+Ela roda automaticamente a cada 6 horas, então todo negócio que você abrir já está atualizado. Não há nada para configurar ou acionar.
 
-## Antes de Começar
-
-<Steps>
-  <Step title="Conecte o HubSpot ao Eazybe">
-    Assim que a conexão estiver ativa, os seus negócios são capturados automaticamente.
-  </Step>
-  <Step title="Associe contatos aos seus negócios">
-    As conversas são vinculadas a um negócio por meio dos contatos associados a ele. Um negócio sem contatos associados é analisado apenas a partir dos dados do HubSpot.
-  </Step>
-  <Step title="Conceda os escopos necessários">
-    Gravar os resultados nos seus negócios exige os escopos **crm.schemas.deals.write** e **crm.objects.deals.write**. Ler a atividade de e-mail exige adicionalmente **sales-email-read**. As versões recentes da integração solicitam os três automaticamente.
-
-    Para verificar, acesse **Integration page → HubSpot settings → Scopes and permissions**. Se algum estiver faltando, reconecte sua conta do HubSpot.
-  </Step>
-</Steps>
+<Note>
+  **Requisitos:** uma conta do HubSpot conectada, com contatos associados aos seus negócios, e os escopos **crm.schemas.deals.write**, **crm.objects.deals.write** e **sales-email-read** concedidos. Um negócio sem contatos associados é analisado apenas a partir dos dados do HubSpot.
+</Note>
 
 ## Como Funciona
 
