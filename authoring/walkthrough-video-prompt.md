@@ -80,7 +80,11 @@ bash scripts/build-walkthrough.sh images/<feature-slug> --narrate --voice nova -
 
 Output lands in the same folder: `images/<feature-slug>/<feature-slug>-walkthrough.mp4` (silent) or `…-walkthrough-narrated.mp4`.
 
-Useful flags: `--secs 5` (seconds per silent slide), `--zoom 1.10` (enable subtle zoom; default `1.0` = off).
+Useful flags: `--secs 5` (seconds per silent slide), `--zoom 1.10` (enable subtle zoom; default `1.0` = off), `--fit cover` (fill the frame, no letterbox bars; crops a sliver of the screenshot), `--fade-color white` (fade slides through white instead of black — better for light UIs), `--burn-narration` (burn the narration text bottom-center as subtitles, replacing the short caption).
+
+Narrated builds also write a WebVTT sidecar (`<out>.vtt`) and cache TTS audio in `<images-dir>/.tts-cache/` (gitignored) — re-running with unchanged narration text makes **zero** TTS API calls. Note: Mintlify strips `<track>` elements from `<video>`, so use `--burn-narration` if subtitles must be visible in the docs.
+
+**Multi-language:** keep one folder with per-language TSVs (`slides-en.tsv`, `slides-es.tsv`, …), copy each to `slides.tsv` before its build, and pass `--out` with a language suffix. Add `poster="…jpg"` to the embed (extract with `ffmpeg -ss 2 -i video.mp4 -frames:v 1 poster.jpg`) so the player doesn't show a black box before play.
 
 ---
 

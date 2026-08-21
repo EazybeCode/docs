@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "mint-docs",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["-y", "mint@latest", "dev", "--port", "3333"],
+      "port": 3333
+    }
+  ]
+}

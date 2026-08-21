@@ -3,3 +3,4 @@ scripts/bin/
 .mint-dev.log
 .DS_Store
 **/.DS_Store
+.tts-cache/
