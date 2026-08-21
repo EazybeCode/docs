@@ -1,17 +1,19 @@
 ---
 title: "AI Filtreleri"
-description: "Tüm Takım Gelen Kutunuzu herhangi bir BEA Radar yapay zekâ özelliğine göre — varsayılan veya özel — arayın ve filtreleyin; filtreleri birleştirerek tam olarak önemli sohbetleri öne çıkarın."
+description: "BEA Radar'ın görüşmelerden okuduklarını kullanarak Takım Gelen Kutusu'nu ilgilenilmesi gereken sohbetlere daraltın."
 ---
 
-## AI Filtreleri Ne İşe Yarar
+AI filtreleri, BEA Radar'ın görüşmelerinize yazdığı değerlere göre sohbet listesini daraltır. Herhangi bir yapay zekâ özelliğine göre filtreleyebilirsiniz: niyet ve aciliyet gibi satış özeti alanları, işletmeniz için oluşturulan özellikler ve bir yöneticinin eklediği özellikler.
 
-**Tüm gelen kutunuzu** herhangi bir yapay zekâ özelliğine göre — varsayılan veya özel — arayın ve filtreleyin.
+Filtreler üst üste eklenebilir ve standart sohbet filtreleriyle birlikte çalışır; böylece geniş bir liste belirli bir görüşme kümesine indirilebilir.
 
-- *"İtirazı kalmamış tüm sıcak potansiyel müşterileri göster."*
-- *"Yanıt bekleyen yüksek aciliyetli tüm sohbetler."*
-- *"Team Plan ile ilgilenen tüm fırsatlar."*
+<Note>
+  **Gereksinimler:** sohbetlerinizde en az bir yapay zekâ özelliğinin değeri olmalıdır. Az önce eklenen bir özelliğin henüz değeri yoktur ve görüşmeler bu özelliğe göre analiz edilene kadar boş liste döndürür.
+</Note>
 
-Yüzlerce sohbet arasında gezinmek yerine, doğru olanlar tek tıklamayla önünüze gelir.
+## Nerede Bulunur
+
+**AI filters** denetimi, Team Inbox içinde sohbet listesinin üstünde, standart filtrelerin yanında yer alır.
 
 ## Gelen Kutunuzu Filtreleme
 
@@ -22,27 +24,41 @@ Yüzlerce sohbet arasında gezinmek yerine, doğru olanlar tek tıklamayla önü
     ![Sohbet listesinin üstündeki AI filters düğmesi](/images/bea-radar-9.png)
   </Step>
   <Step title="Bir AI Özelliği Seçin">
-    Filtrelemek istediğiniz yapay zekâ özelliğini seçin — örneğin **"Conversation State"**.
+    Filtrelemek istediğiniz yapay zekâ özelliğini seçin; örneğin **"Conversation State"**.
 
-    ![Conversation State AI özelliğinin seçilmesi](/images/bea-radar-10.png)
+    ![Conversation State yapay zekâ özelliğinin seçilmesi](/images/bea-radar-10.png)
   </Step>
   <Step title="Bir Özellik Değeri Seçin">
-    Ardından özellik değerini seçin — örneğin **"Waiting on Rep"**.
+    Özellik değerini seçin; örneğin **"Waiting on Rep"**.
 
     ![Waiting on Rep değerinin seçilmesi](/images/bea-radar-11.png)
   </Step>
   <Step title="Daha Fazla Filtre Ekleyin">
-    Aynı şekilde, daha isabetli ve optimize bir sohbet listesi için daha fazla filtre ekleyebilirsiniz.
+    Listeyi daraltmak için aynı şekilde başka filtreler ekleyin.
 
-    ![Birden fazla AI filtresinin birleştirilmesi](/images/bea-radar-12.png)
+    ![Birden fazla yapay zekâ filtresinin birleştirilmesi](/images/bea-radar-12.png)
   </Step>
 </Steps>
 
-<Note>
-  AI filtreleri, daha da optimize bir liste için standart sohbet filtreleriyle birlikte kullanılabilir.
-</Note>
+## Filtreleri Birleştirme
 
-## Sonraki Adımlar
+Aynı anda birden fazla yapay zekâ filtresi uygulanabilir ve her biri listeyi biraz daha daraltır. Yapay zekâ filtreleri, aynı görünümde kanal veya atanan kişi gibi standart sohbet filtreleriyle de birleştirilebilir.
+
+## Filtre Örnekleri
+
+| Aramak istediğiniz | Şuna göre filtreleyin |
+|:-------------------|:----------------------|
+| Önünde engel kalmamış sıcak potansiyel müşteriler | Intent, boş Objection ile birlikte |
+| Ekibinizden yanıt bekleyen acil sohbetler | Urgency, Conversation State ile birlikte |
+| Belirli bir paketle ilgilenen herkes | İlgilenilen paketi kaydeden iş özelliği |
+
+## Bilinmesi Gereken Davranışlar
+
+- **Filtreleme yalnızca gösterileni değiştirir.** Filtreler görüşmeleri silmez, taşımaz ve düzenlemez.
+- **Bir sohbet, özelliğin değeri oluştuğunda görünür.** Özelliğin boş olduğu görüşmeler döndürülmez.
+- **Üst üste eklenen filtreler daraltır, genişletmez.** Birbirini dışlayan iki filtre boş liste döndürür.
+
+## İlgili İçerik
 
 <CardGroup cols={2}>
   <Card title="AI Özellikleri" icon="sliders" href="/tr/ai-agents/bea-radar/ai-properties">

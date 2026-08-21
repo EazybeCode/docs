@@ -1,92 +1,100 @@
 ---
 title: "Propiedades de IA"
-description: "Entiende las propiedades que BEA Radar crea por su cuenta, personaliza propiedades y opciones existentes, añade tus propios campos y configúralo todo desde la configuración del Buzón de Equipo."
+description: "Controla qué campos registra BEA Radar en tus conversaciones, desde los que crea por su cuenta hasta los que defines tú."
 ---
 
-## Propiedades de Empresa Creadas Automáticamente
+Las Propiedades de IA son los campos que BEA Radar rellena en cada chat. Vienen de dos sitios. La mayoría las crea el propio BEA Radar: lee tus conversaciones, deduce qué registra tu equipo y crea esos campos. El resto las añade un administrador, para cualquier dato concreto que quieras capturar y que no se haya creado por su cuenta.
 
-La capacidad destacada: **la IA crea las propiedades que tu negocio necesita, por su cuenta.**
+Los dos tipos se comportan igual una vez existen. Se rellenan en cada chat relevante, sirven para filtrar el buzón y se escriben en el registro del CRM conectado.
 
-Estudia tus conversaciones, deduce qué registra realmente tu equipo y **genera esos campos personalizados automáticamente**, para luego mantenerlos rellenados en cada chat.
+<Note>
+  **Requisitos:** hace falta el rol de **Administrador** para añadir, renombrar o eliminar propiedades y sus opciones. Los empleados pueden cambiar el **valor** de una propiedad en un chat, pero no la propiedad en sí.
+</Note>
+
+## Tipos de Propiedad
+
+Cada propiedad es de uno de estos dos tipos.
+
+| Tipo | Qué almacena |
+|:-----|:-------------|
+| **Text/Number** | Un valor libre, como una cifra de presupuesto o un destino |
+| **Dropdown** | Un valor elegido de una lista fija de opciones que defines tú, como *Caliente*, *Templado*, *Frío* |
+
+## Propiedades Creadas Automáticamente
+
+BEA Radar estudia tus conversaciones, deduce qué campos registra tu equipo y los crea. Después los mantiene rellenados en cada chat. El conjunto resultante varía según el negocio:
 
 - Un equipo **inmobiliario** obtiene campos como *Tipo de propiedad* y *Presupuesto*.
 - Un equipo **SaaS** obtiene *Plan de interés* y *Número de licencias*.
 - Un equipo de **viajes** obtiene *Destino* y *Fechas de viaje*.
 
-No configuras nada. Aprende de tu negocio a partir de tus chats.
+No hay que configurar nada para que empiece. El conjunto se aprende de tus chats y se va formando a lo largo de tus primeras conversaciones.
 
-## Propiedades Personalizadas
-
-Cuando quieras un campo concreto, los administradores pueden añadirlo en pocos clics desde **Buzón de Equipo → Configuración**:
-
-1. Haz clic en **+ Añadir propiedad**
-2. Elige el tipo — **Texto/Número** o **Desplegable**
-3. Escribe una **descripción** breve de lo que se debe capturar (así es como la IA lo entiende)
-
-A partir de ese momento, la IA rellenará esa propiedad en cada chat relevante.
-
-<Warning>
-  Renombrar, añadir y eliminar propiedades y opciones solo está disponible para el rol de **Administrador**. Los empleados pueden cambiar el **valor** de una propiedad, pero no la propiedad en sí.
-</Warning>
-
-## Personalizar una Propiedad Existente
+## Editar una Propiedad o sus Opciones
 
 <Steps>
   <Step title="Abre las Opciones de la Propiedad">
-    Todas las propiedades y opciones son personalizables: puedes renombrar, añadir o eliminar propiedades y sus opciones. Haz clic en los **tres puntos** junto a una propiedad para ver las opciones disponibles.
+    Las propiedades y sus opciones se pueden renombrar, ampliar o eliminar. Haz clic en los **tres puntos** junto a una propiedad para ver las opciones disponibles.
 
     ![Haz clic en los tres puntos para ver las opciones Renombrar propiedad y Eliminar propiedad](/images/bea-radar-5-property-menu.png)
   </Step>
   <Step title="Cambia un Valor o Añade una Opción">
-    Abre el desplegable de opciones para cambiar el valor de la propiedad o añadir una nueva opción a la lista. Luego haz clic en **Guardar cambios** para aplicarlos.
+    Abre el desplegable de opciones para cambiar el valor de la propiedad o añadir una opción nueva a la lista. Haz clic en **Save changes** para aplicar.
 
-    ![Cambia el valor de la propiedad o añade una nueva opción y guarda](/images/bea-radar-6.png)
+    ![Cambia el valor de la propiedad o añade una opción nueva y guarda](/images/bea-radar-6.png)
   </Step>
 </Steps>
 
-## Añadir una Nueva Propiedad de IA
+## Añadir una Propiedad
+
+Añade una propiedad cuando quieras capturar un campo concreto que no se haya creado por su cuenta. Se llega al mismo cuadro de diálogo desde el panel de propiedades de IA en un chat y desde **Team Inbox → Configuración** con **+ Add Property**.
 
 <Steps>
   <Step title="Haz Clic en 'Add AI Properties'">
-    Haz clic en el botón **"Add AI Properties"** en la parte superior del panel de Propiedades de IA.
+    Haz clic en el botón **"Add AI Properties"** en la parte superior del panel de propiedades de IA.
 
-    ![Botón Add AI Properties en la parte superior del panel de Propiedades de IA](/images/bea-radar-7-add-property-button.png)
+    ![Botón Add AI Properties en la parte superior del panel de propiedades de IA](/images/bea-radar-7-add-property-button.png)
   </Step>
   <Step title="Define la Propiedad">
-    Introduce el **Nombre de la propiedad**, elige el **Tipo de propiedad** (Texto/Número o Desplegable) y luego describe la propiedad.
+    Introduce el **Property name**, elige el **Property type**, Text/Number o Dropdown, y escribe una descripción breve de la propiedad. La descripción es lo que lee la IA para decidir qué capturar, así que indica exactamente qué representa el campo.
 
-    ![Diálogo Añadir propiedad con campos de nombre, tipo y descripción](/images/bea-radar-8.png)
+    ![Cuadro de diálogo de propiedad con los campos de nombre, tipo y descripción](/images/bea-radar-8.png)
   </Step>
 </Steps>
 
-<Tip>
-  La **descripción es crucial**: la IA entiende qué capturar a partir de ella. Escribe una frase breve y específica que describa exactamente lo que representa la propiedad.
-</Tip>
+A partir de ese momento, la IA rellena esa propiedad en cada chat relevante.
 
-## Configurar desde los Ajustes del Buzón de Equipo
+## Configurar desde los Ajustes del Team Inbox
 
-También puedes gestionar las Propiedades de IA fuera de un chat concreto, desde la configuración del Buzón de Equipo.
+Las propiedades también se pueden gestionar fuera de un chat concreto, desde los ajustes del Team Inbox.
 
 <Steps>
   <Step title="Abre la Página de Integración">
-    Puedes personalizar las Propiedades de IA directamente desde la página de **Integración** en la configuración del Buzón de Equipo.
+    Abre la página **Integration** en los ajustes del Team Inbox.
 
-    ![Página de Integración en la configuración del Buzón de Equipo](/images/bea-radar-13.png)
+    ![Página de integración en los ajustes del Team Inbox](/images/bea-radar-13.png)
   </Step>
-  <Step title="Abre la Configuración de Propiedades de IA">
-    Haz clic en **"AI Property Configuration"** para configurar tus Propiedades de IA.
+  <Step title="Abre AI Property Configuration">
+    Haz clic en **"AI Property Configuration"** para configurar tus propiedades de IA.
 
     ![Opción AI Property Configuration](/images/bea-radar-14.png)
   </Step>
 </Steps>
 
-## Siguientes Pasos
+## Comportamiento que Conviene Conocer
+
+- **Una propiedad nueva se rellena en adelante.** Después de añadir una propiedad, se rellena en los chats relevantes a partir de ese momento.
+- **La descripción define qué se captura.** La IA lee la descripción para decidir qué buscar, así que una descripción vaga produce valores vagos. Escribe una frase breve y específica.
+- **El conjunto creado automáticamente varía según el espacio de trabajo.** Las propiedades se deducen de tus propias conversaciones, así que otro negocio con BEA Radar ve un conjunto de campos distinto.
+- **Editar las opciones es solo para administradores.** Los empleados pueden seleccionar otro valor de una lista desplegable, pero no pueden añadir ni quitar las opciones que contiene.
+
+## Relacionado
 
 <CardGroup cols={2}>
   <Card title="Filtros de IA" icon="filter" href="/es/ai-agents/bea-radar/ai-filters">
-    Filtra toda tu bandeja de entrada por cualquiera de estas propiedades
+    Filtra el buzón por cualquiera de estas propiedades
   </Card>
   <Card title="Insights de IA en un Chat" icon="comments" href="/es/ai-agents/bea-radar/ai-insights">
-    Consulta el resumen comercial que la IA escribe en cada conversación
+    El resumen comercial escrito junto a cada conversación
   </Card>
 </CardGroup>

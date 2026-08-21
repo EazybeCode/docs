@@ -1,48 +1,64 @@
 ---
 title: "Filtros de IA"
-description: "Pesquise e filtre toda a sua Caixa de Entrada da Equipe por qualquer propriedade de IA do BEA Radar — padrão ou personalizada — e combine filtros para encontrar exatamente as conversas que importam."
+description: "Reduza a Caixa de Entrada da Equipe às conversas que precisam de atenção, usando o que o BEA Radar já leu nelas."
 ---
 
-## O Que os Filtros de IA Fazem
+Os filtros de IA reduzem a lista de conversas com base nos valores que o BEA Radar escreveu nelas. Você pode filtrar por qualquer propriedade de IA: os campos do resumo comercial, como intenção e urgência, as propriedades criadas para o seu negócio e as que um administrador adicionou.
 
-Pesquise e filtre **toda a sua caixa de entrada** por qualquer propriedade de IA, padrão ou personalizada.
+Os filtros podem ser acumulados e funcionam junto com os filtros de conversa padrão, então uma lista ampla pode ser reduzida a um conjunto específico de conversas.
 
-- *"Mostre todos os leads quentes sem objeções pendentes."*
-- *"Todas as conversas de alta urgência aguardando resposta."*
-- *"Todas as negociações interessadas no Plano Team."*
+<Note>
+  **Requisitos:** ao menos uma propriedade de IA precisa ter valor nas suas conversas. Uma propriedade adicionada há pouco ainda não tem valores e retorna uma lista vazia até que conversas sejam analisadas com ela.
+</Note>
 
-Em vez de rolar centenas de conversas, as certas aparecem com um clique.
+## Onde Encontrar
 
-## Filtrar Sua Caixa de Entrada
+O controle **AI filters** fica acima da lista de conversas na Team Inbox, ao lado dos filtros padrão.
+
+## Filtrar sua Caixa de Entrada
 
 <Steps>
   <Step title="Abra os Filtros de IA">
-    Clique em **"AI filters"** para filtrar sua lista de conversas com base em uma propriedade de IA.
+    Clique em **"AI filters"** para filtrar sua lista de conversas por uma propriedade de IA.
 
     ![Botão AI filters acima da lista de conversas](/images/bea-radar-9.png)
   </Step>
   <Step title="Selecione uma Propriedade de IA">
-    Selecione a propriedade de IA pela qual deseja filtrar — por exemplo, **"Conversation State"**.
+    Selecione a propriedade de IA pela qual quer filtrar, por exemplo **"Conversation State"**.
 
     ![Seleção da propriedade de IA Conversation State](/images/bea-radar-10.png)
   </Step>
   <Step title="Selecione um Valor da Propriedade">
-    Em seguida, selecione o valor da propriedade — por exemplo, **"Waiting on Rep"**.
+    Selecione o valor da propriedade, por exemplo **"Waiting on Rep"**.
 
     ![Seleção do valor Waiting on Rep](/images/bea-radar-11.png)
   </Step>
   <Step title="Adicione Mais Filtros">
-    Da mesma forma, você pode adicionar mais filtros para obter uma lista de conversas mais precisa e otimizada.
+    Adicione mais filtros da mesma forma para estreitar a lista.
 
     ![Combinação de vários filtros de IA](/images/bea-radar-12.png)
   </Step>
 </Steps>
 
-<Note>
-  Os filtros de IA podem ser combinados com os filtros de conversa padrão para uma lista ainda mais otimizada.
-</Note>
+## Combinar Filtros
 
-## Próximos Passos
+Vários filtros de IA podem ser aplicados ao mesmo tempo, e cada um estreita mais a lista. Os filtros de IA também podem ser combinados com os filtros de conversa padrão, como canal ou responsável, na mesma visualização.
+
+## Exemplos de Filtros
+
+| Para encontrar | Filtre por |
+|:---------------|:-----------|
+| Leads quentes sem nada travando | Intenção, combinada com Objeção vazia |
+| Conversas urgentes aguardando resposta da sua equipe | Urgência, combinada com Conversation State |
+| Todos os interessados em um plano específico | A propriedade de negócio que registra o plano de interesse |
+
+## Comportamentos a Conhecer
+
+- **Filtrar só muda o que é exibido.** Os filtros não excluem, movem nem editam conversas.
+- **Uma conversa aparece quando a propriedade tem valor.** Conversas em que a propriedade está vazia não são retornadas.
+- **Filtros acumulados estreitam, não ampliam.** Dois filtros que se excluem entre si retornam uma lista vazia.
+
+## Relacionado
 
 <CardGroup cols={2}>
   <Card title="Propriedades de IA" icon="sliders" href="/pt/ai-agents/bea-radar/ai-properties">

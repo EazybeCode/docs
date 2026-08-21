@@ -1,25 +1,31 @@
 ---
 title: "AI Insights on a Chat"
-description: "View the AI sales brief BEA Radar writes beside every WhatsApp conversation — summary, intent, urgency, objection, and the exact next action."
+description: "Open a conversation and know where it stands, without scrolling back through the thread."
 ---
 
-## The AI Sales Brief
+AI Insights is the sales brief BEA Radar writes on every conversation. It records five things: a plain-language summary of the thread, what the person wants, how time-sensitive the conversation is, what is holding the deal back, and the next step for the rep to take. The brief is written when the chat arrives and is updated as the conversation continues.
 
-On every chat — on any number type, and in 1:1 and group conversations alike — BEA Radar automatically fills in a ready-to-act brief:
+Nothing is configured to produce it. There are no rules to define and no chats to tag.
+
+<Note>
+  **Requirements:** access to the **Team Inbox**. The brief is written for every type of WhatsApp number: Personal WhatsApp, WhatsApp Business App, and WhatsApp Business API (WABA). Group chats receive the same brief as direct conversations.
+</Note>
+
+## What the Brief Records
 
 | Property | What it captures |
 |:---------|:-----------------|
-| **AI Summary** | A plain-language recap of the whole conversation — no scrolling |
-| **Intent** | What the person wants (e.g. *Wants a demo*, *Ready to buy*, *Just browsing*) |
+| **AI Summary** | A plain-language recap of the whole conversation |
+| **Intent** | What the person wants, for example *Wants a demo*, *Ready to buy*, or *Just browsing* |
 | **Urgency** | How time-sensitive the conversation is |
-| **Objection** | What's holding the deal back, if anything |
-| **Next Action** | The exact next step the rep should take |
+| **Objection** | What is holding the deal back, if anything |
+| **Next Action** | The next step the rep should take |
 
-No setup, no rules, no tagging — the brief is written the moment the chat comes in, and updates as the conversation continues.
+Alongside these, the chat also shows the properties specific to your business. See [AI Properties](/en/ai-agents/bea-radar/ai-properties).
 
-<Note>
-  The brief is written for **Personal WhatsApp**, **WhatsApp Business App**, and **WhatsApp Business API (WABA)** numbers alike, and group chats get the same treatment as direct ones.
-</Note>
+## Where to Find It
+
+Open a chat in the Team Inbox and open the **User Profile** panel on the right. The brief sits in that panel, below the AI properties.
 
 ## Viewing AI Insights
 
@@ -35,28 +41,30 @@ No setup, no rules, no tagging — the brief is written the moment the chat come
     ![Open a chat and open the User Profile panel](/images/bea-radar-2.png)
   </Step>
   <Step title="See Your AI Properties">
-    Here are your **AI Properties** — automatically created based on what your business tracks.
+    The **AI Properties** section lists the fields created for your business.
 
     ![AI Properties panel in the user profile](/images/bea-radar-3.png)
   </Step>
   <Step title="View Your AI Insights">
-    View your **AI Insights** — Summary, Intent, Urgency Reason, Next Action, and more — all analysed by BEA Radar.
+    Below it, **AI Insights** shows the brief: Summary, Intent, Urgency Reason, Next Action, and the rest of the fields analysed by BEA Radar.
 
     ![AI Insights showing Summary, Intent, Urgency Reason and Next Action](/images/bea-radar-4.png)
   </Step>
 </Steps>
 
-<Tip>
-  The brief refreshes as the conversation continues, so reopening a chat later always shows the current state — not what it looked like when the chat first arrived.
-</Tip>
+## Behaviour to Be Aware Of
 
-## Next Steps
+- **The brief updates as the conversation continues.** Reopening a chat later shows the current state, not the state at the time the chat first arrived.
+- **The brief is written automatically.** There is no tagging step, no keyword list, and no rule to configure.
+- **The conversation is read for meaning.** Fields are filled from what the conversation says, not from keyword matches.
+
+## Related
 
 <CardGroup cols={2}>
   <Card title="AI Properties" icon="sliders" href="/en/ai-agents/bea-radar/ai-properties">
-    Customise, add, and configure the fields the AI fills in
+    Add, edit, and configure the fields the AI fills in
   </Card>
   <Card title="AI Filters" icon="filter" href="/en/ai-agents/bea-radar/ai-filters">
-    Filter your whole inbox by any AI property
+    Filter the inbox by any AI property
   </Card>
 </CardGroup>

@@ -1,62 +1,70 @@
 ---
 title: "Insights de IA em uma Conversa"
-description: "Veja o resumo comercial que o BEA Radar escreve ao lado de cada conversa do WhatsApp — resumo, intenção, urgência, objeção e a próxima ação exata."
+description: "Abra uma conversa e saiba em que ponto ela está, sem voltar a rolar o histórico."
 ---
 
-## O Resumo Comercial de IA
+Insights de IA é o resumo comercial que o BEA Radar escreve em cada conversa. Ele registra cinco coisas: um resumo do histórico em linguagem simples, o que a pessoa quer, quão sensível ao tempo é a conversa, o que está travando a negociação e o próximo passo do representante. O resumo é escrito quando a conversa chega e é atualizado conforme ela avança.
 
-Em cada conversa — em qualquer tipo de número, e tanto em conversas individuais quanto em grupos — o BEA Radar preenche automaticamente um resumo pronto para ação:
+Não é preciso configurar nada para obtê-lo. Não há regras a definir nem conversas a marcar.
+
+<Note>
+  **Requisitos:** acesso à **Team Inbox** (Caixa de Entrada da Equipe). O resumo é escrito para todos os tipos de número do WhatsApp: WhatsApp Pessoal, WhatsApp Business App e WhatsApp Business API (WABA). Conversas em grupo recebem o mesmo resumo que as individuais.
+</Note>
+
+## O que o Resumo Registra
 
 | Propriedade | O que captura |
 |:------------|:--------------|
-| **Resumo de IA** | Uma recapitulação em linguagem simples de toda a conversa — sem rolagem |
-| **Intenção** | O que a pessoa quer (ex.: *Quer uma demo*, *Pronto para comprar*, *Só pesquisando*) |
-| **Urgência** | Quão sensível ao tempo é a conversa |
-| **Objeção** | O que está travando a negociação, se houver algo |
-| **Próxima ação** | O próximo passo exato que o representante deve dar |
+| **AI Summary** | Uma recapitulação de toda a conversa em linguagem simples |
+| **Intent** | O que a pessoa quer, por exemplo *Quer uma demo*, *Pronto para comprar* ou *Só pesquisando* |
+| **Urgency** | Quão sensível ao tempo é a conversa |
+| **Objection** | O que está travando a negociação, se houver algo |
+| **Next Action** | O próximo passo que o representante deve dar |
 
-Sem configuração, sem regras, sem marcação: o resumo é escrito assim que a conversa chega e é atualizado conforme ela avança.
+Ao lado desses campos, a conversa mostra também as propriedades específicas do seu negócio. Consulte [Propriedades de IA](/pt/ai-agents/bea-radar/ai-properties).
 
-<Note>
-  O resumo é escrito da mesma forma para números de **WhatsApp Pessoal**, **WhatsApp Business App** e **WhatsApp Business API (WABA)**, e as conversas em grupo recebem o mesmo tratamento que as individuais.
-</Note>
+## Onde Encontrar
+
+Abra uma conversa na Team Inbox e abra o painel **User Profile** à direita. O resumo fica nesse painel, abaixo das propriedades de IA.
 
 ## Ver os Insights de IA
 
 <Steps>
-  <Step title="Abra a Caixa de Entrada da Equipe">
+  <Step title="Abra a Team Inbox">
     Clique em **"Team Inbox"** no menu de navegação.
 
     ![Clique em Team Inbox](/images/bea-radar-1.png)
   </Step>
-  <Step title="Abra uma Conversa e o Perfil do Usuário">
-    Abra qualquer conversa e, em seguida, abra o painel **Perfil do usuário** à direita.
+  <Step title="Abra uma Conversa e Veja o Perfil do Usuário">
+    Abra qualquer conversa e depois abra o painel **User Profile** à direita.
 
-    ![Abra uma conversa e o painel de perfil do usuário](/images/bea-radar-2.png)
+    ![Abra uma conversa e abra o painel User Profile](/images/bea-radar-2.png)
   </Step>
-  <Step title="Veja Suas Propriedades de IA">
-    Aqui estão suas **Propriedades de IA**, criadas automaticamente com base no que o seu negócio acompanha.
+  <Step title="Veja suas Propriedades de IA">
+    A seção **AI Properties** lista os campos criados para o seu negócio.
 
-    ![Painel de Propriedades de IA no perfil do usuário](/images/bea-radar-3.png)
+    ![Painel de propriedades de IA no perfil do usuário](/images/bea-radar-3.png)
   </Step>
-  <Step title="Veja Seus Insights de IA">
-    Veja seus **Insights de IA** — Resumo, Intenção, Motivo da urgência, Próxima ação e mais — tudo analisado pelo BEA Radar.
+  <Step title="Veja seus Insights de IA">
+    Abaixo dela, **AI Insights** mostra o resumo: Summary, Intent, Urgency Reason, Next Action e os demais campos analisados pelo BEA Radar.
 
-    ![Insights de IA com Resumo, Intenção, Motivo da urgência e Próxima ação](/images/bea-radar-4.png)
+    ![Insights de IA com Summary, Intent, Urgency Reason e Next Action](/images/bea-radar-4.png)
   </Step>
 </Steps>
 
-<Tip>
-  O resumo é atualizado conforme a conversa avança, então reabrir uma conversa mais tarde sempre mostra o estado atual — não como ela estava quando chegou.
-</Tip>
+## Comportamentos a Conhecer
 
-## Próximos Passos
+- **O resumo é atualizado conforme a conversa avança.** Ao reabrir uma conversa mais tarde, você vê o estado atual, não o estado de quando a conversa chegou.
+- **O resumo é escrito automaticamente.** Não há etapa de marcação, lista de palavras-chave nem regra a configurar.
+- **A conversa é lida pelo significado.** Os campos são preenchidos a partir do que a conversa diz, não de correspondências de palavras-chave.
+
+## Relacionado
 
 <CardGroup cols={2}>
   <Card title="Propriedades de IA" icon="sliders" href="/pt/ai-agents/bea-radar/ai-properties">
-    Personalize, adicione e configure os campos que a IA preenche
+    Adicione, edite e configure os campos que a IA preenche
   </Card>
   <Card title="Filtros de IA" icon="filter" href="/pt/ai-agents/bea-radar/ai-filters">
-    Filtre toda a sua caixa de entrada por qualquer propriedade de IA
+    Filtre a caixa de entrada por qualquer propriedade de IA
   </Card>
 </CardGroup>

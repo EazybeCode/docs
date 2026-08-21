@@ -1,22 +1,14 @@
 ---
 title: "BEA Radar Overview"
-description: "BEA Radar is Eazybe's WhatsApp Sales Intelligence layer — it reads every conversation, writes a sales brief, creates the fields your business tracks, and syncs everything to your CRM."
+description: "Every WhatsApp conversation arrives already summarised, prioritised, and logged to your CRM, without anyone tagging chats by hand."
 ---
 
-## What Is BEA Radar?
+BEA Radar reads each WhatsApp conversation in your Team Inbox and writes what it finds into structured fields on the chat: a plain-language summary, what the person wants, how time-sensitive the conversation is, what is holding it back, and the next step for the rep. Alongside those, it works out which fields your own business tracks, such as budget, plan interest, or travel dates, creates them, and keeps them filled. Every field is then written to the matching record in your CRM.
 
-**BEA Radar** is Eazybe's AI layer that turns every WhatsApp conversation into structured, actionable sales data — automatically.
-
-The moment a message lands, the AI reads the conversation and writes a **sales brief** right beside the chat: what it's about, what the person wants, how urgent it is, and the exact next step. It goes further — it **works out the custom fields your business tracks and creates them on its own**, lets you **filter your entire inbox** by any of them, and **pushes everything to your CRM** with no manual entry.
+It works with every type of WhatsApp number: Personal WhatsApp, the WhatsApp Business App, and WhatsApp Business API (WABA). Group chats are covered the same as direct ones, and there is nothing to enable per number or per chat type.
 
 <Note>
-  **In one line:** your reps read chats — Eazybe reads the deal.
-</Note>
-
-Think of it as conversation intelligence built for WhatsApp: self-configuring, and living right inside the inbox your team already uses.
-
-<Note>
-  **Works with every WhatsApp number.** BEA Radar analyses conversations on **Personal WhatsApp**, **WhatsApp Business App**, and **WhatsApp Business API (WABA)** numbers — and it covers both **1:1 chats and group chats**. There's nothing to enable per number or per chat type.
+  **Requirements:** access to the **Team Inbox**, and a connected CRM if you want properties written back to contact and deal records. Adding, renaming, and deleting properties requires the **Admin** role. BEA Radar is available on Eazybe's AI plans.
 </Note>
 
 ## Watch the Walkthrough
@@ -25,128 +17,96 @@ Think of it as conversation intelligence built for WhatsApp: self-configuring, a
   <iframe src="https://www.youtube.com/embed/QjiKNjsTXwQ?rel=0" width="100%" height="400" frameborder="0" allowfullscreen></iframe>
 </Frame>
 
-## The Problem It Solves
-
-Sales and support teams run hundreds of WhatsApp chats a day. In that volume:
-
-- The deal that's **about to close** looks identical to small talk in the chat list.
-- Buying signals — *"send pricing," "we'll decide Friday"* — get **buried and forgotten**.
-- Reps waste hours **scrolling long threads** to remember where a conversation stands.
-- The **CRM is always out of date**, because nobody has time to log chats by hand.
-- Managers have **no structured view** of what's actually happening across conversations.
-
-BEA Radar removes the manual reading, tagging, and logging — so the signal surfaces on its own and the CRM stays current without effort.
-
 ## How It Works
 
-```
-  Every WhatsApp chat
-          ↓
-  AI reads the conversation
-          ↓
-  Writes a sales brief  +  auto-creates the fields your business tracks
-          ↓
-  You filter the inbox to the chats that matter
-          ↓
-  Everything syncs to your CRM — automatically
-```
+Each conversation moves through six stages.
 
-1. **Capture** — the AI observes incoming WhatsApp chats in the Team Inbox in real time, across every connected number (Personal, Business App, and WABA) and in both 1:1 and group chats.
-2. **Read & analyse** — it interprets the conversation, not just keywords, but the actual meaning.
-3. **Fill in properties** — it writes a structured set of fields on the chat.
-4. **Self-configure** — it detects the company-specific properties worth tracking and creates them.
-5. **Surface** — the AI Filter lets you retrieve exactly the chats you want.
-6. **Sync** — every property is pushed to the connected CRM record.
+| Stage | What happens |
+|:------|:-------------|
+| **Capture** | Incoming WhatsApp chats in the Team Inbox are observed in real time, across every connected number and in both 1:1 and group chats |
+| **Read and analyse** | The conversation is interpreted for meaning rather than matched against keywords |
+| **Fill in properties** | A structured set of fields is written on the chat |
+| **Self-configure** | Company-specific properties worth tracking are detected and created |
+| **Surface** | The **AI filters** control retrieves the chats that match those properties |
+| **Sync** | Each property is written to the connected CRM record |
 
-## Automatic CRM Sync
+Analysis begins as soon as a message arrives. There is nothing to trigger.
 
-Every property — auto-created, default, or admin-defined — is **pushed straight into the CRM** on the matching contact or deal record.
+## Where to Find It
 
-- Supported CRMs: **HubSpot, Salesforce, Zoho** (and Eazybe's broader integration set).
-- No copy-paste, no manual logging — the CRM reflects what's actually happening in the chat.
-- Keeps records current in real time as conversations evolve.
-
-<Tip>
-  Confirm your CRM connection before relying on sync, so properties land on the right contact and deal records from day one.
-</Tip>
-
-## Where It Lives
+BEA Radar sits inside the Team Inbox rather than in a separate dashboard.
 
 - **In the chat:** the AI properties panel is pinned beside each conversation in the **Team Inbox**.
-- **Configuration:** **Team Inbox → Settings** (Add Property, manage fields).
-- **Retrieval:** the **AI Filter** sits at the top of the inbox.
-- **Destination:** synced into the connected **CRM** record.
+- **Configuration:** **Team Inbox → Settings**, for adding and managing properties.
+- **Retrieval:** the **AI filters** control sits above the chat list.
+- **Destination:** the connected CRM record.
 
-It sits inside the tools your team already uses daily — nothing new to open, no migration.
+## What BEA Radar Records
 
-## Who It's For
+Three groups of properties are written on every chat.
 
-| Segment | Why it matters |
-|:--------|:---------------|
-| **Sales teams** | Instantly see who's about to buy; never let a hot lead go cold |
-| **Support teams** | Spot escalations and objections without reading every thread |
-| **Managers / RevOps** | A structured, filterable view of every conversation, plus a clean CRM |
-| **Agencies** | Deploy across many client inboxes; each one self-configures |
+| Group | What it holds | Where to read more |
+|:------|:--------------|:-------------------|
+| **The AI sales brief** | A fixed set of fields written on every conversation: summary, intent, urgency, objection, and next action | [AI Insights on a Chat](/en/ai-agents/bea-radar/ai-insights) |
+| **Auto-created business properties** | Fields derived from your own conversations, so the set differs by business. A travel team gets destination and travel dates; a SaaS team gets plan interest and seat count | [AI Properties](/en/ai-agents/bea-radar/ai-properties) |
+| **Admin-defined properties** | Fields an Admin adds, described in a sentence so the AI knows what to capture | [AI Properties](/en/ai-agents/bea-radar/ai-properties) |
 
-**High-fit verticals** (WhatsApp-first, high chat volume): real estate, EdTech, travel, D2C e-commerce, healthcare, and agencies.
+Any of the three can be used as a filter across the whole inbox. See [AI Filters](/en/ai-agents/bea-radar/ai-filters).
 
-## Key Benefits at a Glance
+## CRM Sync
+
+Every property, whether part of the sales brief, auto-created, or added by an Admin, is written to the matching contact or deal record in the connected CRM. Records update as conversations continue, so no chat has to be logged by hand.
+
+Supported CRMs are **HubSpot**, **Salesforce**, and **Zoho**, along with Eazybe's broader integration set.
+
+Confirm your CRM connection before relying on sync, so properties land on the right contact and deal records.
+
+## Behaviour to Be Aware Of
+
+- **The auto-created set differs per workspace.** Properties are derived from your own conversations, so two businesses on BEA Radar see different fields. They appear over your first conversations rather than all at once.
+- **The brief updates as the conversation continues.** Reopening a chat later shows the current state, not the state at the time the chat arrived.
+- **New properties fill going forward.** A property added today is filled on relevant chats from that point on.
+- **A property's description defines what is captured.** For admin-defined properties, the AI reads the description to decide what to look for.
+- **Property management is Admin-only.** Employees can change a property's value on a chat, but cannot add, rename, or delete properties or their options.
+
+## Troubleshooting
+
+| Issue | Cause and resolution |
+|:------|:---------------------|
+| Properties appear in the Team Inbox but not on the CRM record | The CRM is not connected, or the chat's number has no matching contact or deal record. Check the connection and confirm the contact exists in the CRM. |
+| A property cannot be renamed or deleted | Renaming, adding, and deleting properties and options is available to the **Admin** role only. Employees can change a property's value, not the property itself. |
+| An AI filter returns no chats | No chat has a value for that property yet, or the stacked filters exclude one another. Remove filters one at a time to find the one emptying the list. |
+
+## FAQ
+
+<AccordionGroup>
+  <Accordion title="Does it work on all my WhatsApp numbers?">
+    Yes. Every type of WhatsApp number is covered: Personal WhatsApp, WhatsApp Business App, and WhatsApp Business API (WABA). There is nothing to enable per number.
+  </Accordion>
+  <Accordion title="Are group chats analysed too?">
+    Yes. Group chats receive the same properties as direct conversations, with no separate setup.
+  </Accordion>
+  <Accordion title="Can an employee change a property value?">
+    Yes. Employees can change the value of a property on a chat. Adding, renaming, and deleting the property itself, and editing its dropdown options, requires the Admin role.
+  </Accordion>
+  <Accordion title="Do I have to create the properties myself?">
+    No. BEA Radar detects the properties your business tracks from your conversations and creates them. Adding your own is optional, for a field you want captured that the AI has not created.
+  </Accordion>
+</AccordionGroup>
+
+## Related
 
 <CardGroup cols={2}>
-  <Card title="Zero Setup" icon="bolt">
-    The AI configures itself from your conversations
-  </Card>
-  <Card title="Instant Context" icon="brain">
-    Open any chat and the sales brief is already written
-  </Card>
-  <Card title="Never Miss a Deal" icon="bullseye">
-    Buying signals surface automatically
-  </Card>
-  <Card title="Find Anything" icon="magnifying-glass">
-    Filter the whole inbox by any property in one click
-  </Card>
-  <Card title="An Always-Current CRM" icon="rotate">
-    Synced for you, with no manual entry
-  </Card>
-  <Card title="No New Tool to Learn" icon="house">
-    It lives inside your existing Team Inbox
-  </Card>
-</CardGroup>
-
-## Getting Started
-
-<Steps>
-  <Step title="Open Team Inbox">
-    The AI begins reading new chats and writing sales briefs immediately.
-  </Step>
-  <Step title="Let It Auto-Create Properties">
-    Watch it auto-create the properties relevant to your business over your first conversations.
-  </Step>
-  <Step title="Add Your Own Fields (Optional)">
-    Add any specific field via **Settings → Add Property**.
-  </Step>
-  <Step title="Use the AI Filter">
-    Surface the chats that matter in one click.
-  </Step>
-  <Step title="Confirm Your CRM Connection">
-    Make sure your CRM is connected so properties sync to the right records.
-  </Step>
-</Steps>
-
-<Note>
-  BEA Radar is available on Eazybe's AI plans. To see it working on your own chats, book a demo with our team.
-</Note>
-
-## Next Steps
-
-<CardGroup cols={3}>
   <Card title="AI Insights on a Chat" icon="comments" href="/en/ai-agents/bea-radar/ai-insights">
-    See the sales brief the AI writes on every conversation
+    The sales brief written beside every conversation
   </Card>
   <Card title="AI Properties" icon="sliders" href="/en/ai-agents/bea-radar/ai-properties">
-    Customise, add, and configure the fields the AI fills in
+    Add, edit, and configure the fields the AI fills in
   </Card>
   <Card title="AI Filters" icon="filter" href="/en/ai-agents/bea-radar/ai-filters">
-    Filter your whole inbox by any AI property
+    Filter the inbox by any AI property
+  </Card>
+  <Card title="Deal Analysis" icon="chart-line" href="/en/ai-agents/bea-radar/deal-analysis">
+    The same analysis applied to deals in your CRM
   </Card>
 </CardGroup>

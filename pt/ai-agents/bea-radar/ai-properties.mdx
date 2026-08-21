@@ -1,92 +1,100 @@
 ---
 title: "Propriedades de IA"
-description: "Entenda as propriedades que o BEA Radar cria sozinho, personalize propriedades e opções existentes, adicione seus próprios campos e configure tudo nas configurações da Caixa de Entrada da Equipe."
+description: "Controle quais campos o BEA Radar acompanha nas suas conversas, dos que ele cria sozinho aos que você define."
 ---
 
-## Propriedades da Empresa Criadas Automaticamente
+As Propriedades de IA são os campos que o BEA Radar preenche em cada conversa. Elas vêm de dois lugares. A maioria é criada pelo próprio BEA Radar: ele lê suas conversas, deduz o que sua equipe acompanha e cria esses campos. As demais são adicionadas por um administrador, para qualquer dado específico que você queira capturar e que não tenha sido criado sozinho.
 
-O recurso de destaque: **a IA cria as propriedades que o seu negócio precisa, por conta própria.**
+Os dois tipos se comportam da mesma forma depois de existirem. São preenchidos em cada conversa relevante, servem para filtrar a caixa de entrada e são escritos no registro do CRM conectado.
 
-Ela estuda suas conversas, descobre o que sua equipe realmente acompanha e **gera esses campos personalizados automaticamente** — depois os mantém preenchidos em cada conversa.
+<Note>
+  **Requisitos:** a função de **Administrador** é necessária para adicionar, renomear ou excluir propriedades e suas opções. Os funcionários podem alterar o **valor** de uma propriedade em uma conversa, mas não a propriedade em si.
+</Note>
 
-- Uma equipe de **imóveis** recebe campos como *Tipo de imóvel* e *Orçamento*.
-- Uma equipe de **SaaS** recebe *Plano de interesse* e *Número de licenças*.
-- Uma equipe de **viagens** recebe *Destino* e *Datas da viagem*.
+## Tipos de Propriedade
 
-Você não configura nada. Ela aprende sobre o seu negócio pelas suas conversas.
+Cada propriedade é de um destes dois tipos.
 
-## Propriedades Personalizadas
+| Tipo | O que armazena |
+|:-----|:---------------|
+| **Text/Number** | Um valor livre, como uma cifra de orçamento ou um destino |
+| **Dropdown** | Um valor escolhido em uma lista fixa de opções que você define, como *Quente*, *Morno*, *Frio* |
 
-Quando você quiser um campo específico, os administradores podem adicioná-lo em poucos cliques em **Caixa de Entrada da Equipe → Configurações**:
+## Propriedades Criadas Automaticamente
 
-1. Clique em **+ Adicionar propriedade**
-2. Escolha o tipo — **Texto/Número** ou **Lista suspensa**
-3. Escreva uma breve **descrição** do que deve ser capturado (é assim que a IA entende)
+O BEA Radar estuda suas conversas, deduz quais campos sua equipe acompanha e os cria. Depois os mantém preenchidos em cada conversa. O conjunto resultante varia conforme o negócio:
 
-A partir daí, a IA preenche essa propriedade em cada conversa relevante.
+- Uma equipe **imobiliária** recebe campos como *Tipo de imóvel* e *Orçamento*.
+- Uma equipe **SaaS** recebe *Plano de interesse* e *Número de licenças*.
+- Uma equipe de **viagens** recebe *Destino* e *Datas de viagem*.
 
-<Warning>
-  Renomear, adicionar e excluir propriedades e opções está disponível apenas para o perfil de **Administrador**. Os funcionários podem alterar o **valor** de uma propriedade, mas não a propriedade em si.
-</Warning>
+Não é preciso configurar nada para começar. O conjunto é aprendido das suas conversas e se forma ao longo das primeiras delas.
 
-## Personalizar uma Propriedade Existente
+## Editar uma Propriedade ou suas Opções
 
 <Steps>
   <Step title="Abra as Opções da Propriedade">
-    Todas as propriedades e opções são personalizáveis: você pode renomear, adicionar ou excluir propriedades e suas opções. Clique nos **três pontos** ao lado de uma propriedade para ver as opções disponíveis.
+    Propriedades e suas opções podem ser renomeadas, ampliadas ou excluídas. Clique nos **três pontos** ao lado de uma propriedade para ver as opções disponíveis.
 
     ![Clique nos três pontos para ver as opções Renomear propriedade e Excluir propriedade](/images/bea-radar-5-property-menu.png)
   </Step>
   <Step title="Altere um Valor ou Adicione uma Opção">
-    Abra a lista suspensa de opções para alterar o valor da propriedade ou adicionar uma nova opção à lista. Depois clique em **Salvar alterações** para aplicar.
+    Abra a lista suspensa de opções para alterar o valor da propriedade ou adicionar uma nova opção à lista. Clique em **Save changes** para aplicar.
 
     ![Altere o valor da propriedade ou adicione uma nova opção e salve](/images/bea-radar-6.png)
   </Step>
 </Steps>
 
-## Adicionar uma Nova Propriedade de IA
+## Adicionar uma Propriedade
+
+Adicione uma propriedade quando quiser capturar um campo específico que não tenha sido criado sozinho. Chega-se à mesma caixa de diálogo pelo painel de propriedades de IA em uma conversa e por **Team Inbox → Configurações**, usando **+ Add Property**.
 
 <Steps>
   <Step title="Clique em 'Add AI Properties'">
-    Clique no botão **"Add AI Properties"** no topo do painel de Propriedades de IA.
+    Clique no botão **"Add AI Properties"** no topo do painel de propriedades de IA.
 
-    ![Botão Add AI Properties no topo do painel de Propriedades de IA](/images/bea-radar-7-add-property-button.png)
+    ![Botão Add AI Properties no topo do painel de propriedades de IA](/images/bea-radar-7-add-property-button.png)
   </Step>
   <Step title="Defina a Propriedade">
-    Informe o **Nome da propriedade**, escolha o **Tipo de propriedade** (Texto/Número ou Lista suspensa) e depois descreva a propriedade.
+    Informe o **Property name**, escolha o **Property type**, Text/Number ou Dropdown, e escreva uma descrição curta da propriedade. A descrição é o que a IA lê para decidir o que capturar, então indique exatamente o que o campo representa.
 
-    ![Caixa de diálogo Adicionar propriedade com campos de nome, tipo e descrição](/images/bea-radar-8.png)
+    ![Caixa de diálogo de propriedade com os campos de nome, tipo e descrição](/images/bea-radar-8.png)
   </Step>
 </Steps>
 
-<Tip>
-  A **descrição é crucial** — é a partir dela que a IA entende o que deve capturar. Escreva uma frase curta e específica descrevendo exatamente o que a propriedade representa.
-</Tip>
+A partir desse momento, a IA preenche essa propriedade em cada conversa relevante.
 
-## Configurar nas Configurações da Caixa de Entrada da Equipe
+## Configurar pelas Configurações da Team Inbox
 
-Você também pode gerenciar as Propriedades de IA fora de uma conversa específica, nas configurações da Caixa de Entrada da Equipe.
+As propriedades também podem ser gerenciadas fora de uma conversa específica, pelas configurações da Team Inbox.
 
 <Steps>
   <Step title="Abra a Página de Integração">
-    Você pode personalizar as Propriedades de IA diretamente na página de **Integração**, nas configurações da Caixa de Entrada da Equipe.
+    Abra a página **Integration** nas configurações da Team Inbox.
 
-    ![Página de Integração nas configurações da Caixa de Entrada da Equipe](/images/bea-radar-13.png)
+    ![Página de integração nas configurações da Team Inbox](/images/bea-radar-13.png)
   </Step>
-  <Step title="Abra a Configuração de Propriedades de IA">
-    Clique em **"AI Property Configuration"** para configurar suas Propriedades de IA.
+  <Step title="Abra AI Property Configuration">
+    Clique em **"AI Property Configuration"** para configurar suas propriedades de IA.
 
     ![Opção AI Property Configuration](/images/bea-radar-14.png)
   </Step>
 </Steps>
 
-## Próximos Passos
+## Comportamentos a Conhecer
+
+- **Uma propriedade nova é preenchida dali em diante.** Depois de adicionar uma propriedade, ela é preenchida nas conversas relevantes a partir daquele momento.
+- **A descrição define o que é capturado.** A IA lê a descrição para decidir o que procurar, então uma descrição vaga produz valores vagos. Escreva uma frase curta e específica.
+- **O conjunto criado automaticamente varia por espaço de trabalho.** As propriedades são deduzidas das suas próprias conversas, então outro negócio com BEA Radar vê um conjunto de campos diferente.
+- **Editar as opções é apenas para administradores.** Os funcionários podem selecionar outro valor em uma lista suspensa, mas não podem adicionar nem remover as opções nela.
+
+## Relacionado
 
 <CardGroup cols={2}>
   <Card title="Filtros de IA" icon="filter" href="/pt/ai-agents/bea-radar/ai-filters">
-    Filtre toda a sua caixa de entrada por qualquer uma dessas propriedades
+    Filtre a caixa de entrada por qualquer uma dessas propriedades
   </Card>
   <Card title="Insights de IA em uma Conversa" icon="comments" href="/pt/ai-agents/bea-radar/ai-insights">
-    Veja o resumo comercial que a IA escreve em cada conversa
+    O resumo comercial escrito ao lado de cada conversa
   </Card>
 </CardGroup>
