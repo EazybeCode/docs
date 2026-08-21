@@ -1,22 +1,14 @@
 ---
 title: "BEA Radar Genel Bakış"
-description: "BEA Radar, Eazybe'nin WhatsApp Satış Zekâsı katmanıdır: her sohbeti okur, bir satış özeti yazar, işletmenizin takip ettiği alanları oluşturur ve her şeyi CRM'inize senkronize eder."
+description: "Her WhatsApp görüşmesi özetlenmiş, önceliklendirilmiş ve CRM'inize kaydedilmiş halde gelir; kimsenin sohbetleri elle etiketlemesi gerekmez."
 ---
 
-## BEA Radar Nedir?
+BEA Radar, **Team Inbox** (Takım Gelen Kutusu) içindeki her WhatsApp görüşmesini okur ve bulduklarını sohbetin üzerindeki yapılandırılmış alanlara yazar: sade dille bir özet, kişinin ne istediği, görüşmenin ne kadar aciliyet taşıdığı, anlaşmayı neyin engellediği ve temsilcinin atması gereken bir sonraki adım. Bunların yanı sıra, işletmenizin kendi takip ettiği alanları (bütçe, ilgilenilen paket veya seyahat tarihleri gibi) tespit eder, bu alanları oluşturur ve dolu tutar. Her alan daha sonra CRM'inizdeki ilgili kayda yazılır.
 
-**BEA Radar**, Eazybe'nin her WhatsApp sohbetini otomatik olarak yapılandırılmış ve harekete geçirilebilir satış verisine dönüştüren yapay zekâ katmanıdır.
-
-Bir mesaj geldiği anda yapay zekâ sohbeti okur ve sohbetin hemen yanına bir **satış özeti** yazar: konunun ne olduğu, karşıdaki kişinin ne istediği, ne kadar acil olduğu ve atılacak tam sonraki adım. Dahası: işletmenizin takip ettiği **özel alanları kendisi belirleyip oluşturur**, tüm gelen kutunuzu bunların herhangi biriyle **filtrelemenizi** sağlar ve hiçbir manuel giriş olmadan **her şeyi CRM'inize aktarır**.
+Her tür WhatsApp numarasıyla çalışır: Kişisel WhatsApp, WhatsApp Business App ve WhatsApp Business API (WABA). Grup sohbetleri bireysel sohbetlerle aynı şekilde kapsanır ve numara ya da sohbet türü başına etkinleştirilmesi gereken bir şey yoktur.
 
 <Note>
-  **Tek cümlede:** temsilcileriniz sohbetleri okur — Eazybe satışı okur.
-</Note>
-
-Bunu WhatsApp için tasarlanmış bir konuşma zekâsı olarak düşünün: kendi kendini yapılandırır ve ekibinizin zaten kullandığı gelen kutusunun içinde yaşar.
-
-<Note>
-  **Her WhatsApp numarasıyla çalışır.** BEA Radar; **Kişisel WhatsApp**, **WhatsApp Business App** ve **WhatsApp Business API (WABA)** numaralarındaki sohbetleri analiz eder — hem **birebir sohbetleri hem de grup sohbetlerini** kapsar. Numara ya da sohbet türü başına etkinleştirmeniz gereken bir şey yoktur.
+  **Gereksinimler:** **Team Inbox** erişimi ve özelliklerin kişi ve anlaşma kayıtlarına yazılmasını istiyorsanız bağlı bir CRM. Özellik ekleme, yeniden adlandırma ve silme işlemleri **Yönetici** rolü gerektirir. BEA Radar, Eazybe'nin yapay zekâ planlarında sunulur.
 </Note>
 
 ## Tanıtım Videosunu İzleyin
@@ -25,128 +17,96 @@ Bunu WhatsApp için tasarlanmış bir konuşma zekâsı olarak düşünün: kend
   <iframe src="https://www.youtube.com/embed/QjiKNjsTXwQ?rel=0" width="100%" height="400" frameborder="0" allowfullscreen></iframe>
 </Frame>
 
-## Çözdüğü Sorun
-
-Satış ve destek ekipleri günde yüzlerce WhatsApp sohbeti yürütür. Bu yoğunlukta:
-
-- **Kapanmak üzere olan** fırsat, sohbet listesinde sıradan bir mesajla aynı görünür.
-- Satın alma sinyalleri — *"fiyat gönderin", "cuma karar vereceğiz"* — **gözden kaçar ve unutulur**.
-- Temsilciler bir sohbetin hangi aşamada olduğunu hatırlamak için **uzun konuşmalarda saatlerce gezinir**.
-- **CRM her zaman güncel değildir**, çünkü kimsenin sohbetleri elle kaydetmeye vakti yoktur.
-- Yöneticilerin sohbetlerde gerçekte ne olup bittiğine dair **yapılandırılmış bir görünümü yoktur**.
-
-BEA Radar manuel okuma, etiketleme ve kaydetme işini ortadan kaldırır — böylece sinyal kendiliğinden öne çıkar ve CRM zahmetsizce güncel kalır.
-
 ## Nasıl Çalışır
 
-```
-  Her WhatsApp sohbeti
-          ↓
-  Yapay zekâ sohbeti okur
-          ↓
-  Satış özeti yazar  +  işletmenizin takip ettiği alanları otomatik oluşturur
-          ↓
-  Gelen kutusunu önemli sohbetlere göre filtrelersiniz
-          ↓
-  Her şey CRM'inize senkronize edilir — otomatik olarak
-```
+Her görüşme altı aşamadan geçer.
 
-1. **Yakalama** — yapay zekâ, Takım Gelen Kutusu'na gelen WhatsApp sohbetlerini gerçek zamanlı izler; bağlı tüm numaralarda (Kişisel, Business App ve WABA) ve hem birebir hem grup sohbetlerinde.
-2. **Okuma ve analiz** — sohbeti yalnızca anahtar kelimelerle değil, gerçek anlamıyla yorumlar.
-3. **Özellikleri doldurma** — sohbete yapılandırılmış bir alan kümesi yazar.
-4. **Kendi kendini yapılandırma** — şirketinize özel, takip edilmeye değer özellikleri tespit eder ve oluşturur.
-5. **Öne çıkarma** — AI Filtresi tam olarak istediğiniz sohbetlere ulaşmanızı sağlar.
-6. **Senkronizasyon** — her özellik, bağlı CRM kaydına aktarılır.
+| Aşama | Ne olur |
+|:------|:--------|
+| **Yakalama** | Team Inbox'a gelen WhatsApp sohbetleri, bağlı tüm numaralarda ve hem bireysel hem grup sohbetlerinde gerçek zamanlı izlenir |
+| **Okuma ve analiz** | Görüşme, anahtar kelimelerle eşleştirilmek yerine anlamı üzerinden yorumlanır |
+| **Özellikleri doldurma** | Sohbete yapılandırılmış bir alan kümesi yazılır |
+| **Kendi kendini yapılandırma** | Şirketinize özgü, takip edilmeye değer özellikler tespit edilir ve oluşturulur |
+| **Öne çıkarma** | **AI filters** denetimi, bu özelliklerle eşleşen sohbetleri getirir |
+| **Senkronizasyon** | Her özellik, bağlı CRM kaydına yazılır |
 
-## Otomatik CRM Senkronizasyonu
-
-Her özellik — otomatik oluşturulan, varsayılan veya yönetici tanımlı — eşleşen kişi ya da fırsat kaydında **doğrudan CRM'e aktarılır**.
-
-- Desteklenen CRM'ler: **HubSpot, Salesforce, Zoho** (ve Eazybe'nin daha geniş entegrasyon kümesi).
-- Kopyala-yapıştır yok, manuel kayıt yok: CRM, sohbette gerçekte olup biteni yansıtır.
-- Sohbetler geliştikçe kayıtları gerçek zamanlı güncel tutar.
-
-<Tip>
-  Senkronizasyona güvenmeden önce CRM bağlantınızı doğrulayın; böylece özellikler ilk günden itibaren doğru kişi ve fırsat kayıtlarına düşer.
-</Tip>
+Analiz, bir mesaj gelir gelmez başlar. Tetiklenmesi gereken bir şey yoktur.
 
 ## Nerede Bulunur
 
-- **Sohbette:** yapay zekâ özellikleri paneli, **Takım Gelen Kutusu**'nda her sohbetin yanına sabitlenmiştir.
-- **Yapılandırma:** **Takım Gelen Kutusu → Ayarlar** (Özellik Ekle, alanları yönet).
-- **Erişim:** **AI Filtresi** gelen kutusunun üst kısmında yer alır.
-- **Hedef:** bağlı **CRM** kaydına senkronize edilir.
+BEA Radar ayrı bir panelde değil, Team Inbox'ın içinde yer alır.
 
-Ekibinizin her gün kullandığı araçların içinde çalışır — açılacak yeni bir şey yok, taşıma yok.
+- **Sohbette:** yapay zekâ özellikleri paneli, **Team Inbox** içinde her görüşmenin yanına sabitlenmiştir.
+- **Yapılandırma:** özellik eklemek ve yönetmek için **Team Inbox → Ayarlar**.
+- **Erişim:** **AI filters** denetimi, sohbet listesinin üstünde yer alır.
+- **Hedef:** bağlı CRM kaydı.
 
-## Kimler İçin
+## BEA Radar Neleri Kaydeder
 
-| Segment | Neden önemli |
-|:--------|:-------------|
-| **Satış ekipleri** | Kimin satın almak üzere olduğunu anında görün; sıcak bir fırsatı asla soğutmayın |
-| **Destek ekipleri** | Her konuşmayı okumadan tırmanmaları ve itirazları fark edin |
-| **Yöneticiler / RevOps** | Her sohbetin yapılandırılmış, filtrelenebilir görünümü ve temiz bir CRM |
-| **Ajanslar** | Birçok müşteri gelen kutusunda kullanın; her biri kendini yapılandırır |
+Her sohbete üç grup özellik yazılır.
 
-**Yüksek uyumlu sektörler** (WhatsApp öncelikli, yüksek sohbet hacmi): gayrimenkul, EdTech, seyahat, D2C e-ticaret, sağlık ve ajanslar.
+| Grup | İçeriği | Ayrıntılı bilgi |
+|:-----|:--------|:----------------|
+| **Yapay zekâ satış özeti** | Her görüşmeye yazılan sabit alan kümesi: özet, niyet, aciliyet, itiraz ve sonraki eylem | [Bir Sohbette AI İçgörüleri](/tr/ai-agents/bea-radar/ai-insights) |
+| **Otomatik oluşturulan iş özellikleri** | Kendi görüşmelerinizden çıkarılan alanlar; bu nedenle küme işletmeye göre değişir. Bir seyahat ekibi destinasyon ve seyahat tarihleri alır, bir SaaS ekibi ilgilenilen paket ve lisans sayısı alır | [AI Özellikleri](/tr/ai-agents/bea-radar/ai-properties) |
+| **Yönetici tanımlı özellikler** | Bir yöneticinin eklediği, yapay zekânın neyi yakalayacağını bilmesi için bir cümleyle açıklanan alanlar | [AI Özellikleri](/tr/ai-agents/bea-radar/ai-properties) |
 
-## Bir Bakışta Temel Faydalar
+Üç grubun tamamı, gelen kutusunun genelinde filtre olarak kullanılabilir. Bkz. [AI Filtreleri](/tr/ai-agents/bea-radar/ai-filters).
+
+## CRM Senkronizasyonu
+
+Satış özetinin parçası olsun, otomatik oluşturulmuş olsun ya da bir yönetici tarafından eklenmiş olsun, her özellik bağlı CRM'deki ilgili kişi veya anlaşma kaydına yazılır. Kayıtlar görüşmeler ilerledikçe güncellenir, bu nedenle hiçbir sohbetin elle kaydedilmesi gerekmez.
+
+Desteklenen CRM'ler **HubSpot**, **Salesforce** ve **Zoho** ile Eazybe'nin daha geniş entegrasyon kümesidir.
+
+Senkronizasyona güvenmeden önce CRM bağlantınızı doğrulayın; böylece özellikler doğru kişi ve anlaşma kayıtlarına ulaşır.
+
+## Bilinmesi Gereken Davranışlar
+
+- **Otomatik oluşturulan küme çalışma alanına göre değişir.** Özellikler kendi görüşmelerinizden çıkarıldığı için BEA Radar kullanan iki işletme farklı alanlar görür. Alanlar hepsi birden değil, ilk görüşmeleriniz boyunca ortaya çıkar.
+- **Özet, görüşme ilerledikçe güncellenir.** Bir sohbeti daha sonra yeniden açtığınızda, sohbetin geldiği andaki durumu değil güncel durumu görürsünüz.
+- **Yeni özellikler o andan itibaren doldurulur.** Bugün eklenen bir özellik, ilgili sohbetlerde o noktadan sonra doldurulur.
+- **Bir özelliğin açıklaması neyin yakalanacağını belirler.** Yönetici tanımlı özelliklerde yapay zekâ, ne arayacağına açıklamayı okuyarak karar verir.
+- **Özellik yönetimi yalnızca yöneticilere açıktır.** Çalışanlar bir sohbette özelliğin değerini değiştirebilir, ancak özellik veya seçeneklerini ekleyemez, yeniden adlandıramaz ve silemez.
+
+## Sorun Giderme
+
+| Sorun | Nedeni ve çözümü |
+|:------|:-----------------|
+| Özellikler Team Inbox'ta görünüyor ancak CRM kaydında görünmüyor | CRM bağlı değildir veya sohbetin numarasıyla eşleşen bir kişi ya da anlaşma kaydı yoktur. Bağlantıyı kontrol edin ve kişinin CRM'de bulunduğunu doğrulayın. |
+| Bir özellik yeniden adlandırılamıyor veya silinemiyor | Özellikleri ve seçeneklerini yeniden adlandırma, ekleme ve silme yalnızca **Yönetici** rolüne açıktır. Çalışanlar bir özelliğin değerini değiştirebilir, ancak özelliğin kendisini değiştiremez. |
+| Bir AI filtresi hiç sohbet getirmiyor | Henüz hiçbir sohbette o özelliğin değeri yoktur veya üst üste eklenen filtreler birbirini dışlıyordur. Listeyi boşaltan filtreyi bulmak için filtreleri tek tek kaldırın. |
+
+## Sıkça Sorulan Sorular
+
+<AccordionGroup>
+  <Accordion title="Tüm WhatsApp numaralarımda çalışır mı?">
+    Evet. Her tür WhatsApp numarası kapsanır: Kişisel WhatsApp, WhatsApp Business App ve WhatsApp Business API (WABA). Numara başına etkinleştirilmesi gereken bir şey yoktur.
+  </Accordion>
+  <Accordion title="Grup sohbetleri de analiz ediliyor mu?">
+    Evet. Grup sohbetleri, ayrı bir kurulum gerekmeden bireysel görüşmelerle aynı özellikleri alır.
+  </Accordion>
+  <Accordion title="Bir çalışan özellik değerini değiştirebilir mi?">
+    Evet. Çalışanlar bir sohbette özelliğin değerini değiştirebilir. Özelliğin kendisini ekleme, yeniden adlandırma ve silme ile açılır liste seçeneklerini düzenleme işlemleri Yönetici rolü gerektirir.
+  </Accordion>
+  <Accordion title="Özellikleri kendim mi oluşturmalıyım?">
+    Hayır. BEA Radar, işletmenizin takip ettiği özellikleri görüşmelerinizden tespit eder ve oluşturur. Kendi özelliklerinizi eklemek isteğe bağlıdır; yakalanmasını istediğiniz ancak yapay zekânın oluşturmadığı bir alan için kullanılır.
+  </Accordion>
+</AccordionGroup>
+
+## İlgili İçerik
 
 <CardGroup cols={2}>
-  <Card title="Sıfır kurulum" icon="bolt">
-    Yapay zekâ kendini sohbetlerinizden yapılandırır
-  </Card>
-  <Card title="Anında bağlam" icon="brain">
-    Herhangi bir sohbeti açın, satış özeti çoktan yazılmış olsun
-  </Card>
-  <Card title="Hiçbir fırsatı kaçırmayın" icon="bullseye">
-    Satın alma sinyalleri otomatik olarak öne çıkar
-  </Card>
-  <Card title="Her şeyi bulun" icon="magnifying-glass">
-    Tüm gelen kutusunu herhangi bir özelliğe göre tek tıklamayla filtreleyin
-  </Card>
-  <Card title="Her zaman güncel bir CRM" icon="rotate">
-    Sizin yerinize senkronize edilir, manuel giriş yok
-  </Card>
-  <Card title="Öğrenilecek yeni araç yok" icon="house">
-    Mevcut Takım Gelen Kutunuzun içinde çalışır
-  </Card>
-</CardGroup>
-
-## Başlarken
-
-<Steps>
-  <Step title="Takım Gelen Kutusu'nu Açın">
-    Yapay zekâ yeni sohbetleri okumaya ve satış özetleri yazmaya hemen başlar.
-  </Step>
-  <Step title="Özellikleri Otomatik Oluşturmasına İzin Verin">
-    İlk sohbetleriniz boyunca işletmenizle ilgili özellikleri otomatik olarak oluşturmasını izleyin.
-  </Step>
-  <Step title="Kendi Alanlarınızı Ekleyin (İsteğe Bağlı)">
-    **Ayarlar → Özellik Ekle** yoluyla istediğiniz özel alanı ekleyin.
-  </Step>
-  <Step title="AI Filtresini Kullanın">
-    Önemli sohbetleri tek tıklamayla öne çıkarın.
-  </Step>
-  <Step title="CRM Bağlantınızı Doğrulayın">
-    Özelliklerin doğru kayıtlara senkronize edilmesi için CRM'inizin bağlı olduğundan emin olun.
-  </Step>
-</Steps>
-
-<Note>
-  BEA Radar, Eazybe'nin yapay zekâ planlarında sunulur. Kendi sohbetlerinizde çalışırken görmek için ekibimizden bir demo talep edin.
-</Note>
-
-## Sonraki Adımlar
-
-<CardGroup cols={3}>
   <Card title="Bir Sohbette AI İçgörüleri" icon="comments" href="/tr/ai-agents/bea-radar/ai-insights">
-    Yapay zekânın her sohbette yazdığı satış özetini görün
+    Her görüşmenin yanına yazılan satış özeti
   </Card>
   <Card title="AI Özellikleri" icon="sliders" href="/tr/ai-agents/bea-radar/ai-properties">
-    Yapay zekânın doldurduğu alanları özelleştirin, ekleyin ve yapılandırın
+    Yapay zekânın doldurduğu alanları ekleyin, düzenleyin ve yapılandırın
   </Card>
   <Card title="AI Filtreleri" icon="filter" href="/tr/ai-agents/bea-radar/ai-filters">
-    Tüm gelen kutunuzu herhangi bir yapay zekâ özelliğine göre filtreleyin
+    Gelen kutusunu herhangi bir yapay zekâ özelliğine göre filtreleyin
+  </Card>
+  <Card title="Anlaşma Analizi" icon="chart-line" href="/tr/ai-agents/bea-radar/deal-analysis">
+    Aynı analizin CRM'inizdeki anlaşmalara uygulanmış hali
   </Card>
 </CardGroup>

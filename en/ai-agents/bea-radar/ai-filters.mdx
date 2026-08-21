@@ -1,48 +1,64 @@
 ---
 title: "AI Filters"
-description: "Search and filter your entire Team Inbox by any BEA Radar AI property — default or custom — and combine filters to surface exactly the chats that matter."
+description: "Narrow the Team Inbox to the conversations that need attention, using what BEA Radar has already read from them."
 ---
 
-## What AI Filters Do
+AI filters narrow the chat list by the values BEA Radar has written on your conversations. You can filter by any AI property: the sales brief fields such as intent and urgency, the properties created for your business, and the ones an Admin has added.
 
-Search and filter your **entire inbox** by any AI property — default or custom.
+Filters can be stacked, and they work alongside the standard chat filters, so a broad list can be reduced to a specific set of conversations.
 
-- *"Show every hot lead with no objection left."*
-- *"Every chat with high urgency waiting on a reply."*
-- *"All deals interested in the Team Plan."*
+<Note>
+  **Requirements:** at least one AI property must have a value on your chats. A property added a moment ago has no values yet and returns an empty list until conversations are analysed against it.
+</Note>
 
-Instead of scrolling hundreds of conversations, the right ones surface in one click.
+## Where to Find It
+
+The **AI filters** control sits above the chat list in the Team Inbox, next to the standard filters.
 
 ## Filtering Your Inbox
 
 <Steps>
   <Step title="Open AI Filters">
-    Click on **"AI filters"** to filter your chat list based on an AI property.
+    Click on **"AI filters"** to filter your chat list by an AI property.
 
     ![AI filters button above the chat list](/images/bea-radar-9.png)
   </Step>
   <Step title="Select an AI Property">
-    Select the AI property you want to filter by — for example, **"Conversation State"**.
+    Select the AI property you want to filter by, for example **"Conversation State"**.
 
     ![Selecting the Conversation State AI property](/images/bea-radar-10.png)
   </Step>
   <Step title="Select a Property Value">
-    Then select the property value — for example, **"Waiting on Rep"**.
+    Select the property value, for example **"Waiting on Rep"**.
 
     ![Selecting the Waiting on Rep property value](/images/bea-radar-11.png)
   </Step>
   <Step title="Add More Filters">
-    In the same way, you can add more filters to build a tighter, more optimised chat list.
+    Add further filters the same way to narrow the list.
 
     ![Combining multiple AI filters](/images/bea-radar-12.png)
   </Step>
 </Steps>
 
-<Note>
-  AI filters can be combined with the standard chat filters for an even more optimised list.
-</Note>
+## Combining Filters
 
-## Next Steps
+Multiple AI filters can be applied at once, and each one narrows the list further. AI filters can also be combined with the standard chat filters, such as channel or assignee, in the same view.
+
+## Example Filters
+
+| To find | Filter on |
+|:--------|:----------|
+| Hot leads with nothing left blocking them | Intent, combined with an empty Objection |
+| Time-sensitive chats awaiting a reply from your team | Urgency, combined with Conversation State |
+| Everyone interested in a particular plan | The business property recording plan interest |
+
+## Behaviour to Be Aware Of
+
+- **Filtering only changes what is shown.** Filters do not delete, move, or edit conversations.
+- **A chat appears once the property has a value.** Conversations where the property is empty are not returned.
+- **Stacked filters narrow, they do not widen.** Two filters that exclude one another return an empty list.
+
+## Related
 
 <CardGroup cols={2}>
   <Card title="AI Properties" icon="sliders" href="/en/ai-agents/bea-radar/ai-properties">

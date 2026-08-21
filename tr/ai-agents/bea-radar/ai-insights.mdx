@@ -1,62 +1,70 @@
 ---
 title: "Bir Sohbette AI İçgörüleri"
-description: "BEA Radar'ın her WhatsApp sohbetinin yanına yazdığı satış özetini görüntüleyin — özet, niyet, aciliyet, itiraz ve atılacak tam sonraki adım."
+description: "Bir görüşmeyi açın ve konuşma geçmişini geri sarmadan hangi noktada olduğunu görün."
 ---
 
-## Yapay Zekâ Satış Özeti
+AI İçgörüleri, BEA Radar'ın her görüşmeye yazdığı satış özetidir. Beş şeyi kaydeder: konuşmanın sade dille özeti, kişinin ne istediği, görüşmenin ne kadar aciliyet taşıdığı, anlaşmayı neyin engellediği ve temsilcinin atması gereken bir sonraki adım. Özet, sohbet geldiğinde yazılır ve görüşme ilerledikçe güncellenir.
 
-BEA Radar her sohbette — numara türü ne olursa olsun, birebir ve grup sohbetlerinde aynı şekilde — harekete geçmeye hazır bir özeti otomatik olarak doldurur:
+Bunun için yapılandırılması gereken bir şey yoktur. Tanımlanacak kural veya etiketlenecek sohbet bulunmaz.
+
+<Note>
+  **Gereksinimler:** **Team Inbox** (Takım Gelen Kutusu) erişimi. Özet, her tür WhatsApp numarası için yazılır: Kişisel WhatsApp, WhatsApp Business App ve WhatsApp Business API (WABA). Grup sohbetleri bireysel görüşmelerle aynı özeti alır.
+</Note>
+
+## Özet Neleri Kaydeder
 
 | Özellik | Neyi yakalar |
 |:--------|:-------------|
-| **AI Özeti** | Tüm sohbetin sade bir dille özeti — kaydırmaya gerek yok |
-| **Niyet** | Kişinin ne istediği (ör. *Demo istiyor*, *Satın almaya hazır*, *Sadece bakıyor*) |
-| **Aciliyet** | Sohbetin ne kadar zamana duyarlı olduğu |
-| **İtiraz** | Varsa, satışı engelleyen unsur |
-| **Sonraki Adım** | Temsilcinin atması gereken tam sonraki adım |
+| **AI Summary** | Görüşmenin tamamının sade dille özeti |
+| **Intent** | Kişinin ne istediği; örneğin *Demo istiyor*, *Satın almaya hazır* veya *Sadece bakıyor* |
+| **Urgency** | Görüşmenin ne kadar aciliyet taşıdığı |
+| **Objection** | Varsa, anlaşmayı engelleyen unsur |
+| **Next Action** | Temsilcinin atması gereken bir sonraki adım |
 
-Kurulum yok, kural yok, etiketleme yok: özet sohbet gelir gelmez yazılır ve konuşma ilerledikçe güncellenir.
+Bu alanların yanında sohbet, işletmenize özgü özellikleri de gösterir. Bkz. [AI Özellikleri](/tr/ai-agents/bea-radar/ai-properties).
 
-<Note>
-  Özet; **Kişisel WhatsApp**, **WhatsApp Business App** ve **WhatsApp Business API (WABA)** numaraları için aynı şekilde yazılır ve grup sohbetleri birebir sohbetlerle aynı muameleyi görür.
-</Note>
+## Nerede Bulunur
+
+Team Inbox'ta bir sohbet açın ve sağdaki **User Profile** panelini açın. Özet, bu panelde yapay zekâ özelliklerinin altında yer alır.
 
 ## AI İçgörülerini Görüntüleme
 
 <Steps>
-  <Step title="Takım Gelen Kutusu'nu Açın">
+  <Step title="Team Inbox'ı Açın">
     Gezinme menüsünde **"Team Inbox"** öğesine tıklayın.
 
     ![Team Inbox'a tıklayın](/images/bea-radar-1.png)
   </Step>
-  <Step title="Bir Sohbeti ve Kullanıcı Profilini Açın">
-    Herhangi bir sohbeti açın, ardından sağdaki **Kullanıcı Profili** panelini açın.
+  <Step title="Bir Sohbet Açın ve Kullanıcı Profilini Görüntüleyin">
+    Herhangi bir sohbeti açın, ardından sağdaki **User Profile** panelini açın.
 
-    ![Bir sohbeti ve kullanıcı profili panelini açın](/images/bea-radar-2.png)
+    ![Bir sohbet açın ve User Profile panelini açın](/images/bea-radar-2.png)
   </Step>
   <Step title="AI Özelliklerinizi Görün">
-    İşte **AI Özellikleriniz** — işletmenizin takip ettiklerine göre otomatik olarak oluşturulmuştur.
+    **AI Properties** bölümü, işletmeniz için oluşturulan alanları listeler.
 
-    ![Kullanıcı profilindeki AI Özellikleri paneli](/images/bea-radar-3.png)
+    ![Kullanıcı profilindeki AI Properties paneli](/images/bea-radar-3.png)
   </Step>
   <Step title="AI İçgörülerinizi Görüntüleyin">
-    **AI İçgörülerinizi** görüntüleyin — Özet, Niyet, Aciliyet Nedeni, Sonraki Adım ve daha fazlası — tümü BEA Radar tarafından analiz edilir.
+    Hemen altında **AI Insights**, özeti gösterir: Summary, Intent, Urgency Reason, Next Action ve BEA Radar tarafından analiz edilen diğer alanlar.
 
-    ![Özet, Niyet, Aciliyet Nedeni ve Sonraki Adım içeren AI İçgörüleri](/images/bea-radar-4.png)
+    ![Summary, Intent, Urgency Reason ve Next Action gösteren AI Insights](/images/bea-radar-4.png)
   </Step>
 </Steps>
 
-<Tip>
-  Özet, konuşma ilerledikçe yenilenir; bu nedenle bir sohbeti daha sonra tekrar açtığınızda her zaman güncel durumu görürsünüz — sohbet ilk geldiğindeki hâlini değil.
-</Tip>
+## Bilinmesi Gereken Davranışlar
 
-## Sonraki Adımlar
+- **Özet, görüşme ilerledikçe güncellenir.** Bir sohbeti daha sonra yeniden açtığınızda, sohbetin ilk geldiği andaki durumu değil güncel durumu görürsünüz.
+- **Özet otomatik olarak yazılır.** Etiketleme adımı, anahtar kelime listesi veya yapılandırılacak kural yoktur.
+- **Görüşme anlamı üzerinden okunur.** Alanlar, anahtar kelime eşleşmelerinden değil görüşmenin söylediklerinden doldurulur.
+
+## İlgili İçerik
 
 <CardGroup cols={2}>
   <Card title="AI Özellikleri" icon="sliders" href="/tr/ai-agents/bea-radar/ai-properties">
-    Yapay zekânın doldurduğu alanları özelleştirin, ekleyin ve yapılandırın
+    Yapay zekânın doldurduğu alanları ekleyin, düzenleyin ve yapılandırın
   </Card>
   <Card title="AI Filtreleri" icon="filter" href="/tr/ai-agents/bea-radar/ai-filters">
-    Tüm gelen kutunuzu herhangi bir yapay zekâ özelliğine göre filtreleyin
+    Gelen kutusunu herhangi bir yapay zekâ özelliğine göre filtreleyin
   </Card>
 </CardGroup>

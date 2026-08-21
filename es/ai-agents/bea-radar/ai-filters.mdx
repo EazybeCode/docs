@@ -1,48 +1,64 @@
 ---
 title: "Filtros de IA"
-description: "Busca y filtra todo tu Buzón de Equipo por cualquier propiedad de IA de BEA Radar — predeterminada o personalizada — y combina filtros para encontrar exactamente los chats que importan."
+description: "Reduce el Buzón de Equipo a las conversaciones que necesitan atención, usando lo que BEA Radar ya ha leído en ellas."
 ---
 
-## Qué Hacen los Filtros de IA
+Los filtros de IA reducen la lista de chats según los valores que BEA Radar ha escrito en tus conversaciones. Puedes filtrar por cualquier propiedad de IA: los campos del resumen comercial, como intención y urgencia, las propiedades creadas para tu negocio y las que ha añadido un administrador.
 
-Busca y filtra **toda tu bandeja de entrada** por cualquier propiedad de IA, predeterminada o personalizada.
+Los filtros se pueden acumular y funcionan junto con los filtros de chat estándar, así que una lista amplia se puede reducir a un conjunto concreto de conversaciones.
 
-- *"Muéstrame todos los leads calientes sin objeciones pendientes."*
-- *"Todos los chats de alta urgencia esperando respuesta."*
-- *"Todas las oportunidades interesadas en el Plan Team."*
+<Note>
+  **Requisitos:** al menos una propiedad de IA debe tener valor en tus chats. Una propiedad añadida hace un momento todavía no tiene valores y devuelve una lista vacía hasta que se analicen conversaciones con ella.
+</Note>
 
-En lugar de desplazarte por cientos de conversaciones, las correctas aparecen con un solo clic.
+## Dónde Encontrarlo
 
-## Filtrar tu Bandeja de Entrada
+El control **AI filters** está encima de la lista de chats en el Team Inbox, junto a los filtros estándar.
+
+## Filtrar tu Buzón
 
 <Steps>
   <Step title="Abre los Filtros de IA">
-    Haz clic en **"AI filters"** para filtrar tu lista de chats según una propiedad de IA.
+    Haz clic en **"AI filters"** para filtrar tu lista de chats por una propiedad de IA.
 
-    ![Botón AI filters sobre la lista de chats](/images/bea-radar-9.png)
+    ![Botón AI filters encima de la lista de chats](/images/bea-radar-9.png)
   </Step>
   <Step title="Selecciona una Propiedad de IA">
-    Selecciona la propiedad de IA por la que quieres filtrar; por ejemplo, **"Conversation State"**.
+    Selecciona la propiedad de IA por la que quieres filtrar, por ejemplo **"Conversation State"**.
 
     ![Selección de la propiedad de IA Conversation State](/images/bea-radar-10.png)
   </Step>
   <Step title="Selecciona un Valor de la Propiedad">
-    Luego selecciona el valor de la propiedad; por ejemplo, **"Waiting on Rep"**.
+    Selecciona el valor de la propiedad, por ejemplo **"Waiting on Rep"**.
 
     ![Selección del valor Waiting on Rep](/images/bea-radar-11.png)
   </Step>
   <Step title="Añade Más Filtros">
-    Del mismo modo, puedes añadir más filtros para conseguir una lista de chats más ajustada y optimizada.
+    Añade más filtros de la misma forma para acotar la lista.
 
     ![Combinación de varios filtros de IA](/images/bea-radar-12.png)
   </Step>
 </Steps>
 
-<Note>
-  Los filtros de IA se pueden combinar con los filtros de chat estándar para obtener una lista aún más optimizada.
-</Note>
+## Combinar Filtros
 
-## Siguientes Pasos
+Se pueden aplicar varios filtros de IA a la vez, y cada uno acota más la lista. Los filtros de IA también se pueden combinar con los filtros de chat estándar, como canal o responsable, en la misma vista.
+
+## Ejemplos de Filtros
+
+| Para encontrar | Filtra por |
+|:---------------|:-----------|
+| Leads calientes sin nada que los frene | Intención, combinada con Objeción vacía |
+| Chats urgentes que esperan respuesta de tu equipo | Urgencia, combinada con Conversation State |
+| Todos los interesados en un plan concreto | La propiedad de negocio que registra el plan de interés |
+
+## Comportamiento que Conviene Conocer
+
+- **Filtrar solo cambia lo que se muestra.** Los filtros no eliminan, mueven ni editan conversaciones.
+- **Un chat aparece cuando la propiedad tiene valor.** Las conversaciones en las que la propiedad está vacía no se devuelven.
+- **Los filtros acumulados acotan, no amplían.** Dos filtros que se excluyen entre sí devuelven una lista vacía.
+
+## Relacionado
 
 <CardGroup cols={2}>
   <Card title="Propiedades de IA" icon="sliders" href="/es/ai-agents/bea-radar/ai-properties">

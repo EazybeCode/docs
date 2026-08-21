@@ -1,92 +1,100 @@
 ---
 title: "AI Özellikleri"
-description: "BEA Radar'ın kendi başına oluşturduğu özellikleri anlayın, mevcut özellikleri ve seçenekleri özelleştirin, kendi alanlarınızı ekleyin ve her şeyi Takım Gelen Kutusu ayarlarından yapılandırın."
+description: "BEA Radar'ın görüşmelerinizde hangi alanları takip edeceğini belirleyin; kendi oluşturduklarından sizin tanımladıklarınıza kadar."
 ---
 
-## Otomatik Oluşturulan Şirket Özellikleri
+AI Özellikleri, BEA Radar'ın her sohbette doldurduğu alanlardır. İki kaynaktan gelirler. Çoğunu BEA Radar'ın kendisi oluşturur: görüşmelerinizi okur, ekibinizin neyi takip ettiğini çıkarır ve bu alanları oluşturur. Geri kalanları bir yönetici ekler; yakalanmasını istediğiniz ancak kendiliğinden oluşturulmamış belirli bilgiler için kullanılır.
 
-Öne çıkan yetenek: **yapay zekâ, işletmenizin ihtiyaç duyduğu özellikleri kendi başına oluşturur.**
+İki tür de oluşturulduktan sonra aynı şekilde davranır. İlgili her sohbette doldurulur, gelen kutusunu filtrelemek için kullanılabilir ve bağlı CRM kaydına yazılır.
 
-Sohbetlerinizi inceler, ekibinizin gerçekte neyi takip ettiğini çıkarır ve **bu özel alanları otomatik olarak üretir** — ardından her sohbette dolu tutar.
+<Note>
+  **Gereksinimler:** özellikleri ve seçeneklerini eklemek, yeniden adlandırmak veya silmek için **Yönetici** rolü gerekir. Çalışanlar bir sohbette özelliğin **değerini** değiştirebilir, ancak özelliğin kendisini değiştiremez.
+</Note>
 
-- Bir **gayrimenkul** ekibi *Mülk Tipi* ve *Bütçe* gibi alanlar alır.
-- Bir **SaaS** ekibi *İlgilenilen Plan* ve *Kullanıcı Sayısı* alır.
+## Özellik Türleri
+
+Her özellik şu iki türden biridir.
+
+| Tür | Neyi saklar |
+|:----|:------------|
+| **Text/Number** | Bütçe rakamı veya destinasyon gibi serbest biçimli bir değer |
+| **Dropdown** | Sizin tanımladığınız sabit bir seçenek listesinden seçilen değer; örneğin *Sıcak*, *Ilık*, *Soğuk* |
+
+## Otomatik Oluşturulan Özellikler
+
+BEA Radar görüşmelerinizi inceler, ekibinizin hangi alanları takip ettiğini çıkarır ve bunları oluşturur. Ardından her sohbette dolu tutar. Ortaya çıkan küme işletmeye göre değişir:
+
+- Bir **emlak** ekibi *Mülk Tipi* ve *Bütçe* gibi alanlar alır.
+- Bir **SaaS** ekibi *İlgilenilen Paket* ve *Lisans Sayısı* alır.
 - Bir **seyahat** ekibi *Destinasyon* ve *Seyahat Tarihleri* alır.
 
-Hiçbir şey yapılandırmanıza gerek yok. İşletmenizi sohbetlerinizden öğrenir.
+Bunu başlatmak için bir yapılandırma gerekmez. Küme sohbetlerinizden öğrenilir ve ilk görüşmeleriniz boyunca oluşur.
 
-## Özel Özellikler
-
-Belirli bir alan istediğinizde, yöneticiler bunu **Takım Gelen Kutusu → Ayarlar** üzerinden birkaç tıklamayla ekleyebilir:
-
-1. **+ Özellik Ekle**'ye tıklayın
-2. Türü seçin — **Metin/Sayı** veya **Açılır liste**
-3. Neyin yakalanacağına dair kısa bir **açıklama** yazın (yapay zekâ özelliği bu şekilde anlar)
-
-Bu andan itibaren yapay zekâ, ilgili her sohbette bu özelliği doldurur.
-
-<Warning>
-  Özellikleri ve seçenekleri yeniden adlandırma, ekleme ve silme yalnızca **Yönetici** rolü için kullanılabilir. Çalışanlar bir özelliğin **değerini** değiştirebilir, ancak özelliğin kendisini değiştiremez.
-</Warning>
-
-## Mevcut Bir Özelliği Özelleştirme
+## Bir Özelliği veya Seçeneklerini Düzenleme
 
 <Steps>
   <Step title="Özellik Seçeneklerini Açın">
-    Tüm özellikler ve seçenekler özelleştirilebilir: özellikleri ve seçeneklerini yeniden adlandırabilir, ekleyebilir veya silebilirsiniz. Kullanılabilir seçenekleri görmek için bir özelliğin yanındaki **üç noktaya** tıklayın.
+    Özellikler ve seçenekleri yeniden adlandırılabilir, genişletilebilir veya silinebilir. Mevcut seçenekleri görmek için bir özelliğin yanındaki **üç noktaya** tıklayın.
 
-    ![Özelliği yeniden adlandır ve Özelliği sil seçeneklerini görmek için üç noktaya tıklayın](/images/bea-radar-5-property-menu.png)
+    ![Özelliği yeniden adlandırma ve silme seçeneklerini görmek için üç noktaya tıklayın](/images/bea-radar-5-property-menu.png)
   </Step>
   <Step title="Bir Değeri Değiştirin veya Seçenek Ekleyin">
-    Özellik değerini değiştirmek veya listeye yeni bir seçenek eklemek için açılır listeyi açın. Ardından uygulamak için **Değişiklikleri kaydet**'e tıklayın.
+    Özellik değerini değiştirmek ya da listeye yeni bir seçenek eklemek için seçenek açılır listesini açın. Uygulamak için **Save changes** öğesine tıklayın.
 
-    ![Özellik değerini değiştirin veya yeni seçenek ekleyip kaydedin](/images/bea-radar-6.png)
+    ![Özellik değerini değiştirin veya yeni bir seçenek ekleyip kaydedin](/images/bea-radar-6.png)
   </Step>
 </Steps>
 
-## Yeni Bir AI Özelliği Ekleme
+## Özellik Ekleme
+
+Kendiliğinden oluşturulmamış belirli bir alanın yakalanmasını istediğinizde özellik ekleyin. Aynı iletişim kutusuna hem bir sohbetteki yapay zekâ özellikleri panelinden hem de **Team Inbox → Ayarlar** içindeki **+ Add Property** ile ulaşılır.
 
 <Steps>
-  <Step title="'Add AI Properties'e Tıklayın">
-    AI Özellikleri panelinin üst kısmındaki **"Add AI Properties"** düğmesine tıklayın.
+  <Step title="'Add AI Properties' Öğesine Tıklayın">
+    Yapay zekâ özellikleri panelinin üst kısmındaki **"Add AI Properties"** düğmesine tıklayın.
 
-    ![AI Özellikleri panelinin üst kısmındaki Add AI Properties düğmesi](/images/bea-radar-7-add-property-button.png)
+    ![Yapay zekâ özellikleri panelinin üstündeki Add AI Properties düğmesi](/images/bea-radar-7-add-property-button.png)
   </Step>
   <Step title="Özelliği Tanımlayın">
-    **Özellik adını** girin, **Özellik türünü** seçin (Metin/Sayı veya Açılır liste) ve ardından özelliği açıklayın.
+    **Property name** girin, **Property type** olarak Text/Number veya Dropdown seçin ve özellik için kısa bir açıklama yazın. Yapay zekâ, neyi yakalayacağına bu açıklamayı okuyarak karar verir; bu nedenle alanın tam olarak neyi temsil ettiğini belirtin.
 
-    ![Ad, tür ve açıklama alanlarını içeren Özellik ekleme penceresi](/images/bea-radar-8.png)
+    ![Ad, tür ve açıklama alanlarını içeren özellik ekleme iletişim kutusu](/images/bea-radar-8.png)
   </Step>
 </Steps>
 
-<Tip>
-  **Açıklama kritik öneme sahiptir** — yapay zekâ neyi yakalayacağını buna göre anlar. Özelliğin tam olarak neyi temsil ettiğini anlatan kısa ve net bir cümle yazın.
-</Tip>
+O andan itibaren yapay zekâ, bu özelliği ilgili her sohbette doldurur.
 
-## Takım Gelen Kutusu Ayarlarından Yapılandırma
+## Team Inbox Ayarlarından Yapılandırma
 
-AI Özelliklerini tek bir sohbetin dışında, Takım Gelen Kutusu ayarlarından da yönetebilirsiniz.
+Özellikler, tek bir sohbetin dışında, Team Inbox ayarlarından da yönetilebilir.
 
 <Steps>
   <Step title="Entegrasyon Sayfasını Açın">
-    AI Özelliklerini doğrudan Takım Gelen Kutusu ayarlarındaki **Entegrasyon** sayfasından özelleştirebilirsiniz.
+    Team Inbox ayarlarındaki **Integration** sayfasını açın.
 
-    ![Takım Gelen Kutusu ayarlarındaki Entegrasyon sayfası](/images/bea-radar-13.png)
+    ![Team Inbox ayarlarındaki Integration sayfası](/images/bea-radar-13.png)
   </Step>
-  <Step title="AI Özellik Yapılandırmasını Açın">
-    AI Özelliklerinizi yapılandırmak için **"AI Property Configuration"** öğesine tıklayın.
+  <Step title="AI Property Configuration'ı Açın">
+    Yapay zekâ özelliklerinizi yapılandırmak için **"AI Property Configuration"** öğesine tıklayın.
 
     ![AI Property Configuration seçeneği](/images/bea-radar-14.png)
   </Step>
 </Steps>
 
-## Sonraki Adımlar
+## Bilinmesi Gereken Davranışlar
+
+- **Yeni bir özellik o andan itibaren doldurulur.** Bir özelliği ekledikten sonra, ilgili sohbetlerde o noktadan itibaren doldurulur.
+- **Neyin yakalanacağını açıklama belirler.** Yapay zekâ ne arayacağına açıklamayı okuyarak karar verir; belirsiz bir açıklama belirsiz değerler üretir. Kısa ve belirli tek bir cümle yazın.
+- **Otomatik oluşturulan küme çalışma alanına göre değişir.** Özellikler kendi görüşmelerinizden çıkarıldığı için BEA Radar kullanan başka bir işletme farklı bir alan kümesi görür.
+- **Seçenekleri düzenlemek yalnızca yöneticilere açıktır.** Çalışanlar açılır listeden farklı bir değer seçebilir, ancak listedeki seçenekleri ekleyemez veya kaldıramaz.
+
+## İlgili İçerik
 
 <CardGroup cols={2}>
   <Card title="AI Filtreleri" icon="filter" href="/tr/ai-agents/bea-radar/ai-filters">
-    Tüm gelen kutunuzu bu özelliklerden herhangi birine göre filtreleyin
+    Gelen kutusunu bu özelliklerden herhangi birine göre filtreleyin
   </Card>
   <Card title="Bir Sohbette AI İçgörüleri" icon="comments" href="/tr/ai-agents/bea-radar/ai-insights">
-    Yapay zekânın her sohbette yazdığı satış özetini görün
+    Her görüşmenin yanına yazılan satış özeti
   </Card>
 </CardGroup>
