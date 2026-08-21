@@ -1,0 +1,48 @@
+---
+title: "Health Check"
+description: "Confirm that the Public Broadcast API service is reachable without sending a message."
+---
+
+Use the health endpoint for availability checks and integration diagnostics. It does not require an API key and does not verify your organization's WhatsApp configuration.
+
+## Endpoint
+
+```http
+GET /broadcast/public/health
+```
+
+## Request
+
+```bash
+curl "https://cerberus.eazybe.com/prod/api/v2/broadcast/public/health"
+```
+
+## Successful response
+
+The response includes service metadata. These are the stable fields to use for a reachability check:
+
+```json
+{
+  "status": "ok",
+  "timestamp": "2026-08-21T10:30:00.000Z",
+  "service": "Public Broadcast API",
+  "version": "2.0.0"
+}
+```
+
+<Note>
+  The live response can also include an `endpoints` object for service diagnostics. Its route inventory can change independently of this guide; use the [endpoint index](/en/api-reference/endpoints/broadcast-api#endpoint-index) as the supported v2 integration reference.
+</Note>
+
+## What this check confirms
+
+- The Public Broadcast API service can receive HTTP requests.
+- The service returns its current identity and version metadata.
+
+It does not confirm that:
+
+- Your `x-api-key` is valid.
+- A WABA number is connected to your organization.
+- A template is approved or a message can be delivered.
+
+To verify organization access without sending a message, call [Get Phone Numbers](/en/api-reference/endpoints/broadcast-api/get-phone-numbers) with your auth key.

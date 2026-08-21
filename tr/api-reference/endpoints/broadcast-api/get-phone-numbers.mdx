@@ -1,0 +1,42 @@
+---
+title: "Telefon Numaralarını Al"
+description: "Kuruluş kimlik doğrulama anahtarınızın kullanabildiği WhatsApp Business numaralarını listeleyin."
+---
+
+## Telefon numaralarını listele
+
+Kuruluşunuza kayıtlı tüm WhatsApp Business numaralarını listeler. Gönderilen uç noktalarında döndürülen `phone_number`'i `fromPhoneNumber` olarak kullanın.
+
+### Uç Nokta
+
+```http
+GET /broadcast/public/phone-numbers
+```
+
+### İstek
+
+```bash
+curl "https://cerberus.eazybe.com/prod/api/v2/broadcast/public/phone-numbers" \
+  -H "x-api-key: $API_KEY"
+```
+
+### Yanıt
+
+**200 — Telefon numaraları başarıyla getirildi**
+
+```json
+{
+  "status": true,
+  "status_code": 200,
+  "message": "Phone numbers fetched successfully",
+  "data": [
+    {
+      "phone_number": "14844634680",
+      "waba_id": "1099052972334241",
+      "phone_number_id": "894234333763517"
+    }
+  ]
+}
+```
+
+Boş bir `data` dizisi, anahtarın geçerli olduğu ancak kuruluşa henüz bağlı bir WABA numarası olmadığı anlamına gelir. Bu bir hata değil, yapılandırma durumudur.

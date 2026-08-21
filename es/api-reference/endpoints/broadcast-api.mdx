@@ -1,0 +1,167 @@
+---
+title: "API pública de difusión"
+description: "Integra la API v2 de Eazybe para consultar recursos de WhatsApp, enviar difusiones y supervisar trabajos grandes."
+---
+
+La API pública de difusión permite que tu servidor envíe plantillas de WhatsApp aprobadas a escala y mensajes de formato libre compatibles. Esta guía cubre únicamente los endpoints v2 asociados a la organización.
+
+## Configuración base
+
+| Configuración | Valor |
+| --- | --- |
+| **URL** | `https://cerberus.eazybe.com/prod/api/v2` |
+| **Ruta base** | `/broadcast/public` |
+| **Autenticación** | Encabezado `x-api-key` |
+| **Content-Type** | `application/json` |
+
+## Antes de comenzar
+
+<Warning>
+  **Mantenga la clave en el servidor.** Esta clave permite enviar mensajes desde todos los números de WhatsApp de su organización. Guárdela en variables de entorno o en un gestor de secretos; nunca la incluya en código web o móvil.
+</Warning>
+
+<Tip>
+  **Comience aquí.** Consulte Obtener números de teléfono para saber qué números WABA puede utilizar y Obtener plantillas para confirmar que la plantilla está aprobada antes de enviar mensajes.
+</Tip>
+
+---
+
+## Flujo de autenticación
+
+<Steps>
+  <Step>
+    <h3>Usar la clave de autenticación en los encabezados de solicitud</h3>
+    <p>Todos los endpoints de difusión requieren la clave de autenticación generada en el encabezado <strong>x-api-key</strong>, que puede encontrar en Espacio de trabajo → Personal.</p>
+
+    ```http
+    x-api-key: YOUR_API_KEY
+    ```
+
+    <Note>
+      Guarde su clave API de forma segura. Evite regenerarla innecesariamente.
+    </Note>
+
+    <Frame>
+      ![Busque la clave de autenticación de su organización en la sección Personal](/images/public-broadcast-api-auth-key.png)
+    </Frame>
+  </Step>
+</Steps>
+
+### Qué identifica la clave
+
+La clave identifica a su organización. En los endpoints que aceptan un `fromPhoneNumber` o `phone_number`, la API verifica además que el número esté registrado en esa organización y que su registro WABA esté completo: `waba_id`, `phone_number_id`, `phone_number` y `access_token` deben estar presentes. Una discrepancia devuelve `401`, no `403`.
+
+---
+
+## Índice de endpoints
+
+| Método | Punto final | Propósito | Autenticación |
+| --- | --- | --- | --- |
+| `GET` | `/broadcast/public/phone-numbers` | Enumere los números WABA de su organización | Requerido |
+| `GET` | `/broadcast/public/templates` | Listar plantillas aprobadas para un número | Requerido |
+| `POST` | `/broadcast/public/send-template-broadcast` | Enviar una plantilla a muchos destinatarios | Requerido |
+| `POST` | `/broadcast/public/send-freeform` | Enviar un mensaje de formato libre | Requerido |
+| `GET` | `/broadcast/public/status/:jobId` | Consultar un trabajo de difusión grande | Requerido |
+| `GET` | `/broadcast/public/health` | Estado del servicio y lista de puntos finales | Ninguno |
+
+## Reglas de validación
+
+Estos se ejecutan antes de que algo llegue a WhatsApp, por lo que un rechazo aquí no cuesta cuota de mensajes. Cada falla devuelve `400` con `message: "Validation error"` y un motivo específico.
+
+| Regla | Se aplica a | Sobre el fracaso |
+| --- | --- | --- |
+| Los números de teléfono deben constar únicamente de dígitos, sin `+`, espacios ni guiones | Ambos envían puntos finales | `toPhoneNumber` / `countryCode` no válido |
+| Al menos un destinatario | Difusión de plantilla | Se requiere lista de destinatarios |
+| Sin duplicado `countryCode` • `toPhoneNumber` | Difusión de plantilla | Destinatario duplicado encontrado en el índice *n* |
+| Máximo 10.000 destinatarios | Difusión de plantilla | Se superó el límite de destinatarios |
+| La plantilla debe existir y estar aprobada para ese número | Difusión de plantilla | La plantilla no está aprobada o no se encuentra |
+| `text` debe ser una cadena que no esté vacía | Forma libre, tipo `text` | se requiere texto para mensajes de texto |
+| `url` debe ser http o https | Tipos de medios de formato libre | La URL debe ser una URL http o https válida |
+| La extensión de URL debe estar en la lista permitida | Tipos de medios de formato libre | Lista las extensiones aceptadas |
+| Latitud −90 a 90, longitud −180 a 180, ambos números | Forma libre, tipo `location` | Nombra la coordenada infractora |
+| El tipo interactivo debe ser `button` o `list` | Forma libre, tipo `interactive` | el tipo interactivo debe ser botón o lista |
+| 1 a 3 botones | Botones interactivos | No puede exceder los 3 botones |
+| 1 a 10 filas en todas las secciones | Lista interactiva | No puede exceder de 10 filas |
+
+---
+
+## Límites de solicitudes
+
+Los límites se cuentan en una ventana fija de 60 segundos. La mayoría tiene como alcance su clave API **y** el número de teléfono en la solicitud, por lo que dos números de envío diferentes no compiten por el mismo presupuesto.
+
+| Punto final | Límite | Contado por |
+| --- | --- | --- |
+| `send-template-broadcast` | 10/minuto | clave + fromPhoneNumber |
+| `send-freeform` | 20/minuto | clave + fromPhoneNumber |
+| `templates` | 20/minuto | clave + phone_number |
+| `phone-numbers` | 30/minuto | clave |
+| `status` | 30/minuto | clave |
+
+### Al superar un límite
+
+```json
+{
+  "status": false,
+  "status_code": 429,
+  "message": "Rate limit exceeded",
+  "data": {
+    "error": {
+      "message": "Rate limit exceeded. Try again in 43 seconds."
+    }
+  }
+}
+```
+
+El mensaje le indica exactamente cuántos segundos quedan en la ventana. Espere tanto tiempo en lugar de volver a intentarlo inmediatamente: un reintento inmediato no consume nada pero devuelve el mismo error.
+
+---
+
+## Manejo de errores
+
+Cada error utiliza el mismo sobre:
+
+```json
+{
+  "status": false,
+  "status_code": 400,
+  "message": "Short summary",
+  "data": {
+    "error": {
+      "message": "Specific detail about what to fix"
+    }
+  }
+}
+```
+
+### Códigos de estado
+
+| Código | Significado | Qué hacer |
+| --- | --- | --- |
+| `200` | En cola o recuperado | — |
+| `202` | Difusión grande aceptada | Consulte el estado con el `jobId` |
+| `400` | Fallo de validación o límite | Lea `data.error.message` y corrija la carga útil |
+| `401` | Problema de clave, número o propiedad del trabajo | Vea la tabla a continuación |
+| `404` | Trabajo de difusión no encontrado | Compruebe el `jobId` |
+| `409` | Mismo `Idempotency-Key` aún procesándose | Espere y sondee; no reenviar |
+| `429` | Límite de solicitudes excedido | Espere los segundos nombrados en el mensaje |
+| `500` | Envío fallido en sentido descendente | Vuelva a intentarlo con el mismo `Idempotency-Key` |
+| `503` | Se agotó el tiempo de espera de la base de datos de autenticación | Reintentar con retroceso |
+
+### Los cuatro errores 401
+
+Los cuatro devuelven `401` pero significan cosas diferentes:
+
+| Mensaje | Causa | Arreglar |
+| --- | --- | --- |
+| Se requiere clave API | Sin encabezado `x-api-key` | Añade el encabezado |
+| Clave API no válida. Organización no encontrada. | Ninguna organización tiene ese `auth_key` | Verifique la clave y estará en el entorno correcto |
+| No se encontró ninguna cuenta WABA para esta organización. | El número no está registrado en su organización | Utilice un número de Obtener números de teléfono |
+| La cuenta WABA está incompleta. Campos faltantes:… | Falta el registro WABA `waba_id`, `phone_number_id`, `phone_number` o `access_token` | Finalizar la incorporación de WABA para ese número |
+
+<Note>
+  **Reintentar política.** Reintentar `500` y `503` con retroceso exponencial. Nunca vuelva a intentar `400` o `401`: la misma solicitud fallará de manera idéntica. En `429`, espere el intervalo en el que aparecen los nombres de las respuestas. Envíe siempre un `Idempotency-Key` en las solicitudes que desee volver a intentar.
+</Note>
+
+<Info>
+  Esta sección documenta únicamente la integración v2 asociada a la organización. Los endpoints anteriores por número se excluyen intencionadamente de esta guía.
+</Info>

@@ -1,0 +1,42 @@
+---
+title: "Obtener números de teléfono"
+description: "Consulta los números de WhatsApp Business que puede utilizar la clave de autenticación de tu organización."
+---
+
+## Obtener números de teléfono
+
+Enumera todos los números de WhatsApp Business registrados en su organización. Utilice el `phone_number` devuelto como `fromPhoneNumber` en los endpoints de envío.
+
+### Endpoint
+
+```http
+GET /broadcast/public/phone-numbers
+```
+
+### Solicitud
+
+```bash
+curl "https://cerberus.eazybe.com/prod/api/v2/broadcast/public/phone-numbers" \
+  -H "x-api-key: $API_KEY"
+```
+
+### Respuesta
+
+**200: números de teléfono obtenidos correctamente**
+
+```json
+{
+  "status": true,
+  "status_code": 200,
+  "message": "Phone numbers fetched successfully",
+  "data": [
+    {
+      "phone_number": "14844634680",
+      "waba_id": "1099052972334241",
+      "phone_number_id": "894234333763517"
+    }
+  ]
+}
+```
+
+Una matriz `data` vacía significa que la clave es válida pero aún no hay ningún número WABA conectado a la organización. Ese es un estado de configuración, no un error.

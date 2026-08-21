@@ -1,0 +1,46 @@
+---
+title: "Obtener el estado de una difusión"
+description: "Consulta el procesamiento de una difusión con plantilla de más de 1.000 destinatarios."
+---
+
+## Obtener estado de difusión
+
+Devuelve el progreso de un trabajo de difusión grande, los que devolvieron `202` y `jobId`. Las difusiones de 1.000 destinatarios o menos no crean un trabajo y no tienen ningún estado que consultar.
+
+### Endpoint
+
+```http
+GET /broadcast/public/status/:jobId
+```
+
+### Solicitud
+
+```bash
+curl "https://cerberus.eazybe.com/prod/api/v2/broadcast/public/status/pub_4f8c2a1e9b7d43c6a5e0f2b18d3c9a67" \
+  -H "x-api-key: $API_KEY"
+```
+
+### Respuestas
+
+**200: registro del trabajo más un resumen del progreso del fragmento**
+
+```json
+{
+  "status": true,
+  "status_code": 200,
+  "message": "Broadcast status fetched successfully",
+  "data": {
+    "jobId": "pub_4f8c2a1e9b7d43c6a5e0f2b18d3c9a67",
+    "status": "QUEUED_FOR_PROCESSING",
+    "totalRecipients": 1001,
+    "totalChunks": 2,
+    "summary": { }
+  }
+}
+```
+
+**404** — Trabajo de difusión no encontrado
+
+**401** — El trabajo pertenece a una organización diferente
+
+Un trabajo creado por otra organización devuelve `401` en lugar de `404`; los ID de trabajo no se pueden enumerar entre organizaciones.

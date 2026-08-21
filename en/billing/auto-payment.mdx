@@ -1,89 +1,81 @@
 ---
-title: "Auto payment"
-description: "Automatically add credits when your Eazybe wallet balance becomes low."
+title: "Set Up Auto Payment"
+description: "Automatically add credits when an eligible Eazybe wallet reaches a low-balance threshold."
 ---
 
-Auto payment keeps your wallet funded by charging a saved card when your balance reaches the threshold you set.
+Auto payment charges a saved card and adds credits when the workspace wallet reaches your chosen threshold. Use it to reduce interruptions to eligible paid WhatsApp activity.
 
-<Note>
-Auto payment is currently available for **USD wallets**.
-</Note>
-
-## Turn on auto payment for the first time
-
-<Steps>
-  <Step title="Open Auto payment">
-    Go to **Settings → Billing → Credits** and expand **Auto payment** if it is collapsed.
-  </Step>
-  <Step title="Turn on the toggle">
-    Switch **Auto payment** on. If you do not have an existing auto-payment setup, Eazybe connects it to the card already saved for your Eazybe subscription.
-  </Step>
-  <Step title="Review the settings">
-    Confirm **Top up when below** and **Amount to add**. The status changes to **Auto payment active** when setup is ready.
-  </Step>
-</Steps>
-
-Add image here: Auto payment before first-time setup, showing the inactive status and toggle.
+<Frame caption="Credits tab with Auto payment status and Add credits">
+  <img
+    src="/images/billing/add-credits.jpeg"
+    alt="Eazybe Credits tab showing Current balance, Auto payment active status and toggle, and Add credits"
+  />
+</Frame>
 
 <Warning>
-If Eazybe cannot find a usable subscription card, auto payment will not be enabled. Update the subscription payment method or contact Eazybe Support, then try again.
+  The balance, status, and purchase amounts in the screenshot are examples. Auto payment is currently available for USD wallets, and your workspace can show different values.
 </Warning>
 
-## How it works
+## Turn On Auto Payment
+
+1. Open **Settings → Billing → Credits**.
+2. Expand **Auto payment** if the panel is collapsed.
+3. Turn on the **Auto payment** toggle.
+4. Confirm **Top up when below** and **Amount to add**.
+5. Confirm that the status changes to **Auto payment active**.
+
+If this is the first setup, Eazybe uses the eligible card already saved for the workspace subscription.
+
+<Warning>
+  Turning on auto payment authorizes future charges to the saved card. If Eazybe cannot find a usable subscription card, auto payment is not enabled. Update the subscription payment method or contact Eazybe Support, then try again.
+</Warning>
+
+## Choose the Amounts
 
 - **Top up when below** is the wallet balance that triggers auto payment.
-- **Amount to add** is the amount charged to your saved card and added to the wallet.
+- **Amount to add** is charged to the saved card and added to the wallet after a successful payment.
 - The threshold must be lower than the amount to add.
 
-For example, set the threshold to USD 5 and the amount to add to USD 50. Eazybe starts auto payment when the balance reaches USD 5 or less. After a successful payment, the balance increases by USD 50.
+For a USD wallet, the threshold must be at least USD 1, the amount to add must be at least USD 5, and each value can be up to USD 10,000.
 
-## Change the amounts
+Example: if **Top up when below** is USD 5 and **Amount to add** is USD 50, Eazybe starts an automatic payment when the balance reaches USD 5 or less. A successful payment adds USD 50.
 
-1. Click either amount box or its pencil icon.
-2. Update the threshold and amount to add.
-3. Click **Save changes**.
+<Warning>
+  The example explains the trigger; it is not a recommended setting. Choose amounts that match your expected messaging usage and budget.
+</Warning>
 
-For USD wallets, the threshold must be at least USD 1, the amount to add must be at least USD 5, and each value can be up to USD 10,000.
+## Change the Amounts
 
-Add image here: Active auto payment showing both amount fields, Save changes, and the summary message.
+1. Select an amount field or its pencil icon.
+2. Update **Top up when below** and **Amount to add**.
+3. Select **Save changes**.
+4. Recheck the summary shown in the panel.
 
-## Change the payment card
+## Change the Payment Card
 
-<Steps>
-  <Step title="Select Change card">
-    In the Auto payment panel, click **Change card** beside the saved card details.
-  </Step>
-  <Step title="Add the card in Stripe">
-    Enter the new card details on the secure Stripe page and complete the setup.
-  </Step>
-  <Step title="Confirm the card">
-    Return to Billing and confirm that the last four digits shown in Auto payment match the new card.
-  </Step>
-</Steps>
+1. Select **Change card** beside the saved card.
+2. Enter the new card details on the secure Stripe page and complete the setup.
+3. Return to **Credits** and confirm that the card brand and last four digits have updated.
 
-Eazybe displays only the card brand and last four digits in the workspace.
+Eazybe displays only the saved card brand and last four digits in the workspace.
 
-Add image here: The saved payment card and Change card button.
+## Turn Auto Payment Off or On Again
 
-Add video here: A complete auto-payment walkthrough covering first-time setup, changing amounts, changing the card, and disabling auto payment.
+- To stop future automatic top-ups, turn off the toggle and confirm **Disable auto payment**.
+- Disabling keeps the saved configuration so you can turn it on again later.
+- Check the status text to confirm whether auto payment is active.
 
-## Turn auto payment off or on again
+<Warning>
+  Turning auto payment off does not add credits or cancel a payment that has already started. Check **Wallet history** when a payment was triggered near the time you disabled it.
+</Warning>
 
-- To stop automatic charges, turn off the toggle and confirm **Disable auto payment**.
-- Disabling stops future automatic top-ups but keeps the saved configuration, so it can be turned on again later.
-- The status on the Billing page always shows whether auto payment is active.
+## Emails and Notifications
 
-## Emails and notifications
-
-Auto-payment updates are sent to the email address of the workspace account. Eazybe also creates an in-app notification for these events.
+Auto-payment activity is sent to the workspace account email and can also create an in-app notification.
 
 | Event | What you receive |
 | --- | --- |
-| Payment started | An email with the amount and transaction ID |
-| Payment successful | An email with the amount, transaction ID, and updated balance when available |
-| Payment failed | An email with the failure reason, retry timing, and a link or instruction to update the payment method |
-| Repeated failures | After three failed attempts, auto payment is disabled and a final email is sent |
-
-<Note>
-Manually turning auto payment on or off updates the status in Billing. Activity emails are sent for payment attempts and for automatic disabling after repeated failures.
-</Note>
+| Payment started | Amount and transaction ID |
+| Payment successful | Amount, transaction ID, and updated balance when available |
+| Payment failed | Failure reason, retry timing, and instructions for updating the payment method |
+| Repeated failures | Auto payment is disabled after three failed attempts and a final email is sent |

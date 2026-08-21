@@ -1,0 +1,52 @@
+---
+title: "Şablonları Al"
+description: "Kuruluşunuza ait bir numarada kullanılabilen onaylı WhatsApp şablonlarını listeleyin."
+---
+
+## Şablonları listele
+
+Numaralarınızdan birinde mevcut olan onaylanmış WhatsApp şablonlarını döndürür. Bunu bir yayından önce çağırın; onaylanmamış veya yanlış yazılmış bir şablon adı göndermek tüm isteği başarısızlığa uğratır.
+
+### Uç Nokta
+
+```http
+GET /broadcast/public/templates
+```
+
+### Sorgu parametreleri
+
+| Parametre | Tür | Gerekli | Açıklama |
+| --- | --- | --- | --- |
+| `phone_number` | dize | Gerekli | Kuruluşunuza ait bir WABA numarası, yalnızca rakamlar |
+
+### İstek
+
+```bash
+curl "https://cerberus.eazybe.com/prod/api/v2/broadcast/public/templates?phone_number=14844634680" \
+  -H "x-api-key: $API_KEY"
+```
+
+### Yanıt
+
+**200 — Şablonlar başarıyla getirildi**
+
+```json
+{
+  "status": true,
+  "status_code": 200,
+  "message": "Templates fetched successfully",
+  "data": [
+    {
+      "name": "eazybe_temp",
+      "status": "APPROVED",
+      "category": "MARKETING",
+      "language": "en",
+      "components": [
+        { "type": "BODY", "text": "Hello {{1}}, your code is {{2}}." }
+      ]
+    }
+  ]
+}
+```
+
+Gövdedeki `{{n}}` yer tutucularını sayın; bu, her bir alıcının `templateParams` dizisinin tam olarak sağlaması gereken değer sayısıdır.

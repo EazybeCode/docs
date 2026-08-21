@@ -1,71 +1,43 @@
 ---
-title: "View broadcast analytics"
-description: "Review campaign details, recipient delivery activity, and failure reasons."
+title: "View Broadcast Analytics"
+description: "Review campaign details, recipient delivery activity, and message failure reasons."
 ---
 
-Select **View Analytics** beside a campaign to open its detailed report.
+Open a campaign's analytics to see its message, source, delivery totals, and the latest status for each recipient. You can filter, search, and export the delivery activity.
 
-<Frame caption="Select View Analytics beside a broadcast to open its detailed report">
-  <img
-    src="/images/broadcasts/view-broadcast-analytics.jpeg"
-    alt="Broadcast list with the View Analytics buttons highlighted"
-  />
-</Frame>
+<Warning>
+  The campaign names, phone numbers, dates, and delivery totals in these screenshots are examples. Your analytics page shows data from the selected campaign.
+</Warning>
 
-## Campaign summary
+<Steps>
+  <Step title="Open the campaign analytics">
+    On **Broadcasts**, find the campaign and select **View Analytics**. Eazybe opens the detailed report for that campaign.
 
-The top section shows:
+    ![Broadcasts page with View Analytics buttons highlighted](/images/broadcasts/view-broadcast-analytics.jpeg)
+  </Step>
+  <Step title="Review the campaign summary">
+    At the top of the report, confirm the broadcast name and status, **WABA number**, **Sent on** date, **Total contact**, and **Broadcast source**. The message card shows the template preview.
 
-- Broadcast name and status
-- WhatsApp Business number
-- Sent date
-- Total contacts
-- Broadcast source
-- Template preview
+    ![Broadcast analytics page with campaign summary, message preview, and Delivery activity](/images/broadcasts/broadcast-campaign-summary.png)
 
-<Frame caption="Review campaign details, the message preview, and delivery activity">
-  <img
-    src="/images/broadcasts/broadcast-campaign-summary.png"
-    alt="Broadcast analytics page showing the campaign summary, message preview, and delivery activity table"
-  />
-</Frame>
+    <Note>
+      Some source-specific details appear only when they apply. For example, a HubSpot workflow broadcast can show the recipient object and a link to the workflow.
+    </Note>
+  </Step>
+  <Step title="Filter the delivery activity">
+    In **Delivery activity**, select **Total**, **Sent**, **Delivered**, **Read**, or **Failed**. Each row shows the contact, **Message time**, and latest **Status**. Failed rows include a failure reason when one is available.
 
-## Delivery activity
+    ![Delivery activity with Total, Sent, Delivered, Read, and Failed tabs and recipient statuses](/images/broadcasts/broadcast-delivery-activity.jpeg)
+  </Step>
+  <Step title="Search or export the results">
+    Use **Search contacts** to find a phone number. Select **Export** to download the delivery group that is currently open, such as **Export Total** or the failed group.
 
-Use the status tabs to review:
+    ![Broadcast analytics page with campaign summary, Search contacts, and Export Total highlighted](/images/broadcasts/broadcast-search-and-export.jpeg)
 
-- **Total**
-- **Sent**
-- **Delivered**
-- **Read**
-- **Failed**
+    <Tip>
+      Open **Failed** and export that group when you need to correct contact data or share failure details with your team.
+    </Tip>
+  </Step>
+</Steps>
 
-Each row shows the contact, message time, and latest delivery status. Failed rows also show the failure reason.
-
-<Frame caption="Review recipient message times and delivery statuses">
-  <img
-    src="/images/broadcasts/broadcast-delivery-activity.jpeg"
-    alt="Delivery activity table showing contacts, message times, status tabs, search, and export controls"
-  />
-</Frame>
-
-## Search and export
-
-- Use **Search contacts** to find a phone number.
-- Select a status tab to filter the report.
-- Select **Export** to download the currently selected delivery group.
-
-<Frame caption="Search campaign contacts or export the selected delivery group">
-  <img
-    src="/images/broadcasts/broadcast-search-and-export.jpeg"
-    alt="Broadcast analytics page with the Search contacts field and Export Total button highlighted"
-  />
-</Frame>
-
-<Tip>
-  Export the **Failed** tab when you need to correct recipient data or investigate delivery problems with your team.
-</Tip>
-
-## Pagination
-
-Choose 10, 25, or 50 contacts per page. Select **Back to broadcasts** to return to the campaign list.
+Choose 10, 25, or 50 rows per page to move through the recipients. Select **Back to broadcasts** when you are finished.

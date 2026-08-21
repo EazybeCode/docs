@@ -1,0 +1,167 @@
+---
+title: "Genel Yayın API'si"
+description: "WhatsApp kaynaklarını sorgulamak, yayın göndermek ve büyük işleri izlemek için Eazybe v2 API'sini entegre edin."
+---
+
+Genel Yayın API'si, sunucunuzun onaylı WhatsApp şablonlarını ölçekli olarak ve desteklenen serbest biçimli mesajları göndermesini sağlar. Bu kılavuz yalnızca kuruluş kapsamındaki v2 uç noktalarını içerir.
+
+## Temel Yapılandırma
+
+| Ayar | Değer |
+| --- | --- |
+| **URL** | `https://cerberus.eazybe.com/prod/api/v2` |
+| **Temel yol** | `/broadcast/public` |
+| **Kimlik doğrulama** | `x-api-key` başlığı |
+| **Content-Type** | `application/json` |
+
+## Başlamadan Önce
+
+<Warning>
+  **Anahtarı sunucu tarafında tutun.** Bu anahtar, kuruluşunuzun tüm WhatsApp numaralarından gönderim yapılmasına izin verir. Anahtarı ortam değişkenlerinde veya bir gizli anahtar yöneticisinde saklayın; web ya da mobil koda eklemeyin.
+</Warning>
+
+<Tip>
+  **Buradan başlayın.** Kullanabileceğiniz WABA numaralarını görmek için Telefon numaralarını listele bölümünü, şablonun onaylı olduğunu doğrulamak için Şablonları listele bölümünü kullanın.
+</Tip>
+
+---
+
+## Kimlik Doğrulama Akışı
+
+<Steps>
+  <Step>
+    <h3>İstek Başlıklarında Kimlik Doğrulama Anahtarını Kullanın</h3>
+    <p>Tüm yayın uç noktaları, oluşturulan kimlik doğrulama anahtarının <strong>x-api-key</strong> başlığında gönderilmesini gerektirir. Anahtarı Workspace → Staff bölümünde bulabilirsiniz.</p>
+
+    ```http
+    x-api-key: YOUR_API_KEY
+    ```
+
+    <Note>
+      API anahtarınızı güvenli bir şekilde saklayın. Gereksiz yere yeniden oluşturmayın.
+    </Note>
+
+    <Frame>
+      ![Kuruluş kimlik doğrulama anahtarınızı Staff bölümünde bulun](/images/public-broadcast-api-auth-key.png)
+    </Frame>
+  </Step>
+</Steps>
+
+### Anahtar neyi çözüyor?
+
+Anahtar kuruluşunuzu tanımlar. `fromPhoneNumber` veya `phone_number` alan uç noktalarda API ayrıca numaranın söz konusu kuruluşa kayıtlı olduğunu ve WABA kaydının tamamlandığını doğrular; `waba_id`, `phone_number_id`, `phone_number` ve `access_token`'in hepsinin mevcut olması gerekir. Bir uyumsuzluk `403`'i değil, `401`'i döndürür.
+
+---
+
+## Uç nokta dizini
+
+| Yöntem | Uç nokta | Amaç | Yetki |
+| --- | --- | --- | --- |
+| `GET` | `/broadcast/public/phone-numbers` | Kuruluşunuzdaki WABA numaralarını listeleyin | Gerekli |
+| `GET` | `/broadcast/public/templates` | Bir numara için onaylanmış şablonları listeleme | Gerekli |
+| `POST` | `/broadcast/public/send-template-broadcast` | Birçok alıcıya şablon gönderin | Gerekli |
+| `POST` | `/broadcast/public/send-freeform` | Serbest biçimli bir mesaj gönderin | Gerekli |
+| `GET` | `/broadcast/public/status/:jobId` | Büyük bir yayın işini yoklayın | Gerekli |
+| `GET` | `/broadcast/public/health` | Hizmet durumu ve uç nokta listesi | Yok |
+
+## Doğrulama kuralları
+
+Bunlar, herhangi bir şey WhatsApp'a ulaşmadan önce çalışır, dolayısıyla buradaki reddetme mesaj kotasına neden olmaz. Her başarısızlık, `message: "Validation error"` ile `400`'i ve belirli bir nedeni döndürür.
+
+| Kural | Şunlar için geçerlidir | Arıza durumunda |
+| --- | --- | --- |
+| Telefon numaraları yalnızca rakam olmalıdır; `+`, boşluk veya kısa çizgi olmamalıdır | Her ikisi de uç noktalar gönderir | Geçersiz `toPhoneNumber` / `countryCode` |
+| En az bir alıcı | Şablon yayını | Alıcı listesi gerekli |
+| Yinelenen `countryCode` yok • `toPhoneNumber` | Şablon yayını | *n* dizininde yinelenen alıcı bulundu |
+| Maksimum 10.000 alıcı | Şablon yayını | Alıcı sınırı aşıldı |
+| Şablon mevcut olmalı ve bu numara için onaylanmış olmalıdır | Şablon yayını | Şablon onaylanmadı veya bulunamadı |
+| `text` boş olmayan bir dize olmalıdır | Serbest biçimli, `text` yazın | kısa mesajlar için metin gereklidir |
+| `url` http veya https olmalıdır | Serbest biçimli medya türleri | URL geçerli bir http veya https URL'si olmalıdır |
+| URL uzantısı izin verilenler listesinde olmalıdır | Serbest biçimli medya türleri | Kabul edilen uzantıları listeler |
+| Enlem −90 ila 90, boylam −180 ila 180, her iki sayı | Serbest biçimli, `location` yazın | Sorunlu koordinatın adını veriyor |
+| Etkileşimli tür `button` veya `list` olmalıdır | Serbest biçimli, `interactive` yazın | etkileşimli tür düğme veya liste olmalıdır |
+| 1 ila 3 düğme | Etkileşimli düğmeler | 3 düğmeyi aşamaz |
+| Tüm bölümlerde 1 ila 10 satır | İnteraktif liste | 10 satırı aşamaz |
+
+---
+
+## İstek sınırları
+
+Limitler sabit 60 saniyelik bir pencerede sayılır. Çoğunun kapsamı API anahtarınız **ve** istekteki telefon numarasına göre belirlenir; dolayısıyla iki farklı gönderme numarası aynı bütçe için rekabet etmez.
+
+| Uç nokta | Sınırı | Başına sayıldı |
+| --- | --- | --- |
+| `send-template-broadcast` | 10 / dak | tuşu + fromPhoneNumber |
+| `send-freeform` | 20 / dak | tuşu + fromPhoneNumber |
+| `templates` | 20 / dak | tuşu + phone_number |
+| `phone-numbers` | 30 / dak | anahtar |
+| `status` | 30 / dak | anahtar |
+
+### Limitin aşılması
+
+```json
+{
+  "status": false,
+  "status_code": 429,
+  "message": "Rate limit exceeded",
+  "data": {
+    "error": {
+      "message": "Rate limit exceeded. Try again in 43 seconds."
+    }
+  }
+}
+```
+
+Mesaj size pencerede tam olarak kaç saniye kaldığını söyler. Hemen yeniden denemek yerine bu kadar bekleyin; hemen yeniden denemek hiçbir şey tüketmez ancak aynı hatayı döndürür.
+
+---
+
+## Hata Yönetimi
+
+Her hata aynı zarfı kullanır:
+
+```json
+{
+  "status": false,
+  "status_code": 400,
+  "message": "Short summary",
+  "data": {
+    "error": {
+      "message": "Specific detail about what to fix"
+    }
+  }
+}
+```
+
+### Durum kodları
+
+| Kod | Anlamı | Ne yapmalı |
+| --- | --- | --- |
+| `200` | Sıraya alındı ​​veya getirildi | — |
+| `202` | Büyük yayın kabul edildi | `jobId` ile durumu sorgulayın |
+| `400` | Doğrulama veya limit hatası | `data.error.message`'i okuyun ve yükü düzeltin |
+| `401` | Anahtar, numara veya iş sahipliği sorunu | Aşağıdaki tabloya bakın |
+| `404` | Yayın işi bulunamadı | `jobId`'i kontrol edin |
+| `409` | Aynı `Idempotency-Key` hâlâ işleniyor | Bekleyin ve durumu sorgulayın; yeniden göndermeyin |
+| `429` | Oran sınırı aşıldı | Mesajda belirtilen saniyeleri bekleyin |
+| `500` | Alt sistem gönderimi başarısız | Aynı `Idempotency-Key` ile yeniden deneyin |
+| `503` | Kimlik doğrulama veritabanı zaman aşımına uğradı | Geri alma ile yeniden deneyin |
+
+### Dört 401
+
+Dördü de `401` değerini döndürür ancak farklı anlamlara gelir:
+
+| Mesaj | Sebep | Düzelt |
+| --- | --- | --- |
+| API anahtarı gerekli | `x-api-key` başlığı yok | Başlığı ekleyin |
+| Geçersiz API anahtarı. Organizasyon bulunamadı. | Hiçbir kuruluşta `auth_key` | Anahtarı ve doğru ortamda olduğunuzu kontrol edin |
+| Bu kuruluşa ait WABA hesabı bulunamadı. | Numara kuruluşunuza kayıtlı değil | Telefon numaralarını al |
+| WABA hesabı eksik. Eksik alanlar: … | WABA kaydında `waba_id`, `phone_number_id`, `phone_number` veya `access_token` eksik | Bu numara için WABA'ya katılımı tamamlayın |
+
+<Note>
+  **Yeniden deneme politikası.** Üstel geri çekilme ile `500` ve `503`'i yeniden deneyin. `400` veya `401`'i hiçbir zaman yeniden denemeyin; aynı istek aynı şekilde başarısız olur. `429`'te yanıtta belirtilen süre kadar bekleyin. Yeniden denemeyi düşündüğünüz isteklerde her zaman bir `Idempotency-Key` gönderin.
+</Note>
+
+<Info>
+  Bu bölüm yalnızca kuruluş kapsamındaki v2 entegrasyonunu belgeler. Numara bazlı önceki uç noktalar bu kılavuza bilinçli olarak dahil edilmemiştir.
+</Info>

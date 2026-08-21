@@ -1,56 +1,65 @@
 ---
-title: "Broadcast home"
+title: "Use the Broadcast Home"
 description: "Find campaigns, apply filters, understand delivery totals, and open campaign analytics."
 ---
 
-The Broadcast home page lists your campaigns and their latest delivery results.
+The Broadcasts page lists campaigns from the current workspace and their latest delivery totals. Use it to find a campaign, check its status, or open recipient-level analytics.
 
-<Frame caption="View broadcasts, delivery totals, status, and campaign analytics">
+<Frame caption="Broadcasts page with search, filters, delivery totals, and campaign analytics">
   <img
     src="/images/broadcasts/broadcast-home-overview.jpeg"
-    alt="Broadcast home page showing search and filter controls, campaign delivery totals, statuses, and View Analytics buttons"
+    alt="Broadcasts page with Search broadcasts, number, source, and status filters, Refresh, campaign rows, and View Analytics"
   />
 </Frame>
 
-## Find a broadcast
+<Warning>
+  The campaigns, dates, phone numbers, and delivery totals in the screenshot are examples. Your workspace shows its own campaign data.
+</Warning>
 
-Use the controls at the top of the page to:
+## Find a Broadcast
 
-- Search by broadcast name
-- Select a WhatsApp Business number
-- Filter by source
-- Filter by status
-- Refresh the latest results
+<Steps>
+  <Step title="Set the campaign filters">
+    Use **Search broadcasts** to find a campaign by name. Select a WhatsApp Business number, **All sources**, or **All statuses** to narrow the list.
 
-## Understand the columns
+    ![Broadcasts page with Search broadcasts, WhatsApp number, All sources, All statuses, and Refresh](/images/broadcasts/broadcast-home-overview.png)
+
+    <Tip>
+      Select **Refresh** when a recent campaign is still processing or its delivery totals have changed.
+    </Tip>
+  </Step>
+  <Step title="Open the campaign analytics">
+    Find the campaign row and select **View Analytics**. Eazybe opens the campaign summary and its **Delivery activity** table.
+
+    ![Broadcasts page with View Analytics buttons highlighted](/images/broadcasts/view-broadcast-analytics.jpeg)
+  </Step>
+</Steps>
+
+## Understand the Campaign Row
 
 | Column | What it shows |
 | --- | --- |
 | **Broadcast** | Campaign name, source, and template |
-| **Total** | Sent + Delivered + Read + Failed |
-| **Sent** | Messages accepted for sending |
-| **Delivered** | Messages delivered to recipients |
-| **Read** | Messages opened by recipients |
+| **Total** | All recipients currently represented by the delivery statuses |
+| **Sent** | Messages accepted for sending but not yet delivered |
+| **Delivered** | Messages delivered but not yet marked as read |
+| **Read** | Messages marked as read by recipients |
 | **Failed** | Messages that could not be delivered |
 | **Date** | Date the campaign was sent |
-| **Status** | Completed, In progress, or Failed |
-| **View Analytics** | Recipient-level campaign details |
+| **Status** | The campaign's current state, such as **Completed** or **Failed** |
+| **View Analytics** | Opens recipient-level campaign details |
 
-## Broadcast sources
+## Understand the Broadcast Source
 
-The source under each campaign tells you where it was created, such as:
+The source below the campaign name tells you where the broadcast originated. Sources can include:
 
-- Workspace
-- HubSpot segment
-- HubSpot workflow
-- HubSpot contact
-- Zoho
-- Salesforce
+- **Workspace**
+- **HubSpot segment**
+- **HubSpot workflow**
+- **HubSpot contact**
+- **Zoho**
+- **Salesforce**
 
-## Pagination
+## Move Through Older Campaigns
 
-Choose 25, 50, or 100 broadcasts per page. Use the page controls to move through older campaigns.
-
-<Tip>
-  Select **Refresh** when a recent campaign is still in progress or its delivery counts have changed.
-</Tip>
+Choose 25, 50, or 100 rows per page, then use the page controls to move through the campaign history.

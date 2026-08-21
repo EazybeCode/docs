@@ -1,0 +1,31 @@
+---
+title: "Revisar el historial del monedero"
+description: "Consulta transacciones, estado de pagos, saldos y facturas disponibles."
+---
+
+Utiliza **Configuración → Facturación → Historial del monedero** para revisar compras y uso del monedero.
+
+<Note>Está disponible para administradores aptos con acceso a Créditos.</Note>
+
+## Buscar una transacción
+
+1. Abre **Historial del monedero**.
+2. Filtra por **Completado**, **Pendiente** o **Fallido**, o por fechas.
+3. Busca la fila correspondiente.
+4. Revisa fecha, descripción, abono o cargo, saldo posterior, estado y factura.
+
+<Note>Un abono añade fondos; un cargo registra el uso. El saldo posterior muestra el orden de la actividad.</Note>
+
+## Descargar una factura
+
+Usa la descarga de la fila cuando esté disponible. Puede no existir mientras el pago está pendiente o si la actividad no genera factura.
+
+| Estado | Acción |
+| --- | --- |
+| **Completado** | Comprueba importe y saldo; descarga la factura si existe |
+| **Pendiente** | Espera al proveedor antes de volver a intentarlo |
+| **Fallido** | Revisa el fallo y corrige el método antes de una compra nueva |
+
+<Warning>No repitas una compra **Pendiente**; podría producir un cargo duplicado.</Warning>
+
+Si falta una transacción, selecciona **Actualizar** una vez y revisa filtros. Para un pago exitoso ausente, contacta con Soporte con espacio, importe, moneda, referencia y hora.

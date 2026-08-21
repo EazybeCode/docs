@@ -1,86 +1,70 @@
 ---
-title: "Broadcasts overview"
-description: "Send WhatsApp campaigns and track their delivery from the Eazybe workspace."
+title: "Broadcasts Overview"
+description: "Send WhatsApp campaigns from Eazybe and track delivery from one workspace."
 ---
 
-Broadcasts help you send an approved WhatsApp template to many contacts and monitor every campaign from one place.
+Broadcasts let you send an approved WhatsApp template to multiple contacts and track each recipient's delivery status. This guide helps you choose the right recipient source and understand what happens before and after you send.
 
-<Frame caption="Broadcast home with campaign filters, delivery metrics, and the New broadcast button">
+<Frame caption="Broadcast home with campaign filters, delivery totals, and the New broadcast button">
   <img
     src="/images/broadcasts/broadcast-home-overview.png"
-    alt="Eazybe Broadcast home page showing search and campaign filters, delivery metrics, statuses, analytics actions, and the New broadcast button"
+    alt="Eazybe Broadcasts page with Search broadcasts, number, source, and status filters, campaign delivery totals, and the New broadcast button"
   />
 </Frame>
 
-## What you can do
+<Warning>
+  The campaigns, phone numbers, dates, and delivery totals in these screenshots are examples. Your Broadcasts page shows data from your workspace.
+</Warning>
 
-<CardGroup cols={2}>
-  <Card
-    title={
-      <a href="/en/broadcasts/create-broadcast" className="flex flex-col items-start gap-4 text-primary transition-colors duration-200 hover:text-emerald-700 hover:underline">
-        <Icon icon="plus" size={30} className="text-current transition-colors duration-200" />
-        <span>Create a campaign</span>
-      </a>
-    }
-  >
-    Choose a WhatsApp number, select an approved template, and add recipients.
-  </Card>
-  <Card
-    title={
-      <a href="/en/broadcasts/upload-contacts" className="flex flex-col items-start gap-4 text-primary transition-colors duration-200 hover:text-emerald-700 hover:underline">
-        <Icon icon="users" size={30} className="text-current transition-colors duration-200" />
-        <span>Use two recipient sources</span>
-      </a>
-    }
-  >
-    Upload a contact file or select a HubSpot contact list.
-  </Card>
-  <Card
-    title={
-      <a href="/en/broadcasts/estimated-cost-and-sending" className="flex flex-col items-start gap-4 text-primary transition-colors duration-200 hover:text-emerald-700 hover:underline">
-        <Icon icon="calculator" size={30} className="text-current transition-colors duration-200" />
-        <span>Review the estimated cost</span>
-      </a>
-    }
-  >
-    Check the valid recipient count and estimated cost before sending.
-  </Card>
-  <Card
-    title={
-      <a href="/en/broadcasts/broadcast-home" className="flex flex-col items-start gap-4 text-primary transition-colors duration-200 hover:text-emerald-700 hover:underline">
-        <Icon icon="chart-column" size={30} className="text-current transition-colors duration-200" />
-        <span>Track delivery</span>
-      </a>
-    }
-  >
-    Review Sent, Delivered, Read, and Failed results for every campaign.
-  </Card>
-</CardGroup>
+## Before You Begin
+
+You need:
+
+- A WhatsApp Business number connected through Meta
+- At least one approved WhatsApp template
+- Enough Eazybe wallet balance for the campaign
+- A CSV or Excel contact file, or a connected HubSpot account with a contact list
+
+<Note>
+  Only approved templates appear in **Template message**. Templates that are pending or rejected cannot be used for a broadcast.
+</Note>
+
+## Choose a Recipient Source
+
+| Source | Use it when | What to prepare |
+| --- | --- | --- |
+| **Upload a list** | Your contacts are in a CSV or Excel file | Valid international phone numbers and a value for every template variable |
+| **HubSpot contact list** | HubSpot is connected and the contacts already belong to a HubSpot list | A list whose contacts have valid values in `mobilephone` or `phone` |
 
 <Info>
-  The **HubSpot contact list** option is available only when HubSpot is connected to your Eazybe workspace.
+  **HubSpot contact list** appears only when HubSpot is connected to the current Eazybe workspace.
 </Info>
 
-## Broadcast journey
-
-1. Open **Broadcasts**.
-2. Select **New broadcast**.
-3. Choose a message template.
-4. Add recipients.
-5. Review the estimated cost.
-6. Send and monitor the campaign.
-
-<Tip>
-  **Add video:** Complete Broadcasts overview—from creating a campaign to viewing its analytics.
-</Tip>
-
-## Continue learning
+## What You Can Do
 
 <CardGroup cols={2}>
-  <Card title="How broadcasts work" icon="route" href="/en/broadcasts/how-broadcasts-work">
-    Understand the complete workflow.
+  <Card title="Create a New Broadcast" icon="paper-plane" href="/en/broadcasts/create-broadcast">
+    Choose the sending number and template, add recipients, review the estimate, and send.
   </Card>
-  <Card title="Create a new broadcast" icon="paper-plane" href="/en/broadcasts/create-broadcast">
-    Start your first campaign.
+  <Card title="Upload Contacts" icon="file-arrow-up" href="/en/broadcasts/upload-contacts">
+    Format a CSV or Excel file and select the contacts who should receive the campaign.
+  </Card>
+  <Card title="Use a HubSpot Contact List" icon="hubspot" href="/en/broadcasts/hubspot-contact-list">
+    Select a synced HubSpot list and use its contact properties for personalization.
+  </Card>
+  <Card title="View Broadcast Analytics" icon="chart-column" href="/en/broadcasts/view-analytics">
+    Review **Total**, **Sent**, **Delivered**, **Read**, and **Failed** results by recipient.
   </Card>
 </CardGroup>
+
+## What Happens When You Send
+
+Eazybe validates the selected contacts and shows an estimated cost in the footer. After you select **Send broadcast**, the campaign appears on the Broadcasts page, where its status and delivery totals update as WhatsApp processes the messages.
+
+<Warning>
+  Sending a broadcast uses wallet balance. Review the template, variables, recipient count, and estimated cost before selecting **Send broadcast**. You cannot recall a submitted campaign from the Broadcasts page.
+</Warning>
+
+<Card title="See the Complete Workflow" icon="route" href="/en/broadcasts/how-broadcasts-work">
+  Follow the five stages from opening **New broadcast** through monitoring delivery.
+</Card>

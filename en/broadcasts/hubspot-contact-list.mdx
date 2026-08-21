@@ -1,85 +1,70 @@
 ---
-title: "Broadcast to a HubSpot contact list"
-description: "Select a HubSpot list, personalize the template, and send a WhatsApp broadcast."
+title: "Broadcast to a HubSpot Contact List"
+description: "Select a synced HubSpot list, personalize its template, and send a WhatsApp broadcast."
 ---
 
-Use **HubSpot contact list** to send a broadcast to contacts from a HubSpot list.
+Use **HubSpot contact list** to send a broadcast to contacts in one synced HubSpot list. You can search the available lists, select one, and use HubSpot contact properties for template personalization.
 
 <Info>
-  This tab appears only when HubSpot is connected to the current Eazybe workspace.
+  **HubSpot contact list** appears only when HubSpot is connected to the current Eazybe workspace.
 </Info>
-
-<Frame caption="Search for and select a synced HubSpot contact list">
-  <img
-    src="/images/broadcasts/hubspot-contact-list-selection.jpeg"
-    alt="HubSpot contact list tab showing search, list cards, and pagination"
-  />
-</Frame>
-
-## What is a HubSpot segment?
-
-A HubSpot segment—previously called a list—is a saved group of contacts. You can build a segment using contact properties such as lifecycle stage, country, lead status, or any custom property.
-
-- **Active segments** update automatically when contacts match or stop matching the filters.
-- **Static segments** keep a fixed group of contacts unless you add or remove them manually.
-
-<Card title="Create a HubSpot segment" icon="filter" href="/en/integrations/hubspot/create-segment">
-  Learn how to create and prepare a contact segment in HubSpot before selecting it for a broadcast.
-</Card>
 
 ## Requirements
 
-- HubSpot is connected to Eazybe
-- The connection includes the `crm.lists.read` permission
-- The selected list contains contacts with valid WhatsApp phone numbers
+- HubSpot is connected to Eazybe.
+- The connection includes the `crm.lists.read` permission.
+- The selected list contains contacts with valid WhatsApp phone numbers.
 
 If list access is missing, reconnect HubSpot and grant the requested permission.
 
-## Select a list
+## Select a HubSpot List
 
 <Steps>
-  <Step title="Open HubSpot contact list">
-    In **Choose recipients**, select the **HubSpot contact list** tab.
+  <Step title="Open the HubSpot contact list tab">
+    On the **Create broadcast** page, go to **Choose recipients** and select **HubSpot contact list**. Eazybe displays the synced lists and the **Search HubSpot lists** field.
+
+    ![HubSpot contact list tab with synced list cards, Search HubSpot lists, and pagination](/images/broadcasts/hubspot-contact-list-selection.jpeg)
+
+    <Note>
+      If a recently created or edited list is missing, wait for HubSpot to finish updating it, refresh the Eazybe page, and reopen this tab.
+    </Note>
   </Step>
-  <Step title="Find a list">
-    Search by list name or move through the available pages.
-  </Step>
-  <Step title="Select the list">
-    Select one HubSpot list. Selecting another list replaces the current selection.
-  </Step>
-  <Step title="Review the estimate">
-    Wait for Eazybe to validate recipients and calculate the estimated cost.
+  <Step title="Select one list">
+    Search by list name or move through the available pages, then select the list card. The selected list appears above the search field and its card is highlighted. Selecting another card replaces the current selection.
+
+    ![HubSpot contact list tab with one selected list and estimated cost in the footer](/images/broadcasts/hubspot-selected-list.jpeg)
+
+    <Note>
+      Eazybe checks the HubSpot `mobilephone` property first and then `phone`. Contacts without a valid value in either property are excluded from sending.
+    </Note>
+
+    Wait for Eazybe to validate the list and calculate the selected recipient count and **Estimated cost**. Confirm the count before selecting **Send broadcast**.
+
+    <Warning>
+      Sending uses wallet balance. Active HubSpot lists can change as contacts enter or leave the list, so verify the recipient count shown in Eazybe before sending.
+    </Warning>
   </Step>
 </Steps>
 
-<Frame caption="Select a HubSpot list and review the recipient count and estimated cost">
-  <img
-    src="/images/broadcasts/hubspot-selected-list.jpeg"
-    alt="HubSpot contact list tab showing a selected list, recipient count, estimated cost, and Send broadcast button"
-  />
-</Frame>
+## Understand HubSpot List Types
 
-## List types
+A HubSpot segment, previously called a list, is a saved group of contacts.
 
-| Label in Eazybe | HubSpot list type |
+| Label in Eazybe | How membership works |
 | --- | --- |
-| **Static segment** | Membership changes only when contacts are manually added or removed |
-| **Active segment** | HubSpot updates membership automatically using the list filters |
+| **Active segment** | HubSpot automatically adds or removes contacts when they match or stop matching the filters |
+| **Static segment** | Membership stays fixed until contacts are added or removed manually |
 
-## Phone properties
+<Card title="Create a HubSpot Segment" icon="filter" href="/en/integrations/hubspot/create-segment">
+  Prepare a contact segment in HubSpot before selecting it in Eazybe.
+</Card>
 
-Eazybe checks HubSpot phone properties in this order:
+## Personalize the Template
 
-1. `mobilephone`
-2. `phone`
+| Template type | What Eazybe uses |
+| --- | --- |
+| **HubSpot property template** | The HubSpot property mappings saved with the template |
+| **Workspace variable template** | The HubSpot properties and fallback values you map for this broadcast |
+| **Zoho variable template** | The HubSpot properties and fallback values you map for this broadcast |
 
-Contacts without a valid phone value are excluded from sending.
-
-## Template personalization
-
-- **HubSpot property template:** Existing HubSpot mappings are used automatically.
-- **Workspace or Zoho variable template:** Map each template variable to a HubSpot property and provide a fallback value.
-
-The mapping is used for this HubSpot list broadcast only; it does not change the original template type.
-
-See [Template variables and personalization](/en/broadcasts/template-variables).
+Mappings created for this HubSpot list broadcast do not change the original template type. See [Template Variables and Personalization](/en/broadcasts/template-variables).

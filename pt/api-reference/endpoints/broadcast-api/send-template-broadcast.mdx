@@ -1,0 +1,140 @@
+---
+title: "Enviar uma transmissão com modelo"
+description: "Envie um modelo aprovado do WhatsApp para até 10.000 destinatários."
+---
+
+## Enviar modelo de transmissão
+
+Envia um modelo aprovado para uma lista de destinatários. O comportamento muda com o tamanho da lista: até 1.000 destinatários a transmissão é enfileirada de forma síncrona; acima disso, a lista é dividida em partes e processado como um trabalho em segundo plano cujo status pode ser consultado.
+
+### Endpoint
+
+```http
+POST /broadcast/public/send-template-broadcast
+```
+
+### Cabeçalhos
+
+| Cabeçalho | Obrigatório | Descrição |
+| --- | --- | --- |
+| `x-api-key` | Obrigatório | Chave de autorização da organização |
+| `Content-Type` | Obrigatório | `application/json` |
+| `Idempotency-Key` | Opcional | String exclusiva, segura para tentar novamente |
+
+### Corpo
+
+| Campo | Tipo | Obrigatório | Descrição |
+| --- | --- | --- | --- |
+| `broadcastName` | corda | Obrigatório | Rótulo da campanha mostrado nos relatórios |
+| `fromPhoneNumber` | corda | Obrigatório | Seu número WABA, em Obter números de telefone |
+| `templateName` | corda | Obrigatório | Nome do modelo aprovado |
+| `templateLanguage` | corda | Obrigatório | Código de idioma, por ex. `en` |
+| `templateType` | corda | Obrigatório | `MARKETING`, `UTILITY` e assim por diante |
+| `templateId` | corda | Opcional | ID do modelo do WhatsApp |
+| `globalTemplateParams` | string[] | Opcional | Padrões aplicados a destinatários sem parâmetros próprios |
+| `data` | objeto[] | Obrigatório | Destinatários, 1 a 10.000 |
+
+### Objeto destinatário
+
+| Campo | Tipo | Obrigatório | Descrição |
+| --- | --- | --- | --- |
+| `countryCode` | corda | Obrigatório | Apenas dígitos, sem `+`. por exemplo `91` |
+| `toPhoneNumber` | corda | Obrigatório | Apenas dígitos, sem código do país |
+| `templateParams` | string[] | Opcional | Valores para `{{1}}`, `{{2}}`… Substitui globais. |
+
+### Solicitação
+
+```bash
+curl -X POST "https://cerberus.eazybe.com/prod/api/v2/broadcast/public/send-template-broadcast" \
+  -H "x-api-key: $API_KEY" \
+  -H "Content-Type: application/json" \
+  -H "Idempotency-Key: festive-run-1" \
+  -d '{
+    "broadcastName": "Festive Offer Campaign",
+    "fromPhoneNumber": "14844634680",
+    "templateName": "eazybe_temp",
+    "templateLanguage": "en",
+    "templateType": "MARKETING",
+    "templateId": "1530766784804741",
+    "globalTemplateParams": ["Valued customer", "FESTIVE10"],
+    "data": [
+      {
+        "countryCode": "91",
+        "toPhoneNumber": "9675360316",
+        "templateParams": ["Vineet", "VIP20"]
+      },
+      {
+        "countryCode": "91",
+        "toPhoneNumber": "8077378155"
+      }
+    ]
+  }'
+```
+
+Neste exemplo, o primeiro destinatário obtém seus próprios valores e o segundo volta para `globalTemplateParams`.
+
+### Respostas
+
+**200 — Na fila (1.000 destinatários ou menos)**
+
+```json
+{
+  "status": true,
+  "status_code": 200,
+  "message": "Bulk broadcast queued successfully",
+  "data": { }
+}
+```
+
+**202 — Aceito para processamento em segundo plano (mais de 1.000 destinatários)**
+
+```json
+{
+  "status": true,
+  "status_code": 202,
+  "message": "Broadcast accepted for background processing",
+  "data": {
+    "jobId": "pub_4f8c2a1e9b7d43c6a5e0f2b18d3c9a67",
+    "status": "PROCESSING",
+    "totalRecipients": 1001,
+    "chunkSize": 1000,
+    "totalChunks": 2
+  }
+}
+```
+
+Guarde o `jobId` — é a única forma de verificar como terminou a transmissão. Consulte Obter status da transmissão usando esse identificador.
+
+**400 — Limite de destinatários excedido**
+
+```json
+{
+  "status": false,
+  "status_code": 400,
+  "message": "Recipient limit exceeded",
+  "data": {
+    "error": {
+      "message": "Template broadcast cannot exceed 10000 recipients per request."
+    }
+  }
+}
+```
+
+**400 — Modelo não aprovado**
+
+```json
+{
+  "status": false,
+  "status_code": 400,
+  "message": "Template is not approved or not found",
+  "data": {
+    "error": {
+      "message": "Template is not approved or not found for this WABA phone number."
+    }
+  }
+}
+```
+
+<Warning>
+  **Destinatários duplicados são rejeitados, não mesclados.** Se o mesmo par `countryCode` + `toPhoneNumber` aparecer duas vezes, toda a solicitação falhará com um `400` nomeando o índice da duplicata. Desduplicar sua lista antes de enviar.
+</Warning>

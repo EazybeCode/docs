@@ -1,0 +1,140 @@
+---
+title: "Send a Template Broadcast"
+description: "Send an approved WhatsApp template to up to 10,000 recipients and safely retry the request."
+---
+
+Use this endpoint to send one approved template from an organization-owned WhatsApp number to a recipient list. Small broadcasts are queued immediately; larger broadcasts return a job that you can monitor.
+
+## Endpoint
+
+```http
+POST /broadcast/public/send-template-broadcast
+```
+
+**Rate limit:** 10 requests per minute for each API key and `fromPhoneNumber` combination.
+
+## Headers
+
+| Header | Required | Description |
+| --- | --- | --- |
+| `x-api-key` | Required | Organization auth key |
+| `Content-Type` | Required | `application/json` |
+| `Idempotency-Key` | Recommended | A unique value that identifies this broadcast request |
+
+<Tip>
+  Create one `Idempotency-Key` for a logical broadcast and reuse it only when retrying that same request. Use a new key for the next broadcast.
+</Tip>
+
+## Request body
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `broadcastName` | string | Required | Campaign label used in broadcast reporting |
+| `fromPhoneNumber` | string | Required | A sender from [Get Phone Numbers](/en/api-reference/endpoints/broadcast-api/get-phone-numbers) |
+| `templateName` | string | Required | Name of an approved template |
+| `templateLanguage` | string | Required | Template language code, such as `en` |
+| `templateType` | string | Required | Template category, such as `MARKETING` or `UTILITY` |
+| `templateId` | string | Optional | WhatsApp template identifier |
+| `globalTemplateParams` | string[] | Optional | Default placeholder values for recipients without their own values |
+| `data` | object[] | Required | Between 1 and 10,000 recipient objects |
+
+### Recipient object
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `countryCode` | string | Required | Country calling code as digits without `+`, such as `91` |
+| `toPhoneNumber` | string | Required | Local recipient number as digits without the country code |
+| `templateParams` | string[] | Optional | Recipient-specific placeholder values; these override the global values |
+
+## Request example
+
+```bash
+curl -X POST "https://cerberus.eazybe.com/prod/api/v2/broadcast/public/send-template-broadcast" \
+  -H "x-api-key: $API_KEY" \
+  -H "Content-Type: application/json" \
+  -H "Idempotency-Key: festive-run-1" \
+  -d '{
+    "broadcastName": "Festive Offer Campaign",
+    "fromPhoneNumber": "14844634680",
+    "templateName": "eazybe_temp",
+    "templateLanguage": "en",
+    "templateType": "MARKETING",
+    "templateId": "1530766784804741",
+    "globalTemplateParams": ["Valued customer", "FESTIVE10"],
+    "data": [
+      {
+        "countryCode": "91",
+        "toPhoneNumber": "9675360316",
+        "templateParams": ["Vineet", "VIP20"]
+      },
+      {
+        "countryCode": "91",
+        "toPhoneNumber": "8077378155"
+      }
+    ]
+  }'
+```
+
+The first recipient uses `templateParams`. The second recipient has no recipient-specific values, so the API uses `globalTemplateParams`.
+
+## Responses by broadcast size
+
+### Up to 1,000 recipients
+
+The API queues the broadcast and returns `200`.
+
+```json
+{
+  "status": true,
+  "status_code": 200,
+  "message": "Bulk broadcast queued successfully",
+  "data": {}
+}
+```
+
+These broadcasts do not return a `jobId`, so there is no background job to poll.
+
+### 1,001 to 10,000 recipients
+
+The API accepts the request with `202`, divides it into chunks of 1,000 recipients, and returns a `jobId`.
+
+```json
+{
+  "status": true,
+  "status_code": 202,
+  "message": "Broadcast accepted for background processing",
+  "data": {
+    "jobId": "pub_4f8c2a1e9b7d43c6a5e0f2b18d3c9a67",
+    "status": "PROCESSING",
+    "totalRecipients": 1001,
+    "chunkSize": 1000,
+    "totalChunks": 2
+  }
+}
+```
+
+Save `jobId`, then [get the broadcast status](/en/api-reference/endpoints/broadcast-api/get-broadcast-status).
+
+## Validation behavior
+
+- `data` must contain at least 1 and no more than 10,000 recipients.
+- `fromPhoneNumber`, `countryCode`, and `toPhoneNumber` must contain digits only.
+- A duplicate recipient causes the entire request to return `400`; the valid recipients are not queued separately.
+- The template must belong to the sender and have `APPROVED` status.
+- Each parameter array must match the selected template's numbered placeholders.
+
+<Warning>
+  Check for duplicate recipients before sending. A single duplicate rejects the complete broadcast request.
+</Warning>
+
+## Errors and retries
+
+| Status | Cause | What to do |
+| --- | --- | --- |
+| `400` | Invalid recipient, duplicate, template, parameter count, or list size | Correct the request before retrying |
+| `401` | Invalid key, wrong sender organization, or incomplete WABA configuration | Check the organization key and sender |
+| `409` | The idempotency key is already being processed | Wait for the original request |
+| `429` | More than 10 requests in the current window | Wait for the interval in the response |
+| `500` or `503` | Transient service failure | Retry with exponential backoff and the same idempotency key |
+
+Do not change the idempotency key while retrying the same payload. A different key represents a new broadcast and can create duplicate sends.

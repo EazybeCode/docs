@@ -1,0 +1,66 @@
+---
+title: "Get Broadcast Status"
+description: "Check the processing state of a template broadcast that contains more than 1,000 recipients."
+---
+
+Large template broadcasts run as background jobs. Use this endpoint with the `jobId` returned by a `202` response to review the job's progress and summary.
+
+<Note>
+  Broadcasts with 1,000 recipients or fewer return `200` without a `jobId`. There is no background job to poll for those requests.
+</Note>
+
+## Endpoint
+
+```http
+GET /broadcast/public/status/:jobId
+```
+
+**Rate limit:** 30 requests per minute for each API key.
+
+## Path parameter
+
+| Parameter | Type | Required | Description |
+| --- | --- | --- | --- |
+| `jobId` | string | Required | The identifier returned when the broadcast was accepted with `202` |
+
+## Request
+
+```bash
+curl "https://cerberus.eazybe.com/prod/api/v2/broadcast/public/status/pub_4f8c2a1e9b7d43c6a5e0f2b18d3c9a67" \
+  -H "x-api-key: $API_KEY"
+```
+
+## Successful response
+
+```json
+{
+  "status": true,
+  "status_code": 200,
+  "message": "Broadcast status fetched successfully",
+  "data": {
+    "jobId": "pub_4f8c2a1e9b7d43c6a5e0f2b18d3c9a67",
+    "status": "QUEUED_FOR_PROCESSING",
+    "totalRecipients": 1001,
+    "totalChunks": 2,
+    "summary": {}
+  }
+}
+```
+
+The `status` field shows the current job state. The `summary` field contains the processing totals available at that point in the job.
+
+## Poll responsibly
+
+- Start polling only after the send endpoint returns `202` and a `jobId`.
+- Keep each API key below 30 status requests per minute.
+- Stop polling after the response reports a terminal state for the job.
+- If you receive `429`, wait for the interval stated in the response.
+
+## Errors
+
+| Status | Cause | What to check |
+| --- | --- | --- |
+| `401` | The job belongs to another organization | Use the same organization key that created the broadcast |
+| `404` | The job does not exist | Check the complete `jobId` from the `202` response |
+| `429` | More than 30 requests in the current window | Reduce the polling frequency |
+| `503` | Authentication storage timed out | Retry with exponential backoff |

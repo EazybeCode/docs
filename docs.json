@@ -222,6 +222,7 @@
                 "group": "Billing & Payment",
                 "icon": "credit-card",
                 "pages": [
+                  "en/billing/overview",
                   "en/billing/plan-purchase",
                   {
                     "group": "Credits",
@@ -677,7 +678,18 @@
                 "group": "API Documentation",
                 "icon": "server",
                 "pages": [
-                  "en/api-reference/endpoints/broadcast-api",
+                  {
+                    "group": "Public Broadcast API",
+                    "pages": [
+                      "en/api-reference/endpoints/broadcast-api",
+                      "en/api-reference/endpoints/broadcast-api/get-phone-numbers",
+                      "en/api-reference/endpoints/broadcast-api/get-templates",
+                      "en/api-reference/endpoints/broadcast-api/send-template-broadcast",
+                      "en/api-reference/endpoints/broadcast-api/send-free-form-message",
+                      "en/api-reference/endpoints/broadcast-api/get-broadcast-status",
+                      "en/api-reference/endpoints/broadcast-api/health-check"
+                    ]
+                  },
                   "api-reference/endpoints/messages",
                   "api-reference/endpoints/contacts",
                   "api-reference/endpoints/conversations",
@@ -685,7 +697,7 @@
                 ]
               },
               {
-                "group": "Meta API Documentation",
+                "group": "Waba Api Documentation",
                 "icon": "whatsapp",
                 "openapi": "/api-reference/meta/openapi.yaml",
                 "pages": [
@@ -813,23 +825,10 @@
                 ]
               },
               {
-                "group": "Scheduled Webhooks and Custom",
+                "group": "Webhook API",
                 "icon": "code",
                 "pages": [
-                  "en/integrations/webhooks-custom/scheduler-api",
-                  "en/integrations/webhooks-custom/add-chat-id",
-                  "en/integrations/webhooks-custom/webhooks",
-                  "en/integrations/webhooks-custom/create-group-and-add-chat-id",
-                  "en/integrations/webhooks-custom/active-user-api",
-                  "en/integrations/webhooks-custom/compliance-and-privacy",
-                  {
-                    "group": "FAQ",
-                    "pages": [
-                      "en/integrations/webhooks-custom/faq/available-apis",
-                      "en/integrations/webhooks-custom/faq/custom-apis",
-                      "en/integrations/webhooks-custom/faq/create-webhook"
-                    ]
-                  }
+                  "en/integrations/webhooks-custom/webhooks"
                 ]
               }
             ]
@@ -1009,6 +1008,24 @@
                   "es/productivity/broadcast-messages",
                   "es/productivity/scheduler-message",
                   "es/productivity/managing-unreplied-chats"
+                ]
+              },
+              {
+                "group": "Facturación y pagos",
+                "icon": "credit-card",
+                "pages": [
+                  "es/billing/overview",
+                  "es/billing/plan-purchase",
+                  {
+                    "group": "Créditos",
+                    "pages": [
+                      "es/billing/credits-overview",
+                      "es/billing/wallet-recharge",
+                      "es/billing/auto-payment"
+                    ]
+                  },
+                  "es/billing/billing-taxation",
+                  "es/billing/wallet-history"
                 ]
               },
               {
@@ -1437,7 +1454,18 @@
                 "group": "API Documentation",
                 "icon": "server",
                 "pages": [
-                  "es/api-reference/api-de-transmision"
+                  {
+                    "group": "API pública de difusión",
+                    "pages": [
+                      "es/api-reference/endpoints/broadcast-api",
+                      "es/api-reference/endpoints/broadcast-api/get-phone-numbers",
+                      "es/api-reference/endpoints/broadcast-api/get-templates",
+                      "es/api-reference/endpoints/broadcast-api/send-template-broadcast",
+                      "es/api-reference/endpoints/broadcast-api/send-free-form-message",
+                      "es/api-reference/endpoints/broadcast-api/get-broadcast-status",
+                      "es/api-reference/endpoints/broadcast-api/health-check"
+                    ]
+                  }
                 ]
               },
               {
@@ -1569,23 +1597,10 @@
                 ]
               },
               {
-                "group": "Scheduled Webhooks and Custom",
+                "group": "Webhook API",
                 "icon": "code",
                 "pages": [
-                  "es/integrations/webhooks-custom/scheduler-api",
-                  "es/integrations/webhooks-custom/add-chat-id",
-                  "es/integrations/webhooks-custom/webhooks",
-                  "es/integrations/webhooks-custom/create-group-and-add-chat-id",
-                  "es/integrations/webhooks-custom/active-user-api",
-                  "es/integrations/webhooks-custom/compliance-and-privacy",
-                  {
-                    "group": "FAQ",
-                    "pages": [
-                      "es/integrations/webhooks-custom/faq/available-apis",
-                      "es/integrations/webhooks-custom/faq/custom-apis",
-                      "es/integrations/webhooks-custom/faq/create-webhook"
-                    ]
-                  }
+                  "es/integrations/webhooks-custom/webhooks"
                 ]
               }
             ]
@@ -1767,6 +1782,24 @@
                   "pt/productivity/broadcast-messages",
                   "pt/productivity/scheduler-message",
                   "pt/productivity/managing-unreplied-chats"
+                ]
+              },
+              {
+                "group": "Faturamento e pagamentos",
+                "icon": "credit-card",
+                "pages": [
+                  "pt/billing/overview",
+                  "pt/billing/plan-purchase",
+                  {
+                    "group": "Créditos",
+                    "pages": [
+                      "pt/billing/credits-overview",
+                      "pt/billing/wallet-recharge",
+                      "pt/billing/auto-payment"
+                    ]
+                  },
+                  "pt/billing/billing-taxation",
+                  "pt/billing/wallet-history"
                 ]
               },
               {
@@ -2197,7 +2230,18 @@
                 "group": "API Documentation",
                 "icon": "server",
                 "pages": [
-                  "pt/api-reference/api-de-transmissao"
+                  {
+                    "group": "API pública de transmissão",
+                    "pages": [
+                      "pt/api-reference/endpoints/broadcast-api",
+                      "pt/api-reference/endpoints/broadcast-api/get-phone-numbers",
+                      "pt/api-reference/endpoints/broadcast-api/get-templates",
+                      "pt/api-reference/endpoints/broadcast-api/send-template-broadcast",
+                      "pt/api-reference/endpoints/broadcast-api/send-free-form-message",
+                      "pt/api-reference/endpoints/broadcast-api/get-broadcast-status",
+                      "pt/api-reference/endpoints/broadcast-api/health-check"
+                    ]
+                  }
                 ]
               },
               {
@@ -2329,23 +2373,10 @@
                 ]
               },
               {
-                "group": "Scheduled Webhooks and Custom",
+                "group": "Webhook API",
                 "icon": "code",
                 "pages": [
-                  "pt/integrations/webhooks-custom/scheduler-api",
-                  "pt/integrations/webhooks-custom/add-chat-id",
-                  "pt/integrations/webhooks-custom/webhooks",
-                  "pt/integrations/webhooks-custom/create-group-and-add-chat-id",
-                  "pt/integrations/webhooks-custom/active-user-api",
-                  "pt/integrations/webhooks-custom/compliance-and-privacy",
-                  {
-                    "group": "FAQ",
-                    "pages": [
-                      "pt/integrations/webhooks-custom/faq/available-apis",
-                      "pt/integrations/webhooks-custom/faq/custom-apis",
-                      "pt/integrations/webhooks-custom/faq/create-webhook"
-                    ]
-                  }
+                  "pt/integrations/webhooks-custom/webhooks"
                 ]
               }
             ]
@@ -2527,6 +2558,24 @@
                   "tr/productivity/broadcast-messages",
                   "tr/productivity/scheduler-message",
                   "tr/productivity/managing-unreplied-chats"
+                ]
+              },
+              {
+                "group": "Faturalandırma ve Ödemeler",
+                "icon": "credit-card",
+                "pages": [
+                  "tr/billing/overview",
+                  "tr/billing/plan-purchase",
+                  {
+                    "group": "Krediler",
+                    "pages": [
+                      "tr/billing/credits-overview",
+                      "tr/billing/wallet-recharge",
+                      "tr/billing/auto-payment"
+                    ]
+                  },
+                  "tr/billing/billing-taxation",
+                  "tr/billing/wallet-history"
                 ]
               },
               {
@@ -2957,7 +3006,18 @@
                 "group": "API Documentation",
                 "icon": "server",
                 "pages": [
-                  "tr/api-reference/yayin-api-si"
+                  {
+                    "group": "Genel Yayın API'si",
+                    "pages": [
+                      "tr/api-reference/endpoints/broadcast-api",
+                      "tr/api-reference/endpoints/broadcast-api/get-phone-numbers",
+                      "tr/api-reference/endpoints/broadcast-api/get-templates",
+                      "tr/api-reference/endpoints/broadcast-api/send-template-broadcast",
+                      "tr/api-reference/endpoints/broadcast-api/send-free-form-message",
+                      "tr/api-reference/endpoints/broadcast-api/get-broadcast-status",
+                      "tr/api-reference/endpoints/broadcast-api/health-check"
+                    ]
+                  }
                 ]
               },
               {
@@ -3089,23 +3149,10 @@
                 ]
               },
               {
-                "group": "Scheduled Webhooks and Custom",
+                "group": "Webhook API",
                 "icon": "code",
                 "pages": [
-                  "tr/integrations/webhooks-custom/scheduler-api",
-                  "tr/integrations/webhooks-custom/add-chat-id",
-                  "tr/integrations/webhooks-custom/webhooks",
-                  "tr/integrations/webhooks-custom/create-group-and-add-chat-id",
-                  "tr/integrations/webhooks-custom/active-user-api",
-                  "tr/integrations/webhooks-custom/compliance-and-privacy",
-                  {
-                    "group": "FAQ",
-                    "pages": [
-                      "tr/integrations/webhooks-custom/faq/available-apis",
-                      "tr/integrations/webhooks-custom/faq/custom-apis",
-                      "tr/integrations/webhooks-custom/faq/create-webhook"
-                    ]
-                  }
+                  "tr/integrations/webhooks-custom/webhooks"
                 ]
               }
             ]

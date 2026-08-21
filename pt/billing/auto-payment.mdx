@@ -1,0 +1,47 @@
+---
+title: "Configurar pagamento automático"
+description: "Adicione créditos automaticamente quando uma carteira elegível atingir um limite baixo."
+---
+
+O pagamento automático cobra um cartão salvo e adiciona créditos quando o saldo atinge o limite escolhido.
+
+<Frame caption="Guia Créditos com status do pagamento automático"><img src="/images/billing/add-credits.jpeg" alt="Guia Créditos com saldo e pagamento automático" /></Frame>
+<Warning>Os valores da captura são exemplos. O pagamento automático está disponível atualmente para carteiras em USD.</Warning>
+
+## Ativar
+
+1. Abra **Configurações → Faturamento → Créditos**.
+2. Expanda **Pagamento automático**.
+3. Ative o controle.
+4. Confirme **Recarregar quando abaixo de** e **Valor a adicionar**.
+5. Confira **Pagamento automático ativo**.
+
+A Eazybe usa o cartão elegível salvo na assinatura. Se não houver um, atualize a forma de pagamento ou contate o Suporte.
+
+<Warning>A ativação autoriza cobranças futuras no cartão salvo.</Warning>
+
+## Escolher valores
+
+- O limite dispara o pagamento quando o saldo o alcança.
+- O valor de recarga é cobrado e adicionado após o sucesso.
+- O limite deve ser menor que o valor adicionado.
+- Em USD: limite mínimo USD 1, recarga mínima USD 5 e máximo USD 10.000 para cada valor.
+
+Exemplo: limite USD 5 e recarga USD 50 iniciam o pagamento quando o saldo chega a USD 5 ou menos. O exemplo não é uma recomendação.
+
+## Alterar valores ou cartão
+
+Edite os valores e selecione **Salvar alterações**. Para trocar o cartão, selecione **Alterar cartão**, conclua a Stripe e confirme a bandeira e os quatro últimos dígitos.
+
+## Desativar
+
+Desative e confirme **Desativar pagamento automático**. A configuração permanece salva para uso futuro.
+
+<Warning>Desativar não cancela um pagamento já iniciado. Consulte **Histórico da carteira**.</Warning>
+
+| Evento | Aviso |
+| --- | --- |
+| Pagamento iniciado | Valor e ID da transação |
+| Pagamento concluído | Valor, ID e saldo atualizado quando disponível |
+| Pagamento falhou | Motivo, momento de nova tentativa e instruções |
+| Falhas repetidas | Desativação após três tentativas e e-mail final |

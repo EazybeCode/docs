@@ -1,60 +1,63 @@
 ---
-title: "Template variables and personalization"
-description: "Personalize uploaded contacts or map template variables to HubSpot properties."
+title: "Template Variables and Personalization"
+description: "Provide a value for every template variable in uploaded files or HubSpot contact lists."
 ---
 
-Variables personalize the same approved WhatsApp template for each recipient.
+Variables let one approved WhatsApp template use different values for each recipient. Before sending, make sure every selected contact has a value for every variable shown in the template.
 
-For example, `Hello {{1}}, your appointment is on {{2}}.` requires two values for every contact.
+For example, `Hello {{1}}, your appointment is on {{2}}.` needs two values for each contact.
 
-<Frame caption="Preview HubSpot property variables in the selected WhatsApp template">
+<Frame caption="Message preview with HubSpot property variables">
   <img
     src="/images/broadcasts/template-variables-message-preview.jpeg"
-    alt="Create broadcast page showing a WhatsApp message preview with firstname, city, and country property variables"
+    alt="Create broadcast Message preview with firstname, city, and country variables highlighted"
   />
 </Frame>
 
-## Uploaded contact list
+<Warning>
+  The names and message content in the screenshot are examples. Check the **Message preview** for the variables in your selected template.
+</Warning>
 
-Add a column for every numbered variable in your CSV or Excel file.
-
-| Name | Phone | &#123;&#123;1&#125;&#125; | &#123;&#123;2&#125;&#125; |
-| --- | --- | --- | --- |
-| Aisha | 919876543210 | Aisha | 20 August |
-
-The column names must match the variables exactly.
-
-## HubSpot contact list
-
-How variables work depends on the selected template:
-
-| Template type | How it works |
-| --- | --- |
-| **HubSpot property template** | The template is already mapped to HubSpot properties. Eazybe uses those mappings automatically, so no additional mapping panel is shown. |
-| **Workspace variable template** | Map each numbered template variable to a HubSpot contact property before sending. |
-| **Zoho variable template** | Map each numbered template variable to a HubSpot contact property before sending from a HubSpot list. |
-
-## Map a variable to HubSpot
+## Use Variables in an Uploaded File
 
 <Steps>
-  <Step title="Select a variable template">
-    Choose a Workspace or Zoho template that contains variables.
+  <Step title="Check the template variables">
+    Select the **Template message** and review the **Message preview**. Numbered variables appear as `{{1}}`, `{{2}}`, and so on.
+
+    ![Message preview with template variables highlighted](/images/broadcasts/template-variables-message-preview.jpeg)
   </Step>
-  <Step title="Select a HubSpot list">
-    The HubSpot property mapping panel appears below the list.
+  <Step title="Add one column for each variable">
+    In the CSV or Excel file, add a column whose header matches each numbered variable exactly. Fill every variable cell for every recipient.
+
+    ![Spreadsheet with Name, Phone, and numbered variable columns for each contact](/images/broadcasts/prepare-broadcast-variables.jpeg)
+
+    | Name | Phone | &#123;&#123;1&#125;&#125; | &#123;&#123;2&#125;&#125; |
+    | --- | --- | --- | --- |
+    | Aisha | 919876543210 | Aisha | 20 August |
+
+    <Note>
+      Select **Sample CSV** or **Sample Excel** in **Upload a list** when you need a file with the expected structure.
+    </Note>
   </Step>
-  <Step title="Choose a property">
-    Map each variable to the correct HubSpot property, such as **First name** or **Company name**.
-  </Step>
-  <Step title="Add a fallback value">
-    Enter a value to use when the selected property is empty for a contact.
+  <Step title="Upload and validate the values">
+    Select **Choose file** and upload the prepared file. Eazybe displays **Variable data loaded successfully** when it can read the variable data.
+
+    ![Uploaded variable contact list with Variable data loaded successfully and Replace file](/images/broadcasts/review-and-send-broadcast.jpeg)
   </Step>
 </Steps>
 
-<Note>
-  **Add image:** HubSpot property mapping panel showing template variables, property selectors, and fallback fields.
-</Note>
+## Use Variables with a HubSpot List
+
+How Eazybe fills variables depends on the selected template type:
+
+| Template type | How personalization works |
+| --- | --- |
+| **HubSpot property template** | Eazybe uses the HubSpot property mappings already saved with the template. No additional mapping panel appears. |
+| **Workspace variable template** | Map every numbered variable to a HubSpot contact property and enter a fallback value. |
+| **Zoho variable template** | Map every numbered variable to a HubSpot contact property and enter a fallback value. |
+
+The fallback value is used when the mapped HubSpot property is empty for a contact. These mappings apply to the current HubSpot list broadcast and do not change the original template.
 
 <Warning>
-  Every template variable must have a value. Meta error `#132000` means the number of supplied parameters does not match the approved template.
+  Every template variable must receive a value. Meta error `#132000` means the number of supplied parameters does not match the approved template.
 </Warning>

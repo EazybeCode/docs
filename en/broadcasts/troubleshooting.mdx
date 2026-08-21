@@ -1,54 +1,63 @@
 ---
-title: "Broadcast troubleshooting"
-description: "Resolve common contact upload, HubSpot, template, cost, and delivery issues."
+title: "Troubleshoot Broadcasts"
+description: "Resolve common contact upload, HubSpot, template, estimate, and delivery issues."
 ---
 
-## HubSpot contact list is not visible
+Use the symptom that matches what you see in Eazybe. Complete the checks in order, then reopen the broadcast or refresh the results.
 
-The tab appears only when HubSpot is connected to the current workspace.
+## HubSpot Contact List Is Not Visible
 
-**Fix:** Connect HubSpot, then reopen **New broadcast**.
+**Cause:** HubSpot is not connected to the current workspace.
 
-## HubSpot lists cannot be loaded
+**Fix:** Connect HubSpot, return to **Broadcasts**, and reopen **New broadcast**. The **HubSpot contact list** tab appears under **Choose recipients** after the connection is available.
 
-If Eazybe reports that `crm.lists.read` is missing, reconnect HubSpot and approve list access.
+## HubSpot Lists Cannot Be Loaded
+
+**Cause:** The HubSpot connection does not include the `crm.lists.read` permission.
+
+**Fix:** Reconnect HubSpot and approve list access, then reopen **HubSpot contact list**.
+
+## A HubSpot List Is Missing or Still Updating
+
+HubSpot can continue updating an active list after its filters change.
+
+**Fix:** Wait for the update to finish, select **Refresh** in Eazybe, and open the list again. You do not need to sign out.
+
+## No Valid Contacts Were Found
+
+Check the uploaded file or HubSpot properties:
+
+- Include a country code for every phone number.
+- In CSV files, keep **Country Code** and **Phone** in separate columns.
+- In Excel files, put the full international number in **Phone**.
+- Remove spaces and special characters from phone values.
+- Fill empty phone cells.
+- For HubSpot, add a valid value to `mobilephone` or `phone`.
 
 <Note>
-  **Add image:** Missing HubSpot list permission message with the reconnect action.
+  Eazybe removes duplicate phone numbers automatically, so the valid recipient count can be lower than the number of rows in the source.
 </Note>
 
-## HubSpot is still updating the segment
+## Estimated Cost Is Not Displayed
 
-This can happen after a HubSpot list is edited.
+Confirm that you have selected a WhatsApp Business number, an approved **Template message**, and at least one valid recipient. Complete every required variable value or HubSpot property mapping, then wait while **Calculating...** is displayed.
 
-**Fix:** Wait a moment, refresh the Eazybe page, and select the list again. You do not need to log out.
+If **Send broadcast** is still unavailable, check that the Eazybe wallet has enough balance.
 
-## No valid contacts were found
+## Template Parameter Error `#132000`
 
-Check that:
-
-- Every phone number includes a country code
-- CSV country code and phone values use separate columns
-- Excel contains the full international phone number
-- Phone cells are not empty
-
-## Estimated cost is not displayed
-
-Confirm that a template and at least one recipient are selected. Wait while **Calculating...** is displayed.
-
-## Template parameter error `#132000`
-
-The supplied values do not match the number of variables in the approved template.
+The values supplied for the message do not match the number of variables in the approved template.
 
 **Fix:**
 
-- For uploaded contacts, include a populated column for every variable.
-- For HubSpot lists, complete every property mapping and fallback value.
+- For **Upload a list**, add a populated column for every numbered variable.
+- For **HubSpot contact list**, complete every required property mapping and fallback value.
+- Recheck the **Message preview** before sending again.
 
-## A message failed after sending
+## A Message Failed After Sending
 
-Open **View Analytics**, select **Failed**, and review the failure reason. Export the Failed list when you need to correct or share the affected contacts.
+Open **View Analytics**, select **Failed**, and review the failure reason for the contact. Select **Export** to download the failed group when you need to correct or share the affected rows.
 
 <Tip>
-  If the issue continues, contact [support@eazybe.com](mailto:support@eazybe.com) and include the campaign name, sending number, and a screenshot of the error.
+  If the issue continues, email [support@eazybe.com](mailto:support@eazybe.com) with the campaign name, sending number, failure reason, and a screenshot of the error.
 </Tip>

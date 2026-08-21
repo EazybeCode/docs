@@ -1,0 +1,48 @@
+---
+title: "Sağlık Kontrolü"
+description: "Mesaj göndermeden Genel Yayın API'si hizmetine erişilebildiğini doğrulayın."
+---
+
+Hizmet kullanılabilirliğini kontrol etmek ve entegrasyon sorunlarını teşhis etmek için bu uç noktayı kullanın. API anahtarı gerektirmez ve kuruluşunuzun WhatsApp yapılandırmasını doğrulamaz.
+
+## Endpoint
+
+```http
+GET /broadcast/public/health
+```
+
+## Request
+
+```bash
+curl "https://cerberus.eazybe.com/prod/api/v2/broadcast/public/health"
+```
+
+## Response
+
+Yanıt hizmet meta verilerini içerir. Erişilebilirlik kontrolü için şu kararlı alanları kullanın:
+
+```json
+{
+  "status": "ok",
+  "timestamp": "2026-08-21T10:30:00.000Z",
+  "service": "Public Broadcast API",
+  "version": "2.0.0"
+}
+```
+
+<Note>
+  Canlı yanıt, tanılama amacıyla bir `endpoints` nesnesi de içerebilir. Bu envanter kılavuzdan bağımsız değişebilir; desteklenen v2 entegrasyon referansı olarak giriş sayfasındaki uç nokta dizinini kullanın.
+</Note>
+
+## Bu kontrol neyi doğrular?
+
+- Genel Yayın API'si hizmeti HTTP isteklerini alabilir.
+- Hizmet geçerli kimliğini ve sürümünü döndürür.
+
+Şunları doğrulamaz:
+
+- `x-api-key` değerinizin geçerli olduğunu.
+- Kuruluşunuza bir WABA numarası bağlandığını.
+- Bir şablonun onaylı olduğunu veya mesajın teslim edilebildiğini.
+
+Mesaj göndermeden kuruluş erişimini doğrulamak için anahtarınızla [Telefon Numaralarını Al](/tr/api-reference/endpoints/broadcast-api/get-phone-numbers) çağrısı yapın.

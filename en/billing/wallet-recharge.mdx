@@ -1,42 +1,49 @@
 ---
-title: "Wallet recharge"
-description: "Add credits to your Eazybe wallet with a secure one-time payment."
+title: "Add Credits to Your Wallet"
+description: "Add Eazybe wallet credits with a secure one-time payment."
 ---
 
-Use wallet recharge when you want to add credits once without changing your auto-payment settings.
-
-## Add credits
+Use **Add credits** when you want to make one wallet purchase without changing auto-payment settings. You can select a quick amount or enter a custom amount before continuing to checkout.
 
 <Steps>
-  <Step title="Open Credits">
-    Go to **Settings → Billing → Credits** and find **Add credits**.
-  </Step>
-  <Step title="Choose an amount">
-    Select a quick amount or enter a custom amount. Eazybe shows the balance you will have after a successful purchase.
-  </Step>
-  <Step title="Continue to checkout">
-    Click **Complete purchase** and review the amount.
-  </Step>
-  <Step title="Complete payment">
-    Finish the payment in the secure checkout. Your wallet balance updates after the payment succeeds.
+  <Step title="Choose the credit amount">
+    Open **Settings → Billing → Credits** and find **Add credits**. Select a quick amount or enter a custom amount. Check the **New balance** calculation, then select **Complete purchase**.
+
+    ![Credits tab with quick amounts, custom amount, New balance, Clear, and Complete purchase](/images/billing/add-credits.jpeg)
+
+    <Warning>
+      The screenshot shows example USD values. Confirm the currency and amount shown in your workspace before continuing. Selecting **Complete purchase** starts a payment flow.
+    </Warning>
   </Step>
 </Steps>
 
-![Add credits using a custom amount](/images/billing/add-credits.jpeg)
+## Complete Checkout
 
-## Payment flow by wallet currency
+Review the amount and tax shown by the secure checkout, choose the available payment method, and complete the payment. Return to **Credits** and confirm that **Current balance** has increased.
 
 <Tabs>
   <Tab title="INR wallet">
-    Enter an amount from INR 50 to INR 50,000. You can add or confirm GST details, review the tax summary, and complete payment through Razorpay.
+    Enter an amount from INR 50 to INR 50,000. Add or confirm GST details when requested, review the GST breakdown, and complete payment through Razorpay.
   </Tab>
-  <Tab title="Other currencies">
-    Enter an amount from USD 1 to USD 10,000 for a USD wallet, or follow the range shown on your screen. Complete payment through Stripe.
+  <Tab title="USD wallet">
+    Enter an amount from USD 1 to USD 10,000, then complete payment through Stripe.
+  </Tab>
+  <Tab title="Other currency">
+    Follow the amount range and checkout provider shown on your screen.
   </Tab>
 </Tabs>
 
 <Note>
-A one-time credit purchase does not create auto payment or change its threshold and recharge amount. Manage those settings separately in **Auto payment**.
+  A one-time purchase does not enable auto payment or change its threshold, recharge amount, or saved card.
 </Note>
 
-Add video here: A wallet recharge walkthrough showing a quick amount, custom amount, checkout, and updated balance.
+## If the Balance Does Not Update
+
+1. Check whether checkout shows the payment as successful, pending, or failed.
+2. Return to **Credits** and refresh the page once.
+3. Open **Wallet history** and find the matching transaction.
+4. If a successful payment is still missing, contact Eazybe Support with the workspace name, amount, currency, payment reference, and payment time.
+
+<Warning>
+  Do not repeat a payment while the original transaction is pending. A second checkout can create a duplicate charge.
+</Warning>

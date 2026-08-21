@@ -1,0 +1,191 @@
+---
+title: "Serbest Biçimli Mesaj Gönder"
+description: "Kuruluşa ait bir numaradan metin, medya, konum veya etkileşimli WhatsApp mesajı gönderin."
+---
+
+## Serbest biçimli mesaj gönder
+
+Bir alıcıya tek bir mesaj gönderir. Sekiz içerik türünün tamamı bu uç noktayı paylaşır; `type` alanı diğer hangi alanların gerekli olduğuna karar verir.
+
+### Uç Nokta
+
+```http
+POST /broadcast/public/send-freeform
+```
+
+### Ortak alanlar
+
+| Alan | Tür | Gerekli | Açıklama |
+| --- | --- | --- | --- |
+| `fromPhoneNumber` | dize | Gerekli | WABA numaranız |
+| `toPhoneNumber` | dize | Gerekli | Ülke kodunu içeren alıcı, yalnızca rakamlar |
+| `type` | dize | Gerekli | Aşağıdaki sekiz türden biri |
+
+### Türe özgü alanlar
+
+| `type` | Gerekli | İsteğe bağlı | Kabul edilen dosya uzantıları |
+| --- | --- | --- | --- |
+| `text` | `text` | — | — |
+| `image` | `url` | `caption` | jpg, jpeg, png |
+| `document` | `url` | `name`, `caption` | pdf, txt, doc, docx, ppt, pptx, xls, xlsx |
+| `audio` | `url` | — | aac, amr, mp3, m4a, mp4, ogg, opus |
+| `video` | `url` | `caption` | mp4, 3gp |
+| `sticker` | `url` | — | webp |
+| `location` | `latitude`, `longitude` | `name`, `address` | — |
+| `interactive` | `interactive` | — | — |
+
+<Warning>
+  **Uzantı, dosyadan değil, URL yolundan okunur.** `.webp` ile biten bir URL'den sunulan gerçek bir PNG, `image` için reddedilir ve hiçbir uzantısı olmayan bir URL, her medya türü için reddedilir. Sorgu dizeleri göz ardı edildiğinden `…/photo.png?v=2` uygundur.
+</Warning>
+
+### Metin
+
+```json
+{
+  "fromPhoneNumber": "14844634680",
+  "toPhoneNumber": "919675360316",
+  "type": "text",
+  "text": "Your order #4821 has shipped."
+}
+```
+
+### Resim
+
+```json
+{
+  "fromPhoneNumber": "14844634680",
+  "toPhoneNumber": "919675360316",
+  "type": "image",
+  "url": "https://cdn.example.com/offer.jpg",
+  "caption": "This week only"
+}
+```
+
+### Belge
+
+```json
+{
+  "fromPhoneNumber": "14844634680",
+  "toPhoneNumber": "919675360316",
+  "type": "document",
+  "url": "https://cdn.example.com/invoice-4821.pdf",
+  "name": "Invoice_4821.pdf",
+  "caption": "Your invoice is ready"
+}
+```
+
+### Ses
+
+```json
+{
+  "fromPhoneNumber": "14844634680",
+  "toPhoneNumber": "919675360316",
+  "type": "audio",
+  "url": "https://cdn.example.com/voice-note.mp3"
+}
+```
+
+### Video
+
+```json
+{
+  "fromPhoneNumber": "14844634680",
+  "toPhoneNumber": "919675360316",
+  "type": "video",
+  "url": "https://cdn.example.com/demo.mp4",
+  "caption": "60-second walkthrough"
+}
+```
+
+### Çıkartma
+
+```json
+{
+  "fromPhoneNumber": "14844634680",
+  "toPhoneNumber": "919675360316",
+  "type": "sticker",
+  "url": "https://cdn.example.com/thumbs-up.webp"
+}
+```
+
+### Konum
+
+`latitude` ve `longitude`, dize değil, JSON numaraları olmalıdır. Enlem -90 ile 90 arası, boylam -180 ile 180 arası kabul edilir.
+
+```json
+{
+  "fromPhoneNumber": "14844634680",
+  "toPhoneNumber": "919675360316",
+  "type": "location",
+  "latitude": 28.4595,
+  "longitude": 77.0266,
+  "name": "Eazybe HQ",
+  "address": "Sector 44, Gurugram, Haryana 122003"
+}
+```
+
+### Etkileşimli — düğmeler
+
+**3**'e kadar yanıtlama düğmesi. Üçten fazlası reddedilir.
+
+```json
+{
+  "fromPhoneNumber": "14844634680",
+  "toPhoneNumber": "919675360316",
+  "type": "interactive",
+  "interactive": {
+    "type": "button",
+    "header": { "type": "text", "text": "Renew your plan" },
+    "body": { "text": "Your subscription ends in 3 days. Renew now?" },
+    "footer": { "text": "Reply STOP to opt out" },
+    "action": {
+      "buttons": [
+        { "type": "reply", "reply": { "id": "renew_yes", "title": "Renew now" } },
+        { "type": "reply", "reply": { "id": "renew_later", "title": "Remind me later" } }
+      ]
+    }
+  }
+}
+```
+
+### Etkileşimli — liste
+
+Bölüm başına değil, *tüm* bölümlerin toplamında **10**'a kadar satır sayıldı.
+
+```json
+{
+  "fromPhoneNumber": "14844634680",
+  "toPhoneNumber": "919675360316",
+  "type": "interactive",
+  "interactive": {
+    "type": "list",
+    "header": { "type": "text", "text": "Pick a plan" },
+    "body": { "text": "Choose the plan that fits your team." },
+    "action": {
+      "button": "View plans",
+      "sections": [
+        {
+          "title": "Monthly",
+          "rows": [
+            { "id": "starter_m", "title": "Starter", "description": "3 seats included" },
+            { "id": "growth_m", "title": "Growth", "description": "10 seats included" }
+          ]
+        }
+      ]
+    }
+  }
+}
+```
+
+### Yanıt
+
+**200 — sekiz türün tümü için aynı şekil**
+
+```json
+{
+  "status": true,
+  "status_code": 200,
+  "message": "Free-form message queued successfully",
+  "data": { }
+}
+```

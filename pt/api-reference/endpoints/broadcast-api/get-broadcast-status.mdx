@@ -1,0 +1,46 @@
+---
+title: "Obter o status da transmissão"
+description: "Verifique o processamento de uma transmissão com modelo que tenha mais de 1.000 destinatários."
+---
+
+## Obter status da transmissão
+
+Retorna o progresso de um trabalho de transmissão de grande porte — aqueles que retornaram `202` e um `jobId`. Transmissões de 1.000 destinatários ou menos não criam um trabalho e não têm status para consultar.
+
+### Endpoint
+
+```http
+GET /broadcast/public/status/:jobId
+```
+
+### Solicitação
+
+```bash
+curl "https://cerberus.eazybe.com/prod/api/v2/broadcast/public/status/pub_4f8c2a1e9b7d43c6a5e0f2b18d3c9a67" \
+  -H "x-api-key: $API_KEY"
+```
+
+### Respostas
+
+**200 — registro de trabalho mais um resumo do progresso do bloco**
+
+```json
+{
+  "status": true,
+  "status_code": 200,
+  "message": "Broadcast status fetched successfully",
+  "data": {
+    "jobId": "pub_4f8c2a1e9b7d43c6a5e0f2b18d3c9a67",
+    "status": "QUEUED_FOR_PROCESSING",
+    "totalRecipients": 1001,
+    "totalChunks": 2,
+    "summary": { }
+  }
+}
+```
+
+**404** — Trabalho de transmissão não encontrado
+
+**401** — O trabalho pertence a uma organização diferente
+
+Um trabalho criado por outra organização retorna `401` em vez de `404` — os IDs de trabalho não são enumeráveis entre organizações.

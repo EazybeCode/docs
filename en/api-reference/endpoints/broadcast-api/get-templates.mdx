@@ -1,0 +1,75 @@
+---
+title: "Get Templates"
+description: "List the approved WhatsApp templates available to one of your organization's phone numbers."
+---
+
+Use this endpoint before sending a template broadcast. It confirms the exact template name, language, category, and placeholder structure available to a sender.
+
+## Endpoint
+
+```http
+GET /broadcast/public/templates
+```
+
+**Rate limit:** 20 requests per minute for each API key and `phone_number` combination.
+
+## Query parameter
+
+| Parameter | Type | Required | Description |
+| --- | --- | --- | --- |
+| `phone_number` | string | Required | A number returned by [Get Phone Numbers](/en/api-reference/endpoints/broadcast-api/get-phone-numbers), using digits only |
+
+## Request
+
+```bash
+curl "https://cerberus.eazybe.com/prod/api/v2/broadcast/public/templates?phone_number=14844634680" \
+  -H "x-api-key: $API_KEY"
+```
+
+## Successful response
+
+```json
+{
+  "status": true,
+  "status_code": 200,
+  "message": "Templates fetched successfully",
+  "data": [
+    {
+      "name": "eazybe_temp",
+      "status": "APPROVED",
+      "category": "MARKETING",
+      "language": "en",
+      "components": [
+        {
+          "type": "BODY",
+          "text": "Hello {{1}}, your code is {{2}}."
+        }
+      ]
+    }
+  ]
+}
+```
+
+Use these response fields when you build a broadcast:
+
+| Response field | Broadcast field |
+| --- | --- |
+| `name` | `templateName` |
+| `language` | `templateLanguage` |
+| `category` | `templateType` |
+| Numbered placeholders in `components` | Values in `templateParams` or `globalTemplateParams` |
+
+<Warning>
+  The number and order of parameter values must match the template placeholders. For `Hello {{1}}, your code is {{2}}.`, provide exactly two values in that order.
+</Warning>
+
+## Errors
+
+| Status | Cause | What to check |
+| --- | --- | --- |
+| `400` | `phone_number` is missing or malformed | Use digits only |
+| `401` | The number does not belong to the key's organization | Use a number returned for the same key |
+| `401` | The WABA configuration is incomplete | Complete the fields named in the response |
+| `429` | More than 20 requests in the current window | Wait for the interval in the response |
+
+When you have an approved template, [send a template broadcast](/en/api-reference/endpoints/broadcast-api/send-template-broadcast).

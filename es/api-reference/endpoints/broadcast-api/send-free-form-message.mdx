@@ -1,0 +1,191 @@
+---
+title: "Enviar un mensaje de formato libre"
+description: "Envía un mensaje de texto, multimedia, ubicación o interactivo desde un número de tu organización."
+---
+
+## Enviar mensaje de formato libre
+
+Envía un solo mensaje a un destinatario. Los ocho tipos de contenido comparten este endpoint: el campo `type` decide qué otros campos son obligatorios.
+
+### Endpoint
+
+```http
+POST /broadcast/public/send-freeform
+```
+
+### Campos comunes
+
+| Campo | Tipo | Requerido | Descripción |
+| --- | --- | --- | --- |
+| `fromPhoneNumber` | cadena | Requerido | Su número WABA |
+| `toPhoneNumber` | cadena | Requerido | Destinatario con código de país, solo dígitos |
+| `type` | cadena | Requerido | Uno de los ocho tipos siguientes |
+
+### Campos específicos de tipo
+
+| `type` | Requerido | Opcional | Extensiones de archivo aceptadas |
+| --- | --- | --- | --- |
+| `text` | `text` | — | — |
+| `image` | `url` | `caption` | jpg, jpeg, png |
+| `document` | `url` | `name`, `caption` | pdf, txt, doc, docx, ppt, pptx, xls, xlsx |
+| `audio` | `url` | — | aac, amr, mp3, m4a, mp4, ogg, opus |
+| `video` | `url` | `caption` | mp4, 3gp |
+| `sticker` | `url` | — | web |
+| `location` | `latitude`, `longitude` | `name`, `address` | — |
+| `interactive` | `interactive` | — | — |
+
+<Warning>
+  **La extensión se lee desde la ruta URL, no desde el archivo.** Un PNG real servido desde una URL que termina en `.webp` se rechaza para `image`, y una URL sin extensión alguna se rechaza para cada tipo de medio. Las cadenas de consulta se ignoran, por lo que `…/photo.png?v=2` está bien.
+</Warning>
+
+### Texto
+
+```json
+{
+  "fromPhoneNumber": "14844634680",
+  "toPhoneNumber": "919675360316",
+  "type": "text",
+  "text": "Your order #4821 has shipped."
+}
+```
+
+### Imagen
+
+```json
+{
+  "fromPhoneNumber": "14844634680",
+  "toPhoneNumber": "919675360316",
+  "type": "image",
+  "url": "https://cdn.example.com/offer.jpg",
+  "caption": "This week only"
+}
+```
+
+### Documento
+
+```json
+{
+  "fromPhoneNumber": "14844634680",
+  "toPhoneNumber": "919675360316",
+  "type": "document",
+  "url": "https://cdn.example.com/invoice-4821.pdf",
+  "name": "Invoice_4821.pdf",
+  "caption": "Your invoice is ready"
+}
+```
+
+### Audio
+
+```json
+{
+  "fromPhoneNumber": "14844634680",
+  "toPhoneNumber": "919675360316",
+  "type": "audio",
+  "url": "https://cdn.example.com/voice-note.mp3"
+}
+```
+
+### Vídeo
+
+```json
+{
+  "fromPhoneNumber": "14844634680",
+  "toPhoneNumber": "919675360316",
+  "type": "video",
+  "url": "https://cdn.example.com/demo.mp4",
+  "caption": "60-second walkthrough"
+}
+```
+
+### Pegatina
+
+```json
+{
+  "fromPhoneNumber": "14844634680",
+  "toPhoneNumber": "919675360316",
+  "type": "sticker",
+  "url": "https://cdn.example.com/thumbs-up.webp"
+}
+```
+
+### Ubicación
+
+`latitude` y `longitude` deben ser números JSON, no cadenas. La latitud acepta −90 a 90, longitud −180 a 180.
+
+```json
+{
+  "fromPhoneNumber": "14844634680",
+  "toPhoneNumber": "919675360316",
+  "type": "location",
+  "latitude": 28.4595,
+  "longitude": 77.0266,
+  "name": "Eazybe HQ",
+  "address": "Sector 44, Gurugram, Haryana 122003"
+}
+```
+
+### Interactivo: botones
+
+Hasta **3** botones de respuesta. Se rechaza más de tres.
+
+```json
+{
+  "fromPhoneNumber": "14844634680",
+  "toPhoneNumber": "919675360316",
+  "type": "interactive",
+  "interactive": {
+    "type": "button",
+    "header": { "type": "text", "text": "Renew your plan" },
+    "body": { "text": "Your subscription ends in 3 days. Renew now?" },
+    "footer": { "text": "Reply STOP to opt out" },
+    "action": {
+      "buttons": [
+        { "type": "reply", "reply": { "id": "renew_yes", "title": "Renew now" } },
+        { "type": "reply", "reply": { "id": "renew_later", "title": "Remind me later" } }
+      ]
+    }
+  }
+}
+```
+
+### Interactivo — lista
+
+Hasta **10** filas contadas en *todas* las secciones combinadas, no por sección.
+
+```json
+{
+  "fromPhoneNumber": "14844634680",
+  "toPhoneNumber": "919675360316",
+  "type": "interactive",
+  "interactive": {
+    "type": "list",
+    "header": { "type": "text", "text": "Pick a plan" },
+    "body": { "text": "Choose the plan that fits your team." },
+    "action": {
+      "button": "View plans",
+      "sections": [
+        {
+          "title": "Monthly",
+          "rows": [
+            { "id": "starter_m", "title": "Starter", "description": "3 seats included" },
+            { "id": "growth_m", "title": "Growth", "description": "10 seats included" }
+          ]
+        }
+      ]
+    }
+  }
+}
+```
+
+### Respuesta
+
+**200: la misma forma para los ocho tipos**
+
+```json
+{
+  "status": true,
+  "status_code": 200,
+  "message": "Free-form message queued successfully",
+  "data": { }
+}
+```

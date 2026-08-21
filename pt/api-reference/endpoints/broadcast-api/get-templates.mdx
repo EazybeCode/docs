@@ -1,0 +1,52 @@
+---
+title: "Obter modelos"
+description: "Liste os modelos do WhatsApp aprovados para um dos números da sua organização."
+---
+
+## Obter modelos
+
+Retorna os modelos aprovados do WhatsApp disponíveis para um de seus números. Consulte este endpoint antes de uma transmissão – enviar um nome de modelo não aprovado ou com erro ortográfico falha em toda a solicitação.
+
+### Endpoint
+
+```http
+GET /broadcast/public/templates
+```
+
+### Parâmetros de consulta
+
+| Parâmetro | Tipo | Obrigatório | Descrição |
+| --- | --- | --- | --- |
+| `phone_number` | corda | Obrigatório | Um número WABA pertencente à sua organização, apenas dígitos |
+
+### Solicitação
+
+```bash
+curl "https://cerberus.eazybe.com/prod/api/v2/broadcast/public/templates?phone_number=14844634680" \
+  -H "x-api-key: $API_KEY"
+```
+
+### Resposta
+
+**200 — Modelos obtidos com sucesso**
+
+```json
+{
+  "status": true,
+  "status_code": 200,
+  "message": "Templates fetched successfully",
+  "data": [
+    {
+      "name": "eazybe_temp",
+      "status": "APPROVED",
+      "category": "MARKETING",
+      "language": "en",
+      "components": [
+        { "type": "BODY", "text": "Hello {{1}}, your code is {{2}}." }
+      ]
+    }
+  ]
+}
+```
+
+Conte os espaços reservados `{{n}}` no corpo - é exatamente quantos valores a matriz `templateParams` de cada destinatário deve fornecer.

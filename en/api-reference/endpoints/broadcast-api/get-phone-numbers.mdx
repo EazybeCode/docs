@@ -1,0 +1,61 @@
+---
+title: "Get Phone Numbers"
+description: "List the WhatsApp Business phone numbers that your organization auth key can use."
+---
+
+Use this endpoint first to verify your API key and discover the phone numbers available as senders. The returned `phone_number` value is used as `fromPhoneNumber` on send requests.
+
+## Endpoint
+
+```http
+GET /broadcast/public/phone-numbers
+```
+
+**Rate limit:** 30 requests per minute for each API key.
+
+## Request
+
+This endpoint has no query parameters. Pass your organization auth key in the request header.
+
+```bash
+curl "https://cerberus.eazybe.com/prod/api/v2/broadcast/public/phone-numbers" \
+  -H "x-api-key: $API_KEY"
+```
+
+## Successful response
+
+```json
+{
+  "status": true,
+  "status_code": 200,
+  "message": "Phone numbers fetched successfully",
+  "data": [
+    {
+      "phone_number": "14844634680",
+      "waba_id": "1099052972334241",
+      "phone_number_id": "894234333763517"
+    }
+  ]
+}
+```
+
+| Field | Description |
+| --- | --- |
+| `phone_number` | Sender number in digits-only format |
+| `waba_id` | WhatsApp Business Account identifier |
+| `phone_number_id` | Meta identifier for the phone number |
+
+<Note>
+  An empty `data` array means the key is valid but the organization does not have a connected WABA number. Connect or complete the number configuration before sending messages.
+</Note>
+
+## Errors
+
+| Status | Cause | What to check |
+| --- | --- | --- |
+| `401` | Missing or invalid API key | Confirm the `x-api-key` header and key value |
+| `401` | No WABA account is connected | Check the organization's WhatsApp configuration |
+| `429` | More than 30 requests in the current window | Wait for the interval in the response |
+| `503` | Authentication storage timed out | Retry with exponential backoff |
+
+Next, [get templates](/en/api-reference/endpoints/broadcast-api/get-templates) for one of the returned numbers.

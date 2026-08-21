@@ -1,48 +1,61 @@
 ---
-title: "Estimated cost and sending"
-description: "Understand recipient validation, cost calculation, and checks performed before sending."
+title: "Review Estimated Cost and Send"
+description: "Understand recipient validation, the broadcast estimate, and the checks performed before sending."
 ---
 
-The broadcast footer helps you review the campaign before it is submitted.
+The footer on the **Create broadcast** page shows the selected recipient count and estimated cost. Review both values before you submit the campaign.
 
-<Note>
-  **Add image:** Broadcast footer showing recipient count, estimated cost, Cancel, and Send broadcast.
-</Note>
+<Frame caption="Broadcast footer with the selected recipient count and estimated cost">
+  <img
+    src="/images/broadcasts/create-broadcast-review-and-send.jpeg"
+    alt="Broadcast footer with one selected recipient, estimated cost, Cancel, and Send broadcast"
+  />
+</Frame>
 
-## When the estimate appears
+<Warning>
+  The recipient count and price in the screenshot are examples. Your estimate depends on your selected contacts and template.
+</Warning>
 
-Eazybe calculates the estimate after you select:
+## When the Estimate Appears
 
-- A WhatsApp Business number
-- An approved template
+Eazybe calculates the estimate after you have selected:
+
+- A WhatsApp Business number in **Send from**
+- An approved **Template message**
 - At least one valid recipient
+- A value or mapping for every required template variable
 
-While the request is processing, the footer displays **Calculating...**. When complete, it shows the valid recipient count and estimated cost.
+While the request is processing, the footer displays **Calculating...**. When the calculation finishes, it shows the valid recipient count and **Estimated cost**.
 
 <Info>
-  The displayed value is an estimate. The final charge can depend on the template category, recipient country, and WhatsApp pricing.
+  The displayed amount is an estimate. The final charge can depend on the template category, the recipient's country, and WhatsApp pricing.
 </Info>
 
-## HubSpot estimate fallback
+## HubSpot Estimate Fallback
 
-Eazybe normally validates contacts in the selected HubSpot list. If HubSpot temporarily applies a rate limit, Eazybe can show an approximate estimate based on:
+Eazybe normally validates the contacts in the selected HubSpot list. If HubSpot temporarily rate-limits that validation, Eazybe can show an approximate estimate based on:
 
 `Segment size × unit price`
 
-The interface identifies an approximate estimate when exact recipient validation is unavailable.
+The interface identifies the amount as approximate when exact contact validation is unavailable.
 
-## Checks before sending
+## Send the Broadcast
 
-Eazybe confirms that:
+<Steps>
+  <Step title="Check the footer">
+    Confirm the recipient count, template, sending number, and **Estimated cost**. If the count is wrong, return to the contact table and change the selection.
 
-- A broadcast name is entered
-- A number and approved template are selected
-- At least one valid recipient is available
-- Required variables or HubSpot mappings are complete
-- The wallet has sufficient balance
+    ![Broadcast footer with one selected recipient, estimated cost, Cancel, and Send broadcast](/images/broadcasts/create-broadcast-review-and-send.jpeg)
+  </Step>
+  <Step title="Submit the campaign">
+    Select **Send broadcast**. Wait for Eazybe to finish submitting the request before you leave or refresh the page.
 
-Select **Send broadcast** only after the recipient count and estimate are ready.
+    ![Create broadcast screen with the Send broadcast button in the footer](/images/broadcasts/review-and-send-broadcast.jpeg)
 
-<Warning>
-  Do not close or refresh the page while the send request is being submitted.
-</Warning>
+    <Warning>
+      Sending uses wallet balance. A submitted campaign cannot be recalled from this page.
+    </Warning>
+  </Step>
+</Steps>
+
+If **Send broadcast** is unavailable, confirm that the broadcast has a name, number, approved template, valid recipient, complete variable values, and enough wallet balance.

@@ -1,26 +1,13 @@
 ---
-title: "Upload contacts for a broadcast"
-description: "Prepare a CSV or Excel contact list and select the recipients for your campaign."
+title: "Upload Contacts for a Broadcast"
+description: "Prepare a CSV or Excel contact list and select the recipients for a WhatsApp broadcast."
 ---
 
-Use **Upload a list** when your recipients are stored in a CSV or Excel file.
+Use **Upload a list** when your recipients are stored in a CSV or Excel file. This page explains the required phone format, how to upload the file, and how to choose the contacts who will receive the campaign.
 
-<Frame caption="Upload a CSV or Excel contact list by selecting Choose file">
-  <img
-    src="/images/broadcasts/upload-contacts-choose-file.jpeg"
-    alt="Upload a list tab showing sample downloads, the Choose file button, and the contact table"
-  />
-</Frame>
+## Prepare the File
 
-## Supported files
-
-- `.csv`
-- `.xls`
-- `.xlsx`
-
-Download the **Sample CSV** or **Sample Excel** file from the upload panel for the correct structure.
-
-## Required phone format
+Eazybe accepts `.csv`, `.xls`, and `.xlsx` files. In the upload panel, select **Sample CSV** or **Sample Excel** to download the matching structure.
 
 <Tabs>
   <Tab title="CSV">
@@ -31,7 +18,7 @@ Download the **Sample CSV** or **Sample Excel** file from the upload panel for t
     | Aisha | 91 | 9876543210 |
   </Tab>
   <Tab title="Excel">
-    Add the full international number in the **Phone** column.
+    Put the full international number in the **Phone** column.
 
     | Name | Phone |
     | --- | --- |
@@ -40,39 +27,47 @@ Download the **Sample CSV** or **Sample Excel** file from the upload panel for t
 </Tabs>
 
 <Warning>
-  Include the country code and do not add spaces or special characters. Using the sample file helps Excel preserve long phone numbers correctly.
+  Include the country code and remove spaces and special characters from phone values. Use the downloadable sample when spreadsheet software changes long phone numbers.
 </Warning>
 
-## Upload and select contacts
-
-<Steps>
-  <Step title="Choose a file">
-    Select **Choose file** and upload your CSV or Excel file.
-  </Step>
-  <Step title="Review contacts">
-    Eazybe validates and normalizes phone numbers. Empty, invalid, and duplicate rows are not added twice.
-  </Step>
-  <Step title="Select recipients">
-    Select individual contacts or use **Select all**.
-  </Step>
-  <Step title="Review the footer">
-    Confirm the selected recipient count and estimated cost before sending.
-  </Step>
-</Steps>
-
-<Frame caption="Review uploaded contacts and select the recipients for your broadcast">
-  <img
-    src="/images/broadcasts/upload-contacts-select-recipients.png"
-    alt="Uploaded contact table showing search, contact selection, phone numbers, pagination, and estimated cost"
-  />
-</Frame>
-
-## Variable templates
-
-If the selected template contains variables such as `{{1}}`, include one matching column for every variable.
+If the selected template contains numbered variables such as `{{1}}`, add one column with the exact variable name for each variable:
 
 | Name | Phone | &#123;&#123;1&#125;&#125; | &#123;&#123;2&#125;&#125; |
 | --- | --- | --- | --- |
 | Aisha | 919876543210 | Aisha | Premium |
 
-Every selected contact must have the required values. Learn more in [Template variables and personalization](/en/broadcasts/template-variables).
+Every selected contact must have a value for every required variable.
+
+## Upload and Select Contacts
+
+<Steps>
+  <Step title="Upload the contact file">
+    In **Choose recipients**, open **Upload a list** and select **Choose file**. Choose the prepared CSV or Excel file from your device.
+
+    ![Upload a list panel with Sample CSV, Sample Excel, and Choose file](/images/broadcasts/upload-contacts-choose-file.jpeg)
+
+    <Note>
+      After a successful variable-template upload, the panel shows **Variable data loaded successfully**. Select **Replace file** if you need to upload a corrected list.
+    </Note>
+  </Step>
+  <Step title="Select the recipients">
+    Review the imported rows. Select individual contacts or select **Select all**. Use **Search contacts** when you need to find a specific row.
+
+    ![Uploaded contact table with Search contacts, checkboxes, Select all, recipient count, and estimated cost](/images/broadcasts/upload-contacts-select-recipients.png)
+
+    <Note>
+      Eazybe normalizes phone numbers and removes duplicate numbers automatically. Empty or invalid phone values are not valid recipients.
+    </Note>
+  </Step>
+  <Step title="Review the estimate">
+    Check the selected recipient count and **Estimated cost** in the footer. Select **Send broadcast** only after the contact count matches the group you intend to message.
+
+    ![Broadcast footer with one selected recipient, estimated cost, Cancel, and Send broadcast](/images/broadcasts/review-and-send-broadcast.jpeg)
+
+    <Warning>
+      Only selected rows receive the broadcast. Sending uses wallet balance and cannot be recalled from this page.
+    </Warning>
+  </Step>
+</Steps>
+
+Learn how numbered columns are used in [Template Variables and Personalization](/en/broadcasts/template-variables).

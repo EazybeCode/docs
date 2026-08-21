@@ -1,0 +1,47 @@
+---
+title: "Otomatik Ödemeyi Ayarlayın"
+description: "Uygun Eazybe cüzdanı düşük bakiye eşiğine ulaştığında otomatik kredi ekleyin."
+---
+
+Otomatik ödeme, bakiye seçtiğiniz eşiğe ulaştığında kayıtlı karttan ücret çeker ve kredi ekler.
+
+<Frame caption="Otomatik ödeme durumunun bulunduğu Krediler sekmesi"><img src="/images/billing/add-credits.jpeg" alt="Bakiye ve otomatik ödeme seçeneklerinin bulunduğu Krediler sekmesi" /></Frame>
+<Warning>Ekrandaki değerler örnektir. Otomatik ödeme şu anda USD cüzdanlarında kullanılabilir.</Warning>
+
+## Etkinleştirin
+
+1. **Ayarlar → Faturalandırma → Krediler** bölümünü açın.
+2. **Otomatik ödeme** panelini genişletin.
+3. Anahtarı açın.
+4. **Şunun altına düştüğünde yükle** ve **Eklenecek tutar** değerlerini doğrulayın.
+5. **Otomatik ödeme etkin** durumunu kontrol edin.
+
+Eazybe abonelikte kayıtlı uygun kartı kullanır. Kullanılabilir kart yoksa ödeme yöntemini güncelleyin veya Destek ile iletişime geçin.
+
+<Warning>Etkinleştirme, kayıtlı karta gelecekte ücret uygulanmasına izin verir.</Warning>
+
+## Tutarları seçin
+
+- Eşik, bakiye bu değere ulaştığında ödemeyi tetikler.
+- Yükleme tutarı karttan çekilir ve başarılı ödeme sonrası cüzdana eklenir.
+- Eşik, eklenecek tutardan düşük olmalıdır.
+- USD için: eşik en az USD 1, yükleme en az USD 5 ve her değer en fazla USD 10.000 olabilir.
+
+Örnek: USD 5 eşik ve USD 50 yükleme, bakiye USD 5 veya altına indiğinde ödemeyi başlatır. Bu bir öneri değildir.
+
+## Tutarı veya kartı değiştirin
+
+Tutarları düzenleyip **Değişiklikleri kaydet** öğesini seçin. Kart için **Kartı değiştir** öğesini seçin, Stripe işlemini tamamlayın ve marka ile son dört haneyi doğrulayın.
+
+## Devre dışı bırakın
+
+Anahtarı kapatıp **Otomatik ödemeyi devre dışı bırak** öğesini onaylayın. Ayarlar daha sonra kullanılmak üzere saklanır.
+
+<Warning>Devre dışı bırakmak başlamış bir ödemeyi iptal etmez. **Cüzdan geçmişi** bölümünü kontrol edin.</Warning>
+
+| Olay | Bildirim |
+| --- | --- |
+| Ödeme başladı | Tutar ve işlem kimliği |
+| Ödeme başarılı | Tutar, kimlik ve kullanılabiliyorsa güncel bakiye |
+| Ödeme başarısız | Neden, yeniden deneme zamanı ve talimatlar |
+| Tekrarlanan hatalar | Üç denemeden sonra devre dışı bırakma ve son e-posta |

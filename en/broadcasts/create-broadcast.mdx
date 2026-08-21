@@ -1,71 +1,60 @@
 ---
-title: "Create a new broadcast"
-description: "Choose a template, add recipients, review the estimated cost, and send a WhatsApp campaign."
+title: "Create a New Broadcast"
+description: "Choose a template and recipients, review the estimated cost, and send a WhatsApp campaign."
 ---
 
-Open **Broadcasts** and select **New broadcast**.
+Create a broadcast from the Eazybe workspace when you want to send one approved WhatsApp template to multiple contacts. You will choose the message, add recipients, and confirm the cost before sending.
 
-<Frame caption="Start creating a broadcast by selecting New broadcast">
-  <img
-    src="/images/broadcasts/broadcast-workflow-start.jpeg"
-    alt="Eazybe Broadcast home page with the New broadcast button highlighted"
-  />
-</Frame>
-
-## 1. Choose your message
+<Info>
+  Before you start, connect a WhatsApp Business number through Meta, approve a WhatsApp template, and add enough balance to your Eazybe wallet.
+</Info>
 
 <Steps>
-  <Step title="Name the broadcast">
-    Enter a clear internal name, such as **August renewal reminder**. Recipients do not see this name.
+  <Step title="Open a new broadcast">
+    Open **Broadcasts**, then select **New broadcast**. Eazybe opens the **Create broadcast** page.
+
+    ![Broadcasts page with the New broadcast button highlighted](/images/broadcasts/broadcast-workflow-start.jpeg)
   </Step>
-  <Step title="Select Send from">
-    Choose the WhatsApp Business number that will send the campaign.
+  <Step title="Choose the message">
+    Complete the first section:
+
+    1. Enter a **Broadcast name**. Only your team sees this name.
+    2. Select the WhatsApp Business number in **Send from**.
+    3. Select an approved template in **Template message**.
+    4. Check the **Message preview** on the right.
+
+    ![Create broadcast screen with Broadcast name, Send from, Template message, and Message preview](/images/broadcasts/create-broadcast-choose-message.png)
+
+    <Note>
+      If the template you need is not listed, confirm that Meta has approved it. You can also select **Add new template** to start creating one.
+    </Note>
   </Step>
-  <Step title="Select a template">
-    Search for and select an approved WhatsApp template. The message preview updates automatically.
+  <Step title="Choose the recipients">
+    In **Choose recipients**, select one source:
+
+    - **Upload a list** to add a CSV or Excel file.
+    - **HubSpot contact list** to select a synced HubSpot list. This tab appears only when HubSpot is connected.
+
+    ![Choose recipients section with Upload a list and HubSpot contact list tabs](/images/broadcasts/create-broadcast-choose-recipients.jpeg)
+
+    <CardGroup cols={2}>
+      <Card title="Upload a List" icon="file-arrow-up" href="/en/broadcasts/upload-contacts">
+        Prepare the phone number and variable columns before uploading.
+      </Card>
+      <Card title="Use a HubSpot List" icon="hubspot" href="/en/broadcasts/hubspot-contact-list">
+        Search for and select one synced HubSpot contact list.
+      </Card>
+    </CardGroup>
+  </Step>
+  <Step title="Review and send the broadcast">
+    Select the contacts who should receive the message. In the footer, confirm the selected recipient count, sending number, template, and **Estimated cost**. Select **Send broadcast** when the details are correct.
+
+    ![Broadcast footer with one selected recipient, estimated cost, Cancel, and Send broadcast](/images/broadcasts/create-broadcast-review-and-send.jpeg)
+
+    <Warning>
+      Sending a broadcast uses wallet balance. Check every template variable and recipient before you send; you cannot recall a submitted campaign from this page.
+    </Warning>
   </Step>
 </Steps>
 
-<Frame caption="Enter a broadcast name, choose the sending number, and select an approved template">
-  <img
-    src="/images/broadcasts/create-broadcast-choose-message.png"
-    alt="Create broadcast page showing the broadcast name, sending number, template selection, and message preview"
-  />
-</Frame>
-
-## 2. Choose recipients
-
-Select one option:
-
-<CardGroup cols={2}>
-  <Card title="Upload a list" icon="file-arrow-up" href="/en/broadcasts/upload-contacts">
-    Upload a CSV or Excel file and select contacts.
-  </Card>
-  <Card title="HubSpot contact list" icon="hubspot" href="/en/broadcasts/hubspot-contact-list">
-    Select a HubSpot list. This option appears only when HubSpot is connected.
-  </Card>
-</CardGroup>
-
-<Frame caption="Choose between uploading a list and selecting a HubSpot contact list">
-  <img
-    src="/images/broadcasts/create-broadcast-choose-recipients.jpeg"
-    alt="Choose recipients section showing the Upload a list and HubSpot contact list tabs"
-  />
-</Frame>
-
-## 3. Review and send
-
-The footer shows the selected recipient count and estimated cost after the template and recipients are ready.
-
-Select **Send broadcast** to submit the campaign.
-
-<Frame caption="Review the selected recipients and estimated cost before sending">
-  <img
-    src="/images/broadcasts/create-broadcast-review-and-send.jpeg"
-    alt="Create broadcast page showing a selected recipient, estimated cost, and Send broadcast button"
-  />
-</Frame>
-
-<Warning>
-  Check the template, variable values, recipient count, and wallet balance before sending. A submitted campaign cannot be recalled from this page.
-</Warning>
+After submission, return to **Broadcasts** to monitor delivery. Select **View Analytics** beside the campaign for recipient-level results.

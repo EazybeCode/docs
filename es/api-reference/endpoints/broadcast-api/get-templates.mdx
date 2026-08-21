@@ -1,0 +1,52 @@
+---
+title: "Obtener plantillas"
+description: "Consulta las plantillas de WhatsApp aprobadas para uno de los números de tu organización."
+---
+
+## Obtener plantillas
+
+Devuelve las plantillas de WhatsApp aprobadas y disponibles para uno de tus números. Llame a esto antes de una difusión: enviar un nombre de plantilla no aprobado o mal escrito falla en toda la solicitud.
+
+### Endpoint
+
+```http
+GET /broadcast/public/templates
+```
+
+### Parámetros de consulta
+
+| Parámetro | Tipo | Requerido | Descripción |
+| --- | --- | --- | --- |
+| `phone_number` | cadena | Requerido | Un número WABA perteneciente a su organización, solo dígitos |
+
+### Solicitud
+
+```bash
+curl "https://cerberus.eazybe.com/prod/api/v2/broadcast/public/templates?phone_number=14844634680" \
+  -H "x-api-key: $API_KEY"
+```
+
+### Respuesta
+
+**200 — Plantillas obtenidas correctamente**
+
+```json
+{
+  "status": true,
+  "status_code": 200,
+  "message": "Templates fetched successfully",
+  "data": [
+    {
+      "name": "eazybe_temp",
+      "status": "APPROVED",
+      "category": "MARKETING",
+      "language": "en",
+      "components": [
+        { "type": "BODY", "text": "Hello {{1}}, your code is {{2}}." }
+      ]
+    }
+  ]
+}
+```
+
+Cuente los marcadores de posición `{{n}}` en el cuerpo; eso es exactamente cuántos valores debe proporcionar la matriz `templateParams` de cada destinatario.

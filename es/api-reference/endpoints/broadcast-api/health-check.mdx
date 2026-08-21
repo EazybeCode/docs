@@ -1,0 +1,48 @@
+---
+title: "Comprobación de estado"
+description: "Confirma que el servicio de la API pública de difusión está disponible sin enviar mensajes."
+---
+
+Utiliza este endpoint para comprobar la disponibilidad del servicio y diagnosticar la integración. No necesita una clave API y no verifica la configuración de WhatsApp de tu organización.
+
+## Endpoint
+
+```http
+GET /broadcast/public/health
+```
+
+## Request
+
+```bash
+curl "https://cerberus.eazybe.com/prod/api/v2/broadcast/public/health"
+```
+
+## Response
+
+La respuesta incluye metadatos del servicio. Utiliza estos campos estables para comprobar la disponibilidad:
+
+```json
+{
+  "status": "ok",
+  "timestamp": "2026-08-21T10:30:00.000Z",
+  "service": "Public Broadcast API",
+  "version": "2.0.0"
+}
+```
+
+<Note>
+  La respuesta activa también puede incluir un objeto `endpoints` con fines de diagnóstico. Su inventario puede cambiar independientemente de esta guía; utiliza el índice de endpoints de la página de introducción como referencia de integración v2 compatible.
+</Note>
+
+## Qué confirma esta comprobación
+
+- El servicio de la API pública de difusión puede recibir solicitudes HTTP.
+- El servicio devuelve su identidad y versión actuales.
+
+No confirma que:
+
+- Tu `x-api-key` sea válida.
+- La organización tenga conectado un número WABA.
+- Una plantilla esté aprobada o que se pueda entregar un mensaje.
+
+Para verificar el acceso de la organización sin enviar mensajes, llama a [Obtener números de teléfono](/es/api-reference/endpoints/broadcast-api/get-phone-numbers) con tu clave.

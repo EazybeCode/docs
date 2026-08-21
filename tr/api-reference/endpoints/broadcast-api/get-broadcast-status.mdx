@@ -1,0 +1,46 @@
+---
+title: "Yayın Durumunu Al"
+description: "1.000'den fazla alıcısı olan bir şablon yayınının işlenme durumunu kontrol edin."
+---
+
+## Yayın durumunu al
+
+`202` ve `jobId` döndüren büyük bir yayın işinin ilerlemesini döndürür. 1.000 veya daha az alıcının olduğu yayınlar iş yaratmaz ve oylanacak hiçbir şey yoktur.
+
+### Uç Nokta
+
+```http
+GET /broadcast/public/status/:jobId
+```
+
+### İstek
+
+```bash
+curl "https://cerberus.eazybe.com/prod/api/v2/broadcast/public/status/pub_4f8c2a1e9b7d43c6a5e0f2b18d3c9a67" \
+  -H "x-api-key: $API_KEY"
+```
+
+### Yanıtlar
+
+**200 — iş kaydı artı parça ilerlemesinin özeti**
+
+```json
+{
+  "status": true,
+  "status_code": 200,
+  "message": "Broadcast status fetched successfully",
+  "data": {
+    "jobId": "pub_4f8c2a1e9b7d43c6a5e0f2b18d3c9a67",
+    "status": "QUEUED_FOR_PROCESSING",
+    "totalRecipients": 1001,
+    "totalChunks": 2,
+    "summary": { }
+  }
+}
+```
+
+**404** — Yayın işi bulunamadı
+
+**401** — İş farklı bir kuruluşa ait
+
+Başka bir kuruluş tarafından oluşturulan bir iş, `404` yerine `401` değerini döndürür; iş kimlikleri kuruluşlar arasında numaralandırılamaz.

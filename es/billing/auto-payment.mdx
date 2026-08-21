@@ -1,0 +1,49 @@
+---
+title: "Configurar el pago automático"
+description: "Añade créditos automáticamente cuando un monedero apto alcance un umbral bajo."
+---
+
+El pago automático carga una tarjeta guardada y añade créditos cuando el saldo alcanza el umbral elegido.
+
+<Frame caption="Pestaña Créditos con estado del pago automático"><img src="/images/billing/add-credits.jpeg" alt="Pestaña Créditos con saldo, pago automático y compra" /></Frame>
+<Warning>Los valores de la captura son ejemplos. El pago automático está disponible actualmente para monederos USD.</Warning>
+
+## Activarlo
+
+1. Abre **Configuración → Facturación → Créditos**.
+2. Expande **Pago automático**.
+3. Activa el interruptor.
+4. Confirma **Recargar cuando sea inferior a** e **Importe que añadir**.
+5. Comprueba que aparece **Pago automático activo**.
+
+Eazybe utiliza la tarjeta apta guardada para la suscripción. Si no hay una, actualiza el método de pago o contacta con Soporte.
+
+<Warning>Activarlo autoriza futuros cargos a la tarjeta guardada.</Warning>
+
+## Elegir importes
+
+- El umbral inicia el pago cuando el saldo lo alcanza.
+- El importe de recarga se carga en la tarjeta y se añade tras un pago exitoso.
+- El umbral debe ser menor que el importe añadido.
+- En USD: umbral mínimo USD 1, recarga mínima USD 5 y máximo USD 10.000 para cada valor.
+
+Ejemplo: con umbral USD 5 y recarga USD 50, Eazybe inicia el pago cuando el saldo llega a USD 5 o menos. El ejemplo no es una recomendación.
+
+## Cambiar importes o tarjeta
+
+Edita los dos importes y selecciona **Guardar cambios**. Para cambiar la tarjeta, selecciona **Cambiar tarjeta**, completa Stripe y confirma que se actualizaron la marca y los últimos cuatro dígitos.
+
+## Desactivarlo
+
+Desactiva el interruptor y confirma **Desactivar pago automático**. La configuración se conserva para una activación posterior.
+
+<Warning>Desactivarlo no cancela un pago ya iniciado. Revisa **Historial del monedero**.</Warning>
+
+## Avisos
+
+| Evento | Contenido |
+| --- | --- |
+| Pago iniciado | Importe e ID de transacción |
+| Pago exitoso | Importe, ID y saldo actualizado cuando esté disponible |
+| Pago fallido | Motivo, momento de reintento e instrucciones |
+| Fallos repetidos | Se desactiva después de tres intentos fallidos y se envía un correo final |
