@@ -1,0 +1,39 @@
+---
+title: "Instant Webhook"
+description: "Receive WhatsApp Business events at your HTTPS callback by subscribing a WABA through the Eazybe API."
+---
+
+Instant Webhook connects a WhatsApp Business Account (WABA) to an HTTPS callback so your system can receive inbound message and delivery events as they occur. Use the webhook-subscription endpoints in **Waba Api Documentation** to create and manage this connection.
+
+<Info>
+  This page is an overview. Request fields, response schemas, authentication, and error handling are maintained in the linked Waba API reference pages.
+</Info>
+
+## How it works
+
+1. Your callback URL must be available over HTTPS.
+2. When you create the subscription, Meta sends a verification request to the callback.
+3. Your callback must validate the shared verify token and return `hub.challenge`.
+4. After verification, the WABA sends supported inbound and delivery events to the callback.
+
+<Warning>
+  Removing the subscription stops inbound message and delivery events for that WABA. Confirm the WABA ID and callback before changing a production subscription.
+</Warning>
+
+## Webhook API reference
+
+<CardGroup cols={1}>
+  <Card title="List webhook subscriptions" icon="list" href="/api-reference/meta/operations/list-webhook-subscriptions">
+    Check whether a WABA is subscribed and review its configured callback.
+  </Card>
+  <Card title="Create webhook subscription" icon="webhook" href="/api-reference/meta/operations/create-webhook-subscription">
+    Subscribe a WABA to the default Eazybe callback or your custom HTTPS callback.
+  </Card>
+  <Card title="Delete webhook subscription" icon="trash" href="/api-reference/meta/operations/delete-webhook-subscription">
+    Remove the WABA subscription when you no longer want to receive events.
+  </Card>
+</CardGroup>
+
+<Note>
+  For WhatsApp Web extension events and chat-backup workflows, use [Chat Backup Webhooks](/en/integrations/webhooks-custom/webhooks). Instant Webhook uses the WABA webhook-subscription API.
+</Note>

@@ -1,0 +1,74 @@
+---
+title: "Sticker Message"
+description: "Send a WebP sticker from a public URL."
+---
+
+Send a WebP sticker from a public URL.
+
+## Endpoint
+
+```http
+POST /broadcast/public/send-freeform
+```
+
+**Rate limit:** 20 requests per minute for each API key and `fromPhoneNumber` combination.
+
+## Common fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `fromPhoneNumber` | string | Required | A sender from [Get Phone Numbers](/en/api-reference/endpoints/broadcast-api/get-phone-numbers), using digits only |
+| `toPhoneNumber` | string | Required | The recipient's complete international number, including country code and using digits only |
+| `type` | string | Required | `text`, `image`, `document`, `audio`, `video`, `sticker`, `location`, or `interactive` |
+
+Every request uses the same headers and endpoint. Replace `PAYLOAD` with one of the JSON bodies in the sections below.
+
+```bash
+curl -X POST "https://cerberus.eazybe.com/prod/api/v2/broadcast/public/send-freeform" \
+  -H "x-api-key: $API_KEY" \
+  -H "Content-Type: application/json" \
+  -d 'PAYLOAD'
+```
+
+## Example payload
+
+Set `type` to `sticker` and provide a public WebP URL.
+
+**Accepted extension:** `webp`
+
+```json
+{
+  "fromPhoneNumber": "14844634680",
+  "toPhoneNumber": "919675360316",
+  "type": "sticker",
+  "url": "https://cdn.example.com/thumbs-up.webp"
+}
+```
+
+<Warning>
+  The API validates media using the extension in the URL path, not the file's response content. Query parameters are ignored, so `photo.png?v=2` is valid, while a URL with no path extension is rejected.
+</Warning>
+
+## Successful response
+
+The endpoint returns the same success envelope for this content type.
+
+```json
+{
+  "status": true,
+  "status_code": 200,
+  "message": "Free-form message queued successfully",
+  "data": {}
+}
+```
+
+## Errors
+
+| Status | Cause | What to check |
+| --- | --- | --- |
+| `400` | A common or type-specific field is invalid | Check this page's required fields |
+| `400` | A media URL or extension is unsupported | Use `http` or `https` and an accepted path extension |
+| `400` | Coordinates, button count, or list rows exceed their limits | Correct the payload limits |
+| `401` | The key or sender does not belong to the organization | Use a sender returned for the same key |
+| `429` | More than 20 requests in the current window | Wait for the interval in the response |
+| `500` or `503` | Transient service failure | Retry with exponential backoff |

@@ -1,0 +1,58 @@
+---
+title: "Mensagem de vídeo"
+description: "Envie um vídeo MP4 ou 3GP com legenda opcional."
+---
+
+Envie um vídeo MP4 ou 3GP com legenda opcional.
+
+## Endpoint
+
+```http
+POST /broadcast/public/send-freeform
+```
+
+## Campos comuns
+
+| Campo | Tipo | Obrigatório | Descrição |
+| --- | --- | --- | --- |
+| `fromPhoneNumber` | corda | Obrigatório | Seu número WABA |
+| `toPhoneNumber` | corda | Obrigatório | Destinatário com código do país, apenas dígitos |
+| `type` | corda | Obrigatório | Um dos oito tipos abaixo |
+
+**Limite:** 20 solicitações por minuto para cada combinação de chave de API e `fromPhoneNumber`.
+
+## Exemplo de payload
+
+```json
+{
+  "fromPhoneNumber": "14844634680",
+  "toPhoneNumber": "919675360316",
+  "type": "video",
+  "url": "https://cdn.example.com/demo.mp4",
+  "caption": "60-second walkthrough"
+}
+```
+
+## Resposta bem-sucedida
+
+O endpoint retorna o mesmo formato de sucesso para este tipo de conteúdo.
+
+```json
+{
+  "status": true,
+  "status_code": 200,
+  "message": "Free-form message queued successfully",
+  "data": {}
+}
+```
+
+## Erros
+
+| Status | Causa | O que verificar |
+| --- | --- | --- |
+| `400` | Um campo comum ou específico é inválido | Confira os campos obrigatórios desta página |
+| `400` | A URL ou extensão da mídia não é compatível | Use `http` ou `https` e uma extensão aceita |
+| `400` | Coordenadas, botões ou linhas excedem os limites | Corrija os limites do payload |
+| `401` | A chave ou remetente não pertence à organização | Use um remetente retornado pela mesma chave |
+| `429` | O limite de 20 solicitações foi excedido | Aguarde o intervalo informado na resposta |
+| `500` ou `503` | Falha transitória do serviço | Tente novamente com espera exponencial |

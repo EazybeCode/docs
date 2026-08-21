@@ -1,0 +1,57 @@
+---
+title: "Metin Mesajı"
+description: "Bir WhatsApp alıcısına boş olmayan metin mesajı gönderin."
+---
+
+Bir WhatsApp alıcısına boş olmayan metin mesajı gönderin.
+
+## Uç Nokta
+
+```http
+POST /broadcast/public/send-freeform
+```
+
+## Ortak alanlar
+
+| Alan | Tür | Gerekli | Açıklama |
+| --- | --- | --- | --- |
+| `fromPhoneNumber` | dize | Gerekli | WABA numaranız |
+| `toPhoneNumber` | dize | Gerekli | Ülke kodunu içeren alıcı, yalnızca rakamlar |
+| `type` | dize | Gerekli | Aşağıdaki sekiz türden biri |
+
+**İstek sınırı:** Her API anahtarı ve `fromPhoneNumber` birleşimi için dakikada 20 istek.
+
+## Örnek yük
+
+```json
+{
+  "fromPhoneNumber": "14844634680",
+  "toPhoneNumber": "919675360316",
+  "type": "text",
+  "text": "Your order #4821 has shipped."
+}
+```
+
+## Başarılı yanıt
+
+Uç nokta bu içerik türü için aynı başarılı yanıt biçimini döndürür.
+
+```json
+{
+  "status": true,
+  "status_code": 200,
+  "message": "Free-form message queued successfully",
+  "data": {}
+}
+```
+
+## Hatalar
+
+| Durum | Neden | Kontrol edilecekler |
+| --- | --- | --- |
+| `400` | Ortak veya türe özgü alan geçersiz | Bu sayfadaki zorunlu alanları kontrol edin |
+| `400` | Medya URL'si veya uzantısı desteklenmiyor | `http` veya `https` ile kabul edilen uzantıyı kullanın |
+| `400` | Koordinat, düğme veya liste satırı sınırı aşıldı | Yük sınırlarını düzeltin |
+| `401` | Anahtar veya gönderen kuruluşa ait değil | Aynı anahtarla döndürülen göndereni kullanın |
+| `429` | 20 istek sınırı aşıldı | Yanıtta belirtilen süreyi bekleyin |
+| `500` veya `503` | Geçici hizmet hatası | Üstel geri çekilmeyle yeniden deneyin |

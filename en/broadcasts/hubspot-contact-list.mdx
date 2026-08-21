@@ -55,7 +55,16 @@ A HubSpot segment, previously called a list, is a saved group of contacts.
 | **Active segment** | HubSpot automatically adds or removes contacts when they match or stop matching the filters |
 | **Static segment** | Membership stays fixed until contacts are added or removed manually |
 
-<Card title="Create a HubSpot Segment" icon="filter" href="/en/integrations/hubspot/create-segment">
+<Card
+  title={
+    <div className="flex flex-col items-start gap-4">
+      <Icon icon="filter" size={30} className="text-black dark:text-white" />
+      <a href="/en/integrations/hubspot/create-segment" className="text-primary underline-offset-4 hover:underline">
+        Create a HubSpot Segment
+      </a>
+    </div>
+  }
+>
   Prepare a contact segment in HubSpot before selecting it in Eazybe.
 </Card>
 
