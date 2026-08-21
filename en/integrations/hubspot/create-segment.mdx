@@ -5,10 +5,6 @@ description: "Create an active or static contact segment in HubSpot for use in E
 
 HubSpot segments—previously called lists—help you group contacts using properties and filter criteria. After the segment finishes processing, you can select it from **New broadcast → HubSpot contact list** in Eazybe.
 
-<Note>
-  **Add image:** HubSpot navigation showing **More → CRM → Segments**.
-</Note>
-
 ## Before you begin
 
 - Your HubSpot user needs **Write segments** permission.
@@ -20,27 +16,59 @@ HubSpot segments—previously called lists—help you group contacts using prope
 <Steps>
   <Step title="Open Segments">
     In HubSpot, select **More → CRM → Segments**. If **More** is not displayed, open **CRM → Segments** directly.
+
+    <Frame caption="Open CRM and select Segments (Lists), then select Create segment">
+      ![HubSpot CRM navigation with Segments Lists selected and the Create segment button highlighted](/images/hubspot/create-segment-navigation.jpeg)
+    </Frame>
   </Step>
   <Step title="Create a segment">
     Select **Create segment**, choose **Contacts**, and then select **Next**.
+
+    <Frame caption="Choose Contacts as the segment object, then select Next">
+      ![HubSpot segment setup with Contacts selected and the Next button highlighted](/images/hubspot/create-segment-choose-contacts.jpeg)
+    </Frame>
   </Step>
   <Step title="Name the segment">
     Enter a clear name that your team can identify later, such as **India renewal customers**.
+
+    <Frame caption="Enter a recognizable name for the HubSpot segment">
+      ![HubSpot segment editor with the Broadcast Segment name and edit icon highlighted](/images/hubspot/create-segment-name.jpeg)
+    </Frame>
   </Step>
   <Step title="Add filters">
     Select **Add filter** and define which contacts should be included. You can filter using standard or custom HubSpot contact properties.
+
+    <Frame caption="Add contact filters and review the estimated matching contacts">
+      ![HubSpot segment editor showing a phone number filter and the estimated matching contacts](/images/hubspot/create-segment-filters.jpeg)
+    </Frame>
+
+    <Warning>
+      The phone-number rule, estimated size, and contact names in this screenshot are examples. Your preview reflects the filters and contact records in your HubSpot account.
+    </Warning>
   </Step>
   <Step title="Choose the segment type">
-    Select **Next**, then choose **Active** or **Static** based on how membership should be managed.
+    Select **Next**, then choose **Active** or **Static** based on how membership should be managed. See [Choose the right segment type](#choose-the-right-segment-type) for guidance.
+
+    <Frame caption="Choose Active or Static in the Review and save panel">
+      ![HubSpot Review and save panel showing Active and Static segment type options](/images/hubspot/create-segment-type.png)
+    </Frame>
+
+    <Warning>
+      The estimated segment size and available Active or Static segment counts in this screenshot are examples. HubSpot calculates these values from your account and current filters.
+    </Warning>
   </Step>
   <Step title="Save and process">
     Review the details and select **Save and process segment**. Wait until HubSpot finishes processing before using it in Eazybe.
+
+    <Frame caption="Confirm that HubSpot reports Processing is complete">
+      ![HubSpot segment overview showing the Processing is complete confirmation and processed contacts](/images/hubspot/create-segment-processing-complete.png)
+    </Frame>
+
+    <Warning>
+      The segment size and contact records in this screenshot are examples. Your completed segment shows the contacts that match your filters.
+    </Warning>
   </Step>
 </Steps>
-
-<Note>
-  **Add image:** HubSpot segment editor showing contact filters and the Active or Static type selection.
-</Note>
 
 ## Choose the right segment type
 

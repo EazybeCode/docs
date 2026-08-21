@@ -43,16 +43,52 @@ You need:
 ## What You Can Do
 
 <CardGroup cols={2}>
-  <Card title="Create a New Broadcast" icon="paper-plane" href="/en/broadcasts/create-broadcast">
+  <Card
+    title={
+      <div className="flex flex-col items-start gap-4">
+        <Icon icon="paper-plane" size={30} className="text-black dark:text-white" />
+        <a href="/en/broadcasts/create-broadcast" className="text-primary underline-offset-4 hover:underline">
+          Create a New Broadcast
+        </a>
+      </div>
+    }
+  >
     Choose the sending number and template, add recipients, review the estimate, and send.
   </Card>
-  <Card title="Upload Contacts" icon="file-arrow-up" href="/en/broadcasts/upload-contacts">
+  <Card
+    title={
+      <div className="flex flex-col items-start gap-4">
+        <Icon icon="file-arrow-up" size={30} className="text-black dark:text-white" />
+        <a href="/en/broadcasts/upload-contacts" className="text-primary underline-offset-4 hover:underline">
+          Upload Contacts
+        </a>
+      </div>
+    }
+  >
     Format a CSV or Excel file and select the contacts who should receive the campaign.
   </Card>
-  <Card title="Use a HubSpot Contact List" icon="hubspot" href="/en/broadcasts/hubspot-contact-list">
+  <Card
+    title={
+      <div className="flex flex-col items-start gap-4">
+        <Icon icon="hubspot" size={30} className="text-black dark:text-white" />
+        <a href="/en/broadcasts/hubspot-contact-list" className="text-primary underline-offset-4 hover:underline">
+          Use a HubSpot Contact List
+        </a>
+      </div>
+    }
+  >
     Select a synced HubSpot list and use its contact properties for personalization.
   </Card>
-  <Card title="View Broadcast Analytics" icon="chart-column" href="/en/broadcasts/view-analytics">
+  <Card
+    title={
+      <div className="flex flex-col items-start gap-4">
+        <Icon icon="chart-column" size={30} className="text-black dark:text-white" />
+        <a href="/en/broadcasts/view-analytics" className="text-primary underline-offset-4 hover:underline">
+          View Broadcast Analytics
+        </a>
+      </div>
+    }
+  >
     Review **Total**, **Sent**, **Delivered**, **Read**, and **Failed** results by recipient.
   </Card>
 </CardGroup>
@@ -65,6 +101,15 @@ Eazybe validates the selected contacts and shows an estimated cost in the footer
   Sending a broadcast uses wallet balance. Review the template, variables, recipient count, and estimated cost before selecting **Send broadcast**. You cannot recall a submitted campaign from the Broadcasts page.
 </Warning>
 
-<Card title="See the Complete Workflow" icon="route" href="/en/broadcasts/how-broadcasts-work">
+<Card
+  title={
+    <div className="flex flex-col items-start gap-4">
+      <Icon icon="route" size={30} className="text-black dark:text-white" />
+      <a href="/en/broadcasts/how-broadcasts-work" className="text-primary underline-offset-4 hover:underline">
+        See the Complete Workflow
+      </a>
+    </div>
+  }
+>
   Follow the five stages from opening **New broadcast** through monitoring delivery.
 </Card>

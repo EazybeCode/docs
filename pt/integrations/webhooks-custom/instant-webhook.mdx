@@ -1,0 +1,31 @@
+---
+title: "Instant Webhook"
+description: "Receba eventos do WhatsApp Business em um callback HTTPS assinando uma WABA pela API da Eazybe."
+---
+
+Instant Webhook conecta uma Conta do WhatsApp Business (WABA) a um callback HTTPS para que seu sistema receba eventos de mensagens recebidas e entrega assim que ocorrem. Use os endpoints de assinatura do **Wrapper da API Meta** para criar e gerenciar a conexão.
+
+<Info>
+  Esta página é uma visão geral. Campos, esquemas de resposta, autenticação e erros são mantidos nas páginas vinculadas da referência WABA.
+</Info>
+
+## Como funciona
+
+1. O callback deve estar disponível por HTTPS.
+2. Ao criar a assinatura, a Meta envia uma solicitação de verificação.
+3. O callback deve validar o token compartilhado e retornar `hub.challenge`.
+4. Após a verificação, a WABA envia os eventos recebidos e de entrega compatíveis ao callback.
+
+<Warning>
+  Remover a assinatura interrompe os eventos de mensagens recebidas e entrega dessa WABA. Confira o ID da WABA e o callback antes de alterar uma assinatura de produção.
+</Warning>
+
+## Referência de Webhooks
+
+<CardGroup cols={1}>
+  <Card title="Listar assinaturas" icon="list" href="/pt/api-reference/meta/operations/list-webhook-subscriptions">Confira se uma WABA está inscrita e revise o callback configurado.</Card>
+  <Card title="Criar uma assinatura" icon="webhook" href="/pt/api-reference/meta/operations/create-webhook-subscription">Inscreva uma WABA no callback da Eazybe ou em um callback HTTPS personalizado.</Card>
+  <Card title="Excluir uma assinatura" icon="trash" href="/pt/api-reference/meta/operations/delete-webhook-subscription">Remova a assinatura quando não quiser mais receber eventos.</Card>
+</CardGroup>
+
+<Note>Para eventos da extensão do WhatsApp Web e backup de conversas, use [Chat Backup Webhooks](/pt/integrations/webhooks-custom/webhooks). Instant Webhook usa a API de assinatura da WABA.</Note>

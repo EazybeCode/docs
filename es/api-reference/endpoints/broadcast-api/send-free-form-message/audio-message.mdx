@@ -1,0 +1,57 @@
+---
+title: "Mensaje de audio"
+description: "Envía un archivo de audio compatible desde una URL pública."
+---
+
+Envía un archivo de audio compatible desde una URL pública.
+
+## Endpoint
+
+```http
+POST /broadcast/public/send-freeform
+```
+
+## Campos comunes
+
+| Campo | Tipo | Requerido | Descripción |
+| --- | --- | --- | --- |
+| `fromPhoneNumber` | cadena | Requerido | Su número WABA |
+| `toPhoneNumber` | cadena | Requerido | Destinatario con código de país, solo dígitos |
+| `type` | cadena | Requerido | Uno de los ocho tipos siguientes |
+
+**Límite:** 20 solicitudes por minuto para cada combinación de clave API y `fromPhoneNumber`.
+
+## Ejemplo de carga útil
+
+```json
+{
+  "fromPhoneNumber": "14844634680",
+  "toPhoneNumber": "919675360316",
+  "type": "audio",
+  "url": "https://cdn.example.com/voice-note.mp3"
+}
+```
+
+## Respuesta satisfactoria
+
+El endpoint devuelve la misma respuesta satisfactoria para este tipo de contenido.
+
+```json
+{
+  "status": true,
+  "status_code": 200,
+  "message": "Free-form message queued successfully",
+  "data": {}
+}
+```
+
+## Errores
+
+| Estado | Causa | Qué comprobar |
+| --- | --- | --- |
+| `400` | Un campo común o específico no es válido | Comprueba los campos obligatorios de esta página |
+| `400` | La URL o extensión multimedia no es compatible | Usa `http` o `https` y una extensión admitida |
+| `400` | Las coordenadas, botones o filas superan los límites | Corrige los límites de la carga útil |
+| `401` | La clave o el remitente no pertenece a la organización | Usa un remitente obtenido con la misma clave |
+| `429` | Se superó el límite de 20 solicitudes | Espera el intervalo indicado en la respuesta |
+| `500` o `503` | Fallo transitorio del servicio | Reintenta con espera exponencial |

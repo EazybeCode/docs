@@ -1,0 +1,31 @@
+---
+title: "Instant Webhook"
+description: "Recibe eventos de WhatsApp Business en un callback HTTPS suscribiendo una WABA mediante la API de Eazybe."
+---
+
+Instant Webhook conecta una cuenta de WhatsApp Business (WABA) con un callback HTTPS para que tu sistema reciba eventos de mensajes entrantes y entrega cuando ocurren. Utiliza los endpoints de suscripción de **Wrapper de API Meta** para crear y gestionar la conexión.
+
+<Info>
+  Esta página es una descripción general. Los campos, esquemas de respuesta, autenticación y errores se mantienen en las páginas enlazadas de la referencia WABA.
+</Info>
+
+## Cómo funciona
+
+1. El callback debe estar disponible mediante HTTPS.
+2. Al crear la suscripción, Meta envía una solicitud de verificación.
+3. El callback debe validar el token compartido y devolver `hub.challenge`.
+4. Tras la verificación, la WABA envía al callback los eventos entrantes y de entrega compatibles.
+
+<Warning>
+  Eliminar la suscripción detiene los eventos de mensajes entrantes y entrega de esa WABA. Comprueba el ID de la WABA y el callback antes de cambiar una suscripción de producción.
+</Warning>
+
+## Referencia de Webhooks
+
+<CardGroup cols={1}>
+  <Card title="Listar suscripciones" icon="list" href="/es/api-reference/meta/operations/list-webhook-subscriptions">Comprueba si una WABA está suscrita y revisa su callback.</Card>
+  <Card title="Crear una suscripción" icon="webhook" href="/es/api-reference/meta/operations/create-webhook-subscription">Suscribe una WABA al callback de Eazybe o a un callback HTTPS personalizado.</Card>
+  <Card title="Eliminar una suscripción" icon="trash" href="/es/api-reference/meta/operations/delete-webhook-subscription">Elimina la suscripción cuando ya no quieras recibir eventos.</Card>
+</CardGroup>
+
+<Note>Para eventos de la extensión de WhatsApp Web y copias de chats, utiliza [Chat Backup Webhooks](/es/integrations/webhooks-custom/webhooks). Instant Webhook utiliza la API de suscripción WABA.</Note>

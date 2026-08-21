@@ -38,10 +38,28 @@ Create a broadcast from the Eazybe workspace when you want to send one approved 
     ![Choose recipients section with Upload a list and HubSpot contact list tabs](/images/broadcasts/create-broadcast-choose-recipients.jpeg)
 
     <CardGroup cols={2}>
-      <Card title="Upload a List" icon="file-arrow-up" href="/en/broadcasts/upload-contacts">
+      <Card
+        title={
+          <div className="flex flex-col items-start gap-4">
+            <Icon icon="file-arrow-up" size={30} className="text-black dark:text-white" />
+            <a href="/en/broadcasts/upload-contacts" className="text-primary underline-offset-4 hover:underline">
+              Upload a List
+            </a>
+          </div>
+        }
+      >
         Prepare the phone number and variable columns before uploading.
       </Card>
-      <Card title="Use a HubSpot List" icon="hubspot" href="/en/broadcasts/hubspot-contact-list">
+      <Card
+        title={
+          <div className="flex flex-col items-start gap-4">
+            <Icon icon="hubspot" size={30} className="text-black dark:text-white" />
+            <a href="/en/broadcasts/hubspot-contact-list" className="text-primary underline-offset-4 hover:underline">
+              Use a HubSpot List
+            </a>
+          </div>
+        }
+      >
         Search for and select one synced HubSpot contact list.
       </Card>
     </CardGroup>

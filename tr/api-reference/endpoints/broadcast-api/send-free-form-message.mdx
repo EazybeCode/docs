@@ -1,5 +1,5 @@
 ---
-title: "Serbest Biçimli Mesaj Gönder"
+title: "Genel Bakış"
 description: "Kuruluşa ait bir numaradan metin, medya, konum veya etkileşimli WhatsApp mesajı gönderin."
 ---
 
@@ -38,154 +38,39 @@ POST /broadcast/public/send-freeform
   **Uzantı, dosyadan değil, URL yolundan okunur.** `.webp` ile biten bir URL'den sunulan gerçek bir PNG, `image` için reddedilir ve hiçbir uzantısı olmayan bir URL, her medya türü için reddedilir. Sorgu dizeleri göz ardı edildiğinden `…/photo.png?v=2` uygundur.
 </Warning>
 
-### Metin
+## Mesaj türleri
 
-```json
-{
-  "fromPhoneNumber": "14844634680",
-  "toPhoneNumber": "919675360316",
-  "type": "text",
-  "text": "Your order #4821 has shipped."
-}
-```
+<CardGroup cols={2}>
+  <Card title="Metin Mesajı" href="/tr/api-reference/endpoints/broadcast-api/send-free-form-message/text-message">Bu mesaj türünün alanlarını ve örneğini inceleyin.</Card>
+  <Card title="Resim Mesajı" href="/tr/api-reference/endpoints/broadcast-api/send-free-form-message/image-message">Bu mesaj türünün alanlarını ve örneğini inceleyin.</Card>
+  <Card title="Belge Mesajı" href="/tr/api-reference/endpoints/broadcast-api/send-free-form-message/document-message">Bu mesaj türünün alanlarını ve örneğini inceleyin.</Card>
+  <Card title="Ses Mesajı" href="/tr/api-reference/endpoints/broadcast-api/send-free-form-message/audio-message">Bu mesaj türünün alanlarını ve örneğini inceleyin.</Card>
+  <Card title="Video Mesajı" href="/tr/api-reference/endpoints/broadcast-api/send-free-form-message/video-message">Bu mesaj türünün alanlarını ve örneğini inceleyin.</Card>
+  <Card title="Çıkartma Mesajı" href="/tr/api-reference/endpoints/broadcast-api/send-free-form-message/sticker-message">Bu mesaj türünün alanlarını ve örneğini inceleyin.</Card>
+  <Card title="Konum Mesajı" href="/tr/api-reference/endpoints/broadcast-api/send-free-form-message/location-message">Bu mesaj türünün alanlarını ve örneğini inceleyin.</Card>
+  <Card title="Etkileşimli Mesaj" href="/tr/api-reference/endpoints/broadcast-api/send-free-form-message/interactive-message">Bu mesaj türünün alanlarını ve örneğini inceleyin.</Card>
+</CardGroup>
 
-### Resim
+## Başarılı yanıt
 
-```json
-{
-  "fromPhoneNumber": "14844634680",
-  "toPhoneNumber": "919675360316",
-  "type": "image",
-  "url": "https://cdn.example.com/offer.jpg",
-  "caption": "This week only"
-}
-```
-
-### Belge
-
-```json
-{
-  "fromPhoneNumber": "14844634680",
-  "toPhoneNumber": "919675360316",
-  "type": "document",
-  "url": "https://cdn.example.com/invoice-4821.pdf",
-  "name": "Invoice_4821.pdf",
-  "caption": "Your invoice is ready"
-}
-```
-
-### Ses
-
-```json
-{
-  "fromPhoneNumber": "14844634680",
-  "toPhoneNumber": "919675360316",
-  "type": "audio",
-  "url": "https://cdn.example.com/voice-note.mp3"
-}
-```
-
-### Video
-
-```json
-{
-  "fromPhoneNumber": "14844634680",
-  "toPhoneNumber": "919675360316",
-  "type": "video",
-  "url": "https://cdn.example.com/demo.mp4",
-  "caption": "60-second walkthrough"
-}
-```
-
-### Çıkartma
-
-```json
-{
-  "fromPhoneNumber": "14844634680",
-  "toPhoneNumber": "919675360316",
-  "type": "sticker",
-  "url": "https://cdn.example.com/thumbs-up.webp"
-}
-```
-
-### Konum
-
-`latitude` ve `longitude`, dize değil, JSON numaraları olmalıdır. Enlem -90 ile 90 arası, boylam -180 ile 180 arası kabul edilir.
-
-```json
-{
-  "fromPhoneNumber": "14844634680",
-  "toPhoneNumber": "919675360316",
-  "type": "location",
-  "latitude": 28.4595,
-  "longitude": 77.0266,
-  "name": "Eazybe HQ",
-  "address": "Sector 44, Gurugram, Haryana 122003"
-}
-```
-
-### Etkileşimli — düğmeler
-
-**3**'e kadar yanıtlama düğmesi. Üçten fazlası reddedilir.
-
-```json
-{
-  "fromPhoneNumber": "14844634680",
-  "toPhoneNumber": "919675360316",
-  "type": "interactive",
-  "interactive": {
-    "type": "button",
-    "header": { "type": "text", "text": "Renew your plan" },
-    "body": { "text": "Your subscription ends in 3 days. Renew now?" },
-    "footer": { "text": "Reply STOP to opt out" },
-    "action": {
-      "buttons": [
-        { "type": "reply", "reply": { "id": "renew_yes", "title": "Renew now" } },
-        { "type": "reply", "reply": { "id": "renew_later", "title": "Remind me later" } }
-      ]
-    }
-  }
-}
-```
-
-### Etkileşimli — liste
-
-Bölüm başına değil, *tüm* bölümlerin toplamında **10**'a kadar satır sayıldı.
-
-```json
-{
-  "fromPhoneNumber": "14844634680",
-  "toPhoneNumber": "919675360316",
-  "type": "interactive",
-  "interactive": {
-    "type": "list",
-    "header": { "type": "text", "text": "Pick a plan" },
-    "body": { "text": "Choose the plan that fits your team." },
-    "action": {
-      "button": "View plans",
-      "sections": [
-        {
-          "title": "Monthly",
-          "rows": [
-            { "id": "starter_m", "title": "Starter", "description": "3 seats included" },
-            { "id": "growth_m", "title": "Growth", "description": "10 seats included" }
-          ]
-        }
-      ]
-    }
-  }
-}
-```
-
-### Yanıt
-
-**200 — sekiz türün tümü için aynı şekil**
+Uç nokta bu içerik türü için aynı başarılı yanıt biçimini döndürür.
 
 ```json
 {
   "status": true,
   "status_code": 200,
   "message": "Free-form message queued successfully",
-  "data": { }
+  "data": {}
 }
 ```
+
+## Hatalar
+
+| Durum | Neden | Kontrol edilecekler |
+| --- | --- | --- |
+| `400` | Ortak veya türe özgü alan geçersiz | Bu sayfadaki zorunlu alanları kontrol edin |
+| `400` | Medya URL'si veya uzantısı desteklenmiyor | `http` veya `https` ile kabul edilen uzantıyı kullanın |
+| `400` | Koordinat, düğme veya liste satırı sınırı aşıldı | Yük sınırlarını düzeltin |
+| `401` | Anahtar veya gönderen kuruluşa ait değil | Aynı anahtarla döndürülen göndereni kullanın |
+| `429` | 20 istek sınırı aşıldı | Yanıtta belirtilen süreyi bekleyin |
+| `500` veya `503` | Geçici hizmet hatası | Üstel geri çekilmeyle yeniden deneyin |

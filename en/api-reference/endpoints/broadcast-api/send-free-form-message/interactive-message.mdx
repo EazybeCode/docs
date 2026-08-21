@@ -1,0 +1,144 @@
+---
+title: "Interactive Message"
+description: "Send reply buttons or a list message within the supported limits."
+---
+
+Send reply buttons or a list message within the supported limits.
+
+## Endpoint
+
+```http
+POST /broadcast/public/send-freeform
+```
+
+**Rate limit:** 20 requests per minute for each API key and `fromPhoneNumber` combination.
+
+## Common fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `fromPhoneNumber` | string | Required | A sender from [Get Phone Numbers](/en/api-reference/endpoints/broadcast-api/get-phone-numbers), using digits only |
+| `toPhoneNumber` | string | Required | The recipient's complete international number, including country code and using digits only |
+| `type` | string | Required | `text`, `image`, `document`, `audio`, `video`, `sticker`, `location`, or `interactive` |
+
+Every request uses the same headers and endpoint. Replace `PAYLOAD` with one of the JSON bodies in the sections below.
+
+```bash
+curl -X POST "https://cerberus.eazybe.com/prod/api/v2/broadcast/public/send-freeform" \
+  -H "x-api-key: $API_KEY" \
+  -H "Content-Type: application/json" \
+  -d 'PAYLOAD'
+```
+
+## Reply buttons
+
+Set the top-level `type` to `interactive`, then set `interactive.type` to either `button` or `list`.
+
+## Reply buttons
+
+A reply-button message supports between 1 and 3 buttons.
+
+```json
+{
+  "fromPhoneNumber": "14844634680",
+  "toPhoneNumber": "919675360316",
+  "type": "interactive",
+  "interactive": {
+    "type": "button",
+    "header": {
+      "type": "text",
+      "text": "Renew your plan"
+    },
+    "body": {
+      "text": "Your subscription ends in 3 days. Renew now?"
+    },
+    "footer": {
+      "text": "Reply STOP to opt out"
+    },
+    "action": {
+      "buttons": [
+        {
+          "type": "reply",
+          "reply": {
+            "id": "renew_yes",
+            "title": "Renew now"
+          }
+        },
+        {
+          "type": "reply",
+          "reply": {
+            "id": "renew_later",
+            "title": "Remind me later"
+          }
+        }
+      ]
+    }
+  }
+}
+```
+
+## List message
+
+A list message supports between 1 and 10 rows. The limit is counted across all sections combined, not per section.
+
+```json
+{
+  "fromPhoneNumber": "14844634680",
+  "toPhoneNumber": "919675360316",
+  "type": "interactive",
+  "interactive": {
+    "type": "list",
+    "header": {
+      "type": "text",
+      "text": "Pick a plan"
+    },
+    "body": {
+      "text": "Choose the plan that fits your team."
+    },
+    "action": {
+      "button": "View plans",
+      "sections": [
+        {
+          "title": "Monthly",
+          "rows": [
+            {
+              "id": "starter_m",
+              "title": "Starter",
+              "description": "3 seats included"
+            },
+            {
+              "id": "growth_m",
+              "title": "Growth",
+              "description": "10 seats included"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
+```
+
+## Successful response
+
+The endpoint returns the same success envelope for this content type.
+
+```json
+{
+  "status": true,
+  "status_code": 200,
+  "message": "Free-form message queued successfully",
+  "data": {}
+}
+```
+
+## Errors
+
+| Status | Cause | What to check |
+| --- | --- | --- |
+| `400` | A common or type-specific field is invalid | Check this page's required fields |
+| `400` | A media URL or extension is unsupported | Use `http` or `https` and an accepted path extension |
+| `400` | Coordinates, button count, or list rows exceed their limits | Correct the payload limits |
+| `401` | The key or sender does not belong to the organization | Use a sender returned for the same key |
+| `429` | More than 20 requests in the current window | Wait for the interval in the response |
+| `500` or `503` | Transient service failure | Retry with exponential backoff |

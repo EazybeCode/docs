@@ -1,0 +1,31 @@
+---
+title: "Instant Webhook"
+description: "Eazybe API üzerinden bir WABA'ya abone olarak WhatsApp Business olaylarını HTTPS callback adresinizde alın."
+---
+
+Instant Webhook, sisteminizin gelen mesaj ve teslimat olaylarını gerçekleştiği anda alabilmesi için WhatsApp Business Hesabını (WABA) bir HTTPS callback adresine bağlar. Bağlantıyı oluşturmak ve yönetmek için **Meta API Katmanı** altındaki webhook aboneliği uç noktalarını kullanın.
+
+<Info>
+  Bu sayfa genel bir bakış sunar. İstek alanları, yanıt şemaları, kimlik doğrulama ve hata bilgileri bağlantılı WABA referans sayfalarında tutulur.
+</Info>
+
+## Nasıl çalışır?
+
+1. Callback adresiniz HTTPS üzerinden erişilebilir olmalıdır.
+2. Abonelik oluşturulduğunda Meta callback adresine bir doğrulama isteği gönderir.
+3. Callback, paylaşılan doğrulama belirtecini doğrulamalı ve `hub.challenge` değerini döndürmelidir.
+4. Doğrulamadan sonra WABA desteklenen gelen mesaj ve teslimat olaylarını callback adresine gönderir.
+
+<Warning>
+  Aboneliğin kaldırılması ilgili WABA için gelen mesaj ve teslimat olaylarını durdurur. Üretim aboneliğini değiştirmeden önce WABA kimliğini ve callback adresini doğrulayın.
+</Warning>
+
+## Webhook referansı
+
+<CardGroup cols={1}>
+  <Card title="Webhook aboneliklerini listele" icon="list" href="/tr/api-reference/meta/operations/list-webhook-subscriptions">WABA'nın abone olup olmadığını ve yapılandırılan callback adresini kontrol edin.</Card>
+  <Card title="Webhook aboneliği oluştur" icon="webhook" href="/tr/api-reference/meta/operations/create-webhook-subscription">WABA'yı Eazybe callback adresine veya özel HTTPS callback adresinize abone edin.</Card>
+  <Card title="Webhook aboneliğini sil" icon="trash" href="/tr/api-reference/meta/operations/delete-webhook-subscription">Artık olay almak istemediğinizde WABA aboneliğini kaldırın.</Card>
+</CardGroup>
+
+<Note>WhatsApp Web uzantısı olayları ve sohbet yedekleme akışları için [Chat Backup Webhooks](/tr/integrations/webhooks-custom/webhooks) sayfasını kullanın. Instant Webhook, WABA webhook aboneliği API'sini kullanır.</Note>

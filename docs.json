@@ -107,11 +107,24 @@
                   {
                     "group": "Create a broadcast",
                     "pages": [
-                      "en/broadcasts/create-broadcast",
-                      "en/broadcasts/upload-contacts",
-                      "en/broadcasts/hubspot-contact-list",
-                      "en/broadcasts/template-variables",
-                      "en/broadcasts/estimated-cost-and-sending"
+                      {
+                        "group": "Create Broadcast from Workspace",
+                        "pages": [
+                          "en/broadcasts/create-broadcast",
+                          "en/broadcasts/upload-contacts",
+                          "en/broadcasts/hubspot-contact-list",
+                          "en/broadcasts/template-variables",
+                          "en/broadcasts/estimated-cost-and-sending"
+                        ]
+                      },
+                      "en/waba/broadcasting/create-broadcast-with-extension",
+                      {
+                        "group": "HubSpot Workflow for WhatsApp Campaigns",
+                        "pages": [
+                          "en/waba/broadcasting/hubspot-workflow/send-ready-to-use-template",
+                          "en/waba/broadcasting/hubspot-workflow/send-wait-and-reply-template"
+                        ]
+                      }
                     ]
                   },
                   "en/broadcasts/troubleshooting"
@@ -171,22 +184,12 @@
                   },
                   {
                     "group": "Broadcasting",
+                    "hidden": true,
                     "pages": [
-                      "en/waba/broadcasting/send-broadcast",
-                      "en/waba/broadcasting/create-broadcast-with-extension",
-                      {
-                        "group": "HubSpot Workflow for WhatsApp Campaigns",
-                        "pages": [
-                          "en/waba/broadcasting/hubspot-workflow/send-ready-to-use-template",
-                          "en/waba/broadcasting/hubspot-workflow/send-wait-and-reply-template"
-                        ]
-                      },
                       "en/waba/broadcasting/template-based-chatbot"
                     ]
                   },
                   "en/waba/broadcast-rate-list-1st-jan-2026",
-                  "en/waba/wallet-management",
-                  "en/waba/team-inbox",
                   "en/waba/signup-troubleshooting",
                   "en/waba/connect-with-existing-whatsapp",
                   "en/waba/onboarding-to-coex-api",
@@ -678,18 +681,6 @@
                 "group": "API Documentation",
                 "icon": "server",
                 "pages": [
-                  {
-                    "group": "Public Broadcast API",
-                    "pages": [
-                      "en/api-reference/endpoints/broadcast-api",
-                      "en/api-reference/endpoints/broadcast-api/get-phone-numbers",
-                      "en/api-reference/endpoints/broadcast-api/get-templates",
-                      "en/api-reference/endpoints/broadcast-api/send-template-broadcast",
-                      "en/api-reference/endpoints/broadcast-api/send-free-form-message",
-                      "en/api-reference/endpoints/broadcast-api/get-broadcast-status",
-                      "en/api-reference/endpoints/broadcast-api/health-check"
-                    ]
-                  },
                   "api-reference/endpoints/messages",
                   "api-reference/endpoints/contacts",
                   "api-reference/endpoints/conversations",
@@ -697,55 +688,37 @@
                 ]
               },
               {
-                "group": "Waba Api Documentation",
+                "group": "WABA API Documentation",
                 "icon": "whatsapp",
                 "openapi": "/api-reference/meta/openapi.yaml",
                 "pages": [
                   "api-reference/meta/overview",
+                  {
+                    "group": "Broadcast API",
+                    "pages": [
+                      "en/api-reference/endpoints/broadcast-api",
+                      "en/api-reference/endpoints/broadcast-api/get-phone-numbers",
+                      "en/api-reference/endpoints/broadcast-api/get-templates",
+                      "en/api-reference/endpoints/broadcast-api/send-template-broadcast",
+                      {
+                        "group": "Send a Free-Form Message",
+                        "pages": [
+                          "en/api-reference/endpoints/broadcast-api/send-free-form-message",
+                          "en/api-reference/endpoints/broadcast-api/send-free-form-message/text-message",
+                          "en/api-reference/endpoints/broadcast-api/send-free-form-message/image-message",
+                          "en/api-reference/endpoints/broadcast-api/send-free-form-message/document-message",
+                          "en/api-reference/endpoints/broadcast-api/send-free-form-message/audio-message",
+                          "en/api-reference/endpoints/broadcast-api/send-free-form-message/video-message",
+                          "en/api-reference/endpoints/broadcast-api/send-free-form-message/sticker-message",
+                          "en/api-reference/endpoints/broadcast-api/send-free-form-message/location-message",
+                          "en/api-reference/endpoints/broadcast-api/send-free-form-message/interactive-message"
+                        ]
+                      },
+                      "en/api-reference/endpoints/broadcast-api/get-broadcast-status",
+                      "en/api-reference/endpoints/broadcast-api/health-check"
+                    ]
+                  },
                   "api-reference/meta/quickstart",
-                  {
-                    "group": "Phone numbers",
-                    "pages": [
-                      "GET /meta/phone-numbers",
-                      "GET /meta/phone-numbers/{phoneNumberId}/details",
-                      "GET /meta/wabas/{wabaId}/details"
-                    ]
-                  },
-                  {
-                    "group": "Messaging",
-                    "pages": [
-                      "POST /meta/phone-numbers/{phoneNumberId}/messages/template",
-                      "POST /meta/phone-numbers/{phoneNumberId}/messages/marketing-template",
-                      "POST /meta/phone-numbers/{phoneNumberId}/messages/template/bulk",
-                      "POST /meta/phone-numbers/{phoneNumberId}/messages/free-form",
-                      "POST /meta/phone-numbers/{phoneNumberId}/messages",
-                      "POST /meta/phone-numbers/{phoneNumberId}/messages/read",
-                      "POST /meta/phone-numbers/{phoneNumberId}/messages/typing-indicator",
-                      "POST /meta/phone-numbers/{phoneNumberId}/messages/reaction",
-                      "POST /meta/phone-numbers/{phoneNumberId}/messages/contacts"
-                    ]
-                  },
-                  {
-                    "group": "Templates",
-                    "pages": [
-                      "GET /meta/wabas/{wabaId}/templates",
-                      "GET /meta/wabas/{wabaId}/templates/all",
-                      "POST /meta/wabas/{wabaId}/templates",
-                      "POST /meta/wabas/{wabaId}/templates/library",
-                      "POST /meta/wabas/{wabaId}/templates/migrate",
-                      "POST /meta/wabas/{wabaId}/templates/{templateIdOrName}",
-                      "DELETE /meta/wabas/{wabaId}/templates/{templateIdOrName}",
-                      "GET /meta/wabas/{wabaId}/templates/compare"
-                    ]
-                  },
-                  {
-                    "group": "Media",
-                    "pages": [
-                      "POST /meta/phone-numbers/{phoneNumberId}/media",
-                      "GET /meta/media/{mediaId}",
-                      "DELETE /meta/media/{mediaId}"
-                    ]
-                  },
                   {
                     "group": "Webhooks",
                     "pages": [
@@ -756,6 +729,7 @@
                   },
                   {
                     "group": "Analytics",
+                    "hidden": true,
                     "pages": [
                       "GET /meta/wabas/{wabaId}/analytics",
                       "GET /meta/wabas/{wabaId}/template-analytics",
@@ -765,6 +739,7 @@
                   },
                   {
                     "group": "Profiles & settings",
+                    "hidden": true,
                     "pages": [
                       "GET /meta/phone-numbers/{phoneNumberId}/business-profile",
                       "POST /meta/phone-numbers/{phoneNumberId}/business-profile",
@@ -774,6 +749,7 @@
                   },
                   {
                     "group": "Automation",
+                    "hidden": true,
                     "pages": [
                       "GET /meta/phone-numbers/{phoneNumberId}/conversational-automation",
                       "POST /meta/phone-numbers/{phoneNumberId}/conversational-automation"
@@ -781,6 +757,7 @@
                   },
                   {
                     "group": "QR codes",
+                    "hidden": true,
                     "pages": [
                       "GET /meta/phone-numbers/{phoneNumberId}/qr-codes",
                       "POST /meta/phone-numbers/{phoneNumberId}/qr-codes",
@@ -790,6 +767,7 @@
                   },
                   {
                     "group": "Flows",
+                    "hidden": true,
                     "pages": [
                       "GET /meta/wabas/{wabaId}/flows",
                       "POST /meta/wabas/{wabaId}/flows",
@@ -803,6 +781,7 @@
                   },
                   {
                     "group": "Number administration",
+                    "hidden": true,
                     "pages": [
                       "POST /meta/phone-numbers/{phoneNumberId}/request-code",
                       "POST /meta/phone-numbers/{phoneNumberId}/verify-code",
@@ -816,6 +795,7 @@
                   },
                   {
                     "group": "Block list",
+                    "hidden": true,
                     "pages": [
                       "GET /meta/phone-numbers/{phoneNumberId}/blocked-users",
                       "POST /meta/phone-numbers/{phoneNumberId}/blocked-users",
@@ -825,10 +805,11 @@
                 ]
               },
               {
-                "group": "Webhook API",
+                "group": "Webhook",
                 "icon": "code",
                 "pages": [
-                  "en/integrations/webhooks-custom/webhooks"
+                  "en/integrations/webhooks-custom/webhooks",
+                  "en/integrations/webhooks-custom/instant-webhook"
                 ]
               }
             ]
@@ -913,11 +894,24 @@
                   {
                     "group": "Crear una difusión",
                     "pages": [
-                      "es/broadcasts/create-broadcast",
-                      "es/broadcasts/upload-contacts",
-                      "es/broadcasts/hubspot-contact-list",
-                      "es/broadcasts/template-variables",
-                      "es/broadcasts/estimated-cost-and-sending"
+                      {
+                        "group": "Crear una difusión desde el espacio de trabajo",
+                        "pages": [
+                          "es/broadcasts/create-broadcast",
+                          "es/broadcasts/upload-contacts",
+                          "es/broadcasts/hubspot-contact-list",
+                          "es/broadcasts/template-variables",
+                          "es/broadcasts/estimated-cost-and-sending"
+                        ]
+                      },
+                      "es/waba/broadcasting/create-broadcast-with-extension",
+                      {
+                        "group": "Flujos de Trabajo de HubSpot para Campañas de WhatsApp",
+                        "pages": [
+                          "es/waba/broadcasting/hubspot-workflow/send-ready-to-use-template",
+                          "es/waba/broadcasting/hubspot-workflow/send-wait-and-reply-template"
+                        ]
+                      }
                     ]
                   },
                   "es/broadcasts/troubleshooting"
@@ -972,17 +966,9 @@
                   },
                   {
                     "group": "Difusión",
+                    "hidden": true,
                     "pages": [
                       "es/waba/broadcasting/create-campaign",
-                      "es/waba/broadcasting/send-broadcast",
-                      "es/waba/broadcasting/create-broadcast-with-extension",
-                      {
-                        "group": "Flujos de Trabajo de HubSpot para Campañas de WhatsApp",
-                        "pages": [
-                          "es/waba/broadcasting/hubspot-workflow/send-ready-to-use-template",
-                          "es/waba/broadcasting/hubspot-workflow/send-wait-and-reply-template"
-                        ]
-                      },
                       "es/waba/broadcasting/analytics",
                       "es/waba/broadcasting/template-based-chatbot"
                     ]
@@ -992,8 +978,6 @@
                   "es/waba/connect-with-existing-whatsapp",
                   "es/waba/onboarding-to-coex-api",
                   "es/waba/broadcast-rate-list-1st-jan-2026",
-                  "es/waba/wallet-management",
-                  "es/waba/team-inbox",
                   "es/waba/pricing",
                   "es/waba/faq"
                 ]
@@ -1451,73 +1435,37 @@
                 ]
               },
               {
-                "group": "API Documentation",
-                "icon": "server",
+                "group": "Documentación de la API de WABA",
+                "icon": "whatsapp",
+                "openapi": "/es/api-reference/meta/openapi.json",
                 "pages": [
+                  "es/api-reference/meta/overview",
                   {
-                    "group": "API pública de difusión",
+                    "group": "API de difusión",
                     "pages": [
                       "es/api-reference/endpoints/broadcast-api",
                       "es/api-reference/endpoints/broadcast-api/get-phone-numbers",
                       "es/api-reference/endpoints/broadcast-api/get-templates",
                       "es/api-reference/endpoints/broadcast-api/send-template-broadcast",
-                      "es/api-reference/endpoints/broadcast-api/send-free-form-message",
+                      {
+                        "group": "Enviar un mensaje de formato libre",
+                        "pages": [
+                          "es/api-reference/endpoints/broadcast-api/send-free-form-message",
+                          "es/api-reference/endpoints/broadcast-api/send-free-form-message/text-message",
+                          "es/api-reference/endpoints/broadcast-api/send-free-form-message/image-message",
+                          "es/api-reference/endpoints/broadcast-api/send-free-form-message/document-message",
+                          "es/api-reference/endpoints/broadcast-api/send-free-form-message/audio-message",
+                          "es/api-reference/endpoints/broadcast-api/send-free-form-message/video-message",
+                          "es/api-reference/endpoints/broadcast-api/send-free-form-message/sticker-message",
+                          "es/api-reference/endpoints/broadcast-api/send-free-form-message/location-message",
+                          "es/api-reference/endpoints/broadcast-api/send-free-form-message/interactive-message"
+                        ]
+                      },
                       "es/api-reference/endpoints/broadcast-api/get-broadcast-status",
                       "es/api-reference/endpoints/broadcast-api/health-check"
                     ]
-                  }
-                ]
-              },
-              {
-                "group": "Wrapper de API Meta",
-                "icon": "whatsapp",
-                "openapi": "/es/api-reference/meta/openapi.json",
-                "pages": [
-                  "es/api-reference/meta/overview",
+                  },
                   "es/api-reference/meta/quickstart",
-                  {
-                    "group": "Números de teléfono",
-                    "pages": [
-                      "es/api-reference/meta/operations/get-phone-numbers",
-                      "es/api-reference/meta/operations/get-phone-number-details",
-                      "es/api-reference/meta/operations/get-waba-details"
-                    ]
-                  },
-                  {
-                    "group": "Mensajería",
-                    "pages": [
-                      "es/api-reference/meta/operations/send-template-message",
-                      "es/api-reference/meta/operations/send-marketing-template",
-                      "es/api-reference/meta/operations/send-bulk-template",
-                      "es/api-reference/meta/operations/send-free-form-message",
-                      "es/api-reference/meta/operations/send-message",
-                      "es/api-reference/meta/operations/mark-message-read",
-                      "es/api-reference/meta/operations/show-typing-indicator",
-                      "es/api-reference/meta/operations/react-to-message",
-                      "es/api-reference/meta/operations/send-contact-card"
-                    ]
-                  },
-                  {
-                    "group": "Plantillas",
-                    "pages": [
-                      "es/api-reference/meta/operations/list-templates",
-                      "es/api-reference/meta/operations/list-all-templates",
-                      "es/api-reference/meta/operations/create-template",
-                      "es/api-reference/meta/operations/create-template-from-library",
-                      "es/api-reference/meta/operations/migrate-templates",
-                      "es/api-reference/meta/operations/edit-template",
-                      "es/api-reference/meta/operations/delete-template",
-                      "es/api-reference/meta/operations/compare-templates"
-                    ]
-                  },
-                  {
-                    "group": "Archivos multimedia",
-                    "pages": [
-                      "es/api-reference/meta/operations/upload-media",
-                      "es/api-reference/meta/operations/get-media",
-                      "es/api-reference/meta/operations/delete-media"
-                    ]
-                  },
                   {
                     "group": "Webhooks",
                     "pages": [
@@ -1528,6 +1476,7 @@
                   },
                   {
                     "group": "Analíticas",
+                    "hidden": true,
                     "pages": [
                       "es/api-reference/meta/operations/get-messaging-analytics",
                       "es/api-reference/meta/operations/get-template-analytics",
@@ -1537,6 +1486,7 @@
                   },
                   {
                     "group": "Perfiles y configuración",
+                    "hidden": true,
                     "pages": [
                       "es/api-reference/meta/operations/get-business-profile",
                       "es/api-reference/meta/operations/update-business-profile",
@@ -1546,6 +1496,7 @@
                   },
                   {
                     "group": "Automatización",
+                    "hidden": true,
                     "pages": [
                       "es/api-reference/meta/operations/get-conversational-automation",
                       "es/api-reference/meta/operations/update-conversational-automation"
@@ -1553,6 +1504,7 @@
                   },
                   {
                     "group": "Códigos QR",
+                    "hidden": true,
                     "pages": [
                       "es/api-reference/meta/operations/list-qr-codes",
                       "es/api-reference/meta/operations/create-qr-code",
@@ -1562,6 +1514,7 @@
                   },
                   {
                     "group": "Flows",
+                    "hidden": true,
                     "pages": [
                       "es/api-reference/meta/operations/list-flows",
                       "es/api-reference/meta/operations/create-flow",
@@ -1575,6 +1528,7 @@
                   },
                   {
                     "group": "Administración de números",
+                    "hidden": true,
                     "pages": [
                       "es/api-reference/meta/operations/request-verification-code",
                       "es/api-reference/meta/operations/verify-phone-number-code",
@@ -1588,6 +1542,7 @@
                   },
                   {
                     "group": "Lista de bloqueados",
+                    "hidden": true,
                     "pages": [
                       "es/api-reference/meta/operations/list-blocked-users",
                       "es/api-reference/meta/operations/block-users",
@@ -1597,10 +1552,11 @@
                 ]
               },
               {
-                "group": "Webhook API",
+                "group": "Webhook",
                 "icon": "code",
                 "pages": [
-                  "es/integrations/webhooks-custom/webhooks"
+                  "es/integrations/webhooks-custom/webhooks",
+                  "es/integrations/webhooks-custom/instant-webhook"
                 ]
               }
             ]
@@ -1684,11 +1640,24 @@
                   {
                     "group": "Criar uma transmissão",
                     "pages": [
-                      "pt/broadcasts/create-broadcast",
-                      "pt/broadcasts/upload-contacts",
-                      "pt/broadcasts/hubspot-contact-list",
-                      "pt/broadcasts/template-variables",
-                      "pt/broadcasts/estimated-cost-and-sending"
+                      {
+                        "group": "Criar uma transmissão pelo espaço de trabalho",
+                        "pages": [
+                          "pt/broadcasts/create-broadcast",
+                          "pt/broadcasts/upload-contacts",
+                          "pt/broadcasts/hubspot-contact-list",
+                          "pt/broadcasts/template-variables",
+                          "pt/broadcasts/estimated-cost-and-sending"
+                        ]
+                      },
+                      "pt/waba/broadcasting/create-broadcast-with-extension",
+                      {
+                        "group": "Fluxos de Trabalho do HubSpot para Campanhas de WhatsApp",
+                        "pages": [
+                          "pt/waba/broadcasting/hubspot-workflow/send-ready-to-use-template",
+                          "pt/waba/broadcasting/hubspot-workflow/send-wait-and-reply-template"
+                        ]
+                      }
                     ]
                   },
                   "pt/broadcasts/troubleshooting"
@@ -1743,17 +1712,9 @@
                   },
                   {
                     "group": "Transmissão",
+                    "hidden": true,
                     "pages": [
                       "pt/waba/broadcasting/create-campaign",
-                      "pt/waba/broadcasting/send-broadcast",
-                      "pt/waba/broadcasting/create-broadcast-with-extension",
-                      {
-                        "group": "Fluxos de Trabalho do HubSpot para Campanhas de WhatsApp",
-                        "pages": [
-                          "pt/waba/broadcasting/hubspot-workflow/send-ready-to-use-template",
-                          "pt/waba/broadcasting/hubspot-workflow/send-wait-and-reply-template"
-                        ]
-                      },
                       "pt/waba/broadcasting/analytics",
                       "pt/waba/broadcasting/template-based-chatbot"
                     ]
@@ -1763,8 +1724,6 @@
                   "pt/waba/connect-with-existing-whatsapp",
                   "pt/waba/onboarding-to-coex-api",
                   "pt/waba/broadcast-rate-list-1st-jan-2026",
-                  "pt/waba/wallet-management",
-                  "pt/waba/team-inbox",
                   "pt/waba/pricing",
                   "pt/waba/faq"
                 ]
@@ -2227,73 +2186,37 @@
                 ]
               },
               {
-                "group": "API Documentation",
-                "icon": "server",
+                "group": "Documentação da API WABA",
+                "icon": "whatsapp",
+                "openapi": "/pt/api-reference/meta/openapi.json",
                 "pages": [
+                  "pt/api-reference/meta/overview",
                   {
-                    "group": "API pública de transmissão",
+                    "group": "API de transmissão",
                     "pages": [
                       "pt/api-reference/endpoints/broadcast-api",
                       "pt/api-reference/endpoints/broadcast-api/get-phone-numbers",
                       "pt/api-reference/endpoints/broadcast-api/get-templates",
                       "pt/api-reference/endpoints/broadcast-api/send-template-broadcast",
-                      "pt/api-reference/endpoints/broadcast-api/send-free-form-message",
+                      {
+                        "group": "Enviar uma mensagem de formato livre",
+                        "pages": [
+                          "pt/api-reference/endpoints/broadcast-api/send-free-form-message",
+                          "pt/api-reference/endpoints/broadcast-api/send-free-form-message/text-message",
+                          "pt/api-reference/endpoints/broadcast-api/send-free-form-message/image-message",
+                          "pt/api-reference/endpoints/broadcast-api/send-free-form-message/document-message",
+                          "pt/api-reference/endpoints/broadcast-api/send-free-form-message/audio-message",
+                          "pt/api-reference/endpoints/broadcast-api/send-free-form-message/video-message",
+                          "pt/api-reference/endpoints/broadcast-api/send-free-form-message/sticker-message",
+                          "pt/api-reference/endpoints/broadcast-api/send-free-form-message/location-message",
+                          "pt/api-reference/endpoints/broadcast-api/send-free-form-message/interactive-message"
+                        ]
+                      },
                       "pt/api-reference/endpoints/broadcast-api/get-broadcast-status",
                       "pt/api-reference/endpoints/broadcast-api/health-check"
                     ]
-                  }
-                ]
-              },
-              {
-                "group": "Wrapper da API Meta",
-                "icon": "whatsapp",
-                "openapi": "/pt/api-reference/meta/openapi.json",
-                "pages": [
-                  "pt/api-reference/meta/overview",
+                  },
                   "pt/api-reference/meta/quickstart",
-                  {
-                    "group": "Números de telefone",
-                    "pages": [
-                      "pt/api-reference/meta/operations/get-phone-numbers",
-                      "pt/api-reference/meta/operations/get-phone-number-details",
-                      "pt/api-reference/meta/operations/get-waba-details"
-                    ]
-                  },
-                  {
-                    "group": "Mensagens",
-                    "pages": [
-                      "pt/api-reference/meta/operations/send-template-message",
-                      "pt/api-reference/meta/operations/send-marketing-template",
-                      "pt/api-reference/meta/operations/send-bulk-template",
-                      "pt/api-reference/meta/operations/send-free-form-message",
-                      "pt/api-reference/meta/operations/send-message",
-                      "pt/api-reference/meta/operations/mark-message-read",
-                      "pt/api-reference/meta/operations/show-typing-indicator",
-                      "pt/api-reference/meta/operations/react-to-message",
-                      "pt/api-reference/meta/operations/send-contact-card"
-                    ]
-                  },
-                  {
-                    "group": "Modelos",
-                    "pages": [
-                      "pt/api-reference/meta/operations/list-templates",
-                      "pt/api-reference/meta/operations/list-all-templates",
-                      "pt/api-reference/meta/operations/create-template",
-                      "pt/api-reference/meta/operations/create-template-from-library",
-                      "pt/api-reference/meta/operations/migrate-templates",
-                      "pt/api-reference/meta/operations/edit-template",
-                      "pt/api-reference/meta/operations/delete-template",
-                      "pt/api-reference/meta/operations/compare-templates"
-                    ]
-                  },
-                  {
-                    "group": "Mídia",
-                    "pages": [
-                      "pt/api-reference/meta/operations/upload-media",
-                      "pt/api-reference/meta/operations/get-media",
-                      "pt/api-reference/meta/operations/delete-media"
-                    ]
-                  },
                   {
                     "group": "Webhooks",
                     "pages": [
@@ -2304,6 +2227,7 @@
                   },
                   {
                     "group": "Análises",
+                    "hidden": true,
                     "pages": [
                       "pt/api-reference/meta/operations/get-messaging-analytics",
                       "pt/api-reference/meta/operations/get-template-analytics",
@@ -2313,6 +2237,7 @@
                   },
                   {
                     "group": "Perfis e configurações",
+                    "hidden": true,
                     "pages": [
                       "pt/api-reference/meta/operations/get-business-profile",
                       "pt/api-reference/meta/operations/update-business-profile",
@@ -2322,6 +2247,7 @@
                   },
                   {
                     "group": "Automação",
+                    "hidden": true,
                     "pages": [
                       "pt/api-reference/meta/operations/get-conversational-automation",
                       "pt/api-reference/meta/operations/update-conversational-automation"
@@ -2329,6 +2255,7 @@
                   },
                   {
                     "group": "Códigos QR",
+                    "hidden": true,
                     "pages": [
                       "pt/api-reference/meta/operations/list-qr-codes",
                       "pt/api-reference/meta/operations/create-qr-code",
@@ -2338,6 +2265,7 @@
                   },
                   {
                     "group": "Flows",
+                    "hidden": true,
                     "pages": [
                       "pt/api-reference/meta/operations/list-flows",
                       "pt/api-reference/meta/operations/create-flow",
@@ -2351,6 +2279,7 @@
                   },
                   {
                     "group": "Administração de números",
+                    "hidden": true,
                     "pages": [
                       "pt/api-reference/meta/operations/request-verification-code",
                       "pt/api-reference/meta/operations/verify-phone-number-code",
@@ -2364,6 +2293,7 @@
                   },
                   {
                     "group": "Lista de bloqueados",
+                    "hidden": true,
                     "pages": [
                       "pt/api-reference/meta/operations/list-blocked-users",
                       "pt/api-reference/meta/operations/block-users",
@@ -2373,10 +2303,11 @@
                 ]
               },
               {
-                "group": "Webhook API",
+                "group": "Webhook",
                 "icon": "code",
                 "pages": [
-                  "pt/integrations/webhooks-custom/webhooks"
+                  "pt/integrations/webhooks-custom/webhooks",
+                  "pt/integrations/webhooks-custom/instant-webhook"
                 ]
               }
             ]
@@ -2460,11 +2391,24 @@
                   {
                     "group": "Yayın oluşturma",
                     "pages": [
-                      "tr/broadcasts/create-broadcast",
-                      "tr/broadcasts/upload-contacts",
-                      "tr/broadcasts/hubspot-contact-list",
-                      "tr/broadcasts/template-variables",
-                      "tr/broadcasts/estimated-cost-and-sending"
+                      {
+                        "group": "Çalışma alanından yayın oluştur",
+                        "pages": [
+                          "tr/broadcasts/create-broadcast",
+                          "tr/broadcasts/upload-contacts",
+                          "tr/broadcasts/hubspot-contact-list",
+                          "tr/broadcasts/template-variables",
+                          "tr/broadcasts/estimated-cost-and-sending"
+                        ]
+                      },
+                      "tr/waba/broadcasting/create-broadcast-with-extension",
+                      {
+                        "group": "WhatsApp Kampanyaları için HubSpot İş Akışları",
+                        "pages": [
+                          "tr/waba/broadcasting/hubspot-workflow/send-ready-to-use-template",
+                          "tr/waba/broadcasting/hubspot-workflow/send-wait-and-reply-template"
+                        ]
+                      }
                     ]
                   },
                   "tr/broadcasts/troubleshooting"
@@ -2519,17 +2463,9 @@
                   },
                   {
                     "group": "Yayın",
+                    "hidden": true,
                     "pages": [
                       "tr/waba/broadcasting/create-campaign",
-                      "tr/waba/broadcasting/send-broadcast",
-                      "tr/waba/broadcasting/create-broadcast-with-extension",
-                      {
-                        "group": "WhatsApp Kampanyaları için HubSpot İş Akışları",
-                        "pages": [
-                          "tr/waba/broadcasting/hubspot-workflow/send-ready-to-use-template",
-                          "tr/waba/broadcasting/hubspot-workflow/send-wait-and-reply-template"
-                        ]
-                      },
                       "tr/waba/broadcasting/analytics",
                       "tr/waba/broadcasting/template-based-chatbot"
                     ]
@@ -2539,8 +2475,6 @@
                   "tr/waba/connect-with-existing-whatsapp",
                   "tr/waba/onboarding-to-coex-api",
                   "tr/waba/broadcast-rate-list-1st-jan-2026",
-                  "tr/waba/wallet-management",
-                  "tr/waba/team-inbox",
                   "tr/waba/pricing",
                   "tr/waba/faq"
                 ]
@@ -3003,73 +2937,37 @@
                 ]
               },
               {
-                "group": "API Documentation",
-                "icon": "server",
+                "group": "WABA API Dokümantasyonu",
+                "icon": "whatsapp",
+                "openapi": "/tr/api-reference/meta/openapi.json",
                 "pages": [
+                  "tr/api-reference/meta/overview",
                   {
-                    "group": "Genel Yayın API'si",
+                    "group": "Yayın API'si",
                     "pages": [
                       "tr/api-reference/endpoints/broadcast-api",
                       "tr/api-reference/endpoints/broadcast-api/get-phone-numbers",
                       "tr/api-reference/endpoints/broadcast-api/get-templates",
                       "tr/api-reference/endpoints/broadcast-api/send-template-broadcast",
-                      "tr/api-reference/endpoints/broadcast-api/send-free-form-message",
+                      {
+                        "group": "Serbest Biçimli Mesaj Gönder",
+                        "pages": [
+                          "tr/api-reference/endpoints/broadcast-api/send-free-form-message",
+                          "tr/api-reference/endpoints/broadcast-api/send-free-form-message/text-message",
+                          "tr/api-reference/endpoints/broadcast-api/send-free-form-message/image-message",
+                          "tr/api-reference/endpoints/broadcast-api/send-free-form-message/document-message",
+                          "tr/api-reference/endpoints/broadcast-api/send-free-form-message/audio-message",
+                          "tr/api-reference/endpoints/broadcast-api/send-free-form-message/video-message",
+                          "tr/api-reference/endpoints/broadcast-api/send-free-form-message/sticker-message",
+                          "tr/api-reference/endpoints/broadcast-api/send-free-form-message/location-message",
+                          "tr/api-reference/endpoints/broadcast-api/send-free-form-message/interactive-message"
+                        ]
+                      },
                       "tr/api-reference/endpoints/broadcast-api/get-broadcast-status",
                       "tr/api-reference/endpoints/broadcast-api/health-check"
                     ]
-                  }
-                ]
-              },
-              {
-                "group": "Meta API Katmanı",
-                "icon": "whatsapp",
-                "openapi": "/tr/api-reference/meta/openapi.json",
-                "pages": [
-                  "tr/api-reference/meta/overview",
+                  },
                   "tr/api-reference/meta/quickstart",
-                  {
-                    "group": "Telefon numaraları",
-                    "pages": [
-                      "tr/api-reference/meta/operations/get-phone-numbers",
-                      "tr/api-reference/meta/operations/get-phone-number-details",
-                      "tr/api-reference/meta/operations/get-waba-details"
-                    ]
-                  },
-                  {
-                    "group": "Mesajlaşma",
-                    "pages": [
-                      "tr/api-reference/meta/operations/send-template-message",
-                      "tr/api-reference/meta/operations/send-marketing-template",
-                      "tr/api-reference/meta/operations/send-bulk-template",
-                      "tr/api-reference/meta/operations/send-free-form-message",
-                      "tr/api-reference/meta/operations/send-message",
-                      "tr/api-reference/meta/operations/mark-message-read",
-                      "tr/api-reference/meta/operations/show-typing-indicator",
-                      "tr/api-reference/meta/operations/react-to-message",
-                      "tr/api-reference/meta/operations/send-contact-card"
-                    ]
-                  },
-                  {
-                    "group": "Şablonlar",
-                    "pages": [
-                      "tr/api-reference/meta/operations/list-templates",
-                      "tr/api-reference/meta/operations/list-all-templates",
-                      "tr/api-reference/meta/operations/create-template",
-                      "tr/api-reference/meta/operations/create-template-from-library",
-                      "tr/api-reference/meta/operations/migrate-templates",
-                      "tr/api-reference/meta/operations/edit-template",
-                      "tr/api-reference/meta/operations/delete-template",
-                      "tr/api-reference/meta/operations/compare-templates"
-                    ]
-                  },
-                  {
-                    "group": "Medya",
-                    "pages": [
-                      "tr/api-reference/meta/operations/upload-media",
-                      "tr/api-reference/meta/operations/get-media",
-                      "tr/api-reference/meta/operations/delete-media"
-                    ]
-                  },
                   {
                     "group": "Webhook'lar",
                     "pages": [
@@ -3080,6 +2978,7 @@
                   },
                   {
                     "group": "Analizler",
+                    "hidden": true,
                     "pages": [
                       "tr/api-reference/meta/operations/get-messaging-analytics",
                       "tr/api-reference/meta/operations/get-template-analytics",
@@ -3089,6 +2988,7 @@
                   },
                   {
                     "group": "Profiller ve ayarlar",
+                    "hidden": true,
                     "pages": [
                       "tr/api-reference/meta/operations/get-business-profile",
                       "tr/api-reference/meta/operations/update-business-profile",
@@ -3098,6 +2998,7 @@
                   },
                   {
                     "group": "Otomasyon",
+                    "hidden": true,
                     "pages": [
                       "tr/api-reference/meta/operations/get-conversational-automation",
                       "tr/api-reference/meta/operations/update-conversational-automation"
@@ -3105,6 +3006,7 @@
                   },
                   {
                     "group": "QR kodları",
+                    "hidden": true,
                     "pages": [
                       "tr/api-reference/meta/operations/list-qr-codes",
                       "tr/api-reference/meta/operations/create-qr-code",
@@ -3114,6 +3016,7 @@
                   },
                   {
                     "group": "Flows",
+                    "hidden": true,
                     "pages": [
                       "tr/api-reference/meta/operations/list-flows",
                       "tr/api-reference/meta/operations/create-flow",
@@ -3127,6 +3030,7 @@
                   },
                   {
                     "group": "Numara yönetimi",
+                    "hidden": true,
                     "pages": [
                       "tr/api-reference/meta/operations/request-verification-code",
                       "tr/api-reference/meta/operations/verify-phone-number-code",
@@ -3140,6 +3044,7 @@
                   },
                   {
                     "group": "Engellenenler listesi",
+                    "hidden": true,
                     "pages": [
                       "tr/api-reference/meta/operations/list-blocked-users",
                       "tr/api-reference/meta/operations/block-users",
@@ -3149,10 +3054,11 @@
                 ]
               },
               {
-                "group": "Webhook API",
+                "group": "Webhook",
                 "icon": "code",
                 "pages": [
-                  "tr/integrations/webhooks-custom/webhooks"
+                  "tr/integrations/webhooks-custom/webhooks",
+                  "tr/integrations/webhooks-custom/instant-webhook"
                 ]
               }
             ]
