@@ -1,166 +1,114 @@
 ---
 title: "Análise de Negócios do HubSpot"
-description: "Analisa automaticamente cada negócio do HubSpot combinando o registro do HubSpot com as conversas reais por trás dele, para você ver quais negócios avançam, quais estão em risco e quais precisam de atenção hoje."
+description: "A Análise de Negócios revisa cada um dos seus negócios do HubSpot junto com as conversas relacionadas e registra os resultados no próprio registro do negócio."
 ---
 
-A Análise de Negócios do HubSpot revisa cada um dos seus negócios do HubSpot junto com as conversas reais associadas a ele e grava o que encontra no registro do negócio.
+A Análise de Negócios revisa cada um dos seus negócios do HubSpot junto com as conversas associadas a ele e registra o que encontra no registro do negócio.
 
-Ela roda em segundo plano na própria programação. Todo negócio que você abrir já traz uma leitura atualizada de como a situação realmente está — nenhum painel para consultar, nada para acionar.
+Ela roda automaticamente a cada 6 horas. Não há nada para acionar, nenhuma configuração por negócio e nenhum painel separado para abrir.
 
 ## Antes de Começar
 
 <Steps>
   <Step title="Conecte o HubSpot ao Eazybe">
-    A Análise de Negócios funciona com os seus negócios do HubSpot. Assim que sua conta do HubSpot estiver conectada, os negócios são capturados automaticamente — não há nada para ativar.
+    Assim que a conexão estiver ativa, os seus negócios são capturados automaticamente.
   </Step>
-  <Step title="Garanta que seus negócios tenham contatos associados">
-    A análise lê as conversas dos contatos associados a cada negócio. Um negócio sem contatos associados só pode ser analisado a partir dos dados do HubSpot.
+  <Step title="Associe contatos aos seus negócios">
+    As conversas são vinculadas a um negócio por meio dos contatos associados a ele. Um negócio sem contatos associados é analisado apenas a partir dos dados do HubSpot.
   </Step>
-  <Step title="Confirme que o escopo sales-email-read foi concedido">
-    A atividade de e-mail dos seus negócios só pode ser lida se a sua conexão com o HubSpot incluir o escopo **sales-email-read**. A versão mais recente da integração o solicita automaticamente.
+  <Step title="Conceda os escopos necessários">
+    Gravar os resultados nos seus negócios exige os escopos **crm.schemas.deals.write** e **crm.objects.deals.write**. Ler a atividade de e-mail exige adicionalmente **sales-email-read**. As versões recentes da integração solicitam os três automaticamente.
 
-    Para verificar, acesse **Integration page → HubSpot settings → Scopes and permissions**. Se o escopo não aparecer, reconecte sua conta do HubSpot — ao reintegrar, ele é concedido.
-  </Step>
-  <Step title="É isso — não há configuração por negócio">
-    Você não precisa ativar nada em negócios individuais nem configurar campos. A análise começa automaticamente e se mantém atualizada sozinha.
+    Para verificar, acesse **Integration page → HubSpot settings → Scopes and permissions**. Se algum estiver faltando, reconecte sua conta do HubSpot.
   </Step>
 </Steps>
 
 ## Como Funciona
 
-A análise lê duas fontes e as compara.
+Cada análise se baseia em duas fontes.
 
-| Fonte | O que ela lê |
-|:------|:-------------|
-| **HubSpot** | O próprio negócio — etapa, valor, proprietário, data de fechamento, pipeline — além de chamadas, reuniões, tarefas, e-mails e anotações registrados, e os contatos e empresas associados |
-| **Suas conversas** | Os chats e as trocas de e-mail reais com as pessoas daquele negócio, incluindo quem disse o quê, quando e quanto tempo cada lado levou para responder |
+| Fonte | Dados utilizados |
+|:------|:-----------------|
+| **Registro do HubSpot** | Etapa, valor, proprietário, data de fechamento e pipeline do negócio, além das chamadas, reuniões, tarefas, e-mails e anotações registrados, e os contatos e empresas associados |
+| **Conversas** | Chats e trocas de e-mail com os contatos do negócio, incluindo a direção das mensagens, o momento em que ocorreram e quanto tempo cada lado levou para responder |
 
-Ler as duas é o ponto central. O HubSpot registra o que sua equipe digitou; a conversa registra o que realmente aconteceu. Quando as duas divergem, essa diferença costuma ser justamente o que ninguém percebeu.
+As duas fontes são comparadas. Quando o registro do HubSpot e a conversa divergem, a diferença é registrada em vez de resolvida.
+
+Cada execução atualiza os negócios que tiveram nova atividade desde a última análise. Cada negócio guarda o horário da sua análise mais recente.
 
 <Note>
-  Os resultados são gravados em campos próprios e separados no negócio. Sua etapa, valor, data de fechamento e todos os outros campos que sua equipe mantém nunca são editados ou sobrescritos.
+  Os resultados são gravados em propriedades próprias e dedicadas. As propriedades existentes do negócio, como etapa, valor e data de fechamento, nunca são modificadas.
 </Note>
 
 ## Onde Encontrar
 
-Abra qualquer negócio no HubSpot. A análise aparece ao lado das propriedades habituais do negócio, no próprio registro — não há nada separado para abrir.
+Abra qualquer negócio no HubSpot. As propriedades da análise aparecem ao lado das propriedades habituais do negócio, no próprio registro.
 
-Cada negócio também registra quando foi analisado pela última vez, então você sempre sabe o quão atual é a informação.
+## O Que a Análise Registra
 
-## O Que a Análise Informa
+| Área | O que registra |
+|:-----|:---------------|
+| **Responsabilidade da resposta** | Se o negócio aguarda uma resposta da sua equipe ou do cliente |
+| **Tendência de engajamento** | Se a conversa está acelerando ou desacelerando em relação ao padrão anterior |
+| **Inatividade** | Se o cliente parou de responder |
+| **Disposição de compra** | Se o cliente descreve uma necessidade, avalia a sua oferta ou negocia preço e condições |
+| **Autoridade de decisão** | Se o seu contato pode aprovar a compra ou precisa de autorização de outra pessoa |
+| **Precisão da etapa** | Se a conversa está adiantada, atrasada ou alinhada com a etapa registrada |
+| **Riscos de fechamento** | Presença de concorrente, resistência ao preço, silêncio após um orçamento, requisitos não atendidos, prazos que escorregam ou um único contato engajado |
+| **Objeção** | A objeção mais recente do cliente, nas palavras dele |
+| **Prazo de fechamento previsto** | O prazo informado pelo cliente, padronizado em um conjunto fixo de períodos |
+| **Valor discutido** | O montante orçado ou acordado na conversa |
+| **Resumo e próximos passos** | Um resumo em linguagem simples do negócio e as ações recomendadas |
+| **Evidência de apoio** | As mensagens e atividades por trás de cada resultado e o número de conversas lidas |
 
-Para cada negócio do seu pipeline, você vai saber:
+## Filtros e Relatórios
 
-| O que você vai saber | Detalhes |
-|:---------------------|:---------|
-| **Quem deve a próxima resposta** | Se o negócio está aguardando sua equipe ou o cliente |
-| **Se o ritmo está crescendo ou caindo** | Como a conversa está indo agora em comparação com antes: respostas mais rápidas e ricas, ou mais lentas e curtas |
-| **Se o cliente ficou em silêncio** | Sinalizado apenas quando o silêncio realmente se estabeleceu, não assim que uma resposta atrasa |
-| **Quão pronto o comprador está** | Se ele descreve o próprio problema, avalia o que você oferece ou negocia preço e condições |
-| **Se você tem o tomador de decisão** | Se o seu contato pode aprovar a compra ou precisa de autorização de outra pessoa |
-| **Se a etapa do seu pipeline está correta** | Onde a conversa passou da etapa registrada ou ainda não chegou nela |
-| **O que pode bloquear o fechamento** | Pressão de concorrente, resistência ao preço, silêncio após um orçamento, um requisito não atendido, um prazo que escorrega ou uma conta apoiada em um único contato |
-| **No que ele está resistindo** | A objeção mais recente do cliente, nas palavras dele |
-| **Quando ele espera fechar** | O prazo informado pelo cliente, padronizado para você filtrar e gerar relatórios |
-| **O valor realmente discutido** | O montante orçado ou acordado na conversa, que muitas vezes não é o do HubSpot |
-| **Um resumo e os próximos passos** | Uma recapitulação em linguagem simples de todo o negócio, além das ações recomendadas |
-| **A evidência por trás** | As mensagens e atividades específicas de onde cada conclusão veio, e quantas conversas foram lidas |
+Os resultados ficam armazenados como propriedades padrão de negócio do HubSpot, então funcionam em filtros, visualizações salvas, painéis e relatórios como qualquer outra propriedade. Na lista de propriedades do HubSpot elas aparecem juntas, com nomes começando por **AI**.
 
-## Uso no Dia a Dia
+Visualizações que as equipes costumam salvar:
 
-<AccordionGroup>
-  <Accordion title="Comece pela sua fila de respostas">
-    Filtre seus negócios por aqueles que aguardam uma resposta da sua equipe.
+- Negócios que aguardam uma resposta da sua equipe
+- Negócios com tendência de engajamento em queda
+- Negócios em que a etapa e a conversa divergem
+- Negócios com fechamento previsto para o mês atual
 
-    Esta é a lista de maior valor que você vai montar. Cada negócio nela tem um cliente que já demonstrou interesse e agora está esperando — não é preciso prospectar, só responder. Zerar essa lista diariamente costuma ser a ação de receita mais rápida disponível para um representante.
-  </Accordion>
-  <Accordion title="Pegue os negócios antes que esfriem">
-    Filtre pelos negócios cujo ritmo está caindo.
+## Comportamentos a Considerar
 
-    Isso dispara enquanto o negócio ainda parece saudável no pipeline: a etapa não escorregou, a data de fechamento não mudou e nada parece errado no quadro. A queda de ritmo é o aviso mais antecipado que você vai receber, e por isso é o momento mais barato para intervir.
+- **Uma propriedade vazia significa que nenhum sinal foi encontrado.** Os valores só são gravados quando há evidência que os sustente. Uma propriedade vazia indica que a informação não estava presente no HubSpot nem nas conversas.
+- **A inatividade é medida em dias.** Um negócio não é marcado como inativo assim que uma resposta atrasa. O cliente precisa ter deixado a sua última mensagem sem resposta por pelo menos dois dias.
+- **Os valores podem mudar sem mensagens novas.** A inatividade e a tendência de engajamento se baseiam no tempo decorrido e na comparação com a atividade anterior, então os resultados podem mudar durante um período de silêncio.
+- **Os prazos informados são padronizados.** Expressões como "em algumas semanas" são convertidas em um conjunto fixo de períodos, calculados a partir da data atual. Apenas compromissos de fechamento são contados, não o agendamento de reuniões ou demonstrações.
+- **Edições manuais são sobrescritas.** Você pode editar uma propriedade da análise diretamente no HubSpot, mas a próxima execução agendada substituirá o valor. Use suas próprias propriedades ou uma anotação no negócio para registrar a sua avaliação.
 
-    Combine com as informações de bloqueios e objeções para decidir *como* retomar o contato, em vez de simplesmente insistir de novo.
-  </Accordion>
-  <Accordion title="Mantenha sua previsão honesta">
-    Filtre pelos negócios em que a conversa e a etapa do pipeline divergem.
+## Solução de Problemas
 
-    Negócios adiantados em relação à etapa indicam que o HubSpot não foi atualizado e que sua previsão está subestimada. Os atrasados indicam que alguém os empurrou adiante com otimismo e que sua previsão está superestimada — normalmente o erro mais caro dos dois.
-
-    É uma revisão semanal útil para gestores e uma boa limpeza de pipeline antes de qualquer reunião de previsão.
-  </Accordion>
-  <Accordion title="Prepare-se para uma reunião em dois minutos">
-    Abra o negócio e leia o resumo.
-
-    Ele cobre quem está envolvido, do que precisam, o que foi discutido e o que aconteceu mais recentemente — assim você entra em uma reunião, ou assume o pipeline de um colega, sem percorrer meses de histórico.
-  </Accordion>
-  <Accordion title="Encontre suas oportunidades mal atendidas">
-    Procure negócios com forte disposição de compra que ainda estejam em uma etapa inicial do pipeline.
-
-    São clientes avançando mais rápido do que o seu processo. Costumam ser os negócios mais ganháveis do pipeline e os mais fáceis de perder para um concorrente que responda antes.
-  </Accordion>
-  <Accordion title="Monte suas próprias visualizações e relatórios">
-    Tudo fica como propriedades padrão de negócio do HubSpot, então você pode filtrar, salvar visualizações de lista e criar painéis e relatórios exatamente como faria com qualquer outro campo do seu portal.
-
-    Visualizações salvas comuns: *aguardando nós*, *ritmo em queda*, *etapa divergente* e *fechando este mês*.
-  </Accordion>
-</AccordionGroup>
-
-## Bom Saber
-
-<AccordionGroup>
-  <Accordion title="Um campo vazio significa que não há sinal — não que houve erro">
-    Nada é adivinhado. Se a evidência de algo não está no HubSpot nem nas suas conversas, o campo fica vazio em vez de ser preenchido com uma suposição.
-
-    Isso torna os campos vazios úteis por si só. Filtrar por negócios sem prazo de fechamento informado, por exemplo, dá a você todos aqueles em que o cliente nunca se comprometeu com uma data.
-  </Accordion>
-  <Accordion title="O silêncio é medido em dias, não em respostas perdidas">
-    Um negócio não é marcado como inativo assim que uma resposta atrasa. O cliente precisa estar há alguns dias sem responder à sua última mensagem.
-
-    Se você envia de manhã e a análise roda à noite, ele pode nem ter aberto. Essa espera faz com que, quando o aviso aparece, a lista gerada valha a pena ser trabalhada.
-  </Accordion>
-  <Accordion title="Algumas coisas mudam sem mensagens novas">
-    Parte da análise mede tempo e silêncio, não o conteúdo das mensagens.
-
-    Um negócio pode passar a "sem resposta" apenas porque dias suficientes se passaram. E como o ritmo é medido em relação a como a conversa vinha andando, um negócio que parecia estável na semana passada pode cair e depois silenciar sem que nada novo tenha sido dito. A ausência é o próprio sinal.
-  </Accordion>
-  <Accordion title="Os prazos do cliente são padronizados">
-    Clientes dizem coisas como "nos dê algumas semanas" ou "depois da revisão de segurança". Isso é convertido em um conjunto consistente de prazos, calculados em relação à data de hoje em vez de tomados ao pé da letra.
-
-    Como todas as formas de dizer acabam no mesmo vocabulário, um filtro como *fecha este mês* funciona em todo o seu pipeline. Só sinais reais de fechamento são contados: "assinamos no mês que vem" conta, "vamos fazer a demo na sexta" não.
-  </Accordion>
-  <Accordion title="Edições manuais são substituídas na próxima execução">
-    Você pode digitar por cima de um campo da análise no HubSpot, mas a próxima execução agendada vai sobrescrevê-lo. Para registrar seu próprio julgamento de forma permanente, use um dos seus campos ou adicione uma anotação ao negócio.
-  </Accordion>
-  <Accordion title="Veja sobre quanto uma conclusão se apoia">
-    Cada negócio mostra quantas conversas foram lidas. Um resultado que parece confiante mas se apoia em duas mensagens merece menos peso do que um construído sobre sessenta, e a evidência associada mostra exatamente quais mensagens ou atividades produziram cada conclusão.
-  </Accordion>
-</AccordionGroup>
+| Problema | Causa e solução |
+|:---------|:----------------|
+| Um negócio não mostra nenhuma análise | Ele ainda não foi incluído em uma execução, ou os escopos de gravação não foram concedidos. Negócios novos são capturados na próxima execução agendada. Um negócio sem contatos associados e sem atividade registrada não tem dados a analisar. |
+| Nada é gravado em nenhum negócio | O escopo **crm.schemas.deals.write** ou **crm.objects.deals.write** está faltando. Verifique em **Integration page → HubSpot settings → Scopes and permissions** e reconecte a conta. |
+| A atividade de e-mail está faltando | O escopo **sales-email-read** não foi concedido. Verifique na mesma página e reconecte a conta se ele estiver ausente. |
+| Os valores parecem desatualizados | Confira o horário da última análise no negócio. Os negócios só são atualizados quando há nova atividade registrada desde a execução anterior. |
+| Algumas propriedades estão vazias | Nenhuma evidência de apoio foi encontrada para essas propriedades. Esse é o comportamento esperado, não um erro. |
 
 ## Perguntas Frequentes
 
 <AccordionGroup>
   <Accordion title="Isso vai alterar os dados que já tenho no HubSpot?">
-    Não. Tudo é gravado em campos próprios e dedicados. Sua etapa, valor, data de fechamento e os demais campos que sua equipe mantém nunca são editados ou sobrescritos. Quando a análise discorda do HubSpot, ela registra isso no próprio campo e deixa o seu intacto — você decide o que fazer com a diferença.
+    Não. Os resultados são gravados em propriedades próprias e dedicadas. Etapa, valor, data de fechamento e qualquer outra propriedade que sua equipe mantém nunca são editadas ou sobrescritas. Quando a análise diverge do registro do HubSpot, ela anota a diferença na própria propriedade.
   </Accordion>
-  <Accordion title="Com que frequência ela atualiza?">
-    Roda automaticamente em intervalos regulares, atualizando os negócios que tiveram nova atividade desde a última análise. Negócios ativos se mantêm em dia sem nenhuma ação sua, e cada negócio mostra quando foi revisado pela última vez.
+  <Accordion title="Com que frequência ela roda?">
+    A cada 6 horas. Cada execução atualiza os negócios que tiveram nova atividade desde a última análise, e os resultados são gravados automaticamente no HubSpot. Cada negócio mostra quando foi analisado pela última vez.
   </Accordion>
-  <Accordion title="Funciona se houver pouquíssimo histórico de conversa?">
-    Sim, mas com menos base. A análise reflete apenas o que realmente aconteceu nos dados disponíveis — onde não há evidência, nada é gravado. Cada negócio informa quantas conversas foram lidas, então você sempre sabe quanto material há por trás de uma conclusão.
+  <Accordion title="Quais permissões do HubSpot são necessárias?">
+    Gravar os resultados da análise nos seus negócios exige os escopos **crm.schemas.deals.write** e **crm.objects.deals.write** na sua conexão com o HubSpot. Ler a atividade de e-mail exige adicionalmente **sales-email-read**.
+
+    Para verificar, acesse **Integration page → HubSpot settings → Scopes and permissions**. Se algum estiver faltando, reconecte sua conta do HubSpot para concedê-lo.
   </Accordion>
   <Accordion title="Qual é a precisão?">
-    Cada conclusão está ligada à mensagem ou atividade específica de onde veio, então nada é afirmado que não possa ser rastreado até algo real na conversa ou no HubSpot. Se estiver em dúvida sobre um resultado, confira a evidência associada no negócio.
+    Cada resultado está vinculado à mensagem ou atividade de onde veio. Se um valor parecer incorreto, confira a evidência de apoio registrada no negócio.
   </Accordion>
-  <Accordion title="Posso filtrar e gerar relatórios como com dados normais do HubSpot?">
-    Sim. Fica armazenado como propriedades padrão de negócio do HubSpot, então filtros, visualizações de lista salvas, painéis e relatórios funcionam exatamente como para qualquer outro campo do seu portal.
-  </Accordion>
-  <Accordion title="Preciso configurar algo em cada negócio?">
-    Não. Assim que o HubSpot estiver conectado, os negócios são analisados automaticamente. Não há nada para ativar, configurar ou manter negócio a negócio.
-  </Accordion>
-  <Accordion title="Por que os e-mails dos meus negócios não estão sendo incluídos?">
-    Ler a atividade de e-mail exige o escopo **sales-email-read** na sua conexão com o HubSpot. Integrações criadas antes de esse escopo ser adicionado não o possuem.
-
-    Verifique em **Integration page → HubSpot settings → Scopes and permissions**. Se estiver faltando, reconecte sua conta do HubSpot — a integração mais recente inclui o escopo, e a atividade de e-mail passará a ser considerada a partir da próxima execução da análise.
+  <Accordion title="Funciona com pouco histórico de conversa?">
+    Sim, mas com menos dados por trás dos resultados. Cada negócio registra quantas conversas foram lidas, para que você possa avaliar em que um resultado se baseia.
   </Accordion>
 </AccordionGroup>
 
@@ -168,9 +116,9 @@ Para cada negócio do seu pipeline, você vai saber:
 
 <CardGroup cols={2}>
   <Card title="Visão Geral do BEA Radar" icon="radar" href="/pt/ai-agents/bea-radar/overview">
-    O lado WhatsApp do BEA Radar: análise escrita em cada conversa
+    O lado WhatsApp do BEA Radar, aplicado a conversas individuais
   </Card>
   <Card title="Filtros de IA" icon="filter" href="/pt/ai-agents/bea-radar/ai-filters">
-    Filtre sua Caixa de Entrada da Equipe pelo que a IA identificou
+    Filtre sua Caixa de Entrada da Equipe pelo que a análise identificou
   </Card>
 </CardGroup>
