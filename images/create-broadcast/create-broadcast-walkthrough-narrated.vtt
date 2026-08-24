@@ -1,0 +1,19 @@
+WEBVTT
+
+00:00:00.400 --> 00:00:14.510
+A broadcast sends one approved WhatsApp template to many contacts at once. Before you start, make sure a WhatsApp Business number is connected through Meta, your template is approved, and your Eazybe wallet has balance.
+
+00:00:15.010 --> 00:00:25.640
+From the Broadcasts page, click New broadcast in the top right corner. Eazybe opens the Create broadcast page, where you'll set everything up in three quick steps.
+
+00:00:26.140 --> 00:00:38.660
+First, give your broadcast a name — only your team sees it. Pick the number to send from, choose an approved template, and check the Message preview on the right to see exactly what recipients will get.
+
+00:00:39.160 --> 00:00:50.150
+Next, choose who receives it. Upload a CSV or Excel list, or switch to the HubSpot contact list tab to pick a synced list — duplicate phone numbers are removed automatically.
+
+00:00:50.650 --> 00:01:06.700
+Select your contacts, then check the footer: it shows the recipient count, the sending number, the template, and the Estimated cost. When everything looks right, click Send broadcast — sending uses wallet balance, and you can't recall a campaign once it's out.
+
+00:01:07.200 --> 00:01:16.100
+And that's it — your campaign is on its way. Head back to the Broadcasts page to watch delivery, and click View Analytics for recipient-level results.

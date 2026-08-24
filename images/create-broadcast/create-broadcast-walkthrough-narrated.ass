@@ -1,0 +1,20 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1920
+PlayResY: 1080
+WrapStyle: 2
+ScaledBorderAndShadow: yes
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Karaoke,Arial,29,&H00F8AFB9,&H00FFFFFF,&H00000000,&H80000000,-1,0,0,0,95,100,0,0,1,2,1,2,25,25,24,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+
+Dialogue: 0,0:00:00.40,0:00:14.51,Karaoke,,0,0,0,,{\k13}A {\k64}broadcast {\k38}sends {\k25}one {\k57}approved {\k57}WhatsApp {\k57}template {\k19}to {\k32}many {\k57}contacts {\k19}at {\k38}once. {\k45}Before {\k25}you {\k45}start, {\k32}make {\k32}sure {\k13}a {\k57}WhatsApp {\k57}Business {\k45}number {\k19}is \N{\k64}connected {\k51}through {\k38}Meta, {\k32}your {\k57}template {\k19}is {\k64}approved, {\k25}and {\k32}your {\k45}Eazybe {\k45}wallet {\k25}has {\k58}balance.
+Dialogue: 0,0:00:15.01,0:00:25.64,Karaoke,,0,0,0,,{\k32}From {\k26}the {\k71}Broadcasts {\k39}page, {\k39}click {\k26}New {\k64}broadcast {\k19}in {\k26}the {\k26}top {\k39}right {\k51}corner. {\k45}Eazybe {\k39}opens {\k26}the {\k45}Create {\k64}broadcast {\k39}page, {\k39}where {\k45}you'll {\k26}set \N{\k71}everything {\k19}up {\k19}in {\k39}three {\k39}quick {\k40}steps.
+Dialogue: 0,0:00:26.14,0:00:38.66,Karaoke,,0,0,0,,{\k43}First, {\k31}give {\k31}your {\k61}broadcast {\k12}a {\k31}name {\k12}— {\k31}only {\k31}your {\k31}team {\k31}sees {\k24}it. {\k31}Pick {\k24}the {\k43}number {\k18}to {\k31}send {\k37}from, {\k43}choose {\k18}an {\k55}approved {\k61}template, {\k24}and {\k37}check {\k24}the \N{\k49}Message {\k49}preview {\k18}on {\k24}the {\k37}right {\k18}to {\k24}see {\k49}exactly {\k31}what {\k67}recipients {\k31}will {\k30}get.
+Dialogue: 0,0:00:39.16,0:00:50.15,Karaoke,,0,0,0,,{\k37}Next, {\k44}choose {\k25}who {\k56}receives {\k25}it. {\k44}Upload {\k12}a {\k25}CSV {\k19}or {\k37}Excel {\k37}list, {\k19}or {\k44}switch {\k19}to {\k25}the {\k50}HubSpot {\k50}contact {\k31}list {\k25}tab {\k19}to {\k31}pick {\k12}a {\k44}synced {\k31}list {\k12}— {\k62}duplicate \N{\k37}phone {\k50}numbers {\k25}are {\k50}removed {\k92}automatically.
+Dialogue: 0,0:00:50.65,0:01:06.70,Karaoke,,0,0,0,,{\k43}Select {\k31}your {\k61}contacts, {\k31}then {\k37}check {\k24}the {\k49}footer: {\k18}it {\k37}shows {\k24}the {\k61}recipient {\k43}count, {\k24}the {\k49}sending {\k49}number, {\k24}the {\k61}template, {\k24}and {\k24}the {\k61}Estimated {\k37}cost. \N{\k31}When {\k67}everything {\k37}looks {\k43}right, {\k37}click {\k31}Send {\k61}broadcast {\k12}— {\k49}sending {\k31}uses {\k43}wallet {\k55}balance, {\k24}and {\k24}you {\k37}can't {\k43}recall {\k12}a {\k55}campaign {\k31}once {\k31}it's {\k29}out.
+Dialogue: 0,0:01:07.20,0:01:16.10,Karaoke,,0,0,0,,{\k23}And {\k41}that's {\k17}it {\k12}— {\k29}your {\k52}campaign {\k17}is {\k17}on {\k23}its {\k29}way. {\k29}Head {\k29}back {\k17}to {\k23}the {\k64}Broadcasts {\k29}page {\k17}to {\k35}watch {\k58}delivery, {\k23}and {\k35}click {\k29}View {\k58}Analytics {\k23}for \N{\k93}recipient-level {\k58}results.
