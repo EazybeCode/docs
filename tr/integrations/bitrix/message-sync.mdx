@@ -7,7 +7,7 @@ WhatsApp konuşmalarınızı Bitrix ile otomatik olarak senkronize tutun. EazyBe
 
 ## Otomatik Senkronizasyon
 
-Bitrix kişilerinizle olan WhatsApp konuşmaları her **3 dakikada** bir otomatik olarak senkronize edilir.
+Bitrix kişilerinizle olan WhatsApp konuşmaları her **12 dakikada** bir otomatik olarak senkronize edilir.
 
 <Note>
 Yalnızca bağlı Bitrix kişileriyle yapılan sohbetler senkronize edilecektir. WhatsApp kişilerinizin Bitrix kayıtlarına doğru şekilde bağlandığından emin olun.
@@ -15,22 +15,28 @@ Yalnızca bağlı Bitrix kişileriyle yapılan sohbetler senkronize edilecektir.
 
 Senkronizasyon başladığında, son senkronizasyon tarihi ve saati EazyBe uzantısında görüntülenecektir. Kişinin Bitrix sayfasına erişmek için simgeye tıklayarak senkronizasyonu doğrulayabilirsiniz.
 
-![Mesaj Senkronizasyon Durumu](/images/1204564478.png)
-
 ## İlk Entegrasyon
 
 Bitrix'i ilk kez entegre ettiğinizde, EazyBe otomatik olarak **son 3 günün** sohbet yedeğini sağlar. Bu, entegrasyonu kurarken yakın zamandaki konuşma geçmişinizi kaybetmemenizi sağlar.
 
-## Aktivite Kaydı
+## Sohbet Yedeği
 
-WhatsApp sohbetleri, Bitrix'teki **Kişi Sayfası**'nın **Genel bölümünde** yedeklenir. Bu sayede:
+WhatsApp sohbetleri Bitrix'teki **Kişi Sayfası**'nda **zaman çizelgesi belgeleri** olarak yedeklenir.
 
-- CRM içinde tam konuşma geçmişini görüntüleyebilirsiniz
-- Kişilerle tüm iletişimi takip edebilirsiniz
-- Kapsamlı bir aktivite zaman çizelgesi tutabilirsiniz
+- **Aynı günün sohbetleri**: Tek bir kullanıcıyla aynı günün tüm konuşmaları bir belgede görünür
+- **Kullanıcı başına belgeler**: Her kullanıcının yedeği o gün için ayrı bir zaman çizelgesi belgesi oluşturur
+- **Kronolojik sıralama**: Belgeler kişinin aktivite zaman çizelgesinde tarih sırasına göre görünür
+
+<Frame caption="WhatsApp Sohbet Yedeği">
+  <img src="/images/bitrix-message-sync-status.png" alt="Sohbet yedeği görünümü" />
+</Frame>
+
+<Note>
+Yorumlar kişinin Genel bölümünde kullanılabilir.
+</Note>
 
 <Tip>
-Konuşmalarınızın düzgün bir şekilde yedeklendiğinden emin olmak için EazyBe uzantısındaki senkronizasyon durumunu düzenli olarak kontrol edin.
+Bitrix24 içinde doğrudan gerçek zamanlı mesajlaşma için [Takım Gelen Kutusu](/tr/integrations/bitrix/team-inbox) entegrasyonunu kullanın.
 </Tip>
 
 ---

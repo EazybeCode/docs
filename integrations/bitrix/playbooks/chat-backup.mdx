@@ -1,24 +1,51 @@
 ---
 title: 'Chat Backup to Bitrix24'
-description: 'Log WhatsApp messages to Bitrix24'
+description: 'Log WhatsApp messages as timeline documents in Bitrix24'
 ---
 
 <Info>
 **Setup Time**: 5 minutes | **Difficulty**: Easy
 </Info>
 
+## Overview
+
+WhatsApp chat backups are now displayed as **timeline documents** in Bitrix24, providing better organization and easier access to conversation history.
+
+<Frame caption="WhatsApp Chat Backup in Timeline">
+  <img src="/images/bitrix/timeline-chat-backup.png" alt="Timeline chat backup view" />
+</Frame>
+
+## How It Works
+
+### Document Organization
+
+- **Same-day grouping**: All chats from the same day with a single user appear in one document
+- **Per-user documents**: Each user's backup creates a separate timeline document for that day
+- **Timeline view**: Documents appear chronologically in the contact's activity timeline
+
+<Note>
+Comments remain available in the contact's General section, but new chat backups appear as timeline documents.
+</Note>
+
 ## Setup
 
 <Steps>
   <Step title="Enable Backup">
-    **Settings** → **Bitrix24** → Enable **Chat Backup**
+    Navigate to **Settings** → **Bitrix24** → Enable **Chat Backup**
   </Step>
   
   <Step title="Configure">
-    Messages logged as activities
+    Messages are logged as timeline documents on the contact's page
   </Step>
 </Steps>
 
-<Frame caption="WhatsApp in Bitrix24">
-  <img src="/images/bitrix/timeline-view.png" alt="Bitrix24 timeline" />
-</Frame>
+## Features
+
+- **Automatic sync**: Chats sync every 3 minutes
+- **Initial backup**: Past 3 days of chat history on first integration
+- **Organized view**: Same-day chats grouped together
+- **Easy access**: View complete history in the contact's timeline
+
+<Tip>
+For real-time messaging within Bitrix24, use the [Team Inbox](/en/integrations/bitrix/team-inbox) integration.
+</Tip>
