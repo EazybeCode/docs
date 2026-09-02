@@ -1,8 +1,0 @@
-{
-  "permissions": {
-    "allow": [
-      "Bash(curl -L -o \"c:\\\\Users\\\\HP\\\\OneDrive\\\\Desktop\\\\Eazybe-Repos\\\\docs\\\\images\\\\bitrix-contact-inbox-tab.png\" \"https://maas-log-prod.cn-wlcb.ufileos.com/anthropic/01d0ada2-00fb-4f29-a5d2-fc10918c381d/0d14cf29164d6fc0a0f00059033287a6.png?UCloudPublicKey=TOKEN_e15ba47a-d098-4fbd-9afc-a0dcf0e4e621&Expires=1787743710&Signature=vTY8Xp7UQ7/J9REKPOvfejhfHIo=\")",
-      "Bash(curl -L -o \"c:\\\\Users\\\\HP\\\\OneDrive\\\\Desktop\\\\Eazybe-Repos\\\\docs\\\\images\\\\bitrix-message-sync-status.png\" \"https://maas-log-prod.cn-wlcb.ufileos.com/anthropic/01d0ada2-00fb-4f29-a5d2-fc10918c381d/e275377c011db512d8b2085d6202c67c.png?UCloudPublicKey=TOKEN_e15ba47a-d098-4fbd-9afc-a0dcf0e4e621&Expires=1787744136&Signature=E/y/PnWBy5I1IqRfy4wwTsU51hA=\")"
-    ]
-  }
-}

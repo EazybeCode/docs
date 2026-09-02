@@ -547,7 +547,6 @@
                   "en/integrations/bitrix/disconnect",
                   "en/integrations/bitrix/link-contacts",
                   "en/integrations/bitrix/message-sync",
-                  "en/integrations/bitrix/team-inbox",
                   "en/integrations/bitrix/one-click-switch",
                   {
                     "group": "Mini CRM",
@@ -1296,7 +1295,6 @@
                   "es/integrations/bitrix/disconnect",
                   "es/integrations/bitrix/link-contacts",
                   "es/integrations/bitrix/message-sync",
-                  "es/integrations/bitrix/team-inbox",
                   "es/integrations/bitrix/one-click-switch",
                   {
                     "group": "Mini CRM",
@@ -2043,7 +2041,6 @@
                   "pt/integrations/bitrix/disconnect",
                   "pt/integrations/bitrix/link-contacts",
                   "pt/integrations/bitrix/message-sync",
-                  "pt/integrations/bitrix/team-inbox",
                   "pt/integrations/bitrix/one-click-switch",
                   {
                     "group": "Mini CRM",
@@ -2790,7 +2787,6 @@
                   "tr/integrations/bitrix/disconnect",
                   "tr/integrations/bitrix/link-contacts",
                   "tr/integrations/bitrix/message-sync",
-                  "tr/integrations/bitrix/team-inbox",
                   "tr/integrations/bitrix/one-click-switch",
                   {
                     "group": "Mini CRM",
