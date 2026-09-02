@@ -7,7 +7,7 @@ Keep your WhatsApp conversations automatically synchronized with Bitrix. EazyBe 
 
 ## Automatic Sync
 
-WhatsApp conversations with your Bitrix contacts are automatically synced every **3 minutes**.
+WhatsApp conversations with your Bitrix contacts are automatically synced every **12 minutes**.
 
 <Note>
 Only chats with linked Bitrix contacts will be synced. Make sure your WhatsApp contacts are properly linked to Bitrix records.
@@ -15,22 +15,28 @@ Only chats with linked Bitrix contacts will be synced. Make sure your WhatsApp c
 
 Once synchronization begins, the last synced date and time will be displayed in the EazyBe extension. You can verify the synchronization by clicking the icon to access the contact's Bitrix page.
 
-![Message Sync Status](/images/1204564478.png)
-
 ## Initial Integration
 
 When you integrate Bitrix for the first time, EazyBe automatically provides chat backup for the **past 3 days**. This ensures you don't lose any recent conversation history when setting up the integration.
 
-## Activity Logging
+## Chat Backup
 
-WhatsApp chats are backed up in the **General section** of the **Contact's Page** in Bitrix. This allows you to:
+WhatsApp chats are backed up as **timeline documents** on the **Contact's Page** in Bitrix.
 
-- View complete conversation history within the CRM
-- Track all communication with contacts
-- Maintain a comprehensive activity timeline
+- **Same-day chats**: All conversations from the same day with a single user appear in one document
+- **Per-user documents**: Each user's backup creates a separate timeline document for that day
+- **Chronological order**: Documents appear in the contact's activity timeline in date order
+
+<Frame caption="WhatsApp Chat Backup">
+  <img src="/images/bitrix-message-sync-status.png" alt="Timeline document view" />
+</Frame>
+
+<Note>
+Comments remain available in the contact's General section.
+</Note>
 
 <Tip>
-Regularly check the sync status in the EazyBe extension to ensure your conversations are being backed up properly.
+For real-time messaging directly within Bitrix24, use the [Team Inbox](/en/integrations/bitrix/team-inbox) integration.
 </Tip>
 
 ---
