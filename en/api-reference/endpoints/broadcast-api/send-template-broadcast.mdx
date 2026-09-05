@@ -19,11 +19,6 @@ POST /broadcast/public/send-template-broadcast
 | --- | --- | --- |
 | `x-api-key` | Required | Organization auth key |
 | `Content-Type` | Required | `application/json` |
-| `Idempotency-Key` | Recommended | A unique value that identifies this broadcast request |
-
-<Tip>
-  Create one `Idempotency-Key` for a logical broadcast and reuse it only when retrying that same request. Use a new key for the next broadcast.
-</Tip>
 
 ## Request body
 
@@ -48,34 +43,30 @@ POST /broadcast/public/send-template-broadcast
 
 ## Request example
 
+Set `API_KEY` to your organization auth key before running this example.
+
 ```bash
-curl -X POST "https://cerberus.eazybe.com/prod/api/v2/broadcast/public/send-template-broadcast" \
-  -H "x-api-key: $API_KEY" \
-  -H "Content-Type: application/json" \
-  -H "Idempotency-Key: festive-run-1" \
-  -d '{
-    "broadcastName": "Festive Offer Campaign",
-    "fromPhoneNumber": "14844634680",
-    "templateName": "eazybe_temp",
+curl --location 'https://cerberus.eazybe.com/prod/api/v2/broadcast/public/send-template-broadcast' \
+  --header "x-api-key: $API_KEY" \
+  --header 'Content-Type: application/json' \
+  --data '{
+    "broadcastName": "broadcast 90",
+    "fromPhoneNumber": "13022051228",
+    "templateName": "partner_rotw",
     "templateLanguage": "en",
     "templateType": "MARKETING",
-    "templateId": "1530766784804741",
-    "globalTemplateParams": ["Valued customer", "FESTIVE10"],
+    "templateId": "972071395921578",
     "data": [
       {
         "countryCode": "91",
-        "toPhoneNumber": "9675360316",
-        "templateParams": ["Vineet", "VIP20"]
-      },
-      {
-        "countryCode": "91",
-        "toPhoneNumber": "8077378155"
+        "toPhoneNumber": "8882331250",
+        "templateParams": [" على السداد", "الفاتورة"]
       }
     ]
   }'
 ```
 
-The first recipient uses `templateParams`. The second recipient has no recipient-specific values, so the API uses `globalTemplateParams`.
+The recipient uses the two values in `templateParams` for the template's numbered placeholders, in the same order.
 
 ## Responses by broadcast size
 

@@ -1,0 +1,109 @@
+---
+title: "Send WhatsApp Messages through a Zoho Workflow"
+description: "Set up a Zoho CRM workflow that sends WhatsApp messages through the Eazybe integration when a record meets your conditions."
+---
+
+Use this guide to create a Zoho CRM workflow that sends a WhatsApp message when a contact, lead, deal, or another CRM record meets the conditions you define.
+
+## Before you begin
+
+Make sure you have:
+
+- A Zoho CRM account with permission to create workflow rules.
+- The **Zoho trigger** extension installed and showing **Status: Active**.
+- Your Zoho CRM account connected to Eazybe.
+- The Eazybe extension or app installed for the user who owns the record.
+- The recipient's WhatsApp number saved in a Zoho phone field, including the country code.
+
+<Warning>
+  The Zoho workflow integration is available on the Eazybe **Scalar Plan**. Messages are sent from the WhatsApp number of the contact or lead owner, so assign the correct owner before the workflow runs.
+</Warning>
+
+<Steps>
+  <Step title="Confirm the Zoho trigger extension is active">
+    In Zoho CRM, open **Setup**, then go to **Marketplace → All → Installed**. Open **Zoho trigger** and confirm that its **Status** is **Active**.
+
+    ![Zoho trigger extension details showing an active status](/images/zoho-workflow/confirm-zoho-trigger-active.jpg)
+
+    <Note>
+      If the extension is not installed, install the Zoho workflow plugin before continuing:
+
+      [https://crm.zoho.com/market/installPrivatePlugin.do?portalName=rajatverma&nameSpace=zohotrigger&versionIndex=4520363000000413004](https://crm.zoho.com/market/installPrivatePlugin.do?portalName=rajatverma&nameSpace=zohotrigger&versionIndex=4520363000000413004)
+    </Note>
+  </Step>
+
+  <Step title="Open Workflow Rules">
+    Select the **Setup** gear in Zoho CRM. In the **Automation** section, click **Workflow Rules**.
+
+    ![Zoho CRM Setup page with Workflow Rules under Automation](/images/zoho-workflow/open-workflow-rules.jpg)
+  </Step>
+
+  <Step title="Create a workflow rule">
+    On the **Workflow Rules** page, click **Create Rule**. The **Create New Rule** window opens.
+
+    ![Zoho CRM Workflow Rules page with the Create Rule button](/images/zoho-workflow/create-workflow-rule.png)
+  </Step>
+
+  <Step title="Choose the module and name the rule">
+    In **Create New Rule**, select the **Module** that contains the recipients, such as **Contacts** or **Leads**. Enter a recognizable **Rule Name**, add a description if needed, and click **Next**.
+
+    ![Create New Rule window with Module and Rule Name fields](/images/zoho-workflow/choose-module-and-name-rule.jpg)
+
+    <Note>
+      The phone field and owner used later in the workflow come from the module you select here.
+    </Note>
+  </Step>
+
+  <Step title="Define when the workflow runs">
+    Under **Execute this workflow rule based on**, choose the event that should start the workflow, such as **Record action** and **Edit**. Add the field and value conditions, then click **Next**.
+
+    ![Zoho workflow trigger configured for a record action](/images/zoho-workflow/define-workflow-trigger.jpg)
+
+    <Warning>
+      Enable repeat execution only when contacts should receive another message after matching the condition again. Otherwise, the same recipient may receive duplicate messages.
+    </Warning>
+  </Step>
+
+  <Step title="Add the Eazybe WhatsApp action">
+    In the workflow builder, open **Instant Actions → Custom Actions**, then select the Eazybe **MessageOnWhatsapp** action.
+
+    ![Instant Actions menu with the MessageOnWhatsapp custom action](/images/zoho-workflow/add-message-on-whatsapp-action.jpg)
+
+    <Note>
+      Zoho may show the extension namespace in parentheses after **MessageOnWhatsapp**. Select the action that belongs to the Eazybe integration.
+    </Note>
+  </Step>
+
+  <Step title="Choose the recipient and enter the message">
+    In **Send message to WhatsApp**, open **Select number field** and choose the Zoho field that contains the recipient's WhatsApp number, such as **Phone** or **Mobile**. Enter the message in the text field, then click **Save**.
+
+    ![Send message to WhatsApp window with the recipient number field options](/images/zoho-workflow/choose-recipient-and-message.jpg)
+
+    <Warning>
+      Save numbers in international format with the country code. An incorrect or missing country code can send the message to the wrong recipient or prevent delivery.
+    </Warning>
+  </Step>
+</Steps>
+
+## Activate and verify the workflow
+
+Review the trigger, conditions, and **MessageOnWhatsapp** instant action. Click **Save** to activate the workflow, then update a test record so it meets the trigger conditions.
+
+Verify that:
+
+- The intended WhatsApp number receives the message.
+- The message is sent from the record owner's connected WhatsApp number.
+- The workflow runs only when the configured conditions are met.
+
+<Info>
+  Media attached to a workflow message must be no larger than **15 MB**. Compress or resize larger files before testing the workflow.
+</Info>
+
+## Troubleshooting
+
+- If the action is missing, confirm that **Zoho trigger** is active and the Zoho account is connected to Eazybe.
+- If the message is not delivered, confirm that the record owner has the Eazybe extension or app installed and has an active WhatsApp connection.
+- If the wrong recipient receives the message, correct the selected number field and store the number with the appropriate country code.
+- If the workflow sends duplicates, review the repeat execution option and the rule conditions.
+
+For more fixes, see [Troubleshoot Workflow](/en/integrations/zoho/troubleshoot-workflow).

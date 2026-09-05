@@ -119,7 +119,8 @@
                       },
                       "en/waba/broadcasting/create-broadcast-with-extension",
                       "en/waba/broadcasting/hubspot-workflow/send-ready-to-use-template",
-                      "en/waba/broadcasting/hubspot-workflow/send-wait-and-reply-template"
+                      "en/waba/broadcasting/hubspot-workflow/send-wait-and-reply-template",
+                      "en/waba/broadcasting/zoho-workflow/send-whatsapp-message"
                     ]
                   },
                   "en/broadcasts/troubleshooting"
