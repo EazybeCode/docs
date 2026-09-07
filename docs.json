@@ -92,6 +92,17 @@
                 ]
               },
               {
+                "group": "Message Templates",
+                "icon": "message",
+                "pages": [
+                  "en/waba/templates/create-template",
+                  "en/waba/templates/create-template-with-extension",
+                  "en/waba/templates/how-to-create-template-with-hubspot-variables",
+                  "en/waba/templates/utility-templates",
+                  "en/waba/templates/guideline"
+                ]
+              },
+              {
                 "group": "Broadcasts",
                 "icon": "bullhorn",
                 "pages": [
@@ -168,16 +179,6 @@
                   "en/waba/getting-started",
                   "en/waba/connect-waba",
                   "en/waba/facebook-business-verification",
-                  {
-                    "group": "Message Templates",
-                    "pages": [
-                      "en/waba/templates/create-template",
-                      "en/waba/templates/create-template-with-extension",
-                      "en/waba/templates/how-to-create-template-with-hubspot-variables",
-                      "en/waba/templates/utility-templates",
-                      "en/waba/templates/guideline"
-                    ]
-                  },
                   {
                     "group": "Broadcasting",
                     "hidden": true,
