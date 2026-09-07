@@ -1,0 +1,20 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1920
+PlayResY: 1080
+WrapStyle: 2
+ScaledBorderAndShadow: yes
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Karaoke,Arial,42,&H00F8AFB9,&H00FFFFFF,&H00000000,&H80000000,-1,0,0,0,78,100,0,0,1,3,1,2,12,12,30,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+
+Dialogue: 0,0:00:00.40,0:00:11.00,Karaoke,,0,0,0,,{\k31}Para {\k24}ver {\k12}o {\k67}desempenho {\k18}de {\k24}uma {\k61}campanha, {\k43}acesse {\k12}a {\k43}página {\k18}de {\k85}Transmissões, {\k55}encontre {\k12}a {\k55}campanha {\k12}e {\k61}selecione {\k24}Ver \N{\k61}análises. {\k12}O {\k43}Eazybe {\k31}abre {\k12}o {\k61}relatório {\k55}completo {\k37}dessa {\k81}transmissão.
+Dialogue: 0,0:00:11.50,0:00:23.62,Karaoke,,0,0,0,,{\k18}No {\k31}topo {\k31}você {\k55}encontra {\k12}o {\k31}nome {\k12}e {\k12}o {\k43}status {\k18}da {\k80}transmissão, {\k12}o {\k43}número {\k18}do {\k55}WhatsApp {\k37}usado {\k18}no {\k43}envio, {\k12}a {\k37}data, {\k12}o {\k37}total {\k18}de \N{\k55}contatos {\k12}e {\k12}o {\k49}crédito {\k37}total {\k43}usado, {\k31}além {\k18}da {\k43}origem {\k12}e {\k25}uma {\k43}prévia {\k18}da {\k55}mensagem {\k64}enviada.
+Dialogue: 0,0:00:24.12,0:00:34.00,Karaoke,,0,0,0,,{\k18}Em {\k62}Atividade {\k18}de {\k55}entrega, {\k49}alterne {\k37}entre {\k43}Total, {\k62}Enviadas, {\k68}Entregues, {\k37}Lidas {\k12}e {\k49}Falhas. {\k31}Cada {\k37}linha {\k43}mostra {\k12}o {\k55}contato, {\k12}o \N{\k49}horário {\k18}da {\k55}mensagem {\k12}e {\k12}o {\k43}status {\k31}mais {\k58}recente.
+Dialogue: 0,0:00:34.50,0:00:46.74,Karaoke,,0,0,0,,{\k31}Abra {\k12}a {\k25}aba {\k44}Falhas {\k31}para {\k25}ver {\k37}quais {\k62}mensagens {\k25}não {\k62}chegaram. {\k31}Cada {\k37}linha {\k31}traz {\k12}o {\k44}motivo {\k68}exatamente {\k31}como {\k12}a {\k31}Meta {\k56}informa; \N{\k25}por {\k56}exemplo, {\k31}esta {\k56}mensagem {\k25}não {\k25}foi {\k56}entregue {\k31}para {\k44}manter {\k19}um {\k75}ecossistema {\k64}saudável.
+Dialogue: 0,0:00:47.24,0:00:59.33,Karaoke,,0,0,0,,{\k26}Use {\k45}Buscar {\k58}contatos {\k32}para {\k65}localizar {\k19}um {\k45}número {\k78}específico, {\k19}ou {\k65}selecione {\k58}Exportar {\k32}para {\k45}baixar {\k13}o {\k39}grupo {\k19}de {\k52}entrega {\k45}aberto \N{\k19}no {\k58}momento: {\k13}o {\k45}total, {\k19}ou {\k45}apenas {\k19}os {\k58}contatos {\k26}com {\k39}falha {\k32}para {\k71}corrigir.
+Dialogue: 0,0:00:59.83,0:01:12.81,Karaoke,,0,0,0,,{\k58}Escolha {\k29}10, {\k22}25 {\k22}ou {\k22}50 {\k51}linhas {\k29}por {\k51}página {\k36}para {\k72}percorrer {\k22}os {\k101}destinatários {\k14}e {\k72}selecione {\k51}Voltar {\k36}para {\k94}transmissões {\k51}quando \N{\k72}terminar. {\k14}É {\k43}assim {\k29}que {\k36}você {\k72}acompanha {\k14}o {\k80}desempenho {\k22}da {\k73}campanha.

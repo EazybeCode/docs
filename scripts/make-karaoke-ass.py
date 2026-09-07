@@ -22,7 +22,7 @@ ScaledBorderAndShadow: yes
 
 [V4+ Styles]
 Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
-Style: Karaoke,Arial,29,&H00F8AFB9,&H00FFFFFF,&H00000000,&H80000000,-1,0,0,0,95,100,0,0,1,2,1,2,25,25,24,1
+Style: Karaoke,Arial,42,&H00F8AFB9,&H00FFFFFF,&H00000000,&H80000000,-1,0,0,0,78,100,0,0,1,3,1,2,12,12,30,1
 
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text

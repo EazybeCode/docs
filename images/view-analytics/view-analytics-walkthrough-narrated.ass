@@ -1,0 +1,20 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1920
+PlayResY: 1080
+WrapStyle: 2
+ScaledBorderAndShadow: yes
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Karaoke,Arial,42,&H00F8AFB9,&H00FFFFFF,&H00000000,&H80000000,-1,0,0,0,78,100,0,0,1,3,1,2,12,12,30,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+
+Dialogue: 0,0:00:00.40,0:00:10.31,Karaoke,,0,0,0,,{\k19}To {\k25}see {\k25}how {\k13}a {\k57}campaign {\k70}performed, {\k19}go {\k19}to {\k25}the {\k70}Broadcasts {\k38}page, {\k32}find {\k25}the {\k64}campaign, {\k25}and {\k38}click {\k32}View {\k70}Analytics. {\k45}Eazybe \N{\k38}opens {\k25}the {\k32}full {\k45}report {\k25}for {\k32}that {\k73}broadcast.
+Dialogue: 0,0:00:10.81,0:00:25.30,Karaoke,,0,0,0,,{\k19}At {\k25}the {\k31}top, {\k44}you'll {\k31}find {\k25}the {\k63}broadcast {\k31}name {\k25}and {\k50}status, {\k25}the {\k56}WhatsApp {\k44}number {\k19}it {\k25}was {\k31}sent {\k38}from, {\k25}the {\k31}date {\k19}it {\k31}went {\k31}out, \N{\k25}the {\k38}total {\k63}contacts, {\k25}and {\k25}the {\k38}total {\k44}credit {\k31}used {\k13}— {\k31}plus {\k25}the {\k63}broadcast {\k44}source {\k25}and {\k13}a {\k50}preview {\k19}of {\k25}the {\k38}exact {\k50}message {\k35}sent.
+Dialogue: 0,0:00:25.80,0:00:35.04,Karaoke,,0,0,0,,{\k19}In {\k56}Delivery {\k62}activity, {\k43}switch {\k49}between {\k43}Total, {\k37}Sent, {\k68}Delivered, {\k37}Read, {\k25}and {\k49}Failed. {\k31}Each {\k25}row {\k37}shows {\k25}the {\k56}contact, {\k25}the \N{\k49}message {\k37}time, {\k25}and {\k25}its {\k43}latest {\k48}status.
+Dialogue: 0,0:00:35.54,0:00:48.38,Karaoke,,0,0,0,,{\k30}Open {\k24}the {\k42}Failed {\k24}tab {\k18}to {\k24}see {\k36}which {\k54}messages {\k42}didn't {\k24}get {\k54}through. {\k30}Each {\k24}row {\k36}shows {\k24}the {\k48}failure {\k42}reason {\k48}exactly {\k18}as {\k30}Meta \N{\k48}reports {\k18}it {\k12}— {\k24}for {\k54}example, {\k30}this {\k48}message {\k24}was {\k24}not {\k60}delivered {\k18}to {\k54}maintain {\k48}healthy {\k60}ecosystem {\k80}engagement.
+Dialogue: 0,0:00:48.88,0:01:00.52,Karaoke,,0,0,0,,{\k26}Use {\k45}Search {\k58}contacts {\k19}to {\k32}look {\k19}up {\k13}a {\k45}single {\k38}phone {\k51}number, {\k19}or {\k38}click {\k45}Export {\k19}to {\k58}download {\k64}whichever {\k58}delivery {\k38}group {\k19}is \N{\k64}currently {\k32}open {\k13}— {\k45}Total, {\k19}or {\k32}just {\k26}the {\k45}failed {\k58}contacts {\k19}to {\k26}fix {\k26}and {\k45}retry.
+Dialogue: 0,0:01:01.02,0:01:12.20,Karaoke,,0,0,0,,{\k48}Choose {\k27}10, {\k27}25, {\k21}or {\k21}50 {\k34}rows {\k27}per {\k34}page {\k21}to {\k34}move {\k55}through {\k82}recipients, {\k34}then {\k41}click {\k34}Back {\k21}to {\k75}broadcasts {\k34}when {\k48}you're {\k34}done {\k14}— {\k27}and \N{\k48}that's {\k34}your {\k62}campaign {\k89}performance, {\k27}end {\k21}to {\k34}end.

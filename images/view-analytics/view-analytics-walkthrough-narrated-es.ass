@@ -1,0 +1,20 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1920
+PlayResY: 1080
+WrapStyle: 2
+ScaledBorderAndShadow: yes
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Karaoke,Arial,42,&H00F8AFB9,&H00FFFFFF,&H00000000,&H80000000,-1,0,0,0,78,100,0,0,1,3,1,2,12,12,30,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+
+Dialogue: 0,0:00:00.40,0:00:11.12,Karaoke,,0,0,0,,{\k32}Para {\k25}ver {\k19}el {\k76}rendimiento {\k19}de {\k25}una {\k57}campaña, {\k38}entra {\k19}en {\k19}la {\k45}página {\k19}de {\k76}Difusiones, {\k38}busca {\k19}la {\k51}campaña {\k13}y {\k70}selecciona {\k25}Ver \N{\k64}análisis. {\k45}Eazybe {\k32}abre {\k19}el {\k51}informe {\k57}completo {\k19}de {\k25}esa {\k65}difusión.
+Dialogue: 0,0:00:11.62,0:00:25.54,Karaoke,,0,0,0,,{\k44}Arriba {\k76}encontrarás {\k19}el {\k44}nombre {\k13}y {\k19}el {\k44}estado {\k19}de {\k19}la {\k63}difusión, {\k19}el {\k44}número {\k19}de {\k57}WhatsApp {\k38}desde {\k19}el {\k25}que {\k19}se {\k44}envió, {\k19}la {\k44}fecha, {\k19}el \N{\k38}total {\k19}de {\k63}contactos {\k13}y {\k19}el {\k51}crédito {\k38}total {\k44}usado, {\k44}además {\k25}del {\k44}origen {\k13}y {\k25}una {\k38}vista {\k44}previa {\k25}del {\k51}mensaje {\k62}enviado.
+Dialogue: 0,0:00:26.04,0:00:36.16,Karaoke,,0,0,0,,{\k19}En {\k64}Actividad {\k19}de {\k57}entrega, {\k45}cambia {\k38}entre {\k45}Total, {\k64}Enviados, {\k77}Entregados, {\k45}Leídos {\k13}y {\k64}Fallidos. {\k32}Cada {\k32}fila {\k51}muestra {\k19}el {\k64}contacto, \N{\k19}la {\k32}hora {\k26}del {\k51}mensaje {\k13}y {\k19}su {\k45}último {\k49}estado.
+Dialogue: 0,0:00:36.66,0:00:48.66,Karaoke,,0,0,0,,{\k31}Abre {\k18}la {\k49}pestaña {\k55}Fallidos {\k31}para {\k25}ver {\k25}qué {\k55}mensajes {\k18}no {\k62}llegaron. {\k31}Cada {\k31}fila {\k49}muestra {\k18}el {\k43}motivo {\k25}tal {\k31}como {\k18}lo {\k49}informa {\k37}Meta; \N{\k25}por {\k55}ejemplo, {\k31}este {\k49}mensaje {\k18}no {\k18}se {\k49}entregó {\k31}para {\k55}mantener {\k18}un {\k68}ecosistema {\k72}saludable.
+Dialogue: 0,0:00:49.16,0:01:01.23,Karaoke,,0,0,0,,{\k25}Usa {\k44}Buscar {\k63}contactos {\k31}para {\k63}localizar {\k19}un {\k44}número {\k63}concreto, {\k13}o {\k69}selecciona {\k56}Exportar {\k31}para {\k63}descargar {\k19}el {\k38}grupo {\k19}de {\k50}entrega {\k25}que \N{\k44}tengas {\k56}abierto: {\k19}el {\k44}total, {\k13}o {\k31}solo {\k25}los {\k63}contactos {\k56}fallidos {\k31}para {\k80}corregirlos.
+Dialogue: 0,0:01:01.73,0:01:14.23,Karaoke,,0,0,0,,{\k44}Elige {\k29}10, {\k22}25 {\k15}o {\k22}50 {\k44}filas {\k29}por {\k51}página {\k36}para {\k65}recorrer {\k29}los {\k102}destinatarios {\k15}y {\k80}selecciona {\k51}Volver {\k15}a {\k80}difusiones {\k51}cuando {\k73}termines. \N{\k29}Así {\k22}de {\k44}fácil {\k22}es {\k58}revisar {\k22}el {\k87}rendimiento {\k22}de {\k22}tu {\k59}campaña.

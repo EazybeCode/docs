@@ -1,0 +1,19 @@
+WEBVTT
+
+00:00:00.400 --> 00:00:10.310
+To see how a campaign performed, go to the Broadcasts page, find the campaign, and click View Analytics. Eazybe opens the full report for that broadcast.
+
+00:00:10.810 --> 00:00:25.300
+At the top, you'll find the broadcast name and status, the WhatsApp number it was sent from, the date it went out, the total contacts, and the total credit used — plus the broadcast source and a preview of the exact message sent.
+
+00:00:25.800 --> 00:00:35.040
+In Delivery activity, switch between Total, Sent, Delivered, Read, and Failed. Each row shows the contact, the message time, and its latest status.
+
+00:00:35.540 --> 00:00:48.380
+Open the Failed tab to see which messages didn't get through. Each row shows the failure reason exactly as Meta reports it — for example, this message was not delivered to maintain healthy ecosystem engagement.
+
+00:00:48.880 --> 00:01:00.520
+Use Search contacts to look up a single phone number, or click Export to download whichever delivery group is currently open — Total, or just the failed contacts to fix and retry.
+
+00:01:01.020 --> 00:01:12.200
+Choose 10, 25, or 50 rows per page to move through recipients, then click Back to broadcasts when you're done — and that's your campaign performance, end to end.

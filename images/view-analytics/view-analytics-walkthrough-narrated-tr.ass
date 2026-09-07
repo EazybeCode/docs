@@ -1,0 +1,20 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1920
+PlayResY: 1080
+WrapStyle: 2
+ScaledBorderAndShadow: yes
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Karaoke,Arial,42,&H00F8AFB9,&H00FFFFFF,&H00000000,&H80000000,-1,0,0,0,78,100,0,0,1,3,1,2,12,12,30,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+
+Dialogue: 0,0:00:00.40,0:00:11.84,Karaoke,,0,0,0,,{\k28}Bir {\k83}kampanyanın {\k97}performansını {\k49}görmek {\k35}için {\k63}Yayınlar {\k70}sayfasına {\k49}gidin, {\k77}kampanyayı {\k42}bulun {\k21}ve {\k77}Analizleri {\k70}görüntüle \N{\k77}seçeneğini {\k49}seçin. {\k49}Eazybe {\k14}o {\k56}yayının {\k28}tam {\k63}raporunu {\k37}açar.
+Dialogue: 0,0:00:12.34,0:00:27.41,Karaoke,,0,0,0,,{\k28}Üst {\k57}kısımda {\k57}yayının {\k43}adını {\k21}ve {\k71}durumunu, {\k64}gönderim {\k57}yapılan {\k64}WhatsApp {\k85}numarasını, {\k57}tarihi, {\k50}toplam {\k35}kişi {\k64}sayısını {\k21}ve \N{\k78}kullanılan {\k50}toplam {\k57}krediyi {\k85}bulursunuz; {\k50}ayrıca {\k43}yayın {\k57}kaynağı {\k21}ve {\k78}gönderilen {\k57}mesajın {\k78}önizlemesi {\k28}yer {\k41}alır.
+Dialogue: 0,0:00:27.91,0:00:38.95,Karaoke,,0,0,0,,{\k61}Teslimat {\k88}etkinliğinde {\k54}Toplam, {\k82}Gönderildi, {\k48}Teslim {\k54}edildi, {\k48}Okundu {\k20}ve {\k68}Başarısız {\k61}arasında {\k41}geçiş {\k48}yapın. {\k27}Her {\k41}satır {\k54}kişiyi, \N{\k41}mesaj {\k54}saatini {\k20}ve {\k20}en {\k48}güncel {\k48}durumu {\k68}gösterir.
+Dialogue: 0,0:00:39.45,0:00:52.69,Karaoke,,0,0,0,,{\k42}Hangi {\k77}mesajların {\k91}ulaşmadığını {\k49}görmek {\k35}için {\k70}Başarısız {\k70}sekmesini {\k42}açın. {\k28}Her {\k56}satırda {\k49}neden, {\k63}Meta'nın {\k77}bildirdiği {\k56}şekilde \N{\k63}görünür; {\k63}örneğin, {\k21}bu {\k42}mesaj {\k63}sağlıklı {\k28}bir {\k70}ekosistem {\k35}için {\k49}teslim {\k75}edilmedi.
+Dialogue: 0,0:00:53.19,0:01:05.40,Karaoke,,0,0,0,,{\k28}Tek {\k28}bir {\k63}numarayı {\k49}bulmak {\k35}için {\k63}Kişileri {\k28}ara {\k56}alanını {\k63}kullanın {\k35}veya {\k35}açık {\k35}olan {\k63}teslimat {\k56}grubunu {\k63}indirmek {\k35}için {\k35}Dışa {\k42}aktar \N{\k77}seçeneğini {\k49}seçin: {\k35}tümü {\k21}ya {\k21}da {\k63}yalnızca {\k70}başarısız {\k63}kişiler.
+Dialogue: 0,0:01:05.90,0:01:19.79,Karaoke,,0,0,0,,{\k70}Alıcılar {\k70}arasında {\k70}gezinmek {\k39}için {\k47}sayfa {\k55}başına {\k31}10, {\k23}25 {\k39}veya {\k23}50 {\k47}satır {\k47}seçin {\k23}ve {\k55}işiniz {\k86}bittiğinde {\k78}Yayınlara {\k31}dön \N{\k86}seçeneğini {\k55}seçin. {\k70}Kampanya {\k117}performansınız {\k55}baştan {\k39}sona {\k23}bu {\k47}kadar {\k53}basit.
