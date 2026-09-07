@@ -88,7 +88,14 @@
                 "icon": "users",
                 "pages": [
                   "en/team-inbox-hd/team-inbox-hd-en",
-                  "en/team-inbox-hd/filters-in-team-inbox-en"
+                  "en/team-inbox-hd/setup-and-access-en",
+                  "en/team-inbox-hd/filters-in-team-inbox-en",
+                  "en/team-inbox-hd/manage-conversations-en",
+                  "en/team-inbox-hd/messages-templates-quick-replies-en",
+                  "en/team-inbox-hd/new-chats-and-acquisition-en",
+                  "en/team-inbox-hd/ai-features-en",
+                  "en/team-inbox-hd/customer-details-and-hubspot-en",
+                  "en/team-inbox-hd/troubleshooting-en"
                 ]
               },
               {

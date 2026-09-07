@@ -1,0 +1,76 @@
+---
+title: "Troubleshooting"
+description: "Fix common Team Inbox access, channel, conversation, messaging, template, filter, AI, assignment, and HubSpot problems."
+---
+
+Start with the symptom below. Most differences are caused by connection status, role, workspace permissions, channel mapping, plan, or an active list/filter.
+
+<AccordionGroup>
+  <Accordion title="I cannot open Team Inbox">
+    Ask an admin to confirm that the **Team Inbox** integration is enabled and that your role has Team Inbox permission in **Members & Access**. If access changed recently, reopen Team Inbox.
+  </Accordion>
+  <Accordion title="Team Inbox only shows a connection screen">
+    No WhatsApp App or WABA number is connected for the workspace. Install and connect the Eazybe Chrome extension, or connect WhatsApp Business API with a Meta Business account. Return to the Team Inbox tab after setup so it can refresh the connection state.
+  </Accordion>
+  <Accordion title="A WhatsApp number is missing">
+    Confirm that the number is connected, mapped to you when mapping is required, and allowed by **See all channels** or your team scope. Ask an admin to check **User Mapping** and **Sync & Data** in the Team Inbox integration settings.
+  </Accordion>
+  <Accordion title="A conversation is missing">
+    Select **All conversations**, clear the search field, clear filters, and leave any saved view. Then confirm that you can access the source channel. If the conversation belongs to an advertisement, broadcast, AI label, or AI-agent stage, make sure the correct specialized list is selected.
+  </Accordion>
+  <Accordion title="No conversations match my filters">
+    Open **All filters** and check the match count. Remove one rule at a time. Conditions in one group all have to match, so move alternatives into separate OR groups. Also check whether search text is still active.
+  </Accordion>
+  <Accordion title="My filter selection did not change the list">
+    Select **Done** in Channels, Assignee, or All filters. Closing a filter menu without Done does not commit its draft selection.
+  </Accordion>
+  <Accordion title="I can read a WABA chat but cannot reply">
+    Check the banner above the composer. If the number is disconnected, reconnect it. If the 24-hour window is expired, select **Send template** and use an approved template. A WABA group conversation is read-only in the current Team Inbox.
+  </Accordion>
+  <Accordion title="The normal composer disappeared">
+    The WABA 24-hour customer-service window has expired. This is expected. Send an approved template; normal replies become available again after the customer responds and a new window opens.
+  </Accordion>
+  <Accordion title="A template is missing">
+    Confirm that Meta has approved the template and that it belongs to the WABA number currently selected as sender. The selector only shows eligible templates for that number. Use search to check the exact template name.
+  </Accordion>
+  <Accordion title="A template or Quick Reply will not send">
+    Complete every required template variable. For a Quick Reply, check whether an Eazybe or HubSpot variable is unavailable for this customer. Attached Quick Replies send directly and cannot be used after WABA expiry; OGG and recorded quick-reply attachments are not supported for WABA.
+  </Accordion>
+  <Accordion title="An attachment will not upload">
+    Keep the file at or below 16 MB and use a supported image, video, audio, PDF, TXT, CSV, DOC/DOCX, XLS/XLSX, PPT/PPTX, ZIP, or RAR format.
+  </Accordion>
+  <Accordion title="I cannot see Assign, Start new chat, Favorites, saved views, or Acquisition">
+    These controls are role- and permission-dependent. Employee-role users do not see assignment, new-chat, saved-view, acquisition, or favorite-editing controls. Broadcast lists also require Broadcast permission. Managers can be limited by team and channel scope.
+  </Accordion>
+  <Accordion title="Assign does not appear for this conversation">
+    Assignment is available to admins and managers for one-to-one WABA conversations. It is not offered for group or app-synced conversations. Also confirm that your role and the WABA channel are in scope.
+  </Accordion>
+  <Accordion title="AI labels, AI properties, or AI-agent stages are missing">
+    Free and Starter plans do not show AI profile intelligence or AI labels. Employee-role users do not see AI-label or AI-agent lists. Also confirm that properties, labels, deployed agents, funnels, and stages are configured and contain data within your access scope.
+  </Accordion>
+  <Accordion title="I cannot edit customer or HubSpot properties">
+    Ask an admin to check your **User Properties** permission. Without it, supported information remains visible but editing is restricted. Only admins can manage AI-property definitions.
+  </Accordion>
+  <Accordion title="HubSpot cannot find or load the customer">
+    Confirm that HubSpot is connected. Search by name or email. If there is no match, create a HubSpot contact using the current chat number. Use **Retry** after a temporary loading error, or unlink a wrong record with **Not Right Contact?** if you have edit permission.
+  </Accordion>
+  <Accordion title="Recent messages or status changes are not visible">
+    Reopen the conversation or Team Inbox to refresh synchronized data. Also confirm that the source number remains connected. If only one channel is affected, review its connection and synchronization settings.
+  </Accordion>
+</AccordionGroup>
+
+## Information to collect before contacting support
+
+Include:
+
+- Workspace name and affected user's role
+- Customer phone number or conversation name
+- Source WhatsApp number and whether it is APP, API, or COEX
+- Selected list, search text, and active filters
+- Whether the WABA window is open, expired, or disconnected
+- The exact missing control or error message
+- Whether the issue affects one user, one channel, or the entire workspace
+
+<Note>
+  Do not share passwords, one-time codes, private keys, or other authentication secrets in a support message or screenshot.
+</Note>

@@ -1,0 +1,182 @@
+---
+title: "Manage Conversations"
+description: "Understand conversation indicators, read message history, manage favorites, and assign WhatsApp Business API chats."
+---
+
+The conversation list summarizes what needs attention. Open a conversation to read its history, identify the sender and delivery state, choose the synchronized number to view, or give the chat an owner.
+
+## Read a conversation row
+
+Each row can contain the following information:
+
+| Indicator | What it means |
+|---|---|
+| **Photo or initials** | The customer's WhatsApp profile image or a generated fallback. |
+| **Source badge** | Whether the conversation is a group or comes from an APP, API, or coexistence channel. |
+| **Name and message preview** | The customer or group and the most recent message or template preview. |
+| **Time** | When the most recent activity occurred. |
+| **Unread styling** | A visually emphasized row indicates unread activity. Opening the chat clears its unread state in the current list. |
+| **Star** | The conversation is a favorite. Admins and managers can change this; Employee-role users cannot. |
+| **Assignee** | The person currently responsible for a WABA conversation. |
+| **H** | The conversation is marked high priority. |
+| **Window timer or Expired** | The remaining WABA customer-service window, or that the window has closed. |
+
+Conversations are ordered by relevance and recent activity, with favorites kept easy to reach. More conversations load as you scroll.
+
+<Info>
+  **Add image here:** Add a screenshot with callouts for source, unread, favorite, assignee, priority H, and WABA timer. Save it as `/images/team-inbox/conversation-row-indicators.png`.
+</Info>
+
+## Mark a conversation as a favorite
+
+<Steps>
+  <Step title="Find the conversation">
+    Open the relevant Inbox list or use **Search conversations** to find the customer.
+
+    <Info>
+      **Add image here:** Add a screenshot showing the target conversation row. Save it as `/images/team-inbox/favorite-find-conversation.png`.
+    </Info>
+  </Step>
+  <Step title="Add the favorite">
+    Click the star on the conversation row or in the open conversation header.
+
+    <Info>
+      **Add image here:** Add a screenshot showing the active favorite star. Save it as `/images/team-inbox/favorite-add.png`.
+    </Info>
+  </Step>
+  <Step title="Open Favorites">
+    Click **Favorites** in Lists to view all conversations you marked. Click the star again to remove a conversation from Favorites.
+
+    <Info>
+      **Add image here:** Add a screenshot showing Favorites selected and its conversations. Save it as `/images/team-inbox/favorite-open-list.png`.
+    </Info>
+  </Step>
+</Steps>
+
+Favorites appear in the **Favorites** list. If saving fails, Team Inbox restores the previous star state and displays an error.
+
+<Note>
+  Employee-role users can see the favorite state but cannot add or remove favorites.
+</Note>
+
+## Open and read message history
+
+Messages are grouped by date, with separators such as **Today**, **Yesterday**, or a calendar date. Scroll toward the top to load older available dates.
+
+<Info>
+  **Add image here:** Add a screenshot showing date separators, incoming/outgoing groups, senders, a system event, and reply context. Save it as `/images/team-inbox/message-history-overview.png`.
+</Info>
+
+- Incoming messages appear on the left; outgoing messages appear on the right.
+- Consecutive messages from the same sender on the same date are grouped.
+- Group conversations show the sender's name or number in a consistent color.
+- Outgoing messages can show the teammate's name or the AI agent that sent them.
+- A separator such as **AI handed off to teammate** records the change from AI to human handling.
+- Centered system events can record assignment, handoff, window, label, or other conversation changes.
+- A reply preview shows the message being referred to when the source message contains reply context.
+
+### Supported message content
+
+Team Inbox can display:
+
+- Text, images, videos, audio, documents, stickers, and contact cards
+- Locations, which can be opened in a map
+- Approved WhatsApp template messages, including header, body, footer, and buttons
+- Interactive button and list messages
+
+Select an image once to preview it and select the preview to open it fully. Video and audio cards open for playback. Document and other file cards download the attachment.
+
+### Message-delivery indicators
+
+| Icon | Status |
+|---|---|
+| **Clock** | Pending |
+| **One gray check** | Sent |
+| **Two gray checks** | Delivered |
+| **Two blue checks** | Read |
+| **Red alert** | Failed |
+
+## Change which synchronized history you view
+
+For supported one-to-one conversations, admins and managers can use **View** in the header to choose the connected number or participant whose synchronized history should be displayed.
+
+<Steps>
+  <Step title="Open View">
+    Click **View** in the conversation header.
+
+    <Info>
+      **Add image here:** Add a screenshot showing the View control and participant list. Save it as `/images/team-inbox/view-open-menu.png`.
+    </Info>
+  </Step>
+  <Step title="Choose a synchronized number">
+    Search the menu when needed, then select the team member or connected number whose history you want to display.
+
+    <Info>
+      **Add image here:** Add a screenshot showing search and a selected viewing number. Save it as `/images/team-inbox/view-select-number.png`.
+    </Info>
+  </Step>
+</Steps>
+
+This is useful when the same customer appears in history associated with more than one team member or connected number. Search inside the menu when the participant list is long.
+
+Changing **View** does not assign the conversation and does not change its customer.
+
+## Assign a WABA conversation
+
+Assignment is available to admins and managers for one-to-one WhatsApp Business API conversations.
+
+<Steps>
+  <Step title="Open the conversation">
+    Select the WABA conversation you want to route.
+
+    <Info>
+      **Add image here:** Add a screenshot showing the selected WABA conversation. Save it as `/images/team-inbox/assignment-open-conversation.png`.
+    </Info>
+  </Step>
+  <Step title="Open Assign">
+    Select **Assign** in the conversation header.
+
+    <Info>
+      **Add image here:** Add a screenshot showing the Assign control and opened menu. Save it as `/images/team-inbox/assignment-open-menu.png`.
+    </Info>
+  </Step>
+  <Step title="Find the member">
+    Search by name. If the WABA is mapped to a team, the mapped team is shown; otherwise use **Teams** or **All Employees**.
+
+    <Info>
+      **Add image here:** Add a screenshot showing search, Teams, and All Employees. Save it as `/images/team-inbox/assignment-find-member.png`.
+    </Info>
+  </Step>
+  <Step title="Assign the owner">
+    Select a member. A check identifies the current assignee, and the assignment is synchronized for the team.
+
+    <Info>
+      **Add image here:** Add a screenshot showing the checked assignee in the Assign menu. Save it as `/images/team-inbox/assignment-select-owner.png`.
+    </Info>
+  </Step>
+</Steps>
+
+The assigned member can find the conversation in **Assign to me** under their login, provided they have access to its channel.
+
+To remove the owner, open **Assign** and use the clear or **x** control. The conversation then appears in **Unassigned** for users who can access that list.
+
+<Warning>
+  Assignment is not offered for group conversations or app-synced conversations. Employee-role users do not see assignment controls.
+</Warning>
+
+## Open customer details
+
+Use the details control in the conversation header to open the right panel. It shows the customer name and number and lets you switch between:
+
+- **User profile:** Profile, Follow-up, and Task tabs
+- **HubSpot:** Linked CRM contact properties, notes, tasks, and calls when the integration is connected
+
+See [Manage Customer Details and HubSpot](/en/team-inbox-hd/customer-details-and-hubspot-en).
+
+## Group-conversation behavior
+
+Group chats are identified in the conversation list and show individual sender names in the message history. WABA group conversations are read-only in the current Team Inbox, so assignment and the WABA composer are not shown.
+
+## If no conversation is selected
+
+The message area asks you to select a conversation. Choose a row in the current list. If no rows are available, clear search and filters or select **All conversations**.

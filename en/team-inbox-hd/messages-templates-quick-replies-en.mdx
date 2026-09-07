@@ -1,0 +1,289 @@
+---
+title: "Messages, Templates & Quick Replies"
+description: "Reply from Team Inbox with text, files, WhatsApp templates, quick replies, and AI rephrasing while following the 24-hour WABA window."
+---
+
+The composer changes according to the conversation's WhatsApp source and its messaging-window state. Always check the sender, the window timer, and whether the number is connected before sending.
+
+## Send a normal reply
+
+For an app-synced conversation—or a WABA conversation whose 24-hour window is open—use the composer below the message history.
+
+<Steps>
+  <Step title="Check the sender and window">
+    Confirm the selected connected number. For a WABA chat, confirm that the timer is still open.
+
+    <Info>
+      **Add image here:** Add a screenshot showing the sender and open WABA timer. Save it as `/images/team-inbox/message-check-sender-window.png`.
+    </Info>
+  </Step>
+  <Step title="Write the reply">
+    Enter the message in the composer. Press **Shift + Enter** for a new line. The text box expands as you type, up to its maximum display height.
+
+    <Info>
+      **Add image here:** Add a screenshot showing a draft in the Team Inbox composer. Save it as `/images/team-inbox/message-write-reply.png`.
+    </Info>
+  </Step>
+  <Step title="Send the message">
+    Press **Enter** or click the send control. The message appears in the history with its delivery indicator.
+
+    <Info>
+      **Add image here:** Add a screenshot showing the sent message and delivery indicator. Save it as `/images/team-inbox/message-send-reply.png`.
+    </Info>
+  </Step>
+</Steps>
+
+The selected connected or viewed number is used as the sender. Outgoing messages show sender information so teammates can understand who replied.
+
+<Info>
+  **Add image here:** Add a screenshot showing the timer, attachment, template, Quick Replies, AI rephrase, and send controls. Save it as `/images/team-inbox/message-composer-overview.png`.
+</Info>
+
+## Understand the WABA 24-hour window
+
+A WhatsApp Business API conversation has a customer-service window that opens after the customer messages the business.
+
+| State | What Team Inbox shows | How to send |
+|---|---|---|
+| **Open** | A countdown timer, normal composer, and a note that templates are also available. | Send text/files or an approved template. |
+| **Closing soon** | The timer becomes more prominent as time runs down. The **Closing window** list includes open chats with about two hours or less remaining. | Reply before expiry or use a template later. |
+| **Critical** | The timer uses critical styling near expiry. | Send immediately if a normal reply is required. |
+| **Expired** | The normal composer is replaced by a banner explaining that only WABA templates can be delivered. | Select **Send template**. |
+| **Disconnected** | History remains available with **Reconnect this WABA to reply**. | Reconnect the number first. |
+
+The broader **Expire time** filter can find open windows closing in less than 3, 6, or 12 hours.
+
+<Warning>
+  A normal message cannot reopen an expired WABA conversation. Send an approved template and wait for the customer to respond before continuing with normal replies.
+</Warning>
+
+## Attach a file
+
+<Steps>
+  <Step title="Open the attachment picker">
+    Click the attachment control in the composer and choose a supported file.
+
+    <Info>
+      **Add image here:** Add a screenshot showing the attachment control and operating-system file picker. Save it as `/images/team-inbox/attachment-open-picker.png`.
+    </Info>
+  </Step>
+  <Step title="Review the selected file">
+    Confirm the filename and preview. Add a caption when the composer offers one, or remove the file if it is incorrect.
+
+    <Info>
+      **Add image here:** Add a screenshot showing the selected attachment, caption field, and remove control. Save it as `/images/team-inbox/attachment-review-file.png`.
+    </Info>
+  </Step>
+  <Step title="Send the attachment">
+    Click the send control. Team Inbox displays a preview while the upload and send complete.
+
+    <Info>
+      **Add image here:** Add a screenshot showing the outgoing file preview. Save it as `/images/team-inbox/attachment-send.png`.
+    </Info>
+  </Step>
+</Steps>
+
+Supported uploads include:
+
+- Images, video, and audio
+- PDF and text files
+- Word documents: DOC and DOCX
+- Spreadsheets: XLS, XLSX, and CSV
+- Presentations: PPT and PPTX
+- Archives: ZIP and RAR
+
+The maximum file size is **16 MB**.
+
+## Send an approved WhatsApp template
+
+Templates are available for WABA conversations whether the 24-hour window is open or closed.
+
+<Steps>
+  <Step title="Open the template selector">
+    While the window is open, click the document icon with the **Send template message** tooltip. After expiry, click **Send template** in the window banner.
+
+    <Info>
+      **Add image here:** Add a screenshot showing Template in an open window and Send template in an expired window. Save it as `/images/team-inbox/templates-open-selector.png`.
+    </Info>
+  </Step>
+  <Step title="Find a template">
+    Search by template name. Team Inbox shows approved templates for the selected WABA number, with newer templates first when creation dates are available.
+
+    <Info>
+      **Add image here:** Add a screenshot showing the template search field and approved template list. Save it as `/images/team-inbox/templates-search.png`.
+    </Info>
+  </Step>
+  <Step title="Review the preview">
+    Check the template name, language, header media, body, footer, buttons, and any variable count.
+
+    <Info>
+      **Add image here:** Add a screenshot showing all visible parts of a template preview. Save it as `/images/team-inbox/templates-review-preview.png`.
+    </Info>
+  </Step>
+  <Step title="Complete every variable">
+    Enter a value for each required placeholder. The same structure is shown in the live preview.
+
+    <Info>
+      **Add image here:** Add a screenshot showing all required variable fields completed. Save it as `/images/team-inbox/templates-complete-variables.png`.
+    </Info>
+  </Step>
+  <Step title="Send">
+    Confirm the correct WABA sender and recipient, then click **Send Template**.
+
+    <Info>
+      **Add image here:** Add a screenshot showing the sender, recipient, and final Send control. Save it as `/images/team-inbox/templates-send.png`.
+    </Info>
+  </Step>
+</Steps>
+
+The preview supports text, image, video, or document headers and URL or phone buttons when configured in the approved template.
+
+If a template is missing, confirm that it is approved and belongs to the WABA number selected as the sender.
+
+## Use Quick Replies
+
+Quick Replies store frequently used messages.
+
+<Steps>
+  <Step title="Open Quick Replies">
+    Click the message icon with the **Quick reply** tooltip in the composer.
+
+    <Info>
+      **Add image here:** Add a screenshot showing the Quick Replies control and library. Save it as `/images/team-inbox/quick-replies-open.png`.
+    </Info>
+  </Step>
+  <Step title="Find a reply">
+    Search the library or use the sort control to find the reply you need.
+
+    <Info>
+      **Add image here:** Add a screenshot showing search, sorting, titles, scopes, and a visible shortcut. Save it as `/images/team-inbox/quick-replies-find.png`.
+    </Info>
+  </Step>
+  <Step title="Apply the reply">
+    Click the reply. Team Inbox either places it in the composer for review or sends it immediately, according to **Edit before send**.
+
+    <Info>
+      **Add image here:** Add a screenshot showing a reply inserted in the composer. Save it as `/images/team-inbox/quick-replies-apply.png`.
+    </Info>
+  </Step>
+</Steps>
+
+Depending on that reply's setting, Team Inbox either:
+
+- Places the content in the composer so you can edit it before sending, or
+- Sends it immediately.
+
+Replies with attachments must be sent directly and cannot use **Edit before send**.
+
+### Find and sort Quick Replies
+
+Search by reply content, name, or the visible `/shortcut`. Sort the list by:
+
+- Newest first or Oldest first
+- Personal first or Shared first
+- Title A–Z or Title Z–A
+
+The scope on each reply explains who can use it: personal, organization, or a selected team.
+
+### Create a Quick Reply
+
+<Steps>
+  <Step title="Create a reply">
+    Open Quick Replies and select the create action.
+
+    <Info>
+      **Add image here:** Add a screenshot showing Quick Replies and the Add control. Save it as `/images/team-inbox/quick-replies-create.png`.
+    </Info>
+  </Step>
+  <Step title="Add its identity">
+    Enter a clear name so the reply is easy to recognize and search. Existing replies can also display a saved `/shortcut` when one is present.
+
+    <Info>
+      **Add image here:** Add a screenshot showing the Name field in the Quick Reply form. Save it as `/images/team-inbox/quick-replies-name.png`.
+    </Info>
+  </Step>
+  <Step title="Choose visibility">
+    Keep it **Personal**, or make it **Shared** with the organization or one selected team.
+
+    <Info>
+      **Add image here:** Add a screenshot showing Personal and Shared organization/team choices. Save it as `/images/team-inbox/quick-replies-choose-visibility.png`.
+    </Info>
+  </Step>
+  <Step title="Write the message">
+    Enter the reply text. You can add supported variables from Eazybe and, when connected, HubSpot.
+
+    <Info>
+      **Add image here:** Add a screenshot showing the message field and Eazybe/HubSpot variable picker. Save it as `/images/team-inbox/quick-replies-write-message.png`.
+    </Info>
+  </Step>
+  <Step title="Choose sending behavior">
+    Turn **Edit before send** on if users should review the inserted text first.
+
+    <Info>
+      **Add image here:** Add a screenshot showing the Edit before send toggle and attachment behavior. Save it as `/images/team-inbox/quick-replies-edit-before-send.png`.
+    </Info>
+  </Step>
+  <Step title="Save">
+    The reply becomes available in the library to everyone allowed by its scope.
+
+    <Info>
+      **Add image here:** Add a screenshot showing the saved reply in the Quick Replies list. Save it as `/images/team-inbox/quick-replies-save.png`.
+    </Info>
+  </Step>
+</Steps>
+
+### Quick Reply variables
+
+Use the variable picker to insert supported customer or sender information. Available sources can include:
+
+- Agent name and chat/customer name
+- Eazybe profile information
+- HubSpot contact properties when HubSpot is connected and a contact is linked
+
+The value is resolved for the current conversation at sending time. If a value is unavailable or unsupported for that sending method, Team Inbox warns you rather than silently sending incorrect content.
+
+### Attachments in Quick Replies
+
+Quick Replies can include supported images, video, audio, and common document types. WABA applies additional format rules; for example, OGG and recorded quick-reply attachments are not supported in that workflow.
+
+An attached Quick Reply is sent directly, so review its content and recipient before selecting it. Direct sending is unavailable after the WABA window expires; use an approved template instead.
+
+### Edit or delete a Quick Reply
+
+Use a reply's menu to edit its content or delete it. Deleting requires confirmation. Access to shared replies follows their organization or team scope.
+
+## Rephrase a draft with AI
+
+<Steps>
+  <Step title="Write at least 10 characters">
+    Enter the draft you want Eazybe to rephrase.
+
+    <Info>
+      **Add image here:** Add a screenshot showing a draft of at least 10 characters. Save it as `/images/team-inbox/rephrase-write-draft.png`.
+    </Info>
+  </Step>
+  <Step title="Rephrase the reply">
+    Click the round AI control. Eazybe replaces the draft with rephrased text that keeps the original meaning.
+
+    <Info>
+      **Add image here:** Add a screenshot showing the enabled AI control and generated wording. Save it as `/images/team-inbox/rephrase-click-ai.png`.
+    </Info>
+  </Step>
+  <Step title="Review before sending">
+    Read the replacement text, edit it if needed, and send it when it is correct for the customer.
+
+    <Info>
+      **Add image here:** Add a screenshot showing the reviewed rephrased draft. Save it as `/images/team-inbox/rephrase-review-send.png`.
+    </Info>
+  </Step>
+</Steps>
+
+If the draft is shorter than 10 characters, the control remains unavailable and its tooltip explains the minimum length.
+
+## Know what was sent
+
+After sending, use the message indicator to check whether it is pending, sent, delivered, read, or failed. For file messages, the conversation shows an optimistic preview while the send completes.
+
+<Tip>
+  For an expired WABA chat, do not use a direct-send Quick Reply. If the wording is reusable, create or choose an approved WhatsApp template with the same intent.
+</Tip>

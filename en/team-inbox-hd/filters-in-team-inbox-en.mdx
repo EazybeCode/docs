@@ -1,237 +1,238 @@
 ---
-title: "Filters in Team Inbox"
-description: "Learn how to find the right conversations using channel, assignee, expiry-time, and AI-property filters."
+title: "Find Conversations by Filters"
+description: "Find the right Team Inbox conversations using lists, search, channel, assignee, expiry-time, AI-property filters, and saved views."
 ---
 
-Filters help you focus on the conversations that need attention without changing or deleting any chat. You can narrow the inbox by WhatsApp number, owner, messaging-window expiry, or AI-generated customer information.
+Use lists for common queues, search for one customer, or combine filters for a precise segment. These controls only change what is displayed; they do not move, edit, or delete conversations.
 
-<Note>
-  Filters only change the conversations shown to you. They do not delete, move, or edit conversations.
-</Note>
+<Info>
+  **Add image here:** Add a screenshot showing Lists, Search conversations, Channels, Assignee, and All filters. Save it as `/images/team-inbox/filters-overview.png`.
+</Info>
 
-## Choose the right filter
+## Use the Inbox lists
 
-<CardGroup cols={2}>
-  <Card title="Channels" icon="hashtag">
-    View conversations from selected APP, API, or COEX WhatsApp numbers.
-  </Card>
-  <Card title="Assignee" icon="user-check">
-    Find conversations owned by one or more team members.
-  </Card>
-  <Card title="Expire time" icon="clock">
-    Prioritize chats whose WhatsApp messaging window will close soon.
-  </Card>
-  <Card title="AI properties" icon="sparkles">
-    Segment conversations using AI-generated customer information.
-  </Card>
-</CardGroup>
+Open **Lists** and choose the queue that matches your work.
 
-<Frame>
-  <img src="/images/team-inbox-filters-overview.png" alt="Search, Channels, Assignee, and All filters controls in Team Inbox" />
-</Frame>
+| Inbox list | What it shows |
+|---|---|
+| **All conversations** | Every conversation currently available to you. |
+| **Favorites** | Conversations marked with a star. |
+| **Assigned** | Conversations that have an owner. This list is not shown to Employee-role users. |
+| **Unassigned** | Conversations that do not have an owner. This list is not shown to Employee-role users. |
+| **Assign to me** | Conversations already assigned to the signed-in user. Selecting this list does not assign a new conversation. |
+| **Closing window** | WABA conversations whose 24-hour messaging window is open and has no more than about two hours remaining. Expired chats are excluded. |
 
-## Search conversations
+Counts beside a list show how many conversations are currently in it. You can collapse an individual section or the entire Lists panel.
 
-Enter a contact name or phone number in **Search conversations**. Search works together with active filters, which is useful when you need to find one customer inside a filtered list.
+Additional lists can appear for AI labels, advertisements, broadcast workflows, and AI-agent stages. See [Start New Chats and Review Acquisition Conversations](/en/team-inbox-hd/new-chats-and-acquisition-en) and [Use AI Features](/en/team-inbox-hd/ai-features-en).
 
-Select the **x** in the search field to remove only the search text. Your other filters remain active.
+## Search by name or phone number
 
-## Filter by channel
+Enter a customer name or phone number in **Search conversations**. Search works inside the selected list and together with active filters.
 
-Use **Channels** to display conversations from one or more connected WhatsApp numbers. The list includes every number you can access and shows its channel type:
+Select the **x** in the search field to remove only the search text. The selected list and other filters remain active.
 
-| Channel type | What it means | When it is useful |
-|---|---|---|
-| **APP** | A WhatsApp or WhatsApp Business App number connected through Eazybe | Separate conversations synced from team members' app numbers |
-| **API** | An official WhatsApp Business API number | Focus on support, sales, or automation conversations handled through WABA |
-| **COEX** | A coexistence number used with the WhatsApp Business App and Cloud API | View conversations from numbers operating in coexistence mode |
+<Info>
+  **Add image here:** Add a screenshot showing a name/number search and the x clear control. Save it as `/images/team-inbox/search-conversations.png`.
+</Info>
 
-The beginning of the list shows COEX and API numbers:
+The conversation list loads more results as you scroll. If a search result is not in the first set of conversations, continue scrolling or remove restrictive filters.
 
-<Frame>
-  <img src="/images/team-inbox-filter-channels.png" alt="Channels filter showing COEX and API WhatsApp numbers" />
-</Frame>
+## Use quick filters
 
-Scroll down to see APP numbers:
+Quick filters appear on standard Inbox lists such as All conversations, Favorites, Assigned, Unassigned, Assign to me, and Closing window. They are not shown for specialized AI-label, advertisement, broadcast, or AI-agent-stage results.
 
-<Frame>
-  <img src="/images/team-inbox-filter-channels-app.png" alt="Channels filter showing APP WhatsApp numbers" />
-</Frame>
+### Filter by Channels
+
+**Channels** limits results to one or more WhatsApp numbers you can access.
+
+| Badge | Meaning |
+|---|---|
+| **APP** | A WhatsApp or WhatsApp Business App number synchronized with Eazybe. |
+| **API** | An official WhatsApp Business API number. |
+| **COEX** | A coexistence number used with both WhatsApp Business App and Cloud API. |
+
+A disconnected marker identifies a number that needs to be reconnected. You may still be able to read its existing history, but sending is unavailable.
 
 <Steps>
   <Step title="Open Channels">
-    Click **Channels** above the conversation list.
+    Select **Channels** above the conversation list.
+
+    <Info>
+      **Add image here:** Add a screenshot showing the Channels button above the conversation list. Save it as `/images/team-inbox/filters-open-channels.png`.
+    </Info>
   </Step>
-  <Step title="Find the number">
-    Search by channel name or number, or scroll through the available APP, API, and COEX channels.
+  <Step title="Find and select numbers">
+    Search by name or number, select one or more channels, or use **Select All**.
+
+    <Info>
+      **Add image here:** Add a screenshot showing channel search, APP/API/COEX badges, checkboxes, and Select All. Save it as `/images/team-inbox/filters-select-channels.png`.
+    </Info>
   </Step>
-  <Step title="Select and apply">
-    Select one or more numbers and click **Done**. Selecting multiple numbers displays conversations from any of those channels.
+  <Step title="Apply the selection">
+    Select **Done**. The result can include a conversation from any selected channel.
+
+    <Info>
+      **Add image here:** Add a screenshot showing selected channels and the Done control. Save it as `/images/team-inbox/filters-apply-channels.png`.
+    </Info>
   </Step>
 </Steps>
 
-<Tip>
-  Channel availability follows your workspace access. If a number is missing, ask a workspace admin to confirm that you can access it.
-</Tip>
+Use **Clear** inside the menu to remove the draft selection. Closing the menu without selecting **Done** does not apply the draft.
 
-## Filter by assignee
+### Filter by Assignee
 
-Use **Assignee** to find conversations owned by specific workspace members. This helps managers review workloads and helps agents focus on the chats they are responsible for.
+**Assignee** shows conversations owned by one or more workspace members.
 
-<Frame>
-  <img src="/images/team-inbox-filter-assignee.png" alt="Assignee filter showing workspace members" />
-</Frame>
+<Steps>
+  <Step title="Open Assignee">
+    Click **Assignee** above the conversation list.
 
-You can select one or more assignees:
+    <Info>
+      **Add image here:** Add a screenshot showing the Assignee quick filter. Save it as `/images/team-inbox/filters-open-assignee.png`.
+    </Info>
+  </Step>
+  <Step title="Choose team members">
+    Search by name and select one member for an individual queue or multiple members for a combined queue. Use **Select All** when every available member should match.
 
-- Select one member to review that person's queue.
-- Select multiple members to review a team's combined workload.
-- Use **is known** in **All filters** to show assigned conversations.
-- Use **is unknown** to find conversations that do not have an owner.
+    <Info>
+      **Add image here:** Add a screenshot showing search, multiple selected members, and Select All. Save it as `/images/team-inbox/filters-select-assignees.png`.
+    </Info>
+  </Step>
+  <Step title="Apply the assignee filter">
+    Click **Done**. Use **Clear** in the menu to remove its draft selections.
 
-Click **Done** after making your selection.
+    <Info>
+      **Add image here:** Add a screenshot showing the selected assignees and Done. Save it as `/images/team-inbox/filters-apply-assignees.png`.
+    </Info>
+  </Step>
+</Steps>
 
-## Filter by messaging-window expiry
-
-Use **Expire time** to prioritize conversations before the WhatsApp messaging window closes.
-
-<Frame>
-  <img src="/images/team-inbox-filter-expire-time.png" alt="Expire time filter with 3h, 6h, and 12h choices" />
-</Frame>
-
-Choose the time range that matches your workflow:
-
-- **3h:** Work on the most urgent conversations first.
-- **6h:** Plan the current support or sales shift.
-- **12h:** Review conversations that may need attention later in the day.
-
-<Warning>
-  When the messaging window expires, an API conversation may require an approved WhatsApp template before you can send another message.
-</Warning>
-
-## Filter by AI properties
-
-AI properties are customer details extracted or maintained by Eazybe AI, such as **Urgency Level**, **Conversation State**, **Issue Category**, or **Stage**. The exact properties available depend on your workspace configuration.
-
-<Frame>
-  <img src="/images/team-inbox-filter-ai-properties.png" alt="All filters editor with the Urgency Level AI property selected" />
-</Frame>
-
-AI-property filters help you create useful customer segments, for example:
-
-- High-urgency conversations that need immediate attention
-- Customers in a specific sales stage
-- Conversations with a known issue category
-- Contacts whose property is still unknown and needs review
-
-Choose an AI property in **All filters**, select an operator, and select values when required.
+The available members follow your workspace and team access.
 
 ## Use All filters
 
-Click **All filters** when you need more control than the quick filters provide. The editor shows every active condition, including conditions created through **Channels** and **Assignee**.
+Open **All filters** for expiry time, advanced assignment rules, channels, and configured AI customer properties.
 
-<Frame>
-  <img src="/images/team-inbox-all-filters.png" alt="All filters editor with conditions and an OR group option" />
-</Frame>
+<Info>
+  **Add image here:** Add a screenshot showing two conditions, operators, values, and an OR group. Save it as `/images/team-inbox/filters-all-filters.png`.
+</Info>
 
-In **All filters**, you can:
+### Available properties
 
-- Change the property being filtered
-- Choose how values should match
-- Add more conditions with **+ Add condition**
-- Create alternative groups with **+ Add OR group**
-- Remove individual conditions
-- Clear every active filter
+| Property | Examples |
+|---|---|
+| **Expire time** | Less than 3 hours, less than 6 hours, or less than 12 hours before the WABA messaging window closes. |
+| **Assignee** | One or more team members, any known owner, or no owner. |
+| **Channels** | One or more APP, API, or COEX numbers. |
+| **AI properties** | Workspace-defined details such as urgency, issue category, lead stage, or another configured customer field. Availability depends on plan and role. |
 
-### Filter operators
+### Operators
 
 | Operator | Result |
 |---|---|
-| **is any of** | Includes conversations matching at least one selected value |
-| **is none of** | Excludes conversations matching any selected value |
-| **is known** | Includes conversations where the property has a value |
-| **is unknown** | Includes conversations where the property has no value |
+| **is any of** | Includes a conversation if its value matches at least one selected value. |
+| **is none of** | Excludes a conversation if its value matches any selected value. |
+| **is known** | Includes conversations where the property has a value. |
+| **is unknown** | Includes conversations where the property has no value. |
+
+**Expire time** and **Channels** use **is any of** or **is none of**. Assignee and supported AI properties can also use **is known** and **is unknown**.
+
+### Combine conditions with AND and OR
+
+Conditions inside one group use **AND** logic: a conversation must match every condition in that group.
+
+For example, **Channels is any of Support API AND Assignee is unknown** finds unassigned conversations on that number.
+
+Select **+ Add condition** to make the current group more specific. Select **+ Add OR group** when either group can match.
+
+For example, one result can include **unassigned conversations on Support API OR conversations assigned to the Sales Manager**.
+
+## Apply and review filters
+
+<Steps>
+  <Step title="Build the conditions">
+    Choose a property, operator, and values for each rule.
+
+    <Info>
+      **Add image here:** Add a screenshot showing property, operator, and value controls. Save it as `/images/team-inbox/filters-build-conditions.png`.
+    </Info>
+  </Step>
+  <Step title="Check the match count">
+    Review the result count in the filter editor before applying.
+
+    <Info>
+      **Add image here:** Add a screenshot showing the match count at the bottom of All filters. Save it as `/images/team-inbox/filters-check-match-count.png`.
+    </Info>
+  </Step>
+  <Step title="Select Done">
+    The conversation list refreshes with the committed conditions.
+
+    <Info>
+      **Add image here:** Add a screenshot showing the Done control with configured conditions. Save it as `/images/team-inbox/filters-select-done.png`.
+    </Info>
+  </Step>
+  <Step title="Review active filters">
+    Quick-filter buttons show their active state. **All filters** shows a badge for active conditions not already represented in the quick row.
+
+    <Info>
+      **Add image here:** Add a screenshot showing active quick filters and the All filters badge. Save it as `/images/team-inbox/filters-review-active.png`.
+    </Info>
+  </Step>
+</Steps>
+
+The quick row displays up to two filter summaries. Open **All filters** to review the complete rule set.
+
+## Save filters as My views
+
+Admins and managers can save an active filter as a private view.
+
+<Steps>
+  <Step title="Apply at least one filter">
+    The **Save as view** bar appears after a filter is active.
+
+    <Info>
+      **Add image here:** Add a screenshot showing an active filter and the Save as view bar. Save it as `/images/team-inbox/views-save-bar.png`.
+    </Info>
+  </Step>
+  <Step title="Name the view">
+    Use a clear name, such as **Unassigned support chats closing today**.
+
+    <Info>
+      **Add image here:** Add a screenshot showing the view-name field. Save it as `/images/team-inbox/views-name-view.png`.
+    </Info>
+  </Step>
+  <Step title="Save">
+    The view stores the complete configuration, including operators, selected values, quick filters, and AND/OR groups.
+
+    <Info>
+      **Add image here:** Add a screenshot showing the Save view control and the new item under My views. Save it as `/images/team-inbox/views-save-view.png`.
+    </Info>
+  </Step>
+</Steps>
+
+Saved views appear under **My views** in Lists. Select a view to restore it. If you change a selected view, Team Inbox shows **Unsaved changes**; select **Update view** to replace its saved filter configuration.
 
 <Note>
-  **Expire time** and **Channels** support **is any of** and **is none of**. Assignee and AI properties can also support **is known** and **is unknown**.
+  Saved views are currently private to their creator. Shared workspace views are not available in the current Team Inbox interface. Saved views are not shown to Employee-role users.
 </Note>
-
-## Combine conditions with AND and OR
-
-Conditions in the same group use **AND** logic. A conversation must match every condition in that group.
-
-For example, **Urgency Level is known AND Channels is any of Support Number** returns conversations that have an urgency value and came through the selected support number.
-
-Click **+ Add OR group** when either set of conditions may match. For example, use separate groups to show conversations assigned to Alice **OR** conversations received through the Support API channel.
-
-<Tip>
-  If no conversations match, remove one condition or move alternative conditions into separate OR groups.
-</Tip>
-
-## Apply a filter
-
-<Steps>
-  <Step title="Choose your filters">
-    Use the quick filters or configure conditions in **All filters**.
-  </Step>
-  <Step title="Review the match count">
-    The bottom-left corner of the editor shows how many conversations match before you apply the filter.
-  </Step>
-  <Step title="Click Done">
-    The inbox refreshes only after you click **Done**.
-  </Step>
-  <Step title="Confirm the active state">
-    Active quick filters are highlighted. The badge on **All filters** represents active conditions that are not already visible in the quick-filter row.
-  </Step>
-</Steps>
-
-<Frame>
-  <img src="/images/team-inbox-filter-applied.png" alt="Team Inbox toolbar after a channel filter has been applied" />
-</Frame>
-
-Open **All filters** again to review every active condition and the current match count:
-
-<Frame>
-  <img src="/images/team-inbox-filter-applied-details.png" alt="Applied Urgency Level and Channels filters with two matching conversations" />
-</Frame>
-
-## Save filters as a view
-
-After applying at least one filter, click **Save as view** in the result bar.
-
-<Steps>
-  <Step title="Name the view">
-    Enter a clear name, such as **Urgent support conversations**.
-  </Step>
-  <Step title="Choose visibility">
-    Select **Only me** for **My views**, or **Everyone** for **Shared views**.
-  </Step>
-  <Step title="Save the view">
-    Click **Save view**. The view stores all conditions, values, operators, and AND/OR groups.
-  </Step>
-</Steps>
-
-Select a saved view in the left sidebar to restore its filters. If you change an active saved view, use **Update view** to replace its saved configuration.
 
 ## Clear filters
 
-- Click **Clear filters** in the full editor to remove every conversation filter.
-- Click **Clear** in the result bar to return to the unfiltered **All conversations** list.
-- Removing search text does not clear the other active filters.
+- Select **Clear filters** in the full editor to remove all conversation-filter conditions.
+- Select **Clear** in the saved-view result bar to leave the saved view and return to unfiltered **All conversations**.
+- Clear the search field separately if it still contains text.
 
-## Troubleshooting
+## If the result is empty
 
-<AccordionGroup>
-  <Accordion title="No conversations match">
-    Remove one condition, select broader values, or move alternatives into separate OR groups.
-  </Accordion>
-  <Accordion title="A channel or assignee is missing">
-    Available options follow your workspace access. Ask an admin to confirm that the number or member is available to you.
-  </Accordion>
-  <Accordion title="The list does not change while I select values">
-    This is expected. Click **Done** in the dropdown or full filter editor to apply your selection.
-  </Accordion>
-  <Accordion title="The All filters badge is larger than the visible quick filters">
-    The quick-filter row shows up to two filters. Other active conditions remain applied and are represented by the badge.
-  </Accordion>
-</AccordionGroup>
+Check these items in order:
+
+1. Clear the search text.
+2. Open **All filters** and remove one condition at a time.
+3. Put alternatives in separate OR groups instead of the same AND group.
+4. Confirm the selected channel is connected and available to you.
+5. Confirm the conversation belongs to the currently selected list.
+
+<Tip>
+  Use **Closing window** for the most urgent open WABA conversations. Use the 3-, 6-, or 12-hour **Expire time** values when you need a wider planning window.
+</Tip>

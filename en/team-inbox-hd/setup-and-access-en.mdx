@@ -1,0 +1,225 @@
+---
+title: "Setup & Access"
+description: "Connect WhatsApp, enable Team Inbox, map channels to members, configure sync, and understand role-based access."
+---
+
+Team Inbox needs at least one connected WhatsApp number and the correct workspace access. Admins control the integration and permissions; each member then sees only the conversations and tools available to them.
+
+## Connect the first WhatsApp number
+
+If an admin or manager opens Team Inbox before a number is connected, Eazybe displays a connection screen with two choices:
+
+| Connection | Choose it when | What is required |
+|---|---|---|
+| **Chrome extension** | You want to sync a WhatsApp or WhatsApp Business App number. | Install the Eazybe extension and connect the number. The setup screen describes this as a sync that can be completed in under 30 seconds. |
+| **WhatsApp Business API** | You want to use an official WABA number, templates, and the API messaging workflow. | A Meta Business account and a connected WhatsApp Business API number. |
+
+<Steps>
+  <Step title="Open Team Inbox">
+    Click **Team Inbox** in the main navigation. When no number is connected, the setup screen displays **Install Chrome extension** and **Connect WhatsApp Business API**.
+
+    <Info>
+      **Add image here:** Add a screenshot showing Install Chrome extension and Connect WhatsApp Business API. Save it as `/images/team-inbox/setup-connection-choices.png`.
+    </Info>
+  </Step>
+  <Step title="Choose the connection method">
+    Click **Install Chrome extension** for an app-synced number, or click **Connect WhatsApp Business API** for an official API number.
+
+    <Info>
+      **Add image here:** Add a screenshot showing the two connection choices with the selected path highlighted. Save it as `/images/team-inbox/setup-choose-connection.png`.
+    </Info>
+  </Step>
+  <Step title="Complete the connection flow">
+    Follow the connection instructions for the method you selected. A WABA connection requires a Meta Business account.
+
+    <Info>
+      **Add image here:** Add a screenshot showing the final connection screen for the chosen method. Save it as `/images/team-inbox/setup-complete-connection.png`.
+    </Info>
+  </Step>
+  <Step title="Return to Team Inbox">
+    Return to the browser tab after the connection completes. Team Inbox refreshes the connection state and opens the workspace.
+
+    <Info>
+      **Add image here:** Add a screenshot showing Team Inbox after the first number connects. Save it as `/images/team-inbox/setup-open-inbox.png`.
+    </Info>
+  </Step>
+</Steps>
+
+<Note>
+  The connection screen states that the connection is end-to-end encrypted.
+</Note>
+
+## Turn Team Inbox on or off
+
+<Steps>
+  <Step title="Open Integrations">
+    As an admin, open **Integrations** from the workspace navigation.
+
+    <Info>
+      **Add image here:** Add a screenshot showing Integrations in the workspace navigation. Save it as `/images/team-inbox/setup-open-integrations.png`.
+    </Info>
+  </Step>
+  <Step title="Find Team Inbox">
+    Locate the **Team Inbox** integration card.
+
+    <Info>
+      **Add image here:** Add a screenshot showing the Team Inbox integration card. Save it as `/images/team-inbox/setup-find-team-inbox.png`.
+    </Info>
+  </Step>
+  <Step title="Change the integration state">
+    Use the Team Inbox switch to turn the feature on or off. When it is on, open its settings to configure mapping, sync, and AI properties.
+
+    <Info>
+      **Add image here:** Add a screenshot showing the enabled switch and settings control. Save it as `/images/team-inbox/setup-enable-team-inbox.png`.
+    </Info>
+  </Step>
+</Steps>
+
+Other roles can see the integration state but cannot change the switch.
+
+## Configure Team Inbox
+
+### Map WhatsApp Business API numbers to members
+
+Use **User Mapping** to decide which employees can work with each connected WABA number.
+
+<Steps>
+  <Step title="Open User Mapping">
+    In the Team Inbox integration settings, open **User Mapping**.
+
+    <Info>
+      **Add image here:** Add a screenshot showing Team Inbox settings and the User Mapping section. Save it as `/images/team-inbox/access-open-user-mapping.png`.
+    </Info>
+  </Step>
+  <Step title="Find the WABA row">
+    Find the required number under **WABA Name**. Each connected WABA appears in its own row.
+
+    <Info>
+      **Add image here:** Add a screenshot showing WABA Name and the available rows. Save it as `/images/team-inbox/access-find-waba.png`.
+    </Info>
+  </Step>
+  <Step title="Open the employee selector">
+    Click the control in the row's **Employees** column.
+
+    <Info>
+      **Add image here:** Add a screenshot showing the Employees selector for one WABA. Save it as `/images/team-inbox/access-open-employees.png`.
+    </Info>
+  </Step>
+  <Step title="Select employees">
+    Use **Search employees...** when needed, then select each member who should work with the WABA's conversations.
+
+    <Info>
+      **Add image here:** Add a screenshot showing Search employees... and selected members. Save it as `/images/team-inbox/access-select-employees.png`.
+    </Info>
+  </Step>
+  <Step title="Save the mapping">
+    Click **Save** after changing one or more rows. Team Inbox confirms that the mappings were saved.
+
+    <Info>
+      **Add image here:** Add a screenshot showing the completed mapping and Save control. Save it as `/images/team-inbox/access-save-mapping.png`.
+    </Info>
+  </Step>
+</Steps>
+
+### Configure synchronization and data
+
+Use **Sync & Data** to control which conversations are backed up to Team Inbox.
+
+<Steps>
+  <Step title="Open Sync & Data">
+    In **Team Inbox Integration**, click **Sync & Data**.
+
+    <Info>
+      **Add image here:** Add a screenshot showing the Sync & Data tab. Save it as `/images/team-inbox/sync-open-tab.png`.
+    </Info>
+  </Step>
+  <Step title="Set Sync Conversations">
+    Use the **Sync Conversations** switch to turn automatic WhatsApp conversation backup on or off.
+
+    <Info>
+      **Add image here:** Add a screenshot showing the Sync Conversations switch and explanation. Save it as `/images/team-inbox/sync-conversations.png`.
+    </Info>
+  </Step>
+  <Step title="Choose whether employees can access sync settings">
+    As an admin, use **Let employees access this section** to control whether Employee-role users can open these settings.
+
+    <Info>
+      **Add image here:** Add a screenshot showing Let employees access this section. Save it as `/images/team-inbox/sync-employee-access.png`.
+    </Info>
+  </Step>
+  <Step title="Choose labels to synchronize">
+    Expand **Labels**, then select which labeled conversations Team Inbox should synchronize.
+
+    <Info>
+      **Add image here:** Add a screenshot showing Labels expanded and selected labels. Save it as `/images/team-inbox/sync-select-labels.png`.
+    </Info>
+  </Step>
+</Steps>
+
+<Note>
+  The employee-access choice appears to admins. Label choices apply to conversation synchronization; they do not delete existing WhatsApp conversations.
+</Note>
+
+### Configure AI properties
+
+Use **AI Property Configuration** to prepare the customer information Eazybe AI maintains beside conversations. Eligible workspaces can also manage property definitions from an open conversation. See [Use AI Features](/en/team-inbox-hd/ai-features-en).
+
+<Info>
+  **Add image here:** Add a screenshot showing AI Property Configuration in Team Inbox settings. Save it as `/images/team-inbox/setup-ai-property-configuration.png`.
+</Info>
+
+## Team Inbox permissions
+
+Admins configure member access in **Members & Access**. The relevant permissions are:
+
+| Permission | What it controls |
+|---|---|
+| **Team Inbox** | Whether the member can open Team Inbox. |
+| **See all channels** | Whether the member can see every allowed channel or is limited to the WhatsApp numbers mapped to them. |
+| **Broadcasts** | Whether broadcast-related lists and actions are available. |
+| **User Properties** | Whether the member can edit customer and connected CRM information. Without it, supported information remains view-only. |
+
+<Warning>
+  Enabling **Team Inbox** does not automatically give a member access to every WhatsApp number. Check both **See all channels** and the number mapping.
+</Warning>
+
+## How roles affect the interface
+
+Permissions can be customized, but the interface also applies role-based limits.
+
+| Capability | Admin | Manager | Employee |
+|---|---|---|---|
+| Open Team Inbox | Based on Team Inbox permission | Based on Team Inbox permission | Based on Team Inbox permission |
+| See channels | All or permission-scoped | Can be team/channel-scoped | Commonly limited to mapped channels unless broader access is granted |
+| Assign or unassign a WABA chat | Available | Available when the chat is in scope | Not shown |
+| Add or remove favorites | Available | Available | Not available |
+| Start a new chat | Available | Available when access is ready | Not shown |
+| Use saved views | Available | Available | Not shown |
+| See acquisition and AI-agent lists | Available when configured | Available when configured and in scope | Not shown |
+| Manage AI-property definitions | Available on eligible plans | Not available | Not available |
+| Edit allowed customer/CRM data | Based on User Properties permission | Based on User Properties permission | Based on User Properties permission |
+
+Managers can be restricted to their team and approved channels. In AI-agent lists, stage counts may be hidden even when the manager can open the relevant stage.
+
+## Why two members can see different conversations
+
+A conversation appears only when all applicable access checks pass:
+
+1. Team Inbox is enabled for the workspace.
+2. The member has Team Inbox access.
+3. The source WhatsApp number is available to that member.
+4. A team-scoped manager is allowed to see the relevant member or channel.
+5. The current list, search, and filters include the conversation.
+
+The same checks also control which channels and assignees appear in filter menus.
+
+## Security and safe collaboration
+
+- Access changes affect what a member can see; they do not delete the underlying conversation.
+- Assignment gives an owner responsibility for the chat but does not move or erase its history.
+- Team Inbox displays sender information on outgoing messages so teammates can understand who replied.
+- A disconnected WABA becomes read-only in Team Inbox until it is reconnected.
+
+<Tip>
+  After changing mapping or permissions, ask the member to reopen Team Inbox. If the number is still missing, verify the number's connection and synchronization settings.
+</Tip>
