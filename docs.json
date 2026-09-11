@@ -194,7 +194,13 @@
                     ]
                   },
                   "en/waba/broadcast-rate-list-1st-jan-2026",
-                  "en/waba/signup-troubleshooting",
+                  {
+                    "group": "Embedded Signup Troubleshooting",
+                    "pages": [
+                      "en/waba/signup-troubleshooting",
+                      "en/waba/business-partner-already-connected"
+                    ]
+                  },
                   "en/waba/connect-with-existing-whatsapp",
                   "en/waba/onboarding-to-coex-api",
                   "en/waba/faq"

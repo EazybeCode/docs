@@ -1,0 +1,74 @@
+---
+title: "Business Partner Already Connected"
+description: "Clear the Embedded Signup error that says your number is already connected to a business partner when the WhatsApp Business app shows no partner attached."
+---
+
+Use this guide when Embedded Signup for WhatsApp Coexistence stops with a message that your phone number is already connected to a business partner, but the WhatsApp Business app shows no partner under **WhatsApp Business Platform**. Working through the six steps below, in order, clears the stale link so you can complete Embedded Signup.
+
+## Before you start
+
+<Info>
+This fix applies only when **all** of the following are true:
+
+- Embedded Signup reports that the number is already connected to a business partner.
+- In the WhatsApp Business app, **Settings > Business tools > WhatsApp Business Platform** shows no connected partner.
+- In your Meta Business Portfolio at [business.facebook.com](https://business.facebook.com), no partner is listed against the number under **Settings > Partners**.
+
+If the app does show a connected partner, tap **Disconnect** on that screen. If your Business Portfolio lists a partner, remove it there. Then retry Embedded Signup. For other signup errors, see [Signup Troubleshooting](/en/waba/signup-troubleshooting).
+</Info>
+
+<Warning>
+Complete every step, in order, on the phone that holds the WhatsApp Business number. If you skip the backup in Step 1, your chats are lost when you uninstall the app.
+</Warning>
+
+## Resolve the issue
+
+<Steps>
+  <Step title="Take a chat backup">
+    Open **WhatsApp Business** and go to **Settings > Chats > Chat backup**. Start the backup and wait for it to finish before you move on.
+
+    <Note>
+    On Android the backup is saved to Google Drive, on iPhone to iCloud. The backup is complete when the screen shows a fresh time under the last backup. Anything not included in this backup will not come back after you reinstall.
+    </Note>
+  </Step>
+
+  <Step title="Uninstall WhatsApp Business">
+    Uninstall the WhatsApp Business app from your phone, the same way you remove any other app.
+
+    <Warning>
+    Do **not** delete your WhatsApp Business account from the app's **Account** settings. Deleting the account wipes the number's history with Meta and can push it into a cooldown period. Remove the app only.
+    </Warning>
+  </Step>
+
+  <Step title="Install regular WhatsApp">
+    Install the regular **WhatsApp** app, not WhatsApp Business. Log in with the **same phone number** you use for WhatsApp Business and verify it with the code WhatsApp sends you.
+
+    Send messages to 2–3 contacts and wait for them to reply.
+
+    <Note>
+    These need to be real two-way conversations with people who reply to you. Messages to yourself, or messages nobody answers, do not help. This activity is what lets Meta recognise the number as a genuine, active account.
+    </Note>
+  </Step>
+
+  <Step title="Uninstall regular WhatsApp">
+    Once you have exchanged messages with those contacts, uninstall the regular WhatsApp app. As before, remove the app only. Do not delete the account.
+  </Step>
+
+  <Step title="Reinstall WhatsApp Business">
+    Install **WhatsApp Business** again and log in with the same phone number. When the app offers to restore your chat history, restore the backup you took in Step 1.
+
+    Send messages to 2–3 contacts and receive replies from them, as you did in Step 3.
+  </Step>
+
+  <Step title="Try Embedded Signup again">
+    Return to Eazybe and start Embedded Signup for the same number. The message about an already connected business partner should no longer appear.
+
+    <Tip>
+    If you need a reminder of each screen in the connection flow, follow [Onboarding to Coex/API](/en/waba/onboarding-to-coex-api).
+    </Tip>
+  </Step>
+</Steps>
+
+## Need Help?
+
+If Embedded Signup still reports the number as connected to a business partner after all six steps, reach out to us at [hey@eazybe.com](mailto:hey@eazybe.com), or message us on WhatsApp at [+91 63643 46419](https://wa.me/916364346419). Share the phone number (including country code) and a screenshot of the message. We're happy to help!
