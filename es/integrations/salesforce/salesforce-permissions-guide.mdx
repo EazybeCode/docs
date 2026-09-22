@@ -1,0 +1,146 @@
+---
+title: 'Permisos de Salesforce Requeridos para la Sincronización de Chats de WhatsApp'
+description: 'Configura los permisos de Salesforce para habilitar la copia de seguridad y sincronización de chats de WhatsApp'
+---
+
+<Info>
+**Tiempo de configuración**: 10 minutos | **Dificultad**: Media | **Edición de Salesforce**: Todas
+</Info>
+
+## Por Qué Importan los Permisos
+
+Eazybe almacena las conversaciones de WhatsApp en un objeto personalizado llamado **WhatsApp Chats by EazyBe (WhatsAppChat__c)**. Si tu usuario no tiene los permisos adecuados, la sincronización de chats no funcionará.
+
+<Warning>
+La falta de permisos causará fallos en la sincronización de chats incluso con credenciales válidas.
+</Warning>
+
+## Configuración Paso a Paso
+
+<Steps>
+  <Step title="Habilitar el Acceso al Objeto en tu Perfil">
+    1. Haz clic en el **icono de engranaje (⚙️)** en la esquina superior derecha
+    2. Selecciona **Configuración (Setup)**
+    3. En el cuadro de Búsqueda rápida, escribe **"Perfiles"** y selecciónalo
+    4. Busca y haz clic en el **Perfil** al que pertenecen tus usuarios (por ejemplo, "Standard User" o tu perfil personalizado)
+    5. Desplázate hasta la sección **Configuración de objetos personalizados**
+    6. Busca **WhatsApp Chats by EazyBe (WhatsAppChat__c)**
+    7. Haz clic en **Editar**
+    8. Habilita los siguientes permisos:
+       - ✅ **Leer (Read)**
+       - ✅ **Crear (Create)**
+       - ✅ **Editar (Edit)**
+    9. Haz clic en **Guardar**
+
+    <Frame caption="Permisos de objeto en el perfil">
+      <img src="/images/salesforce/object-permissions-profile.png" alt="Permisos de objeto en el perfil" />
+    </Frame>
+  </Step>
+
+  <Step title="Habilitar Permisos de Campos en el Administrador de Objetos">
+    Después de habilitar el acceso al objeto, necesitas hacer visibles los campos.
+
+    1. Permanece en **Configuración** y ve a **Administrador de objetos (Object Manager)**
+    2. Busca y haz clic en **WhatsApp Chats by EazyBe (WhatsAppChat__c)**
+    3. Haz clic en **Campos y relaciones (Fields & Relationships)**
+    4. Para cada campo de la lista:
+       - Haz clic en el nombre del campo
+       - Haz clic en **Seguridad a nivel de campo (Field Level Security)** o **Permisos de campo**
+       - Asegúrate de que **Visible** esté ✅ marcado
+       - Haz clic en **Guardar**
+  </Step>
+
+  <Step title="Verificar Todos los Campos Requeridos">
+    Asegúrate de que **Visible** esté habilitado para todos estos campos:
+
+    **Datos del Mensaje**
+    - Message__c
+    - MessageId__c
+    - Timestamp__c
+
+    **Información del Remitente**
+    - Sender__c
+    - SenderName__c
+    - SenderEmail__c
+
+    **Información del Destinatario**
+    - Receiver__c
+    - ReceiverName__c
+
+    **Detalles del Chat**
+    - ChatName__c
+    - Chatter__c
+    - ChannelId__c
+    - GroupChatNames__c
+
+    **Vinculación de Contactos**
+    - ContactId__c
+    - ContactType__c
+
+    **Información del Workspace**
+    - WorkspaceId__c
+    - WorkspaceName__c
+
+    **Archivos Adjuntos**
+    - FileName__c
+    - FileFormat__c
+
+    **Estado de Sincronización**
+    - Status__c
+    - CreatedByUser__c
+
+    **Participantes del Grupo**
+    - ChatParticipantWhatsAppNames__c
+    - ChatParticipantWhatsAppNumbers__c
+    - ChatParticipantSalesforceNames__c
+  </Step>
+</Steps>
+
+## Probar la Sincronización
+
+<Steps>
+  <Step title="Aplicar y Verificar">
+    1. Cierra sesión en Salesforce y vuelve a iniciarla (los permisos pueden tardar unos minutos en aplicarse)
+    2. Abre Eazybe
+    3. Intenta sincronizar los chats de WhatsApp nuevamente
+  </Step>
+</Steps>
+
+## Lista de Verificación
+
+Usa esta lista para confirmar que todo está configurado:
+
+<Checklist>
+- [ ] El perfil tiene **Leer (Read)** habilitado en el objeto WhatsAppChat__c
+- [ ] El perfil tiene **Crear (Create)** habilitado en el objeto WhatsAppChat__c
+- [ ] El perfil tiene **Editar (Edit)** habilitado en el objeto WhatsAppChat__c
+- [ ] Los 23 campos tienen **Visible** habilitado en la Seguridad a nivel de campo
+- [ ] El usuario cerró y volvió a iniciar sesión después de los cambios
+</Checklist>
+
+## Para Administradores del Sistema
+
+<Success>
+Si eres **Administrador del Sistema**, puedes omitir toda la configuración manual:
+
+1. Desconecta tu integración de Salesforce en Eazybe
+2. Vuelve a conectarla usando tus credenciales de Administrador del Sistema
+
+Los usuarios administradores tienen acceso completo por defecto—no se necesita configuración adicional.
+</Success>
+
+## Solución de Problemas
+
+<Info>
+Si completaste todos los pasos y la sincronización aún no funciona, verifica:
+- Tu token de OAuth de Salesforce es válido
+- La conectividad de red con la API de Salesforce
+- El usuario tiene acceso a la API habilitado en su perfil
+</Info>
+
+## ¿Necesitas Ayuda?
+
+Si sigues experimentando problemas:
+
+- Envíanos un correo a [hey@eazybe.com](mailto:hey@eazybe.com)
+- Visita nuestro [Centro de Ayuda](https://eazybe.com/help)

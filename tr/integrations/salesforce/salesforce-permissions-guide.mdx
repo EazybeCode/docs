@@ -1,0 +1,146 @@
+---
+title: 'WhatsApp Sohbet Senkronizasyonu için Gerekli Salesforce İzinleri'
+description: 'WhatsApp sohbet yedekleme ve senkronizasyonunu etkinleştirmek için Salesforce izinlerini yapılandırın'
+---
+
+<Info>
+**Kurulum Süresi**: 10 dakika | **Zorluk**: Orta | **Salesforce Sürümü**: Tümü
+</Info>
+
+## İzinler Neden Önemli
+
+Eazybe, WhatsApp konuşmalarını **WhatsApp Chats by EazyBe (WhatsAppChat__c)** adlı özel bir nesnede saklar. Kullanıcınız gerekli izinlere sahip değilse sohbet senkronizasyonu çalışmaz.
+
+<Warning>
+Eksik izinler, geçerli kimlik bilgileri olsa bile sohbet senkronizasyonu hatalarına neden olur.
+</Warning>
+
+## Adım Adım Yapılandırma
+
+<Steps>
+  <Step title="Profilinizde Nesne Erişimini Etkinleştirin">
+    1. Sağ üst köşedeki **dişli simgesine (⚙️)** tıklayın
+    2. **Kurulum (Setup)** seçeneğini seçin
+    3. Hızlı Bul kutusuna **"Profiller"** yazın ve seçin
+    4. Kullanıcılarınızın ait olduğu **Profili** bulun ve tıklayın (örneğin, "Standard User" veya özel profiliniz)
+    5. **Özel Nesne Ayarları** bölümüne ilerleyin
+    6. **WhatsApp Chats by EazyBe (WhatsAppChat__c)** öğesini bulun
+    7. **Düzenle** öğesine tıklayın
+    8. Aşağıdaki izinleri etkinleştirin:
+       - ✅ **Okuma (Read)**
+       - ✅ **Oluşturma (Create)**
+       - ✅ **Düzenleme (Edit)**
+    9. **Kaydet** öğesine tıklayın
+
+    <Frame caption="Profildeki nesne izinleri">
+      <img src="/images/salesforce/object-permissions-profile.png" alt="Profildeki nesne izinleri" />
+    </Frame>
+  </Step>
+
+  <Step title="Nesne Yöneticisinde Alan İzinlerini Etkinleştirin">
+    Nesne erişimini etkinleştirdikten sonra, alanları görünür hale getirmeniz gerekir.
+
+    1. **Kurulum**'da kalın ve **Nesne Yöneticisi (Object Manager)**'na gidin
+    2. **WhatsApp Chats by EazyBe (WhatsAppChat__c)** öğesini bulun ve tıklayın
+    3. **Alanlar ve İlişkiler (Fields & Relationships)** öğesine tıklayın
+    4. Aşağıdaki her alan için:
+       - Alan adına tıklayın
+       - **Alan Düzeyi Güvenliği (Field Level Security)** veya **Alan İzinleri** öğesine tıklayın
+       - **Görünür** seçeneğinin ✅ işaretli olduğundan emin olun
+       - **Kaydet** öğesine tıklayın
+  </Step>
+
+  <Step title="Gerekli Tüm Alanları Doğrulayın">
+    Bu alanların tümü için **Görünür** seçeneğinin etkin olduğundan emin olun:
+
+    **Mesaj Verileri**
+    - Message__c
+    - MessageId__c
+    - Timestamp__c
+
+    **Gönderen Bilgileri**
+    - Sender__c
+    - SenderName__c
+    - SenderEmail__c
+
+    **Alıcı Bilgileri**
+    - Receiver__c
+    - ReceiverName__c
+
+    **Sohbet Ayrıntıları**
+    - ChatName__c
+    - Chatter__c
+    - ChannelId__c
+    - GroupChatNames__c
+
+    **Kişi Bağlama**
+    - ContactId__c
+    - ContactType__c
+
+    **Çalışma Alanı Bilgileri**
+    - WorkspaceId__c
+    - WorkspaceName__c
+
+    **Dosya Ekleri**
+    - FileName__c
+    - FileFormat__c
+
+    **Senkronizasyon Durumu**
+    - Status__c
+    - CreatedByUser__c
+
+    **Grup Katılımcıları**
+    - ChatParticipantWhatsAppNames__c
+    - ChatParticipantWhatsAppNumbers__c
+    - ChatParticipantSalesforceNames__c
+  </Step>
+</Steps>
+
+## Senkronizasyonu Test Edin
+
+<Steps>
+  <Step title="Uygulayın ve Doğrulayın">
+    1. Salesforce'tan çıkış yapıp tekrar giriş yapın (izinlerin uygulanması birkaç dakika sürebilir)
+    2. Eazybe'yi açın
+    3. WhatsApp sohbetlerini tekrar senkronize etmeyi deneyin
+  </Step>
+</Steps>
+
+## Doğrulama Kontrol Listesi
+
+Her şeyin yapılandırıldığını onaylamak için bu kontrol listesini kullanın:
+
+<Checklist>
+- [ ] Profil, WhatsAppChat__c nesnesinde **Okuma (Read)** iznine sahip
+- [ ] Profil, WhatsAppChat__c nesnesinde **Oluşturma (Create)** iznine sahip
+- [ ] Profil, WhatsAppChat__c nesnesinde **Düzenleme (Edit)** iznine sahip
+- [ ] 23 alanın tümü, Alan Düzeyi Güvenliği'nde **Görünür** olarak etkin
+- [ ] Kullanıcı, değişikliklerden sonra çıkış yapıp tekrar giriş yaptı
+</Checklist>
+
+## Sistem Yöneticileri İçin
+
+<Success>
+Bir **Sistem Yöneticisi**yseniz, tüm manuel kurulumu atlayabilirsiniz:
+
+1. Eazybe'de Salesforce entegrasyonunuzu kesin
+2. Sistem Yöneticisi kimlik bilgilerinizle yeniden bağlanın
+
+Yönetici kullanıcılar varsayılan olarak tam erişime sahiptir—ek yapılandırma gerekmez.
+</Success>
+
+## Sorun Giderme
+
+<Info>
+Tüm adımları tamamladıysanız ve senkronizasyon hâlâ çalışmıyorsa şunları kontrol edin:
+- Salesforce OAuth jetonunuz geçerli
+- Salesforce API'sine ağ bağlantısı
+- Kullanıcının profilinde API erişimi etkin
+</Info>
+
+## Yardıma mı İhtiyacınız Var?
+
+Sorun yaşamaya devam ediyorsanız:
+
+- Bize [hey@eazybe.com](mailto:hey@eazybe.com) adresinden e-posta gönderin
+- [Yardım Merkezimizi](https://eazybe.com/help) ziyaret edin

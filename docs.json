@@ -1217,6 +1217,7 @@
                   "es/integrations/salesforce/invite-team",
                   "es/integrations/salesforce/linking-contacts",
                   "es/integrations/salesforce/message-sync",
+                  "es/integrations/salesforce/salesforce-permissions-guide",
                   {
                     "group": "Vista Mini-CRM",
                     "pages": [
@@ -1964,6 +1965,7 @@
                   "pt/integrations/salesforce/invite-team",
                   "pt/integrations/salesforce/linking-contacts",
                   "pt/integrations/salesforce/message-sync",
+                  "pt/integrations/salesforce/salesforce-permissions-guide",
                   {
                     "group": "Vista Mini-CRM",
                     "pages": [
@@ -2711,6 +2713,7 @@
                   "tr/integrations/salesforce/invite-team",
                   "tr/integrations/salesforce/linking-contacts",
                   "tr/integrations/salesforce/message-sync",
+                  "tr/integrations/salesforce/salesforce-permissions-guide",
                   {
                     "group": "Mini-CRM Görünümü",
                     "pages": [
