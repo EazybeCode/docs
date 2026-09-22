@@ -1,0 +1,146 @@
+---
+title: "Takım Gelen Kutusu"
+description: "EazyBe Takım Gelen Kutusu'nu ve Zaman Çizelgesi'ni doğrudan Salesforce içinde Contact, Lead ve Person Account kayıtlarında kullanın; ayrıca tüm ekibiniz için genel bir Takım Gelen Kutusu'na erişin"
+---
+
+EazyBe Takım Gelen Kutusu doğrudan Salesforce'un içine gömülüdür, böylece ekibiniz CRM'den ayrılmadan WhatsApp görüşmelerini yönetebilir. Etkinleştirildikten sonra şunları elde edersiniz:
+
+- **Kayıtlarda Takım Gelen Kutusu** — belirli bir Contact, Lead veya Person Account için WhatsApp görüşmeleri, doğrudan kayıt sayfasında gösterilir
+- **Zaman Çizelgesi** — kaydın zaman çizelgesinde görüntülenen tam WhatsApp görüşme geçmişi
+- **Genel Takım Gelen Kutusu** — ekibinizdeki tüm görüşmeler tek bir yerde
+
+<Note>
+Bu kurulum, EazyBe Team Inbox paketinin **yeni yüklemeleri** içindir. Yeni paketi yüklemeyen mevcut organizasyonlar etkilenmez — mevcut kurulumları eskisi gibi çalışmaya devam eder.
+</Note>
+
+## Takım Gelen Kutusu'nu Etkinleştirme
+
+Bir Salesforce **yöneticisinin** aşağıdaki adımları organizasyon başına bir kez tamamlaması gerekir. 1–3. adımlar tek seferlik ön koşul kurulumudur; 4–6. adımlar Takım Gelen Kutusu'nu yükler ve etkinleştirir.
+
+<Steps>
+  <Step title="Record Type'lar oluşturun">
+    Account, Contact ve Lead için en az bir aktif Record Type gereklidir. Bunları şu şekilde oluşturun (her nesne için tekrarlayın):
+
+    1. **Setup**'a gidin ve **Object Manager**'ı açın.
+    2. Nesneyi seçin — **Account**, **Contact** veya **Lead**.
+    3. **Record Types**'a ve ardından **New**'e tıklayın.
+    4. Mevcut Record Type olarak **Master**'ı seçin.
+    5. Bir Record Type etiketi girin (örneğin, **Default Account**, **Default Contact** veya **Default Lead**).
+    6. Record Type'ı **Active** olarak işaretleyin.
+    7. Record Type'ı gerekli tüm Profillere atayın.
+    8. Uygun Page Layout'u seçin.
+    9. **Save**'e tıklayın.
+
+    Bir nesnenin zaten aktif bir Record Type'ı varsa, o nesne için bu adımı atlayabilirsiniz.
+  </Step>
+  <Step title="Sharing Settings'i yapılandırın">
+    1. **Setup**'a gidin ve **Sharing Settings**'i aratın.
+    2. **Organization-Wide Defaults** altında şunları yapılandırın:
+
+    | Nesne | Önerilen ayar |
+    | --- | --- |
+    | Account | Private veya Public Read Only |
+    | Contact | Controlled by Parent veya Private |
+    | Lead | Private veya Public Read Only |
+
+    3. **Save**'e tıklayın.
+  </Step>
+  <Step title="Field History Tracking'i etkinleştirin">
+    Field History Tracking her nesne (Account, Contact ve Lead) için ayrı ayrı etkinleştirilmelidir:
+
+    1. **Setup**'a gidin ve **Object Manager**'ı açın.
+    2. Nesneyi seçin — **Account**, **Contact** veya **Lead**.
+    3. **Fields & Relationships**'i seçin.
+    4. **Set History Tracking**'e tıklayın.
+    5. **Track Field History**'yi etkinleştirin ve takip edilmesi gereken alanları seçin.
+    6. **Save**'e tıklayın.
+  </Step>
+  <Step title="EazyBe Team Inbox paketini yükleyin">
+    **EazyBe Team Inbox** yönetilen paketini Salesforce organizasyonunuza yükleyin:
+
+    [EazyBe Team Inbox paketini yükle](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tdM000000cUpt&isdtp=p1)
+
+    İstendiğinde **Install for All Users** (Tüm Kullanıcılar İçin Yükle) seçeneğini seçin.
+  </Step>
+  <Step title="External Client App Manager'da kullanıcıları yetkilendirin">
+    Paket yüklendikten sonra erişim sahibi olması gereken profilleri yetkilendirin:
+
+    1. Salesforce'ta **Setup**'a gidin ve **External Client App Manager**'ı aratın.
+    2. **Eazybe Team Inbox — Packaged** uygulamasını (yüklü olarak listelenen EazyBe uygulaması) açın.
+    3. **Policies** altında **Permitted Users** seçeneğini **Admin approved users are pre-authorized** olarak ayarlayın.
+    4. **Authorized Profiles** altında **System Administrator**'ı seçin ve **Save**'e tıklayın.
+
+    <Frame caption="External Client App Manager'da profil yetkilendirme">
+      <img src="/images/salesforce-team-inbox-app-manager.png" alt="Eazybe Team Inbox uygulaması için Policies ve yetkilendirilmiş profiller" />
+    </Frame>
+  </Step>
+  <Step title="Kayıt sayfalarını etkinleştirin">
+    Ardından, Takım Gelen Kutusu'nun ve Zaman Çizelgesi'nin kayıtlarınızda görünmesi için EazyBe kayıt sayfalarını etkinleştirin. Bu adımı her nesne için tekrarlayın:
+
+    | Nesne | Seçilecek sayfa |
+    | --- | --- |
+    | Contact | Eazybe Contact Record Page |
+    | Lead | Eazybe Lead Record Page |
+    | Person Account | Eazybe Person Account Record Page |
+
+    1. Sağ üst köşedeki **dişli simgesine** (⚙️) tıklayın ve **Edit Page**'i seçin.
+    2. Lightning App Builder'ın üst kısmındaki sayfa seçicisinden nesnenin sayfasını seçin (yukarıdaki tabloya bakın).
+    3. Sağ üst köşedeki **Activation**'a tıklayın.
+    4. Açılan pencerede sayfayı tüm organizasyonunuza atamak için **Org Default**'u seçin.
+    5. Hem **Desktop** hem de **Phone**'u seçin.
+    6. **Save**'e tıklayın.
+
+    <Frame caption="Eazybe Contact Record Page'i etkinleştirme">
+      <img src="/images/salesforce-team-inbox-activation.png" alt="Lightning App Builder'daki etkinleştirme penceresi" />
+    </Frame>
+  </Step>
+</Steps>
+
+<Note>
+Yukarıdaki yetkilendirme ve etkinleştirme adımları geçicidir. Yaklaşan bir paket güncellemesi bunları yükleme sırasında otomatik olarak halledecektir; kullanıcıların bunları elle yapması gerekmeyecektir.
+</Note>
+
+## Contact, Lead ve Person Account'da Takım Gelen Kutusu
+
+Sayfalar etkinleştirildikten sonra Salesforce'ta herhangi bir **Contact**, **Lead** veya **Person Account** kaydını açın. Kayıt sayfası, o kayda ait tüm WhatsApp görüşmelerini içeren EazyBe Takım Gelen Kutusu'nu ve Zaman Çizelgesi'ni gösterir.
+
+<Frame caption="Bir Contact kaydında Takım Gelen Kutusu ve Zaman Çizelgesi">
+  <img src="/images/salesforce-team-inbox-contact.png" alt="Contact kayıt sayfasında Takım Gelen Kutusu ve Zaman Çizelgesi" />
+</Frame>
+
+## Genel Takım Gelen Kutusu
+
+**Ekibinizdeki tüm görüşmeleri** görmek için Salesforce navigasyonundan **EazyBe Takım Gelen Kutusu**'nu açın. Bu genel gelen kutusu tek bir kayıtla sınırlı değildir — çalışma alanınızdaki tüm görüşmeleri gösterir.
+
+<Frame caption="Salesforce'ta Genel Takım Gelen Kutusu">
+  <img src="/images/salesforce-team-inbox-global.png" alt="Tüm görüşmeleri gösteren Genel Takım Gelen Kutusu" />
+</Frame>
+
+## Özellikler
+
+### Görüşmeleri Görüntüleme
+- **Kayıt gelen kutusu**: Belirli bir contact, lead veya person account ile tüm WhatsApp görüşmelerini görün
+- **Zaman Çizelgesi**: Kaydın zaman çizelgesinde tam WhatsApp görüşme geçmişi
+- **Genel gelen kutusu**: Tüm ekip görüşmelerini tek bir yerde görün
+
+### Mesaj Gönderme
+<Tip>
+Bağlı bir API veya CoEx numaranız varsa, mesajları doğrudan Salesforce içindeki Takım Gelen Kutusu'ndan gönderip alabilirsiniz.
+</Tip>
+
+### Ekip İş Birliği
+- **Birleşik gelen kutusu**: Tüm ekip görüşmeleri tek bir yerde
+- **Kayıt bağlamı**: Kaydın tüm ayrıntılarını görüntülerken gelen kutusuna erişin
+- **Kesintisiz iş akışı**: WhatsApp'ı yönetirken Salesforce'ta kalın
+
+## Gereksinimler
+
+Takım Gelen Kutusu entegrasyonunu kullanmak için şunlara ihtiyacınız var:
+
+- Salesforce organizasyonunuza yüklenmiş **EazyBe Team Inbox paketi** (bir yönetici tarafından)
+- Salesforce ile **aktif EazyBe entegrasyonu**
+- External Client App Manager'da **yetkilendirilmiş profiliniz** (yukarıdaki 5. adıma bakın)
+
+---
+
+Herhangi bir sorunuz varsa, bize [hey@eazybe.com](mailto:hey@eazybe.com) adresinden ulaşın.

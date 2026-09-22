@@ -1,0 +1,146 @@
+---
+title: "Caixa de Entrada da Equipe"
+description: "Use a Caixa de Entrada da Equipe e a Linha do Tempo da EazyBe diretamente dentro do Salesforce nos registros de Contato, Lead e Conta de Pessoa, além de uma Caixa de Entrada da Equipe global para toda a sua equipe"
+---
+
+A Caixa de Entrada da Equipe da EazyBe está integrada diretamente dentro do Salesforce, para que sua equipe possa gerenciar as conversas do WhatsApp sem sair do CRM. Depois de habilitada, você obtém:
+
+- **Caixa de Entrada da Equipe nos registros** — conversas do WhatsApp para um Contato, Lead ou Conta de Pessoa específicos, exibidas diretamente na página do registro
+- **Linha do Tempo** — o histórico completo de conversas do WhatsApp exibido na linha do tempo do registro
+- **Caixa de Entrada da Equipe Global** — todas as conversas da sua equipe em um só lugar
+
+<Note>
+Esta configuração se aplica a **novas instalações** do pacote EazyBe Team Inbox. As organizações existentes que não instalarem o novo pacote não são afetadas — a configuração atual delas continua funcionando exatamente como antes.
+</Note>
+
+## Habilitar a Caixa de Entrada da Equipe
+
+Um **administrador** do Salesforce precisa concluir as etapas a seguir uma vez por organização. As etapas 1–3 são a configuração prévia única; as etapas 4–6 instalam e habilitam a Caixa de Entrada da Equipe.
+
+<Steps>
+  <Step title="Crie os Tipos de Registro">
+    É necessário pelo menos um Tipo de Registro ativo para Conta, Contato e Lead. Crie-os da seguinte forma (repita para cada objeto):
+
+    1. Vá para **Setup** e abra o **Object Manager**.
+    2. Selecione o objeto — **Account**, **Contact** ou **Lead**.
+    3. Clique em **Record Types** e depois em **New**.
+    4. Selecione **Master** como o Tipo de Registro existente.
+    5. Insira um rótulo para o Tipo de Registro (por exemplo, **Default Account**, **Default Contact** ou **Default Lead**).
+    6. Marque o Tipo de Registro como **Active**.
+    7. Atribua o Tipo de Registro a todos os perfis necessários.
+    8. Selecione o Page Layout apropriado.
+    9. Clique em **Save**.
+
+    Se um objeto já tiver um Tipo de Registro ativo, você pode pular esta etapa para esse objeto.
+  </Step>
+  <Step title="Configure os Sharing Settings">
+    1. Vá para **Setup** e pesquise por **Sharing Settings**.
+    2. Em **Organization-Wide Defaults**, configure o seguinte:
+
+    | Objeto | Configuração recomendada |
+    | --- | --- |
+    | Account | Private ou Public Read Only |
+    | Contact | Controlled by Parent ou Private |
+    | Lead | Private ou Public Read Only |
+
+    3. Clique em **Save**.
+  </Step>
+  <Step title="Habilite o rastreamento do histórico de campos">
+    O rastreamento do histórico de campos deve ser habilitado separadamente para cada objeto (Account, Contact e Lead):
+
+    1. Vá para **Setup** e abra o **Object Manager**.
+    2. Selecione o objeto — **Account**, **Contact** ou **Lead**.
+    3. Selecione **Fields & Relationships**.
+    4. Clique em **Set History Tracking**.
+    5. Habilite **Track Field History** e selecione os campos necessários para rastrear.
+    6. Clique em **Save**.
+  </Step>
+  <Step title="Instale o pacote EazyBe Team Inbox">
+    Instale o pacote gerenciado **EazyBe Team Inbox** na sua organização do Salesforce:
+
+    [Instalar o pacote EazyBe Team Inbox](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tdM000000cUpt&isdtp=p1)
+
+    Quando solicitado, escolha **Instalar para Todos os Usuários**.
+  </Step>
+  <Step title="Autorize os usuários no External Client App Manager">
+    Depois que o pacote for instalado, autorize os perfis que devem ter acesso:
+
+    1. No Salesforce, vá para **Setup** e pesquise por **External Client App Manager**.
+    2. Abra **Eazybe Team Inbox — Packaged** (o aplicativo da EazyBe listado como instalado).
+    3. Em **Policies**, defina **Permitted Users** como **Admin approved users are pre-authorized**.
+    4. Em **Authorized Profiles**, selecione **System Administrator** e clique em **Save**.
+
+    <Frame caption="Autorização de perfis no External Client App Manager">
+      <img src="/images/salesforce-team-inbox-app-manager.png" alt="Policies e perfis autorizados para o aplicativo Eazybe Team Inbox" />
+    </Frame>
+  </Step>
+  <Step title="Ative as páginas de registro">
+    Em seguida, ative as páginas da EazyBe para que a Caixa de Entrada da Equipe e a Linha do Tempo apareçam nos seus registros. Repita esta etapa para cada objeto:
+
+    | Objeto | Página a selecionar |
+    | --- | --- |
+    | Contato | Eazybe Contact Record Page |
+    | Lead | Eazybe Lead Record Page |
+    | Conta de Pessoa | Eazybe Person Account Record Page |
+
+    1. Clique no **ícone de engrenagem** (⚙️) no canto superior direito e selecione **Edit Page**.
+    2. No seletor de páginas na parte superior do Lightning App Builder, selecione a página do objeto (veja a tabela acima).
+    3. Clique em **Activation** no canto superior direito.
+    4. No modal, escolha **Org Default** para atribuir a página a toda a sua organização.
+    5. Selecione tanto **Desktop** quanto **Phone**.
+    6. Clique em **Save**.
+
+    <Frame caption="Ativando a página Eazybe Contact Record Page">
+      <img src="/images/salesforce-team-inbox-activation.png" alt="Modal de ativação no Lightning App Builder" />
+    </Frame>
+  </Step>
+</Steps>
+
+<Note>
+As etapas de autorização e ativação acima são temporárias. Uma próxima atualização do pacote cuidará delas automaticamente durante a instalação, para que os usuários não precisem executá-las manualmente.
+</Note>
+
+## Caixa de Entrada da Equipe em Contato, Lead e Conta de Pessoa
+
+Depois que as páginas forem ativadas, abra qualquer registro de **Contato**, **Lead** ou **Conta de Pessoa** no Salesforce. A página do registro mostra a Caixa de Entrada da Equipe e a Linha do Tempo da EazyBe com todas as conversas do WhatsApp daquele registro.
+
+<Frame caption="Caixa de Entrada da Equipe e Linha do Tempo em um registro de Contato">
+  <img src="/images/salesforce-team-inbox-contact.png" alt="Caixa de Entrada da Equipe e Linha do Tempo na página de um registro de Contato" />
+</Frame>
+
+## Caixa de Entrada da Equipe Global
+
+Para ver **todas as conversas da sua equipe**, abra a **Caixa de Entrada da Equipe da EazyBe** na navegação do Salesforce. Essa caixa de entrada global não se limita a um único registro — ela mostra todas as conversas do seu espaço de trabalho.
+
+<Frame caption="Caixa de Entrada da Equipe Global no Salesforce">
+  <img src="/images/salesforce-team-inbox-global.png" alt="Caixa de Entrada da Equipe Global mostrando todas as conversas" />
+</Frame>
+
+## Recursos
+
+### Ver Conversas
+- **Caixa de entrada do registro**: Veja todas as conversas do WhatsApp com um contato, lead ou conta de pessoa específico
+- **Linha do Tempo**: Histórico completo de conversas do WhatsApp na linha do tempo do registro
+- **Caixa de entrada global**: Veja todas as conversas da equipe em um só lugar
+
+### Enviar Mensagens
+<Tip>
+Se você tiver um número API ou CoEx conectado, poderá enviar e receber mensagens diretamente da Caixa de Entrada da Equipe dentro do Salesforce.
+</Tip>
+
+### Colaboração em Equipe
+- **Caixa de entrada unificada**: Todas as conversas da equipe em um só lugar
+- **Contexto do registro**: Acesse a caixa de entrada enquanto visualiza todos os detalhes do registro
+- **Fluxo de trabalho contínuo**: Fique dentro do Salesforce enquanto gerencia o WhatsApp
+
+## Requisitos
+
+Para usar a integração da Caixa de Entrada da Equipe, você precisa:
+
+- Do **pacote EazyBe Team Inbox** instalado na sua organização do Salesforce (por um administrador)
+- De uma **integração ativa** da EazyBe com o Salesforce
+- Do seu **perfil autorizado** no External Client App Manager (consulte a etapa 5 acima)
+
+---
+
+Se tiver alguma dúvida, entre em contato conosco em [hey@eazybe.com](mailto:hey@eazybe.com).

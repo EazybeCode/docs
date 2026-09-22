@@ -1,0 +1,146 @@
+---
+title: "Team Inbox"
+description: "Use the EazyBe Team Inbox and Timeline directly inside Salesforce on Contact, Lead, and Person Account records, plus a global Team Inbox for your whole team"
+---
+
+EazyBe Team Inbox is embedded directly inside Salesforce, so your team can manage WhatsApp conversations without leaving the CRM. Once enabled, you get:
+
+- **Team Inbox on records** — WhatsApp conversations for a specific Contact, Lead, or Person Account, shown right on the record page
+- **Timeline** — the full WhatsApp conversation history displayed on the record's timeline
+- **Global Team Inbox** — all conversations across your team in one place
+
+<Note>
+This setup applies to **new installations** of the EazyBe Team Inbox package. Existing orgs that don't install the new package are not affected — their current setup keeps working exactly as before.
+</Note>
+
+## Enable the Team Inbox
+
+A Salesforce **administrator** needs to complete the following steps once per org. Steps 1–3 are the one-time prerequisite setup; steps 4–6 install and enable the Team Inbox.
+
+<Steps>
+  <Step title="Create Record Types">
+    At least one active Record Type is required for Account, Contact, and Lead. Create them as follows (repeat for each object):
+
+    1. Go to **Setup** and open **Object Manager**.
+    2. Select the object — **Account**, **Contact**, or **Lead**.
+    3. Click **Record Types**, then **New**.
+    4. Select **Master** as the existing Record Type.
+    5. Enter a Record Type Label (e.g., **Default Account**, **Default Contact**, or **Default Lead**).
+    6. Mark the Record Type as **Active**.
+    7. Assign the Record Type to all required Profiles.
+    8. Select the appropriate Page Layout.
+    9. Click **Save**.
+
+    If an object already has an active Record Type, you can skip it for that object.
+  </Step>
+  <Step title="Configure Sharing Settings">
+    1. Go to **Setup** and search for **Sharing Settings**.
+    2. Under **Organization-Wide Defaults**, configure the following:
+
+    | Object | Recommended Setting |
+    | --- | --- |
+    | Account | Private or Public Read Only |
+    | Contact | Controlled by Parent or Private |
+    | Lead | Private or Public Read Only |
+
+    3. Click **Save**.
+  </Step>
+  <Step title="Enable Field History Tracking">
+    Field History Tracking must be enabled separately for each object (Account, Contact, and Lead):
+
+    1. Go to **Setup** and open **Object Manager**.
+    2. Select the object — **Account**, **Contact**, or **Lead**.
+    3. Select **Fields & Relationships**.
+    4. Click **Set History Tracking**.
+    5. Enable **Track Field History** and select the required fields to track.
+    6. Click **Save**.
+  </Step>
+  <Step title="Install the EazyBe Team Inbox package">
+    Install the **EazyBe Team Inbox** managed package in your Salesforce org:
+
+    [Install the EazyBe Team Inbox package](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tdM000000cUpt&isdtp=p1)
+
+    When prompted, choose **Install for All Users**.
+  </Step>
+  <Step title="Authorize users in External Client App Manager">
+    After the package is installed, authorize the profiles that should have access:
+
+    1. In Salesforce, go to **Setup** and search for **External Client App Manager**.
+    2. Open **Eazybe Team Inbox — Packaged** (the EazyBe app listed as installed).
+    3. Under **Policies**, set **Permitted Users** to **Admin approved users are pre-authorized**.
+    4. Under **Authorized Profiles**, select **System Administrator** and click **Save**.
+
+    <Frame caption="Authorizing profiles in External Client App Manager">
+      <img src="/images/salesforce-team-inbox-app-manager.png" alt="Policies and authorized profiles for the Eazybe Team Inbox app" />
+    </Frame>
+  </Step>
+  <Step title="Activate the record pages">
+    Next, activate the EazyBe record pages so the Team Inbox and Timeline appear on your records. Repeat this step for each object:
+
+    | Object | Page to select |
+    | --- | --- |
+    | Contact | Eazybe Contact Record Page |
+    | Lead | Eazybe Lead Record Page |
+    | Person Account | Eazybe Person Account Record Page |
+
+    1. Click the **gear icon** (⚙️) in the top-right corner and select **Edit Page**.
+    2. In the page selector at the top of the Lightning App Builder, select the page for the object (see the table above).
+    3. Click **Activation** in the top-right corner.
+    4. In the modal, choose **Org Default** to assign the page to your whole org.
+    5. Select both **Desktop** and **Phone**.
+    6. Click **Save**.
+
+    <Frame caption="Activating the Eazybe Contact Record Page">
+      <img src="/images/salesforce-team-inbox-activation.png" alt="Activation modal in the Lightning App Builder" />
+    </Frame>
+  </Step>
+</Steps>
+
+<Note>
+The authorization and activation steps above are temporary. An upcoming package update will handle them automatically during installation, so users won't need to perform them manually.
+</Note>
+
+## Team Inbox on Contact, Lead, and Person Account
+
+Once the pages are activated, open any **Contact**, **Lead**, or **Person Account** record in Salesforce. The record page shows the EazyBe Team Inbox and Timeline with all WhatsApp conversations for that record.
+
+<Frame caption="Team Inbox and Timeline on a Contact record">
+  <img src="/images/salesforce-team-inbox-contact.png" alt="Team Inbox and Timeline on a Contact record page" />
+</Frame>
+
+## Global Team Inbox
+
+To see **all conversations across your team**, open the **EazyBe Team Inbox** from the Salesforce navigation. This global inbox is not limited to a single record — it shows every conversation across your workspace.
+
+<Frame caption="Global Team Inbox in Salesforce">
+  <img src="/images/salesforce-team-inbox-global.png" alt="Global Team Inbox showing all conversations" />
+</Frame>
+
+## Features
+
+### View Conversations
+- **Record inbox**: See all WhatsApp conversations with a specific contact, lead, or person account
+- **Timeline**: Full WhatsApp conversation history on the record's timeline
+- **Global inbox**: View all team conversations in one place
+
+### Send Messages
+<Tip>
+If you have a connected API or CoEx number, you can send and receive messages directly from the Team Inbox inside Salesforce.
+</Tip>
+
+### Team Collaboration
+- **Unified inbox**: All team conversations in one place
+- **Record context**: Access the inbox while viewing the full record details
+- **Seamless workflow**: Stay within Salesforce while managing WhatsApp
+
+## Requirements
+
+To use the Team Inbox integration, you need:
+
+- **EazyBe Team Inbox package** installed in your Salesforce org (by an admin)
+- **Active EazyBe integration** with Salesforce
+- Your **profile authorized** in External Client App Manager (see step 5 above)
+
+---
+
+If you have any questions, reach out to us at [hey@eazybe.com](mailto:hey@eazybe.com).

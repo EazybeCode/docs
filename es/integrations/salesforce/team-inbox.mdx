@@ -1,0 +1,146 @@
+---
+title: "Bandeja de Equipo"
+description: "Usa la Bandeja de Equipo y la Línea de Tiempo de EazyBe directamente dentro de Salesforce en los registros de Contacto, Cliente Potencial y Cuenta de Persona, además de una Bandeja de Equipo global para todo tu equipo"
+---
+
+La Bandeja de Equipo de EazyBe está integrada directamente dentro de Salesforce, para que tu equipo pueda gestionar las conversaciones de WhatsApp sin salir del CRM. Una vez habilitada, obtienes:
+
+- **Bandeja de Equipo en los registros** — conversaciones de WhatsApp para un Contacto, Cliente Potencial o Cuenta de Persona específicos, mostradas directamente en la página del registro
+- **Línea de Tiempo** — el historial completo de conversaciones de WhatsApp mostrado en la línea de tiempo del registro
+- **Bandeja de Equipo Global** — todas las conversaciones de tu equipo en un solo lugar
+
+<Note>
+Esta configuración aplica a **nuevas instalaciones** del paquete EazyBe Team Inbox. Las organizaciones existentes que no instalen el nuevo paquete no se ven afectadas — su configuración actual sigue funcionando exactamente igual que antes.
+</Note>
+
+## Habilitar la Bandeja de Equipo
+
+Un **administrador** de Salesforce debe completar los siguientes pasos una vez por organización. Los pasos 1–3 son la configuración previa única; los pasos 4–6 instalan y habilitan la Bandeja de Equipo.
+
+<Steps>
+  <Step title="Crea los Tipos de Registro">
+    Se requiere al menos un Tipo de Registro activo para Cuenta, Contacto y Cliente Potencial. Créalos de la siguiente manera (repite para cada objeto):
+
+    1. Ve a **Setup** y abre **Object Manager**.
+    2. Selecciona el objeto — **Account**, **Contact** o **Lead**.
+    3. Haz clic en **Record Types** y luego en **New**.
+    4. Selecciona **Master** como el Tipo de Registro existente.
+    5. Introduce una etiqueta para el Tipo de Registro (por ejemplo, **Default Account**, **Default Contact** o **Default Lead**).
+    6. Marca el Tipo de Registro como **Active**.
+    7. Asigna el Tipo de Registro a todos los perfiles necesarios.
+    8. Selecciona el Page Layout apropiado.
+    9. Haz clic en **Save**.
+
+    Si un objeto ya tiene un Tipo de Registro activo, puedes omitirlo para ese objeto.
+  </Step>
+  <Step title="Configura los Sharing Settings">
+    1. Ve a **Setup** y busca **Sharing Settings**.
+    2. En **Organization-Wide Defaults**, configura lo siguiente:
+
+    | Objeto | Configuración recomendada |
+    | --- | --- |
+    | Account | Private o Public Read Only |
+    | Contact | Controlled by Parent o Private |
+    | Lead | Private o Public Read Only |
+
+    3. Haz clic en **Save**.
+  </Step>
+  <Step title="Habilita el seguimiento del historial de campos">
+    El seguimiento del historial de campos debe habilitarse por separado para cada objeto (Account, Contact y Lead):
+
+    1. Ve a **Setup** y abre **Object Manager**.
+    2. Selecciona el objeto — **Account**, **Contact** o **Lead**.
+    3. Selecciona **Fields & Relationships**.
+    4. Haz clic en **Set History Tracking**.
+    5. Habilita **Track Field History** y selecciona los campos necesarios para el seguimiento.
+    6. Haz clic en **Save**.
+  </Step>
+  <Step title="Instala el paquete de EazyBe Team Inbox">
+    Instala el paquete administrado **EazyBe Team Inbox** en tu organización de Salesforce:
+
+    [Instalar el paquete EazyBe Team Inbox](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tdM000000cUpt&isdtp=p1)
+
+    Cuando se te solicite, elige **Instalar para Todos los Usuarios**.
+  </Step>
+  <Step title="Autoriza a los usuarios en External Client App Manager">
+    Después de instalar el paquete, autoriza los perfiles que deben tener acceso:
+
+    1. En Salesforce, ve a **Setup** y busca **External Client App Manager**.
+    2. Abre **Eazybe Team Inbox — Packaged** (la aplicación de EazyBe listada como instalada).
+    3. En **Policies**, establece **Permitted Users** en **Admin approved users are pre-authorized**.
+    4. En **Authorized Profiles**, selecciona **System Administrator** y haz clic en **Save**.
+
+    <Frame caption="Autorización de perfiles en External Client App Manager">
+      <img src="/images/salesforce-team-inbox-app-manager.png" alt="Policies y perfiles autorizados para la aplicación Eazybe Team Inbox" />
+    </Frame>
+  </Step>
+  <Step title="Activa las páginas de registros">
+    A continuación, activa las páginas de EazyBe para que la Bandeja de Equipo y la Línea de Tiempo aparezcan en tus registros. Repite este paso para cada objeto:
+
+    | Objeto | Página a seleccionar |
+    | --- | --- |
+    | Contacto | Eazybe Contact Record Page |
+    | Cliente Potencial | Eazybe Lead Record Page |
+    | Cuenta de Persona | Eazybe Person Account Record Page |
+
+    1. Haz clic en el **icono de engranaje** (⚙️) en la esquina superior derecha y selecciona **Edit Page**.
+    2. En el selector de páginas en la parte superior del Lightning App Builder, selecciona la página del objeto (ver la tabla anterior).
+    3. Haz clic en **Activation** en la esquina superior derecha.
+    4. En el modal, elige **Org Default** para asignar la página a toda tu organización.
+    5. Selecciona tanto **Desktop** como **Phone**.
+    6. Haz clic en **Save**.
+
+    <Frame caption="Activando la página Eazybe Contact Record Page">
+      <img src="/images/salesforce-team-inbox-activation.png" alt="Modal de activación en Lightning App Builder" />
+    </Frame>
+  </Step>
+</Steps>
+
+<Note>
+Los pasos de autorización y activación anteriores son temporales. Una próxima actualización del paquete los gestionará automáticamente durante la instalación, por lo que los usuarios no necesitarán realizarlos manualmente.
+</Note>
+
+## Bandeja de Equipo en Contacto, Cliente Potencial y Cuenta de Persona
+
+Una vez activadas las páginas, abre cualquier registro de **Contacto**, **Cliente Potencial** o **Cuenta de Persona** en Salesforce. La página del registro muestra la Bandeja de Equipo y la Línea de Tiempo de EazyBe con todas las conversaciones de WhatsApp de ese registro.
+
+<Frame caption="Bandeja de Equipo y Línea de Tiempo en un registro de Contacto">
+  <img src="/images/salesforce-team-inbox-contact.png" alt="Bandeja de Equipo y Línea de Tiempo en la página de un registro de Contacto" />
+</Frame>
+
+## Bandeja de Equipo Global
+
+Para ver **todas las conversaciones de tu equipo**, abre la **Bandeja de Equipo de EazyBe** desde la navegación de Salesforce. Esta bandeja global no está limitada a un solo registro — muestra todas las conversaciones de tu espacio de trabajo.
+
+<Frame caption="Bandeja de Equipo Global en Salesforce">
+  <img src="/images/salesforce-team-inbox-global.png" alt="Bandeja de Equipo Global mostrando todas las conversaciones" />
+</Frame>
+
+## Características
+
+### Ver Conversaciones
+- **Bandeja del registro**: Ve todas las conversaciones de WhatsApp con un contacto, cliente potencial o cuenta de persona específico
+- **Línea de Tiempo**: Historial completo de conversaciones de WhatsApp en la línea de tiempo del registro
+- **Bandeja global**: Ve todas las conversaciones del equipo en un solo lugar
+
+### Enviar Mensajes
+<Tip>
+Si tienes un número API o CoEx conectado, puedes enviar y recibir mensajes directamente desde la Bandeja de Equipo dentro de Salesforce.
+</Tip>
+
+### Colaboración en Equipo
+- **Bandeja unificada**: Todas las conversaciones del equipo en un solo lugar
+- **Contexto del registro**: Accede a la bandeja mientras ves todos los detalles del registro
+- **Flujo de trabajo fluido**: Mantente dentro de Salesforce mientras gestionas WhatsApp
+
+## Requisitos
+
+Para usar la integración de la Bandeja de Equipo, necesitas:
+
+- El **paquete EazyBe Team Inbox** instalado en tu organización de Salesforce (por un administrador)
+- Una **integración activa** de EazyBe con Salesforce
+- Tu **perfil autorizado** en External Client App Manager (ver el paso 5 anterior)
+
+---
+
+Si tienes alguna pregunta, contáctanos en [hey@eazybe.com](mailto:hey@eazybe.com).
