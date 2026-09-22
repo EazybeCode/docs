@@ -484,6 +484,7 @@
                       "integrations/salesforce/playbooks/overview",
                       "integrations/salesforce/playbooks/lead-capture",
                       "integrations/salesforce/playbooks/chat-backup",
+                      "integrations/salesforce/playbooks/salesforce-permissions-guide",
                       "integrations/salesforce/playbooks/flow-automation",
                       "integrations/salesforce/playbooks/opportunity-alerts"
                     ]
