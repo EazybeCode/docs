@@ -185,6 +185,7 @@
                 "pages": [
                   "en/waba/getting-started",
                   "en/waba/connect-waba",
+                  "en/waba/waba-disconnect-alerts",
                   "en/waba/facebook-business-verification",
                   {
                     "group": "Broadcasting",

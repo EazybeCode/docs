@@ -6,6 +6,12 @@
       "runtimeExecutable": "npx",
       "runtimeArgs": ["-y", "mint@latest", "dev", "--port", "3333"],
       "port": 3333
+    },
+    {
+      "name": "mint-docs-clone",
+      "runtimeExecutable": "sh",
+      "runtimeArgs": ["-c", "cd /Users/sarthakupadhyay/Projects/eazybe-docs && mint dev --port 3333"],
+      "port": 3333
     }
   ]
 }

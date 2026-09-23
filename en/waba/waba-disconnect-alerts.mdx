@@ -1,0 +1,141 @@
+---
+title: "Set Up WABA Disconnect Alerts"
+description: "Choose who receives an email when a WhatsApp Business number disconnects and reconnect the number from WABA settings."
+---
+
+Set up disconnect alerts so the people you choose receive an email when a WhatsApp Business number loses its connection to Meta. You can manage recipients, check your numbers, and reconnect a disconnected number from **Settings → WABA**.
+
+<Note>
+Only workspace admins can change disconnect alerts or reconnect a number. Managers and employees can open the page, but the recipient list is blurred and marked **Admin only**.
+</Note>
+
+## Set up disconnect alerts
+
+<Steps>
+  <Step title="Open WABA settings">
+    Go to **Settings** and select **WABA** in the left menu. Under **Notifications**, you will see the **Disconnect alerts** card.
+
+    The **Connected numbers** section below it shows the connection status of your workspace's WhatsApp Business numbers.
+
+    ![WABA highlighted in Settings with disconnect alerts and connected numbers visible](/images/waba-disconnect-alerts/open-waba-settings.png)
+  </Step>
+
+  <Step title="Turn on disconnect alerts">
+    Select **Turn on** at the top right of the **Disconnect alerts** card.
+
+    <Note>
+    When you turn on disconnect alerts for the first time, your organization owner's email address is automatically added as the default recipient.
+    </Note>
+
+    While alerts are off, the card reads *Alerts are off. Turn them on to choose who gets notified.*
+
+    ![Turn on button highlighted on the Disconnect alerts card in WABA settings](/images/waba-disconnect-alerts/turn-on-disconnect-alerts.png)
+  </Step>
+
+  <Step title="Add an email recipient">
+    Select **+ Add email** to add another recipient. Choose a recipient in either of these ways:
+
+    - Select a teammate under **From your workspace**. Scroll through the list or type to filter by name or email address.
+    - Type an email address and press **Enter** or select **Add**.
+
+    Repeat this action for each person who should receive an alert.
+
+    <Note>
+    Recipients do not need to be workspace members. You can add a shared inbox such as `alerts@yourcompany.com`.
+    </Note>
+
+    <Note>
+    You can save up to **10 recipients**. When you reach the limit, **+ Add email** is replaced by **10 of 10 recipients added**. Remove a recipient to make room for another.
+    </Note>
+
+    ![Email recipient field and workspace teammate list in WABA disconnect alerts](/images/waba-disconnect-alerts/add-email-recipient.png)
+  </Step>
+
+  <Step title="Review your recipients">
+    The first two recipients appear as chips on the card. If you have added more than two, select **+N more** to open the full list.
+
+    In the full list, search by name or email address and use the **×** button to remove a recipient.
+
+    <Note>
+    Changes save immediately. There is no separate **Save** button.
+    </Note>
+
+    ![Saved recipient chips, the more recipients menu, and Add email on the Disconnect alerts card](/images/waba-disconnect-alerts/review-recipients.png)
+  </Step>
+</Steps>
+
+## Understand the alert email
+
+When a number loses its connection to Meta, every recipient on your list receives the same alert email. Your recipient list applies to the whole workspace, rather than to individual numbers.
+
+<Warning>
+A disconnected number cannot send or receive messages until it is reconnected. Open **Settings → WABA** to check its status and reconnect it.
+</Warning>
+
+## Reconnect a disconnected number
+
+<Steps>
+  <Step title="Find the disconnected number">
+    In **Settings → WABA**, scroll to **Connected numbers**. Each number has a **Connected** or **Disconnected** badge. Disconnected numbers appear first.
+  </Step>
+
+  <Step title="Select Reconnect">
+    Select **Reconnect** next to the number showing **Disconnected**. This opens the same Meta sign-up window used by **Connect to API** on the Channels page.
+
+    <Note>
+    You must be a workspace admin to reconnect a number.
+    </Note>
+  </Step>
+
+  <Step title="Complete the Meta connection flow">
+    Follow the Meta sign-up flow using the same WhatsApp Business account you use when connecting through the Channels page.
+
+    Once Meta confirms the connection, the list refreshes and the number's badge returns to **Connected**.
+  </Step>
+</Steps>
+
+## Manage recipients and turn alerts off
+
+To remove a recipient from the full list, select **+N more**, find the recipient, and select **×**. When you remove someone from a list of 10, **+ Add email** becomes available again.
+
+<Note>
+While alerts are on, you must keep at least one recipient. If you try to remove the last one, you will see *Keep at least one recipient while disconnect alerts are on. Turn the alerts off instead.*
+</Note>
+
+To stop alert emails, select **Turn off** on the **Disconnect alerts** card. Your recipient list stays saved, so you can select **Turn on** later without rebuilding it. Adding recipients, removing recipients, and turning alerts on or off each save automatically.
+
+## Who can use disconnect alerts
+
+| Action | Admin | Manager | Employee |
+| --- | --- | --- | --- |
+| Open WABA settings | Yes | Yes | Yes |
+| View the recipient list | Yes | Blurred and marked **Admin only** | Blurred and marked **Admin only** |
+| Add or remove recipients | Yes | No | No |
+| Turn alerts on or off | Yes | No | No |
+| Reconnect a number | Yes | No | No |
+
+## Troubleshooting
+
+### WABA is missing from Settings
+
+Reload the page. Every role can open WABA settings, but the menu appears after your workspace permissions finish loading.
+
+### You see an invalid email message
+
+If you see *Enter a valid email address.*, check the address for a missing `@` or domain, correct it, and try again.
+
+### You see a duplicate recipient message
+
+If you see *\<name\> is already on the list.*, that email address is already saved. Check the recipient chips or select **+N more** to view the full list.
+
+### Your recipient change does not save
+
+If you see *Could not save disconnect alert recipients. Please try again.*, the change did not reach Eazybe. The list returns to its previous state. Check your internet connection and retry the change.
+
+### Nobody received an alert
+
+Check the following:
+
+- The card shows **Turn off**, which means alerts are currently on.
+- At least one recipient is saved.
+- Recipients have checked their spam folders.
