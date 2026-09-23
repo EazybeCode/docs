@@ -460,7 +460,6 @@
                   "en/integrations/salesforce/linking-contacts",
                   "en/integrations/salesforce/message-sync",
                   "en/integrations/salesforce/team-inbox",
-                  "en/integrations/salesforce/timeline",
                   {
                     "group": "Mini-CRM View",
                     "pages": [
@@ -1221,7 +1220,6 @@
                   "es/integrations/salesforce/message-sync",
                   "es/integrations/salesforce/salesforce-permissions-guide",
                   "es/integrations/salesforce/team-inbox",
-                  "es/integrations/salesforce/timeline",
                   {
                     "group": "Vista Mini-CRM",
                     "pages": [
@@ -1971,7 +1969,6 @@
                   "pt/integrations/salesforce/message-sync",
                   "pt/integrations/salesforce/salesforce-permissions-guide",
                   "pt/integrations/salesforce/team-inbox",
-                  "pt/integrations/salesforce/timeline",
                   {
                     "group": "Vista Mini-CRM",
                     "pages": [
@@ -2721,7 +2718,6 @@
                   "tr/integrations/salesforce/message-sync",
                   "tr/integrations/salesforce/salesforce-permissions-guide",
                   "tr/integrations/salesforce/team-inbox",
-                  "tr/integrations/salesforce/timeline",
                   {
                     "group": "Mini-CRM Görünümü",
                     "pages": [

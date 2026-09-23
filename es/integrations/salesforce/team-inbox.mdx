@@ -1,12 +1,11 @@
 ---
 title: "Bandeja de Equipo"
-description: "Usa la Bandeja de Equipo y la Línea de Tiempo de EazyBe directamente dentro de Salesforce en los registros de Contacto, Cliente Potencial y Cuenta de Persona, además de una Bandeja de Equipo global para todo tu equipo"
+description: "Usa la Bandeja de Equipo de EazyBe directamente dentro de Salesforce en los registros de Contacto, Cliente Potencial y Cuenta de Persona, además de una Bandeja de Equipo global para todo tu equipo"
 ---
 
 La Bandeja de Equipo de EazyBe está integrada directamente dentro de Salesforce, para que tu equipo pueda gestionar las conversaciones de WhatsApp sin salir del CRM. Una vez habilitada, obtienes:
 
 - **Bandeja de Equipo en los registros** — conversaciones de WhatsApp para un Contacto, Cliente Potencial o Cuenta de Persona específicos, mostradas directamente en la página del registro
-- **Línea de Tiempo** — el historial completo de conversaciones de WhatsApp mostrado en la línea de tiempo del registro
 - **Bandeja de Equipo Global** — todas las conversaciones de tu equipo en un solo lugar
 
 <Note>
@@ -58,7 +57,7 @@ Un **administrador** de Salesforce debe completar los siguientes pasos una vez p
   <Step title="Instala el paquete de EazyBe Team Inbox">
     Instala el paquete administrado **EazyBe Team Inbox** en tu organización de Salesforce:
 
-    [Instalar el paquete EazyBe Team Inbox](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tdM000000cUpt&isdtp=p1)
+    [Instalar el paquete EazyBe Team Inbox](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tdM000000cdzd&isdtp=p1)
 
     Cuando se te solicite, elige **Instalar para Todos los Usuarios**.
   </Step>
@@ -70,12 +69,16 @@ Un **administrador** de Salesforce debe completar los siguientes pasos una vez p
     3. En **Policies**, establece **Permitted Users** en **Admin approved users are pre-authorized**.
     4. En **Authorized Profiles**, selecciona **System Administrator** y haz clic en **Save**.
 
-    <Frame caption="Autorización de perfiles en External Client App Manager">
-      <img src="/images/salesforce-team-inbox-app-manager.png" alt="Policies y perfiles autorizados para la aplicación Eazybe Team Inbox" />
+    <Frame caption="Abrir Eazybe Team Inbox en External Client App Manager">
+      <img src="/images/salesforce-team-inbox-app-manager.png" alt="Aplicación Eazybe Team Inbox listada en External Client App Manager" />
+    </Frame>
+
+    <Frame caption="Autorizar a System Administrator en App Policies">
+      <img src="/images/salesforce-team-inbox-app-policies.png" alt="App Policies con System Administrator seleccionado para la aplicación Eazybe Team Inbox" />
     </Frame>
   </Step>
   <Step title="Activa las páginas de registros">
-    A continuación, activa las páginas de EazyBe para que la Bandeja de Equipo y la Línea de Tiempo aparezcan en tus registros. Repite este paso para cada objeto:
+    A continuación, activa las páginas de EazyBe para que la Bandeja de Equipo aparezca en tus registros. Repite este paso para cada objeto:
 
     | Objeto | Página a seleccionar |
     | --- | --- |
@@ -90,8 +93,8 @@ Un **administrador** de Salesforce debe completar los siguientes pasos una vez p
     5. Selecciona tanto **Desktop** como **Phone**.
     6. Haz clic en **Save**.
 
-    <Frame caption="Activando la página Eazybe Contact Record Page">
-      <img src="/images/salesforce-team-inbox-activation.png" alt="Modal de activación en Lightning App Builder" />
+    <Frame caption="Seleccionar la página Eazybe Contact Record Page en Lightning App Builder">
+      <img src="/images/salesforce-team-inbox-activation.png" alt="Selector de páginas en Lightning App Builder con Eazybe Contact Record Page resaltada y el botón Activation en la esquina superior derecha" />
     </Frame>
   </Step>
 </Steps>
@@ -102,25 +105,26 @@ Los pasos de autorización y activación anteriores son temporales. Una próxima
 
 ## Bandeja de Equipo en Contacto, Cliente Potencial y Cuenta de Persona
 
-Una vez activadas las páginas, abre cualquier registro de **Contacto**, **Cliente Potencial** o **Cuenta de Persona** en Salesforce. La página del registro muestra la Bandeja de Equipo y la Línea de Tiempo de EazyBe con todas las conversaciones de WhatsApp de ese registro.
+Una vez activadas las páginas, abre cualquier registro de **Contacto**, **Cliente Potencial** o **Cuenta de Persona** en Salesforce. La página del registro muestra la Bandeja de Equipo de EazyBe con todas las conversaciones de WhatsApp de ese registro.
 
-<Frame caption="Bandeja de Equipo y Línea de Tiempo en un registro de Contacto">
-  <img src="/images/salesforce-team-inbox-contact.png" alt="Bandeja de Equipo y Línea de Tiempo en la página de un registro de Contacto" />
+<Frame caption="Bandeja de Equipo en un registro de Contacto">
+  <img src="/images/salesforce-team-inbox-contact.png" alt="Bandeja de Equipo en la página de un registro de Contacto" />
 </Frame>
 
 ## Bandeja de Equipo Global
 
-Para ver **todas las conversaciones de tu equipo**, abre la **Bandeja de Equipo de EazyBe** desde la navegación de Salesforce. Esta bandeja global no está limitada a un solo registro — muestra todas las conversaciones de tu espacio de trabajo.
+Para ver **todas las conversaciones de tu equipo**, abre la aplicación **Eazybe Team Inbox** desde el **App Launcher** (el icono de cuadrícula en la esquina superior izquierda).
+
+Esta bandeja global no está limitada a un solo registro — muestra todas las conversaciones de tu espacio de trabajo.
 
 <Frame caption="Bandeja de Equipo Global en Salesforce">
-  <img src="/images/salesforce-team-inbox-global.png" alt="Bandeja de Equipo Global mostrando todas las conversaciones" />
+  <img src="/images/salesforce-team-inbox-global.png" alt="Bandeja de Equipo Global mostrando todas las conversaciones del equipo" />
 </Frame>
 
 ## Características
 
 ### Ver Conversaciones
 - **Bandeja del registro**: Ve todas las conversaciones de WhatsApp con un contacto, cliente potencial o cuenta de persona específico
-- **Línea de Tiempo**: Historial completo de conversaciones de WhatsApp en la línea de tiempo del registro
 - **Bandeja global**: Ve todas las conversaciones del equipo en un solo lugar
 
 ### Enviar Mensajes

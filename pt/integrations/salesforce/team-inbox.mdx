@@ -1,12 +1,11 @@
 ---
 title: "Caixa de Entrada da Equipe"
-description: "Use a Caixa de Entrada da Equipe e a Linha do Tempo da EazyBe diretamente dentro do Salesforce nos registros de Contato, Lead e Conta de Pessoa, além de uma Caixa de Entrada da Equipe global para toda a sua equipe"
+description: "Use a Caixa de Entrada da Equipe da EazyBe diretamente dentro do Salesforce nos registros de Contato, Lead e Conta de Pessoa, além de uma Caixa de Entrada da Equipe global para toda a sua equipe"
 ---
 
 A Caixa de Entrada da Equipe da EazyBe está integrada diretamente dentro do Salesforce, para que sua equipe possa gerenciar as conversas do WhatsApp sem sair do CRM. Depois de habilitada, você obtém:
 
 - **Caixa de Entrada da Equipe nos registros** — conversas do WhatsApp para um Contato, Lead ou Conta de Pessoa específicos, exibidas diretamente na página do registro
-- **Linha do Tempo** — o histórico completo de conversas do WhatsApp exibido na linha do tempo do registro
 - **Caixa de Entrada da Equipe Global** — todas as conversas da sua equipe em um só lugar
 
 <Note>
@@ -58,7 +57,7 @@ Um **administrador** do Salesforce precisa concluir as etapas a seguir uma vez p
   <Step title="Instale o pacote EazyBe Team Inbox">
     Instale o pacote gerenciado **EazyBe Team Inbox** na sua organização do Salesforce:
 
-    [Instalar o pacote EazyBe Team Inbox](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tdM000000cUpt&isdtp=p1)
+    [Instalar o pacote EazyBe Team Inbox](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tdM000000cdzd&isdtp=p1)
 
     Quando solicitado, escolha **Instalar para Todos os Usuários**.
   </Step>
@@ -70,12 +69,16 @@ Um **administrador** do Salesforce precisa concluir as etapas a seguir uma vez p
     3. Em **Policies**, defina **Permitted Users** como **Admin approved users are pre-authorized**.
     4. Em **Authorized Profiles**, selecione **System Administrator** e clique em **Save**.
 
-    <Frame caption="Autorização de perfis no External Client App Manager">
-      <img src="/images/salesforce-team-inbox-app-manager.png" alt="Policies e perfis autorizados para o aplicativo Eazybe Team Inbox" />
+    <Frame caption="Abrindo o Eazybe Team Inbox no External Client App Manager">
+      <img src="/images/salesforce-team-inbox-app-manager.png" alt="Aplicativo Eazybe Team Inbox listado no External Client App Manager" />
+    </Frame>
+
+    <Frame caption="Autorizando o System Administrator nos App Policies">
+      <img src="/images/salesforce-team-inbox-app-policies.png" alt="App Policies com System Administrator selecionado para o aplicativo Eazybe Team Inbox" />
     </Frame>
   </Step>
   <Step title="Ative as páginas de registro">
-    Em seguida, ative as páginas da EazyBe para que a Caixa de Entrada da Equipe e a Linha do Tempo apareçam nos seus registros. Repita esta etapa para cada objeto:
+    Em seguida, ative as páginas da EazyBe para que a Caixa de Entrada da Equipe apareça nos seus registros. Repita esta etapa para cada objeto:
 
     | Objeto | Página a selecionar |
     | --- | --- |
@@ -90,8 +93,8 @@ Um **administrador** do Salesforce precisa concluir as etapas a seguir uma vez p
     5. Selecione tanto **Desktop** quanto **Phone**.
     6. Clique em **Save**.
 
-    <Frame caption="Ativando a página Eazybe Contact Record Page">
-      <img src="/images/salesforce-team-inbox-activation.png" alt="Modal de ativação no Lightning App Builder" />
+    <Frame caption="Selecionando a página Eazybe Contact Record Page no Lightning App Builder">
+      <img src="/images/salesforce-team-inbox-activation.png" alt="Seletor de páginas no Lightning App Builder com Eazybe Contact Record Page destacada e o botão Activation no canto superior direito" />
     </Frame>
   </Step>
 </Steps>
@@ -102,25 +105,26 @@ As etapas de autorização e ativação acima são temporárias. Uma próxima at
 
 ## Caixa de Entrada da Equipe em Contato, Lead e Conta de Pessoa
 
-Depois que as páginas forem ativadas, abra qualquer registro de **Contato**, **Lead** ou **Conta de Pessoa** no Salesforce. A página do registro mostra a Caixa de Entrada da Equipe e a Linha do Tempo da EazyBe com todas as conversas do WhatsApp daquele registro.
+Depois que as páginas forem ativadas, abra qualquer registro de **Contato**, **Lead** ou **Conta de Pessoa** no Salesforce. A página do registro mostra a Caixa de Entrada da Equipe da EazyBe com todas as conversas do WhatsApp daquele registro.
 
-<Frame caption="Caixa de Entrada da Equipe e Linha do Tempo em um registro de Contato">
-  <img src="/images/salesforce-team-inbox-contact.png" alt="Caixa de Entrada da Equipe e Linha do Tempo na página de um registro de Contato" />
+<Frame caption="Caixa de Entrada da Equipe em um registro de Contato">
+  <img src="/images/salesforce-team-inbox-contact.png" alt="Caixa de Entrada da Equipe na página de um registro de Contato" />
 </Frame>
 
 ## Caixa de Entrada da Equipe Global
 
-Para ver **todas as conversas da sua equipe**, abra a **Caixa de Entrada da Equipe da EazyBe** na navegação do Salesforce. Essa caixa de entrada global não se limita a um único registro — ela mostra todas as conversas do seu espaço de trabalho.
+Para ver **todas as conversas da sua equipe**, abra o aplicativo **Eazybe Team Inbox** no **App Launcher** (o ícone de grade no canto superior esquerdo).
+
+Essa caixa de entrada global não se limita a um único registro — ela mostra todas as conversas do seu espaço de trabalho.
 
 <Frame caption="Caixa de Entrada da Equipe Global no Salesforce">
-  <img src="/images/salesforce-team-inbox-global.png" alt="Caixa de Entrada da Equipe Global mostrando todas as conversas" />
+  <img src="/images/salesforce-team-inbox-global.png" alt="Caixa de Entrada da Equipe Global mostrando todas as conversas da equipe" />
 </Frame>
 
 ## Recursos
 
 ### Ver Conversas
 - **Caixa de entrada do registro**: Veja todas as conversas do WhatsApp com um contato, lead ou conta de pessoa específico
-- **Linha do Tempo**: Histórico completo de conversas do WhatsApp na linha do tempo do registro
 - **Caixa de entrada global**: Veja todas as conversas da equipe em um só lugar
 
 ### Enviar Mensagens
