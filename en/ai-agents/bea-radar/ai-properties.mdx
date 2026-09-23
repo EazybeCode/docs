@@ -64,6 +64,39 @@ Add a property when you want a specific field captured that has not been created
 
 From then on, the AI fills that property in on every relevant chat.
 
+## Writing a Good Property Description
+
+The description is the most important part of a property — it's the instruction the AI follows to decide what to capture. A vague description produces vague values. Brief it like a new team member, not a data dictionary.
+
+A good description:
+
+- **Says what to capture in one sentence.** Don't repeat the property name — *"The type of insurance"* teaches nothing.
+- **Defines your business terms.** The AI doesn't know what *qualified* or *hot* means at your company. Spell out the criteria.
+- **Says who must have said it** — customer or agent. Without this, the AI records prices and dates *your own agent* quoted.
+- **Specifies the format, with one example.** Otherwise you get `12/09/2026`, `next month`, and `12th Sept` in the same column.
+- **Defines every dropdown option** — one short gloss each, e.g. *fee_pending = documents in, payment not*.
+- **Gives a tie-break rule.** If two values could apply, say which wins — *"pick the furthest along"*.
+- **Writes the exclusions** — what looks like a match but isn't: *"not a CRM they're asking whether we support"*.
+- **Says when to leave it blank.** The AI will guess rather than look unhelpful unless you tell it not to.
+- **Does one job.** If the description has an *"and"* in it, it's probably two properties.
+- **Distinguishes it from its neighbours.** If another property could accept the same answer, say how they differ.
+- **Uses real values as examples, not explanations** — *"July", "December", "March"*, not *"a month or a range"*. Only the first three are used.
+
+### Shape to follow
+
+```text
+[What to capture] — [who must have said it].
+[Format + one example.]
+[Each allowed value defined.]
+[What doesn't count.]
+[Which value wins if two apply.]
+Leave blank if [condition].
+```
+
+<Tip>
+  **Worked example:** The month the customer wants to travel, as stated by the customer — not a month our agent suggested. Month name only, e.g. July. If they give a range, use the first month. Leave blank if no month is mentioned.
+</Tip>
+
 ## Configuring from Team Inbox Settings
 
 Properties can also be managed outside an individual chat, from the Team Inbox settings.
