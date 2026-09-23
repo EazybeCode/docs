@@ -1,0 +1,141 @@
+---
+title: "WABA Bağlantı Kesilmesi Uyarılarını Ayarlayın"
+description: "Bir WhatsApp Business numarasının bağlantısı kesildiğinde kimin e-posta alacağını seçin ve numarayı WABA ayarlarından yeniden bağlayın."
+---
+
+Bir WhatsApp Business numarasının Meta bağlantısı kesildiğinde seçtiğiniz kişilere e-posta gönderilmesi için bağlantı kesilmesi uyarılarını ayarlayın. **Settings → WABA** bölümünden alıcıları yönetebilir, numaralarınızı kontrol edebilir ve bağlantısı kesilen bir numarayı yeniden bağlayabilirsiniz.
+
+<Note>
+Yalnızca çalışma alanı yöneticileri uyarıları değiştirebilir veya bir numarayı yeniden bağlayabilir. Müdürler ve çalışanlar sayfayı açabilir, ancak alıcı listesi bulanık görünür ve **Admin only** olarak işaretlenir.
+</Note>
+
+## Bağlantı kesilmesi uyarılarını ayarlayın
+
+<Steps>
+  <Step title="WABA ayarlarını açın">
+    **Settings** bölümüne gidin ve sol menüden **WABA** seçeneğini seçin. **Notifications** altında **Disconnect alerts** kartını göreceksiniz.
+
+    Altındaki **Connected numbers** bölümü, çalışma alanınızdaki WhatsApp Business numaralarının bağlantı durumunu gösterir.
+
+    ![Ayarlarda vurgulanan WABA seçeneği, bağlantı uyarıları ve bağlı numaralar](/images/waba-disconnect-alerts/open-waba-settings.png)
+  </Step>
+
+  <Step title="Bağlantı kesilmesi uyarılarını açın">
+    **Disconnect alerts** kartının sağ üst köşesindeki **Turn on** seçeneğini seçin.
+
+    <Note>
+    Bağlantı kesilmesi uyarılarını ilk kez açtığınızda, kuruluş sahibinizin e-posta adresi varsayılan alıcı olarak otomatik eklenir.
+    </Note>
+
+    Uyarılar kapalıyken kartta *Alerts are off. Turn them on to choose who gets notified.* yazısı görünür.
+
+    ![Bağlantı kesilmesi uyarıları kartında vurgulanan Turn on düğmesi](/images/waba-disconnect-alerts/turn-on-disconnect-alerts.png)
+  </Step>
+
+  <Step title="Bir e-posta alıcısı ekleyin">
+    Başka bir alıcı eklemek için **+ Add email** seçeneğini seçin. Alıcıyı şu yollardan biriyle ekleyebilirsiniz:
+
+    - **From your workspace** altında bir ekip arkadaşınızı seçin. Listede gezinin veya ada ya da e-posta adresine göre filtrelemek için yazın.
+    - Bir e-posta adresi yazıp **Enter** tuşuna basın veya **Add** seçeneğini seçin.
+
+    Uyarı alması gereken her kişi için bu işlemi tekrarlayın.
+
+    <Note>
+    Alıcıların çalışma alanına üye olması gerekmez. `alerts@yourcompany.com` gibi paylaşılan bir e-posta adresi ekleyebilirsiniz.
+    </Note>
+
+    <Note>
+    En fazla **10 alıcı** kaydedebilirsiniz. Sınıra ulaştığınızda **+ Add email** yerine **10 of 10 recipients added** görünür. Başka birini eklemek için bir alıcıyı kaldırın.
+    </Note>
+
+    ![Alıcı eklemek için e-posta alanı ve çalışma alanındaki ekip arkadaşlarının listesi](/images/waba-disconnect-alerts/add-email-recipient.png)
+  </Step>
+
+  <Step title="Alıcılarınızı gözden geçirin">
+    İlk iki alıcı kartta etiket olarak görünür. İkiden fazla alıcı eklediyseniz tam listeyi açmak için **+N more** seçeneğini seçin.
+
+    Tam listede ada veya e-posta adresine göre arama yapabilir ve **×** düğmesiyle bir alıcıyı kaldırabilirsiniz.
+
+    <Note>
+    Değişiklikler hemen kaydedilir. Ayrı bir **Save** düğmesi yoktur.
+    </Note>
+
+    ![Uyarı kartında kayıtlı alıcılar, diğer alıcılar menüsü ve Add email düğmesi](/images/waba-disconnect-alerts/review-recipients.png)
+  </Step>
+</Steps>
+
+## Uyarı e-postasının anlamı
+
+Bir numaranın Meta bağlantısı kesildiğinde listenizdeki tüm alıcılar aynı uyarı e-postasını alır. Alıcı listeniz tek tek numaralara değil, çalışma alanının tamamına uygulanır.
+
+<Warning>
+Bağlantısı kesilen bir numara yeniden bağlanana kadar mesaj gönderemez veya alamaz. Durumunu kontrol etmek ve yeniden bağlamak için **Settings → WABA** bölümünü açın.
+</Warning>
+
+## Bağlantısı kesilen bir numarayı yeniden bağlayın
+
+<Steps>
+  <Step title="Bağlantısı kesilen numarayı bulun">
+    **Settings → WABA** bölümünde **Connected numbers** alanına ilerleyin. Her numarada **Connected** veya **Disconnected** durum etiketi bulunur. Bağlantısı kesilen numaralar önce gösterilir.
+  </Step>
+
+  <Step title="Reconnect seçeneğini seçin">
+    **Disconnected** olarak görünen numaranın yanındaki **Reconnect** seçeneğini seçin. Kanallar sayfasındaki **Connect to API** seçeneğinin kullandığı Meta kayıt penceresi açılır.
+
+    <Note>
+    Bir numarayı yeniden bağlamak için çalışma alanı yöneticisi olmalısınız.
+    </Note>
+  </Step>
+
+  <Step title="Meta bağlantı işlemini tamamlayın">
+    Kanallar sayfasından bağlanırken kullandığınız WhatsApp Business hesabıyla Meta kayıt işlemini tamamlayın.
+
+    Meta bağlantıyı onayladığında liste yenilenir ve numaranın durum etiketi tekrar **Connected** olur.
+  </Step>
+</Steps>
+
+## Alıcıları yönetin ve uyarıları kapatın
+
+Tam listeden bir alıcıyı kaldırmak için **+N more** seçeneğini seçin, alıcıyı bulun ve **×** düğmesini seçin. 10 kişilik bir listeden birini kaldırdığınızda **+ Add email** tekrar kullanılabilir olur.
+
+<Note>
+Uyarılar açıkken en az bir alıcı bulunmalıdır. Son alıcıyı kaldırmaya çalışırsanız *Keep at least one recipient while disconnect alerts are on. Turn the alerts off instead.* mesajını görürsünüz.
+</Note>
+
+Uyarı e-postalarını durdurmak için **Disconnect alerts** kartında **Turn off** seçeneğini seçin. Alıcı listeniz kayıtlı kalır; daha sonra **Turn on** seçeneğini seçtiğinizde listeyi yeniden oluşturmanız gerekmez. Alıcı ekleme, alıcı kaldırma ve uyarıları açıp kapatma işlemleri otomatik kaydedilir.
+
+## Bağlantı kesilmesi uyarılarını kimler kullanabilir
+
+| İşlem | Yönetici | Müdür | Çalışan |
+| --- | --- | --- | --- |
+| WABA ayarlarını açma | Evet | Evet | Evet |
+| Alıcı listesini görüntüleme | Evet | Bulanık ve **Admin only** olarak işaretli | Bulanık ve **Admin only** olarak işaretli |
+| Alıcı ekleme veya kaldırma | Evet | Hayır | Hayır |
+| Uyarıları açma veya kapatma | Evet | Hayır | Hayır |
+| Bir numarayı yeniden bağlama | Evet | Hayır | Hayır |
+
+## Sorun giderme
+
+### Settings bölümünde WABA görünmüyor
+
+Sayfayı yenileyin. Tüm roller WABA ayarlarını açabilir, ancak menü çalışma alanı izinleri yüklendikten sonra görünür.
+
+### Geçersiz e-posta mesajı görüyorsunuz
+
+*Enter a valid email address.* mesajını görürseniz adreste `@` veya alan adının eksik olup olmadığını kontrol edin, adresi düzeltin ve tekrar deneyin.
+
+### Alıcının zaten kayıtlı olduğunu belirten bir mesaj görüyorsunuz
+
+*\<name\> is already on the list.* mesajını görürseniz bu e-posta adresi zaten kayıtlıdır. Alıcı etiketlerini kontrol edin veya tam listeyi görmek için **+N more** seçeneğini seçin.
+
+### Alıcı değişikliği kaydedilmiyor
+
+*Could not save disconnect alert recipients. Please try again.* mesajını görürseniz değişiklik Eazybe'ye ulaşmamıştır. Liste önceki durumuna döner. İnternet bağlantınızı kontrol edin ve değişikliği tekrar deneyin.
+
+### Kimse uyarı almadı
+
+Şunları kontrol edin:
+
+- Kartta **Turn off** görünüyor; bu, uyarıların açık olduğunu gösterir.
+- En az bir alıcı kayıtlı.
+- Alıcılar spam klasörlerini kontrol etti.

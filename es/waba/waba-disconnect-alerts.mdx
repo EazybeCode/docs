@@ -1,0 +1,141 @@
+---
+title: "Configurar Alertas de Desconexión de WABA"
+description: "Elige quién recibe un correo cuando se desconecta un número de WhatsApp Business y vuelve a conectarlo desde la configuración de WABA."
+---
+
+Configura las alertas de desconexión para que las personas que elijas reciban un correo cuando un número de WhatsApp Business pierda su conexión con Meta. Puedes gestionar destinatarios, comprobar tus números y volver a conectar un número desconectado desde **Settings → WABA**.
+
+<Note>
+Solo los administradores del espacio de trabajo pueden modificar las alertas o volver a conectar un número. Los responsables y empleados pueden abrir la página, pero la lista de destinatarios aparece difuminada y marcada como **Admin only**.
+</Note>
+
+## Configura las alertas de desconexión
+
+<Steps>
+  <Step title="Abre la configuración de WABA">
+    Ve a **Settings** y selecciona **WABA** en el menú izquierdo. En **Notifications**, verás la tarjeta **Disconnect alerts**.
+
+    Debajo, la sección **Connected numbers** muestra el estado de conexión de los números de WhatsApp Business de tu espacio de trabajo.
+
+    ![WABA resaltado en Configuración junto a las alertas y los números conectados](/images/waba-disconnect-alerts/open-waba-settings.png)
+  </Step>
+
+  <Step title="Activa las alertas de desconexión">
+    Selecciona **Turn on** en la esquina superior derecha de la tarjeta **Disconnect alerts**.
+
+    <Note>
+    Al activar las alertas de desconexión por primera vez, el correo del propietario de tu organización se añade automáticamente como destinatario predeterminado.
+    </Note>
+
+    Mientras las alertas están desactivadas, la tarjeta muestra *Alerts are off. Turn them on to choose who gets notified.*
+
+    ![Botón Turn on resaltado en la tarjeta de alertas de desconexión](/images/waba-disconnect-alerts/turn-on-disconnect-alerts.png)
+  </Step>
+
+  <Step title="Añade un destinatario de correo">
+    Selecciona **+ Add email** para añadir otro destinatario. Puedes hacerlo de estas formas:
+
+    - Selecciona un compañero en **From your workspace**. Desplázate por la lista o escribe para filtrar por nombre o correo.
+    - Escribe una dirección de correo y pulsa **Enter** o selecciona **Add**.
+
+    Repite esta acción para cada persona que deba recibir una alerta.
+
+    <Note>
+    Los destinatarios no tienen que ser miembros del espacio de trabajo. Puedes añadir un buzón compartido, como `alerts@yourcompany.com`.
+    </Note>
+
+    <Note>
+    Puedes guardar hasta **10 destinatarios**. Al alcanzar el límite, **+ Add email** se sustituye por **10 of 10 recipients added**. Elimina un destinatario para añadir otro.
+    </Note>
+
+    ![Campo de correo y lista de compañeros del espacio de trabajo para añadir destinatarios](/images/waba-disconnect-alerts/add-email-recipient.png)
+  </Step>
+
+  <Step title="Revisa tus destinatarios">
+    Los dos primeros destinatarios aparecen como etiquetas en la tarjeta. Si has añadido más de dos, selecciona **+N more** para abrir la lista completa.
+
+    En la lista completa, busca por nombre o correo y usa el botón **×** para eliminar un destinatario.
+
+    <Note>
+    Los cambios se guardan inmediatamente. No hay un botón **Save** independiente.
+    </Note>
+
+    ![Destinatarios guardados, menú para ver más y botón Add email en la tarjeta de alertas](/images/waba-disconnect-alerts/review-recipients.png)
+  </Step>
+</Steps>
+
+## Qué significa el correo de alerta
+
+Cuando un número pierde su conexión con Meta, todos los destinatarios de tu lista reciben el mismo correo de alerta. La lista se aplica a todo el espacio de trabajo, no a números individuales.
+
+<Warning>
+Un número desconectado no puede enviar ni recibir mensajes hasta que se vuelva a conectar. Abre **Settings → WABA** para comprobar su estado y volver a conectarlo.
+</Warning>
+
+## Vuelve a conectar un número desconectado
+
+<Steps>
+  <Step title="Busca el número desconectado">
+    En **Settings → WABA**, desplázate hasta **Connected numbers**. Cada número muestra el estado **Connected** o **Disconnected**. Los números desconectados aparecen primero.
+  </Step>
+
+  <Step title="Selecciona Reconnect">
+    Selecciona **Reconnect** junto al número marcado como **Disconnected**. Se abrirá la misma ventana de registro de Meta que utiliza **Connect to API** en la página de canales.
+
+    <Note>
+    Debes ser administrador del espacio de trabajo para volver a conectar un número.
+    </Note>
+  </Step>
+
+  <Step title="Completa el proceso de conexión de Meta">
+    Sigue el proceso de registro de Meta con la misma cuenta de WhatsApp Business que utilizas al conectar desde la página de canales.
+
+    Cuando Meta confirme la conexión, la lista se actualizará y el número volverá a mostrar **Connected**.
+  </Step>
+</Steps>
+
+## Gestiona destinatarios y desactiva las alertas
+
+Para eliminar un destinatario de la lista completa, selecciona **+N more**, busca al destinatario y selecciona **×**. Si eliminas a alguien de una lista de 10, **+ Add email** vuelve a estar disponible.
+
+<Note>
+Mientras las alertas estén activadas, debes mantener al menos un destinatario. Si intentas eliminar el último, verás *Keep at least one recipient while disconnect alerts are on. Turn the alerts off instead.*
+</Note>
+
+Para dejar de recibir correos de alerta, selecciona **Turn off** en la tarjeta **Disconnect alerts**. La lista de destinatarios se conserva, por lo que puedes seleccionar **Turn on** más adelante sin crearla de nuevo. Añadir o eliminar destinatarios y activar o desactivar las alertas son cambios que se guardan automáticamente.
+
+## Quién puede usar las alertas de desconexión
+
+| Acción | Administrador | Responsable | Empleado |
+| --- | --- | --- | --- |
+| Abrir la configuración de WABA | Sí | Sí | Sí |
+| Ver la lista de destinatarios | Sí | Difuminada y marcada **Admin only** | Difuminada y marcada **Admin only** |
+| Añadir o eliminar destinatarios | Sí | No | No |
+| Activar o desactivar las alertas | Sí | No | No |
+| Volver a conectar un número | Sí | No | No |
+
+## Solución de problemas
+
+### WABA no aparece en Settings
+
+Recarga la página. Todos los roles pueden abrir la configuración de WABA, pero el menú aparece cuando terminan de cargarse los permisos del espacio de trabajo.
+
+### Aparece un mensaje de correo no válido
+
+Si ves *Enter a valid email address.*, comprueba si falta `@` o el dominio, corrige la dirección e inténtalo de nuevo.
+
+### Aparece un mensaje de destinatario duplicado
+
+Si ves *\<name\> is already on the list.*, esa dirección ya está guardada. Revisa las etiquetas de destinatarios o selecciona **+N more** para ver la lista completa.
+
+### El cambio de destinatarios no se guarda
+
+Si ves *Could not save disconnect alert recipients. Please try again.*, el cambio no llegó a Eazybe. La lista vuelve a su estado anterior. Comprueba tu conexión a internet y vuelve a intentarlo.
+
+### Nadie recibió una alerta
+
+Comprueba lo siguiente:
+
+- La tarjeta muestra **Turn off**, lo que indica que las alertas están activadas.
+- Hay al menos un destinatario guardado.
+- Los destinatarios han revisado sus carpetas de correo no deseado.

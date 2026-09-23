@@ -960,6 +960,7 @@
                   "es/waba/overview",
                   "es/waba/getting-started",
                   "es/waba/connect-waba",
+                  "es/waba/waba-disconnect-alerts",
                   "es/waba/facebook-business-verification",
                   {
                     "group": "Plantillas de Mensajes",
@@ -1704,6 +1705,7 @@
                   "pt/waba/overview",
                   "pt/waba/getting-started",
                   "pt/waba/connect-waba",
+                  "pt/waba/waba-disconnect-alerts",
                   "pt/waba/facebook-business-verification",
                   {
                     "group": "Modelos de Mensagens",
@@ -2453,6 +2455,7 @@
                   "tr/waba/overview",
                   "tr/waba/getting-started",
                   "tr/waba/connect-waba",
+                  "tr/waba/waba-disconnect-alerts",
                   "tr/waba/facebook-business-verification",
                   {
                     "group": "Mesaj Şablonları",
