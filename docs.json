@@ -255,7 +255,8 @@
                 "icon": "gear",
                 "pages": [
                   "settings/team-management",
-                  "settings/roles-permissions"
+                  "settings/roles-permissions",
+                  "settings/sla"
                 ]
               },
               {
@@ -665,7 +666,6 @@
                   "en/ai-agents/knowledge-base-agent/ai-agent-setup"
                 ]
               },
-          
               {
                 "group": "BEA Radar",
                 "icon": "radar",

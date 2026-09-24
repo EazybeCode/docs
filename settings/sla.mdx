@@ -1,0 +1,92 @@
+---
+title: "SLAs (Response-Time Alerts)"
+description: "Turn your AI chat labels into a prioritized alert feed, so the right person is notified when an important chat waits too long."
+---
+
+SLAs turn your AI chat labels into a prioritized alert feed, so the right person is notified when an important chat is waiting too long. Instead of everyone watching every chat, Eazybe watches for you and raises an alert only when a chat crosses the limit you set.
+
+## Before you start
+
+- You need **admin access**.
+- Your chats should be getting **AI labels** (*Hot Lead*, *Escalation*, *Followup Pending*, *Unreplied*) — SLAs are built on these labels.
+
+## Turn SLAs on
+
+<Steps>
+  <Step title="Open Settings → SLA">
+    Go to **Settings → SLA**.
+  </Step>
+  <Step title="Toggle the master switch on">
+    Turn on the master switch at the top.
+
+    <Warning>With the master switch off, no alerts are sent — even if rules exist.</Warning>
+  </Step>
+</Steps>
+
+You start with two ready-made rules you can keep, edit, or delete:
+
+- **Hot Lead + Unreplied** → alert after **10 minutes**, severity **Critical**
+- **Escalation** → alert after **15 minutes**, severity **High**
+
+## How a rule works
+
+Each rule says: *"When a chat has these labels and stays that way longer than X, raise an alert at this severity and notify these people."*
+
+For each rule you set:
+
+| Setting | What it does |
+|:--------|:-------------|
+| **Labels** | Which chats the rule watches. Pick up to 2 labels — a chat must have **all** of them to match. |
+| **Time limit** | How long to wait before alerting (minutes, hours, or days). |
+| **Severity** | How urgent — Critical, High, Medium, Low, or Suppress. |
+| **Notify** | Who gets pinged — Manager, Team Lead, or Rep. |
+| **On/Off** | Turn a rule off without deleting it. |
+
+<Note>
+  **Good to know:**
+  - **Hot Lead** and **Escalation** can't be combined in one rule (a chat can't be both).
+  - The timer measures the most relevant wait — how long since the escalation, since the follow-up became due, or since the customer's last message.
+  - Each chat raises only **one** alert — its highest-severity matching rule wins, so you never get duplicate pings for the same chat.
+</Note>
+
+## Severity — and using "Suppress"
+
+Severity controls how loud an alert is:
+
+- **Critical / High** — surfaced right away.
+- **Medium / Low** — grouped and sent on your chosen schedule (see [Notification schedule](#notification-schedule)), so they don't spam anyone.
+- **Suppress** — the chat is matched but deliberately silenced. Use this to hide known noise (for example, a label combo you don't want alerts for). Suppressed chats show up as *"N hidden as noise"* rather than as alerts.
+
+## Business hours
+
+SLAs should only count time when your team is actually working.
+
+- Set your **start/end time**, **time zone**, and **working days**.
+- Or tick **"Same as working hours"** to reuse your organisation's hours.
+
+Time outside business hours doesn't count toward a chat's limit, so a message that arrives after close isn't flagged as "late" overnight.
+
+## Notification schedule
+
+- Choose how often Medium/Low alerts are **batched**: every **2, 3, or 4 hours**, or once at **end of day**.
+- Add the **phone number(s)** that should receive the SLA report.
+
+## Save
+
+Click **Save**. Changes take effect for new alerts going forward. The page shows when you have unsaved changes.
+
+## Example
+
+<Info>
+  You want managers pinged fast when a hot lead goes cold, but only a daily summary for older unanswered chats.
+
+  - **Rule 1:** Hot Lead + Unreplied · 10 min · Critical · notify **Manager**
+  - **Rule 2:** Unreplied · 4 hours · Low · notify **Rep**
+  - **Frequency:** End of day · **Business hours:** 9:30–20:00, Mon–Sat
+</Info>
+
+## Tips
+
+- Start with **fewer, stricter rules** and loosen them once you see the volume.
+- Use **Suppress** instead of deleting a rule when you want to stop alerts but keep the definition.
+- **If nobody's getting alerts:** check the master switch, that the rule is **On**, and that it's within **business hours**.
