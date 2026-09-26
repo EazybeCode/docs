@@ -1,45 +1,117 @@
 ---
 title: "View Broadcast Analytics"
-description: "Review campaign details, recipient delivery activity, and message failure reasons."
+description: "Review a campaign's message, delivery statuses, failure reasons, opted-out contacts, and recipient exports."
 ---
 
+{/*
 <video controls className="w-full aspect-video rounded-xl" poster="/images/view-analytics/view-analytics-poster.jpg" src="/images/view-analytics/view-analytics-walkthrough-narrated.mp4"></video>
+*/}
 
-Open a campaign's analytics to see its message, source, delivery totals, and the latest status for each recipient. You can filter, search, and export the delivery activity.
+Open a campaign to see its message preview and what happened to each recipient's message. Use **Delivery activity** to review statuses, find failure reasons, search the recipient list, and download an Excel report.
 
 <Warning>
-  The campaign names, phone numbers, dates, and delivery totals in these screenshots are examples. Your analytics page shows data from the selected campaign.
+  These screenshots show a local workspace used for this guide. Full phone numbers are covered with solid bars. Your campaign names, dates, and totals will differ.
 </Warning>
 
 <Steps>
-  <Step title="Open the campaign analytics">
-    On **Broadcasts**, find the campaign and select **View Analytics**. Eazybe opens the detailed report for that campaign.
+  <Step title="Open the campaign">
+    On **Broadcasts**, select **Broadcast** and choose the sender number. Find the campaign and select its name with the **↗** icon. Wait for the campaign details and message preview to finish loading.
 
-    ![Broadcasts page with View Analytics buttons highlighted](/images/broadcasts/view-broadcast-analytics.jpeg)
-  </Step>
-  <Step title="Review the campaign summary">
-    At the top of the report, confirm the broadcast name and status, **WABA number**, **Sent on** date, **Total contact**, and **Broadcast source**. The message card shows the template preview.
-
-    ![Broadcast analytics page with campaign summary, message preview, and Delivery activity](/images/broadcasts/broadcast-campaign-summary.png)
+    ![Broadcasts page with clickable campaign names under Campaign performance](/images/broadcast-custom-filter/broadcast-overview.png)
 
     <Note>
-      Some source-specific details appear only when they apply. For example, a HubSpot workflow broadcast can show the recipient object and a link to the workflow.
+      **Template** and **Number** rows are summaries. Switch to **Broadcast** to open an individual campaign.
     </Note>
   </Step>
-  <Step title="Filter the delivery activity">
-    In **Delivery activity**, select **Total**, **Sent**, **Delivered**, **Read**, or **Failed**. Each row shows the contact, **Message time**, and latest **Status**. Failed rows include a failure reason when one is available.
+  <Step title="Review the summary and message">
+    Check the campaign name and status at the top. The summary helps you confirm the sender, campaign source, contact total, and recorded credit usage.
 
-    ![Delivery activity with Total, Sent, Delivered, Read, and Failed tabs and recipient statuses](/images/broadcasts/broadcast-delivery-activity.jpeg)
+    ![Campaign summary and message preview, with search and export controls highlighted and phone numbers redacted](/images/broadcast-custom-filter/campaign-details.png)
+
+    | Field | What it shows |
+    | --- | --- |
+    | **WABA NUMBER** | Sender name and WhatsApp Business phone number. |
+    | **SENT ON** | The campaign date shown by the report. The report uses the latest available activity date, falling back to the original sent date. |
+    | **TOTAL CONTACT** | The combined **Sent**, **Delivered**, **Read**, and **Failed** counts. |
+    | **BROADCAST SOURCE** | Where the campaign originated, such as Workspace, Eazybe extension, HubSpot, Zoho, or Salesforce. The exact label can identify a segment, contact, or workflow. |
+    | **HUBSPOT RECIPIENT OBJECT** | Shown for HubSpot campaigns. Identifies the record type, such as Contacts, Deals, Leads, or CRM records. |
+    | **TOTAL CREDIT USED** | Recorded campaign credit usage, shown with the workspace currency symbol. |
+
+    The **Message** panel shows the template name, message body, and any available header, footer, media, and button labels. **Preview** identifies it as a template preview. It can show placeholders such as `{{firstname}}` instead of a particular recipient's details.
+
+    <Note>
+      Button labels inside the message card are part of the preview. When media is available, an image is displayed, a video has playback controls, or a document can show **Open document**. If the panel says **Message content is not available for this broadcast.**, you can still review its delivery activity.
+    </Note>
+
+    HubSpot campaigns can also show **Workflow name** in the header. This version does not open a workflow from that control; use HubSpot itself to inspect the workflow.
   </Step>
-  <Step title="Search or export the results">
-    Use **Search contacts** to find a phone number. Select **Export** to download the delivery group that is currently open, such as **Export Total** or the failed group.
+  <Step title="Choose the delivery group to review">
+    In **Delivery activity**, select **Total**, **Sent**, **Delivered**, **Read**, **Failed**, or **Opt Out**. The selected tab is underlined, and the list changes to that group.
 
-    ![Broadcast analytics page with campaign summary, Search contacts, and Export Total highlighted](/images/broadcasts/broadcast-search-and-export.jpeg)
+    ![Delivery activity showing all six delivery groups and a recipient row](/images/broadcast-custom-filter/campaign-details.png)
+
+    | Tab | What you see |
+    | --- | --- |
+    | **Total** | Recipients represented by Sent, Delivered, Read, and Failed. |
+    | **Sent** | Messages with a reported status of Sent, before a Delivered or Read update. |
+    | **Delivered** | Messages with a reported status of Delivered, before a Read update. |
+    | **Read** | Messages with a reported status of Read. |
+    | **Failed** | Messages that failed, with a failure reason when available. |
+    | **Opt Out** | Contacts recorded as opted out for this campaign. |
+
+    Each row shows **CONTACT**, **MESSAGE TIME**, and **STATUS**. The message time includes a time and date when available. For HubSpot campaigns, the line under **Delivery activity** identifies the recipient type being reported.
+
+    <Note>
+      A contact can appear in both **Failed** and **Opt Out**, but is counted once in **Total**. Do not add the Opt Out count to Total. The information icon beside **Total** explains this overlap.
+    </Note>
+  </Step>
+  <Step title="Read the failure reason">
+    Select **Failed** to show the **FAILURE REASON** column. Read the reason beside each recipient to understand why that message failed. Hover over a shortened reason to read its full text.
+
+    ![Failed selected and the failure reason highlighted in violet](/images/broadcast-custom-filter/failure-reasons.png)
+
+    If the service did not provide a reason, the row says **No failure reason provided**. Use **Export Failed** when you need the listed recipients and their reasons in a file.
+
+    <Note>
+      The reason in this screenshot applies to that example message. Other failed messages can have different causes. Reviewing or exporting this list does not retry a message.
+    </Note>
+  </Step>
+  <Step title="Check opted-out contacts">
+    Select **Opt Out**. When contacts are present, their rows can show the opt-out reason, the source of the preference update, its date and time, and an **Opt Out** status.
+
+    ![Opt Out selected with zero contacts and Export Opt Out disabled](/images/broadcast-custom-filter/opt-out.png)
+
+    <Warning>
+      Opt-out rows show **No wallet deduction** for the suppressed message. This describes that message; it does not mean the entire campaign had no cost. Check **TOTAL CREDIT USED** for the campaign's recorded credit usage.
+    </Warning>
+
+    This screenshot shows **Opt Out 0**, so **No contacts found** and a disabled **Export Opt Out** button are expected. This page reports preferences; it does not change a contact's opt-out choice.
+  </Step>
+  <Step title="Search and export the selected group">
+    Enter a phone number or part of it in **Search contacts**. Search also matches available delivery-status text, CRM object types, and failure-reason text. It searches within the delivery tab you have selected.
+
+    ![Search contacts and Export Total highlighted above the recipient list](/images/broadcast-custom-filter/campaign-details.png)
+
+    Select **Export Total**, **Export Failed**, **Export Opt Out**, or the export button for your current tab. The download is an Excel **.xlsx** file containing all matching rows from that tab, including results beyond the visible page.
+
+    The file includes **Recipient Phone Number**, **Delivery Status**, **Message Timestamp**, **Failure Reason**, and **CRM Object**. It does not export the message preview or every piece of opt-out metadata shown on screen.
 
     <Tip>
-      Open **Failed** and export that group when you need to correct contact data or share failure details with your team.
+      Your search stays in place when you switch tabs and also narrows the export. Clear **Search contacts** before exporting the whole group. The tab's count is the group total; the footer shows how many contacts match your search.
     </Tip>
   </Step>
 </Steps>
 
-Choose 10, 25, or 50 rows per page to move through the recipients. Select **Back to broadcasts** when you are finished.
+## Move Through the Recipient List
+
+Choose **10**, **25**, or **50** under **Rows per page**, then use the left and right arrows. Changing the tab, search text, or page size returns you to page 1. The page arrows are disabled when there is no previous or next page.
+
+Select **Back to broadcasts** above the campaign when you are finished. Recheck the view and filters when you return; your column choices remain remembered in the browser.
+
+## Why Are No Contacts Shown?
+
+Wait for **Loading campaign details...** to finish. If **No contacts found** remains, clear **Search contacts** or select another tab. **Export** is disabled whenever the selected group and search have no rows to download.
+
+Summary counts can come from the campaign summary while the list shows the recipient details available to the report, so a count does not always guarantee that every matching detail row has loaded. If you expected contacts and none appear, return to **Broadcasts**, select **Refresh**, and reopen the campaign.
+
+For campaign, template, or number totals instead of recipient records, use [Customize and Export Reports](/en/broadcasts/customize-and-export-reports).

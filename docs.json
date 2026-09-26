@@ -119,6 +119,9 @@
                     "group": "Analytics",
                     "pages": [
                       "en/broadcasts/broadcast-home",
+                      "en/broadcasts/filter-broadcasts-and-templates",
+                      "en/broadcasts/compare-numbers-by-date",
+                      "en/broadcasts/customize-and-export-reports",
                       "en/broadcasts/view-analytics"
                     ]
                   },

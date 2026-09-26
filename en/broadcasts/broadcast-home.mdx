@@ -1,67 +1,78 @@
 ---
 title: "Analytics Overview"
-description: "Find campaigns, apply filters, understand delivery totals, and open campaign analytics."
+description: "Choose a broadcast, template, or number view to review campaign performance and build your report."
 ---
 
-<video controls className="w-full aspect-video rounded-xl" poster="/images/broadcast-home/broadcast-home-poster.jpg" src="/images/broadcast-home/broadcast-home-walkthrough-narrated.mp4"></video>
+Use **Broadcasts** to review campaign performance, compare templates or sender numbers, and export the results you need. The **Broadcast**, **Template**, and **Number** controls determine how the table groups your results.
 
-The Broadcasts page lists campaigns from the current workspace and their latest delivery totals. Use it to find a campaign, check its status, or open recipient-level analytics.
-
-<Frame caption="Broadcasts page with search, filters, delivery totals, and campaign analytics">
-  <img
-    src="/images/broadcasts/broadcast-home-overview.jpeg"
-    alt="Broadcasts page with Search broadcasts, number, source, and status filters, Refresh, campaign rows, and View Analytics"
-  />
-</Frame>
+![Broadcasts page with the grouping controls and sender selector highlighted in violet](/images/broadcast-custom-filter/broadcast-overview.png)
 
 <Warning>
-  The campaigns, dates, phone numbers, and delivery totals in the screenshot are examples. Your workspace shows its own campaign data.
+  These screenshots were captured from a local workspace for this guide. The campaign names, dates, and totals belong to that workspace; your report will show your own data.
 </Warning>
 
-## Find a Broadcast
+## Before You Start
 
-<Steps>
-  <Step title="Set the campaign filters">
-    Use **Search broadcasts** to find a campaign by name. Select a WhatsApp Business number, **All sources**, or **All statuses** to narrow the list.
+Open **Broadcasts** in your workspace. You need a WhatsApp Business number available in the workspace to review its campaigns. If you see **Connect to WABA**, [connect a WhatsApp Business number](/en/waba/connect-waba) first.
 
-    ![Broadcasts page with Search broadcasts, WhatsApp number, All sources, All statuses, and Refresh](/images/broadcasts/broadcast-home-overview.png)
+Filters, grouping, sorting, and exports help you review existing activity. They do not send a new message or change a contact's preferences. To start a campaign, select **New broadcast** and follow [Create a Broadcast](/en/broadcasts/create-broadcast).
 
-    <Tip>
-      Select **Refresh** when a recent campaign is still processing or its delivery totals have changed.
-    </Tip>
-  </Step>
-  <Step title="Open the campaign analytics">
-    Find the campaign row and select **View Analytics**. Eazybe opens the campaign summary and its **Delivery activity** table.
+## Choose Your View
 
-    ![Broadcasts page with View Analytics buttons highlighted](/images/broadcasts/view-broadcast-analytics.jpeg)
-  </Step>
-</Steps>
+| View | What each row represents | Available filters |
+| --- | --- | --- |
+| **Broadcast** | An individual campaign; select its name to open its analytics | Sender number, templates, template category, and campaign **Status** |
+| **Template** | A template with its broadcast count, message totals, and cost | Sender number and templates, including selection by category |
+| **Number** | A sender number with its broadcast count, message totals, and cost | One or more numbers and a date range |
 
-## Understand the Campaign Row
+## Understand the Columns
 
-| Column | What it shows |
+| Column | What it means |
 | --- | --- |
-| **Broadcast** | Campaign name, source, and template |
-| **Total** | All recipients currently represented by the delivery statuses |
-| **Sent** | Messages accepted for sending but not yet delivered |
-| **Delivered** | Messages delivered but not yet marked as read |
-| **Read** | Messages marked as read by recipients |
-| **Failed** | Messages that could not be delivered |
-| **Date** | Date the campaign was sent |
-| **Status** | The campaign's current state, such as **Completed** or **Failed** |
-| **View Analytics** | Opens recipient-level campaign details |
+| **Broadcast** | Campaign name. Its template and category appear underneath; select the name with **↗** to open the campaign. |
+| **Template** | Template name, with its category underneath. This view combines activity for that template. |
+| **Number** | Sender name, with the phone number underneath. This view combines activity for that sender. |
+| **Broadcasts** | Number of campaigns included in a template or number summary. |
+| **Total** | Total message/recipient records reported for the row. |
+| **Sent** | Messages whose reported delivery status is Sent. |
+| **Delivered** | Messages whose reported delivery status is Delivered. |
+| **Read** | Messages whose reported delivery status is Read. |
+| **Failed** | Messages reported as failed. Open the campaign to review available reasons. |
+| **Cost** | Recorded cost for the row, shown using the workspace currency setting. |
+| **Date** | Latest available campaign activity date, or the sent date when a later activity date is unavailable. **--** means no valid date is available. |
+| **Status** | Campaign state, such as **Completed**, **In-Progress**, or **Failed**. |
 
-## Understand the Broadcast Source
+**Date** and **Status** are available in **Broadcast** view. **Broadcasts** is available in **Template** and **Number** views. Use **Columns** to show a field that is hidden.
 
-The source below the campaign name tells you where the broadcast originated. Sources can include:
+<Note>
+  A campaign's status and its recipients' delivery statuses answer different questions. For example, a **Completed** campaign can still have failed recipients. Use **Failed** inside that campaign for the reasons. Summary totals can include the same contact across different campaigns; they are not a count of unique people across your workspace.
+</Note>
 
-- **Workspace**
-- **HubSpot segment**
-- **HubSpot workflow**
-- **HubSpot contact**
-- **Zoho**
-- **Salesforce**
+<Note>
+  Date-range controls appear only in **Number** view. Although **Status** also remains visible in **Template** view, use **Broadcast** view to filter individual campaigns by status.
+</Note>
 
-## Move Through Older Campaigns
+## Build Your Report
 
-Choose 25, 50, or 100 rows per page, then use the page controls to move through the campaign history.
+- [Filter Broadcasts and Templates](/en/broadcasts/filter-broadcasts-and-templates): choose a sender, select templates or a category, and narrow campaigns by status.
+- [Compare Numbers by Date](/en/broadcasts/compare-numbers-by-date): choose sender numbers and use a preset or custom date range.
+- [Customize and Export Reports](/en/broadcasts/customize-and-export-reports): choose columns, sort rows, and download a CSV.
+
+## Refresh or Start Over
+
+| Control | What it does |
+| --- | --- |
+| **Refresh** | Requests updated results using your current selections. Wait for loading to finish before reading or exporting the totals. |
+| **Reset filters** in **Broadcast** or **Template** | Clears template, category, and status restrictions, keeps the current sender, and refreshes the report. |
+| **Reset filters** in **Number** | Selects all listed numbers, clears the date range and any retained template/status restrictions, and refreshes the report. |
+| **Remove date filter** | Clears only the date restriction and keeps the chosen numbers. |
+
+Column choices stay as you set them when you reset filters. Switching between **Broadcast**, **Template**, and **Number** clears the selected sort order. Your number/date choices and sender/template choices are separate; a number date range does not filter the campaign or template view.
+
+## Open an Individual Campaign
+
+In **Broadcast** view, select the campaign name with the **↗** icon to open its detailed analytics. Use [View Broadcast Analytics](/en/broadcasts/view-analytics) for the recipient-level report.
+
+<Tip>
+  Select **Refresh** to request the latest data. If a loading error says your last successful data is still shown, the visible totals may be out of date; use **Retry** in the error message or **Refresh** once the connection is available.
+</Tip>
