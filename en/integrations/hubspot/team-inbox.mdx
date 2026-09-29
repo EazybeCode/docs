@@ -1,0 +1,112 @@
+---
+title: "Team inbox"
+description: "Manage WhatsApp conversations and message customers directly from HubSpot with your existing Eazybe Team Inbox access."
+---
+
+Eazybe Team Inbox brings your WhatsApp conversations into HubSpot. You can work with a contact's chat from their CRM record or use the overall Team Inbox to manage the conversations available to you in one place.
+
+## What You Can Do
+
+- **Message customers from HubSpot:** With a connected Coexistence (CoEx) or WhatsApp Business API number, you can send and receive WhatsApp messages directly inside the CRM.
+- **Chat contact by contact:** Open a contact's conversation from their contact record, or from a deal or ticket associated with that contact.
+- **Work across conversations:** Open the overall Team Inbox from HubSpot's left navigation to find and manage the conversations you have access to.
+- **Keep user-specific access:** Each user has the same Team Inbox access as at [app.eazybe.com](https://app.eazybe.com). Your permissions determine which conversations you can see and manage in HubSpot.
+
+| Where you open Team Inbox | What you see |
+| --- | --- |
+| Contact record | The contact's WhatsApp conversation |
+| Deal record | The conversation for a contact associated with the deal |
+| Ticket record | The conversation for a contact associated with the ticket |
+| **Eazybe Team Inbox** in HubSpot's left navigation | The overall inbox, covering the conversations available to you |
+
+<Note>
+Your Team Inbox access is the same as at [app.eazybe.com](https://app.eazybe.com). Opening it in HubSpot does not expand which team conversations you can see or manage.
+</Note>
+
+## Before You Open a Contact's Inbox
+
+<Warning>
+The contact's WhatsApp number must include its international country calling code, for example **+1 202 555 0148**. If the number is saved without the international code, Team Inbox is inaccessible for that contact. Update the contact's number to include the correct country code before opening the inbox. This also applies when you open the contact's conversation from an associated deal or ticket.
+</Warning>
+
+## Open a Conversation from a Record
+
+Complete [Set Up Team Inbox in HubSpot](/en/integrations/hubspot/team-inbox-setup) first if the record does not have an inbox card.
+
+<Steps>
+  <Step title="Open the Record's Team Inbox Card">
+    Open the HubSpot record and find the card in its right sidebar: **Eazybe Team Inbox** for a contact, **Eazybe Deal Team Inbox** for a deal, or **Eazybe Ticket Team Inbox** for a ticket.
+
+    On a contact, click **Open Contact Conversation**. The conversation opens in an **Eazybe Team Inbox** window within HubSpot. For a deal or ticket, use the conversation action in its card to open the associated contact's conversation.
+
+    <Note>
+    A deal or ticket needs the relevant contact association. If you cannot find the expected conversation, check the associated contact and your Team Inbox access.
+    </Note>
+
+    ![Open Contact Conversation button highlighted in the contact's Eazybe Team Inbox card](/images/hubspot-team-inbox/contact-card.png)
+  </Step>
+  <Step title="Review the Conversation">
+    Read the message history in the conversation window. The **View:** selector shows the current conversation view; use it to choose from the views available to you. The **Assign:** control shows the conversation's assignee.
+
+    Close the window with the **X** in the top-right corner to return to the record.
+
+    <Warning>
+    If the conversation shows **Expired** and **The 24h window has expired — only WABA templates can be delivered**, use **Send template** to continue through the template flow. The example below shows this state; message availability depends on the selected conversation.
+    </Warning>
+
+    <Note>
+    This screenshot uses a fictional customer, business, phone number, and messages to illustrate the interface.
+    </Note>
+
+    ![Fictional customer conversation with View and Assign controls, close button, and expired messaging-window notice](/images/hubspot-team-inbox/contact-conversation.png)
+  </Step>
+</Steps>
+
+## Open the Overall Team Inbox
+
+<Warning>
+The overall Team Inbox works only while the Eazybe extension is active in another browser tab. Keep WhatsApp Web open with Eazybe running while you use the overall inbox in HubSpot. Having the extension installed alone is not enough.
+</Warning>
+
+<Steps>
+  <Step title="Open Eazybe Team Inbox from HubSpot Navigation">
+    Click **Eazybe Team Inbox** in HubSpot's left navigation. The **Team Inbox** page opens inside HubSpot, with inbox lists on the left, conversations in the middle, and a conversation area on the right.
+
+    This inbox is not limited to the record you were viewing. It still follows your existing Eazybe access.
+
+    <Note>
+    The inbox screenshot uses fictional customer and assignee details with an example message preview.
+    </Note>
+
+    ![Eazybe Team Inbox entry highlighted in HubSpot's left navigation with fictional conversation details](/images/hubspot-team-inbox/overall-inbox.png)
+  </Step>
+  <Step title="Find and Select a Conversation">
+    Choose **All conversations**, or narrow the list with **Favorites**, **Assigned**, **Unassigned**, or **Assign to me**. Use **Search conversations**, **Channels**, **Assignee**, and **All filters** above the conversation list to find the chat you need.
+
+    Click a conversation in the list to open it on the right. Until you select one, the panel says **Select a conversation**. The screenshot shows the **Favorites** list selected.
+
+    ![Inbox lists, search, channel and assignee filters, and a conversation row highlighted](/images/hubspot-team-inbox/overall-inbox.png)
+  </Step>
+</Steps>
+
+<Tip>
+For the shared inbox features, see [Manage Conversations](/en/team-inbox-hd/manage-conversations-en) and [Messages, Templates, and Quick Replies](/en/team-inbox-hd/messages-templates-quick-replies-en).
+</Tip>
+
+## Troubleshooting
+
+### Why Is Team Inbox Inaccessible for a Contact?
+
+Check the contact's WhatsApp number. It must include the international country calling code. Add the correct code if it is missing, then reopen the conversation. For a deal or ticket, check the number on the associated contact.
+
+### Why Can I Not Open the Overall Inbox?
+
+Check that WhatsApp Web is open in another tab and that the Eazybe extension is active there. Return to HubSpot and reload the page, then select **Eazybe Team Inbox** again.
+
+### Why Are Some Conversations Missing?
+
+Check which conversations you can access at **app.eazybe.com**. HubSpot uses the same Team Inbox access. Also check the selected inbox list, search text, and filters. On a deal or ticket, confirm that the relevant contact is associated with the record.
+
+### Why Is the Team Inbox Card Missing from a Record?
+
+Enable the appropriate contact, deal, or ticket card under **WhatsApp Integration** → **Settings** → **App cards** → **Manage locations**. Select the card under **Record Page** → **Default view** → **RIGHT SIDEBAR** and save it. See the [setup guide](/en/integrations/hubspot/team-inbox-setup) for screenshots.

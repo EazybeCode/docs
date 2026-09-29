@@ -1,0 +1,112 @@
+---
+title: "Bandeja de Equipo"
+description: "Gestiona conversaciones de WhatsApp y envía mensajes desde HubSpot con tus permisos actuales de Eazybe Team Inbox."
+---
+
+Eazybe Team Inbox lleva tus conversaciones de WhatsApp a HubSpot. Puedes abrir el chat de un contacto desde su registro del CRM o usar la bandeja general para gestionar las conversaciones a las que tienes acceso.
+
+## Qué Puedes Hacer
+
+- **Enviar mensajes desde HubSpot:** Con un número conectado mediante Coexistencia (CoEx) o la API de WhatsApp Business, puedes enviar y recibir mensajes de WhatsApp dentro del CRM.
+- **Conversar contacto por contacto:** Abre una conversación desde el registro del contacto o desde un negocio o ticket asociado a ese contacto.
+- **Gestionar varias conversaciones:** Abre la bandeja general desde la navegación izquierda de HubSpot para buscar y gestionar las conversaciones disponibles para ti.
+- **Mantener los permisos de cada usuario:** Cada usuario tiene el mismo acceso que en [app.eazybe.com](https://app.eazybe.com). Tus permisos determinan qué conversaciones puedes ver y gestionar en HubSpot.
+
+| Dónde abres Team Inbox | Qué ves |
+| --- | --- |
+| Registro de contacto | La conversación de WhatsApp del contacto |
+| Registro de negocio | La conversación de un contacto asociado al negocio |
+| Registro de ticket | La conversación de un contacto asociado al ticket |
+| **Eazybe Team Inbox** en la navegación izquierda de HubSpot | La bandeja general con las conversaciones disponibles para ti |
+
+<Note>
+Abrir Team Inbox en HubSpot no amplía tus permisos de [app.eazybe.com](https://app.eazybe.com). Los nombres de los controles se mantienen en inglés para que coincidan con las capturas.
+</Note>
+
+## Antes de Abrir la Bandeja de un Contacto
+
+<Warning>
+El número de WhatsApp del contacto debe incluir el prefijo internacional del país, por ejemplo **+1 202 555 0148**. Si el número no incluye el prefijo internacional, no podrás acceder a Team Inbox para ese contacto. Corrige el número antes de abrir la bandeja. Este requisito también se aplica al abrir la conversación desde un negocio o ticket asociado.
+</Warning>
+
+## Abrir una Conversación desde un Registro
+
+Si el registro aún no tiene la tarjeta, sigue primero [Configurar la Bandeja de Equipo en HubSpot](/es/integrations/hubspot/team-inbox-setup).
+
+<Steps>
+  <Step title="Abre la tarjeta de Team Inbox del registro">
+    Abre el registro en HubSpot y busca la tarjeta en la barra lateral derecha: **Eazybe Team Inbox** para contactos, **Eazybe Deal Team Inbox** para negocios o **Eazybe Ticket Team Inbox** para tickets.
+
+    En un contacto, haz clic en **Open Contact Conversation**. Se abrirá una ventana de **Eazybe Team Inbox** dentro de HubSpot. En un negocio o ticket, usa la acción de conversación de su tarjeta para abrir el chat del contacto asociado.
+
+    <Note>
+    El negocio o ticket debe estar asociado al contacto correspondiente. Si no encuentras la conversación esperada, comprueba la asociación y tus permisos de Team Inbox.
+    </Note>
+
+    ![Botón Open Contact Conversation resaltado en la tarjeta del contacto](/images/hubspot-team-inbox/contact-card.png)
+  </Step>
+  <Step title="Revisa la conversación">
+    Lee el historial de mensajes. **View:** muestra la vista actual; úsalo para elegir entre las vistas disponibles para ti. **Assign:** muestra a quién está asignada la conversación.
+
+    Cierra la ventana con la **X** de la esquina superior derecha para volver al registro.
+
+    <Warning>
+    Si aparece **Expired** y **The 24h window has expired — only WABA templates can be delivered**, usa **Send template** para continuar mediante una plantilla. El ejemplo muestra este estado; las opciones de mensajería dependen de la conversación seleccionada.
+    </Warning>
+
+    <Note>
+    El cliente, la empresa, el teléfono y los mensajes de esta captura son ficticios y sirven para ilustrar la interfaz.
+    </Note>
+
+    ![Conversación ficticia con View, Assign y el aviso de ventana de mensajería vencida](/images/hubspot-team-inbox/contact-conversation.png)
+  </Step>
+</Steps>
+
+## Abrir la Bandeja General
+
+<Warning>
+La bandeja general solo funciona mientras la extensión de Eazybe está activa en otra pestaña del navegador. Mantén WhatsApp Web abierto con Eazybe en funcionamiento mientras usas la bandeja general en HubSpot. No basta con tener instalada la extensión.
+</Warning>
+
+<Steps>
+  <Step title="Abre Eazybe Team Inbox desde la navegación de HubSpot">
+    Haz clic en **Eazybe Team Inbox** en la navegación izquierda. Se abrirá **Team Inbox** dentro de HubSpot, con las listas a la izquierda, las conversaciones en el centro y el área de conversación a la derecha.
+
+    Esta bandeja no se limita al registro que estabas viendo y respeta tus permisos actuales de Eazybe.
+
+    <Note>
+    La captura utiliza un cliente, una persona asignada y una vista previa de mensaje ficticios.
+    </Note>
+
+    ![Acceso a Eazybe Team Inbox resaltado en la navegación de HubSpot](/images/hubspot-team-inbox/overall-inbox.png)
+  </Step>
+  <Step title="Busca y selecciona una conversación">
+    Elige **All conversations** o limita la lista con **Favorites**, **Assigned**, **Unassigned** o **Assign to me**. Usa **Search conversations**, **Channels**, **Assignee** y **All filters** para encontrar el chat.
+
+    Haz clic en una conversación para abrirla a la derecha. Hasta que selecciones una, el panel mostrará **Select a conversation**. La captura muestra la lista **Favorites** seleccionada.
+
+    ![Listas, búsqueda, filtros y conversación de ejemplo en Team Inbox](/images/hubspot-team-inbox/overall-inbox.png)
+  </Step>
+</Steps>
+
+<Tip>
+Consulta [Gestionar Conversaciones (en inglés)](/en/team-inbox-hd/manage-conversations-en) y [Mensajes, Plantillas y Respuestas Rápidas (en inglés)](/en/team-inbox-hd/messages-templates-quick-replies-en) para conocer las funciones de la bandeja compartida.
+</Tip>
+
+## Solución de Problemas
+
+### ¿Por Qué No Puedo Acceder a Team Inbox para un Contacto?
+
+Comprueba que el número de WhatsApp incluya el prefijo internacional del país. Añádelo si falta y vuelve a abrir la conversación. En un negocio o ticket, revisa el número del contacto asociado.
+
+### ¿Por Qué No Puedo Abrir la Bandeja General?
+
+Comprueba que WhatsApp Web esté abierto en otra pestaña y que Eazybe esté activo allí. Recarga HubSpot y vuelve a seleccionar **Eazybe Team Inbox**.
+
+### ¿Por Qué Faltan Algunas Conversaciones?
+
+Comprueba a qué conversaciones tienes acceso en **app.eazybe.com**. HubSpot usa los mismos permisos. Revisa también la lista seleccionada, el texto de búsqueda y los filtros. En negocios y tickets, comprueba la asociación con el contacto.
+
+### ¿Por Qué No Aparece la Tarjeta en el Registro?
+
+Activa la tarjeta correspondiente en **WhatsApp Integration** → **Settings** → **App cards** → **Manage locations**. Selecciónala en **Record Page** → **Default view** → **RIGHT SIDEBAR** y guarda los cambios. Consulta la [guía de configuración](/es/integrations/hubspot/team-inbox-setup).

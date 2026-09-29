@@ -1,0 +1,90 @@
+---
+title: "Configurar a Caixa de Entrada da Equipe no HubSpot"
+description: "Adicione o Eazybe Team Inbox à barra lateral direita dos contatos, negócios e tickets do HubSpot."
+---
+
+Adicione um cartão do Team Inbox aos registros para abrir conversas do WhatsApp sem sair do HubSpot. Ative cada cartão separadamente para contatos, negócios e tickets.
+
+Para conhecer o recurso, veja [Caixa de Entrada da Equipe](/pt/integrations/hubspot/team-inbox).
+
+## Antes de Começar
+
+- Conecte o Eazybe ao HubSpot seguindo [Conectar sua Conta do HubSpot](/pt/integrations/hubspot/account-connection).
+- Salve o número de WhatsApp de cada contato com o código internacional do país (DDI). Sem esse código, o Team Inbox fica inacessível para o contato.
+- Use uma conta do HubSpot com permissão para gerenciar cartões de aplicativos e layouts de registros.
+- Confira se você consegue acessar o Team Inbox em [app.eazybe.com](https://app.eazybe.com). O acesso dentro do HubSpot será o mesmo.
+
+<Note>
+Adicionar um cartão define onde o Team Inbox aparece; não concede acesso a outras conversas. Os nomes dos controles foram mantidos em inglês para corresponder às capturas de tela.
+</Note>
+
+## Adicionar os Cartões aos Registros
+
+<Steps>
+  <Step title="Abra Connected Apps">
+    No HubSpot, clique na engrenagem **Settings** na navegação superior. Em **Account Management**, expanda **Integrations** e selecione **Connected Apps**.
+
+    ![Connected Apps destacado em Integrations nas configurações](/images/hubspot-team-inbox/settings-navigation.png)
+  </Step>
+  <Step title="Selecione WhatsApp Integration">
+    Em **Connected Apps**, encontre **WhatsApp Integration** em **My Apps** e clique no nome. Use **Search for an app** se tiver vários aplicativos instalados.
+
+    ![WhatsApp Integration destacado na lista de aplicativos conectados](/images/hubspot-team-inbox/connected-apps.png)
+  </Step>
+  <Step title="Abra as configurações dos cartões">
+    Selecione **Settings** e depois **App cards** para ver os cartões disponíveis em **WhatsApp Integration**.
+
+    | Registro do HubSpot | Cartão a configurar |
+    | --- | --- |
+    | Contato | **Eazybe Team Inbox** |
+    | Negócio | **Eazybe Deal Team Inbox** |
+    | Ticket | **Eazybe Ticket Team Inbox** |
+
+    Clique em **Manage locations** no cartão que deseja adicionar. Role para baixo se o cartão de tickets não estiver visível.
+
+    ![Settings, App cards e Manage locations destacados](/images/hubspot-team-inbox/app-cards.png)
+  </Step>
+  <Step title="Ative o cartão de contatos">
+    Em **Eazybe Team Inbox**, use o painel **Contacts**. Em **Record Page**, encontre **Default view** e marque **Eazybe Team Inbox** na coluna **RIGHT SIDEBAR**. Clique em **Save**.
+
+    O cartão ficará disponível na barra lateral direita dos contatos que usam essa visualização.
+
+    <Note>
+    Use a caixa de seleção de **Record Page**. **Conversations Inbox** é outra localização. Se a caixa já estiver marcada, o cartão já está ativo nessa visualização.
+    </Note>
+
+    ![Caixa de seleção do cartão de contatos e botão Save destacados](/images/hubspot-team-inbox/contact-location.png)
+  </Step>
+  <Step title="Ative o cartão de negócios">
+    Volte a **App cards** e clique em **Manage locations** no cartão **Eazybe Deal Team Inbox**. Em **Deals**, marque **Eazybe Deal Team Inbox** em **Record Page** → **Default view** → **RIGHT SIDEBAR** e clique em **Save**.
+
+    <Note>
+    A caixa de entrada do negócio mostra a conversa de um contato associado ao negócio. Confira se o contato correto está associado. **Deal Execution** é uma localização diferente de **Record Page**.
+    </Note>
+
+    ![Caixa de seleção do cartão de negócios e botão Save destacados](/images/hubspot-team-inbox/deal-location.png)
+  </Step>
+  <Step title="Ative o cartão de tickets">
+    Volte a **App cards** e clique em **Manage locations** no cartão **Eazybe Ticket Team Inbox**. Em **Tickets**, marque **Eazybe Ticket Team Inbox** em **Record Page** → **Default view** → **RIGHT SIDEBAR** e clique em **Save**.
+
+    A caixa de entrada do ticket usa o contato associado ao ticket. Confira essa associação antes de abrir a conversa.
+
+    ![Caixa de seleção do cartão de tickets e botão Save destacados](/images/hubspot-team-inbox/ticket-location.png)
+  </Step>
+  <Step title="Posicione o cartão na barra lateral direita">
+    Abra um contato, negócio ou ticket e encontre o cartão do Team Inbox na barra lateral direita. Arraste-o pelo cabeçalho até a posição desejada, como acima dos outros cartões de associações.
+
+    O exemplo mostra **Eazybe Team Inbox** no topo da barra lateral de um contato. Você também pode reposicionar os cartões de negócios e tickets.
+
+    ![Cabeçalho do Eazybe Team Inbox destacado acima dos outros cartões](/images/hubspot-team-inbox/contact-card.png)
+  </Step>
+</Steps>
+
+## Se o Cartão Não Aparecer
+
+- Confira se configurou o cartão do objeto correto. Ativar o cartão de contatos não ativa os de negócios e tickets.
+- Abra **Manage locations** novamente e confirme que a caixa de **Record Page** → **Default view** está marcada e salva.
+- Confira se o registro usa a visualização configurada. Outra visualização pode precisar de uma configuração própria.
+- Recarregue o registro depois de salvar e procure mais abaixo na barra lateral direita.
+
+Continue em [Caixa de Entrada da Equipe](/pt/integrations/hubspot/team-inbox) para abrir conversas de registros e a caixa de entrada geral.

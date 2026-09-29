@@ -296,6 +296,8 @@
                 "pages": [
                   "en/integrations/hubspot/prerequisites",
                   "en/integrations/hubspot/account-connection",
+                  "en/integrations/hubspot/team-inbox",
+                  "en/integrations/hubspot/team-inbox-setup",
                   "en/integrations/hubspot/disconnect",
                   "en/integrations/hubspot/invite-team",
                   "en/integrations/hubspot/link-whatsapp-contacts",
@@ -1063,6 +1065,8 @@
                 "pages": [
                   "es/integrations/hubspot/prerequisites",
                   "es/integrations/hubspot/account-connection",
+                  "es/integrations/hubspot/team-inbox",
+                  "es/integrations/hubspot/team-inbox-setup",
                   "es/integrations/hubspot/disconnect",
                   "es/integrations/hubspot/invite-team",
                   "es/integrations/hubspot/link-whatsapp-contacts",
@@ -1813,6 +1817,8 @@
                 "pages": [
                   "pt/integrations/hubspot/prerequisites",
                   "pt/integrations/hubspot/account-connection",
+                  "pt/integrations/hubspot/team-inbox",
+                  "pt/integrations/hubspot/team-inbox-setup",
                   "pt/integrations/hubspot/disconnect",
                   "pt/integrations/hubspot/invite-team",
                   "pt/integrations/hubspot/link-whatsapp-contacts",
@@ -2563,6 +2569,8 @@
                 "pages": [
                   "tr/integrations/hubspot/prerequisites",
                   "tr/integrations/hubspot/account-connection",
+                  "tr/integrations/hubspot/team-inbox",
+                  "tr/integrations/hubspot/team-inbox-setup",
                   "tr/integrations/hubspot/disconnect",
                   "tr/integrations/hubspot/invite-team",
                   "tr/integrations/hubspot/link-whatsapp-contacts",

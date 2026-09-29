@@ -1,0 +1,112 @@
+---
+title: "Takım Gelen Kutusu"
+description: "Mevcut Eazybe Team Inbox izinlerinizle WhatsApp konuşmalarını yönetin ve HubSpot içinden mesaj gönderin."
+---
+
+Eazybe Team Inbox, WhatsApp konuşmalarınızı HubSpot'a taşır. CRM'deki bir kişi kaydından o kişinin sohbetini açabilir veya erişebildiğiniz konuşmaları genel gelen kutusundan yönetebilirsiniz.
+
+## Neler Yapabilirsiniz?
+
+- **HubSpot içinden mesajlaşın:** Coexistence (CoEx) veya WhatsApp Business API üzerinden bağlı bir numarayla CRM içinden mesaj gönderip alabilirsiniz.
+- **Kişiye göre sohbet edin:** Konuşmayı kişi kaydından ya da bu kişiyle ilişkilendirilmiş bir anlaşma veya destek talebi kaydından açın.
+- **Birden fazla konuşmayı yönetin:** Erişebildiğiniz konuşmaları bulmak ve yönetmek için HubSpot'un sol menüsünden genel gelen kutusunu açın.
+- **Kullanıcıya özel erişimi koruyun:** Her kullanıcı, [app.eazybe.com](https://app.eazybe.com) üzerindeki erişim haklarına sahiptir. HubSpot'ta görebileceğiniz ve yönetebileceğiniz konuşmaları bu izinler belirler.
+
+| Team Inbox'ı açtığınız yer | Göreceğiniz içerik |
+| --- | --- |
+| Kişi kaydı | Kişinin WhatsApp konuşması |
+| Anlaşma kaydı | Anlaşmayla ilişkili bir kişinin konuşması |
+| Destek talebi kaydı | Destek talebiyle ilişkili bir kişinin konuşması |
+| HubSpot'un sol menüsündeki **Eazybe Team Inbox** | Erişebildiğiniz konuşmaların yer aldığı genel gelen kutusu |
+
+<Note>
+Team Inbox'ı HubSpot'ta açmak, [app.eazybe.com](https://app.eazybe.com) üzerindeki izinlerinizi genişletmez. Ekran görüntüleriyle eşleşmesi için arayüz etiketleri İngilizce bırakılmıştır.
+</Note>
+
+## Bir Kişinin Gelen Kutusunu Açmadan Önce
+
+<Warning>
+Kişinin WhatsApp numarası uluslararası ülke kodunu içermelidir; örneğin **+1 202 555 0148**. Ülke kodu yoksa bu kişi için Team Inbox'a erişilemez. Gelen kutusunu açmadan önce numarayı düzeltin. Bu gereklilik, ilişkili bir anlaşma veya destek talebi üzerinden açılan konuşmalar için de geçerlidir.
+</Warning>
+
+## Bir Kayıttan Konuşma Açma
+
+Kart henüz kayıtta görünmüyorsa önce [HubSpot'ta Takım Gelen Kutusunu Ayarlama](/tr/integrations/hubspot/team-inbox-setup) adımlarını izleyin.
+
+<Steps>
+  <Step title="Kayıttaki Team Inbox kartını açın">
+    HubSpot kaydını açın ve sağ kenar çubuğundaki kartı bulun: kişiler için **Eazybe Team Inbox**, anlaşmalar için **Eazybe Deal Team Inbox**, destek talepleri için **Eazybe Ticket Team Inbox**.
+
+    Kişi kaydında **Open Contact Conversation** seçeneğine tıklayın. Konuşma, HubSpot içindeki **Eazybe Team Inbox** penceresinde açılır. Anlaşma veya destek talebinde, ilişkili kişinin sohbetini açmak için karttaki konuşma eylemini kullanın.
+
+    <Note>
+    Anlaşma veya destek talebi doğru kişiyle ilişkilendirilmiş olmalıdır. Beklediğiniz konuşmayı bulamıyorsanız kişi ilişkisini ve Team Inbox izinlerinizi kontrol edin.
+    </Note>
+
+    ![Kişi kartında vurgulanan Open Contact Conversation düğmesi](/images/hubspot-team-inbox/contact-card.png)
+  </Step>
+  <Step title="Konuşmayı inceleyin">
+    Mesaj geçmişini okuyun. **View:** geçerli görünümü gösterir; erişebildiğiniz görünümler arasında seçim yapmak için bu alanı kullanın. **Assign:** konuşmanın atandığı kişiyi gösterir.
+
+    Pencereyi kapatıp kayda dönmek için sağ üst köşedeki **X** simgesine tıklayın.
+
+    <Warning>
+    **Expired** ve **The 24h window has expired — only WABA templates can be delivered** uyarıları görünüyorsa şablon akışıyla devam etmek için **Send template** seçeneğini kullanın. Örnek bu durumu gösterir; mesajlaşma seçenekleri seçilen konuşmaya bağlıdır.
+    </Warning>
+
+    <Note>
+    Bu ekran görüntüsündeki müşteri, şirket, telefon numarası ve mesajlar arayüzü göstermek için hazırlanmış kurgusal örneklerdir.
+    </Note>
+
+    ![View, Assign ve süresi dolan mesajlaşma penceresi uyarısını gösteren örnek konuşma](/images/hubspot-team-inbox/contact-conversation.png)
+  </Step>
+</Steps>
+
+## Genel Gelen Kutusunu Açma
+
+<Warning>
+Genel gelen kutusu yalnızca Eazybe uzantısı başka bir tarayıcı sekmesinde etkin durumdayken çalışır. HubSpot'ta genel gelen kutusunu kullanırken WhatsApp Web'i açık ve Eazybe'yi çalışır durumda tutun. Uzantının yalnızca yüklü olması yeterli değildir.
+</Warning>
+
+<Steps>
+  <Step title="HubSpot menüsünden Eazybe Team Inbox'ı açın">
+    Sol menüde **Eazybe Team Inbox** seçeneğine tıklayın. **Team Inbox** sayfası HubSpot içinde açılır: solda listeler, ortada konuşmalar ve sağda sohbet alanı bulunur.
+
+    Bu gelen kutusu, görüntülediğiniz kayıtla sınırlı değildir ve mevcut Eazybe izinlerinizi kullanır.
+
+    <Note>
+    Ekran görüntüsündeki müşteri ve atanan kişi bilgileri ile mesaj önizlemesi örnek verilerden oluşur.
+    </Note>
+
+    ![HubSpot menüsünde vurgulanan Eazybe Team Inbox bağlantısı](/images/hubspot-team-inbox/overall-inbox.png)
+  </Step>
+  <Step title="Bir konuşma bulun ve seçin">
+    **All conversations** seçeneğini kullanın veya listeyi **Favorites**, **Assigned**, **Unassigned** ya da **Assign to me** ile daraltın. Sohbeti bulmak için **Search conversations**, **Channels**, **Assignee** ve **All filters** alanlarını kullanın.
+
+    Sağ tarafta açmak için bir konuşmaya tıklayın. Konuşma seçilene kadar panelde **Select a conversation** görünür. Ekran görüntüsünde **Favorites** listesi seçilidir.
+
+    ![Team Inbox listeleri, arama, filtreler ve örnek konuşma](/images/hubspot-team-inbox/overall-inbox.png)
+  </Step>
+</Steps>
+
+<Tip>
+Paylaşılan gelen kutusunun özellikleri için [Konuşmaları Yönetme (İngilizce)](/en/team-inbox-hd/manage-conversations-en) ve [Mesajlar, Şablonlar ve Hızlı Yanıtlar (İngilizce)](/en/team-inbox-hd/messages-templates-quick-replies-en) kılavuzlarına bakın.
+</Tip>
+
+## Sorun Giderme
+
+### Bir Kişi İçin Team Inbox'a Neden Erişemiyorum?
+
+WhatsApp numarasının uluslararası ülke kodunu içerdiğini kontrol edin. Eksikse doğru kodu ekleyip konuşmayı yeniden açın. Anlaşma veya destek talebinde ilişkili kişinin numarasını kontrol edin.
+
+### Genel Gelen Kutusunu Neden Açamıyorum?
+
+WhatsApp Web'in başka bir sekmede açık ve Eazybe'nin o sekmede etkin olduğundan emin olun. HubSpot'u yenileyip **Eazybe Team Inbox** seçeneğini yeniden açın.
+
+### Bazı Konuşmalar Neden Görünmüyor?
+
+**app.eazybe.com** üzerinde hangi konuşmalara erişebildiğinizi kontrol edin. HubSpot aynı izinleri kullanır. Seçili listeyi, aramayı ve filtreleri de kontrol edin. Anlaşma ve destek taleplerinde kişi ilişkisini doğrulayın.
+
+### Kart Neden Kayıtta Görünmüyor?
+
+İlgili kartı **WhatsApp Integration** → **Settings** → **App cards** → **Manage locations** yolundan etkinleştirin. **Record Page** → **Default view** → **RIGHT SIDEBAR** altında seçip kaydedin. [Kurulum kılavuzuna](/tr/integrations/hubspot/team-inbox-setup) bakın.
