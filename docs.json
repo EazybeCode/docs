@@ -191,13 +191,19 @@
                   "en/waba/waba-disconnect-alerts",
                   "en/waba/facebook-business-verification",
                   {
+                    "group": "Meta Pricing",
+                    "pages": [
+                      "en/waba/broadcast-rate-list-1st-jan-2026",
+                      "en/waba/service-message-charges"
+                    ]
+                  },
+                  {
                     "group": "Broadcasting",
                     "hidden": true,
                     "pages": [
                       "en/waba/broadcasting/template-based-chatbot"
                     ]
                   },
-                  "en/waba/broadcast-rate-list-1st-jan-2026",
                   {
                     "group": "Embedded Signup Troubleshooting",
                     "pages": [
