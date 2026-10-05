@@ -1,12 +1,171 @@
 ---
 title: "Roles & Permissions"
-description: "Configure roles"
+description: "What Owners, Admins, Managers and Employees can see and do in your Eazybe workspace"
 ---
 
 ## Roles & Permissions
 
-| Role | Access |
-|------|--------|
-| Admin | Full |
-| Member | Standard |
-| Viewer | Read-only |
+Every person in your Eazybe organization has one of four roles. The role decides which parts of the workspace they can open and whose data they see.
+
+| Role | Who it is for | Sees data for |
+|------|---------------|---------------|
+| **Owner** | The person who created the organization | The whole organization |
+| **Admin** | People who run the workspace with the Owner | The whole organization, except the Owner |
+| **Manager** | Team leads | Their own team |
+| **Employee** | Agents and reps handling chats | Themselves |
+
+<Info>
+The Owner can do everything an Admin can, and the Owner's own chats and activity stay private: no other role can see them, including Admins. The Owner label appears under **Settings → Profile** for the person who created the organization. Anyone who joins an existing organization starts as an Employee.
+</Info>
+
+### What each role can do
+
+<Tabs>
+  <Tab title="Owner">
+    The Owner is the person who created the organization.
+
+    - Has full access to every section of the workspace
+    - Can do everything an Admin can do
+    - Sees chats and activity for everyone in the organization
+    - Keeps their own chats and activity private from every other role
+    - Access cannot be restricted by anyone
+
+    To move ownership to another person, contact us at **hey@eazybe.com**.
+  </Tab>
+  <Tab title="Admin">
+    Admins have full access to every section, and their access cannot be restricted.
+
+    - See staff, chats and analytics for everyone except the Owner
+    - Assign and change roles, and set working hours
+    - Manage the plan, seats, billing and wallet history
+    - Connect and disconnect WhatsApp Business API numbers
+    - Turn Team Inbox on or off
+    - Connect CRMs and control CRM sync settings
+    - Decide what Managers and Employees can open
+
+    Admins cannot see the Owner's chats or activity.
+  </Tab>
+  <Tab title="Manager">
+    Managers work at team level.
+
+    - See staff, chats and analytics for their own team
+    - Create and manage teams and team members
+    - Connect and disconnect HubSpot, Zoho and Salesforce
+    - Use Broadcasts, Templates, AI Agents and Credits
+    - Adjust access for Managers and Employees in their team
+
+    Managers cannot change roles, manage the plan or billing, or connect WhatsApp Business API numbers.
+  </Tab>
+  <Tab title="Employee">
+    Employees work on their own conversations.
+
+    - Open Team Inbox on the chats assigned to them
+    - Use Broadcasts, Templates and AI Agents
+    - Edit contact properties in the Mini CRM
+    - See their own profile and their own activity
+
+    Employees cannot open Teams, Analytics, Channels or Credits unless an Admin or Manager gives them access.
+  </Tab>
+</Tabs>
+
+### Permissions at a glance
+
+| Area | Owner | Admin | Manager | Employee |
+| ------ | ------ | ------ | ------ | ------ |
+| **Staff list** | Everyone | Everyone | Own team | Own record |
+| **Assign or change a role** | ✅ | ✅ | ❌ | ❌ |
+| **Set working hours** | ✅ | ✅ | ❌ | ❌ |
+| **Remove several staff at once** | ✅ | ✅ | ❌ | ❌ |
+| **Create and manage teams** | ✅ | ✅ | ✅ | ❌ |
+| **Team Inbox chats** | Everyone's | Everyone's, except the Owner's | Own team's | Assigned to them |
+| **Turn Team Inbox on or off** | ✅ | ✅ | ❌ | ❌ |
+| **Analytics** | Whole organization | Whole organization, except the Owner | Own team | Off by default |
+| **Plan, seats, billing & taxation, wallet history** | ✅ | ✅ | ❌ | ❌ |
+| **Credits** | ✅ | ✅ | ✅ | Off by default |
+| **Channels page** | ✅ | ✅ | ✅ | Off by default |
+| **Connect or disconnect a WhatsApp Business API number** | ✅ | ✅ | ❌ | ❌ |
+| **WhatsApp disconnect alerts** | ✅ | ✅ | View only | View only |
+| **Connect HubSpot, Zoho or Salesforce** | ✅ | ✅ | ✅ | ❌ |
+| **CRM sync settings and field mapping** | ✅ | ✅ | ❌ | ❌ |
+| **Broadcasts and Templates** | ✅ | ✅ | ✅ | ✅ |
+| **AI Agents** | ✅ | ✅ | ✅ | ✅ |
+| **Members & Access** | Full control | Full control | Managers and Employees in own team | Off by default |
+
+<Tip>
+Add each Manager to a team. A Manager sees the staff, chats and analytics of the team they belong to.
+</Tip>
+
+### Assigning a role
+
+Only an Owner or Admin can assign or change a role.
+
+<Steps>
+  <Step title="Open Staff">
+    In the workspace sidebar, click **Staff**.
+  </Step>
+  <Step title="Add or edit a person">
+    Click **Add Employee** to invite someone new. For an existing person, open the **⋯** menu on their row and click **Edit Employee Details**.
+  </Step>
+  <Step title="Choose the role">
+    In **Employee Role**, select **Admin**, **Manager** or **Employee**.
+  </Step>
+  <Step title="Save">
+    Click **Send Invite** for a new person, or **Save Changes** for an existing one.
+  </Step>
+</Steps>
+
+<Note>
+You can have more than one Admin. A pending invite cannot be edited until the person accepts it.
+</Note>
+
+### Customizing access with Members & Access
+
+On the **Scaler** plan, you can choose which sections Managers and Employees can open. Go to **Settings → Members & Access**.
+
+- **By role** sets the default for everyone with that role.
+- **By member** overrides the default for one person. Click **Reset to role default** to remove the overrides.
+
+These are the defaults:
+
+| Section | Owner / Admin | Manager | Employee |
+|---------|---------------|---------|----------|
+| Team Inbox | Always on | Always on | On |
+| See all channels | Always on | On | Off |
+| Credits | Always on | On | Off |
+| Channels | Always on | On | Off |
+| AI Agents | Always on | On | On |
+| Broadcasts | Always on | On | On |
+| User Properties | Always on | On | On |
+| Sync Settings | Always on | On | On |
+| Analytics | Always on | On | Off |
+| Members & Access | Always on | On | Off |
+
+<Warning>
+Owner and Admin access is always on and cannot be switched off, so no one can lock themselves out of permissions.
+</Warning>
+
+Turning a section on lets a person open it. It does not widen whose data they see, and it does not unlock Admin-only actions such as changing the plan or connecting a WhatsApp Business API number.
+
+### FAQs
+
+**Can an Admin see the Owner's chats?**
+
+No. The Owner's chats and activity are visible only to the Owner.
+
+**Can a Manager see an Admin's or the Owner's chats?**
+
+No. Managers see chats for Managers and Employees in their team.
+
+**Can an Employee see other people's chats?**
+
+No. Employees work on the chats assigned to them.
+
+**Who can change my role?**
+
+An Owner or Admin in your organization. Your role is shown under **Settings → Profile**.
+
+**Why can't I see Analytics or Channels?**
+
+These sections are off by default for Employees. Ask an Admin or your Manager to turn them on for you.
+
+Need help? Reach us at **hey@eazybe.com**.

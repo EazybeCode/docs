@@ -1037,7 +1037,8 @@
                 "group": "Configuración",
                 "icon": "gear",
                 "pages": [
-                  "es/settings/team-management"
+                  "es/settings/team-management",
+                  "es/settings/roles-permissions"
                 ]
               },
               {
@@ -1789,6 +1790,7 @@
                 "pages": [
                   "pt/settings/workspace",
                   "pt/settings/team-management",
+                  "pt/settings/roles-permissions",
                   "pt/settings/billing"
                 ]
               },
@@ -2541,6 +2543,7 @@
                 "pages": [
                   "tr/settings/workspace",
                   "tr/settings/team-management",
+                  "tr/settings/roles-permissions",
                   "tr/settings/billing"
                 ]
               },

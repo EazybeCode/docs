@@ -1,12 +1,171 @@
 ---
-title: "Roles & Permissions"
-description: "Configure roles"
+title: "Roles y permisos"
+description: "Qué pueden ver y hacer los Propietarios, Administradores, Gerentes y Empleados en tu espacio de trabajo de Eazybe"
 ---
 
-## Roles & Permissions
+## Roles y permisos
 
-| Role | Access |
-|------|--------|
-| Admin | Full |
-| Member | Standard |
-| Viewer | Read-only |
+Cada persona de tu organización en Eazybe tiene uno de cuatro roles. El rol define qué partes del espacio de trabajo puede abrir y los datos de quién puede ver.
+
+| Rol | Para quién es | Ve los datos de |
+|------|---------------|---------------|
+| **Propietario (Owner)** | La persona que creó la organización | Toda la organización |
+| **Administrador (Admin)** | Quienes gestionan el espacio de trabajo junto al Propietario | Toda la organización, excepto el Propietario |
+| **Gerente (Manager)** | Líderes de equipo | Su propio equipo |
+| **Empleado (Employee)** | Agentes y representantes que atienden chats | Sí mismo |
+
+<Info>
+El Propietario puede hacer todo lo que hace un Administrador, y sus propios chats y actividad son privados: ningún otro rol puede verlos, ni siquiera los Administradores. La etiqueta Owner aparece en **Settings → Profile** para la persona que creó la organización. Quien se une a una organización existente empieza como Empleado.
+</Info>
+
+### Qué puede hacer cada rol
+
+<Tabs>
+  <Tab title="Propietario">
+    El Propietario es la persona que creó la organización.
+
+    - Tiene acceso completo a todas las secciones del espacio de trabajo
+    - Puede hacer todo lo que hace un Administrador
+    - Ve los chats y la actividad de todas las personas de la organización
+    - Mantiene sus propios chats y actividad privados frente a los demás roles
+    - Nadie puede restringir su acceso
+
+    Para transferir la propiedad a otra persona, escríbenos a **hey@eazybe.com**.
+  </Tab>
+  <Tab title="Administrador">
+    Los Administradores tienen acceso completo a todas las secciones y su acceso no se puede restringir.
+
+    - Ven el personal, los chats y las analíticas de todos, excepto del Propietario
+    - Asignan y cambian roles, y definen el horario laboral
+    - Gestionan el plan, los asientos, la facturación y el historial de la billetera
+    - Conectan y desconectan números de WhatsApp Business API
+    - Activan o desactivan Team Inbox
+    - Conectan CRM y controlan los ajustes de sincronización del CRM
+    - Deciden qué pueden abrir los Gerentes y los Empleados
+
+    Los Administradores no pueden ver los chats ni la actividad del Propietario.
+  </Tab>
+  <Tab title="Gerente">
+    Los Gerentes trabajan a nivel de equipo.
+
+    - Ven el personal, los chats y las analíticas de su propio equipo
+    - Crean y gestionan equipos y sus miembros
+    - Conectan y desconectan HubSpot, Zoho y Salesforce
+    - Usan Broadcasts, Templates, AI Agents y Credits
+    - Ajustan el acceso de los Gerentes y Empleados de su equipo
+
+    Los Gerentes no pueden cambiar roles, gestionar el plan o la facturación, ni conectar números de WhatsApp Business API.
+  </Tab>
+  <Tab title="Empleado">
+    Los Empleados trabajan en sus propias conversaciones.
+
+    - Abren Team Inbox con los chats que tienen asignados
+    - Usan Broadcasts, Templates y AI Agents
+    - Editan las propiedades de los contactos en el Mini CRM
+    - Ven su propio perfil y su propia actividad
+
+    Los Empleados no pueden abrir Teams, Analytics, Channels ni Credits, salvo que un Administrador o un Gerente les dé acceso.
+  </Tab>
+</Tabs>
+
+### Permisos de un vistazo
+
+| Área | Propietario | Administrador | Gerente | Empleado |
+| ------ | ------ | ------ | ------ | ------ |
+| **Lista de personal** | Todos | Todos | Su equipo | Su propio registro |
+| **Asignar o cambiar un rol** | ✅ | ✅ | ❌ | ❌ |
+| **Definir el horario laboral** | ✅ | ✅ | ❌ | ❌ |
+| **Eliminar a varias personas a la vez** | ✅ | ✅ | ❌ | ❌ |
+| **Crear y gestionar equipos** | ✅ | ✅ | ✅ | ❌ |
+| **Chats de Team Inbox** | Los de todos | Los de todos, excepto los del Propietario | Los de su equipo | Los que tiene asignados |
+| **Activar o desactivar Team Inbox** | ✅ | ✅ | ❌ | ❌ |
+| **Analíticas** | Toda la organización | Toda la organización, excepto el Propietario | Su equipo | Desactivado por defecto |
+| **Plan, asientos, facturación e impuestos, historial de la billetera** | ✅ | ✅ | ❌ | ❌ |
+| **Credits** | ✅ | ✅ | ✅ | Desactivado por defecto |
+| **Página Channels** | ✅ | ✅ | ✅ | Desactivado por defecto |
+| **Conectar o desconectar un número de WhatsApp Business API** | ✅ | ✅ | ❌ | ❌ |
+| **Alertas de desconexión de WhatsApp** | ✅ | ✅ | Solo lectura | Solo lectura |
+| **Conectar HubSpot, Zoho o Salesforce** | ✅ | ✅ | ✅ | ❌ |
+| **Ajustes de sincronización del CRM y mapeo de campos** | ✅ | ✅ | ❌ | ❌ |
+| **Broadcasts y Templates** | ✅ | ✅ | ✅ | ✅ |
+| **AI Agents** | ✅ | ✅ | ✅ | ✅ |
+| **Members & Access** | Control total | Control total | Gerentes y Empleados de su equipo | Desactivado por defecto |
+
+<Tip>
+Añade cada Gerente a un equipo. Un Gerente ve el personal, los chats y las analíticas del equipo al que pertenece.
+</Tip>
+
+### Asignar un rol
+
+Solo un Propietario o un Administrador puede asignar o cambiar un rol.
+
+<Steps>
+  <Step title="Abre Staff">
+    En la barra lateral del espacio de trabajo, haz clic en **Staff**.
+  </Step>
+  <Step title="Añade o edita a una persona">
+    Haz clic en **Add Employee** para invitar a alguien nuevo. Para una persona existente, abre el menú **⋯** de su fila y haz clic en **Edit Employee Details**.
+  </Step>
+  <Step title="Elige el rol">
+    En **Employee Role**, selecciona **Admin**, **Manager** o **Employee**.
+  </Step>
+  <Step title="Guarda">
+    Haz clic en **Send Invite** para una persona nueva, o en **Save Changes** para una existente.
+  </Step>
+</Steps>
+
+<Note>
+Puedes tener más de un Administrador. Una invitación pendiente no se puede editar hasta que la persona la acepte.
+</Note>
+
+### Personalizar el acceso con Members & Access
+
+En el plan **Scaler**, puedes elegir qué secciones pueden abrir los Gerentes y los Empleados. Ve a **Settings → Members & Access**.
+
+- **By role** define el valor por defecto para todas las personas con ese rol.
+- **By member** cambia el valor por defecto para una sola persona. Haz clic en **Reset to role default** para quitar esos cambios.
+
+Estos son los valores por defecto:
+
+| Sección | Propietario / Administrador | Gerente | Empleado |
+|---------|---------------|---------|----------|
+| Team Inbox | Siempre activado | Siempre activado | Activado |
+| See all channels | Siempre activado | Activado | Desactivado |
+| Credits | Siempre activado | Activado | Desactivado |
+| Channels | Siempre activado | Activado | Desactivado |
+| AI Agents | Siempre activado | Activado | Activado |
+| Broadcasts | Siempre activado | Activado | Activado |
+| User Properties | Siempre activado | Activado | Activado |
+| Sync Settings | Siempre activado | Activado | Activado |
+| Analytics | Siempre activado | Activado | Desactivado |
+| Members & Access | Siempre activado | Activado | Desactivado |
+
+<Warning>
+El acceso del Propietario y de los Administradores está siempre activado y no se puede desactivar, para que nadie se quede sin acceso a los permisos.
+</Warning>
+
+Activar una sección permite que la persona la abra. No amplía los datos que puede ver ni desbloquea acciones exclusivas de los Administradores, como cambiar el plan o conectar un número de WhatsApp Business API.
+
+### Preguntas frecuentes
+
+**¿Puede un Administrador ver los chats del Propietario?**
+
+No. Los chats y la actividad del Propietario solo los ve el Propietario.
+
+**¿Puede un Gerente ver los chats de un Administrador o del Propietario?**
+
+No. Los Gerentes ven los chats de los Gerentes y Empleados de su equipo.
+
+**¿Puede un Empleado ver los chats de otras personas?**
+
+No. Los Empleados trabajan con los chats que tienen asignados.
+
+**¿Quién puede cambiar mi rol?**
+
+Un Propietario o un Administrador de tu organización. Tu rol aparece en **Settings → Profile**.
+
+**¿Por qué no veo Analytics o Channels?**
+
+Estas secciones están desactivadas por defecto para los Empleados. Pide a un Administrador o a tu Gerente que las active para ti.
+
+¿Necesitas ayuda? Escríbenos a **hey@eazybe.com**.

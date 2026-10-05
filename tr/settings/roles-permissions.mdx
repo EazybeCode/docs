@@ -1,12 +1,171 @@
 ---
-title: "Roles & Permissions"
-description: "Configure roles"
+title: "Roller ve İzinler"
+description: "Sahip, Admin, Müdür ve Çalışan rollerinin Eazybe çalışma alanınızda neleri görebildiği ve yapabildiği"
 ---
 
-## Roles & Permissions
+## Roller ve İzinler
 
-| Role | Access |
-|------|--------|
-| Admin | Full |
-| Member | Standard |
-| Viewer | Read-only |
+Eazybe organizasyonunuzdaki her kişinin dört rolden biri vardır. Rol, kişinin çalışma alanının hangi bölümlerini açabileceğini ve kimin verilerini göreceğini belirler.
+
+| Rol | Kimler için | Kimin verilerini görür |
+|------|---------------|---------------|
+| **Sahip (Owner)** | Organizasyonu oluşturan kişi | Tüm organizasyon |
+| **Admin** | Çalışma alanını Sahip ile birlikte yönetenler | Sahip hariç tüm organizasyon |
+| **Müdür (Manager)** | Ekip liderleri | Kendi ekibi |
+| **Çalışan (Employee)** | Sohbetlerle ilgilenen temsilciler | Yalnızca kendisi |
+
+<Info>
+Sahip, bir Admin'in yapabildiği her şeyi yapabilir ve kendi sohbetleri ile etkinliği gizli kalır: Adminler dahil başka hiçbir rol bunları göremez. Owner etiketi, organizasyonu oluşturan kişi için **Settings → Profile** altında görünür. Mevcut bir organizasyona katılan herkes Çalışan olarak başlar.
+</Info>
+
+### Her rol neler yapabilir
+
+<Tabs>
+  <Tab title="Sahip">
+    Sahip, organizasyonu oluşturan kişidir.
+
+    - Çalışma alanının tüm bölümlerine tam erişimi vardır
+    - Bir Admin'in yapabildiği her şeyi yapabilir
+    - Organizasyondaki herkesin sohbetlerini ve etkinliğini görür
+    - Kendi sohbetleri ve etkinliği diğer tüm rollerden gizlidir
+    - Erişimi kimse tarafından kısıtlanamaz
+
+    Sahipliği başka birine devretmek için bize **hey@eazybe.com** adresinden ulaşın.
+  </Tab>
+  <Tab title="Admin">
+    Adminlerin tüm bölümlere tam erişimi vardır ve erişimleri kısıtlanamaz.
+
+    - Sahip dışındaki herkesin personel kaydını, sohbetlerini ve analizlerini görür
+    - Rol atar ve değiştirir, çalışma saatlerini belirler
+    - Planı, koltukları, faturalandırmayı ve cüzdan geçmişini yönetir
+    - WhatsApp Business API numaralarını bağlar ve bağlantısını keser
+    - Team Inbox'ı açar veya kapatır
+    - CRM'leri bağlar ve CRM senkronizasyon ayarlarını kontrol eder
+    - Müdürlerin ve Çalışanların neleri açabileceğine karar verir
+
+    Adminler, Sahibin sohbetlerini veya etkinliğini göremez.
+  </Tab>
+  <Tab title="Müdür">
+    Müdürler ekip düzeyinde çalışır.
+
+    - Kendi ekibinin personelini, sohbetlerini ve analizlerini görür
+    - Ekipleri ve ekip üyelerini oluşturur ve yönetir
+    - HubSpot, Zoho ve Salesforce'u bağlar ve bağlantısını keser
+    - Broadcasts, Templates, AI Agents ve Credits bölümlerini kullanır
+    - Kendi ekibindeki Müdürlerin ve Çalışanların erişimini düzenler
+
+    Müdürler rol değiştiremez, planı veya faturalandırmayı yönetemez ve WhatsApp Business API numarası bağlayamaz.
+  </Tab>
+  <Tab title="Çalışan">
+    Çalışanlar kendi konuşmaları üzerinde çalışır.
+
+    - Team Inbox'ı kendilerine atanan sohbetlerle açar
+    - Broadcasts, Templates ve AI Agents bölümlerini kullanır
+    - Mini CRM'de kişi özelliklerini düzenler
+    - Kendi profilini ve kendi etkinliğini görür
+
+    Bir Admin veya Müdür erişim vermediği sürece Çalışanlar Teams, Analytics, Channels veya Credits bölümlerini açamaz.
+  </Tab>
+</Tabs>
+
+### Bir bakışta izinler
+
+| Alan | Sahip | Admin | Müdür | Çalışan |
+| ------ | ------ | ------ | ------ | ------ |
+| **Personel listesi** | Herkes | Herkes | Kendi ekibi | Kendi kaydı |
+| **Rol atama veya değiştirme** | ✅ | ✅ | ❌ | ❌ |
+| **Çalışma saatlerini belirleme** | ✅ | ✅ | ❌ | ❌ |
+| **Birden fazla kişiyi aynı anda kaldırma** | ✅ | ✅ | ❌ | ❌ |
+| **Ekip oluşturma ve yönetme** | ✅ | ✅ | ✅ | ❌ |
+| **Team Inbox sohbetleri** | Herkesin | Sahibinkiler hariç herkesin | Kendi ekibinin | Kendisine atananlar |
+| **Team Inbox'ı açma veya kapatma** | ✅ | ✅ | ❌ | ❌ |
+| **Analizler** | Tüm organizasyon | Sahip hariç tüm organizasyon | Kendi ekibi | Varsayılan olarak kapalı |
+| **Plan, koltuklar, faturalandırma ve vergi, cüzdan geçmişi** | ✅ | ✅ | ❌ | ❌ |
+| **Credits** | ✅ | ✅ | ✅ | Varsayılan olarak kapalı |
+| **Channels sayfası** | ✅ | ✅ | ✅ | Varsayılan olarak kapalı |
+| **WhatsApp Business API numarası bağlama veya bağlantısını kesme** | ✅ | ✅ | ❌ | ❌ |
+| **WhatsApp bağlantı kesilme uyarıları** | ✅ | ✅ | Yalnızca görüntüleme | Yalnızca görüntüleme |
+| **HubSpot, Zoho veya Salesforce bağlama** | ✅ | ✅ | ✅ | ❌ |
+| **CRM senkronizasyon ayarları ve alan eşleme** | ✅ | ✅ | ❌ | ❌ |
+| **Broadcasts ve Templates** | ✅ | ✅ | ✅ | ✅ |
+| **AI Agents** | ✅ | ✅ | ✅ | ✅ |
+| **Members & Access** | Tam kontrol | Tam kontrol | Kendi ekibindeki Müdürler ve Çalışanlar | Varsayılan olarak kapalı |
+
+<Tip>
+Her Müdürü bir ekibe ekleyin. Müdür, ait olduğu ekibin personelini, sohbetlerini ve analizlerini görür.
+</Tip>
+
+### Rol atama
+
+Yalnızca Sahip veya bir Admin rol atayabilir ya da değiştirebilir.
+
+<Steps>
+  <Step title="Staff sayfasını açın">
+    Çalışma alanı kenar çubuğunda **Staff** öğesine tıklayın.
+  </Step>
+  <Step title="Bir kişi ekleyin veya düzenleyin">
+    Yeni birini davet etmek için **Add Employee** düğmesine tıklayın. Mevcut bir kişi için satırındaki **⋯** menüsünü açın ve **Edit Employee Details** seçeneğine tıklayın.
+  </Step>
+  <Step title="Rolü seçin">
+    **Employee Role** alanında **Admin**, **Manager** veya **Employee** seçin.
+  </Step>
+  <Step title="Kaydedin">
+    Yeni bir kişi için **Send Invite**, mevcut bir kişi için **Save Changes** düğmesine tıklayın.
+  </Step>
+</Steps>
+
+<Note>
+Birden fazla Admin olabilir. Bekleyen bir davet, kişi kabul edene kadar düzenlenemez.
+</Note>
+
+### Members & Access ile erişimi özelleştirme
+
+**Scaler** planında, Müdürlerin ve Çalışanların hangi bölümleri açabileceğini seçebilirsiniz. **Settings → Members & Access** bölümüne gidin.
+
+- **By role**, o role sahip herkes için varsayılanı belirler.
+- **By member**, tek bir kişi için varsayılanı değiştirir. Bu değişiklikleri kaldırmak için **Reset to role default** düğmesine tıklayın.
+
+Varsayılanlar şunlardır:
+
+| Bölüm | Sahip / Admin | Müdür | Çalışan |
+|---------|---------------|---------|----------|
+| Team Inbox | Her zaman açık | Her zaman açık | Açık |
+| See all channels | Her zaman açık | Açık | Kapalı |
+| Credits | Her zaman açık | Açık | Kapalı |
+| Channels | Her zaman açık | Açık | Kapalı |
+| AI Agents | Her zaman açık | Açık | Açık |
+| Broadcasts | Her zaman açık | Açık | Açık |
+| User Properties | Her zaman açık | Açık | Açık |
+| Sync Settings | Her zaman açık | Açık | Açık |
+| Analytics | Her zaman açık | Açık | Kapalı |
+| Members & Access | Her zaman açık | Açık | Kapalı |
+
+<Warning>
+Sahip ve Admin erişimi her zaman açıktır ve kapatılamaz; böylece kimse izin ayarlarının dışında kalmaz.
+</Warning>
+
+Bir bölümü açmak, kişinin o bölümü açabilmesini sağlar. Kimin verilerini gördüğünü genişletmez ve planı değiştirmek ya da WhatsApp Business API numarası bağlamak gibi yalnızca Adminlere özel işlemlerin kilidini açmaz.
+
+### Sık sorulan sorular
+
+**Bir Admin, Sahibin sohbetlerini görebilir mi?**
+
+Hayır. Sahibin sohbetlerini ve etkinliğini yalnızca Sahip görebilir.
+
+**Bir Müdür, bir Admin'in veya Sahibin sohbetlerini görebilir mi?**
+
+Hayır. Müdürler, kendi ekibindeki Müdürlerin ve Çalışanların sohbetlerini görür.
+
+**Bir Çalışan başkalarının sohbetlerini görebilir mi?**
+
+Hayır. Çalışanlar kendilerine atanan sohbetler üzerinde çalışır.
+
+**Rolümü kim değiştirebilir?**
+
+Organizasyonunuzdaki Sahip veya bir Admin. Rolünüz **Settings → Profile** altında görünür.
+
+**Analytics veya Channels bölümünü neden göremiyorum?**
+
+Bu bölümler Çalışanlar için varsayılan olarak kapalıdır. Bir Admin'den veya Müdürünüzden bunları sizin için açmasını isteyin.
+
+Yardıma mı ihtiyacınız var? Bize **hey@eazybe.com** adresinden ulaşın.

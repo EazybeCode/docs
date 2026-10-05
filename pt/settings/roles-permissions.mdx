@@ -1,12 +1,171 @@
 ---
-title: "Roles & Permissions"
-description: "Configure roles"
+title: "Funções e permissões"
+description: "O que Proprietários, Administradores, Gerentes e Funcionários podem ver e fazer no seu espaço de trabalho do Eazybe"
 ---
 
-## Roles & Permissions
+## Funções e permissões
 
-| Role | Access |
-|------|--------|
-| Admin | Full |
-| Member | Standard |
-| Viewer | Read-only |
+Cada pessoa da sua organização no Eazybe tem uma de quatro funções. A função define quais partes do espaço de trabalho ela pode abrir e os dados de quem ela vê.
+
+| Função | Para quem é | Vê os dados de |
+|------|---------------|---------------|
+| **Proprietário (Owner)** | A pessoa que criou a organização | Toda a organização |
+| **Administrador (Admin)** | Quem gerencia o espaço de trabalho com o Proprietário | Toda a organização, exceto o Proprietário |
+| **Gerente (Manager)** | Líderes de equipe | Sua própria equipe |
+| **Funcionário (Employee)** | Agentes e representantes que atendem chats | Si mesmo |
+
+<Info>
+O Proprietário pode fazer tudo o que um Administrador faz, e seus próprios chats e atividade são privados: nenhuma outra função pode vê-los, nem mesmo os Administradores. O rótulo Owner aparece em **Settings → Profile** para a pessoa que criou a organização. Quem entra em uma organização existente começa como Funcionário.
+</Info>
+
+### O que cada função pode fazer
+
+<Tabs>
+  <Tab title="Proprietário">
+    O Proprietário é a pessoa que criou a organização.
+
+    - Tem acesso total a todas as seções do espaço de trabalho
+    - Pode fazer tudo o que um Administrador faz
+    - Vê os chats e a atividade de todas as pessoas da organização
+    - Mantém seus próprios chats e atividade privados em relação às demais funções
+    - Ninguém pode restringir seu acesso
+
+    Para transferir a propriedade para outra pessoa, fale conosco em **hey@eazybe.com**.
+  </Tab>
+  <Tab title="Administrador">
+    Os Administradores têm acesso total a todas as seções, e seu acesso não pode ser restringido.
+
+    - Veem a equipe, os chats e as análises de todos, exceto do Proprietário
+    - Atribuem e alteram funções, e definem o horário de trabalho
+    - Gerenciam o plano, os assentos, o faturamento e o histórico da carteira
+    - Conectam e desconectam números do WhatsApp Business API
+    - Ativam ou desativam o Team Inbox
+    - Conectam CRMs e controlam as configurações de sincronização do CRM
+    - Decidem o que Gerentes e Funcionários podem abrir
+
+    Os Administradores não podem ver os chats nem a atividade do Proprietário.
+  </Tab>
+  <Tab title="Gerente">
+    Os Gerentes trabalham no nível da equipe.
+
+    - Veem a equipe, os chats e as análises da sua própria equipe
+    - Criam e gerenciam equipes e seus membros
+    - Conectam e desconectam HubSpot, Zoho e Salesforce
+    - Usam Broadcasts, Templates, AI Agents e Credits
+    - Ajustam o acesso dos Gerentes e Funcionários da sua equipe
+
+    Os Gerentes não podem alterar funções, gerenciar o plano ou o faturamento, nem conectar números do WhatsApp Business API.
+  </Tab>
+  <Tab title="Funcionário">
+    Os Funcionários trabalham nas suas próprias conversas.
+
+    - Abrem o Team Inbox com os chats atribuídos a eles
+    - Usam Broadcasts, Templates e AI Agents
+    - Editam as propriedades dos contatos no Mini CRM
+    - Veem o próprio perfil e a própria atividade
+
+    Os Funcionários não podem abrir Teams, Analytics, Channels ou Credits, a menos que um Administrador ou Gerente libere o acesso.
+  </Tab>
+</Tabs>
+
+### Permissões em resumo
+
+| Área | Proprietário | Administrador | Gerente | Funcionário |
+| ------ | ------ | ------ | ------ | ------ |
+| **Lista da equipe** | Todos | Todos | Sua equipe | Seu próprio registro |
+| **Atribuir ou alterar uma função** | ✅ | ✅ | ❌ | ❌ |
+| **Definir o horário de trabalho** | ✅ | ✅ | ❌ | ❌ |
+| **Remover várias pessoas de uma vez** | ✅ | ✅ | ❌ | ❌ |
+| **Criar e gerenciar equipes** | ✅ | ✅ | ✅ | ❌ |
+| **Chats do Team Inbox** | De todos | De todos, exceto os do Proprietário | Da sua equipe | Atribuídos a ele |
+| **Ativar ou desativar o Team Inbox** | ✅ | ✅ | ❌ | ❌ |
+| **Análises** | Toda a organização | Toda a organização, exceto o Proprietário | Sua equipe | Desativado por padrão |
+| **Plano, assentos, faturamento e impostos, histórico da carteira** | ✅ | ✅ | ❌ | ❌ |
+| **Credits** | ✅ | ✅ | ✅ | Desativado por padrão |
+| **Página Channels** | ✅ | ✅ | ✅ | Desativado por padrão |
+| **Conectar ou desconectar um número do WhatsApp Business API** | ✅ | ✅ | ❌ | ❌ |
+| **Alertas de desconexão do WhatsApp** | ✅ | ✅ | Somente leitura | Somente leitura |
+| **Conectar HubSpot, Zoho ou Salesforce** | ✅ | ✅ | ✅ | ❌ |
+| **Configurações de sincronização do CRM e mapeamento de campos** | ✅ | ✅ | ❌ | ❌ |
+| **Broadcasts e Templates** | ✅ | ✅ | ✅ | ✅ |
+| **AI Agents** | ✅ | ✅ | ✅ | ✅ |
+| **Members & Access** | Controle total | Controle total | Gerentes e Funcionários da sua equipe | Desativado por padrão |
+
+<Tip>
+Adicione cada Gerente a uma equipe. Um Gerente vê a equipe, os chats e as análises da equipe à qual pertence.
+</Tip>
+
+### Atribuir uma função
+
+Somente um Proprietário ou Administrador pode atribuir ou alterar uma função.
+
+<Steps>
+  <Step title="Abra Staff">
+    Na barra lateral do espaço de trabalho, clique em **Staff**.
+  </Step>
+  <Step title="Adicione ou edite uma pessoa">
+    Clique em **Add Employee** para convidar alguém novo. Para uma pessoa existente, abra o menu **⋯** na linha dela e clique em **Edit Employee Details**.
+  </Step>
+  <Step title="Escolha a função">
+    Em **Employee Role**, selecione **Admin**, **Manager** ou **Employee**.
+  </Step>
+  <Step title="Salve">
+    Clique em **Send Invite** para uma pessoa nova, ou em **Save Changes** para uma existente.
+  </Step>
+</Steps>
+
+<Note>
+Você pode ter mais de um Administrador. Um convite pendente não pode ser editado até que a pessoa o aceite.
+</Note>
+
+### Personalizar o acesso com Members & Access
+
+No plano **Scaler**, você pode escolher quais seções Gerentes e Funcionários podem abrir. Vá em **Settings → Members & Access**.
+
+- **By role** define o padrão para todas as pessoas com aquela função.
+- **By member** altera o padrão para uma única pessoa. Clique em **Reset to role default** para remover essas alterações.
+
+Estes são os padrões:
+
+| Seção | Proprietário / Administrador | Gerente | Funcionário |
+|---------|---------------|---------|----------|
+| Team Inbox | Sempre ativado | Sempre ativado | Ativado |
+| See all channels | Sempre ativado | Ativado | Desativado |
+| Credits | Sempre ativado | Ativado | Desativado |
+| Channels | Sempre ativado | Ativado | Desativado |
+| AI Agents | Sempre ativado | Ativado | Ativado |
+| Broadcasts | Sempre ativado | Ativado | Ativado |
+| User Properties | Sempre ativado | Ativado | Ativado |
+| Sync Settings | Sempre ativado | Ativado | Ativado |
+| Analytics | Sempre ativado | Ativado | Desativado |
+| Members & Access | Sempre ativado | Ativado | Desativado |
+
+<Warning>
+O acesso do Proprietário e dos Administradores está sempre ativado e não pode ser desativado, para que ninguém fique sem acesso às permissões.
+</Warning>
+
+Ativar uma seção permite que a pessoa a abra. Isso não amplia os dados que ela vê nem libera ações exclusivas dos Administradores, como alterar o plano ou conectar um número do WhatsApp Business API.
+
+### Perguntas frequentes
+
+**Um Administrador pode ver os chats do Proprietário?**
+
+Não. Os chats e a atividade do Proprietário são visíveis apenas para o Proprietário.
+
+**Um Gerente pode ver os chats de um Administrador ou do Proprietário?**
+
+Não. Os Gerentes veem os chats dos Gerentes e Funcionários da sua equipe.
+
+**Um Funcionário pode ver os chats de outras pessoas?**
+
+Não. Os Funcionários trabalham com os chats atribuídos a eles.
+
+**Quem pode alterar a minha função?**
+
+Um Proprietário ou Administrador da sua organização. Sua função aparece em **Settings → Profile**.
+
+**Por que não vejo Analytics ou Channels?**
+
+Essas seções ficam desativadas por padrão para os Funcionários. Peça a um Administrador ou ao seu Gerente para ativá-las para você.
+
+Precisa de ajuda? Fale conosco em **hey@eazybe.com**.
