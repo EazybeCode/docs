@@ -1,79 +1,156 @@
 ---
-title: "Broadcast to a HubSpot Contact List"
-description: "Select a synced HubSpot list, personalize its template, and send a WhatsApp broadcast."
+title: "Broadcast to a HubSpot Contact or Deal Segment"
+description: "Choose a synced HubSpot contact or deal segment, review eligible contacts, and prepare your WhatsApp broadcast."
 ---
 
-Use **HubSpot contact list** to send a broadcast to contacts in one synced HubSpot list. You can search the available lists, select one, and use HubSpot contact properties for template personalization.
+Use **HubSpot segment** to choose recipients from a saved HubSpot contact or deal segment. Contact segments use their member contacts; deal segments use the unique contacts associated with their member deals.
 
 <Info>
-  **HubSpot contact list** appears only when HubSpot is connected to the current Eazybe workspace.
+  **HubSpot segment** appears when HubSpot is connected to your Eazybe workspace.
 </Info>
 
-## Requirements
+## Before You Begin
 
-- HubSpot is connected to Eazybe.
-- The connection includes the `crm.lists.read` permission.
-- The selected list contains contacts with valid WhatsApp phone numbers.
+- Connect HubSpot to Eazybe with permission to read segments (`crm.lists.read`) and the relevant CRM records.
+- Prepare a contact or deal segment in HubSpot. For a deal segment, associate the intended contacts with its deals.
+- Give recipient contacts an international phone number in HubSpot's **Mobile phone number** or **Phone number** property.
+- Choose a connected WhatsApp Business number and an approved template on **Create broadcast**. See [Create a New Broadcast](/en/broadcasts/create-broadcast).
 
-If list access is missing, reconnect HubSpot and grant the requested permission.
+<Note>
+  **Contacts** and **Deals** identify the records in the segment; **Active segment** and **Static segment** describe how its membership is maintained.
+</Note>
 
-## Select a HubSpot List
+<Warning>
+  The screenshots show examples captured from Eazybe. Segment names, record counts, and eligible-contact totals will differ in your workspace. Violet arrows and outlines highlight the controls to use.
+</Warning>
+
+## Use a Contact Segment
 
 <Steps>
-  <Step title="Open the HubSpot contact list tab">
-    On the **Create broadcast** page, go to **Choose recipients** and select **HubSpot contact list**. Eazybe displays the synced lists and the **Search HubSpot lists** field.
+  <Step title="Open HubSpot segments and choose Contacts">
+    Open **Broadcasts**, select **New broadcast**, and complete your message details. In **Choose recipients**, select **HubSpot segment**, then **Contacts**.
 
-    ![HubSpot contact list tab with synced list cards, Search HubSpot lists, and pagination](/images/broadcasts/hubspot-contact-list-selection.jpeg)
+    ![HubSpot segment tab, Contacts tab, and contact-segment search highlighted with violet arrows](/images/hubspot-segments/contacts-browse.png)
 
-    <Note>
-      If a recently created or edited list is missing, wait for HubSpot to finish updating it, refresh the Eazybe page, and reopen this tab.
-    </Note>
+    Enter a segment name in **Search HubSpot contact segments** to narrow the cards. Each card shows the segment name, its type, and its contact count. Use the left and right page arrows below the cards when more results are available.
   </Step>
-  <Step title="Select one list">
-    Search by list name or move through the available pages, then select the list card. The selected list appears above the search field and its card is highlighted. Selecting another card replaces the current selection.
+  <Step title="Select a contact segment and check its eligible contacts">
+    Select the segment card. The card is highlighted, and a summary appears above **HubSpot segments**. Wait for **Resolving eligible contacts…** to finish, then check the eligible-contact count.
 
-    ![HubSpot contact list tab with one selected list and estimated cost in the footer](/images/broadcasts/hubspot-selected-list.jpeg)
+    ![Selected contact segment with 2 eligible contacts of 4 resolved and its highlighted card](/images/hubspot-segments/contacts-selected.png)
+
+    In this example, the segment contains **4 contacts**, but the summary shows **2 eligible contacts of 4 resolved**. Use the eligible-contact total when reviewing your audience, rather than assuming every member can receive a message.
 
     <Note>
-      Eazybe checks the HubSpot `mobilephone` property first and then `phone`. Contacts without a valid value in either property are excluded from sending.
+      Eazybe checks `mobilephone` first, then `phone`. Contacts without a usable phone number are excluded, and duplicate phone numbers are removed. An eligible number does not guarantee successful WhatsApp delivery.
     </Note>
-
-    Wait for Eazybe to validate the list and calculate the selected recipient count and **Estimated cost**. Confirm the count before selecting **Send broadcast**.
-
-    <Warning>
-      Sending uses wallet balance. Active HubSpot lists can change as contacts enter or leave the list, so verify the recipient count shown in Eazybe before sending.
-    </Warning>
   </Step>
 </Steps>
 
-## Understand HubSpot List Types
+## Use a Deal Segment
 
-A HubSpot segment, previously called a list, is a saved group of contacts.
+<Steps>
+  <Step title="Choose Deals and find your segment">
+    In **Choose recipients**, select **HubSpot segment**, then **Deals**. Use **Search HubSpot deal segments** to find the segment you want.
 
-| Label in Eazybe | How membership works |
+    ![Deals tab and Search HubSpot deal segments highlighted above cards showing deal counts](/images/hubspot-segments/deals-browse.png)
+
+    The cards now show **Deal segment** and the number of **deals** in each segment. Use the page arrows below the cards to browse additional results.
+
+    <Note>
+      Switching between **Contacts** and **Deals** clears the current segment selection and search. Select the segment you want after switching.
+    </Note>
+  </Step>
+  <Step title="Select a deal segment and review its associated contacts">
+    Select the deal-segment card and wait for the summary to finish resolving contacts. The summary states: **Recipients are unique contacts associated with deals in this segment.**
+
+    ![Selected deal segment showing 10 deals on its card and 6 eligible contacts in its summary](/images/hubspot-segments/deals-selected.png)
+
+    In this example, **10 deals** resolve to **6 eligible contacts**. Eazybe sends to the associated contacts' phone numbers. The deal count is not the recipient count: deals can share contacts, have several associated contacts, or have no associated contacts.
+
+    <Note>
+      A contact associated with multiple deals is not counted as a separate recipient for every deal. Duplicate phone numbers are removed. Check the eligible-contact summary before reviewing the cost.
+    </Note>
+  </Step>
+</Steps>
+
+## Understand Segment Membership
+
+| Label | How membership works |
 | --- | --- |
-| **Active segment** | HubSpot automatically adds or removes contacts when they match or stop matching the filters |
-| **Static segment** | Membership stays fixed until contacts are added or removed manually |
+| **Active segment** | HubSpot adds or removes records as they match or stop matching the segment's filters |
+| **Static segment** | Membership changes when records are manually added or removed |
 
-<Card
-  title={
-    <div className="flex flex-col items-start gap-4">
-      <Icon icon="filter" size={30} className="text-black dark:text-white" />
-      <a href="/en/integrations/hubspot/create-segment" className="text-primary underline-offset-4 hover:underline">
-        Create a HubSpot Segment
-      </a>
-    </div>
-  }
->
-  Prepare a contact segment in HubSpot before selecting it in Eazybe.
-</Card>
+To prepare a contact segment first, see [Create a HubSpot Segment](/en/integrations/hubspot/create-segment).
 
-## Personalize the Template
+## Personalize and Review Your Broadcast
 
-| Template type | What Eazybe uses |
+Select your approved **Template message** and check the **Message preview**. If the footer says **Choose a template to calculate recipients**, choose a template before reviewing the final audience and cost.
+
+### Map Workspace Template Variables
+
+When you select a **Workspace variable template** and a HubSpot segment, use **Map template variables to HubSpot** to personalize each numbered variable.
+
+The selected segment determines which properties are available:
+
+| Selected segment | Available mapping properties |
 | --- | --- |
-| **HubSpot property template** | The HubSpot property mappings saved with the template |
-| **Workspace variable template** | The HubSpot properties and fallback values you map for this broadcast |
-| **Zoho variable template** | The HubSpot properties and fallback values you map for this broadcast |
+| **Contacts** | **Contact properties** from HubSpot |
+| **Deals** | **Deal properties** from HubSpot |
 
-Mappings created for this HubSpot list broadcast do not change the original template type. See [Template Variables and Personalization](/en/broadcasts/template-variables).
+For each variable, open **Choose a HubSpot property**, use **Search HubSpot properties…** to find the field, and select it. Enter a **Fallback value (required)** for every variable. Eazybe uses that fallback when the selected property is empty.
+
+For example, use a contact's first name when working with a contact segment, or a deal's name when working with a deal segment. With a deal segment, the message uses the mapped deal values and is sent to the associated contacts.
+
+<Frame caption="workspace_variable_new with a deal segment: choose a deal property and enter a fallback for all three variables.">
+  <img
+    src="/images/hubspot-segments/workspace-variable-new-mapping.png"
+    alt="workspace_variable_new mapping panel with three numbered variables, Deal properties, property pickers, and required fallback fields highlighted in violet"
+  />
+</Frame>
+
+The **workspace_variable_new** example shows the fields before mapping. Complete all three property selections and fallback values before sending. When you choose a contact segment instead, these fields show **Contact properties**.
+
+
+<Note>
+  The property type follows your segment selection. After switching between **Contacts** and **Deals**, select the segment and review every variable's mapping and fallback before sending. These selections apply only to this broadcast; saved template mappings are not changed.
+</Note>
+
+### Review HubSpot Template Variables
+
+Select your HubSpot variable template in **Template message**, then choose a HubSpot segment. Review the suggested values in **Map template variables to HubSpot** and adjust the property or fallback where needed.
+
+<Frame caption="hubspot_fallback with a contact segment: review the suggested City and Country/Region mappings and their fallbacks.">
+  <img
+    src="/images/hubspot-segments/hubspot-fallback-mapping.png"
+    alt="hubspot_fallback mapping panel showing City and Country/Region contact properties with call_fallback and country_fallback values"
+  />
+</Frame>
+
+In this **hubspot_fallback** example, the first variable maps to **City** with **call_fallback**, and the second maps to **Country/Region** with **country_fallback**. These are the example template's suggested values; review them and enter fallback wording that fits your message.
+
+**Zoho variable templates** with numbered variables also show this panel when a HubSpot segment is selected. See [Template Variables and Personalization](/en/broadcasts/template-variables).
+
+
+When your message and recipients are ready, review the recipient count and **Estimated cost** in the footer. Follow [Estimated Cost and Sending](/en/broadcasts/estimated-cost-and-sending) to finish.
+
+<Warning>
+  **Send Broadcast** sends a real campaign and uses wallet balance. Check the audience, template variables, and cost before sending. Active segments can change as HubSpot updates their membership.
+</Warning>
+
+## Troubleshoot Segment Selection
+
+| What you see | What to do |
+| --- | --- |
+| **HubSpot segment** is missing | Connect HubSpot to the current Eazybe workspace, then reopen the broadcast page |
+| **No matching HubSpot contact segments** or **No matching HubSpot deal segments** | Clear the search or try another name. Check that you selected the correct **Contacts** or **Deals** tab |
+| **No contact segments found** or **No deal segments found** | Check that the connected HubSpot account has a segment of that record type. Allow HubSpot to finish processing it, then refresh Eazybe |
+| **HubSpot list access required** or **Reconnect HubSpot to continue** | Select **Reconnect HubSpot**, grant the requested access, then return and select **Try again** |
+| **Unable to load HubSpot segments** | Select **Try again**. If the error persists, check the HubSpot connection under **Integrations** |
+| **This deal segment contains no associated contacts.** | Associate contacts with the deals in HubSpot, or choose a different deal segment |
+| **Associated contacts exist but have no usable phone number.** | Add or correct the contacts' international mobile or phone numbers in HubSpot, then refresh and select the segment again |
+| **HubSpot is still updating this segment.** | Wait for HubSpot to finish, refresh the page, and select the segment again |
+
+<Tip>
+  A card's contact or deal count describes its HubSpot membership. The selected summary shows the contacts Eazybe can resolve for sending. Check both when a segment's recipient total is smaller than expected.
+</Tip>

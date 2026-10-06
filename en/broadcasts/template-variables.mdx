@@ -1,6 +1,6 @@
 ---
 title: "Template Variables and Personalization"
-description: "Provide a value for every template variable in uploaded files or HubSpot contact lists."
+description: "Provide a value for every template variable in uploaded files or HubSpot contact and deal segments."
 ---
 
 Variables let one approved WhatsApp template use different values for each recipient. Before sending, make sure every selected contact has a value for every variable shown in the template.
@@ -46,22 +46,42 @@ For example, `Hello {{1}}, your appointment is on {{2}}.` needs two values for e
   </Step>
 </Steps>
 
-## Use Variables with a HubSpot List
+## Use Variables with a HubSpot Segment
 
-How Eazybe fills variables depends on the selected template type:
+Select a template with numbered variables and choose a **HubSpot segment**. The **Map template variables to HubSpot** panel lets you set the property and fallback for each variable, including when you use a **Workspace variable template**.
 
-| Template type | How personalization works |
+| Selected segment | Available mapping properties |
 | --- | --- |
-| **HubSpot property template** | Eazybe uses the HubSpot property mappings already saved with the template. No additional mapping panel appears. |
-| **Workspace variable template** | Map every numbered variable to a HubSpot contact property and enter a fallback value. |
-| **Zoho variable template** | Map every numbered variable to a HubSpot contact property and enter a fallback value. |
+| **Contacts** | **Contact properties** |
+| **Deals** | **Deal properties** |
 
-The fallback value is used when the mapped HubSpot property is empty for a contact. These mappings apply to the current HubSpot list broadcast and do not change the original template.
+For every numbered variable, open **Choose a HubSpot property**, search for the field, and select it. Enter a **Fallback value (required)**. The fallback is used when the mapped property is empty.
 
-<Frame caption="Map template variables for a HubSpot list broadcast">
+For a deal segment, the message uses mapped deal properties and is delivered to the contacts associated with those deals. After switching segment types, review the mappings and fallbacks for the newly selected segment.
+
+The panel also appears for **HubSpot property templates** and **Zoho variable templates** that contain numbered variables. Review any suggested mapping before sending. Every variable needs a property and a fallback; these selections apply only to the current broadcast and do not change saved template mappings.
+
+See [Broadcast to a HubSpot Contact or Deal Segment](/en/broadcasts/hubspot-contact-list) for segment selection and eligible-contact counts.
+
+### Workspace Variable Template Example
+
+Select **workspace_variable_new** and a deal segment to map its three variables to **Deal properties**. The screenshot shows the fields before mapping; select a property and enter a fallback for every variable. A contact segment shows **Contact properties** instead.
+
+<Frame caption="workspace_variable_new: deal-property selections and required fallbacks">
   <img
-    src="/images/broadcasts/template-variables-hubspot-list.jpeg"
-    alt="Create broadcast page with a HubSpot list selected and template variables mapped to HubSpot contact properties with fallback values"
+    src="/images/hubspot-segments/workspace-variable-new-mapping.png"
+    alt="Three workspace template variables with Deal properties, property pickers, and required fallback fields highlighted in violet"
+  />
+</Frame>
+
+### HubSpot Variable Template Example
+
+Select **hubspot_fallback** and a contact segment. Review the suggested **City** and **Country/Region** mappings. This example has **call_fallback** and **country_fallback** as fallback values; replace them with wording that fits your message when needed.
+
+<Frame caption="hubspot_fallback: suggested contact-property mappings and fallback values">
+  <img
+    src="/images/hubspot-segments/hubspot-fallback-mapping.png"
+    alt="HubSpot template variables mapped to City and Country/Region with example fallback values"
   />
 </Frame>
 
