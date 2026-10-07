@@ -354,6 +354,7 @@
                   "en/integrations/hubspot/workflow-troubleshoot",
                   "en/integrations/hubspot/analytics-dashboard",
                   "en/integrations/hubspot/broadcast-reporting",
+                  "en/integrations/hubspot/broadcast-opt-out-status",
                   {
                     "group": "FAQ",
                     "pages": [

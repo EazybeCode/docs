@@ -1,0 +1,58 @@
+---
+title: "Check Broadcast Opt-Out Status in HubSpot"
+description: "View a contact's Eazybe broadcast opt-out status and the date and time it was last updated in HubSpot."
+---
+
+Use Eazybe's HubSpot contact properties to check whether a contact has opted out of WhatsApp broadcasts after unsubscribing in chat. Add the status and its last-updated timestamp to your **Contacts** view so you can review them together.
+
+## Understand the contact properties
+
+| Contact property | What it shows |
+| --- | --- |
+| **Eazybe Broadcast Opt Out** | The contact's recorded broadcast opt-out status. **Opted In** indicates that the contact is recorded as opted in; an opted-out status indicates that the contact has unsubscribed from broadcasts. |
+| **Eazybe Broadcast Opt Out Updated At (GMT+5:30)** | The date and time the broadcast opt-out status was last updated, shown in GMT+5:30. |
+
+<Note>
+  In **Choose which columns you see**, the timestamp property is listed as **Eazybe Broadcast Opt Out Updated At**, without the timezone suffix. The contact table displays the timezone with the date and time.
+</Note>
+
+## Add and check the properties
+
+In HubSpot, open **CRM → Contacts** and select the contact view you want to use, such as **All contacts**. Open the table's column settings to display **Choose which columns you see**.
+
+<Steps>
+  <Step title="Select the broadcast opt-out properties">
+    In **Choose which columns you see**, enter **Eazybe Broadcast** in the search field. Under **CONTACT INFORMATION**, select both properties:
+
+    - **Eazybe Broadcast Opt Out**
+    - **Eazybe Broadcast Opt Out Updated At**
+
+    Click **Apply** to add the selected columns to your contact table.
+
+    ![HubSpot column chooser with Eazybe Broadcast Opt Out and Eazybe Broadcast Opt Out Updated At selected](/images/hubspot-broadcast-opt-out/select-opt-out-properties.png)
+
+    <Note>
+      Selecting these columns changes what you see in the table. It does not subscribe or unsubscribe a contact.
+    </Note>
+  </Step>
+
+  <Step title="Read the status and its update time">
+    Back in **Contacts**, find the contact's row and review **Eazybe Broadcast Opt Out** alongside **Eazybe Broadcast Opt Out Updated At**. If the columns are outside your visible table area, scroll horizontally to find them.
+
+    Read the status to check the contact's broadcast preference, then use the timestamp to see when that preference was last updated. This is the preference-update time, not the time a broadcast was sent or delivered.
+
+    ![HubSpot Contacts table showing broadcast opt-out status and last-updated timestamps in GMT+5:30](/images/hubspot-broadcast-opt-out/view-opt-out-status.png)
+
+    <Warning>
+      The populated status rows in this screenshot show **Opted In**. The dates and values illustrate the table layout; check your own contact's row for their current recorded status.
+    </Warning>
+
+    <Note>
+      A blank value or **--** does not confirm that a contact is opted in. It means no value is displayed for that property. Check the contact's recorded preference before using it to decide who should receive a broadcast.
+    </Note>
+  </Step>
+</Steps>
+
+## Check opt-outs for a specific broadcast
+
+These HubSpot properties let you review the preference recorded on the contact. To inspect the **Opt Out** recipient group for an individual campaign, see [View Broadcast Analytics](/en/broadcasts/view-analytics).
