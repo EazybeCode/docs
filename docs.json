@@ -675,7 +675,8 @@
                 "icon": "database",
                 "pages": [
                   "en/ai-agents/knowledge-base-agent/agent-info",
-                  "en/ai-agents/knowledge-base-agent/ai-agent-setup"
+                  "en/ai-agents/knowledge-base-agent/ai-agent-setup",
+                   "en/ai-agents/knowledge-base-agent/lead-response-limit"
                 ]
               },
               {
