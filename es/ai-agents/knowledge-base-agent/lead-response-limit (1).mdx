@@ -1,0 +1,54 @@
+---
+title: "Limite de Resposta a Leads"
+description: "Controle quantos novos contatos seu agente de IA gerencia em comparação com sua equipe de vendas humana"
+---
+
+A configuração de Limite de Resposta a Leads permite controlar a proporção de novos contatos recebidos que seu agente de IA gerencia automaticamente. Em vez da IA responder a cada novo contato, você escolhe quantos ela atende — o restante fica para sua equipe de vendas gerenciar manualmente.
+
+Isso é útil quando você quer comparar o desempenho da IA com sua equipe humana no mesmo grupo de leads, ou quando está começando com a Eazybe e quer iniciar com uma proporção menor antes de ir com tudo.
+
+## Onde Encontrar
+
+Vá até a aba **Settings** do seu agente (ícone de engrenagem na barra lateral esquerda). A seção Limite de Resposta a Leads fica entre o seletor de nome do **WhatsApp Profile** e a seção de **Blocked Numbers**.
+
+![Limite de Resposta a Leads nas Configurações do Agente](/images/lead-response-limit/image1.png)
+
+## Como Configurar
+
+<Steps>
+  <Step title="Ativar o Toggle">
+    Na aba Settings, encontre a seção **Lead Response Limit** e ative o toggle. Quando está desativado (padrão), a IA gerencia cada novo contato normalmente.
+  </Step>
+  <Step title="Definir sua Proporção">
+    Dois campos numéricos aparecem: **AI handles [X]** de cada **[Y] new contacts**. Insira a proporção desejada. Por exemplo, definir X = 1 e Y = 5 significa que a IA atende 1 de cada 5 novos contatos, e os 4 restantes ficam para sua equipe.
+
+    ![Definir sua Proporção de Resposta a Leads](/images/lead-response-limit/image2.png)
+  </Step>
+  <Step title="Confirmar a Configuração">
+    Um banner amarelo informativo abaixo dos campos confirma sua proporção em linguagem clara — por exemplo, "AI will handle 1 out of every 5 new contacts." Revise para garantir que corresponde à sua intenção.
+  </Step>
+  <Step title="Salvar Configurações">
+    Role para baixo e clique em **Save settings** para aplicar as alterações. Sua proporção não terá efeito até que você salve.
+
+    ![Clique em Save Settings](/images/lead-response-limit/image3.png)
+  </Step>
+</Steps>
+
+## O Que Acontece com Cada Contato
+
+- **Contatos atendidos pela IA** passam pelo fluxo completo de conversa — qualificação, follow-ups e transferência — exatamente como fariam sem essa configuração.
+- **Contatos não atendidos pela IA** não recebem resposta automatizada. Eles aparecem na sua caixa de entrada como qualquer lead normal do WhatsApp, prontos para sua equipe de vendas gerenciar manualmente.
+
+<Note>Esta configuração aplica-se apenas a **novos contatos recebidos**. Conversas existentes que já estão ativas com a IA continuam sem interrupção, independentemente da proporção.</Note>
+
+## Alterar a Proporção
+
+Você pode atualizar a proporção a qualquer momento. As alterações entram em vigor a partir do **próximo lote** de novos contatos — elas não reatribuem retroativamente contatos que já foram alocados. Um lead que já está em conversa com a IA não ficará repentinamente em silêncio, e um lead já atribuído à sua equipe não receberá uma mensagem inesperada da IA.
+
+Se você desativar o toggle, a IA retoma o gerenciamento de todos os novos contatos a partir desse momento. Os contatos que estavam no grupo "humano" durante o período ativo não são afetados.
+
+## Cenários de Exemplo
+
+- **Começar de forma conservadora:** Defina 1 de cada 10 para a primeira semana, revise o desempenho da IA na aba Analytics, depois aumente para 3 de cada 10 quando tiver confiança.
+- **Filtragem de alto volume:** Defina 9 de cada 10 para que a IA gerencie a maior parte da qualificação inicial enquanto seu closer foca nos leads mais quentes.
+- **Testes A/B:** Defina 1 de cada 2 para uma divisão 50-50 equilibrada, depois compare taxas de agendamento, tempos de resposta e precisão de qualificação entre os grupos de IA e humanos durante um período fixo.
