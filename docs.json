@@ -107,7 +107,8 @@
                   "en/voice-number/phone-numbers",
                   "en/voice-number/call-history",
                   "en/voice-number/call-analytics",
-                  "en/voice-number/sms"
+                  "en/voice-number/sms",
+                  "en/voice-number/billing-subscription"
                 ]
               },
               {
