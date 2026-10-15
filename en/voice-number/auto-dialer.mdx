@@ -1,0 +1,43 @@
+---
+title: "Auto Dialer"
+description: "Import a contact list and call each contact in order with a controlled time gap."
+---
+
+Auto Dialer calls a reviewed list one contact at a time from your selected voice number. You can upload a CSV or Excel file, choose the delay between calls, and monitor each result.
+
+<Warning>Uploading a list does not start calls. Calls begin only after you click **Start auto dialer**.</Warning>
+
+<Steps>
+  <Step title="Open Auto Dialer">
+    Open **Auto Dialer** under **CALLS**. The page shows **Upload list**, **Review contacts**, and **Start calling**.
+
+    ![Auto Dialer upload screen](/images/voice-number/auto-dialer-upload.jpg)
+  </Step>
+  <Step title="Upload your contact file">
+    In **Contact list**, click **Choose file** and select a `.csv`, `.xlsx`, or `.xls` file. Each sheet can contain up to 1,000 contacts plus a header, and the file must be smaller than 5 MB.
+
+    Use separate columns for **Name**, **Country Code**, and **Phone Number**. A phone number may include its country code instead, such as `+14155550101`.
+
+    <Tip>Use **Download CSV sample** or **Download Excel sample** to see the expected format.</Tip>
+  </Step>
+  <Step title="Review and correct the contacts">
+    Review the contact table before calling. Eazybe detects the phone, name, and country-code columns. Use **Adjust import settings** if the detected columns are incorrect. You can also choose a sheet, change **Phone column**, **Name column**, or **Country code column**, and set **First row contains column names (e.g. Name, Phone)**.
+
+    Contacts with invalid numbers are listed in an amber warning and will not be called. Correct those rows and upload the file again.
+  </Step>
+  <Step title="Set the calling session">
+    Under **Calling session**, choose **Call from** and select the voice number that will place the calls. Set **Time between calls** as a whole number and choose **Seconds** or **Minutes**. The first call starts immediately; the delay applies between subsequent calls.
+
+    ![Auto Dialer time-gap selector](/images/voice-number/auto-dialer-gap.jpg)
+  </Step>
+  <Step title="Start and control the session">
+    Click **Start auto dialer**. Contacts are called in list order. The table shows **Calling**, **On call**, **Done**, and each outcome.
+
+    - **Pause** lets the current call finish and holds the session.
+    - **Stop** ends the current call and keeps the remaining queue.
+    - **Skip call** ends the current call and moves to the next contact.
+    - **Resume** continues a paused session.
+
+    Keep the page open and use a headset. Calls require an active voice number, browser phone, eligible subscription, and wallet balance.
+  </Step>
+</Steps>

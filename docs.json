@@ -99,6 +99,18 @@
                 ]
               },
               {
+                "group": "Voice Number",
+                "icon": "phone",
+                "pages": [
+                  "en/voice-number/dialer",
+                  "en/voice-number/auto-dialer",
+                  "en/voice-number/phone-numbers",
+                  "en/voice-number/call-history",
+                  "en/voice-number/call-analytics",
+                  "en/voice-number/sms"
+                ]
+              },
+              {
                 "group": "Message Templates",
                 "icon": "message",
                 "pages": [
