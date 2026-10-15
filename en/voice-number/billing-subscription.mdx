@@ -1,89 +1,84 @@
 ---
-title: "Billing and Subscription for Voice Numbers"
-description: "Understand the subscription, number rental, wallet balance, and usage charges for Voice Number features."
+title: "Voice Number Billing"
+description: "Understand voice-number rental, wallet deductions, and call and SMS usage charges."
 ---
 
-Voice Number uses two billing areas: your subscription and your wallet. The subscription covers the Eazybe plan and purchased-number rental; the wallet covers usage such as calls and messages.
+Voice Number billing has two parts: the recurring charge for a purchased number and usage charges deducted from your wallet. Calls and SMS use the wallet separately from your Eazybe workspace plan.
 
 <Info>
-Billing options and amounts depend on your role, wallet currency, plan, number of seats, billing period, and the numbers in your workspace. Administrators see more billing controls than other users.
+The final usage amount depends on the call or message, provider cost, duration, destination, and the wallet currency. The exact amount is recorded after billing is processed.
 </Info>
 
-## What You Pay For
+## Number rental and purchase charges
 
-| Item | Where to review it | Billing behavior |
-| --- | --- | --- |
-| Eazybe subscription | **Settings → Billing → Your plan** | Plan price depends on plan, seats, billing period, and currency. |
-| Voice-number rental | **Settings → Billing → Your plan** and **CALLS → Phone Numbers → Your numbers** | Each purchased number has a recurring rental amount. A separate virtual-number subscription row may appear in **Your plan**. |
-| Number setup or purchase | **CALLS → Phone Numbers → Review your purchase** | A one-time setup or purchase fee may apply, with tax where applicable. |
-| Calling and SMS usage | Wallet balance and usage records | Calls and messages are charged separately from number rental. |
+When you buy a Voice Number, Eazybe shows the amount due before you confirm the purchase. The number also has a recurring monthly rental charge.
 
-<Warning>Buying a number, recharging the wallet, or sending an SMS can create a real charge. Review the displayed amount and billing schedule before confirming payment or sending a message.</Warning>
+| Country | Monthly rental |
+| --- | ---: |
+| United States | **$6/month** |
+| Canada | **$9/month** |
+| Puerto Rico | **$12/month** |
 
-## Check Your Subscription
+The purchase screen is the source of truth for the number you select. It shows the one-time purchase or setup fee, the rental period, tax where applicable, and the next renewal date.
 
-1. Open **Settings** in the Eazybe sidebar.
-2. Select **Billing**.
-3. Open **Your plan**.
+To review a purchased number, open **CALLS → Phone Numbers → Your numbers**. The table shows the number, monthly amount, purchase date, and renewal date.
 
-The page can show your plan name, validity date, seats, price per seat, total price, billing period, GST notes for INR pricing, and a separate monthly row for virtual numbers.
+## Call billing
 
-Only administrators can see **Your plan**. If you do not see it, ask a workspace administrator to review the subscription.
+Calls made from Dialer or Auto Dialer are charged to the wallet after the call ends. Both the agent side of the call and the customer side are included in the final total. A call can therefore have a charge even when the displayed duration or destination differs from another call.
 
-### Change the plan
+There is no single fixed price for every call. The provider cost changes with the destination and billed duration, and an answered call can include recording usage.
 
-Select **Upgrade**, choose **Monthly** or **Yearly**, review the available plans, set the phone-number count when shown, and select **Upgrade Now**. Complete payment in the checkout window.
+The total wallet deduction is calculated as follows:
 
-<Note>Available plans and prices load dynamically. The checkout amount can change with the selected plan, billing period, phone-number count, seats, and currency.</Note>
+| Wallet currency | Total deduction |
+| --- | --- |
+| USD | **The complete USD provider call cost, including applicable voice and recording usage, multiplied by the call billing margin.** |
+| INR | **The complete USD total converted to INR using the current USD-to-INR wallet rate.** |
 
-## Check Voice-Number Rental
+The default call billing margin is **3×**. The product calculates the complete total automatically and records the debit in wallet history. It does not split the customer-facing charge into separate provider-cost lines.
 
-Open **CALLS → Phone Numbers → Your numbers**. The table shows each number's **Monthly amount**, **Purchased** date, and **Renews** date. The purchase review also shows the amount due today, rental period, one-time setup, tax, and recurring amount after the current period.
+Before starting a call, the wallet must meet the minimum balance required by the workspace:
 
-Cancelling a number keeps it active until the paid period ends. After that, the number is released and cannot be recovered. Cancel before the 28th to avoid the next monthly charge when applicable.
+- **INR wallet:** ₹100
+- **USD wallet:** $1
 
-## Add Wallet Credits
+This minimum is an eligibility check, not the price of a call. The actual total is deducted after billing is processed.
+
+## SMS billing
+
+Incoming and outgoing SMS, including verification-code messages received on your Voice Number, are charged from the wallet. The SMS total is based on the provider message cost, the wallet currency, and the default **3× SMS billing margin**. If an inbound message has no provider cost, the billing service uses a **$0.004** provider-cost fallback before applying the margin and currency conversion.
+
+Because carrier and destination costs can vary, the product calculates the complete SMS total for each message instead of promising one fixed public price.
+
+## Add wallet credits
 
 1. Open **Settings → Billing → Credits**.
-2. In **Add credits**, choose a suggested amount or enter an amount within the displayed range.
-3. Review **New balance**.
-4. Select **Complete purchase** and finish checkout.
+2. Select an amount under **Add credits**.
+3. Review the new balance and complete payment.
 
-The supported limits in the billing guide are:
+Use enough wallet credit to cover the calls and messages you plan to make. A successful recharge appears in **Wallet history** after the payment provider confirms it.
 
-- INR wallets: **₹1,000–₹50,000**, paid through Razorpay; GST information and tax summary may appear.
-- Other wallet currencies, including USD: **10–10,000**, paid through Stripe.
+## Review usage and charges
 
-Credits are added after payment is completed and the payment webhook processes the transaction.
+- Open **Settings → Billing → Wallet history** to review wallet debits and credits.
+- Open **CALLS → Call History** to review individual calls.
+- Open **CALLS → Phone Numbers → Your numbers** to review number rental and renewal details.
 
-## Use Auto Payment When Available
+## Common questions
 
-Auto payment is shown only for USD wallets. Expand the **Auto payment** card and turn on the switch. You can edit **Top up when below** and **Amount to add**, then select **Save changes**.
+### Why did two calls have different prices?
 
-For USD wallets, each amount must be between **$10** and **$10,000**. The threshold must be at least **$1** and lower than the amount to add.
+The total changes with billed duration, destination, provider rates, and whether recording or other billable call usage was present. INR totals also change with the USD-to-INR wallet rate.
 
-To stop automatic recharges, turn off the switch and confirm **Disable auto payment**. A saved configuration then appears as **Paused** and can be enabled again. Disabling auto payment does not remove the current wallet balance or reverse earlier recharges.
+### When is the wallet charged?
 
-## Review Wallet History
+The wallet is charged after the call or message cost is received and billing is processed. The completed debit appears in wallet history.
 
-Administrators with Credits access can open **Wallet history**. Use **Status**, **From Date**, and **To Date** to filter transactions. The available status values include **All Status**, **Completed**, **Pending**, and **Failed**.
+### Does the wallet charge include the number rental?
 
-Completed recharges may show **Download invoice** or **View payment receipt**. Free-credit records and incomplete transactions do not show invoice actions.
+No. The monthly number rental and any purchase or setup fee are separate from call and SMS usage deductions.
 
-## Common Questions
+### Why can I not start a call?
 
-### Why can I use Phone Numbers but not see billing controls?
-
-Billing tabs are role- and account-scoped. **Your plan** is administrator-only. Ask an administrator to review the subscription or wallet.
-
-### Why is Auto payment missing?
-
-Auto payment controls are displayed only for USD wallets.
-
-### Why is a call or SMS blocked?
-
-Calling can be blocked when the workspace has no eligible subscription or insufficient wallet balance. SMS requires an active voice number and may incur messaging charges. Ask an administrator to check the plan and wallet.
-
-### Where can I update GST details?
-
-For INR administrators, open **Settings → Billing → Billing & taxation**. Enter and verify the 15-character **GSTIN**, review the company and billing details, optionally add a **Finance Email**, and select **Save Billing Information**.
+Calling is blocked when the workspace does not have enough eligible wallet balance. Add credits, then try again.
