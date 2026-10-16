@@ -919,6 +919,19 @@
                 ]
               },
               {
+                "group": "Número de voz",
+                "icon": "phone",
+                "pages": [
+                  "es/voice-number/dialer",
+                  "es/voice-number/auto-dialer",
+                  "es/voice-number/phone-numbers",
+                  "es/voice-number/call-history",
+                  "es/voice-number/call-analytics",
+                  "es/voice-number/sms",
+                  "es/voice-number/billing-subscription"
+                ]
+              },
+              {
                 "group": "Difusiones",
                 "icon": "bullhorn",
                 "pages": [
@@ -1665,6 +1678,19 @@
                 "pages": [
                   "pt/team-inbox-hd/team-inbox-hd-pt",
                   "pt/team-inbox-hd/filters-in-team-inbox-pt"
+                ]
+              },
+              {
+                "group": "Número de voz",
+                "icon": "phone",
+                "pages": [
+                  "pt/voice-number/dialer",
+                  "pt/voice-number/auto-dialer",
+                  "pt/voice-number/phone-numbers",
+                  "pt/voice-number/call-history",
+                  "pt/voice-number/call-analytics",
+                  "pt/voice-number/sms",
+                  "pt/voice-number/billing-subscription"
                 ]
               },
               {
@@ -2419,6 +2445,19 @@
                 "pages": [
                   "tr/team-inbox-hd/team-inbox-hd-tr",
                   "tr/team-inbox-hd/filters-in-team-inbox-tr"
+                ]
+              },
+              {
+                "group": "Sesli Numara",
+                "icon": "phone",
+                "pages": [
+                  "tr/voice-number/dialer",
+                  "tr/voice-number/auto-dialer",
+                  "tr/voice-number/phone-numbers",
+                  "tr/voice-number/call-history",
+                  "tr/voice-number/call-analytics",
+                  "tr/voice-number/sms",
+                  "tr/voice-number/billing-subscription"
                 ]
               },
               {
