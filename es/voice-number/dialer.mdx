@@ -1,6 +1,95 @@
 ---
 title: "Marcador"
-description: "Llama a un contacto desde tu número de voz."
+description: "Llama a un cliente desde tu número de voz, usa los controles y resuelve problemas comunes."
 ---
 
-Abre **CALLS → Dialer**, selecciona **Call from**, elige el código de país, escribe el número y pulsa **Call**. Permite el micrófono y usa auriculares si es necesario. Durante la llamada puedes silenciar, poner en espera, abrir el teclado y finalizarla. Las llamadas se cobran al monedero cuando terminan.
+Usa **Dialer** para llamar a una persona a la vez desde tu número de voz de Eazybe. Hablas y escuchas desde el navegador mediante el micrófono y los altavoces del ordenador o unos auriculares.
+
+## Antes de llamar
+
+- Tu organización necesita un número de voz activo y una suscripción que incluya llamadas.
+- Tu número de voz debe estar disponible para ti. Si no aparece, pide al administrador que revise su estado y tus permisos.
+- El teléfono del navegador debe estar conectado en la ventana que utilizas. Permite el micrófono cuando Eazybe lo solicite y comprueba los auriculares.
+- Tu organización necesita saldo suficiente en el monedero para iniciar una llamada.
+
+<Warning>Las llamadas se cobran al monedero de tu organización cuando terminan. Al hacer clic en **Call** realizas una llamada real al número introducido.</Warning>
+
+## Realizar una llamada
+
+<Steps>
+  <Step title="Abrir el marcador">
+    En la barra lateral de Eazybe, abre **Dialer** dentro de **CALLS**. Se abre la ventana **Dialer** con la descripción **Call from your business number**.
+
+    ![Ventana del marcador](/images/voice-number/dialer-open.jpg)
+
+    <Note>Si aparece **Browser phone is offline**, conecta el teléfono del navegador antes de continuar. Consulta la solución de problemas.</Note>
+  </Step>
+  <Step title="Elegir tu número de voz">
+    Abre **Call from** y selecciona el número de voz para la llamada saliente. Si tiene un nombre, aparece junto al número. Comprueba la selección antes de cada llamada.
+
+    ![Lista Call from con números de voz](/images/voice-number/dialer-call-from.jpg)
+
+    <Note>**Call from** es tu número de empresa. **Phone number** es el número de la persona a la que llamas. La lista depende de los números y permisos de tu organización.</Note>
+  </Step>
+  <Step title="Introducir el número del cliente">
+    Elige el **Country code** del destinatario y escribe los dígitos restantes en **Phone number**. Puedes escribirlos o usar el teclado.
+
+    Por ejemplo, para **+1 202 555 0123**, elige **US +1** y escribe **2025550123**. No introduzcas el código de país dos veces.
+
+    ![Campos de código de país y número](/images/voice-number/dialer-open.jpg)
+
+    - Usa **C** para borrar el número.
+    - Usa el icono de borrar para eliminar el último dígito.
+    - Confirma el código y el número antes de continuar.
+
+    <Tip>También puedes pegar un número internacional completo que empiece por **+**. Comprueba ambos campos después de pegarlo.</Tip>
+  </Step>
+  <Step title="Iniciar la llamada">
+    Haz clic en **Call**. Eazybe conecta primero el teléfono del navegador y después llama al destinatario. Cuando responde, el marcador muestra **Connected** y el tiempo transcurrido.
+
+    ![Botón Call y aviso de cobro](/images/voice-number/dialer-open.jpg)
+
+    <Note>Solo puedes tener una llamada a la vez. Termina la llamada actual antes de iniciar otra. El marcador permanece abierto para acceder a **End call**.</Note>
+  </Step>
+</Steps>
+
+## Durante la llamada
+
+| Control | Función |
+| --- | --- |
+| **Mute** / **Unmute** | Apaga o activa tu micrófono. |
+| **Hold** / **Resume** | Pone la llamada en espera y la reanuda. **Hold** aparece cuando responde el destinatario. |
+| **Keypad** | Envía dígitos, **\*** o **#** a un menú telefónico o introduce un código. |
+| **End call** | Finaliza la llamada con el botón rojo. |
+
+Antes de llamar, el teclado introduce el número. Durante la llamada, envía tonos al sistema telefónico conectado.
+
+## Después de la llamada
+
+El marcador vuelve a la vista de entrada cuando termina. Si no hubo respuesta o no se pudo conectar, puede aparecer un mensaje breve. Abre **Call History** en **CALLS** para revisar las llamadas.
+
+## Solución de problemas
+
+### El teléfono del navegador está desconectado
+
+Si aparece **Browser phone is offline**, usa el control de conexión del mensaje para conectar el teléfono en esta ventana. Espera a que termine antes de llamar.
+
+![Mensaje Browser phone is offline](/images/voice-number/dialer-offline.jpg)
+
+Si falla, lee el motivo mostrado. Comprueba el permiso del micrófono y el dispositivo de audio. Si el teléfono está activo en otra ventana, termina allí la llamada antes de conectarlo aquí.
+
+### No aparece ningún número de voz
+
+**No phone number yet** significa que no hay un número activo disponible. Si aparece **Buy a number**, úsalo para abrir la compra. Si no, pide al administrador que asigne un número y revise tus permisos.
+
+### La facturación bloquea la llamada
+
+**No subscription** significa que necesitas una suscripción válida. **Insufficient balance** significa que hay que recargar el monedero. El administrador puede usar **View plans** o **Recharge wallet** cuando aparezcan.
+
+### El botón de llamada no está disponible
+
+Comprueba que el teléfono del navegador está conectado, que has seleccionado un número en **Call from** y que no estás en otra llamada. Si aparece **Connecting call updates...**, espera. Si aparece **Reconnect**, úsalo antes de intentar de nuevo.
+
+### Se rechaza el número
+
+Elige el **Country code** correcto e introduce los dígitos restantes en **Phone number**. Si no se reconoce el código pegado, selecciónalo de la lista y vuelve a escribir el número.
