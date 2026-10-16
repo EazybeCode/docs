@@ -1,10 +1,45 @@
 ---
 title: "Otomatik arama"
-description: "Kişi listesini sırayla arayın."
+description: "Kişi listesini içe aktarın ve belirlenen aralıklarla kişileri sırayla arayın."
 ---
 
-**CALLS → Auto Dialer** bölümünü açın. **Download CSV sample** veya **Download Excel sample** ile örnek dosyayı indirin, kişilerinizi ekleyin ve doldurulmuş dosyayı yükleyin. Listeyi kontrol edin, sesli numaranızı ve aramalar arasındaki süreyi seçin. **Start Auto Dialer** düğmesine basın.
+Auto Dialer, seçtiğiniz sesli numaradan incelenmiş listedeki kişileri tek tek arar. CSV veya Excel dosyası yükleyebilir, aramalar arasındaki süreyi seçebilir ve sonuçları izleyebilirsiniz.
 
-![Otomatik arama kişi yükleme ekranı](/images/voice-number/auto-dialer-upload.jpg) Sistem kişileri belirlediğiniz aralıklarla tek tek arar.
+<Warning>Liste yüklemek aramaları başlatmaz. Aramalar yalnızca **Start auto dialer** düğmesine bastığınızda başlar.</Warning>
 
-**Start Auto Dialer** düğmesine bastıktan sonra **Calling session** panelinde **SESSION IN PROGRESS**, mevcut kişi, telefon numarası ve **Dialling...** durumu görünür. Mevcut kişi tabloda **Calling** olarak işaretlenir. Etkin aramayı **Pause**, **Stop**, **Skip call** veya **Mute** düğmeleriyle kontrol edebilirsiniz.
+<Steps>
+  <Step title="Auto Dialer’ı açma">
+    **CALLS** altında **Auto Dialer** bölümünü açın. Sayfada **Upload list**, **Review contacts** ve **Start calling** adımları görünür.
+
+    ![Auto Dialer upload screen](/images/voice-number/auto-dialer-upload.jpg)
+  </Step>
+  <Step title="Kişi dosyasını yükleme">
+    **Contact list** bölümünde **Choose file** düğmesine tıklayın ve `.csv`, `.xlsx` veya `.xls` dosyası seçin. Her sayfada başlık satırına ek olarak en fazla 1.000 kişi bulunabilir ve dosya 5 MB’tan küçük olmalıdır. **Name**, **Country Code** ve **Phone Number** için ayrı sütunlar kullanın. Telefon numarası ülke kodunu içerebilir; örneğin `+14155550101`.
+
+    ![Auto Dialer contact upload screen with CSV and Excel sample download buttons](/images/voice-number/auto-dialer-upload.jpg)
+
+    <Tip>CSV şablonu indirmek için **Download CSV sample**, XLS/XLSX şablonu indirmek için **Download Excel sample** seçeneğini kullanın. Kişilerinizi ekleyin, dosyayı kaydedin ve Auto Dialer’ı başlatmadan önce yükleyin.</Tip>
+  </Step>
+  <Step title="Kişileri inceleme ve düzeltme">
+    Aramadan önce kişi tablosunu inceleyin. Eazybe telefon, ad ve ülke kodu sütunlarını algılar. Algılama yanlışsa **Adjust import settings** kullanın. Ayrıca sayfa seçebilir, **Phone column**, **Name column** veya **Country code column** alanlarını değiştirebilir ve **First row contains column names (e.g. Name, Phone)** seçeneğini ayarlayabilirsiniz. Geçersiz numaralar sarı uyarıda gösterilir ve aranmaz. Bu satırları düzeltip dosyayı yeniden yükleyin.
+  </Step>
+  <Step title="Arama oturumunu ayarlama">
+    **Calling session** altında **Call from** seçeneğini açın ve aramaları yapacak sesli numarayı seçin. **Time between calls** alanına tam sayı girin ve **Seconds** veya **Minutes** seçin. İlk arama hemen başlar; aralık sonraki aramalar arasında uygulanır.
+
+    ![Auto Dialer time-gap selector](/images/voice-number/auto-dialer-gap.jpg)
+  </Step>
+  <Step title="Oturumu başlatma ve kontrol etme">
+    **Start auto dialer** düğmesine tıklayın. Kişiler listedeki sırayla aranır. Tabloda **Calling**, **On call**, **Done** ve sonuçlar görünür.
+
+    Oturum çalışırken **Calling session** panelinde **SESSION IN PROGRESS**, mevcut kişi, telefon numarası ve **Dialling...** durumu görünür. Mevcut kişi tabloda **Calling** olarak işaretlenir. Etkin aramayı **Pause**, **Stop**, **Skip call** veya **Mute** ile kontrol edin.
+
+    ![Auto Dialer session in progress showing the current contact and call controls](/images/voice-number/auto-dialer-upload.jpg)
+
+    - **Pause** mevcut aramanın bitmesini bekler ve oturumu duraklatır.
+    - **Stop** mevcut aramayı bitirir ve kalan kuyruğu korur.
+    - **Skip call** mevcut aramayı bitirir ve sonraki kişiye geçer.
+    - **Resume** duraklatılmış oturumu sürdürür.
+
+    Sayfayı açık tutun ve kulaklık kullanın. Aramalar için etkin sesli numara, tarayıcı telefonu, uygun abonelik ve cüzdan bakiyesi gerekir.
+  </Step>
+</Steps>

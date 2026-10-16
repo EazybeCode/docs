@@ -1,10 +1,45 @@
 ---
 title: "Marcador automático"
-description: "Llama a una lista de contactos de forma secuencial."
+description: "Importa una lista de contactos y llama a cada contacto en orden con un intervalo controlado."
 ---
 
-Abre **CALLS → Auto Dialer**. Descarga **Download CSV sample** o **Download Excel sample**, añade tus contactos al archivo de ejemplo y vuelve a subirlo. Revisa la lista, selecciona tu número de voz y define el intervalo entre llamadas. Pulsa **Start Auto Dialer**.
+Auto Dialer llama a una lista revisada, un contacto a la vez, desde el número de voz seleccionado. Puedes subir un archivo CSV o Excel, elegir el intervalo entre llamadas y revisar cada resultado.
 
-![Pantalla de carga de contactos del marcador automático](/images/voice-number/auto-dialer-upload.jpg) El sistema llama a los contactos uno por uno y respeta el intervalo configurado. Corrige los números con errores antes de iniciar.
+<Warning>Subir una lista no inicia las llamadas. Las llamadas comienzan solo después de hacer clic en **Start auto dialer**.</Warning>
 
-Después de pulsar **Start Auto Dialer**, el panel **Calling session** muestra **SESSION IN PROGRESS**, el contacto actual, el número y el estado **Dialling...**. El contacto actual aparece como **Calling** en la tabla. Puedes usar **Pause**, **Stop**, **Skip call** o **Mute** para controlar la llamada activa.
+<Steps>
+  <Step title="Abrir Auto Dialer">
+    Abre **Auto Dialer** dentro de **CALLS**. La página muestra **Upload list**, **Review contacts** y **Start calling**.
+
+    ![Auto Dialer upload screen](/images/voice-number/auto-dialer-upload.jpg)
+  </Step>
+  <Step title="Subir el archivo de contactos">
+    En **Contact list**, haz clic en **Choose file** y selecciona un archivo `.csv`, `.xlsx` o `.xls`. Cada hoja puede tener hasta 1.000 contactos más una fila de encabezado y el archivo debe ser menor de 5 MB. Usa columnas separadas para **Name**, **Country Code** y **Phone Number**. El número también puede incluir el código de país, por ejemplo `+14155550101`.
+
+    ![Auto Dialer contact upload screen with CSV and Excel sample download buttons](/images/voice-number/auto-dialer-upload.jpg)
+
+    <Tip>Usa **Download CSV sample** para descargar una plantilla CSV o **Download Excel sample** para descargar una plantilla XLS/XLSX. Añade tus contactos, guarda el archivo y súbelo antes de iniciar Auto Dialer.</Tip>
+  </Step>
+  <Step title="Revisar y corregir los contactos">
+    Revisa la tabla antes de llamar. Eazybe detecta las columnas de teléfono, nombre y código de país. Usa **Adjust import settings** si la detección es incorrecta. También puedes elegir una hoja, cambiar **Phone column**, **Name column** o **Country code column**, y activar **First row contains column names (e.g. Name, Phone)**. Los números no válidos aparecen en un aviso ámbar y no se llamarán. Corrige esas filas y vuelve a subir el archivo.
+  </Step>
+  <Step title="Configurar la sesión de llamadas">
+    En **Calling session**, elige **Call from** y selecciona el número de voz que hará las llamadas. Define **Time between calls** como un número entero y elige **Seconds** o **Minutes**. La primera llamada comienza inmediatamente; el intervalo se aplica entre las siguientes llamadas.
+
+    ![Auto Dialer time-gap selector](/images/voice-number/auto-dialer-gap.jpg)
+  </Step>
+  <Step title="Iniciar y controlar la sesión">
+    Haz clic en **Start auto dialer**. Los contactos se llaman en el orden de la lista. La tabla muestra **Calling**, **On call**, **Done** y cada resultado.
+
+    Mientras la sesión está activa, **Calling session** muestra **SESSION IN PROGRESS**, el contacto actual, el número de teléfono y **Dialling...**. El contacto actual aparece como **Calling** en la tabla. Usa **Pause**, **Stop**, **Skip call** o **Mute** para controlar la llamada activa.
+
+    ![Auto Dialer session in progress showing the current contact and call controls](/images/voice-number/auto-dialer-upload.jpg)
+
+    - **Pause** deja que termine la llamada actual y pausa la sesión.
+    - **Stop** termina la llamada actual y conserva la cola restante.
+    - **Skip call** termina la llamada actual y pasa al siguiente contacto.
+    - **Resume** continúa una sesión pausada.
+
+    Mantén la página abierta y usa auriculares. Las llamadas requieren un número de voz activo, teléfono del navegador, suscripción válida y saldo en el monedero.
+  </Step>
+</Steps>
