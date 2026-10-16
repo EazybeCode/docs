@@ -27,16 +27,16 @@ To review a purchased number, open **CALLS → Phone Numbers → Your numbers**.
 
 Calls made from Dialer or Auto Dialer are charged to the wallet after the call ends. Both the agent side of the call and the customer side are included in the final total. A call can therefore have a charge even when the displayed duration or destination differs from another call.
 
-There is no single fixed price for every call. The provider cost changes with the destination and billed duration, and an answered call can include recording usage.
+There is no single fixed price for every call. The final amount can vary with the destination, billed duration, and call features.
 
-The total wallet deduction is calculated as follows:
+Eazybe deducts the final call amount from your wallet after the call ends. The amount is calculated for that call and shown in your wallet transaction in the wallet currency.
 
-| Wallet currency | Total deduction |
+| Wallet currency | Amount deducted by Eazybe |
 | --- | --- |
-| USD | **The complete USD provider call cost, including applicable voice and recording usage, multiplied by the call billing margin.** |
-| INR | **The complete USD total converted to INR using the current USD-to-INR wallet rate.** |
+| USD | The exact final USD amount shown in the wallet transaction. |
+| INR | The exact final INR amount shown in the wallet transaction. |
 
-The default call billing margin is **3×**. The product calculates the complete total automatically and records the debit in wallet history. It does not split the customer-facing charge into separate provider-cost lines.
+There is no separate provider charge to pay. The amount shown in Eazybe wallet history is the complete amount deducted from your balance.
 
 Before starting a call, the wallet must meet the minimum balance required by the workspace:
 
@@ -47,9 +47,7 @@ This minimum is an eligibility check, not the price of a call. The actual total 
 
 ## SMS billing
 
-Incoming and outgoing SMS, including verification-code messages received on your Voice Number, are charged from the wallet. The SMS total is based on the provider message cost, the wallet currency, and the default **3× SMS billing margin**. If an inbound message has no provider cost, the billing service uses a **$0.004** provider-cost fallback before applying the margin and currency conversion.
-
-Because carrier and destination costs can vary, the product calculates the complete SMS total for each message instead of promising one fixed public price.
+Incoming and outgoing SMS, including verification-code messages received on your Voice Number, are charged from the wallet. Eazybe deducts the complete SMS amount from your wallet after the message is processed. The exact amount appears in wallet history in your wallet currency. SMS prices can vary by message and destination, so the wallet transaction is the final price charged by Eazybe.
 
 ## Add wallet credits
 
@@ -69,7 +67,7 @@ Use enough wallet credit to cover the calls and messages you plan to make. A suc
 
 ### Why did two calls have different prices?
 
-The total changes with billed duration, destination, provider rates, and whether recording or other billable call usage was present. INR totals also change with the USD-to-INR wallet rate.
+The total changes with billed duration, destination, call details and wallet currency. The amount in wallet history is the final Eazybe charge.
 
 ### When is the wallet charged?
 
