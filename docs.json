@@ -102,6 +102,7 @@
                 "group": "Voice Number",
                 "icon": "phone",
                 "pages": [
+                  "en/voice-number/overview",
                   "en/voice-number/dialer",
                   "en/voice-number/auto-dialer",
                   "en/voice-number/phone-numbers",
@@ -689,7 +690,7 @@
                 "pages": [
                   "en/ai-agents/knowledge-base-agent/agent-info",
                   "en/ai-agents/knowledge-base-agent/ai-agent-setup",
-                   "en/ai-agents/knowledge-base-agent/lead-response-limit"
+                  "en/ai-agents/knowledge-base-agent/lead-response-limit"
                 ]
               },
               {
@@ -922,6 +923,7 @@
                 "group": "Número de voz",
                 "icon": "phone",
                 "pages": [
+                  "es/voice-number/overview",
                   "es/voice-number/dialer",
                   "es/voice-number/auto-dialer",
                   "es/voice-number/phone-numbers",
@@ -1684,6 +1686,7 @@
                 "group": "Número de voz",
                 "icon": "phone",
                 "pages": [
+                  "pt/voice-number/overview",
                   "pt/voice-number/dialer",
                   "pt/voice-number/auto-dialer",
                   "pt/voice-number/phone-numbers",
@@ -2451,6 +2454,7 @@
                 "group": "Sesli Numara",
                 "icon": "phone",
                 "pages": [
+                  "tr/voice-number/overview",
                   "tr/voice-number/dialer",
                   "tr/voice-number/auto-dialer",
                   "tr/voice-number/phone-numbers",
