@@ -1,0 +1,77 @@
+---
+title: "Playground Testing Credits"
+description: "Learn how credits work when you test your agent in the Playground."
+---
+
+Every AI response your agent generates while you test in the Playground now deducts credits from your account. Testing is billed the same way as live usage because each test reply runs the same AI model that a real customer conversation would. The cost depends on the **AI model tier** selected for your agent — higher tiers are more capable and cost more per reply.
+
+## Where to see the cost and your balance
+
+When you open the **Playground** tab, a billing bar appears at the top of the chat window. It shows two things:
+
+- **Cost per reply** — the amount deducted each time the agent sends a response (e.g. $0.04 at the Very High tier).
+- **Remaining balance** — your current wallet balance in your local currency (e.g. ₹1,838.42 left).
+
+<Frame caption="Playground billing bar showing cost per reply and remaining balance">
+  <img
+    src="/images/billing/playground-credits.png"
+    alt="Playground billing bar with arrows pointing to cost per reply and remaining balance"
+  />
+</Frame>
+
+<Warning>
+  The cost and balance shown in the screenshot are examples. Your workspace may show different amounts depending on your selected model tier and wallet currency.
+</Warning>
+
+## Cost per reply
+
+| Model tier | Cost per reply |
+| --- | --- |
+| **Low** | $0.01 |
+| **Medium** | $0.02 |
+| **High** | $0.03 |
+| **Very High** | $0.04 |
+| **Premium** | $0.05 |
+| **Ultra** | $0.06 |
+
+The **Ultra** tier is intended for the hardest cases only. It is slower and considerably more expensive, so use it only where the lower tiers fall short.
+
+You can choose the model tier in your agent's **Billing** tab under the **AI Model** dropdown. The price per reply is shown next to each tier.
+
+## Tips to keep testing costs low
+
+- **Pick the right tier before you start.** Use a lower tier (Low or Medium) for routine checks like greetings and scripted answers. Switch to a higher tier only when you need to test answer quality.
+- **Plan your test cases in advance.** Keep each chat focused and short instead of re-running the same conversation many times.
+- **Check the Monthly Breakdown** in the Billing tab after a testing round to see what it cost.
+
+## Frequently asked questions
+
+<AccordionGroup>
+  <Accordion title="Is there a flat fee per test chat?">
+    No. Charges follow the AI work done. You pay per AI reply, not per conversation.
+  </Accordion>
+
+  <Accordion title="How are workflow agents charged?">
+    Workflow agents are charged per AI step (node), not per reply. A standard classify-then-reply flow runs two AI steps for one customer message, so it is billed twice per message.
+  </Accordion>
+
+  <Accordion title="If the agent sends multiple WhatsApp messages in one reply, is that one charge or multiple?">
+    Several WhatsApp messages from one AI reply step count as one charge. Several AI steps in the same turn are charged separately.
+  </Accordion>
+
+  <Accordion title="Am I charged for failed or empty replies?">
+    A provider failure with no tokens used is not charged. An empty output after tokens were used is charged, and a delivery failure after the model has already run can still be charged.
+  </Accordion>
+
+  <Accordion title="What currency are the charges in?">
+    Tier prices are in USD. If your wallet is in INR, amounts are converted at the configured rate (currently 93.0 INR per USD). So a $0.04 reply is about ₹3.72.
+  </Accordion>
+
+  <Accordion title="What happens if my balance runs out during a live WhatsApp conversation?">
+    The agent stops running. The incoming message is kept but no automatic reply is sent. Top up your balance to resume.
+  </Accordion>
+
+  <Accordion title="Are live WhatsApp conversations charged the same way?">
+    Yes. Live conversations use the same tier prices and the same per-step counting as the Playground.
+  </Accordion>
+</AccordionGroup>
