@@ -1,0 +1,176 @@
+---
+title: "Sohbetleri ve mesajları silme"
+description: "Silme izinlerini yönetin; Eazybe Team Inbox'tan mesajları, sohbetleri, bir etiketteki sohbetleri veya Excel dosyasıyla eşleşen sohbetleri silin."
+---
+
+Eazybe Team Inbox'tan tek bir mesajı, seçtiğiniz mesajları veya bir sohbetin tamamını silebilirsiniz. Ayrıca bir etiketteki tüm sohbetleri silebilir ya da WhatsApp numaraları içeren bir Excel dosyasıyla sohbetleri bulabilirsiniz.
+
+<Warning>
+Silme işlemi kalıcıdır ve Eazybe Team Inbox'ta geri alınamaz. WhatsApp sohbetleriniz ve mesajlarınız silinmez. Bir sohbet silindiğinde kişi veya grup kaydı ve etiketleri korunur.
+</Warning>
+
+<Note>
+Bu özelliğin düğme ve kontrol adları, arayüzde kolayca bulabilmeniz için İngilizce olarak bırakılmıştır. Ekran görüntüsü de İngilizce arayüzü gösterir.
+</Note>
+
+## Sohbetleri kimler silebilir?
+
+Özellik kullanıma sunulduğunda varsayılan olarak yalnızca kuruluş sahibi (**Org Owner**) silme yetkisine sahiptir. Kuruluş sahibi, **Settings → Members & Access** bölümünden diğer yöneticilere (**Admins**) yetki verebilir. Manager ve Employee rolleri **Not eligible** (uygun değil) olarak gösterilir.
+
+Sohbet silme yetkisi, bir yöneticinin başka kişilere silme yetkisi verebileceği anlamına gelmez. Bu ayarı yalnızca kuruluş sahibi değiştirebilir ve kuruluş sahibinin erişimi her zaman korunur.
+
+## Yöneticilere silme yetkisi verme
+
+<Steps>
+  <Step title="Members & Access bölümünü açın">
+    Kuruluş sahibi olarak oturum açın. **Settings** bölümünü açıp **Members & Access** seçeneğini belirleyin.
+
+    **By role** sekmesinde **Team Inbox** bölümü kapalıysa genişletin ve **Delete Chats** satırını bulun.
+
+    <Note>
+    Bu ekran görüntüsündeki kanal ve hesap bilgileri kurgusaldır. Görüntü, kuruluş sahibi olmayan bir hesapta iznin kapalı ve düzenlemeye kapalı olduğunu gösterir.
+    </Note>
+
+    ![Members & Access ekranında Team Inbox altındaki Delete Chats izni ve Not eligible olarak gösterilen Manager ve Employee rolleri](/images/delete-chats/members-access-demo.png)
+  </Step>
+  <Step title="Yetki verilecek kişileri seçin">
+    Belirli bir yöneticiye yetki vermek için **By member** sekmesini açın, yöneticiyi seçin ve erişim panelinde **Delete Chats** seçeneğini etkinleştirin. Yetki verilecek diğer yöneticiler için işlemi tekrarlayın.
+
+    Yöneticilerin varsayılan ayarını değiştirmek için **By role** sekmesinde, **Delete Chats** satırının **Admin** sütunundaki anahtarı kullanın.
+
+    <Tip>
+    Yalnızca belirli yöneticilere yetki vermek istiyorsanız Admin rolünün varsayılan ayarını kapalı tutun ve ilgili kişilerin iznini **By member** sekmesinden açın.
+    </Tip>
+  </Step>
+  <Step title="Kaydedilen izni kontrol edin">
+    Anahtarı değiştirdiğinizde ayar kaydedilir. Sayfadan ayrılmadan önce başarı bildirimini bekleyin. Kayıt başarısız olursa son kaydedilen izin geçerli kalır.
+
+    Kişiye özel ayar (**Member override**), rolün varsayılan ayarından önceliklidir. **Reset to role default**, kişiye özel ayarı kaldırarak yöneticinin rolün mevcut ayarını kullanmasını sağlar. Erişimi kaldırmak için kişinin **Delete Chats** iznini kapatın veya kendisine uygulanan rol varsayılanını değiştirin.
+  </Step>
+</Steps>
+
+## Tek bir mesajı silme
+
+<Steps>
+  <Step title="Mesaj işlemlerini açın">
+    **Team Inbox** içinde sohbeti açın. İmleci mesajın üzerine getirin veya klavyeyle işlem kontrolüne odaklanın ve mesaj menüsünü açın.
+  </Step>
+  <Step title="Delete message seçeneğini kullanın">
+    **Delete message** seçeneğine tıklayın. Onay penceresindeki mesaj sayısını ve sohbeti kontrol edip [Silme işlemini onaylama](#silme-islemini-onaylama) adımlarını izleyin.
+
+    Yalnızca seçtiğiniz mesaj silinir. Sohbetin geri kalanı korunur.
+  </Step>
+</Steps>
+
+## Birden fazla mesajı seçip silme
+
+<Steps>
+  <Step title="Mesaj seçimini başlatın">
+    Bir mesajın menüsünü açıp **Select messages** seçeneğine tıklayın. İşlemi başlattığınız mesaj otomatik olarak seçilir.
+  </Step>
+  <Step title="Seçiminizi gözden geçirin">
+    Mesajların yanındaki kutuları işaretleyin veya işaretlerini kaldırın. Seçim çubuğunda kaç mesaj seçtiğiniz gösterilir.
+
+    **Select all (N)**, sohbette o anda yüklenmiş ve seçilmeye uygun mesajları seçer. **Deselect all** seçimi temizler.
+
+    <Note>
+    Tümünü seçme işlemi yalnızca yüklenmiş mesajları kapsar; sohbet geçmişinin tamamını kapsamayabilir. Arama kayıtları, sistem kayıtları ve henüz gönderilmemiş mesajlar silinmek üzere seçilemez.
+    </Note>
+  </Step>
+  <Step title="Seçili mesajları silin">
+    Seçim çubuğundaki **Delete (N)** düğmesine tıklayın; N, seçili mesaj sayısıdır. Ardından [Silme işlemini onaylama](#silme-islemini-onaylama) adımlarını izleyin. Hiçbir mesaj seçili değilse düğme devre dışıdır.
+
+    Onay penceresini iptal etmek seçiminizi korur. Seçim modundan **X** ile çıkabilir veya açık bir onay penceresi yokken **Escape** tuşuna basabilirsiniz. Başka bir sohbete geçmek de seçimi temizler.
+  </Step>
+</Steps>
+
+## Bir sohbetin tamamını silme
+
+<Steps>
+  <Step title="Sohbet menüsünü açın">
+    Team Inbox sohbet listesinde imleci bireysel sohbetin veya grup sohbetinin üzerine getirin ya da işlem kontrolüne odaklanın. Sohbetin yanındaki üç noktalı menüyü açıp **Delete chat** seçeneğine tıklayın.
+  </Step>
+  <Step title="Sohbeti kontrol edip onaylayın">
+    Onay penceresinde adı gösterilen sohbeti kontrol edip [Silme işlemini onaylama](#silme-islemini-onaylama) adımlarını izleyin.
+
+    İşlem başarılı olduğunda sohbet listeden kaldırılır. Sohbet açıksa sohbet paneli, hiçbir sohbetin seçili olmadığı duruma döner.
+  </Step>
+</Steps>
+
+## Bir etiketteki tüm sohbetleri silme
+
+<Steps>
+  <Step title="Etiket işlemlerini açın">
+    Team Inbox kenar çubuğunda etiketi bulun, üç noktalı menüsünü açın ve **Delete all chats in this label** seçeneğine tıklayın.
+
+    <Warning>
+    Bu işlem yalnızca sohbetlerden etiketi kaldırmaz; eşleşen sohbetleri siler. Etiket, kişiler ve gruplar korunur.
+    </Warning>
+  </Step>
+  <Step title="Etkilenen sohbetleri ve gelen kutularını kontrol edin">
+    Eazybe eşleşen sohbetleri bulur; sohbet sayısını ve etkilenen gelen kutusu sayısını gösterir. Atlanan öğeleri inceleyip [Silme işlemini onaylama](#silme-islemini-onaylama) adımlarını izleyin.
+
+    <Warning>
+    Etikete göre silme, kuruluşunuzdaki birden fazla gelen kutusunu etkileyebilir. Onay penceresindeki kapsamı kontrol edin; işlem listede görünen sohbetlerle sınırlı değildir.
+    </Warning>
+
+    Eşleşen sohbet yoksa ilgili etiket için **No chats to delete** mesajı gösterilir. Silme işlemi sürerken pencereyi açık tutun.
+  </Step>
+</Steps>
+
+<Note>
+Huniler ve aşamalar için de **Delete all chats in this funnel** ve **Delete all chats in this stage** işlemleri bulunur. Onaylamadan önce huni veya aşama adını ve etkilenen gelen kutularını kontrol edin.
+</Note>
+
+## Excel dosyasıyla sohbetleri silme
+
+<Steps>
+  <Step title="Team Inbox ayarlarında Delete Chats sekmesini açın">
+    **Integrations** bölümünü açın, **Team Inbox** ayarlarına girin ve **Delete Chats** sekmesini seçin. Dosya yükleme bölümünün başlığı **Delete chats using an XLSX file** şeklindedir.
+  </Step>
+  <Step title="Dosyanızı hazırlayın">
+    **Download template** düğmesine tıklayın. Örnek numaraları, sohbetlerini silmek istediğiniz WhatsApp numaralarıyla değiştirin.
+
+    - En fazla **1 MB** boyutunda bir **.xlsx** dosyası kullanın.
+    - İlk çalışma sayfasını kullanın. **A1** hücresinde tam olarak **WhatsApp Number** yazmalıdır; bu başlığı çevirmeyin.
+    - A sütununa her satırda bir tam WhatsApp numarası girin ve ülke kodunu ekleyin.
+    - Excel'in rakamları değiştirmemesi için numara sütununu **Metin** biçiminde tutun.
+    - Her dosyada en fazla **500 numara satırı** bulundurun. Daha uzun listeleri ayrı dosyalara bölün.
+
+    <Note>
+    Biçimlendirme karakterleri kaldırıldıktan sonra numaralar 8–15 rakam içermelidir. Bu dosyayla grup sohbetleri hedeflenemez; gruplar için Team Inbox'taki **Delete chat** seçeneğini kullanın.
+    </Note>
+  </Step>
+  <Step title="Dosyayı yükleyip önizlemeyi kontrol edin">
+    **Browse files** düğmesine tıklayın veya dosyayı **Upload .xlsx** alanına bırakın. Kontrollerin tamamlanmasını bekleyin.
+
+    Önizlemede satırlar, eşleşen sohbetler, yinelenen satırlar, geçersiz satırlar ve bulunamayan numaralar gösterilir. Numaralar kısmen gizlenir; her satırda eşleşme sonucu veya neden kullanılamadığı belirtilir.
+
+    Yinelenen numaralar yalnızca bir kez işlenir. Kuruluşunuzda sohbeti olmayan numaralar atlanır. Geçersiz satırları düzeltip dosyayı yeniden yükleyin. Kontrol sürerken, işlemi engelleyen hatalar varken veya eşleşen sohbet bulunmadığında silme işlemi kullanılamaz.
+
+    <Warning>
+    Her numaranın sohbetleri **kuruluşunuzdaki tüm gelen kutularında** aranır. Bir numara birden fazla sohbetle eşleşebilir; bu nedenle sohbet sayısı dosyadaki benzersiz numara sayısından yüksek olabilir.
+    </Warning>
+  </Step>
+  <Step title="Silme işlemini gözden geçirip onaylayın">
+    **Review deletion (N chats)** düğmesine tıklayın. Sohbet sayısını ve etkilenen gelen kutularını kontrol edip [Silme işlemini onaylama](#silme-islemini-onaylama) adımlarını izleyin.
+
+    Yükleme ekranından ilerlemeyi ve sonucu takip edin. Bazı sohbetlerin silinmesi başarısız olursa nedenlerini inceleyin ve yalnızca bunları yeniden denemek için **Retry failed chats** düğmesini kullanın. Yeniden onay vermeniz istenir.
+  </Step>
+</Steps>
+
+<h2 id="silme-islemini-onaylama">Silme işlemini onaylama</h2>
+
+Her silme yöntemi bir **Delete Chats** onay penceresi açar. Vurgulanan kutu kaç mesajın veya sohbetin kalıcı olarak silineceğini gösterir. Ardından ilgili sohbet veya gelen kutusu kapsamı belirtilir.
+
+1. Sayıyı, öğe türünü ve kapsamı kontrol edin.
+2. Kalıcı silme uyarısını okuyun. WhatsApp sohbetleriniz ve mesajlarınız silinmez.
+3. **Delete** düğmesindeki üç saniyelik geri sayımın bitmesini bekleyin.
+4. İşlemi başlatmak için **Delete**, verileri değiştirmeden çıkmak için **Cancel** düğmesine tıklayın.
+
+## Silme işlemi tamamlanmazsa
+
+- **Bazı mesajlar silinemiyorsa:** Hata mesajını, silinen ve başarısız olan öğe sayılarını okuyun. Silinemeyen mesajlar, inceleyip yeniden deneyebilmeniz için seçili kalır.
+- **Etiket veya dosya işlemindeki bazı sohbetler silinemiyorsa:** Nedenleri inceleyip **Retry failed chats** düğmesine tıklayın. Başarıyla silinmiş sohbetler yeniden denemeye dahil edilmez.
+- **Bir sohbetin tamamı silinemiyorsa:** Hata mesajını okuyun. Yeniden denemeden önce inceleyebilmeniz için sohbet görünür kalır.
+- **Silme kontrolleri görünmüyorsa:** Kuruluş sahibinden **Delete Chats** erişiminizi kontrol etmesini isteyin. Team Inbox veya Members & Access erişimi, otomatik olarak silme yetkisi vermez.

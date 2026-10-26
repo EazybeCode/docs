@@ -1,0 +1,176 @@
+---
+title: "Excluir conversas e mensagens"
+description: "Gerencie as permissões de exclusão e remova mensagens, conversas completas, conversas de uma etiqueta ou conversas identificadas por um arquivo Excel no Eazybe Team Inbox."
+---
+
+Exclua mensagens individuais, mensagens selecionadas ou conversas completas do Eazybe Team Inbox. Você também pode excluir todas as conversas de uma etiqueta ou usar um arquivo Excel para localizar conversas pelo número do WhatsApp.
+
+<Warning>
+A exclusão é permanente e não pode ser desfeita no Eazybe Team Inbox. Suas conversas e mensagens do WhatsApp não serão excluídas. Ao excluir uma conversa, o contato ou grupo e suas etiquetas são mantidos.
+</Warning>
+
+<Note>
+Os nomes dos controles deste recurso são mantidos em inglês para facilitar sua identificação na interface. A captura de tela também mostra a interface em inglês.
+</Note>
+
+## Quem pode excluir conversas
+
+No lançamento, apenas o proprietário da organização (**Org Owner**) tem acesso por padrão. Ele pode conceder acesso a outros administradores (**Admins**) em **Settings → Members & Access**. Os perfis Manager e Employee aparecem como **Not eligible** (não elegíveis).
+
+A permissão para excluir conversas não permite que um administrador conceda esse acesso a outras pessoas. Apenas o proprietário pode alterar essa configuração e ele sempre mantém o acesso.
+
+## Conceder acesso de exclusão aos administradores
+
+<Steps>
+  <Step title="Abra Members & Access">
+    Entre como proprietário, abra **Settings** e selecione **Members & Access**.
+
+    Em **By role**, expanda **Team Inbox** se estiver recolhido e localize **Delete Chats**.
+
+    <Note>
+    Esta captura usa dados fictícios de canal e conta. Ela mostra a permissão desativada e indisponível para edição em uma conta que não pertence ao proprietário.
+    </Note>
+
+    ![Members & Access com a permissão Delete Chats em Team Inbox e os perfis Manager e Employee marcados como Not eligible](/images/delete-chats/members-access-demo.png)
+  </Step>
+  <Step title="Escolha quem terá acesso">
+    Para conceder acesso a um administrador específico, selecione **By member**, escolha a pessoa e ative **Delete Chats** no painel de acesso. Repita para cada administrador que precisar da permissão.
+
+    Para definir o padrão dos administradores, use **By role** e altere o botão da coluna **Admin** na linha **Delete Chats**.
+
+    <Tip>
+    Para conceder acesso apenas a determinados administradores, deixe o padrão do perfil Admin desativado e ative a permissão dessas pessoas em **By member**.
+    </Tip>
+  </Step>
+  <Step title="Confira a permissão salva">
+    As alterações são salvas quando você muda o botão de ativação. Aguarde a notificação de sucesso antes de sair. Se ocorrer um erro, a última permissão salva continua em vigor.
+
+    Uma configuração individual (**Member override**) tem prioridade sobre o padrão do perfil. **Reset to role default** remove essa configuração para que o administrador siga o padrão atual. Para retirar o acesso, desative **Delete Chats** para a pessoa ou altere o padrão do perfil aplicável.
+  </Step>
+</Steps>
+
+## Excluir uma mensagem
+
+<Steps>
+  <Step title="Abra as ações da mensagem">
+    Abra a conversa no **Team Inbox**. Passe o cursor sobre a mensagem ou use o teclado para focar o controle de ações e abra o menu.
+  </Step>
+  <Step title="Selecione Delete message">
+    Clique em **Delete message**. Confira a quantidade de mensagens e a conversa no diálogo e siga [Confirmar a exclusão](#confirmar-a-exclusao).
+
+    Somente a mensagem escolhida é removida. O restante da conversa permanece.
+  </Step>
+</Steps>
+
+## Selecionar e excluir várias mensagens
+
+<Steps>
+  <Step title="Comece a selecionar mensagens">
+    Abra o menu de uma mensagem e clique em **Select messages**. A mensagem inicial é selecionada automaticamente.
+  </Step>
+  <Step title="Revise a seleção">
+    Marque ou desmarque as caixas das mensagens. A barra de seleção mostra quantas mensagens você selecionou.
+
+    **Select all (N)** seleciona as mensagens elegíveis carregadas na conversa. **Deselect all** limpa a seleção.
+
+    <Note>
+    Selecionar todas se aplica às mensagens carregadas, não necessariamente ao histórico completo. Registros de chamadas, entradas do sistema e mensagens que ainda não foram enviadas não podem ser selecionados para exclusão.
+    </Note>
+  </Step>
+  <Step title="Exclua as mensagens selecionadas">
+    Clique em **Delete (N)**, em que N é a quantidade selecionada, e siga [Confirmar a exclusão](#confirmar-a-exclusao). O botão fica desativado quando nada está selecionado.
+
+    Cancelar a confirmação mantém a seleção. Saia do modo de seleção com **X** ou pressione **Escape** quando nenhum diálogo de confirmação estiver aberto. Trocar de conversa também limpa a seleção.
+  </Step>
+</Steps>
+
+## Excluir uma conversa inteira
+
+<Steps>
+  <Step title="Abra o menu da conversa">
+    Na lista do Team Inbox, passe o cursor sobre a conversa individual ou de grupo, ou foque seu controle de ações. Abra o menu de três pontos ao lado da conversa e clique em **Delete chat**.
+  </Step>
+  <Step title="Revise a conversa e confirme">
+    Confira o nome da conversa na confirmação e siga [Confirmar a exclusão](#confirmar-a-exclusao).
+
+    Após a exclusão bem-sucedida, a conversa é removida da lista. Se estava aberta, o painel volta ao estado em que nenhuma conversa está selecionada.
+  </Step>
+</Steps>
+
+## Excluir todas as conversas de uma etiqueta
+
+<Steps>
+  <Step title="Abra as ações da etiqueta">
+    Localize a etiqueta na barra lateral do Team Inbox, abra o menu de três pontos e clique em **Delete all chats in this label**.
+
+    <Warning>
+    Esta ação exclui as conversas correspondentes; ela não apenas remove a etiqueta dessas conversas. A etiqueta, os contatos e os grupos são mantidos.
+    </Warning>
+  </Step>
+  <Step title="Confira as conversas e caixas de entrada afetadas">
+    O Eazybe encontra as conversas correspondentes e mostra sua quantidade e o número de caixas de entrada afetadas. Revise os itens ignorados e siga [Confirmar a exclusão](#confirmar-a-exclusao).
+
+    <Warning>
+    A exclusão por etiqueta pode afetar várias caixas de entrada da organização. Confira o alcance da confirmação: ele não se limita às conversas visíveis na lista.
+    </Warning>
+
+    Se não houver conversas correspondentes, o Eazybe mostra **No chats to delete** para a etiqueta. Mantenha a janela aberta durante a exclusão.
+  </Step>
+</Steps>
+
+<Note>
+Funis e etapas também têm ações próprias: **Delete all chats in this funnel** e **Delete all chats in this stage**. Confira o funil ou a etapa e as caixas de entrada afetadas antes de confirmar.
+</Note>
+
+## Excluir conversas usando um arquivo Excel
+
+<Steps>
+  <Step title="Abra Delete Chats nas configurações do Team Inbox">
+    Abra **Integrations**, entre nas configurações de **Team Inbox** e selecione **Delete Chats**. A seção de envio tem o título **Delete chats using an XLSX file**.
+  </Step>
+  <Step title="Prepare o arquivo">
+    Clique em **Download template**. Substitua os números de exemplo pelos números do WhatsApp cujas conversas deseja excluir.
+
+    - Use um arquivo **.xlsx** de até **1 MB**.
+    - Use a primeira planilha. A célula **A1** deve conter exatamente **WhatsApp Number**; não traduza esse cabeçalho.
+    - Insira um número completo por linha na coluna A, incluindo o código do país.
+    - Mantenha a coluna no formato **Texto** para que o Excel não altere os dígitos.
+    - Inclua no máximo **500 linhas de números** por arquivo. Divida listas maiores em arquivos separados.
+
+    <Note>
+    Os números devem ter de 8 a 15 dígitos após a remoção dos caracteres de formatação. O arquivo não permite selecionar conversas de grupo; para elas, use **Delete chat** no Team Inbox.
+    </Note>
+  </Step>
+  <Step title="Envie o arquivo e confira a prévia">
+    Clique em **Browse files** ou arraste o arquivo para **Upload .xlsx**. Aguarde o término das verificações.
+
+    A prévia mostra linhas, conversas correspondentes, duplicatas, linhas inválidas e números não encontrados. Os números ficam parcialmente ocultos; cada linha mostra o resultado ou o motivo pelo qual não pode ser usada.
+
+    Números duplicados são processados uma única vez. Números sem conversas na organização são ignorados. Corrija as linhas inválidas e envie o arquivo novamente. A exclusão fica indisponível durante a verificação, quando há erros que bloqueiam a operação ou quando nenhuma conversa corresponde aos números.
+
+    <Warning>
+    As conversas de cada número são procuradas em **todas as caixas de entrada da organização**. Um número pode corresponder a várias conversas; portanto, a quantidade de conversas pode ser maior que a de números únicos no arquivo.
+    </Warning>
+  </Step>
+  <Step title="Revise e confirme a exclusão">
+    Clique em **Review deletion (N chats)**. Confira a quantidade de conversas e as caixas de entrada afetadas, e siga [Confirmar a exclusão](#confirmar-a-exclusao).
+
+    Acompanhe o progresso e o resultado na tela de envio. Se algumas conversas falharem, confira os motivos e use **Retry failed chats** para tentar novamente apenas essas conversas. Uma nova confirmação será solicitada.
+  </Step>
+</Steps>
+
+<h2 id="confirmar-a-exclusao">Confirmar a exclusão</h2>
+
+Todos os métodos abrem um diálogo **Delete Chats**. A caixa destacada informa quantas mensagens ou conversas serão excluídas permanentemente, seguida da conversa ou das caixas de entrada afetadas.
+
+1. Confira a quantidade, o tipo de item e o alcance.
+2. Leia o aviso de exclusão permanente. Suas conversas e mensagens do WhatsApp não serão excluídas.
+3. Aguarde a contagem regressiva de três segundos no botão **Delete**.
+4. Clique em **Delete** para executar a exclusão ou em **Cancel** para manter os dados.
+
+## Se a exclusão não for concluída
+
+- **Algumas mensagens falham:** Leia o erro e as quantidades excluídas e com falha. As mensagens com falha continuam selecionadas para revisão e nova tentativa.
+- **Algumas conversas de uma etiqueta ou arquivo falham:** Confira os motivos e clique em **Retry failed chats**. As conversas já excluídas com sucesso não entram na nova tentativa.
+- **A exclusão de uma conversa inteira falha:** Leia o erro. A conversa permanece visível para revisão antes de tentar novamente.
+- **Os controles de exclusão não aparecem:** Peça ao proprietário para verificar seu acesso a **Delete Chats**. Ter acesso ao Team Inbox ou a Members & Access não concede automaticamente permissão de exclusão.

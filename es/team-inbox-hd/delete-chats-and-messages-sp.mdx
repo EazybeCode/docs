@@ -1,0 +1,176 @@
+---
+title: "Eliminar chats y mensajes"
+description: "Gestiona los permisos de eliminación y elimina mensajes, conversaciones, chats de una etiqueta o chats identificados mediante un archivo de Excel en Eazybe Team Inbox."
+---
+
+Elimina mensajes individuales, mensajes seleccionados o conversaciones completas de Eazybe Team Inbox. También puedes eliminar todos los chats de una etiqueta o buscar chats por número de WhatsApp mediante un archivo de Excel.
+
+<Warning>
+La eliminación es permanente y no se puede deshacer en Eazybe Team Inbox. Tus chats y mensajes de WhatsApp no se eliminarán. Al eliminar un chat, se conservan el contacto o grupo y sus etiquetas.
+</Warning>
+
+<Note>
+Los nombres de los controles de esta función se mantienen en inglés para que puedas identificarlos en la interfaz. La captura también muestra la interfaz en inglés.
+</Note>
+
+## Quién puede eliminar chats
+
+En el lanzamiento, solo el propietario de la organización (**Org Owner**) tiene acceso de forma predeterminada. Puede concederlo a otros administradores (**Admins**) desde **Settings → Members & Access**. Los roles Manager y Employee aparecen como **Not eligible** (no elegibles).
+
+Tener permiso para eliminar chats no permite a un administrador conceder ese permiso a otras personas. Solo el propietario puede modificarlo y siempre conserva el acceso.
+
+## Dar acceso de eliminación a los administradores
+
+<Steps>
+  <Step title="Abre Members & Access">
+    Inicia sesión como propietario, abre **Settings** y selecciona **Members & Access**.
+
+    En **By role**, despliega **Team Inbox** si está contraído y busca **Delete Chats**.
+
+    <Note>
+    Esta captura utiliza datos ficticios del canal y de la cuenta. Muestra el permiso desactivado y no editable desde una cuenta que no es la del propietario.
+    </Note>
+
+    ![Members & Access con el permiso Delete Chats dentro de Team Inbox y los roles Manager y Employee marcados como Not eligible](/images/delete-chats/members-access-demo.png)
+  </Step>
+  <Step title="Elige quién tendrá acceso">
+    Para conceder acceso a un administrador concreto, selecciona **By member**, elige a esa persona y activa **Delete Chats** en su panel de acceso. Repite el proceso para cada administrador que lo necesite.
+
+    Para establecer el valor predeterminado de los administradores, utiliza **By role** y cambia el interruptor de la columna **Admin** en la fila **Delete Chats**.
+
+    <Tip>
+    Si solo determinadas personas deben tener acceso, deja desactivado el valor predeterminado del rol Admin y activa el permiso para ellas en **By member**.
+    </Tip>
+  </Step>
+  <Step title="Comprueba que el permiso se haya guardado">
+    Los cambios se guardan al cambiar el interruptor. Espera la notificación de éxito antes de salir. Si se produce un error, sigue vigente el último permiso guardado.
+
+    Una excepción individual (**Member override**) tiene prioridad sobre el valor del rol. **Reset to role default** elimina esa excepción para que el administrador siga la configuración actual del rol. Para retirar el acceso, desactiva **Delete Chats** para esa persona o cambia el valor del rol que se le aplica.
+  </Step>
+</Steps>
+
+## Eliminar un mensaje
+
+<Steps>
+  <Step title="Abre las acciones del mensaje">
+    Abre la conversación en **Team Inbox**. Pasa el cursor sobre el mensaje o utiliza el teclado para enfocar su control de acciones y abre el menú.
+  </Step>
+  <Step title="Selecciona Delete message">
+    Haz clic en **Delete message**. Revisa la cantidad de mensajes y la conversación en el diálogo y sigue los pasos de [Confirmar la eliminación](#confirmar-la-eliminacion).
+
+    Solo se elimina el mensaje elegido. El resto de la conversación se conserva.
+  </Step>
+</Steps>
+
+## Seleccionar y eliminar varios mensajes
+
+<Steps>
+  <Step title="Empieza a seleccionar mensajes">
+    Abre el menú de un mensaje y haz clic en **Select messages**. Ese primer mensaje se selecciona automáticamente.
+  </Step>
+  <Step title="Revisa la selección">
+    Marca o desmarca las casillas de los mensajes. La barra de selección muestra cuántos has seleccionado.
+
+    **Select all (N)** selecciona los mensajes elegibles cargados actualmente en la conversación. **Deselect all** borra la selección.
+
+    <Note>
+    Seleccionar todos se aplica a los mensajes cargados, no necesariamente a todo el historial. No se pueden seleccionar registros de llamadas, entradas del sistema ni mensajes que todavía no se hayan enviado.
+    </Note>
+  </Step>
+  <Step title="Elimina los mensajes seleccionados">
+    Haz clic en **Delete (N)**, donde N es la cantidad seleccionada, y sigue [Confirmar la eliminación](#confirmar-la-eliminacion). El botón está desactivado cuando no hay mensajes seleccionados.
+
+    Cancelar la confirmación conserva la selección. Para salir del modo de selección, utiliza **X** o pulsa **Escape** cuando no haya un diálogo de confirmación abierto. Cambiar de conversación también borra la selección.
+  </Step>
+</Steps>
+
+## Eliminar un chat completo
+
+<Steps>
+  <Step title="Abre el menú del chat">
+    En la lista de conversaciones de Team Inbox, pasa el cursor sobre el chat individual o grupal, o enfoca su control de acciones. Abre el menú de tres puntos junto al chat y haz clic en **Delete chat**.
+  </Step>
+  <Step title="Revisa la conversación y confirma">
+    Comprueba el nombre de la conversación y sigue [Confirmar la eliminación](#confirmar-la-eliminacion).
+
+    Cuando la eliminación se completa, el chat desaparece de la lista. Si estaba abierto, el panel vuelve al estado en el que no hay ningún chat seleccionado.
+  </Step>
+</Steps>
+
+## Eliminar todos los chats de una etiqueta
+
+<Steps>
+  <Step title="Abre las acciones de la etiqueta">
+    Busca la etiqueta en la barra lateral de Team Inbox, abre su menú de tres puntos y haz clic en **Delete all chats in this label**.
+
+    <Warning>
+    Esta acción elimina los chats coincidentes; no se limita a quitarles la etiqueta. Se conservan la etiqueta, los contactos y los grupos.
+    </Warning>
+  </Step>
+  <Step title="Comprueba los chats y buzones afectados">
+    Eazybe busca los chats coincidentes y muestra su cantidad y el número de buzones afectados. Revisa los elementos omitidos y sigue [Confirmar la eliminación](#confirmar-la-eliminacion).
+
+    <Warning>
+    La eliminación por etiqueta puede afectar a varios buzones de tu organización. Revisa el alcance de la confirmación: no se limita a los chats visibles en la lista.
+    </Warning>
+
+    Si no hay coincidencias, Eazybe muestra **No chats to delete** para esa etiqueta. Mantén la ventana abierta mientras se ejecuta la eliminación.
+  </Step>
+</Steps>
+
+<Note>
+Los embudos y las etapas también tienen acciones propias: **Delete all chats in this funnel** y **Delete all chats in this stage**. Revisa el embudo o la etapa y los buzones afectados antes de confirmar.
+</Note>
+
+## Eliminar chats mediante un archivo de Excel
+
+<Steps>
+  <Step title="Abre Delete Chats en la configuración de Team Inbox">
+    Abre **Integrations**, entra en la configuración de **Team Inbox** y selecciona **Delete Chats**. La sección de carga se titula **Delete chats using an XLSX file**.
+  </Step>
+  <Step title="Prepara el archivo">
+    Haz clic en **Download template**. Sustituye los números de ejemplo por los números de WhatsApp cuyos chats quieras eliminar.
+
+    - Utiliza un archivo **.xlsx** de hasta **1 MB**.
+    - Utiliza la primera hoja. La celda **A1** debe contener exactamente **WhatsApp Number**; no traduzcas este encabezado.
+    - Introduce un número completo por fila en la columna A, incluido el código de país.
+    - Mantén el formato de la columna como **Texto** para que Excel no modifique los dígitos.
+    - Incluye como máximo **500 filas de números** por archivo. Divide las listas mayores en varios archivos.
+
+    <Note>
+    Los números deben tener entre 8 y 15 dígitos después de quitar los caracteres de formato. El archivo no permite seleccionar chats grupales; para ellos utiliza **Delete chat** en Team Inbox.
+    </Note>
+  </Step>
+  <Step title="Carga el archivo y revisa la vista previa">
+    Haz clic en **Browse files** o arrastra el archivo a **Upload .xlsx**. Espera a que terminen las comprobaciones.
+
+    La vista previa muestra filas, chats coincidentes, duplicados, filas no válidas y números no encontrados. Los números aparecen parcialmente ocultos; cada fila muestra el resultado o el motivo por el que no puede utilizarse.
+
+    Los números duplicados se procesan una sola vez. Se omiten los que no tienen ningún chat en tu organización. Corrige las filas no válidas y vuelve a cargar el archivo. No puedes continuar durante la comprobación, si hay errores que bloquean la operación o si no hay chats coincidentes.
+
+    <Warning>
+    Se buscan los chats de cada número en **todos los buzones de tu organización**. Un número puede coincidir con varios chats; por eso, la cantidad de chats puede superar la de números únicos del archivo.
+    </Warning>
+  </Step>
+  <Step title="Revisa y confirma la eliminación">
+    Haz clic en **Review deletion (N chats)**. Comprueba la cantidad de chats y los buzones afectados, y sigue [Confirmar la eliminación](#confirmar-la-eliminacion).
+
+    Consulta el progreso y el resultado en la pantalla de carga. Si algunos chats fallan, revisa los motivos y utiliza **Retry failed chats** para reintentar solo esos chats. Se te pedirá confirmar de nuevo.
+  </Step>
+</Steps>
+
+<h2 id="confirmar-la-eliminacion">Confirmar la eliminación</h2>
+
+Todos los métodos abren un diálogo **Delete Chats**. El recuadro destacado indica cuántos mensajes o chats se eliminarán permanentemente y, a continuación, la conversación o los buzones afectados.
+
+1. Comprueba la cantidad, el tipo de elemento y el alcance.
+2. Lee la advertencia de eliminación permanente. Tus chats y mensajes de WhatsApp no se eliminarán.
+3. Espera a que termine la cuenta atrás de tres segundos del botón **Delete**.
+4. Haz clic en **Delete** para ejecutar la eliminación o en **Cancel** para conservar los datos.
+
+## Si la eliminación no se completa
+
+- **Fallan algunos mensajes:** Revisa el error y las cantidades eliminadas y fallidas. Los mensajes fallidos permanecen seleccionados para que puedas revisarlos y reintentar.
+- **Fallan algunos chats de una etiqueta o archivo:** Revisa los motivos y haz clic en **Retry failed chats**. El reintento no incluye los chats ya eliminados correctamente.
+- **Falla la eliminación de un chat completo:** Lee el error. El chat permanece visible para que lo revises antes de reintentar.
+- **No aparecen los controles de eliminación:** Pide al propietario que revise tu acceso a **Delete Chats**. Tener acceso a Team Inbox o Members & Access no concede automáticamente permiso para eliminar.

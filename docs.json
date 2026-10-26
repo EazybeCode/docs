@@ -919,7 +919,8 @@
                 "icon": "users",
                 "pages": [
                   "es/team-inbox-hd/team-inbox-hd-sp",
-                  "es/team-inbox-hd/filters-in-team-inbox-sp"
+                  "es/team-inbox-hd/filters-in-team-inbox-sp",
+                  "es/team-inbox-hd/delete-chats-and-messages-sp"
                 ]
               },
               {
@@ -1685,7 +1686,8 @@
                 "icon": "users",
                 "pages": [
                   "pt/team-inbox-hd/team-inbox-hd-pt",
-                  "pt/team-inbox-hd/filters-in-team-inbox-pt"
+                  "pt/team-inbox-hd/filters-in-team-inbox-pt",
+                  "pt/team-inbox-hd/delete-chats-and-messages-pt"
                 ]
               },
               {
@@ -2456,7 +2458,8 @@
                 "icon": "users",
                 "pages": [
                   "tr/team-inbox-hd/team-inbox-hd-tr",
-                  "tr/team-inbox-hd/filters-in-team-inbox-tr"
+                  "tr/team-inbox-hd/filters-in-team-inbox-tr",
+                  "tr/team-inbox-hd/delete-chats-and-messages-tr"
                 ]
               },
               {
