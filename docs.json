@@ -266,6 +266,7 @@
                     "group": "Credits",
                     "pages": [
                       "en/billing/credits-overview",
+                      "en/billing/playground-credits",
                       "en/billing/wallet-recharge",
                       "en/billing/auto-payment"
                     ]
@@ -1058,6 +1059,7 @@
                     "group": "Créditos",
                     "pages": [
                       "es/billing/credits-overview",
+                      "es/billing/playground-credits",
                       "es/billing/wallet-recharge",
                       "es/billing/auto-payment"
                     ]
@@ -1826,6 +1828,7 @@
                     "group": "Créditos",
                     "pages": [
                       "pt/billing/credits-overview",
+                      "pt/billing/playground-credits",
                       "pt/billing/wallet-recharge",
                       "pt/billing/auto-payment"
                     ]
@@ -2596,6 +2599,7 @@
                     "group": "Krediler",
                     "pages": [
                       "tr/billing/credits-overview",
+                      "tr/billing/playground-credits",
                       "tr/billing/wallet-recharge",
                       "tr/billing/auto-payment"
                     ]
