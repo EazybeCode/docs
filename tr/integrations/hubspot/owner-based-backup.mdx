@@ -1,0 +1,70 @@
+---
+title: "Kayıt sahibine göre sohbet yedekleme"
+description: "WhatsApp sohbetlerini her kaydın sahibine göre HubSpot kişilerine, anlaşmalarına, şirketlerine ve destek taleplerine yedekleyin."
+---
+
+**Owner-based backup**, her kullanıcının bire bir WhatsApp sohbetlerini yalnızca **User Mapping** bölümünde eşleştirildiği HubSpot sahibine ait kayıtlara yedekler. **Kişiler, anlaşmalar, şirketler ve destek talepleri ayrı ayrı** değerlendirilir. İlişkili kayıtlar, kişinin yedekleme uygunluğunu otomatik olarak devralmaz.
+
+## Başlamadan önce
+
+- HubSpot bağlıyken [Eazybe çalışma alanına](https://app.eazybe.com/integrations) **kuruluş yöneticisi** olarak giriş yapın.
+- **Sync Conversations** açık olmalıdır.
+- **Integrations → HubSpot → User Mapping** bölümünde her ekip üyesinin doğru HubSpot sahibiyle eşleştirildiğini kontrol edin. Kuralı API numaralarına uygulayacaksanız onların eşleştirmelerini de kontrol edin.
+- HubSpot'ta her kaydın sahibini kontrol edin.
+
+<Note>
+Bu özellik bire bir sohbetler içindir. Grup yedeklemesi ayrı yönetilir. Kayıt sahiplerini veya HubSpot erişim izinlerini değiştirmez.
+</Note>
+
+## Sahibe göre yedeklemeyi açma
+
+1. Eazybe'de **Integrations** bölümünü açın.
+2. **HubSpot** için **Settings** seçeneğini açın.
+3. **Sync & Data** sekmesini seçin.
+4. **Owner-based backup** seçeneğini açın.
+5. Sahibi atanmamış kayıtlar ve API numaraları için ek seçenekleri yapılandırın.
+
+Değişiklikler otomatik kaydedilir. Başarı bildirimini bekleyin. Kayıt başarısız olursa anahtar önceki değerine döner.
+
+![Sync & Data sekmesindeki Owner-based backup ayarı](/images/hubspot-owner-backup/sync-data.jpg)
+
+## Kullanılabilir seçenekler
+
+Üç anahtar da **varsayılan olarak kapalıdır**. Ek iki seçenek, Owner-based backup açıldığında görünür.
+
+| Seçenek | Açıkken | Kapalıyken |
+| --- | --- | --- |
+| **Owner-based backup** | Her kişinin, anlaşmanın, şirketin ve destek talebinin sahibini kontrol eder. | Bu sahip filtresi olmadan normal yedekleme davranışı devam eder. |
+| **Back up to unassigned records** | Sahibi olmayan uygun ilişkili kayıtları da kapsar. | Sahibi olmayan kayıtları atlar. |
+| **Apply to API numbers** | **User Mapping** bölümünde API numarasına eşleştirilen HubSpot sahibini kullanır. | Ana kural açık olsa bile API numaraları normal yedekleme davranışını sürdürür. |
+
+![Owner-based backup ve ek seçeneklerini gösteren örnek ekran](/images/hubspot-owner-backup/owner-settings-demo.png)
+
+*Ana kuralın açık, ek seçeneklerin kapalı olduğu temsili bir örnektir. Kuruluşunuzun kayıtlı ayarlarını göstermez. Görsellerde arayüz İngilizcedir.*
+
+Paylaşılan API numarasında, ortak gelen kutusundan mesajı gönderen çalışan yerine **numaraya** eşleştirilen sahip kullanılır.
+
+## Farklı kayıt sahipleriyle örnek
+
+Maya, HubSpot'ta Maya ile eşleştirilmiştir ve bir müşteriyle sohbet eder. Kural açıkken:
+
+| Kayıt | HubSpot sahibi | Sonuç |
+| --- | --- | --- |
+| Kişi: Alex Morgan | Maya | Dahil edilir |
+| Anlaşma: Yenileme | Leo | Atlanır |
+| Şirket: Northstar Studio | Maya | Dahil edilir |
+| Destek talebi: Kurulum yardımı | Atanmamış | Yalnızca **Back up to unassigned records** açıksa dahil edilir |
+
+İsimler kurgusaldır. Kişi Leo'ya ait olsaydı kişi kaydı atlanırdı; ancak Maya'ya ait şirket yine yedek alabilirdi. Atanmamış kayıtlar seçeneği, başka bir sahibe ait kayıtları hiçbir zaman dahil etmez.
+
+## Kapsam ve sorun giderme
+
+- Kural sonraki yedeklemeleri yönetir. Geçmişi otomatik olarak yeniden dağıtmaz veya açılmadan önce oluşturulan etkinlikleri kaldırmaz.
+- Mevcut senkronizasyon hariç tutmaları ve ilişkili kayıt sınırları geçerlidir. Sahiplik, ilişkisiz bir kaydı yedekleme hedefi yapmaz.
+- Hiçbir kayıt uygun değilse o yedekleme atlanır; bu durum tek başına bir senkronizasyon hatası değildir.
+- Sahip eşleştirmesi yoksa Eazybe yöneticinin sahibini yerine kullanmaz. İlgili seçenek açıksa yalnızca gerçekten sahibi olmayan kayıtlar uygun olabilir.
+- Ayar görünmüyorsa kuruluş yöneticisi olduğunuzu ve HubSpot'un bağlı olduğunu doğrulayın.
+- Sohbet eksikse **User Mapping**, kaydın kendi sahibi, kişiyle ilişkisi ve senkronizasyon filtrelerini kontrol edin.
+- Ayar yüklenmezse **Retry** seçeneğini kullanın. Kaydetme başarısız olursa yeniden deneyin ve başarı bildirimini bekleyin.
+
+[Mesaj senkronizasyonu](/tr/integrations/hubspot/message-syncing) ve [kişileri senkronizasyon dışında tutma](/tr/integrations/hubspot/exclude-contacts-from-sync) kılavuzlarına bakın. Yardım için **hey@eazybe.com** adresine yazın.

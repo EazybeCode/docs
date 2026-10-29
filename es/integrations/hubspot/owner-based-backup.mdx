@@ -1,0 +1,70 @@
+---
+title: "Respaldo de chats según el propietario"
+description: "Respalda chats de WhatsApp en contactos, negocios, empresas y tickets de HubSpot según el propietario de cada registro."
+---
+
+**Owner-based backup** respalda las conversaciones individuales de WhatsApp de cada usuario únicamente en los registros cuyo propietario de HubSpot coincide con el usuario asignado en **User Mapping**. Comprueba por separado los **contactos, negocios, empresas y tickets**: los registros asociados no heredan la elegibilidad del contacto.
+
+## Antes de empezar
+
+- Accede al [espacio de trabajo de Eazybe](https://app.eazybe.com/integrations) como **administrador de la organización**, con HubSpot conectado.
+- Mantén **Sync Conversations** activado.
+- En **Integrations → HubSpot → User Mapping**, verifica la asignación de cada miembro al propietario correcto de HubSpot. Revisa también los números API si vas a aplicarles esta regla.
+- Comprueba el propietario de cada registro en HubSpot.
+
+<Note>
+La función se aplica a chats individuales. El respaldo de grupos se gestiona por separado. No cambia los propietarios ni los permisos de acceso de HubSpot.
+</Note>
+
+## Activar el respaldo por propietario
+
+1. Abre **Integrations** en Eazybe.
+2. Abre **Settings** de **HubSpot**.
+3. Selecciona **Sync & Data**.
+4. Activa **Owner-based backup**.
+5. Configura las opciones para registros sin propietario y números API.
+
+Los cambios se guardan automáticamente. Espera la notificación de éxito. Si falla el guardado, el interruptor vuelve al valor anterior.
+
+![Ubicación de Owner-based backup en Sync & Data](/images/hubspot-owner-backup/sync-data.jpg)
+
+## Opciones disponibles
+
+Los tres interruptores están **desactivados de forma predeterminada**. Las dos opciones adicionales aparecen al activar Owner-based backup.
+
+| Opción | Activada | Desactivada |
+| --- | --- | --- |
+| **Owner-based backup** | Comprueba el propietario de cada contacto, negocio, empresa y ticket. | Mantiene el respaldo habitual sin este filtro de propietario. |
+| **Back up to unassigned records** | Incluye también registros vinculados elegibles sin propietario. | Omite los registros sin propietario. |
+| **Apply to API numbers** | Usa el propietario asignado al número API en **User Mapping**. | Los números API mantienen su comportamiento habitual, aunque la regla principal esté activa. |
+
+![Demostración de Owner-based backup y sus dos opciones adicionales](/images/hubspot-owner-backup/owner-settings-demo.png)
+
+*Demostración ilustrativa con la regla principal activada y las opciones adicionales desactivadas. No representa la configuración guardada de tu organización. Las imágenes muestran la interfaz en inglés.*
+
+Para un número API compartido, se utiliza el propietario asignado al **número**, no el empleado que envía el mensaje desde la bandeja compartida.
+
+## Ejemplo con propietarios diferentes
+
+Maya está asignada a Maya en HubSpot y conversa con un cliente. Con la regla activada:
+
+| Registro | Propietario | Resultado |
+| --- | --- | --- |
+| Contacto: Alex Morgan | Maya | Se incluye |
+| Negocio: Renovación | Leo | Se omite |
+| Empresa: Northstar Studio | Maya | Se incluye |
+| Ticket: Ayuda de configuración | Sin asignar | Solo se incluye con **Back up to unassigned records** activado |
+
+Los nombres son ficticios. Si el contacto perteneciera a Leo, se omitiría el contacto, pero la empresa de Maya podría recibir el respaldo. La opción de registros sin asignar nunca incluye registros de otro propietario.
+
+## Alcance y solución de problemas
+
+- La regla controla los respaldos posteriores. No redistribuye automáticamente el historial ni elimina las actividades creadas antes de activarla.
+- Siguen aplicándose las exclusiones de sincronización y los límites de registros asociados. La propiedad no convierte un registro no relacionado en destino del respaldo.
+- Si ningún registro cumple los requisitos, se omite ese respaldo; no implica necesariamente un error.
+- Sin una asignación de propietario, Eazybe no usa el propietario del administrador como sustituto. Solo pueden incluirse registros realmente sin propietario si está activada la opción correspondiente.
+- Si falta la opción, verifica que eres administrador y que HubSpot está conectado.
+- Si falta un chat, revisa **User Mapping**, el propietario del registro, su asociación con el contacto y los filtros de sincronización.
+- Si no carga la configuración, pulsa **Retry**. Si falla el guardado, vuelve a intentarlo y espera la confirmación.
+
+Consulta [la sincronización de mensajes](/es/integrations/hubspot/message-syncing) y [las exclusiones de contactos](/es/integrations/hubspot/exclude-contacts-from-sync). Para obtener ayuda, escribe a **hey@eazybe.com**.
