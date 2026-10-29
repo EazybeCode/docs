@@ -1,0 +1,82 @@
+---
+title: "Owner-based Chat Backup"
+description: "Back up WhatsApp chats to HubSpot Contacts, Deals, Companies, and Tickets according to each record's owner."
+---
+
+**Owner-based backup** lets your team back up each user's one-to-one WhatsApp conversations only to HubSpot records assigned to that user's mapped HubSpot owner. It checks **Contacts, Deals, Companies, and Tickets separately**.
+
+For example, a contact and its associated deal can have different owners. The deal does not automatically inherit the contact's backup eligibility.
+
+## Before you start
+
+- Sign in to the [Eazybe workspace](https://app.eazybe.com/integrations) as an **organization admin** with HubSpot connected.
+- Keep **Sync Conversations** enabled.
+- In **Integrations → HubSpot → User Mapping**, check that each team member is mapped to the correct HubSpot owner. If you plan to apply the rule to API numbers, check their mappings too.
+- Check the owner assigned to each relevant record in HubSpot.
+
+<Note>
+This setting applies to one-to-one chats. WhatsApp group backup is managed separately. It does not change record ownership or HubSpot access permissions.
+</Note>
+
+## Enable Owner-based backup
+
+1. Open **Integrations** in your Eazybe workspace.
+2. Open **Settings** for **HubSpot**.
+3. Select **Sync & Data**.
+4. Turn on **Owner-based backup**.
+5. Choose whether to include unassigned records and API numbers using the options below.
+
+Each switch saves automatically. Wait for the success notification before leaving. If saving fails, the switch returns to its previous value.
+
+![Owner-based backup in the HubSpot Sync & Data tab](/images/hubspot-owner-backup/sync-data.jpg)
+
+## Choose your backup rules
+
+All three switches are **off by default**. The two additional options appear when Owner-based backup is on.
+
+| Setting | When enabled | When disabled |
+| --- | --- | --- |
+| **Owner-based backup** | Checks the owner of each Contact, Deal, Company, and Ticket before backing up to it. | Uses the usual contact and associated-record backup behavior without this owner filter. |
+| **Back up to unassigned records** | Also includes eligible linked records that have no assigned owner. | Skips records with no owner. |
+| **Apply to API numbers** | Applies the owner rule using the API number's HubSpot owner in **User Mapping**. | API numbers keep their usual backup behavior, even when Owner-based backup is on. |
+
+![Demo showing Owner-based backup enabled and its two optional switches disabled](/images/hubspot-owner-backup/owner-settings-demo.png)
+
+*Illustrative demo of the enabled settings, based on the product interface. The optional switches are off in this example; it does not represent your organization's saved configuration.*
+
+<Info>
+For a shared API number, the rule uses the owner mapped to that **number**, not the employee who happens to send a message from the shared inbox.
+</Info>
+
+## Example: different owners across related records
+
+Maya's Eazybe account is mapped to Maya in HubSpot. She chats with a customer whose contact has these linked records. With Owner-based backup on:
+
+| Record | HubSpot owner | Result for Maya's chat |
+| --- | --- | --- |
+| Contact: Alex Morgan | Maya | Included |
+| Deal: Renewal | Leo | Skipped |
+| Company: Northstar Studio | Maya | Included |
+| Ticket: Setup assistance | Unassigned | Included only if **Back up to unassigned records** is on |
+
+These are fictional names. If the contact were owned by Leo, the contact would be skipped, but the company owned by Maya could still receive the backup. Turning on the unassigned option never includes records assigned to another owner.
+
+## What happens after you enable it?
+
+- The rule controls subsequent backups; it does not automatically redistribute past chat history.
+- Activities created before enabling Owner-based backup remain in HubSpot. Enabling the feature does not clean up older backups.
+- Existing sync exclusions and associated-record limits still apply. Ownership alone does not make an unrelated record a backup destination.
+- If no record qualifies, the chat is skipped for that backup. This is expected behavior, not necessarily a sync error.
+- If a user or API number has no HubSpot owner mapping, Eazybe does not substitute the admin's owner. Only genuinely unassigned records can qualify when the unassigned option is enabled.
+
+## Troubleshooting
+
+| What you see | What to check |
+| --- | --- |
+| The setting is missing | Confirm that HubSpot is connected and you are an organization admin. |
+| A record is missing the chat | Check **User Mapping**, that record's own HubSpot owner, its association with the contact, and your existing sync filters. |
+| An unassigned record is skipped | Enable **Back up to unassigned records** if you want to include it. |
+| An API number still backs up across owners | Enable **Apply to API numbers** and verify the number's mapping. |
+| The setting cannot load | Select **Retry**. If a save fails, try again and wait for the success notification. |
+
+See [message syncing](/en/integrations/hubspot/message-syncing) for general backup behavior or [excluding contacts from sync](/en/integrations/hubspot/exclude-contacts-from-sync) for label-based exclusions. For help, contact **hey@eazybe.com**.

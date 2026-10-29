@@ -1,0 +1,70 @@
+---
+title: "Backup de chats por proprietário"
+description: "Faça backup de conversas do WhatsApp em contatos, negócios, empresas e tickets do HubSpot conforme o proprietário de cada registro."
+---
+
+O **Owner-based backup** faz backup das conversas individuais de cada usuário apenas nos registros cujo proprietário do HubSpot corresponde ao usuário definido em **User Mapping**. A regra verifica **contatos, negócios, empresas e tickets separadamente**. Os registros associados não herdam a elegibilidade do contato.
+
+## Antes de começar
+
+- Entre no [workspace Eazybe](https://app.eazybe.com/integrations) como **administrador da organização**, com o HubSpot conectado.
+- Mantenha **Sync Conversations** ativado.
+- Em **Integrations → HubSpot → User Mapping**, confira o mapeamento de cada membro para o proprietário correto do HubSpot. Confira também os números API se quiser aplicar a regra a eles.
+- Verifique o proprietário de cada registro no HubSpot.
+
+<Note>
+Esta função se aplica a conversas individuais. O backup de grupos é gerenciado separadamente. Ela não altera proprietários nem permissões de acesso no HubSpot.
+</Note>
+
+## Ativar o backup por proprietário
+
+1. Abra **Integrations** no Eazybe.
+2. Abra **Settings** do **HubSpot**.
+3. Selecione **Sync & Data**.
+4. Ative **Owner-based backup**.
+5. Configure as opções para registros sem proprietário e números API.
+
+Cada alteração é salva automaticamente. Aguarde a notificação de sucesso. Se o salvamento falhar, o controle retorna ao valor anterior.
+
+![Localização de Owner-based backup na aba Sync & Data](/images/hubspot-owner-backup/sync-data.jpg)
+
+## Opções disponíveis
+
+Os três controles ficam **desativados por padrão**. As duas opções adicionais aparecem quando Owner-based backup está ativado.
+
+| Opção | Ativada | Desativada |
+| --- | --- | --- |
+| **Owner-based backup** | Verifica o proprietário de cada contato, negócio, empresa e ticket. | Mantém o backup habitual sem este filtro de proprietário. |
+| **Back up to unassigned records** | Inclui também registros vinculados elegíveis sem proprietário. | Ignora registros sem proprietário. |
+| **Apply to API numbers** | Usa o proprietário mapeado ao número API em **User Mapping**. | Números API mantêm o comportamento habitual, mesmo com a regra principal ativada. |
+
+![Demonstração de Owner-based backup com suas duas opções adicionais](/images/hubspot-owner-backup/owner-settings-demo.png)
+
+*Demonstração ilustrativa com a regra principal ativada e as opções adicionais desativadas. Não representa a configuração salva da sua organização. As imagens mostram a interface em inglês.*
+
+Para um número API compartilhado, a regra usa o proprietário mapeado ao **número**, não o funcionário que envia a mensagem pela caixa de entrada compartilhada.
+
+## Exemplo com proprietários diferentes
+
+Maya está mapeada para Maya no HubSpot e conversa com um cliente. Com a regra ativada:
+
+| Registro | Proprietário | Resultado |
+| --- | --- | --- |
+| Contato: Alex Morgan | Maya | Incluído |
+| Negócio: Renovação | Leo | Ignorado |
+| Empresa: Northstar Studio | Maya | Incluído |
+| Ticket: Ajuda na configuração | Sem proprietário | Incluído somente com **Back up to unassigned records** ativado |
+
+Os nomes são fictícios. Se o contato pertencesse a Leo, ele seria ignorado, mas a empresa de Maya ainda poderia receber o backup. A opção para registros sem proprietário nunca inclui registros de outro proprietário.
+
+## Escopo e solução de problemas
+
+- A regra controla os backups seguintes. Não redistribui automaticamente o histórico nem remove atividades criadas antes de sua ativação.
+- As exclusões de sincronização e os limites de registros associados continuam válidos. Ser proprietário não torna um registro sem associação elegível para o backup.
+- Se nenhum registro se qualificar, esse backup será ignorado; isso não significa necessariamente um erro.
+- Sem mapeamento de proprietário, o Eazybe não usa o proprietário do administrador como substituto. Apenas registros realmente sem proprietário podem se qualificar quando a opção correspondente estiver ativada.
+- Se a opção não aparecer, confirme que você é administrador e que o HubSpot está conectado.
+- Se uma conversa não aparecer, confira **User Mapping**, o proprietário do registro, sua associação com o contato e os filtros de sincronização.
+- Se a configuração não carregar, selecione **Retry**. Se o salvamento falhar, tente novamente e aguarde a confirmação.
+
+Consulte [a sincronização de mensagens](/pt/integrations/hubspot/message-syncing) e [as exclusões de contatos](/pt/integrations/hubspot/exclude-contacts-from-sync). Para obter ajuda, escreva para **hey@eazybe.com**.

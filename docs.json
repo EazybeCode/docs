@@ -330,6 +330,7 @@
                     "group": "Chat Backup",
                     "pages": [
                       "en/integrations/hubspot/message-syncing",
+                      "en/integrations/hubspot/owner-based-backup",
                       "en/integrations/hubspot/exclude-contacts-from-sync",
                       "en/integrations/hubspot/chat-backup-location",
                       "en/integrations/hubspot/backup-view",
@@ -1122,6 +1123,7 @@
                     "group": "Respaldo de Chat",
                     "pages": [
                       "es/integrations/hubspot/message-syncing",
+                      "es/integrations/hubspot/owner-based-backup",
                       "es/integrations/hubspot/exclude-contacts-from-sync",
                       "es/integrations/hubspot/chat-backup-location",
                       "es/integrations/hubspot/backup-view",
@@ -1894,6 +1896,7 @@
                     "group": "Backup de Chat",
                     "pages": [
                       "pt/integrations/hubspot/message-syncing",
+                      "pt/integrations/hubspot/owner-based-backup",
                       "pt/integrations/hubspot/exclude-contacts-from-sync",
                       "pt/integrations/hubspot/chat-backup-location",
                       "pt/integrations/hubspot/backup-view",
@@ -2666,6 +2669,7 @@
                     "group": "Sohbet Yedekleme",
                     "pages": [
                       "tr/integrations/hubspot/message-syncing",
+                      "tr/integrations/hubspot/owner-based-backup",
                       "tr/integrations/hubspot/exclude-contacts-from-sync",
                       "tr/integrations/hubspot/chat-backup-location",
                       "tr/integrations/hubspot/backup-view",
