@@ -66,6 +66,7 @@
                       "en/getting-started/cloud-whatsapp/about",
                       "en/getting-started/cloud-whatsapp/how-to-connect",
                       "en/getting-started/cloud-whatsapp/disconnect",
+                      "en/getting-started/cloud-whatsapp/disconnect-alerts",
                       "en/getting-started/cloud-whatsapp/compliance-and-privacy",
                       {
                         "group": "FAQ",
@@ -898,6 +899,7 @@
                       "es/getting-started/cloud-whatsapp/about",
                       "es/getting-started/cloud-whatsapp/how-to-connect",
                       "es/getting-started/cloud-whatsapp/disconnect",
+                      "es/getting-started/cloud-whatsapp/disconnect-alerts",
                       "es/getting-started/cloud-whatsapp/compliance-and-privacy",
                       {
                         "group": "FAQ",
@@ -1666,6 +1668,7 @@
                       "pt/getting-started/cloud-whatsapp/about",
                       "pt/getting-started/cloud-whatsapp/how-to-connect",
                       "pt/getting-started/cloud-whatsapp/disconnect",
+                      "pt/getting-started/cloud-whatsapp/disconnect-alerts",
                       "pt/getting-started/cloud-whatsapp/compliance-and-privacy",
                       {
                         "group": "FAQ",
@@ -2439,6 +2442,7 @@
                       "tr/getting-started/cloud-whatsapp/about",
                       "tr/getting-started/cloud-whatsapp/how-to-connect",
                       "tr/getting-started/cloud-whatsapp/disconnect",
+                      "tr/getting-started/cloud-whatsapp/disconnect-alerts",
                       "tr/getting-started/cloud-whatsapp/compliance-and-privacy",
                       {
                         "group": "FAQ",

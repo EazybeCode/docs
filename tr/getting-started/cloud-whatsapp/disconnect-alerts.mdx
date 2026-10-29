@@ -1,0 +1,76 @@
+---
+title: "Cloud Bağlantı Kesilmesi Uyarıları"
+description: "Cloud bağlantısı kesildiğinde kimlere e-posta gönderileceğini seçin, bağlantı durumunu inceleyin ve yeniden bağlanma seçeneğini bulun."
+---
+
+Cloud bağlantısı kesildiğinde e-posta alın. Bildirimleri ve alıcıları **Settings → Disconnect Alerts → Cloud** bölümünden yönetin.
+
+*Görseller, her işlemi gösteren oklar eklenmiş ve yapay zekâyla netleştirilmiş uygulama ekran görüntüleridir. Kontrol adları, ekran görüntüleriyle eşleşmesi için İngilizce bırakılmıştır.*
+
+## Cloud uyarılarını ayarlama
+
+<Steps>
+  <Step title="Cloud bağlantı kesilmesi uyarılarını açın">
+    [Eazybe ayarlarını](https://app.eazybe.com/settings) açın, **Disconnect Alerts** seçeneğini ve ardından **Cloud** sekmesini seçin.
+
+    **Disconnect alerts** kartı, Cloud bağlantısı kesildiğinde e-posta gönderileceğini belirtir.
+
+    <Note>
+    Alıcıları yönetmeden önce **Cloud** sekmesinin seçili olduğundan emin olun. **WABA** için ayrı bir sekme ve alıcı listesi bulunur.
+    </Note>
+
+    ![Disconnect Alerts ve Cloud sekmesi seçili ayarlar ekranı](/images/cloud-disconnect-alerts/open-cloud-simple.png)
+  </Step>
+
+  <Step title="Uyarıların etkin olup olmadığını kontrol edin">
+    Kartta **Turn off** görünüyorsa Cloud bağlantı kesilmesi uyarıları etkindir. Açıklamanın altındaki e-posta etiketleri kayıtlı alıcıları gösterir.
+
+    **Turn off** seçeneğini yalnızca bu bildirim e-postalarını durdurmak istediğinizde seçin.
+
+    ![Turn off ve kayıtlı alıcı gösterilen uyarı kartı](/images/cloud-disconnect-alerts/check-alerts-simple.png)
+  </Step>
+
+  <Step title="Bir e-posta alıcısı ekleyin">
+    **+ Add email** seçeneğini seçin. **FROM YOUR WORKSPACE** altında bir ekip arkadaşı seçebilir veya alana bir e-posta adresi yazıp **Add** düğmesini seçebilirsiniz.
+
+    Oklar e-posta alanını ve **Add** düğmesini gösterir. Alan boşken düğme devre dışıdır.
+
+    Cloud bağlantısını yeniden kurmaktan sorumlu kişilerin takip ettiği bir gelen kutusu kullanın. Bir alıcı ekledikten sonra karttaki e-posta etiketlerini kontrol edin.
+
+    ![E-posta alanı, Add düğmesi ve ekip arkadaşı önerileri](/images/cloud-disconnect-alerts/add-recipient-simple.png)
+  </Step>
+</Steps>
+
+## Kesilen Cloud bağlantısını inceleme
+
+Bildirim kartının altındaki **CONNECTED NUMBERS** bölümünü kontrol edin. Kayıtlarda **Disconnected** durumu, bir neden ve tarih-saat bilgisi gösterilebilir. Nedenler arasında **Logged out on the phone or the session failed** (telefonda oturum kapatıldı veya oturum başarısız oldu) ve **Connection lost** (bağlantı kesildi) bulunur.
+
+<Note>
+**CONNECTED NUMBERS** başlığı, listedeki tüm bağlantıların şu anda bağlı olduğu anlamına gelmez. Her kaydın yanındaki durum etiketini kontrol edin.
+</Note>
+
+![Disconnected durumları ve Reconnect bağlantıları gösterilen Cloud kayıtları](/images/cloud-disconnect-alerts/reconnect-simple.png)
+
+Oklar durum etiketini ve **Reconnect** bağlantısını gösterir.
+
+Etkilenen bağlantının yanındaki **Reconnect** seçeneğiyle [Channels sayfasını](https://app.eazybe.com/numbers-connected) açın. İlgili numarayı bulun ve sunulan Cloud bağlantı adımlarını izleyin. **Reconnect**, Channels sayfasını açar; tek başına bağlantıyı yeniden kurmaz.
+
+## Alıcıları yönetme
+
+Kayıtlı e-posta adresleri etiketler olarak gösterilir. Bir alıcıyı kaldırmak için adresinin yanındaki **×** simgesini, başka birini eklemek için **+ Add email** seçeneğini kullanın. Cloud uyarılarının alıcılarını düzenlerken **Cloud** sekmesini seçili tutun.
+
+## Sık sorulan sorular
+
+<AccordionGroup>
+  <Accordion title="Neden Cloud uyarıları yerine WhatsApp Business API uyarılarını görüyorum?">
+    **Disconnect Alerts** bölümünün üst kısmında **WABA** sekmesinden **Cloud** sekmesine geçin.
+  </Accordion>
+
+  <Accordion title="Reconnect seçeneğini nerede bulabilirim?">
+    **CONNECTED NUMBERS** bölümünde **Disconnected** durumunu arayın. **Reconnect** bağlantısı, bağlantısı kesilmiş Cloud kayıtlarının yanında görünür.
+  </Accordion>
+
+  <Accordion title="Neden kimse bağlantı kesilmesi uyarısı almadı?">
+    Cloud kartında **Turn off** yazdığını doğrulayın; bu, uyarıların etkin olduğunu gösterir. İstenen e-posta adresinin listede olduğunu kontrol edin ve alıcıdan spam klasörünü kontrol etmesini isteyin.
+  </Accordion>
+</AccordionGroup>

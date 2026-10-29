@@ -1,0 +1,76 @@
+---
+title: "Alertas de desconexión de Cloud"
+description: "Elige quién recibe un correo cuando Cloud se desconecta, revisa su estado y encuentra la opción para reconectarlo."
+---
+
+Recibe un correo cuando una conexión de Cloud se desconecta. Gestiona las notificaciones y los destinatarios en **Settings → Disconnect Alerts → Cloud**.
+
+*Las imágenes son capturas de la aplicación mejoradas con IA, con flechas que indican cada acción. Los nombres de los controles se mantienen en inglés para coincidir con las capturas.*
+
+## Configurar las alertas de Cloud
+
+<Steps>
+  <Step title="Abrir las alertas de desconexión de Cloud">
+    Abre [Settings de Eazybe](https://app.eazybe.com/settings), selecciona **Disconnect Alerts** y abre la pestaña **Cloud**.
+
+    La tarjeta **Disconnect alerts** indica que se enviará un correo cuando una conexión de Cloud se desconecte.
+
+    <Note>
+    Comprueba que **Cloud** esté seleccionado antes de gestionar los destinatarios. **WABA** tiene su propia pestaña y lista de destinatarios.
+    </Note>
+
+    ![Configuración con Disconnect Alerts y la pestaña Cloud seleccionados](/images/cloud-disconnect-alerts/open-cloud-simple.png)
+  </Step>
+
+  <Step title="Comprobar si las alertas están activadas">
+    Si la tarjeta muestra **Turn off**, las alertas de desconexión de Cloud están activadas. Las etiquetas de correo debajo de la descripción muestran los destinatarios guardados.
+
+    Selecciona **Turn off** solo si quieres dejar de recibir estos correos de notificación.
+
+    ![Tarjeta de alertas con Turn off y un destinatario guardado](/images/cloud-disconnect-alerts/check-alerts-simple.png)
+  </Step>
+
+  <Step title="Añadir un destinatario">
+    Selecciona **+ Add email**. Puedes elegir a un compañero en **FROM YOUR WORKSPACE** o introducir una dirección de correo y seleccionar **Add**.
+
+    Las flechas señalan el campo de correo y el botón **Add**. El botón está deshabilitado mientras el campo está vacío.
+
+    Usa una bandeja de entrada que revisen las personas responsables de restablecer la conexión de Cloud. Comprueba las etiquetas de correo después de añadir un destinatario.
+
+    ![Campo de correo, botón Add y sugerencias de compañeros](/images/cloud-disconnect-alerts/add-recipient-simple.png)
+  </Step>
+</Steps>
+
+## Revisar una conexión de Cloud desconectada
+
+Debajo de la tarjeta de notificaciones, revisa **CONNECTED NUMBERS**. Cada entrada puede mostrar la etiqueta **Disconnected**, un motivo y la fecha y hora. Los motivos incluyen **Logged out on the phone or the session failed** (se cerró la sesión en el teléfono o falló la sesión) y **Connection lost** (se perdió la conexión).
+
+<Note>
+El título **CONNECTED NUMBERS** no significa que todas las conexiones de la lista estén activas. Consulta el estado de cada entrada.
+</Note>
+
+![Conexiones de Cloud con estado Disconnected y enlaces Reconnect](/images/cloud-disconnect-alerts/reconnect-simple.png)
+
+Las flechas señalan el estado y el enlace **Reconnect**.
+
+Selecciona **Reconnect** junto a la conexión afectada para abrir la [página Channels](https://app.eazybe.com/numbers-connected). Busca el número correspondiente y sigue el proceso de conexión de Cloud disponible. **Reconnect** abre Channels; por sí solo no restablece la conexión.
+
+## Gestionar los destinatarios
+
+Las direcciones guardadas aparecen como etiquetas. Usa **×** junto a una dirección para eliminar ese destinatario, o **+ Add email** para añadir otro. Mantén seleccionada la pestaña **Cloud** al editar los destinatarios de estas alertas.
+
+## Preguntas frecuentes
+
+<AccordionGroup>
+  <Accordion title="¿Por qué veo alertas de WhatsApp Business API en lugar de alertas de Cloud?">
+    Cambia de **WABA** a **Cloud** en la parte superior de **Disconnect Alerts**.
+  </Accordion>
+
+  <Accordion title="¿Dónde encuentro la opción Reconnect?">
+    Busca la etiqueta **Disconnected** en **CONNECTED NUMBERS**. El enlace **Reconnect** aparece junto a las conexiones de Cloud desconectadas.
+  </Accordion>
+
+  <Accordion title="¿Por qué nadie recibió una alerta de desconexión?">
+    Confirma que la tarjeta de Cloud muestre **Turn off**, lo que indica que las alertas están activadas. Comprueba que la dirección deseada esté en la lista y pide al destinatario que revise su carpeta de spam.
+  </Accordion>
+</AccordionGroup>
