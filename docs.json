@@ -867,7 +867,8 @@
                 "group": "Changelog",
                 "icon": "clock-rotate-left",
                 "pages": [
-                  "changelog/overview"
+                  "changelog/overview",
+                  "changelog/roadmap"
                 ]
               }
             ]
