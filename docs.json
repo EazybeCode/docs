@@ -716,6 +716,14 @@
                   "en/ai-agents/bea-radar/deal-analysis"
                 ]
               }
+              ,
+            {
+              "group": "MCP Integration",
+              "icon": "plug",
+              "pages": [
+                "en/ai-agents/mcp-setup"
+              ]
+            }
             ]
           },
           {
