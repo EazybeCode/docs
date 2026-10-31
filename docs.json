@@ -39,6 +39,12 @@
       "url": "https://eazybe.com/blog"
     }
   ],
+  "redirects": [
+    {
+      "source": "/en/waba/broadcast-rate-list-1st-jan-2026",
+      "destination": "/en/waba/broadcast-rate-list-1-october-2026"
+    }
+  ],
   "navigation": {
     "languages": [
       {
@@ -210,7 +216,7 @@
                   {
                     "group": "Meta Pricing",
                     "pages": [
-                      "en/waba/broadcast-rate-list-1st-jan-2026",
+                      "en/waba/broadcast-rate-list-1-october-2026",
                       "en/waba/service-message-charges"
                     ]
                   },
@@ -373,6 +379,7 @@
                   "en/integrations/hubspot/workflow-troubleshoot",
                   "en/integrations/hubspot/analytics-dashboard",
                   "en/integrations/hubspot/broadcast-reporting",
+                  "en/integrations/hubspot/broadcast-timeline",
                   "en/integrations/hubspot/broadcast-opt-out-status",
                   {
                     "group": "FAQ",
