@@ -1510,12 +1510,12 @@
               {
               "group": "Integración MCP",
               "icon": "plug",
-              "pages": [
+                            "pages": [
                 "es/ai-agents/mcp-setup"
               ]
-                      }
-          ]
-        },
+            }
+            ]
+          },
           {
             "tab": "API Reference",
             "groups": [
