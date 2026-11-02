@@ -126,6 +126,7 @@
                 "pages": [
                   "en/waba/templates/create-template",
                   "en/waba/templates/create-template-with-extension",
+                  "en/waba/templates/max-bidding-price",
                   "en/waba/templates/how-to-create-template-with-hubspot-variables",
                   "en/waba/templates/utility-templates",
                   "en/waba/templates/guideline"
