@@ -1506,8 +1506,13 @@
                   "es/ai-agents/bea-radar/ai-filters",
                   "es/ai-agents/bea-radar/deal-analysis"
                 ]
-              }
-            ]
+              },
+              {
+              "group": "Integración MCP",
+              "icon": "plug",
+              "pages": [
+                "es/ai-agents/mcp-setup"
+              ]
           },
           {
             "tab": "API Reference",
@@ -2280,7 +2285,14 @@
                   "pt/ai-agents/bea-radar/ai-filters",
                   "pt/ai-agents/bea-radar/deal-analysis"
                 ]
-              }
+              },
+                          {
+              "group": "Integração MCP",
+              "icon": "plug",
+              "pages": [
+                "pt/ai-agents/mcp-setup"
+              ]
+            }
             ]
           },
           {
@@ -3054,7 +3066,14 @@
                   "tr/ai-agents/bea-radar/ai-filters",
                   "tr/ai-agents/bea-radar/deal-analysis"
                 ]
-              }
+              },
+                          {
+              "group": "MCP Entegrasyonu",
+              "icon": "plug",
+              "pages": [
+                "tr/ai-agents/mcp-setup"
+              ]
+            }
             ]
           },
           {
