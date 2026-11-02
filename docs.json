@@ -1513,7 +1513,9 @@
               "pages": [
                 "es/ai-agents/mcp-setup"
               ]
-          },
+                      }
+          ]
+        },
           {
             "tab": "API Reference",
             "groups": [
