@@ -67,6 +67,15 @@
                     ]
                   },
                   {
+                    "group": "Onboarding",
+                    "pages": [
+                      "en/getting-started/onboarding/overview",
+                      "en/getting-started/onboarding/admin",
+                      "en/getting-started/onboarding/employee",
+                      "en/getting-started/onboarding/crm"
+                    ]
+                  },
+                  {
                     "group": "Cloud WhatsApp",
                     "pages": [
                       "en/getting-started/cloud-whatsapp/about",
@@ -716,15 +725,14 @@
                   "en/ai-agents/bea-radar/ai-filters",
                   "en/ai-agents/bea-radar/deal-analysis"
                 ]
+              },
+              {
+                "group": "MCP Integration",
+                "icon": "plug",
+                "pages": [
+                  "en/ai-agents/mcp-setup"
+                ]
               }
-              ,
-            {
-              "group": "MCP Integration",
-              "icon": "plug",
-              "pages": [
-                "en/ai-agents/mcp-setup"
-              ]
-            }
             ]
           },
           {
@@ -908,6 +916,15 @@
                     "pages": [
                       "es/getting-started/eazybe-onboarding-sp",
                       "es/getting-started/onboarding-to-coexistence"
+                    ]
+                  },
+                  {
+                    "group": "Incorporación del equipo",
+                    "pages": [
+                      "es/getting-started/onboarding/overview",
+                      "es/getting-started/onboarding/admin",
+                      "es/getting-started/onboarding/employee",
+                      "es/getting-started/onboarding/crm"
                     ]
                   },
                   {
@@ -1509,12 +1526,12 @@
                 ]
               },
               {
-              "group": "Integración MCP",
-              "icon": "plug",
-                            "pages": [
-                "es/ai-agents/mcp-setup"
-              ]
-            }
+                "group": "Integración MCP",
+                "icon": "plug",
+                "pages": [
+                  "es/ai-agents/mcp-setup"
+                ]
+              }
             ]
           },
           {
@@ -1676,6 +1693,15 @@
                       "pt/getting-started/connect-whatsapp",
                       "pt/getting-started/eazybe-onboarding-pt",
                       "pt/getting-started/onboarding-to-coexistence"
+                    ]
+                  },
+                  {
+                    "group": "Onboarding da equipe",
+                    "pages": [
+                      "pt/getting-started/onboarding/overview",
+                      "pt/getting-started/onboarding/admin",
+                      "pt/getting-started/onboarding/employee",
+                      "pt/getting-started/onboarding/crm"
                     ]
                   },
                   {
@@ -2289,13 +2315,13 @@
                   "pt/ai-agents/bea-radar/deal-analysis"
                 ]
               },
-                          {
-              "group": "Integração MCP",
-              "icon": "plug",
-              "pages": [
-                "pt/ai-agents/mcp-setup"
-              ]
-            }
+              {
+                "group": "Integração MCP",
+                "icon": "plug",
+                "pages": [
+                  "pt/ai-agents/mcp-setup"
+                ]
+              }
             ]
           },
           {
@@ -3070,13 +3096,13 @@
                   "tr/ai-agents/bea-radar/deal-analysis"
                 ]
               },
-                          {
-              "group": "MCP Entegrasyonu",
-              "icon": "plug",
-              "pages": [
-                "tr/ai-agents/mcp-setup"
-              ]
-            }
+              {
+                "group": "MCP Entegrasyonu",
+                "icon": "plug",
+                "pages": [
+                  "tr/ai-agents/mcp-setup"
+                ]
+              }
             ]
           },
           {
