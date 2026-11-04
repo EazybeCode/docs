@@ -7,7 +7,7 @@ This guide explains how WhatsApp and Salesforce contacts are linked, enabling au
 
 ## How Contact Linking Works
 
-WhatsApp and Salesforce contacts link automatically through phone numbers stored in Salesforce's **Phone Number** or **Mobile** fields. You can also:
+WhatsApp numbers are matched to Salesforce Leads and Contacts using the fields configured in [Number mapping](/en/integrations/salesforce/number-mapping). The default uses Phone, Mobile, and previously mapped fields. Admins can instead search all Phone-type fields or select specific Phone and Text fields, including custom fields. You can also:
 
 - Create contacts directly from WhatsApp using EazyBe
 - Link existing Salesforce contacts to WhatsApp phone numbers
@@ -44,7 +44,7 @@ Both 1:1 chats and group chats associated with the contact will be backed up to 
 ![Sync Status](/images/1196588812.png)
 
 <Tip>
-  Ensure your Salesforce contacts have accurate phone numbers in the Phone Number or Mobile fields for automatic linking to work correctly.
+  Ensure the correct WhatsApp number is stored in a field included in your saved Number mapping configuration.
 </Tip>
 
 ## Need Help?
