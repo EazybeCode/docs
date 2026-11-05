@@ -1,59 +1,40 @@
 ---
-title: "Administrador: convide seus funcionários"
-description: "Envie convites e ajude sua equipe a entrar na organização principal do Eazybe."
+title: "Administrador: crie seu workspace"
+description: "Crie o workspace da empresa, escolha seu CRM e convide a equipe."
 ---
 
-Convide os funcionários usando seus e-mails de trabalho e compartilhe o código da organização principal para que entrem na equipe correta.
+<Note>
+Este guia segue o novo onboarding de dev. As telas após o login usam o protótipo como referência visual: nomes, números, preços, contadores de etapas e botões exclusivos do protótipo são ilustrativos. Siga os controles do seu aplicativo Eazybe.
+</Note>
 
-<Note>Os nomes dos controles são mantidos em inglês para corresponder às capturas de tela.</Note>
+Conclua primeiro [o login e seu número de trabalho](/pt/getting-started/onboarding/overview). Crie um workspace apenas se estiver configurando uma nova equipe para a empresa.
 
 <Steps>
-  <Step title="Abra a seção de convite de funcionários">
-    Faça login em [app.eazybe.com](https://app.eazybe.com) como administrador da organização principal. Abra **Staff** (Funcionários) e selecione **Add Employee** (Adicionar funcionário).
+<Step title="Selecione Criar um novo espaço de trabalho">
+Em **Configure seu espaço de trabalho**, selecione **Criar um novo espaço de trabalho**. Se a empresa já tiver um workspace, peça o código ao administrador e use **Entrar**.
 
-    ![Botão Add Employee na página de funcionários](/images/team-onboarding/staff-invite.jpg)
-  </Step>
-  <Step title="Preencha os dados do funcionário e envie o convite">
-    Em **Add employee**, preencha **Full name** (Nome completo), escolha **Employee Role** (Função do funcionário) e informe o **Email**. Preencha **WhatsApp Number** (Número do WhatsApp), **Team** (Equipe) e **Working Hours** (Horário de trabalho), se necessário. Depois, selecione **Send Invite** (Enviar convite).
+![Opções para criar um workspace ou entrar com código](/images/onboarding-v2/pt/workspace-choice.png)
+</Step>
+<Step title="Preencha os dados do workspace">
+Preencha **Nome do espaço de trabalho**, selecione **Tamanho da equipe** e escolha **CRM principal**. Depois, selecione **Criar espaço de trabalho**. Escolha a opção sem CRM se ainda não usar um. A seleção registra sua preferência; ela não autoriza nem conecta o CRM.
 
-    O Eazybe envia um convite para esse e-mail. O funcionário pode usar o link do convite ou fazer login diretamente em [app.eazybe.com](https://app.eazybe.com) com o mesmo e-mail.
+![Nome do workspace, tamanho da equipe e CRM principal](/images/onboarding-v2/pt/create-workspace.png)
+</Step>
 
-    ![Formulário de funcionário com campos obrigatórios e Send Invite](/images/team-onboarding/invite-employee.jpg)
-
-    <Note>
-    Peça ao funcionário que instale a extensão e faça login antes de entrar na organização. Envie o [guia de onboarding para funcionários](/pt/getting-started/onboarding/employee).
-    </Note>
-  </Step>
 </Steps>
 
-## Compartilhe o código da organização principal
+## Continuar a configuração
 
-Na página **Staff**, encontre **ORGANIZATION CODE** e use **Copy Organization Code** (Copiar código da organização). Compartilhe o código com o funcionário convidado.
+[Instale a extensão e conecte WhatsApp ou chamadas →](/pt/getting-started/onboarding/crm)
 
-Você também encontra **Organization Code** no painel **My Account** (Minha conta) do Eazybe dentro do WhatsApp Web. Confira se **Organization Name** (Nome da organização) corresponde à organização principal antes de copiar o código.
+## Convide sua equipe
 
-<Warning>
-Compartilhe o **Organization Code**, não o **Access Code** nem a **Auth Key**. Essas são credenciais diferentes e não são necessárias para entrar na organização.
-</Warning>
+Após o onboarding, use **Convide sua equipe** na lista de Início ou abra **Staff → Add Employee**. Informe nome, função e e-mail de trabalho do funcionário e selecione **Send Invite**. Ele pode abrir o link do convite ou fazer login em app.eazybe.com com esse e-mail.
 
-O funcionário abre **Join Organisation** na extensão e cola o código em **Organization Code**. Depois que ele entrar, confira se aparece na lista **Staff** da organização principal com a função desejada.
+Compartilhe o **Organization Code** do workspace principal em **Staff**. Os funcionários colam esse código no campo de entrada durante a configuração do workspace. Compartilhe o código da organização, não as credenciais separadas Access Code ou Auth Key.
 
-## Conclua a configuração do CRM
+[Envie o guia para os funcionários →](/pt/getting-started/onboarding/employee)
 
-Se sua organização usa **HubSpot, Salesforce ou Zoho**, conecte o CRM como administrador caso ele ainda não esteja conectado. Os funcionários devem ser mapeados automaticamente quando o administrador tiver conectado o CRM. Se alguém não estiver mapeado, use **Settings → User Mapping** (Configurações → Mapeamento de usuários) nessa integração.
+## Confira o mapeamento do CRM
 
-[Consulte o guia de mapeamento do CRM →](/pt/getting-started/onboarding/crm)
-
-## Perguntas frequentes
-
-<AccordionGroup>
-  <Accordion title="E se o funcionário não receber o e-mail?">
-    Confira o endereço informado e peça ao funcionário que verifique a pasta de spam ou lixo eletrônico. Ele também pode abrir app.eazybe.com diretamente, fazer login com o mesmo e-mail e usar o código da organização na extensão.
-  </Accordion>
-  <Accordion title="Qual código de organização devo compartilhar?">
-    Compartilhe o código da organização principal, onde você quer que o funcionário trabalhe. Confira o nome da organização primeiro.
-  </Accordion>
-  <Accordion title="O convite também conecta o CRM do funcionário?">
-    O convite e a configuração do CRM são etapas separadas. Para HubSpot, Salesforce ou Zoho, confira o mapeamento automático depois que o funcionário entrar. Para outros CRMs, o funcionário precisa integrar a própria conta.
-  </Accordion>
-</AccordionGroup>
+No HubSpot, Salesforce ou Zoho, os funcionários podem ser mapeados automaticamente depois que o administrador conecta o CRM. Se faltar um mapeamento, abra **Settings → User Mapping** desse CRM e escolha o usuário correto. Funcionários que usam outros CRMs concluem a própria integração.

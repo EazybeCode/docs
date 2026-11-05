@@ -1,63 +1,62 @@
 ---
-title: "Connect Your CRM After Joining"
-description: "Check automatic mapping or connect your own CRM account after onboarding."
+title: "Finish Setup: Extension, WhatsApp and Calling"
+description: "Install the extension, choose your goal, and finish your connections."
 ---
 
-First [join your main organization](/en/getting-started/onboarding/employee). Then use the path that matches your CRM.
+<Note>
+This guide follows the new onboarding on dev. Screens after sign-in use the supplied prototype as a visual reference; sample names, numbers, prices, progress counts, and prototype-only buttons are illustrative. Follow the controls shown in your Eazybe app.
+</Note>
 
-| Your CRM | What the employee does | What the admin does |
-| --- | --- | --- |
-| HubSpot, Salesforce, or Zoho—already connected by the admin | Check that your account is mapped automatically. | Complete missing mappings in the CRM's **Settings → User Mapping**. |
-| HubSpot, Salesforce, or Zoho—not connected yet | Ask your admin to connect the organization's CRM. | Connect the CRM, then check employee mappings. |
-| Another CRM | Integrate your own CRM account, even if the admin has connected theirs. | Help the employee identify the correct account and setup guide if needed. |
-| No CRM | Continue using the features your organization has set up. | No CRM setup is required for joining the organization. |
-
-## HubSpot, Salesforce, and Zoho
-
-Employees should be mapped automatically when the admin has already connected the CRM. If mapping is missing, the **admin** completes these steps.
+Continue here after creating or joining your workspace.
 
 <Steps>
-  <Step title="Open your CRM's settings">
-    In [app.eazybe.com](https://app.eazybe.com), open **Integrations**. Find **HubSpot**, **Salesforce**, or **Zoho**, then select **Settings** on the connected CRM card.
+<Step title="Add Eazybe to Chrome">
+On **Add Eazybe to Chrome**, select **Add to Chrome · it’s free**. You can also open the [Chrome Web Store listing](https://chromewebstore.google.com/detail/whatsapp-ai-agents-with-c/clgficggccelgifppbcaepjdkklfcefd) directly. In the store, choose **Add to Chrome**, then **Add extension**. Install it only once. If Eazybe detects it already, select **Continue**. **Skip for now** lets you finish other setup, but install the extension before using Eazybe inside WhatsApp Web.
 
-    If the card shows **Connect**, the admin needs to complete the CRM connection first.
+![New extension installation step](/images/onboarding-v2/extension.jpg)
+</Step>
+<Step title="Choose what your team will use">
+On **What will your team use Eazybe for?**, select **WhatsApp**, **Calling**, or **Both**. Both takes you through WhatsApp first and then calling. You can add the other option later.
 
-    ![Integrations page showing connected CRM Settings buttons and Connect buttons](/images/team-onboarding/crm-integrations.png)
-  </Step>
-  <Step title="Find the employee in User Mapping">
-    Open **User Mapping**. Find the employee by name or email. In HubSpot, you can use **Unmapped** and the employee search field to find accounts that still need mapping.
+![WhatsApp, Calling, and Both options](/images/onboarding-v2/goal.jpg)
+</Step>
+<Step title="Choose your WhatsApp connection">
+If you selected WhatsApp or Both, choose a method below. Coexistence and Cloud API setup require an admin; ask your admin if those options are unavailable.
 
-    ![HubSpot User Mapping tab with Unmapped filter and employee search](/images/team-onboarding/user-mapping.jpg)
+![WhatsApp, Coexistence, and Cloud API options](/images/onboarding-v2/whatsapp-method.jpg)
+</Step>
 
-    <Note>
-    The screenshots show HubSpot as the example. Open the settings for the CRM your organization actually uses.
-    </Note>
-  </Step>
-  <Step title="Map the employee to the correct CRM user">
-    In the employee's row, choose their matching CRM account. In HubSpot, this control is labelled **Select HubSpot User**. Confirm that the selected CRM user belongs to that employee, then check that their row shows the mapped user.
-
-    ![HubSpot User column with Select HubSpot User control](/images/team-onboarding/select-crm-user.jpg)
-
-    Ask the employee to check the CRM connection in Eazybe after the mapping is complete.
-  </Step>
 </Steps>
 
-## Other CRMs: connect your own account
+| Method | When to use it | Next action |
+| --- | --- | --- |
+| **WhatsApp** | Connect a personal or WhatsApp Business app number. | Scan the QR code with your phone. |
+| **Coexistence** | Keep the WhatsApp Business app and add the API to the same number. | Select **Connect with Meta** and follow the business-app connection flow. |
+| **Cloud API** | Use a number on Meta's API without the phone app. | Select **Connect with Meta** and complete Meta's setup. |
 
-Each employee completes their own integration. Open **Integrations**, select your CRM, and follow its connection flow using your own CRM account. Your admin's connection does not replace this step.
+## Connect with a QR code
 
-Use the integration guide for your CRM for its specific login, authorization, or configuration requirements. After connecting, return to Eazybe and confirm that your CRM is available.
+On your phone, open WhatsApp, go to **Settings → Linked devices → Link a device**, and scan the code shown in your Eazybe session. Wait for **WhatsApp connected** before continuing. Use **New code** if a QR error appears, or **Use a different way** to change methods.
 
-## Frequently asked questions
+![Prototype illustration of the QR connection screen](/images/onboarding-v2/whatsapp-qr.jpg)
 
-<AccordionGroup>
-  <Accordion title="I am in the organization but not mapped to HubSpot, Salesforce, or Zoho.">
-    Ask your admin to open Integrations, choose your CRM's Settings, and check User Mapping. Give them the email address you use for Eazybe and the CRM account that should be linked to you.
-  </Accordion>
-  <Accordion title="Should I reconnect a CRM the admin has already connected?">
-    For HubSpot, Salesforce, or Zoho, ask the admin to check your mapping first. For other CRMs, you need to complete your own integration.
-  </Accordion>
-  <Accordion title="Does joining an organization require a CRM?">
-    No. Join your main organization first. Complete CRM setup only if your team uses a CRM with Eazybe.
-  </Accordion>
-</AccordionGroup>
+<Note>The QR code in this image is an illustration. Scan the current code in your own Eazybe app. The prototype's **I scanned it** button is a demo control; the implemented flow detects the connection.</Note>
+
+## Set up calling
+
+If you selected Both, choose **Next: set up calling** after WhatsApp. If you selected Calling, you go straight to the calling options.
+
+![Calling options in the prototype](/images/onboarding-v2/calling-method.jpg)
+
+- **Use my own number:** Install the Eazybe app on your Android phone, sign in with the same email, and follow the call-access prompts.
+- **Get a number from Eazybe:** Select **Choose my number** to open Phone Numbers, choose a country and area code, and review the actual price before activating a number. The price in the prototype is illustrative.
+
+You can use **Skip for now** where offered and finish later. Skipping does not connect a number.
+
+## Finish from Home
+
+Use the **Get started** checklist to finish any remaining tasks, including **Connect your CRM** and **Invite your team**. The checklist depends on what you selected and completed.
+
+![Prototype Home checklist after onboarding](/images/onboarding-v2/home-checklist.jpg)
+
+Selecting **Main CRM** during workspace creation does not connect it. Open **Connect your CRM** or **Integrations** and complete your CRM's authorization. For HubSpot, Salesforce, or Zoho, the admin checks **Settings → User Mapping** if an employee is not mapped automatically. Other CRM users complete their own integration.

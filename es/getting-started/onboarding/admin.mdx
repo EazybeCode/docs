@@ -1,59 +1,40 @@
 ---
-title: "Administrador: invita a tus empleados"
-description: "Envía invitaciones y ayuda a tu equipo a unirse a tu organización principal de Eazybe."
+title: "Administrador: crea tu espacio de trabajo"
+description: "Crea el espacio de tu empresa, elige tu CRM e invita a tu equipo."
 ---
 
-Invita a los empleados con sus correos de trabajo y comparte el código de tu organización principal para que se unan al equipo correcto.
+<Note>
+Esta guía sigue el nuevo proceso de incorporación de dev. Las capturas posteriores al inicio de sesión usan el prototipo de referencia: los nombres, números, precios, contadores de pasos y botones exclusivos del prototipo son ilustrativos. Sigue los controles de tu aplicación Eazybe.
+</Note>
 
-<Note>Los nombres de los controles se mantienen en inglés para que coincidan con las capturas.</Note>
+Completa primero [el inicio de sesión y tu número de trabajo](/es/getting-started/onboarding/overview). Crea un espacio solo si estás configurando un equipo nuevo para tu empresa.
 
 <Steps>
-  <Step title="Abre la sección de invitación de empleados">
-    Inicia sesión en [app.eazybe.com](https://app.eazybe.com) como administrador de tu organización principal. Abre **Staff** (Personal) y selecciona **Add Employee** (Añadir empleado).
+<Step title="Selecciona Crear un espacio de trabajo nuevo">
+En **Configura tu espacio de trabajo**, selecciona **Crear un espacio de trabajo nuevo**. Si tu empresa ya tiene un espacio, pide el código a su administrador y usa **Unirse**.
 
-    ![Botón Add Employee en la página de personal](/images/team-onboarding/staff-invite.jpg)
-  </Step>
-  <Step title="Introduce los datos del empleado y envía la invitación">
-    En **Add employee**, introduce **Full name** (Nombre completo), elige **Employee Role** (Rol del empleado) e introduce su **Email**. Completa **WhatsApp Number** (Número de WhatsApp), **Team** (Equipo) y **Working Hours** (Horario de trabajo) si es necesario. Después, selecciona **Send Invite** (Enviar invitación).
+![Opciones para crear un espacio o unirse con un código](/images/onboarding-v2/es/workspace-choice.png)
+</Step>
+<Step title="Introduce los datos del espacio">
+Completa **Nombre del espacio de trabajo**, selecciona **Tamaño del equipo** y elige **CRM principal**. Después, selecciona **Crear espacio de trabajo**. Elige la opción sin CRM si todavía no usas uno. Esta selección guarda tu preferencia; no autoriza ni conecta el CRM.
 
-    Eazybe envía una invitación a ese correo. El empleado puede usar el enlace del mensaje o iniciar sesión directamente en [app.eazybe.com](https://app.eazybe.com) con el mismo correo.
+![Nombre del espacio, tamaño del equipo y CRM principal](/images/onboarding-v2/es/create-workspace.png)
+</Step>
 
-    ![Formulario para añadir un empleado con los campos obligatorios y Send Invite](/images/team-onboarding/invite-employee.jpg)
-
-    <Note>
-    Pide al empleado que instale la extensión e inicie sesión antes de unirse a la organización. Envíale la [guía de incorporación para empleados](/es/getting-started/onboarding/employee).
-    </Note>
-  </Step>
 </Steps>
 
-## Comparte el código de tu organización principal
+## Continúa la configuración
 
-En **Staff**, busca **ORGANIZATION CODE** y usa **Copy Organization Code** (Copiar código de la organización). Compártelo con el empleado invitado.
+[Instala la extensión y conecta WhatsApp o llamadas →](/es/getting-started/onboarding/crm)
 
-También encontrarás **Organization Code** en el panel **My Account** (Mi cuenta) de Eazybe dentro de WhatsApp Web. Comprueba que **Organization Name** (Nombre de la organización) corresponde a tu organización principal antes de copiar el código.
+## Invita a tu equipo
 
-<Warning>
-Comparte el **Organization Code**, no el **Access Code** ni la **Auth Key**. Son credenciales diferentes y no se necesitan para unirse a la organización.
-</Warning>
+Después de la incorporación, usa **Invita a tu equipo** en la lista de Inicio o abre **Staff → Add Employee**. Introduce el nombre, el rol y el correo de trabajo del empleado y selecciona **Send Invite**. Puede abrir el enlace del correo o iniciar sesión en app.eazybe.com con ese correo.
 
-El empleado abre **Join Organisation** en la extensión y pega el código en **Organization Code**. Cuando se una, comprueba que aparece en la lista **Staff** de tu organización principal con el rol previsto.
+Comparte el **Organization Code** del espacio principal desde **Staff**. Los empleados lo pegan en el campo para unirse durante la configuración. Comparte el código de organización, no las credenciales independientes Access Code o Auth Key.
 
-## Completa la configuración del CRM
+[Comparte la guía para empleados →](/es/getting-started/onboarding/employee)
 
-Si tu organización usa **HubSpot, Salesforce o Zoho**, conecta el CRM como administrador si aún no está conectado. Los empleados deberían asignarse automáticamente cuando el administrador haya conectado el CRM. Si falta alguien, usa **Settings → User Mapping** (Configuración → Asignación de usuarios) dentro de esa integración.
+## Comprueba la asignación del CRM
 
-[Consulta la guía de asignación del CRM →](/es/getting-started/onboarding/crm)
-
-## Preguntas frecuentes
-
-<AccordionGroup>
-  <Accordion title="¿Qué ocurre si el empleado no recibe el correo?">
-    Comprueba el correo que introdujiste y pide al empleado que revise la carpeta de spam o correo no deseado. También puede abrir app.eazybe.com directamente, iniciar sesión con el mismo correo y usar el código de tu organización en la extensión.
-  </Accordion>
-  <Accordion title="¿Qué código de organización debo compartir?">
-    Comparte el código de tu organización principal, donde quieres que trabaje el empleado. Comprueba primero el nombre de la organización.
-  </Accordion>
-  <Accordion title="¿La invitación también conecta el CRM del empleado?">
-    La invitación y la configuración del CRM son procesos separados. Para HubSpot, Salesforce o Zoho, comprueba la asignación automática después de que el empleado se una. Para otros CRM, el empleado debe integrar su propia cuenta.
-  </Accordion>
-</AccordionGroup>
+En HubSpot, Salesforce o Zoho, los empleados pueden asignarse automáticamente cuando el administrador conecta el CRM. Si falta una asignación, abre **Settings → User Mapping** de ese CRM y selecciona el usuario correcto. Quienes usan otros CRM completan su propia integración.

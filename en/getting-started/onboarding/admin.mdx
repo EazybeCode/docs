@@ -1,57 +1,40 @@
 ---
-title: "Admin: Invite Your Employees"
-description: "Send employee invitations and help your team join your main Eazybe organization."
+title: "Admin: Create Your Workspace"
+description: "Create your company workspace, choose your CRM preference, and invite your team."
 ---
 
-Invite employees using their work email addresses, then share your main organization's code so they can join the right team.
+<Note>
+This guide follows the new onboarding on dev. Screens after sign-in use the supplied prototype as a visual reference; sample names, numbers, prices, progress counts, and prototype-only buttons are illustrative. Follow the controls shown in your Eazybe app.
+</Note>
+
+Complete [sign-in and your work number](/en/getting-started/onboarding/overview) first. Create a workspace only if you are setting up a new company team.
 
 <Steps>
-  <Step title="Open the employee invitation section">
-    Sign in to [app.eazybe.com](https://app.eazybe.com) as an admin of your main organization. Open **Staff** and select **Add Employee** to invite an employee.
+<Step title="Choose Create a new workspace">
+On **Set up your workspace**, select **Create a new workspace**. If your company already has a workspace, ask its admin for the code and use **Join** instead.
 
-    ![Staff page with the Add Employee button](/images/team-onboarding/staff-invite.jpg)
-  </Step>
-  <Step title="Enter the employee details and send the invitation">
-    In **Add employee**, enter **Full name**, choose **Employee Role**, and enter the employee's **Email**. Complete **WhatsApp Number**, **Team**, and **Working Hours** if needed, then select **Send Invite**.
+![Workspace creation and join-code options](/images/onboarding-v2/workspace-choice.jpg)
+</Step>
+<Step title="Enter your workspace details">
+Enter **Workspace name**, select **Team size**, and choose **Main CRM**. Then select **Create workspace**. Choose the no-CRM option if you do not use a CRM yet. Selecting a CRM here records your preference; it does not authorize or connect the CRM.
 
-    Eazybe sends an invitation to that email address. The employee can use the email link or sign in directly at [app.eazybe.com](https://app.eazybe.com) with the same email.
+![Workspace name, team size, and main CRM](/images/onboarding-v2/create-workspace.jpg)
+</Step>
 
-    ![Add employee form showing required fields and Send Invite](/images/team-onboarding/invite-employee.jpg)
-
-    <Note>
-    Ask the employee to install the extension and sign in before joining your organization. Send them the [employee onboarding guide](/en/getting-started/onboarding/employee).
-    </Note>
-  </Step>
 </Steps>
 
-## Share your main organization's code
+## Continue setup
 
-On the **Staff** page, find **ORGANIZATION CODE** and use **Copy Organization Code**. Share it with the invited employee.
+[Install the extension and connect WhatsApp or calling →](/en/getting-started/onboarding/crm)
 
-You can also find **Organization Code** in the Eazybe **My Account** panel inside WhatsApp Web. Confirm that **Organization Name** is your main organization before copying its code.
+## Invite your team
 
-<Warning>
-Share the **Organization Code**, not the **Access Code** or **Auth Key**. Those are separate credentials and are not needed to join the organization.
-</Warning>
+After onboarding, use **Invite your team** in the Home checklist, or open **Staff → Add Employee**. Enter the employee's name, role, and work email, then select **Send Invite**. They can open the email link or sign in at app.eazybe.com with that email.
 
-The employee opens **Join Organisation** in the extension and pastes your code into **Organization Code**. After they join, check that they appear in your main organization's **Staff** list with the intended role.
+Share your main workspace's **Organization Code** from **Staff**. Employees paste it into the joining field during workspace setup. Share the organization code, not the separate access code or auth key.
 
-## Finish CRM setup
+[Send employees the joining guide →](/en/getting-started/onboarding/employee)
 
-If your organization uses **HubSpot, Salesforce, or Zoho**, connect the CRM as an admin if it is not already connected. Employees should be mapped automatically when the admin has connected the CRM; if someone is not mapped, use **Settings → User Mapping** within that CRM integration.
+## Check CRM mapping
 
-[Follow the CRM mapping guide →](/en/getting-started/onboarding/crm)
-
-## Frequently asked questions
-
-<AccordionGroup>
-  <Accordion title="What if the employee does not receive the email?">
-    Check the email address you entered and ask the employee to check spam or junk. They can also open app.eazybe.com directly, sign in with that same email, and use your organization code in the extension.
-  </Accordion>
-  <Accordion title="Which organization code should I share?">
-    Share the code for your main organization—the one where you want the employee to work. Confirm the organization name first.
-  </Accordion>
-  <Accordion title="Does an invitation also connect the employee's CRM?">
-    The invitation and CRM setup are separate. For HubSpot, Salesforce, or Zoho, check automatic mapping after the employee joins. For other CRMs, the employee needs to integrate their own account.
-  </Accordion>
-</AccordionGroup>
+For HubSpot, Salesforce, or Zoho, employees can be mapped automatically after the admin connects the CRM. If a mapping is missing, open that CRM's **Settings → User Mapping** and select the correct CRM user. Employees using other CRMs complete their own integration.

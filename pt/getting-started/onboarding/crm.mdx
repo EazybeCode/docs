@@ -1,65 +1,62 @@
 ---
-title: "Conecte seu CRM depois de entrar"
-description: "Confira o mapeamento automático ou conecte sua própria conta do CRM após o onboarding."
+title: "Conclua a configuração: extensão, WhatsApp e chamadas"
+description: "Instale a extensão, escolha seu objetivo e conclua as conexões."
 ---
 
-Primeiro, [entre na organização principal](/pt/getting-started/onboarding/employee). Depois, siga as instruções para seu CRM.
+<Note>
+Este guia segue o novo onboarding de dev. As telas após o login usam o protótipo como referência visual: nomes, números, preços, contadores de etapas e botões exclusivos do protótipo são ilustrativos. Siga os controles do seu aplicativo Eazybe.
+</Note>
 
-| Seu CRM | O que o funcionário faz | O que o administrador faz |
-| --- | --- | --- |
-| HubSpot, Salesforce ou Zoho, já conectado pelo administrador | Confere se sua conta foi mapeada automaticamente. | Conclui os mapeamentos pendentes em **Settings → User Mapping** do CRM. |
-| HubSpot, Salesforce ou Zoho, ainda não conectado | Pede ao administrador que conecte o CRM da organização. | Conecta o CRM e confere os mapeamentos dos funcionários. |
-| Outro CRM | Integra a própria conta, mesmo que o administrador já tenha conectado a dele. | Ajuda a identificar a conta correta e o guia de configuração, se necessário. |
-| Sem CRM | Continua usando os recursos configurados pela organização. | Não é necessário configurar um CRM para entrar na organização. |
-
-## HubSpot, Salesforce e Zoho
-
-Os funcionários devem ser mapeados automaticamente quando o administrador já tiver conectado o CRM. Se faltar um mapeamento, o **administrador** conclui estas etapas.
-
-<Note>Os nomes dos controles são mantidos em inglês para corresponder às capturas de tela.</Note>
+Continuar aqui depois de criar ou entrar no workspace.
 
 <Steps>
-  <Step title="Abra as configurações do seu CRM">
-    Em [app.eazybe.com](https://app.eazybe.com), abra **Integrations** (Integrações). Encontre **HubSpot**, **Salesforce** ou **Zoho** e selecione **Settings** (Configurações) no cartão do CRM conectado.
+<Step title="Adicione o Eazybe ao Chrome">
+Em **Adicione o Eazybe ao Chrome**, selecione **Adicionar ao Chrome · é grátis**. Você também pode abrir a [página da Chrome Web Store](https://chromewebstore.google.com/detail/whatsapp-ai-agents-with-c/clgficggccelgifppbcaepjdkklfcefd) diretamente. Na loja, escolha **Add to Chrome** e depois **Add extension**. Instale apenas uma vez. Se o Eazybe já detectar a extensão, selecione **Continuar**. **Pular por enquanto** permite concluir outras tarefas, mas instale a extensão antes de usar o Eazybe dentro do WhatsApp Web.
 
-    Se o cartão mostrar **Connect** (Conectar), o administrador precisa conectar o CRM primeiro.
+![Nova etapa de instalação da extensão](/images/onboarding-v2/pt/extension.png)
+</Step>
+<Step title="Escolha como sua equipe usará o Eazybe">
+Em **Para que sua equipe usará o Eazybe?**, selecione **WhatsApp**, **Chamadas** ou **Ambos**. Ambos configura primeiro o WhatsApp e depois as chamadas. Você pode adicionar a outra opção mais tarde.
 
-    ![Página de integrações com botões Settings e Connect](/images/team-onboarding/crm-integrations.png)
-  </Step>
-  <Step title="Encontre o funcionário em User Mapping">
-    Abra **User Mapping** (Mapeamento de usuários). Busque o funcionário pelo nome ou e-mail. No HubSpot, você pode usar **Unmapped** (Não mapeados) e o campo de busca de funcionários para encontrar as contas pendentes.
+![Opções WhatsApp, Chamadas e Ambos](/images/onboarding-v2/pt/goal.png)
+</Step>
+<Step title="Escolha a conexão do WhatsApp">
+Se escolheu WhatsApp ou Ambos, selecione um método abaixo. Coexistência e API na nuvem exigem um administrador; peça ajuda se essas opções estiverem indisponíveis.
 
-    ![Aba User Mapping do HubSpot com filtro Unmapped e busca de funcionários](/images/team-onboarding/user-mapping.jpg)
+![Opções WhatsApp, Coexistência e API na nuvem](/images/onboarding-v2/pt/whatsapp-method.png)
+</Step>
 
-    <Note>
-    As capturas usam o HubSpot como exemplo. Abra as configurações do CRM que sua organização utiliza.
-    </Note>
-  </Step>
-  <Step title="Mapeie o funcionário para o usuário correto do CRM">
-    Na linha do funcionário, escolha a conta correspondente do CRM. No HubSpot, esse controle se chama **Select HubSpot User** (Selecionar usuário do HubSpot). Confirme que o usuário selecionado pertence ao funcionário e confira se a linha exibe o usuário mapeado.
-
-    ![Coluna HubSpot User com o controle Select HubSpot User](/images/team-onboarding/select-crm-user.jpg)
-
-    Peça ao funcionário que confira a conexão do CRM no Eazybe depois que o mapeamento estiver concluído.
-  </Step>
 </Steps>
 
-## Outros CRMs: conecte sua própria conta
+| Método | Quando usar | Próxima ação |
+| --- | --- | --- |
+| **WhatsApp** | Conectar um número pessoal ou do aplicativo WhatsApp Business. | Escaneie o QR pelo celular. |
+| **Coexistência** | Manter o WhatsApp Business e adicionar a API ao mesmo número. | Selecione **Connect with Meta** e siga o fluxo de conexão do aplicativo Business. |
+| **API na nuvem** | Usar um número na API da Meta sem o aplicativo no celular. | Selecione **Connect with Meta** e conclua a configuração da Meta. |
 
-Cada funcionário realiza sua própria integração. Abra **Integrations**, selecione seu CRM e siga o fluxo de conexão usando sua própria conta. A conexão do administrador não substitui esta etapa.
+## Conecte com um QR code
 
-Consulte o guia de integração do seu CRM para os requisitos específicos de login, autorização ou configuração. Depois de conectar, volte ao Eazybe e confirme se o CRM está disponível.
+No celular, abra o WhatsApp, acesse **Configurações → Aparelhos conectados → Conectar um aparelho** e escaneie o código da sua sessão do Eazybe. Espere **WhatsApp connected** antes de continuar. Use **New code** se aparecer um erro no QR ou **Usar outro método** para trocar de método.
 
-## Perguntas frequentes
+![Ilustração do protótipo da conexão por QR](/images/onboarding-v2/pt/whatsapp-qr.png)
 
-<AccordionGroup>
-  <Accordion title="Estou na organização, mas não estou mapeado no HubSpot, Salesforce ou Zoho.">
-    Peça ao administrador que abra Integrations, escolha Settings do seu CRM e confira User Mapping. Informe o e-mail que você usa no Eazybe e a conta do CRM que deve ser vinculada a você.
-  </Accordion>
-  <Accordion title="Devo reconectar um CRM que o administrador já conectou?">
-    Para HubSpot, Salesforce ou Zoho, peça primeiro ao administrador que confira seu mapeamento. Para outros CRMs, você precisa concluir sua própria integração.
-  </Accordion>
-  <Accordion title="Preciso de um CRM para entrar em uma organização?">
-    Não. Entre na organização principal primeiro. Configure o CRM somente se sua equipe o utilizar com o Eazybe.
-  </Accordion>
-</AccordionGroup>
+<Note>O QR da imagem é ilustrativo. Escaneie o código atual do seu aplicativo Eazybe. **Já escaneei** é um controle de demonstração do protótipo; o fluxo implementado detecta a conexão.</Note>
+
+## Configure as chamadas
+
+Se escolheu Ambos, selecione **Next: set up calling** depois do WhatsApp. Se escolheu Chamadas, você vai diretamente às opções de chamadas.
+
+![Opções de chamadas no protótipo](/images/onboarding-v2/pt/calling-method.png)
+
+- **Usar meu próprio número:** Instale o Eazybe no celular Android, faça login com o mesmo e-mail e siga as instruções de acesso às chamadas.
+- **Obter um número do Eazybe:** Selecione **Choose my number** para abrir Phone Numbers, escolha país e código de área e confira o preço real antes de ativar um número. O preço do protótipo é ilustrativo.
+
+Você pode usar **Pular por enquanto** quando disponível e terminar depois. Pular uma etapa não conecta um número.
+
+## Termine em Início
+
+Use a lista **Primeiros passos** para concluir tarefas pendentes, incluindo **Conecte seu CRM** e **Convide sua equipe**. A lista depende do que você selecionou e concluiu.
+
+![Lista de configuração de Início no protótipo](/images/onboarding-v2/pt/home-checklist.png)
+
+Escolher **CRM principal** ao criar o workspace não o conecta. Abra **Conecte seu CRM** ou **Integrations** e conclua a autorização. No HubSpot, Salesforce ou Zoho, o administrador confere **Settings → User Mapping** se um funcionário não for mapeado automaticamente. Usuários de outros CRMs concluem a própria integração.

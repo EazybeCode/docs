@@ -1,41 +1,38 @@
 ---
-title: "Incorporación del equipo"
-description: "Invita a tus empleados, únete a tu organización principal y configura tu CRM."
+title: "Primeros pasos con Eazybe"
+description: "Inicia sesión, añade tu número de trabajo y crea o únete a un espacio de trabajo."
 ---
 
-Configura tu equipo en Eazybe con dos recorridos conectados: el administrador invita a los empleados y comparte el código de la organización; cada empleado instala la extensión, inicia sesión y se une a esa organización.
-
-<CardGroup cols={2}>
-  <Card title="Para administradores" icon="user-plus" href="/es/getting-started/onboarding/admin">
-    Invita a los empleados por correo y comparte el código de tu organización principal.
-  </Card>
-  <Card title="Para empleados" icon="users" href="/es/getting-started/onboarding/employee">
-    Instala Eazybe, inicia sesión con tu correo de trabajo y únete a tu equipo.
-  </Card>
-</CardGroup>
-
-## El proceso de incorporación
-
-| Quién | Qué hacer | Qué ocurre después |
-| --- | --- | --- |
-| Administrador | Añade al empleado y selecciona **Send Invite** (Enviar invitación). | El empleado recibe una invitación por correo. |
-| Empleado | Instala la extensión de Eazybe e inicia sesión con el correo que recibió la invitación. | Eazybe está disponible dentro de WhatsApp Web. |
-| Administrador | Comparte el **Organization Code** (Código de la organización) de la organización principal. | El empleado puede unirse a la organización correcta. |
-| Empleado | Abre **Join Organisation**, pega el código y selecciona **Join Organization**. | El empleado se une a la organización principal. |
-| Administrador o empleado | [Comprueba la conexión del CRM y la asignación de usuarios](/es/getting-started/onboarding/crm). | El empleado queda vinculado a la cuenta de CRM correcta. |
-
 <Note>
-La extensión es necesaria para el proceso de WhatsApp Web de esta guía. Usa el mismo correo para la invitación, la extensión y app.eazybe.com. Los nombres de los controles se mantienen en inglés para que puedas identificarlos en las capturas.
+Esta guía sigue el nuevo proceso de incorporación de dev. Las capturas posteriores al inicio de sesión usan el prototipo de referencia: los nombres, números, precios, contadores de pasos y botones exclusivos del prototipo son ilustrativos. Sigue los controles de tu aplicación Eazybe.
 </Note>
 
-## Antes de empezar
+Empieza en [Eazybe](https://app.eazybe.com/signin). Para revisar el nuevo flujo antes de su lanzamiento, usa [dev](https://dev-app.eazybe.com/signin).
 
-**Administradores:** ten acceso a tu organización principal de Eazybe y al correo de trabajo de cada empleado.
+El recorrido es **Inicio de sesión → Tu WhatsApp → Espacio de trabajo → Extensión → Objetivo → Conexión**. Algunas pantallas pueden omitirse si tu cuenta ya tiene la información necesaria.
 
-**Empleados:** usa Chrome en tu computadora, ten acceso a tu correo de trabajo y a WhatsApp, y pide al administrador el código de la organización principal.
+<Steps>
+<Step title="Inicia sesión con tu correo de trabajo">
+Introduce **Correo de trabajo** y selecciona **Continuar**, o elige **Continuar con Google**. Si tu administrador te invitó, usa ese mismo correo.
 
-**¿Usas un CRM?** HubSpot, Salesforce y Zoho pueden asignar automáticamente a los empleados cuando el administrador ya ha conectado el CRM. Si falta una asignación, el administrador la completa en la configuración de la integración. Para otros CRM, cada empleado completa su propia integración.
+![Nueva pantalla de inicio de sesión de Eazybe](/images/onboarding-v2/es/sign-in.png)
+</Step>
+<Step title="Verifica tu correo">
+Introduce el código de seis dígitos recibido por correo y selecciona **Verificar**. Usa **Enviar un código nuevo** si lo necesitas o **Atrás** para corregir el correo. El acceso con Google puede no requerir esta pantalla.
 
-<Card title="Conecta o comprueba tu CRM" icon="plug" href="/es/getting-started/onboarding/crm">
-  Sigue las instrucciones para tu CRM después de unirte a la organización.
-</Card>
+![Verificación de correo en el prototipo](/images/onboarding-v2/es/verify-email.png)
+</Step>
+<Step title="Añade tu número de WhatsApp de trabajo">
+Introduce **Tu nombre**, elige el prefijo del país e introduce **Número de WhatsApp**. Selecciona **Continuar**. Este número se usa para alertas; añadirlo aquí no conecta la sincronización de chats.
+
+![Campos de nombre y número de WhatsApp](/images/onboarding-v2/es/work-number.png)
+</Step>
+
+</Steps>
+
+## Crea o únete a un espacio de trabajo
+
+- **¿Configuras Eazybe para tu empresa?** [Crea tu espacio de trabajo](/es/getting-started/onboarding/admin).
+- **¿Te unes a un equipo existente?** [Usa el código del administrador](/es/getting-started/onboarding/employee).
+
+Usa el mismo correo de trabajo en Eazybe, la extensión y la aplicación móvil. La conexión del CRM se completa por separado de la verificación del correo.

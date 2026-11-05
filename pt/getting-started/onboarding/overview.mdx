@@ -1,41 +1,38 @@
 ---
-title: "Onboarding da equipe"
-description: "Convide seus funcionários, entre na organização principal e prepare seu CRM."
+title: "Primeiros passos com o Eazybe"
+description: "Faça login, adicione seu número de trabalho e crie ou entre em um workspace."
 ---
 
-Configure sua equipe no Eazybe com dois fluxos conectados: o administrador convida os funcionários e compartilha o código da organização; cada funcionário instala a extensão, faz login e entra nessa organização.
-
-<CardGroup cols={2}>
-  <Card title="Para administradores" icon="user-plus" href="/pt/getting-started/onboarding/admin">
-    Convide os funcionários por e-mail e compartilhe o código da organização principal.
-  </Card>
-  <Card title="Para funcionários" icon="users" href="/pt/getting-started/onboarding/employee">
-    Instale o Eazybe, faça login com seu e-mail de trabalho e entre na sua equipe.
-  </Card>
-</CardGroup>
-
-## O fluxo de onboarding
-
-| Quem | O que fazer | O que acontece depois |
-| --- | --- | --- |
-| Administrador | Adicione o funcionário e selecione **Send Invite** (Enviar convite). | O funcionário recebe um convite por e-mail. |
-| Funcionário | Instale a extensão do Eazybe e faça login com o e-mail que recebeu o convite. | O Eazybe fica disponível no WhatsApp Web. |
-| Administrador | Compartilhe o **Organization Code** (Código da organização) da organização principal. | O funcionário pode entrar na organização correta. |
-| Funcionário | Abra **Join Organisation**, cole o código e selecione **Join Organization**. | O funcionário entra na organização principal. |
-| Administrador ou funcionário | [Confira a conexão do CRM e o mapeamento de usuários](/pt/getting-started/onboarding/crm). | O funcionário fica vinculado à conta correta do CRM. |
-
 <Note>
-A extensão é necessária para o fluxo do WhatsApp Web deste guia. Use o mesmo e-mail no convite, na extensão e em app.eazybe.com. Os nomes dos controles são mantidos em inglês para facilitar a identificação nas capturas de tela.
+Este guia segue o novo onboarding de dev. As telas após o login usam o protótipo como referência visual: nomes, números, preços, contadores de etapas e botões exclusivos do protótipo são ilustrativos. Siga os controles do seu aplicativo Eazybe.
 </Note>
 
-## Antes de começar
+Comece pelo [Eazybe](https://app.eazybe.com/signin). Para revisar o novo fluxo antes do lançamento, use [dev](https://dev-app.eazybe.com/signin).
 
-**Administradores:** tenha acesso à organização principal do Eazybe e ao e-mail de trabalho de cada funcionário.
+O fluxo é **Login → Seu WhatsApp → Workspace → Extensão → Objetivo → Conexão**. Algumas telas podem ser puladas se sua conta já tiver as informações necessárias.
 
-**Funcionários:** use o Chrome no computador, tenha acesso ao e-mail de trabalho e ao WhatsApp e peça ao administrador o código da organização principal.
+<Steps>
+<Step title="Faça login com seu e-mail de trabalho">
+Preencha **E-mail de trabalho** e selecione **Continuar**, ou escolha **Continuar com o Google**. Se o administrador convidou você, use o mesmo e-mail do convite.
 
-**Usa um CRM?** HubSpot, Salesforce e Zoho podem mapear os funcionários automaticamente quando o administrador já conectou o CRM. Se faltar um mapeamento, o administrador o conclui nas configurações da integração. Para outros CRMs, cada funcionário realiza sua própria integração.
+![Nova tela de login do Eazybe](/images/onboarding-v2/pt/sign-in.png)
+</Step>
+<Step title="Verifique seu e-mail">
+Digite o código de seis dígitos recebido por e-mail e selecione **Verificar**. Use **Enviar um novo código** se necessário ou **Voltar** para corrigir o e-mail. O login pelo Google pode não exigir essa tela de código.
 
-<Card title="Conecte ou confira seu CRM" icon="plug" href="/pt/getting-started/onboarding/crm">
-  Siga as instruções para seu CRM depois de entrar na organização.
-</Card>
+![Verificação de e-mail no protótipo](/images/onboarding-v2/pt/verify-email.png)
+</Step>
+<Step title="Adicione seu WhatsApp de trabalho">
+Preencha **Seu nome**, escolha o código do país e informe **Número do WhatsApp**. Selecione **Continuar**. Esse número é usado para alertas; adicioná-lo aqui não conecta a sincronização de conversas.
+
+![Campos de nome e número do WhatsApp](/images/onboarding-v2/pt/work-number.png)
+</Step>
+
+</Steps>
+
+## Crie ou entre em um workspace
+
+- **Está configurando para sua empresa?** [Crie seu workspace](/pt/getting-started/onboarding/admin).
+- **Vai entrar em uma equipe existente?** [Use o código do administrador](/pt/getting-started/onboarding/employee).
+
+Use o mesmo e-mail de trabalho no Eazybe, na extensão e no aplicativo móvel. A conexão do CRM é concluída separadamente da verificação de e-mail.

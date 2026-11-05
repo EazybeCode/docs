@@ -1,41 +1,38 @@
 ---
-title: "Team Onboarding"
-description: "Invite your employees, join your main organization, and get your CRM ready."
+title: "Get Started with Eazybe"
+description: "Sign in, add your work number, and create or join your workspace."
 ---
 
-Set up your team in Eazybe with two connected journeys: the admin invites employees and shares the organization code; each employee installs the extension, signs in, and joins that organization.
-
-<CardGroup cols={2}>
-  <Card title="For admins" icon="user-plus" href="/en/getting-started/onboarding/admin">
-    Invite employees by email and share your main organization's code.
-  </Card>
-  <Card title="For employees" icon="users" href="/en/getting-started/onboarding/employee">
-    Install Eazybe, sign in with your work email, and join your team.
-  </Card>
-</CardGroup>
-
-## The onboarding flow
-
-| Who | What to do | What happens next |
-| --- | --- | --- |
-| Admin | Add the employee and select **Send Invite**. | The employee receives an invitation email. |
-| Employee | Install the Eazybe extension and sign in with the invited email address. | Eazybe is available inside WhatsApp Web. |
-| Admin | Share the main organization's **Organization Code**. | The employee can join the correct organization. |
-| Employee | Open **Join Organisation**, paste the code, and select **Join Organization**. | The employee joins the main organization. |
-| Admin or employee | [Check the CRM connection and user mapping](/en/getting-started/onboarding/crm). | The employee is connected to the right CRM account. |
-
 <Note>
-The extension is required for the WhatsApp Web onboarding flow in this guide. Use the same email address for the invitation, the extension, and app.eazybe.com.
+This guide follows the new onboarding on dev. Screens after sign-in use the supplied prototype as a visual reference; sample names, numbers, prices, progress counts, and prototype-only buttons are illustrative. Follow the controls shown in your Eazybe app.
 </Note>
 
-## Before you begin
+Start at [Eazybe](https://app.eazybe.com/signin). To review the new flow before release, use [dev](https://dev-app.eazybe.com/signin).
 
-**Admins:** have access to your main Eazybe organization and each employee's work email address.
+The flow is **Sign in → Your WhatsApp → Workspace → Extension → Goal → Connect**. Some screens may be skipped when your account already has the required information.
 
-**Employees:** use Chrome on your computer, have access to your work email and WhatsApp, and ask your admin for the main organization's code.
+<Steps>
+<Step title="Sign in with your work email">
+Enter **Work email** and select **Continue**, or choose **Continue with Google**. If your admin invited you, use that same email address.
 
-**Using a CRM?** HubSpot, Salesforce, and Zoho can map employees automatically when the admin has already connected the CRM. If mapping is missing, the admin completes it in the CRM integration's settings. For other CRMs, each employee completes their own integration.
+![New Eazybe sign-in screen](/images/onboarding-v2/sign-in.jpg)
+</Step>
+<Step title="Verify your email">
+Enter the six-digit code from your email and select **Verify**. Use **Send a new code** if needed, or **Back** to correct your email. Google sign-in may not require this email-code screen.
 
-<Card title="Connect or check your CRM" icon="plug" href="/en/getting-started/onboarding/crm">
-  Follow the right path for your CRM after joining your organization.
-</Card>
+![Email verification screen in the prototype](/images/onboarding-v2/verify-email.jpg)
+</Step>
+<Step title="Add your work WhatsApp number">
+Enter **Your name**, choose the country code, and enter your **WhatsApp number**. Select **Continue**. This is the number used for alerts; adding it here does not connect WhatsApp chat sync.
+
+![Name and WhatsApp number fields](/images/onboarding-v2/work-number.jpg)
+</Step>
+
+</Steps>
+
+## Create or join a workspace
+
+- **Setting up for your company?** [Create your workspace](/en/getting-started/onboarding/admin).
+- **Joining an existing team?** [Join with your admin’s code](/en/getting-started/onboarding/employee).
+
+Use the same work email across Eazybe, its extension, and the mobile app. Your organization's CRM connection is completed separately from email verification.
