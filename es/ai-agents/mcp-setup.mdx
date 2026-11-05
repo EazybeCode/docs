@@ -1,0 +1,620 @@
+---
+title: "Conectar el Servidor MCP de Eazybe con Herramientas de IA"
+description: "Guia paso a paso para conectar tu workspace de Eazybe a Claude Code, Claude Desktop, ChatGPT, OpenAI Codex y otras herramientas de IA compatibles con MCP para operaciones de CRM, WhatsApp y workspace."
+---
+
+> **Indice de documentacion**
+> Antes de explorar paginas individuales, consulta el indice completo en [https://help.eazybe.com/llms.txt](https://help.eazybe.com/llms.txt) para conocer los temas disponibles.
+
+# Conectar el Servidor MCP de Eazybe con Herramientas de IA
+
+> Conecta tu workspace de Eazybe a Claude Code, Claude Desktop, ChatGPT, OpenAI Codex o cualquier herramienta de IA compatible con MCP, dandole acceso directo a tu CRM, conversaciones de WhatsApp, analiticas de equipo, campanas y mas.
+
+El servidor MCP (Model Context Protocol) de Eazybe te permite consultar y gestionar tu workspace de Eazybe directamente desde cualquier herramienta de IA que soporte el estandar MCP. Una vez conectado, puedes buscar registros de CRM, leer conversaciones con clientes, consultar analiticas de equipo, inspeccionar campanas y realizar operaciones del workspace, todo mediante lenguaje natural.
+
+## Herramientas de IA Compatibles
+
+El servidor MCP de Eazybe funciona con cualquier herramienta que soporte el Model Context Protocol, incluyendo:
+
+- **Claude Code** — Asistente de IA de Anthropic para programacion (app de escritorio o extension de VS Code)
+- **Claude Desktop** — App de escritorio de Anthropic para Claude con soporte MCP
+- **ChatGPT** — Asistente de IA de OpenAI con soporte de conectores MCP
+- **OpenAI Codex** — Asistente de programacion de OpenAI con soporte MCP
+- **Cualquier cliente compatible con MCP** — Cursor, Windsurf, Cline y otras herramientas que soporten servidores MCP
+
+> [!NOTE]
+> Los pasos de configuracion son similares en todas las herramientas. Elige tu herramienta de IA a continuacion para ver las instrucciones especificas.
+
+---
+
+<Tabs>
+
+  <Tab title="Claude Code">
+
+## Lo que Necesitas Antes de Empezar
+
+Asegurate de tener lo siguiente listo:
+
+- **Claude Code** — la app de escritorio o la extension de VS Code, instalada y funcionando
+- **Una cuenta de workspace de Eazybe** — con acceso de administrador o usuario autorizado
+- **Tu URL del servidor MCP de Eazybe** — tu equipo de desarrollo o administrador del workspace te la proporcionara
+
+---
+
+## Paso 1: Abrir la Configuracion del Servidor MCP en Claude Code
+
+**1. Abre Claude Code** en tu computadora (app de escritorio o VS Code).
+
+**2. Abre el panel de servidores MCP.** Puedes encontrarlo haciendo clic en el **icono MCP** en la barra lateral, o a traves de **Settings > MCP Servers**.
+
+Veras una lista de servidores MCP. Si es tu primera vez, la lista puede estar vacia o mostrar solo los servidores predeterminados de Claude (Claude Docs, Google Drive, Notion).
+
+---
+
+## Paso 2: Agregar el Servidor de Eazybe
+
+**1. Haz clic en "Add MCP Server"** (o el boton **+**) para agregar un nuevo servidor.
+
+**2. Ingresa los detalles del servidor:**
+
+| Campo | Que Ingresar |
+|---|---|
+| **Server name** | `eazybe` |
+| **Server URL** | La URL del endpoint MCP proporcionada por tu equipo de desarrollo |
+
+> [!NOTE]
+> La URL del servidor depende de tu entorno. Tu equipo de desarrollo te dara la URL correcta. Generalmente termina en `/sse`. Si no estas seguro, pregunta a tu administrador del workspace antes de continuar.
+
+**3. Haz clic en Save.**
+
+El servidor aparece en tu lista de servidores MCP. Veras una insignia de estado **"Connecting..."** junto a el.
+
+![Eazybe server appearing in the MCP servers list with Connecting status](/images/mcp-setup/mcp-connecting.png)
+
+*El servidor de Eazybe aparece bajo "User" con una insignia amarilla "Connecting...".*
+
+---
+
+## Paso 3: Autenticar tu Conexion
+
+El primer intento de conexion generalmente **se agotara despues de 30 segundos**. Esto es esperado — el servidor necesita que inicies sesion antes de poder conectarse.
+
+**1. Veras un estado "Failed"** con un mensaje de error: *"MCP server eazybe connection timed out after 30000ms"*.
+
+**2. Haz clic en el boton "Authenticating...".** Esto abre una ventana del navegador donde puedes iniciar sesion.
+
+![Connection failed screen showing timeout error and Authenticating button](/images/mcp-setup/mcp-failed.png)
+
+*Haz clic en el boton amarillo "Authenticating..." para abrir la pagina de inicio de sesion en tu navegador.*
+
+**3. Inicia sesion con tus credenciales de Eazybe** en la ventana del navegador que se abre. Usa el mismo correo electronico y contrasena que usas para iniciar sesion en tu workspace de Eazybe.
+
+**4. Veras una pagina de confirmacion de exito** una vez que la autenticacion este completa.
+
+![Authentication successful confirmation page](/images/mcp-setup/mcp-auth-success.png)
+
+*"Authentication successful" — ahora puedes cerrar esta pestana del navegador y volver a Claude Code.*
+
+**5. Cierra la pestana del navegador** y regresa a Claude Code.
+
+---
+
+## Paso 4: Reconectar y Confirmar
+
+**1. De vuelta en Claude Code**, el servidor puede seguir mostrando **Failed**. Haz clic en **"Reconnect"**.
+
+**2. El servidor deberia mostrar ahora una insignia verde "Connected".**
+
+![Eazybe server showing Connected status with green badge](/images/mcp-setup/mcp-connected.png)
+
+*La insignia verde "Connected" confirma que el servidor esta listo. Tambien veras opciones para Reconnect, Clear authentication, Disable y Remove.*
+
+> [!NOTE]
+> Si Reconnect no funciona, haz clic en **"Clear authentication"** y repite el Paso 3 desde el principio. Asegurate de estar usando las credenciales correctas de tu workspace de Eazybe.
+
+---
+
+## Paso 5: Verificar que tus Herramientas estan Cargadas
+
+**1. Haz clic en "View tools"** en la parte inferior del panel de detalles del servidor.
+
+**2. Deberias ver 19 o mas herramientas listadas.** Estas son las operaciones MCP que Claude puede usar en tu workspace.
+
+![View tools link showing 19 available tools](/images/mcp-setup/mcp-view-tools.png)
+
+*Haz clic en "View tools (19)" para confirmar que todas las herramientas se cargaron correctamente. Si ves 0 herramientas, desconecta y reconecta el servidor.*
+
+---
+
+## Paso 6: Ejecutar tu Primera Consulta
+
+**1. Abre un nuevo chat** en Claude Code.
+
+**2. Escribe esta consulta de prueba:**
+
+```
+What services does Eazybe provide for this workspace? List every available operation grouped by category.
+```
+
+**3. Claude llamara a la herramienta `business_capabilities`** y devolvera la lista completa de operaciones de tu workspace.
+
+**4. Una respuesta exitosa muestra:**
+
+- Tu ID de organizacion y detalles del plan
+- Proveedores conectados (ej., HubSpot, Google Calendar)
+- Numero total de operaciones disponibles
+- Cualquier limitacion de disponibilidad
+
+![First query results showing workspace plan, operations, and readiness limitations](/images/mcp-setup/mcp-first-query.png)
+
+*Una primera consulta exitosa confirma que tu conexion MCP esta funcionando completamente.*
+
+Si ves esta respuesta, tu configuracion esta completa. Ahora puedes usar Claude para consultar tu workspace de Eazybe.
+
+  </Tab>
+
+  <Tab title="Claude Desktop">
+
+## Lo que Necesitas Antes de Empezar
+
+Asegurate de tener lo siguiente listo:
+
+- **Claude Desktop app** — instalada en tu computadora Mac o Windows
+- **Una cuenta de workspace de Eazybe** — con acceso de administrador o usuario autorizado
+- **Tu URL del servidor MCP de Eazybe** — tu equipo de desarrollo o administrador del workspace te la proporcionara
+
+---
+
+## Paso 1: Abrir la Configuracion de Desarrollador
+
+**1. Abre Claude Desktop** en tu computadora.
+
+**2. Ve a Settings** — haz clic en el icono de menu en la parte superior izquierda, luego selecciona **Settings**.
+
+**3. Navega a la pestana Developer** en la barra lateral izquierda.
+
+**4. Veras la seccion de configuracion del servidor MCP** con opciones para editar el archivo de configuracion y gestionar servidores conectados.
+
+![Claude Desktop Developer settings showing MCP server configuration panel](/images/mcp-setup/claude-desktop-settings.png)
+
+*El panel de configuracion de Developer muestra la seccion MCP con un boton "Edit Config" y cualquier servidor conectado.*
+
+---
+
+## Paso 2: Editar el Archivo de Configuracion
+
+**1. Haz clic en "Edit Config"** para abrir el archivo `claude_desktop_config.json`.
+
+**2. Agrega la configuracion del servidor de Eazybe** usando el puente `mcp-remote`:
+
+![Config file showing the Eazybe MCP server configuration with mcp-remote](/images/mcp-setup/claude-desktop-config.png)
+
+*Agrega la entrada del servidor MCP de Eazybe a tu archivo de configuracion. Reemplaza YOUR_MCP_SERVER_URL con la URL de tu equipo de desarrollo.*
+
+```json
+{
+  "mcpServers": {
+    "eazybe": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "mcp-remote",
+        "YOUR_MCP_SERVER_URL"
+      ],
+      "env": {}
+    }
+  }
+}
+```
+
+> [!NOTE]
+> Ubicacion del archivo de configuracion:
+> - **Mac:** `~/Library/Application Support/Claude/claude_desktop_config.json`
+> - **Windows:** `%APPDATA%\Claude\claude_desktop_config.json`
+>
+> Reemplaza `YOUR_MCP_SERVER_URL` con la URL del endpoint MCP de tu equipo de desarrollo (generalmente termina en `/sse`).
+
+**3. Guarda el archivo** y reinicia Claude Desktop.
+
+---
+
+## Paso 3: Autenticar tu Conexion
+
+**1. Despues de reiniciar, Claude Desktop intentara conectarse** al servidor MCP de Eazybe.
+
+**2. Se abrira automaticamente una ventana del navegador** para la autenticacion. Inicia sesion con tus credenciales del workspace de Eazybe.
+
+**3. Veras una pagina de confirmacion "Authentication Successful".**
+
+![Authentication successful page showing Eazybe workspace connected](/images/mcp-setup/claude-desktop-auth.png)
+
+*"Authentication Successful" — tu workspace de Eazybe esta ahora conectado. Cierra esta pestana y regresa a Claude Desktop.*
+
+**4. Cierra la pestana del navegador** y regresa a Claude Desktop.
+
+> [!NOTE]
+> Si la conexion se agota antes de que te autentiques, simplemente reinicia Claude Desktop e intenta de nuevo. El paso de autenticacion solo necesita hacerse una vez.
+
+---
+
+## Paso 4: Verificar y Ejecutar tu Primera Consulta
+
+**1. Abre una nueva conversacion** en Claude Desktop.
+
+**2. Haz clic en el boton "+"** junto a la entrada de mensaje para ver tus conectores disponibles. Deberias ver el servidor de Eazybe listado con sus herramientas.
+
+**3. Escribe esta consulta de prueba:**
+
+```
+What services does Eazybe provide for this workspace? List every available operation grouped by category.
+```
+
+**4. Claude llamara a la herramienta `business_capabilities`** y devolvera la lista completa de operaciones de tu workspace.
+
+![First query in Claude Desktop showing workspace operations grouped by category](/images/mcp-setup/claude-desktop-query.png)
+
+*Una primera consulta exitosa muestra las 19 herramientas agrupadas por categoria — CRM, WhatsApp, Campanas, Analiticas, Agentes y mas.*
+
+Si ves esta respuesta, tu configuracion esta completa. Ahora puedes usar Claude Desktop para consultar tu workspace de Eazybe.
+
+  </Tab>
+
+  <Tab title="ChatGPT">
+
+## Lo que Necesitas Antes de Empezar
+
+Asegurate de tener lo siguiente listo:
+
+- **Cuenta de ChatGPT** — con acceso a ChatGPT Plus o plan Team
+- **Una cuenta de workspace de Eazybe** — con acceso de administrador o usuario autorizado
+- **Tu URL del servidor MCP de Eazybe** — tu equipo de desarrollo o administrador del workspace te la proporcionara
+
+---
+
+## Paso 1: Activar el Modo Desarrollador
+
+**1. Abre ChatGPT** en tu navegador en [chat.openai.com](https://chat.openai.com).
+
+**2. Ve a Settings** — haz clic en tu icono de perfil en la parte inferior izquierda, luego selecciona **Settings**.
+
+**3. Navega a la pestana Advanced.**
+
+**4. Activa "Developer Mode"** activando el interruptor. Esto desbloquea la funcion de Apps and Connectors necesaria para conexiones MCP.
+
+![ChatGPT Settings showing Advanced tab with Developer Mode toggle enabled](/images/mcp-setup/chatgpt-settings.png)
+
+*Activa Developer Mode en la pestana Advanced para desbloquear el soporte de conectores MCP.*
+
+---
+
+## Paso 2: Agregar el Conector de Eazybe
+
+**1. En el panel de Settings**, desplazate hacia abajo hasta la seccion **Apps and Connectors**.
+
+**2. Haz clic en "Add Connector"** para abrir el formulario de creacion de conectores.
+
+**3. Completa los detalles del conector:**
+
+![Add Connector modal with Eazybe server details filled in](/images/mcp-setup/chatgpt-add-connector.png)
+
+*Completa el nombre, la URL del servidor y selecciona autenticacion OAuth 2.0.*
+
+| Campo | Que Ingresar |
+|---|---|
+| **Name** | `Eazybe` |
+| **Description** | Conectar al workspace de Eazybe para CRM, WhatsApp y analiticas |
+| **Server URL** | La URL del endpoint MCP proporcionada por tu equipo de desarrollo (termina en `/sse`) |
+| **Authentication** | OAuth 2.0 |
+
+**4. Haz clic en "Create"** para guardar el conector.
+
+---
+
+## Paso 3: Autenticar tu Conexion
+
+**1. Despues de crear el conector**, ChatGPT abrira una ventana del navegador para la autenticacion.
+
+**2. Inicia sesion con tus credenciales del workspace de Eazybe** (el mismo correo electronico y contrasena que usas para iniciar sesion en Eazybe).
+
+**3. Veras una pagina de confirmacion "Authentication Successful".**
+
+![Authentication successful page showing Eazybe connected to ChatGPT](/images/mcp-setup/chatgpt-auth.png)
+
+*"Authentication Successful" — Eazybe esta ahora conectado a tu cuenta de ChatGPT. Cierra esta pestana y regresa a ChatGPT.*
+
+**4. Cierra la pestana del navegador** y regresa a ChatGPT.
+
+> [!NOTE]
+> Si la autenticacion se agota, regresa a Settings, encuentra el conector de Eazybe y haz clic en "Reconnect" para intentar de nuevo.
+
+---
+
+## Paso 4: Verificar y Ejecutar tu Primera Consulta
+
+**1. Abre una nueva conversacion** en ChatGPT.
+
+**2. Escribe esta consulta de prueba:**
+
+```
+What services does Eazybe provide for this workspace? List every available operation grouped by category.
+```
+
+**3. ChatGPT llamara a la herramienta `business_capabilities`** y devolvera la lista de operaciones de tu workspace.
+
+![ChatGPT first query showing Eazybe workspace operations with 19 tools](/images/mcp-setup/chatgpt-query.png)
+
+*Una consulta exitosa confirma que la conexion esta funcionando — las 19 operaciones estan disponibles y agrupadas por categoria.*
+
+**4. Una respuesta exitosa muestra:**
+
+- Tu ID de organizacion y detalles del plan
+- Proveedores conectados (ej., HubSpot, Google Calendar)
+- Numero total de operaciones disponibles (19+)
+
+Si ves esta respuesta, tu configuracion esta completa. Ahora puedes usar ChatGPT para consultar tu workspace de Eazybe.
+
+  </Tab>
+
+  <Tab title="OpenAI Codex">
+
+## Lo que Necesitas Antes de Empezar
+
+Asegurate de tener lo siguiente listo:
+
+- **OpenAI Codex CLI** — instalado en tu maquina (`npm install -g @openai/codex`)
+- **Una cuenta de workspace de Eazybe** — con acceso de administrador o usuario autorizado
+- **Tu URL del servidor MCP de Eazybe** — tu equipo de desarrollo o administrador del workspace te la proporcionara
+
+---
+
+## Paso 1: Crear el Archivo de Configuracion
+
+OpenAI Codex usa un archivo de configuracion JSON para conectarse a servidores MCP.
+
+**1. Abre tu terminal** y crea el directorio de configuracion:
+
+```bash
+mkdir -p ~/.codex
+```
+
+**2. Crea o edita el archivo de configuracion** en `~/.codex/config.json` (Mac/Linux) o `%USERPROFILE%\.codex\config.json` (Windows):
+
+![Editing the Codex config file with the Eazybe MCP server URL](/images/mcp-setup/codex-config-edit.png)
+
+*Agrega la URL del servidor MCP de Eazybe a tu archivo de configuracion de Codex.*
+
+**3. Agrega la configuracion del servidor de Eazybe:**
+
+```json
+{
+  "mcpServers": {
+    "eazybe": {
+      "url": "YOUR_EAZYBE_MCP_SERVER_URL"
+    }
+  }
+}
+```
+
+> [!NOTE]
+> Reemplaza `YOUR_EAZYBE_MCP_SERVER_URL` con la URL del endpoint MCP proporcionada por tu equipo de desarrollo. Generalmente termina en `/sse`.
+
+**4. Guarda el archivo.**
+
+---
+
+## Paso 2: Iniciar Codex y Autenticarse
+
+**1. Abre tu terminal y ejecuta:**
+
+```bash
+codex
+```
+
+**2. Codex intentara conectarse al servidor MCP de Eazybe.** La primera conexion se agotara despues de 30 segundos — esto es esperado y normal.
+
+![Codex CLI showing authentication timeout and browser prompt](/images/mcp-setup/codex-auth-timeout.png)
+
+*El tiempo de espera es esperado. Codex abrira tu navegador para la autenticacion.*
+
+**3. Se abrira automaticamente una ventana del navegador para la autenticacion.** Inicia sesion con tus credenciales del workspace de Eazybe (el mismo correo electronico y contrasena que usas para iniciar sesion en Eazybe).
+
+**4. Veras una pagina de confirmacion "Authentication successful".**
+
+![Authentication successful confirmation page](/images/mcp-setup/codex-auth-success.png)
+
+*"Authentication successful" — cierra esta pestana y regresa a tu terminal.*
+
+**5. Cierra la pestana del navegador** y regresa a la terminal. Codex se reconectara automaticamente.
+
+---
+
+## Paso 3: Verificar tu Conexion
+
+Una vez autenticado, Codex mostrara un resumen de la conexion con todas las herramientas disponibles.
+
+![Codex connected showing server details and 19 available tools by category](/images/mcp-setup/codex-connected-tools.png)
+
+*Codex esta conectado a Eazybe con 19 herramientas cargadas en CRM, WhatsApp, Campanas, Analiticas y Agentes.*
+
+---
+
+## Paso 4: Ejecutar tu Primera Consulta
+
+**1. En la terminal de Codex, escribe:**
+
+```
+What services does Eazybe provide for this workspace? List every available operation grouped by category.
+```
+
+**2. Codex llamara a la herramienta `business_capabilities`** y devolvera la lista de operaciones de tu workspace.
+
+![Codex first query showing operations grouped by category](/images/mcp-setup/codex-first-query.png)
+
+*Una consulta exitosa muestra tu ID de organizacion, plan, proveedores conectados y las 19 operaciones agrupadas por categoria.*
+
+**3. Una respuesta exitosa muestra:**
+
+- Tu ID de organizacion y detalles del plan
+- Proveedores conectados (ej., HubSpot, Google Calendar)
+- Numero total de operaciones disponibles
+
+Si ves esta respuesta, tu configuracion esta completa.
+
+  </Tab>
+
+  <Tab title="Other AI Tools">
+
+## Conectar con Cualquier Herramienta Compatible con MCP
+
+El servidor MCP de Eazybe funciona con cualquier herramienta de IA que soporte el estandar Model Context Protocol. Esto incluye herramientas como **Cursor**, **Windsurf**, **Cline** y otras.
+
+---
+
+## Lo que Necesitas
+
+- **Una herramienta de IA compatible con MCP** — instalada y funcionando
+- **Una cuenta de workspace de Eazybe** — con acceso de administrador o usuario autorizado
+- **Tu URL del servidor MCP de Eazybe** — tu equipo de desarrollo o administrador del workspace te la proporcionara (termina en `/sse`)
+
+---
+
+## Pasos Generales de Configuracion
+
+**1. Abre la configuracion de servidores MCP de tu herramienta de IA.** La mayoria de las herramientas tienen esto bajo Settings, Extensions o un panel dedicado de MCP.
+
+**2. Agrega un nuevo servidor MCP con estos detalles:**
+
+| Campo | Que Ingresar |
+|---|---|
+| **Server name** | `eazybe` |
+| **Server URL / Endpoint** | La URL del endpoint MCP proporcionada por tu equipo de desarrollo |
+| **Transport** | SSE (Server-Sent Events) |
+
+**3. Guarda y conecta.** El primer intento generalmente se agotara mientras espera la autenticacion.
+
+**4. Autenticate.** Se abrira una ventana del navegador — inicia sesion con tus credenciales del workspace de Eazybe.
+
+![Authentication successful page for any MCP-compatible tool](/images/mcp-setup/codex-auth-success.png)
+
+*"Authentication successful" — cierra esta pestana y regresa a tu herramienta de IA.*
+
+**5. Reconecta** despues de la autenticacion. El servidor deberia mostrarse como conectado.
+
+**6. Verifica** ejecutando esta consulta de prueba:
+
+```
+What services does Eazybe provide for this workspace? List every available operation grouped by category.
+```
+
+Una respuesta exitosa muestra tu ID de organizacion, detalles del plan, proveedores conectados y operaciones disponibles.
+
+> [!NOTE]
+> Si tu herramienta de IA requiere un formato de configuracion especifico (JSON, YAML, TOML), consulta la documentacion de esa herramienta para saber como agregar un servidor MCP. La URL del servidor y el flujo de autenticacion son los mismos en todas las herramientas.
+
+---
+
+## Guias de Configuracion por Herramienta
+
+### Cursor
+
+Abre el panel de configuracion MCP de Cursor o crea el archivo de configuracion en `~/.cursor/mcp.json`:
+
+![Cursor IDE MCP settings showing Eazybe server connected with 19 tools](/images/mcp-setup/cursor-mcp-settings.png)
+
+*Panel de configuracion MCP de Cursor mostrando el servidor de Eazybe conectado con 19 herramientas disponibles.*
+
+```json
+{
+  "mcpServers": {
+    "eazybe": {
+      "url": "YOUR_EAZYBE_MCP_SERVER_URL"
+    }
+  }
+}
+```
+
+### Windsurf
+
+Abre el panel de configuracion MCP de Windsurf o crea el archivo de configuracion en `~/.windsurf/mcp_config.json`:
+
+![Windsurf MCP settings showing Eazybe server connected](/images/mcp-setup/windsurf-mcp-settings.png)
+
+*Panel de configuracion de servidores MCP de Windsurf mostrando el servidor de Eazybe conectado y activo.*
+
+```json
+{
+  "mcpServers": {
+    "eazybe": {
+      "serverUrl": "YOUR_EAZYBE_MCP_SERVER_URL"
+    }
+  }
+}
+```
+
+### Cline (Extension de VS Code)
+
+En VS Code con Cline instalado, abre el panel MCP de Cline desde la barra lateral:
+
+![Cline VS Code extension showing Eazybe MCP server connected and a sample CRM query](/images/mcp-setup/cline-mcp-panel.png)
+
+*Panel MCP de Cline en VS Code mostrando el servidor de Eazybe conectado y una consulta de CRM ejecutandose.*
+
+Haz clic en **"+ Add MCP Server"** luego ingresa `eazybe` como nombre y tu URL del endpoint MCP luego autenticate en el navegador cuando se te solicite.
+
+  </Tab>
+
+</Tabs>
+
+---
+
+## Lo que Puedes Hacer una vez Conectado
+
+Una vez conectado el servidor MCP, puedes pedirle a tu herramienta de IA que:
+
+- **Busque registros de CRM** — encuentra deals, contactos, empresas o tickets por cualquier campo, propietario, fecha o etapa
+- **Consulte analiticas de equipo** — ve la actividad de mensajeria, rendimiento de representantes y comparaciones semana a semana
+- **Lea conversaciones con clientes** — busca mensajes de WhatsApp en varios idiomas, lee hilos completos, verifica quien esta esperando una respuesta
+- **Inspeccione campanas y broadcasts** — lista campanas, verifica tasas de entrega y lectura, ve estados individuales de destinatarios
+- **Previsualice plantillas** — ve mensajes de plantilla renderizados con valores de prueba, sin enviar nada
+- **Consulte el saldo del wallet** — ve tu saldo de creditos de mensajeria y moneda
+- **Liste agentes y etiquetas** — inspecciona agentes de IA, su disponibilidad, versiones y etiquetas de negocio con estructuras de embudo
+- **Gestione registros de CRM** — crea, actualiza o archiva deals, contactos, empresas y tickets (requiere tu aprobacion explicita)
+
+> [!NOTE]
+> **Todas las operaciones de escritura requieren tu aprobacion explicita.** Tu herramienta de IA siempre te mostrara la accion exacta (que se creara, cambiara o eliminara) y esperara a que confirmes antes de realizar cualquier cambio. No se envian mensajes y no se modifican registros sin tu permiso.
+
+---
+
+## Solucion de Problemas
+
+**La conexion se agota despues de 30 segundos**
+
+Esto significa que se necesita autenticacion. Busca un boton "Authenticating" o una ventana del navegador. Inicia sesion con tus credenciales de Eazybe, luego reconecta.
+
+**El servidor muestra "Failed" despues de la autenticacion**
+
+Haz clic en **Reconnect**. Si sigue fallando, limpia cualquier autenticacion guardada y repite los pasos de inicio de sesion. Asegurate de estar usando las credenciales correctas de tu workspace de Eazybe.
+
+**Las herramientas muestran 0 o no se estan cargando**
+
+El servidor puede necesitar una actualizacion. Desconecta el servidor de Eazybe, reconectalo y comienza una **nueva conversacion**. Si las herramientas siguen sin aparecer, verifica con tu equipo de desarrollo que el servidor MCP este funcionando.
+
+**"access_verified: false" en todas las operaciones**
+
+Esto es normal y esperado. Significa que la conexion existe, pero cada fuente de datos se verifica la primera vez que ejecutas una consulta contra ella. Si una consulta especifica falla con un error de permisos, verifica los permisos de tu rol en Eazybe o cuenta de HubSpot.
+
+**Error "connection_store_unavailable" en una consulta**
+
+Este es un problema intermitente del backend. Simplemente reintenta la misma consulta — generalmente funciona en el segundo intento. Si sigue ocurriendo, el servidor MCP puede necesitar un reinicio por parte del equipo de desarrollo.
+
+**Google Calendar muestra "connected" pero las consultas de calendario fallan**
+
+La herramienta `read_calendar_events` no esta actualmente expuesta a traves del conector MCP. Las consultas relacionadas con el calendario (disponibilidad de reuniones, demos agendadas) no funcionaran hasta que se agregue esta herramienta. Contacta al equipo de desarrollo para solicitarla.
+
+**Tu herramienta de IA dice "most tools aren't loaded" o "status: refresh_required"**
+
+Desconecta el servidor MCP de Eazybe en tu configuracion, reconectalo y comienza una nueva conversacion. Esto ocurre cuando el token de sesion ha expirado y necesita una conexion nueva.
+
+---
+
+*Ultima actualizacion: Noviembre 2026*
