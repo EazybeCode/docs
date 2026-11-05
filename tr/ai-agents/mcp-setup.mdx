@@ -1,0 +1,620 @@
+---
+title: "Eazybe MCP Sunucusunu Yapay Zeka Araclariyla Baglama"
+description: "Eazybe calisma alaninizi Claude Code, Claude Desktop, ChatGPT, OpenAI Codex ve diger MCP uyumlu yapay zeka araclarina baglamak icin adim adim kilavuz. CRM, WhatsApp ve calisma alani islemleri icin."
+---
+
+> **Dokumantasyon Dizini**
+> Bireysel sayfalari kesfetmeden once, mevcut konulari anlamak icin [https://help.eazybe.com/llms.txt](https://help.eazybe.com/llms.txt) adresindeki tam dizine bakin.
+
+# Eazybe MCP Sunucusunu Yapay Zeka Araclariyla Baglama
+
+> Eazybe calisma alaninizi Claude Code, Claude Desktop, ChatGPT, OpenAI Codex veya MCP uyumlu herhangi bir yapay zeka aracina baglayarak CRM, WhatsApp konusmalari, ekip analizleri, kampanyalar ve daha fazlasina dogrudan erisim saglayin.
+
+Eazybe MCP (Model Context Protocol) sunucusu, MCP standardini destekleyen herhangi bir yapay zeka aracindan Eazybe calisma alaninizi dogrudan sorgulamanizi ve yonetmenizi saglar. Baglandiginda, CRM kayitlarini arayabilir, musteri konusmalarini okuyabilir, ekip analizlerini kontrol edebilir, kampanyalari inceleyebilir ve calisma alani islemlerini gerceklestirebilirsiniz — hepsi dogal dil ile.
+
+## Desteklenen Yapay Zeka Araclari
+
+Eazybe MCP sunucusu, Model Context Protocol'u destekleyen herhangi bir aracla calisir, bunlar arasinda:
+
+- **Claude Code** — Anthropic'in yapay zeka programlama asistani (masaustu uygulamasi veya VS Code eklentisi)
+- **Claude Desktop** — Anthropic'in MCP destekli Claude masaustu uygulamasi
+- **ChatGPT** — OpenAI'nin MCP baglayici destekli yapay zeka asistani
+- **OpenAI Codex** — OpenAI'nin MCP destekli programlama asistani
+- **Herhangi bir MCP uyumlu istemci** — Cursor, Windsurf, Cline ve MCP sunucularini destekleyen diger araclar
+
+> [!NOTE]
+> Kurulum adimlari tum araclarda benzerdir. Belirli talimatlari gormek icin asagidan yapay zeka aracinizi secin.
+
+---
+
+<Tabs>
+
+  <Tab title="Claude Code">
+
+## Baslamadan Once Gerekenler
+
+Asagidakilerin hazir oldugundan emin olun:
+
+- **Claude Code** — masaustu uygulamasi veya VS Code eklentisi, kurulu ve calisiyor
+- **Bir Eazybe calisma alani hesabi** — yonetici veya yetkili kullanici erisimi ile
+- **Eazybe MCP sunucu URL'niz** — gelistirme ekibiniz veya calisma alani yoneticiniz saglayacaktir
+
+---
+
+## Adim 1: Claude Code'da MCP Sunucu Ayarlarini Acma
+
+**1. Claude Code'u acin** bilgisayarinizda (masaustu uygulamasi veya VS Code).
+
+**2. MCP sunucular panelini acin.** Yan cubukta **MCP simgesine** tiklayarak veya **Settings > MCP Servers** yoluyla bulabilirsiniz.
+
+MCP sunuculari listesini goreceksiniz. Ilk kez kullaniyorsaniz, liste bos olabilir veya yalnizca varsayilan Claude sunucularini gosterebilir (Claude Docs, Google Drive, Notion).
+
+---
+
+## Adim 2: Eazybe Sunucusunu Ekleme
+
+**1. "Add MCP Server"** dusgesine tiklayin (veya **+** dugmesine) yeni bir sunucu eklemek icin.
+
+**2. Sunucu detaylarini girin:**
+
+| Alan | Ne Girilecek |
+|---|---|
+| **Server name** | `eazybe` |
+| **Server URL** | Gelistirme ekibiniz tarafindan saglanan MCP endpoint URL'si |
+
+> [!NOTE]
+> Sunucu URL'si ortaminiza bagli olarak degisir. Gelistirme ekibiniz size dogru URL'yi verecektir. Genellikle `/sse` ile biter. Emin degilseniz, devam etmeden once calisma alani yoneticinize sorun.
+
+**3. Save'e tiklayin.**
+
+Sunucu MCP sunuculari listenizde gorunur. Yaninda **"Connecting..."** durum rozeti goreceksiniz.
+
+![Eazybe server appearing in the MCP servers list with Connecting status](/images/mcp-setup/mcp-connecting.png)
+
+*Eazybe sunucusu "User" altinda sari "Connecting..." rozeti ile gorunur.*
+
+---
+
+## Adim 3: Baglantinizi Dogrulama
+
+Ilk baglanti denemesi genellikle **30 saniye sonra zaman asimina ugrar**. Bu beklenen bir durumdur — sunucu baglanmadan once oturum acmanizi gerektirir.
+
+**1. "Failed" durumu goreceksiniz** ve bir hata mesaji: *"MCP server eazybe connection timed out after 30000ms"*.
+
+**2. "Authenticating..." dugmesine tiklayin.** Bu, oturum acabileceginiz bir tarayici penceresi acar.
+
+![Connection failed screen showing timeout error and Authenticating button](/images/mcp-setup/mcp-failed.png)
+
+*Tarayicinizda oturum acma sayfasini acmak icin sari "Authenticating..." dugmesine tiklayin.*
+
+**3. Eazybe kimlik bilgilerinizle oturum acin** acilan tarayici penceresinde. Eazybe calisma alaniniza giris yapmak icin kullandiginiz ayni e-posta ve sifreyi kullanin.
+
+**4. Dogrulama tamamlandiginda bir basari onay sayfasi goreceksiniz.**
+
+![Authentication successful confirmation page](/images/mcp-setup/mcp-auth-success.png)
+
+*"Authentication successful" — artik bu tarayici sekmesini kapatabilir ve Claude Code'a donebilirsiniz.*
+
+**5. Tarayici sekmesini kapatin** ve Claude Code'a donun.
+
+---
+
+## Adim 4: Yeniden Baglanma ve Onaylama
+
+**1. Claude Code'a dondugunuzde**, sunucu hala **Failed** gosterebilir. **"Reconnect"** dugmesine tiklayin.
+
+**2. Sunucu artik yesil "Connected" rozeti gostermelidir.**
+
+![Eazybe server showing Connected status with green badge](/images/mcp-setup/mcp-connected.png)
+
+*Yesil "Connected" rozeti sunucunun hazir oldugunu onaylar. Ayrica Reconnect, Clear authentication, Disable ve Remove seceneklerini goreceksiniz.*
+
+> [!NOTE]
+> Reconnect calismiyorsa, **"Clear authentication"** dugmesine tiklayin ve Adim 3'u basindan tekrarlayin. Eazybe calisma alani kimlik bilgilerinizi dogru kullandiginizdan emin olun.
+
+---
+
+## Adim 5: Araclarinizin Yuklendigini Dogrulama
+
+**1. Sunucu detaylari panelinin altindaki "View tools"** dugmesine tiklayin.
+
+**2. 19 veya daha fazla arac listelendigini gormelisiniz.** Bunlar Claude'un calisma alaninizda kullanabilecegi MCP islemleridir.
+
+![View tools link showing 19 available tools](/images/mcp-setup/mcp-view-tools.png)
+
+*Tum araclarin dogru yuklendigini dogrulamak icin "View tools (19)" dugmesine tiklayin. 0 arac goruyorsaniz, sunucuyu baglantisini kesin ve yeniden baglayin.*
+
+---
+
+## Adim 6: Ilk Sorgunuzu Calistirma
+
+**1. Yeni bir sohbet acin** Claude Code'da.
+
+**2. Bu test sorgusunu yazin:**
+
+```
+What services does Eazybe provide for this workspace? List every available operation grouped by category.
+```
+
+**3. Claude `business_capabilities` aracini cagirarak** calisma alaninizin tam islem listesini dondurur.
+
+**4. Basarili bir yanit sunlari gosterir:**
+
+- Organizasyon kimliginiz ve plan detaylari
+- Bagli saglayicilar (orn., HubSpot, Google Calendar)
+- Toplam mevcut islem sayisi
+- Herhangi bir hazirlik sinirlamasi
+
+![First query results showing workspace plan, operations, and readiness limitations](/images/mcp-setup/mcp-first-query.png)
+
+*Basarili bir ilk sorgu, MCP baglantinizin tamamen calistigini onaylar.*
+
+Bu yaniti goruyorsaniz, kurulumunuz tamamlanmistir. Artik Eazybe calisma alaninizi sorgulamak icin Claude'u kullanabilirsiniz.
+
+  </Tab>
+
+  <Tab title="Claude Desktop">
+
+## Baslamadan Once Gerekenler
+
+Asagidakilerin hazir oldugundan emin olun:
+
+- **Claude Desktop uygulamasi** — Mac veya Windows bilgisayariniza kurulu
+- **Bir Eazybe calisma alani hesabi** — yonetici veya yetkili kullanici erisimi ile
+- **Eazybe MCP sunucu URL'niz** — gelistirme ekibiniz veya calisma alani yoneticiniz saglayacaktir
+
+---
+
+## Adim 1: Gelistirici Ayarlarini Acma
+
+**1. Claude Desktop'u acin** bilgisayarinizda.
+
+**2. Settings'e gidin** — sol ustteki menu simgesine tiklayin, ardindan **Settings**'i secin.
+
+**3. Sol kenar cubugunda Developer sekmesine gidin.**
+
+**4. MCP sunucu yapilandirma bolumunu goreceksiniz** yapilandirma dosyasini duzenleme ve bagli sunuculari yonetme secenekleri ile.
+
+![Claude Desktop Developer settings showing MCP server configuration panel](/images/mcp-setup/claude-desktop-settings.png)
+
+*Developer ayarlari paneli, "Edit Config" dugmesi ve bagli sunucularla MCP bolumunu gosterir.*
+
+---
+
+## Adim 2: Yapilandirma Dosyasini Duzenleme
+
+**1. "Edit Config" dugmesine tiklayin** `claude_desktop_config.json` dosyasini acmak icin.
+
+**2. Eazybe sunucu yapilandirmasini ekleyin** `mcp-remote` koprusu kullanarak:
+
+![Config file showing the Eazybe MCP server configuration with mcp-remote](/images/mcp-setup/claude-desktop-config.png)
+
+*Yapilandirma dosyaniza Eazybe MCP sunucu girisi ekleyin. YOUR_MCP_SERVER_URL'yi gelistirme ekibinizden aldiginiz URL ile degistirin.*
+
+```json
+{
+  "mcpServers": {
+    "eazybe": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "mcp-remote",
+        "YOUR_MCP_SERVER_URL"
+      ],
+      "env": {}
+    }
+  }
+}
+```
+
+> [!NOTE]
+> Yapilandirma dosyasi konumu:
+> - **Mac:** `~/Library/Application Support/Claude/claude_desktop_config.json`
+> - **Windows:** `%APPDATA%\Claude\claude_desktop_config.json`
+>
+> `YOUR_MCP_SERVER_URL`'yi gelistirme ekibinizden aldiginiz MCP endpoint URL'si ile degistirin (genellikle `/sse` ile biter).
+
+**3. Dosyayi kaydedin** ve Claude Desktop'u yeniden baslatin.
+
+---
+
+## Adim 3: Baglantinizi Dogrulama
+
+**1. Yeniden baslatma sonrasi, Claude Desktop** Eazybe MCP sunucusuna baglanmaya calisacaktir.
+
+**2. Kimlik dogrulama icin otomatik olarak bir tarayici penceresi acilacaktir.** Eazybe calisma alani kimlik bilgilerinizle oturum acin.
+
+**3. "Authentication Successful" onay sayfasini goreceksiniz.**
+
+![Authentication successful page showing Eazybe workspace connected](/images/mcp-setup/claude-desktop-auth.png)
+
+*"Authentication Successful" — Eazybe calisma alaniniz artik bagli. Bu sekmeyi kapatin ve Claude Desktop'a donun.*
+
+**4. Tarayici sekmesini kapatin** ve Claude Desktop'a donun.
+
+> [!NOTE]
+> Kimlik dogrulama oncesi baglanti zaman asimina ugrarsa, Claude Desktop'u yeniden baslatin ve tekrar deneyin. Kimlik dogrulama adiminin yalnizca bir kez yapilmasi gerekir.
+
+---
+
+## Adim 4: Dogrulama ve Ilk Sorgunuzu Calistirma
+
+**1. Yeni bir konusma acin** Claude Desktop'ta.
+
+**2. "+" dugmesine tiklayin** mesaj girisinin yaninda mevcut baglayicilarinizi gormek icin. Eazybe sunucusunu araclariyla birlikte listelendigini gormelisiniz.
+
+**3. Bu test sorgusunu yazin:**
+
+```
+What services does Eazybe provide for this workspace? List every available operation grouped by category.
+```
+
+**4. Claude `business_capabilities` aracini cagirarak** calisma alaninizin tam islem listesini dondurur.
+
+![First query in Claude Desktop showing workspace operations grouped by category](/images/mcp-setup/claude-desktop-query.png)
+
+*Basarili bir ilk sorgu, kategoriye gore gruplanmis 19 araci gosterir — CRM, WhatsApp, Kampanyalar, Analizler, Ajanlar ve daha fazlasi.*
+
+Bu yaniti goruyorsaniz, kurulumunuz tamamlanmistir. Artik Eazybe calisma alaninizi sorgulamak icin Claude Desktop'u kullanabilirsiniz.
+
+  </Tab>
+
+  <Tab title="ChatGPT">
+
+## Baslamadan Once Gerekenler
+
+Asagidakilerin hazir oldugundan emin olun:
+
+- **ChatGPT hesabi** — ChatGPT Plus veya Team planina erisim ile
+- **Bir Eazybe calisma alani hesabi** — yonetici veya yetkili kullanici erisimi ile
+- **Eazybe MCP sunucu URL'niz** — gelistirme ekibiniz veya calisma alani yoneticiniz saglayacaktir
+
+---
+
+## Adim 1: Gelistirici Modunu Etkinlestirme
+
+**1. ChatGPT'yi acin** tarayicinizda [chat.openai.com](https://chat.openai.com) adresinde.
+
+**2. Settings'e gidin** — sol alttaki profil simgenize tiklayin, ardindan **Settings**'i secin.
+
+**3. Advanced sekmesine gidin.**
+
+**4. "Developer Mode"u etkinlestirin** anahtari acarak. Bu, MCP baglantilari icin gereken Apps and Connectors ozelliginin kilidini acar.
+
+![ChatGPT Settings showing Advanced tab with Developer Mode toggle enabled](/images/mcp-setup/chatgpt-settings.png)
+
+*MCP baglayici destegini acmak icin Advanced sekmesinde Developer Mode'u etkinlestirin.*
+
+---
+
+## Adim 2: Eazybe Baglayicisini Ekleme
+
+**1. Settings panelinde**, **Apps and Connectors** bolumune kadar asagi kaydin.
+
+**2. "Add Connector" dugmesine tiklayin** baglayici olusturma formunu acmak icin.
+
+**3. Baglayici detaylarini doldurun:**
+
+![Add Connector modal with Eazybe server details filled in](/images/mcp-setup/chatgpt-add-connector.png)
+
+*Adi, sunucu URL'sini doldurun ve OAuth 2.0 kimlik dogrulamasini secin.*
+
+| Alan | Ne Girilecek |
+|---|---|
+| **Name** | `Eazybe` |
+| **Description** | CRM, WhatsApp ve analizler icin Eazybe calisma alanina baglanin |
+| **Server URL** | Gelistirme ekibiniz tarafindan saglanan MCP endpoint URL'si (`/sse` ile biter) |
+| **Authentication** | OAuth 2.0 |
+
+**4. "Create" dugmesine tiklayin** baglayiciyi kaydetmek icin.
+
+---
+
+## Adim 3: Baglantinizi Dogrulama
+
+**1. Baglayiciyi olusturduktan sonra**, ChatGPT kimlik dogrulama icin bir tarayici penceresi acacaktir.
+
+**2. Eazybe calisma alani kimlik bilgilerinizle oturum acin** (Eazybe'ye giris yapmak icin kullandiginiz ayni e-posta ve sifre).
+
+**3. "Authentication Successful" onay sayfasini goreceksiniz.**
+
+![Authentication successful page showing Eazybe connected to ChatGPT](/images/mcp-setup/chatgpt-auth.png)
+
+*"Authentication Successful" — Eazybe artik ChatGPT hesabiniza bagli. Bu sekmeyi kapatin ve ChatGPT'ye donun.*
+
+**4. Tarayici sekmesini kapatin** ve ChatGPT'ye donun.
+
+> [!NOTE]
+> Kimlik dogrulama zaman asimina ugrarsa, Settings'e geri donun, Eazybe baglayicisini bulun ve tekrar denemek icin "Reconnect" dugmesine tiklayin.
+
+---
+
+## Adim 4: Dogrulama ve Ilk Sorgunuzu Calistirma
+
+**1. Yeni bir konusma acin** ChatGPT'de.
+
+**2. Bu test sorgusunu yazin:**
+
+```
+What services does Eazybe provide for this workspace? List every available operation grouped by category.
+```
+
+**3. ChatGPT `business_capabilities` aracini cagirarak** calisma alaninizin islem listesini dondurur.
+
+![ChatGPT first query showing Eazybe workspace operations with 19 tools](/images/mcp-setup/chatgpt-query.png)
+
+*Basarili bir sorgu baglantinin calistigini onaylar — tum 19 islem mevcut ve kategoriye gore gruplanmis.*
+
+**4. Basarili bir yanit sunlari gosterir:**
+
+- Organizasyon kimliginiz ve plan detaylari
+- Bagli saglayicilar (orn., HubSpot, Google Calendar)
+- Toplam mevcut islem sayisi (19+)
+
+Bu yaniti goruyorsaniz, kurulumunuz tamamlanmistir. Artik Eazybe calisma alaninizi sorgulamak icin ChatGPT'yi kullanabilirsiniz.
+
+  </Tab>
+
+  <Tab title="OpenAI Codex">
+
+## Baslamadan Once Gerekenler
+
+Asagidakilerin hazir oldugundan emin olun:
+
+- **OpenAI Codex CLI** — makinenize kurulu (`npm install -g @openai/codex`)
+- **Bir Eazybe calisma alani hesabi** — yonetici veya yetkili kullanici erisimi ile
+- **Eazybe MCP sunucu URL'niz** — gelistirme ekibiniz veya calisma alani yoneticiniz saglayacaktir
+
+---
+
+## Adim 1: Yapilandirma Dosyasini Olusturma
+
+OpenAI Codex, MCP sunucularina baglanmak icin bir JSON yapilandirma dosyasi kullanir.
+
+**1. Terminalinizi acin** ve yapilandirma dizinini olusturun:
+
+```bash
+mkdir -p ~/.codex
+```
+
+**2. Yapilandirma dosyasini olusturun veya duzenleyin** `~/.codex/config.json` (Mac/Linux) veya `%USERPROFILE%\.codex\config.json` (Windows) konumunda:
+
+![Editing the Codex config file with the Eazybe MCP server URL](/images/mcp-setup/codex-config-edit.png)
+
+*Codex yapilandirma dosyaniza Eazybe MCP sunucu URL'sini ekleyin.*
+
+**3. Eazybe sunucu yapilandirmasini ekleyin:**
+
+```json
+{
+  "mcpServers": {
+    "eazybe": {
+      "url": "YOUR_EAZYBE_MCP_SERVER_URL"
+    }
+  }
+}
+```
+
+> [!NOTE]
+> `YOUR_EAZYBE_MCP_SERVER_URL`'yi gelistirme ekibiniz tarafindan saglanan MCP endpoint URL'si ile degistirin. Genellikle `/sse` ile biter.
+
+**4. Dosyayi kaydedin.**
+
+---
+
+## Adim 2: Codex'i Baslatma ve Kimlik Dogrulama
+
+**1. Terminalinizi acin ve calistirin:**
+
+```bash
+codex
+```
+
+**2. Codex, Eazybe MCP sunucusuna baglanmaya calisacaktir.** Ilk baglanti 30 saniye sonra zaman asimina ugrayacaktir — bu beklenen ve normal bir durumdur.
+
+![Codex CLI showing authentication timeout and browser prompt](/images/mcp-setup/codex-auth-timeout.png)
+
+*Zaman asimi beklenen bir durumdur. Codex kimlik dogrulama icin tarayicinizi acacaktir.*
+
+**3. Kimlik dogrulama icin otomatik olarak bir tarayici penceresi acilacaktir.** Eazybe calisma alani kimlik bilgilerinizle oturum acin (Eazybe'ye giris yapmak icin kullandiginiz ayni e-posta ve sifre).
+
+**4. "Authentication successful" onay sayfasini goreceksiniz.**
+
+![Authentication successful confirmation page](/images/mcp-setup/codex-auth-success.png)
+
+*"Authentication successful" — bu sekmeyi kapatin ve terminalinize donun.*
+
+**5. Tarayici sekmesini kapatin** ve terminale donun. Codex otomatik olarak yeniden baglanacaktir.
+
+---
+
+## Adim 3: Baglantinizi Dogrulama
+
+Kimlik dogrulama sonrasi, Codex tum mevcut araclarla bir baglanti ozeti gosterecektir.
+
+![Codex connected showing server details and 19 available tools by category](/images/mcp-setup/codex-connected-tools.png)
+
+*Codex, CRM, WhatsApp, Kampanyalar, Analizler ve Ajanlar genelinde 19 arac yuklu olarak Eazybe'ye bagli.*
+
+---
+
+## Adim 4: Ilk Sorgunuzu Calistirma
+
+**1. Codex terminalinde yazin:**
+
+```
+What services does Eazybe provide for this workspace? List every available operation grouped by category.
+```
+
+**2. Codex `business_capabilities` aracini cagirarak** calisma alaninizin islem listesini dondurur.
+
+![Codex first query showing operations grouped by category](/images/mcp-setup/codex-first-query.png)
+
+*Basarili bir sorgu organizasyon kimliginizi, planinizi, bagli saglayicilarinizi ve kategoriye gore gruplanmis 19 islemi gosterir.*
+
+**3. Basarili bir yanit sunlari gosterir:**
+
+- Organizasyon kimliginiz ve plan detaylari
+- Bagli saglayicilar (orn., HubSpot, Google Calendar)
+- Toplam mevcut islem sayisi
+
+Bu yaniti goruyorsaniz, kurulumunuz tamamlanmistir.
+
+  </Tab>
+
+  <Tab title="Other AI Tools">
+
+## MCP Uyumlu Herhangi bir Aracla Baglama
+
+Eazybe MCP sunucusu, Model Context Protocol standardini destekleyen herhangi bir yapay zeka araciyla calisir. Buna **Cursor**, **Windsurf**, **Cline** ve diger araclar dahildir.
+
+---
+
+## Gerekenler
+
+- **MCP uyumlu bir yapay zeka araci** — kurulu ve calisiyor
+- **Bir Eazybe calisma alani hesabi** — yonetici veya yetkili kullanici erisimi ile
+- **Eazybe MCP sunucu URL'niz** — gelistirme ekibiniz veya calisma alani yoneticiniz saglayacaktir (`/sse` ile biter)
+
+---
+
+## Genel Kurulum Adimlari
+
+**1. Yapay zeka aracinizin MCP sunucu ayarlarini acin.** Cogu aracta bu Settings, Extensions veya ozel bir MCP paneli altindadir.
+
+**2. Bu detaylarla yeni bir MCP sunucusu ekleyin:**
+
+| Alan | Ne Girilecek |
+|---|---|
+| **Server name** | `eazybe` |
+| **Server URL / Endpoint** | Gelistirme ekibiniz tarafindan saglanan MCP endpoint URL'si |
+| **Transport** | SSE (Server-Sent Events) |
+
+**3. Kaydedin ve baglanin.** Ilk deneme genellikle kimlik dogrulama beklerken zaman asimina ugrar.
+
+**4. Kimlik dogrulayin.** Bir tarayici penceresi acilacaktir — Eazybe calisma alani kimlik bilgilerinizle oturum acin.
+
+![Authentication successful page for any MCP-compatible tool](/images/mcp-setup/codex-auth-success.png)
+
+*"Authentication successful" — bu sekmeyi kapatin ve yapay zeka araciniza donun.*
+
+**5. Yeniden baglanin** kimlik dogrulama sonrasi. Sunucu bagli olarak gosterilmelidir.
+
+**6. Dogrulayin** bu test sorgusunu calistirarak:
+
+```
+What services does Eazybe provide for this workspace? List every available operation grouped by category.
+```
+
+Basarili bir yanit organizasyon kimliginizi, plan detaylarinizi, bagli saglayicilarinizi ve mevcut islemleri gosterir.
+
+> [!NOTE]
+> Yapay zeka araciniz belirli bir yapilandirma formati gerektiriyorsa (JSON, YAML, TOML), bir MCP sunucusu ekleme yontemi icin o aracin dokumantasyonuna bakin. Sunucu URL'si ve kimlik dogrulama akisi tum araclarda aynidir.
+
+---
+
+## Araca Ozel Kurulum Kilavuzlari
+
+### Cursor
+
+Cursor'un MCP ayarlari panelini acin veya `~/.cursor/mcp.json` konumunda yapilandirma dosyasini olusturun:
+
+![Cursor IDE MCP settings showing Eazybe server connected with 19 tools](/images/mcp-setup/cursor-mcp-settings.png)
+
+*Cursor'un MCP ayarlari paneli, 19 mevcut aracla bagli Eazybe sunucusunu gosteriyor.*
+
+```json
+{
+  "mcpServers": {
+    "eazybe": {
+      "url": "YOUR_EAZYBE_MCP_SERVER_URL"
+    }
+  }
+}
+```
+
+### Windsurf
+
+Windsurf'un MCP yapilandirma panelini acin veya `~/.windsurf/mcp_config.json` konumunda yapilandirma dosyasini olusturun:
+
+![Windsurf MCP settings showing Eazybe server connected](/images/mcp-setup/windsurf-mcp-settings.png)
+
+*Windsurf'un MCP Sunucu Yapilandirma paneli, bagli ve aktif Eazybe sunucusunu gosteriyor.*
+
+```json
+{
+  "mcpServers": {
+    "eazybe": {
+      "serverUrl": "YOUR_EAZYBE_MCP_SERVER_URL"
+    }
+  }
+}
+```
+
+### Cline (VS Code Eklentisi)
+
+Cline kurulu VS Code'da, kenar cubugunden Cline MCP panelini acin:
+
+![Cline VS Code extension showing Eazybe MCP server connected and a sample CRM query](/images/mcp-setup/cline-mcp-panel.png)
+
+*VS Code'da Cline'in MCP paneli, bagli Eazybe sunucusunu ve calisan bir CRM sorgusunu gosteriyor.*
+
+**"+ Add MCP Server"** dugmesine tiklayin ardindan ad olarak `eazybe` ve MCP endpoint URL'nizi girin ardindan istendiginde tarayicide kimlik dogrulayin.
+
+  </Tab>
+
+</Tabs>
+
+---
+
+## Baglandiginda Yapabilecekleriniz
+
+MCP sunucusu baglandiginda, yapay zeka aracinizdan su islemleri yapmasini isteyebilirsiniz:
+
+- **CRM kayitlarini arama** — herhangi bir alana, sahibe, tarihe veya asamaya gore anlasmalar, kisiler, sirketler veya biletler bulun
+- **Ekip analizlerini kontrol etme** — mesajlasma aktivitesini, temsilci performansini ve haftalik karsilastirmalari gorun
+- **Musteri konusmalarini okuma** — birden fazla dilde WhatsApp mesajlarini arayin, tam konusmalari okuyun, kimin yanit bekledigini kontrol edin
+- **Kampanyalari ve yayinlari inceleme** — kampanyalari listeleyin, teslimat ve okuma oranlarini kontrol edin, bireysel alici durumlarini gorun
+- **Sablonlari onizleme** — test degerleriyle islenmis sablon mesajlarini gorun, hicbir sey gondermeden
+- **Cuzdan bakiyesini kontrol etme** — mesajlasma kredi bakiyenizi ve para biriminizi gorun
+- **Ajanlari ve etiketleri listeleme** — yapay zeka ajanlarini, hazirliklarini, versiyonlarini ve huni yapilariyla is etiketlerini inceleyin
+- **CRM kayitlarini yonetme** — anlasmalar, kisiler, sirketler ve biletler olusturun, guncelleyin veya arsivleyin (acik onayinizi gerektirir)
+
+> [!NOTE]
+> **Tum yazma islemleri acik onayinizi gerektirir.** Yapay zeka araciniz her zaman tam islemi (ne olusturulacak, degistirilecek veya silinecek) gosterir ve herhangi bir degisiklik yapmadan once onaylaminizi bekler. Izniniz olmadan hicbir mesaj gonderilmez ve hicbir kayit degistirilmez.
+
+---
+
+## Sorun Giderme
+
+**Baglanti 30 saniye sonra zaman asimina ugriyor**
+
+Bu, kimlik dogrulama gerektigini gosterir. "Authenticating" dugmesi veya tarayici penceresi istemi arayin. Eazybe kimlik bilgilerinizle oturum acin, ardindan yeniden baglanin.
+
+**Sunucu kimlik dogrulama sonrasi "Failed" gosteriyor**
+
+**Reconnect** dugmesine tiklayin. Hala basarisiz olursa, kayitli kimlik dogrulamayi temizleyin ve oturum acma adimlarini tekrarlayin. Eazybe calisma alani kimlik bilgilerinizi dogru kullandiginizdan emin olun.
+
+**Araclar 0 gosteriyor veya yuklenmiyor**
+
+Sunucunun yenilenmesi gerekebilir. Eazybe sunucusunun baglantisinizi kesin, yeniden baglayin ve **yeni bir konusma** baslatin. Araclar hala gorunmuyorsa, gelistirme ekibinizle MCP sunucusunun calisip calismadigini kontrol edin.
+
+**Tum islemlerde "access_verified: false"**
+
+Bu normal ve beklenen bir durumdur. Baglantinin var oldugu anlamina gelir, ancak her veri kaynagi ilk sorguyu calistirdiginizda dogrulanir. Belirli bir sorgu izin hatasiyla basarisiz olursa, Eazybe rolunuzu veya HubSpot hesap izinlerinizi kontrol edin.
+
+**Bir sorguda "connection_store_unavailable" hatasi**
+
+Bu aralikh bir backend sorunudur. Ayni sorguyu tekrar deneyin — genellikle ikinci denemede calisir. Devam ederse, MCP sunucusunun gelistirme ekibi tarafindan yeniden baslatilmasi gerekebilir.
+
+**Google Calendar "connected" gosteriyor ancak takvim sorgulari basarisiz oluyor**
+
+`read_calendar_events` araci su anda MCP baglayicisi araciligiyla kullanima sunulmamistir. Takvimle ilgili sorgular (toplanti musaitligi, planlanan demolar) bu arac eklenene kadar calismayacaktir. Talep etmek icin gelistirme ekibinize basvurun.
+
+**Yapay zeka araciniz "most tools aren't loaded" veya "status: refresh_required" diyor**
+
+Ayarlarinizda Eazybe MCP sunucusunun baglantisinizi kesin, yeniden baglayin ve yeni bir konusma baslatin. Bu, oturum tokeninin suresi dolmus ve yeni bir baglanti gerektirdiginde olur.
+
+---
+
+*Son guncelleme: Kasim 2026*
