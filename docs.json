@@ -2325,7 +2325,7 @@
                 "group": "Integração MCP",
                 "icon": "plug",
                 "pages": [
-                  "pt/ai-agents/mcp-server-setup"
+                  "pt/ai-agents/mcp-setu"
                 ]
               }
             ]
@@ -3108,7 +3108,7 @@
                 "group": "MCP Entegrasyonu",
                 "icon": "plug",
                 "pages": [
-                  "tr/ai-agents/mcp-server-setup"
+                  "tr/ai-agents/mcp-setup"
                 ]
               }
             ]
