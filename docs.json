@@ -57,15 +57,6 @@
                 "group": "Getting Started",
                 "icon": "rocket",
                 "pages": [
-                  "introduction",
-                  "quickstart",
-                  {
-                    "group": "Setup",
-                    "pages": [
-                      "en/getting-started/eazybe-onboarding-en",
-                      "en/getting-started/onboarding-to-coexistence"
-                    ]
-                  },
                   {
                     "group": "Onboarding",
                     "pages": [
@@ -911,15 +902,6 @@
                 "group": "Primeros Pasos",
                 "icon": "rocket",
                 "pages": [
-                  "es/introduction",
-                  "es/quickstart",
-                  {
-                    "group": "Configuración",
-                    "pages": [
-                      "es/getting-started/eazybe-onboarding-sp",
-                      "es/getting-started/onboarding-to-coexistence"
-                    ]
-                  },
                   {
                     "group": "Incorporación del equipo",
                     "pages": [
@@ -1687,18 +1669,6 @@
                 "group": "Primeiros Passos",
                 "icon": "rocket",
                 "pages": [
-                  "pt/introduction",
-                  "pt/quickstart",
-                  {
-                    "group": "Configuração",
-                    "pages": [
-                      "pt/getting-started/installation",
-                      "pt/getting-started/system-requirements",
-                      "pt/getting-started/connect-whatsapp",
-                      "pt/getting-started/eazybe-onboarding-pt",
-                      "pt/getting-started/onboarding-to-coexistence"
-                    ]
-                  },
                   {
                     "group": "Onboarding da equipe",
                     "pages": [
