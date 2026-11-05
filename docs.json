@@ -1533,7 +1533,7 @@
                 "group": "Integración MCP",
                 "icon": "plug",
                 "pages": [
-                  "es/ai-agents/mcp-server-setup"
+                  "es/ai-agents/mcp-setup"
                 ]
               }
             ]
