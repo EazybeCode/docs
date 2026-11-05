@@ -226,7 +226,8 @@
                   {
                     "group": "Meta Pricing",
                     "pages": [
-                      "en/waba/broadcast-rate-list-1-october-2026",
+                      "en/waba/broadcast-rate-list-1-october-2026-inr",
+                      "en/waba/broadcast-rate-list-1-october-2026-usd",
                       "en/waba/service-message-charges"
                     ]
                   },
