@@ -729,10 +729,10 @@
                 ]
               },
               {
-                "group": "MCP Integration",
+                "group": "",
                 "icon": "plug",
                 "pages": [
-                  "en/ai-agents/mcp-server-setup"
+                  "en/ai-agents/mcp-setup"
                 ]
               }
             ]
