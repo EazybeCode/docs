@@ -1,0 +1,62 @@
+---
+title: "Enviar Mensajes de WhatsApp Mediante un Flujo de Trabajo de Zoho"
+description: "Configura una regla de Zoho CRM para enviar mensajes de WhatsApp con Eazybe cuando un registro cumpla tus condiciones."
+---
+
+Crea un flujo de trabajo que envíe un mensaje cuando un contacto, lead u otro registro cumpla las condiciones que definas.
+
+## Antes de Empezar
+
+Necesitas permiso para crear reglas, **Zoho trigger** instalado y **Active**, tu cuenta de Zoho conectada a Eazybe y el número del destinatario guardado con el prefijo internacional. El propietario del registro debe tener instalada la extensión o aplicación de Eazybe y una conexión activa de WhatsApp.
+
+<Warning>La integración de flujos de trabajo está disponible en el **Plan Scalar**. El mensaje se envía desde el número de WhatsApp del propietario del contacto o lead. Asigna el propietario correcto antes de ejecutar la regla.</Warning>
+
+<Steps>
+  <Step title="Confirmar que Zoho trigger está activo">
+    Abre **Setup → Marketplace → All → Installed**, selecciona **Zoho trigger** y confirma **Status: Active**.
+
+    Si falta, [instala Zoho trigger y Team Inbox](https://crm.zoho.com/market/installPrivatePlugin.do?portalName=rajatverma&nameSpace=zohotrigger&versionIndex=4520363000000438001). El mismo paquete incluye la acción de flujo de trabajo y las bandejas de Contactos/Leads y general. Consulta las [instrucciones de instalación](/es/integrations/zoho/team-inbox#instalar-el-paquete).
+
+    ![Zoho trigger con estado activo](/images/zoho-workflow/confirm-zoho-trigger-active.jpg)
+  </Step>
+  <Step title="Abrir las reglas de flujo de trabajo">
+    En **Setup**, abre **Automation → Workflow Rules**.
+
+    ![Workflow Rules en la configuración de Zoho](/images/zoho-workflow/open-workflow-rules.jpg)
+  </Step>
+  <Step title="Crear una regla">
+    Pulsa **Create Rule** para abrir **Create New Rule**.
+
+    ![Botón Create Rule](/images/zoho-workflow/create-workflow-rule.png)
+  </Step>
+  <Step title="Elegir el módulo y nombrar la regla">
+    Selecciona **Module**, por ejemplo **Contacts** o **Leads**. Introduce **Rule Name**, añade una descripción si la necesitas y pulsa **Next**. El campo de teléfono y el propietario proceden de este módulo.
+
+    ![Selección del módulo y nombre de la regla](/images/zoho-workflow/choose-module-and-name-rule.jpg)
+  </Step>
+  <Step title="Definir cuándo se ejecuta">
+    En **Execute this workflow rule based on**, elige el evento, por ejemplo **Record action → Edit**. Define los campos y valores de las condiciones y pulsa **Next**.
+
+    <Warning>Activa la ejecución repetida solo si quieres enviar otro mensaje cuando el registro vuelva a cumplir la condición. De lo contrario, podrías enviar duplicados.</Warning>
+
+    ![Configuración del evento que activa la regla](/images/zoho-workflow/define-workflow-trigger.jpg)
+  </Step>
+  <Step title="Añadir la acción de WhatsApp">
+    Abre **Instant Actions → Custom Actions** y selecciona **MessageOnWhatsapp** de Eazybe. Zoho puede mostrar el espacio de nombres de la extensión entre paréntesis.
+
+    ![Acción MessageOnWhatsapp](/images/zoho-workflow/add-message-on-whatsapp-action.jpg)
+  </Step>
+  <Step title="Elegir el destinatario y escribir el mensaje">
+    En **Send message to WhatsApp**, abre **Select number field** y selecciona el campo del destinatario, como **Phone** o **Mobile**. Escribe el mensaje y pulsa **Save**. Guarda el número con su prefijo internacional para evitar errores de entrega o destinatario.
+
+    ![Selección del campo de número y mensaje](/images/zoho-workflow/choose-recipient-and-message.jpg)
+  </Step>
+</Steps>
+
+## Activar y Verificar
+
+Revisa el evento, las condiciones y la acción. Pulsa **Save** para activar la regla y modifica un registro de prueba para que cumpla las condiciones. Comprueba que el destinatario correcto recibe el mensaje desde el número del propietario y que la regla solo se ejecuta cuando corresponde.
+
+<Info>Los archivos multimedia adjuntos no deben superar **15 MB**.</Info>
+
+Si falta la acción, verifica la instalación y conexión de Zoho trigger. Si no se entrega el mensaje, revisa la conexión del propietario y el campo de número. Si se duplica, revisa la ejecución repetida. Consulta [Solucionar problemas del flujo de trabajo](/es/integrations/zoho/troubleshoot-workflow).
