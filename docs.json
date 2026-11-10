@@ -296,7 +296,7 @@
                 "pages": [
                   "settings/team-management",
                   "settings/roles-permissions",
-                  "en/sla-alerts"
+                  "settings/sla-alerts"
                 ]
               },
               {
