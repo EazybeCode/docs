@@ -41,6 +41,10 @@
   ],
   "redirects": [
     {
+      "source": "/en/voice-number",
+      "destination": "/en/voice-number/overview"
+    },
+    {
       "source": "/en/waba/broadcast-rate-list-1st-jan-2026",
       "destination": "/en/waba/broadcast-rate-list-1-october-2026"
     }
@@ -114,6 +118,7 @@
                   "en/voice-number/dialer",
                   "en/voice-number/auto-dialer",
                   "en/voice-number/phone-numbers",
+                  "en/voice-number/business-verification",
                   "en/voice-number/call-history",
                   "en/voice-number/call-analytics",
                   "en/voice-number/sms",
