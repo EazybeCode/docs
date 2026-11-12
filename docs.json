@@ -41,6 +41,18 @@
   ],
   "redirects": [
     {
+      "source": "/es/voice-number",
+      "destination": "/es/voice-number/overview"
+    },
+    {
+      "source": "/pt/voice-number",
+      "destination": "/pt/voice-number/overview"
+    },
+    {
+      "source": "/tr/voice-number",
+      "destination": "/tr/voice-number/overview"
+    },
+    {
       "source": "/en/voice-number",
       "destination": "/en/voice-number/overview"
     },
@@ -958,6 +970,7 @@
                   "es/voice-number/dialer",
                   "es/voice-number/auto-dialer",
                   "es/voice-number/phone-numbers",
+                  "es/voice-number/business-verification",
                   "es/voice-number/call-history",
                   "es/voice-number/call-analytics",
                   "es/voice-number/sms",
@@ -1736,6 +1749,7 @@
                   "pt/voice-number/dialer",
                   "pt/voice-number/auto-dialer",
                   "pt/voice-number/phone-numbers",
+                  "pt/voice-number/business-verification",
                   "pt/voice-number/call-history",
                   "pt/voice-number/call-analytics",
                   "pt/voice-number/sms",
@@ -2522,6 +2536,7 @@
                   "tr/voice-number/dialer",
                   "tr/voice-number/auto-dialer",
                   "tr/voice-number/phone-numbers",
+                  "tr/voice-number/business-verification",
                   "tr/voice-number/call-history",
                   "tr/voice-number/call-analytics",
                   "tr/voice-number/sms",
