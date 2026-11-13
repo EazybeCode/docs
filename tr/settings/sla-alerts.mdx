@@ -1,0 +1,292 @@
+---
+title: "Bildirimler ve uyarılar — Sohbetleri, yanıt sürelerini ve AI Properties'i izleyin"
+description: "Cevaplanmamış sohbetleri, AI property durumlarını ve ekip aktivitesini izlemek için uyarı kuralları oluşturun. Ekibiniz bir yanıt hedefini kaçırdığında WhatsApp ve e-posta ile bildirim alın."
+---
+
+> **Dokümantasyon Dizini**
+> Tek tek sayfaları keşfetmeden önce, tüm mevcut konular için [https://help.eazybe.com/llms.txt](https://help.eazybe.com/llms.txt) adresindeki tam dizine bakın.
+
+# Notifications & Alerts
+
+> Bir müşteri çok uzun beklediğinde, bir sohbet yanlış durumda kaldığında veya bir ekip üyesi yanıt vermeyi bıraktığında anında haberdar olmak için uyarı kuralları oluşturun. Eazybe her kuralı sürekli kontrol eder ve bir şey dikkat gerektirdiğinde WhatsApp ve e-postanıza rapor gönderir.
+
+Notifications & alerts, workspace'inizdeki yanıt süresi izleme için kontrol merkezidir. Siz kuralları tanımlarsınız — Eazybe sohbetlerinizi 7/24 izler ve bir şey sınırı aştığında size bildirir.
+
+---
+
+## Uyarı kuralları nedir?
+
+Bir uyarı kuralı, bir koşul artı bir zamanlayıcıdır. Koşul zamanlayıcının belirttiğinden daha uzun süre doğru kaldığında, sohbet (veya çalışan) bir sonraki planlı raporda görünür.
+
+Eazybe iki tür tetikleyiciyi destekler:
+
+### Unanswered chats (cevaplanmamış sohbetler)
+Ekipten yanıt almamış müşteri mesajlarını izler. Zamanlayıcı, müşterinin ilk cevaplanmamış mesajıyla başlar. Herhangi bir ekip üyesi yanıt verdiği anda sıfırlanır. Müşteriden gelen ek mesajlar zamanlayıcıyı **sıfırlamaz** — saat orijinal cevaplanmamış mesajdan itibaren işlemeye devam eder.
+
+**Örnek:** "Customer waits 15 min for a reply" — bir müşteri 14:00'te mesaj gönderir ve 14:15'e kadar kimse yanıt vermezse, bu sohbet raporda görünür.
+
+### AI property (yapay zeka özelliği)
+Bir sohbetteki belirli bir AI property değerini izler. Zamanlayıcı, özellik eşleşen değeri aldığında başlar ve bu şekilde kaldığı sürece devam eder. Özellik başka bir şeye değiştiğinde zamanlayıcı sıfırlanır.
+
+**Örnek:** "Client Issuess is Issue reported for 2 min" — yapay zekanın bir sorun tespit ettiği ve 2 dakika boyunca ilgilenilmeden kalan herhangi bir sohbet işaretlenir.
+
+Tek bir **değeri** (örn., Conversation State "Waiting on Client") veya **birden fazla değeri** (örn., Preferred Lang English, Spanish, Portuguese'den herhangi biri) izleyebilirsiniz.
+
+> [!NOTE]
+> Uyarı kurallarında yalnızca **dropdown** AI properties kullanılabilir. Metin ve sayı özellikleri henüz desteklenmemektedir. Hangi özelliklerin dropdown olduğunu **Settings → AI Properties** bölümünde görebilirsiniz.
+
+---
+
+## AI Properties'i anlama
+
+AI properties, Eazybe'nin yapay zekasının sohbette tartışılan konulara göre her sohbet için otomatik olarak doldurduğu alanlardır. Team Inbox'ta görünürler ve CRM'inize senkronize edilirler.
+
+Workspace'inizdeki AI properties'i görmek için:
+
+1. **Settings → AI Properties** bölümüne gidin.
+2. Tüm mevcut özelliklerin listesini, türlerini (Dropdown veya Text/Number) ve her birinin kaç değere sahip olduğunu göreceksiniz.
+
+![AI Properties ayarları sayfası — özellik listesi, türler ve yenileme oranları](/images/sla-ai-properties.png)
+
+*Settings → AI Properties, yapay zekanın doldurduğu her alanı gösterir. Dropdown özellikler (3 seçenekli "Preferred Lang" gibi) uyarı kurallarında kullanılabilir. Text/Number özellikler ("Primary Use case" gibi) henüz kurallarda kullanılamaz.*
+
+### Özellikler ne sıklıkla güncellenir?
+
+AI properties anlık değildir — bir programa göre yenilenir:
+
+| Özellik türü | Yenileme oranı | Maliyet |
+|---|---|---|
+| **Dropdown** özellikler | Her 30 dakikada | Güncelleme başına kişi başına ₹0,093 |
+| **Metin ve sayı** özellikleri | Her 4 saatte | Güncelleme başına kişi başına ₹0,93 |
+
+Son yenilemeden bu yana yeni mesajı olmayan kişiler atlanır ve ücretlendirilmez.
+
+> [!IMPORTANT]
+> Dropdown özellikler her 30 dakikada güncellendiğinden, 2 dakikalık zamanlayıcılı bir uyarı kuralı tam olarak 2 dakikada tetiklenmeyebilir. Durum değişikliği yalnızca bir sonraki güncellemede algılanır. Kesin uyarılar için yenileme aralığınızdan daha uzun zamanlayıcılar kullanın. 2 dakikalık bir kural, en az bir yenileme döngüsü boyunca o durumda kalmış sorunları yakalamak için kullanışlıdır.
+
+---
+
+## Uyarı kurallarını ayarlama
+
+### Adım 1: Uyarılar sayfasını açın
+
+Sol kenar çubuğunda **Settings** bölümüne gidin, ardından **Notifications & alerts** seçeneğine tıklayın.
+
+Şunları göreceksiniz:
+- Sağ üstte bir **Alerts** toggle'ı — kuralların çalışması için **Enabled** olmalıdır.
+- Kaç kuralın aktif olduğunu, rapor sıklığını ve teslimat kanallarını gösteren bir **özet çubuğu**.
+- **Uyarı kuralları listeniz** — her kural adını, açıklamasını, önem derecesini, açma/kapama toggle'ını ve düzenleme düğmesini gösterir.
+
+![Notifications & alerts ana sayfası — uyarı kuralları, toggle'lar ve özet](/images/sla-main-page.png)
+
+*Notifications & alerts sayfası. Üstteki özet çubuğu "4 of 4 rules on" ile rapor teslimat detaylarını gösterir. Her kural kartı tetikleme koşulunu, zamanlayıcıyı, önem derecesi rozetini, açma/kapama toggle'ını ve düzenleme kalemini gösterir.*
+
+### Adım 2: Yeni bir uyarı oluşturun
+
+Alert rules bölümünün sağ üstündeki **+ Add alert** düğmesine tıklayın. Bir diyalog penceresi açılır.
+
+#### Unanswered chat uyarısı oluşturma
+
+1. Bir **Alert name** girin — "Customer waiting 15 min" veya "No reply 5 min" gibi açıklayıcı bir şey.
+2. **"What should trigger this alert?"** altında — **Unanswered chats** seçeneğini seçin.
+3. **Alert after** değerini ayarlayın — bu kural tetiklenmeden önce bir müşterinin bekleyebileceği dakika (veya saat) sayısı. Örnek: 15 min.
+4. **Priority** değerini ayarlayın — Critical, High, Medium veya Low. Bu, kuralın raporlarda nasıl görüneceğini kontrol eder.
+5. Alttaki **önizleme metnini** kontrol edin — bu kuralın tam olarak ne zaman tetiklendiğini ve neyin temizlediğini açıklar.
+6. **+ Add alert** düğmesine tıklayın.
+
+![Unanswered chats için yeni uyarı diyaloğu — ad, tetikleyici, zamanlayıcı, öncelik ve önizleme](/images/sla-new-alert-unanswered.png)
+
+*Bir Unanswered chats uyarısı oluşturma. Alttaki önizleme şunu doğrular: "Triggers when a customer has waited 15 minutes for a reply. The wait starts at the first unanswered customer message. A team reply clears it."*
+
+#### AI property uyarısı oluşturma
+
+1. Bir **Alert name** girin — örneğin "Waiting on Client - Property" veya "Language preference".
+2. **"What should trigger this alert?"** altında — **AI property** seçeneğini seçin.
+3. **"Which AI property should we watch?"** altında — listeden bir dropdown özellik seçin (örn., Conversation State, Preferred Lang, Client Issues).
+4. **Choose matching values** seçeneğine tıklayın — bir veya daha fazla değer seçin. Örneğin, Conversation State'den "Waiting on Client" seçin veya Preferred Lang'dan "English, Spanish, Portuguese" seçin.
+5. İsteğe bağlı olarak ek yapılandırma için **Advanced options** bölümünü genişletin.
+6. **Alert after** değerini ayarlayın — özelliğin eşleşen durumda ne kadar kalması gerektiği.
+7. **Priority** değerini ayarlayın.
+8. **+ Add alert** düğmesine tıklayın.
+
+![AI property için yeni uyarı diyaloğu — özellik seçici, değer seçimi ve gelişmiş seçenekler](/images/sla-new-alert-property.png)
+
+*Bir AI property uyarısı oluşturma. İzlenecek özelliği seçin, hangi değerlerin uyarıyı tetikleyeceğini belirleyin ve koşulun tetiklenmeden önce ne kadar süre devam etmesi gerektiğini ayarlayın.*
+
+> [!NOTE]
+> **Tek değer vs. birden fazla değer:**
+> - Tek değer (örn., Conversation State **is** "Waiting on Client") — sohbet tam olarak bu duruma sahip olduğunda kural tetiklenir.
+> - Birden fazla değer (örn., Preferred Lang **is any of** English, Spanish, Portuguese) — sohbet seçilen değerlerden herhangi biriyle eşleştiğinde kural tetiklenir. Bu, ilgili durumların bir grubunu izlemek için kullanışlıdır.
+
+### Adım 3: Her kuralı yapılandırın
+
+Kuralları oluşturduktan sonra ana sayfadan yönetebilirsiniz:
+
+- **Açma/kapama toggle'ı** — her kuralın yanındaki anahtar, kuralı silmeden etkinleştirir veya devre dışı bırakır.
+- **Düzenle** — adı, zamanlayıcıyı, önceliği veya koşulları değiştirmek için kalem simgesine tıklayın.
+- **Önem derecesi rozetleri** — Critical (kırmızı), High (turuncu), Medium (sarı), Low (mavi) görsel olarak önceliklendirmenize yardımcı olur.
+
+**Özet çubuğu** otomatik olarak güncellenir: "4 of 4 rules on. Reports go every 2 hours by WhatsApp to 3 numbers and email to 3."
+
+---
+
+## Rapor teslimatını yapılandırma
+
+Uyarı kurallarının altına doğru kaydırarak **Report delivery** bölümüne gidin. Burada ihlal edilen kuralların raporlarının ekibinize nasıl ve ne zaman gönderileceğini ayarlarsınız.
+
+![Report delivery ayarları — WhatsApp numaraları, e-posta alıcıları ve sıklık](/images/sla-report-delivery.png)
+
+*Report delivery yapılandırması. WhatsApp ve e-posta bağımsız olarak etkinleştirilebilir. Sıklık sekmeleri raporların ne sıklıkla gönderileceğini kontrol eder.*
+
+### WhatsApp raporları
+
+1. **WhatsApp** toggle'ını açın.
+2. Raporu hangi bağlı WhatsApp numaralarının alacağını seçin. İstediğiniz numaraların yanındaki kutuları işaretleyin.
+3. Raporlar normal metin mesajı olarak (mesajlaşma penceresi açıksa) veya `sla_notice` şablonu olarak (pencere kapalıysa — alıcı tam metni almak için "Send report" düğmesine dokunur) gönderilir.
+
+### E-posta raporları
+
+1. **Email with PDF report** toggle'ını açın.
+2. **Email recipients** alanına e-posta adreslerini girin ve **Add** düğmesine tıklayın. 20'ye kadar alıcı ekleyebilirsiniz. Virgülle ayırarak birden fazla adres yapıştırın.
+3. **"Only email when a rule has breached"** seçeneğini işaretleyin — her şey yolundayken boş raporlar almamak için bu önerilir.
+
+Her e-posta şunları içerir:
+- Toplam ihlallerin kısa bir özeti
+- İhlal eden sohbetleri görüntülemek için Team Inbox bağlantısı
+- Kural toplamları ve örnek sohbet girişleri içeren ekli bir PDF dosyası
+
+### Rapor sıklığı
+
+Raporların ne sıklıkla teslim edileceğini seçin:
+
+| Sıklık | İdeal kullanım |
+|---|---|
+| **Every 2 hours** | Sık güncellemeye ihtiyaç duyan yoğun trafikli ekipler |
+| **Every 3 hours** | Standart izleme |
+| **Every 4 hours** | Daha az trafikli ekipler |
+| **End of day** | Günlük özet — iş gününün sonunda tek bir rapor |
+
+> [!IMPORTANT]
+> **Zamanlayıcı vs. sıklık:** Her kuraldaki zamanlayıcı (örn., "15 min"), bir sohbetin ne zaman ihlal olarak **nitelendirildiğini** kontrol eder. Sıklık (örn., "Every 2 hours"), **raporun ne zaman gönderildiğini** kontrol eder. Bir sohbet 15 dakikada ihlal edebilir ancak yalnızca 2 saat sonraki bir sonraki planlı raporda görünebilir. Daha hızlı farkındalık için daha kısa sıklık aralıkları kullanın.
+
+### Değişikliklerinizi kaydedin
+
+Kuralları ve teslimatı ayarladıktan sonra sağ üstteki **Save changes** düğmesine tıklayın. Her şeyin doğru şekilde kaydedildiğini doğrulamak için sayfayı yenileyin.
+
+---
+
+## Team Inbox'ta ihlal edilen kuralları görüntüleme
+
+Uyarı kuralları aktif olduğunda ve sohbetler bunları ihlal etmeye başladığında, sonuçları Team Inbox'ta görebilirsiniz.
+
+1. Sol kenar çubuğundan **Team Inbox** bölümünü açın.
+2. Sol panelin en altına kaydırın — **Over SLA** bölümünü bulun.
+3. Her aktif kural, şu anda kaç sohbetin ihlal ettiğini gösteren **canlı bir sayaçla** görünür.
+4. **Sohbet listesini filtrelemek** için bir kural adına tıklayın — yalnızca o kuralla eşleşen sohbetler gösterilir.
+
+![Team Inbox — Over SLA bölümü, kural adları ve ihlal sayaçları](/images/sla-team-inbox.png)
+
+*Team Inbox'taki "Over SLA" bölümü, ihlal eden her kural için canlı sayaçları gösterir. Sohbetleri filtrelemek için bir kurala tıklayın. Bu örnekte 54 sohbet "Waiting on Client" kuralını, 93 sohbet "NO reply" kuralını ihlal ediyor.*
+
+### Bir ihlali ne sıfırlar?
+
+| Kural türü | Neyin temizlediği |
+|---|---|
+| **Unanswered chat** | Herhangi bir ekip üyesi sohbete yanıt verir. İhlal hemen temizlenir. Müşteriden gelen ek mesajlar zamanlayıcıyı **sıfırlamaz**. |
+| **AI property** | Özellik değeri, kural koşuluyla artık eşleşmeyen bir şeye değişir. Örneğin, kural "Conversation State is Waiting on Client" izliyorsa ve durum "Active" olarak değişirse, ihlal temizlenir. |
+
+> [!NOTE]
+> Tek bir sohbet aynı anda birden fazla kuralı ihlal edebilir. Örneğin, her iki koşul da doğruysa bir sohbet hem "Unanswered 15 min" hem de "Waiting on Client" altında görünebilir. Team Inbox ve raporlardaki ihlal sayaçları kural eşleşmelerini sayar, benzersiz sohbetleri değil.
+
+---
+
+## E-posta raporunu anlama
+
+Planlı bir rapor çalıştığında ve kurallar ihlal edildiğinde, şöyle bir e-posta alırsınız:
+
+**Konu:** "SLA breaches need attention"
+
+E-posta gövdesi şunları içerir:
+
+| Alan | Ne gösterir |
+|---|---|
+| **Workspace** | Workspace ID'niz |
+| **Chat breaches** | Bir kural eşiğini aşan toplam sohbet sayısı |
+| **Inactivity breaches** | Eşik süresi içinde mesaj göndermemiş çalışanlar (çalışan hareketsizlik kurallarınız varsa) |
+| **Critical breaches** | Critical öncelikli kurallardaki ihlal sayısı |
+| **Rule breakdown** | Her kural, bireysel ihlal sayısı ve önem derecesiyle listelenir |
+
+Eklenen **PDF**, ihlal eden her kuraldan örnek sohbetlerle bir anlık görüntü sağlar, böylece bir yönetici dashboard'u açmadan inceleme yapabilir.
+
+---
+
+## Örnek uyarı yapılandırmaları
+
+Farklı ekip ihtiyaçları için yaygın kurulumlar:
+
+### Hızlı yanıt ekibi (satış)
+| Kural | Tetikleyici | Zamanlayıcı | Öncelik |
+|---|---|---|---|
+| Hızlı yanıt SLA | Unanswered chats | 5 min | Critical |
+| Sıcak lead takılmış | AI property: Lead Stage is "Hot" | 10 min | High |
+
+### Destek ekibi
+| Kural | Tetikleyici | Zamanlayıcı | Öncelik |
+|---|---|---|---|
+| Müşteri bekliyor | Unanswered chats | 15 min | Medium |
+| Çözülmemiş sorun | AI property: Client Issues is "Issue reported" | 30 min | High |
+| Bekleyen eskalasyon | AI property: Client Issues is "With tech team" | 60 min | Critical |
+
+### Çok dilli ekip
+| Kural | Tetikleyici | Zamanlayıcı | Öncelik |
+|---|---|---|---|
+| Dil SLA'ı | AI property: Preferred Lang is any of English, Spanish, Portuguese | 15 min | Medium |
+| Cevaplanmamış | Unanswered chats | 10 min | High |
+
+---
+
+## İpuçları ve en iyi uygulamalar
+
+- **Daha uzun zamanlayıcılarla başlayın** (15–30 dk) ve ekibiniz alıştıkça kısaltın. Ortalama 10 dakikada yanıt veren bir ekipte 2 dakikalık bir kural sürekli gürültü üretecektir.
+- **Kurallarınızı net bir şekilde adlandırın** — ad Team Inbox'ta, WhatsApp raporlarında ve e-posta raporlarında görünür. "Customer waiting 15 min", "Kural 1"den daha iyidir.
+- **Öncelik seviyelerini anlamlı kullanın** — acil eylem gerektiren kurallar için Critical (kaybedilen anlaşmalar, eskalasyonlar), standart SLA takibi için Medium, bilgilendirme amaçlı izleme için Low.
+- **"Only email when breached" seçeneğini etkinleştirin** — bu, gelen kutunuzun boş raporlarla dolmasını önler.
+- **AI property yenileme aralığını kontrol edin** — dropdown özellikler her 30 dakikada güncellenir. 30 dakikadan kısa zamanlayıcılı bir kural tam dakikasında tetiklenmeyebilir, ancak en az bir yenileme döngüsü boyunca o durumda olan her şeyi yakalayacaktır.
+- **Daha geniş izleme için birden fazla değer kullanın** — English, Spanish ve Portuguese için 3 ayrı kural oluşturmak yerine "Preferred Lang is any of English, Spanish, Portuguese" ile tek bir kural oluşturun.
+- **Over SLA bölümünü her gün kontrol edin** — sabah rutininizin bir parçası olarak Team Inbox → Over SLA'yı gece boyunca oluşan ihlaller için kontrol edin.
+
+---
+
+## Sorun giderme
+
+**Alerts toggle'ı açık ama Team Inbox'ta hiçbir kural görünmüyor**
+
+En az bir kuralın oluşturulduğundan ve açık olduğundan emin olun. Save changes düğmesine tıklayın ve Team Inbox'ı yenileyin. Kurallar kaydedildikten sonra görünmeye başlaması birkaç dakika sürebilir.
+
+**Kural sayacı 0 ama sohbetler eşleşmeli**
+
+AI property kuralları için özellik değeri tam olarak eşleşmelidir. İhlal etmesini beklediğiniz bir sohbeti açın, AI properties panelini kontrol edin ve değerin kural koşulunuzla eşleştiğini doğrulayın. Ayrıca özelliğin yakın zamanda güncellenip güncellenmediğini kontrol edin — dropdown özellikler her 30 dakikada güncellenir.
+
+**E-posta raporu gelmiyor**
+
+Report delivery bölümünde e-posta adresinin doğru eklendiğini kontrol edin. Spam/istenmeyen klasörlerini kontrol edin. "Only email when a rule has breached" işaretliyse, raporlar yalnızca gerçek ihlaller olduğunda gönderilir. Sıklığı doğrulayın — "End of day" olarak ayarlanmışsa rapor iş gününün sonunda bir kez gelir.
+
+**WhatsApp raporu gelmiyor**
+
+Report delivery'de telefon numaralarının işaretli olduğunu doğrulayın. Mesajlaşma penceresi kapalıysa, rapor `sla_notice` şablonu olarak gönderilir — alıcının gerçek metni almak için "Send report" düğmesine dokunması gerekir. Şablonun WhatsApp Manager'da onaylandığını kontrol edin.
+
+**Bir sohbet temizlendi ama hâlâ Over SLA'da görünüyor**
+
+Over SLA sayaçları bir sonraki kontrol döngüsünde güncellenir, anında değil. Bir sohbete yanıt verdikten sonra sayaç bir sonraki değerlendirmede düşmelidir. Devam ederse, sohbet hâlâ aynı kuralın başka bir koşuluyla eşleşiyor olabilir.
+
+**AI property kuralları için zamanlayıcı yanlış görünüyor**
+
+AI property durum değişiklikleri bir sonraki yenileme aralığında (dropdown'lar için her 30 dakikada) algılanır. 2 dakikalık zamanlayıcılı bir kural, uyarının durum değişikliğinden tam olarak 2 dakika sonra tetikleneceği anlamına gelmez — sistem durumu algıladıktan 2 dakika sonra tetiklenir, bu da gerçek değişiklikten 30 dakika sonra olabilir. Zamana duyarlı uyarılar için gerçek zamanlı mesaj zaman damgalarını kullanan "Unanswered chats" tetikleyicisini kullanın.
+
+**Bir sohbet birden fazla kural altında görünüyor**
+
+Bu beklenen bir davranıştır. Bir sohbet aynı anda birden fazla kuralla eşleşebilir. Raporlardaki toplam sayılar kural eşleşmelerini gösterir, benzersiz sohbetleri değil. Örneğin, hem "Unanswered 15 min" hem de "Conversation State is Waiting on Client" olan bir sohbet her iki kuralın altında da görünür.
+
+---
+
+*Son güncelleme: Kasım 2026*
