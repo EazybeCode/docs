@@ -309,7 +309,7 @@
                 "pages": [
                   "settings/team-management",
                   "settings/roles-permissions",
-                  "en/sla-alerts"
+                  "settings/sla-alerts"
                 ]
               },
               {
@@ -1120,7 +1120,7 @@
                 "pages": [
                   "es/settings/team-management",
                   "es/settings/roles-permissions",
-                  "es/sla-alerts"
+                  "es/settings/sla-alerts"
                 ]
               },
               {
@@ -1904,7 +1904,7 @@
                   "pt/settings/workspace",
                   "pt/settings/team-management",
                   "pt/settings/roles-permissions",
-                  "pt/sla-alerts",
+                  "pt/settings/sla-alerts",
                   "pt/settings/billing"
                 ]
               },
@@ -2692,7 +2692,7 @@
                   "tr/settings/workspace",
                   "tr/settings/team-management",
                   "tr/settings/roles-permissions",
-                  "tr/sla-alerts",
+                  "tr/settings/sla-alerts",
                   "tr/settings/billing"
                 ]
               },
