@@ -448,6 +448,7 @@
                 "pages": [
                   "en/integrations/zoho/prerequisites",
                   "en/integrations/zoho/team-inbox",
+                  "en/integrations/zoho/activity-backup",
                   "en/integrations/zoho/invite-team",
                   "en/integrations/zoho/link-whatsapp-contacts",
                   "en/integrations/zoho/custom-object-permissions",
@@ -1253,6 +1254,7 @@
                 "pages": [
                   "es/integrations/zoho/prerequisites",
                   "es/integrations/zoho/team-inbox",
+                  "es/integrations/zoho/activity-backup",
                   "es/integrations/zoho/setup",
                   "es/integrations/zoho/invite-team",
                   "es/integrations/zoho/link-whatsapp-contacts",
@@ -2038,6 +2040,7 @@
                 "pages": [
                   "pt/integrations/zoho/prerequisites",
                   "pt/integrations/zoho/team-inbox",
+                  "pt/integrations/zoho/activity-backup",
                   "pt/integrations/zoho/setup",
                   "pt/integrations/zoho/invite-team",
                   "pt/integrations/zoho/link-whatsapp-contacts",
@@ -2826,6 +2829,7 @@
                 "pages": [
                   "tr/integrations/zoho/prerequisites",
                   "tr/integrations/zoho/team-inbox",
+                  "tr/integrations/zoho/activity-backup",
                   "tr/integrations/zoho/setup",
                   "tr/integrations/zoho/invite-team",
                   "tr/integrations/zoho/link-whatsapp-contacts",
