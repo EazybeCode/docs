@@ -128,6 +128,7 @@
                 "pages": [
                   "en/voice-number/overview",
                   "en/voice-number/dialer",
+                  "en/voice-number/hubspot-dialer",
                   "en/voice-number/auto-dialer",
                   "en/voice-number/phone-numbers",
                   "en/voice-number/business-verification",
