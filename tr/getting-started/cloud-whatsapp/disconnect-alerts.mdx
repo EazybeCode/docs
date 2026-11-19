@@ -1,76 +1,86 @@
 ---
-title: "Cloud Bağlantı Kesilmesi Uyarıları"
-description: "Cloud bağlantısı kesildiğinde kimlere e-posta gönderileceğini seçin, bağlantı durumunu inceleyin ve yeniden bağlanma seçeneğini bulun."
+title: "Cloud Bağlantı Kesilme Uyarıları"
+description: "Bağlantısı kesilen kullanıcıya isteğe bağlı CC e-postalarıyla uyarı gönderin veya özel alıcılar seçin."
 ---
 
-Cloud bağlantısı kesildiğinde e-posta alın. Bildirimleri ve alıcıları **Settings → Disconnect Alerts → Cloud** bölümünden yönetin.
+Cloud bağlantısı kesildiğinde kullanıcıyı bilgilendirin ve ekibin de haberdar olması için CC e-posta adresleri ekleyin. **Settings → Disconnect alerts → Cloud (app numbers)** bölümünden özel bir alıcı listesine de uyarı gönderebilirsiniz.
 
-*Görseller, her işlemi gösteren oklar eklenmiş ve yapay zekâyla netleştirilmiş uygulama ekran görüntüleridir. Kontrol adları, ekran görüntüleriyle eşleşmesi için İngilizce bırakılmıştır.*
+<Note>
+Bu uyarıları yalnızca çalışma alanı yöneticileri yönetebilir. **Cloud (app numbers)** ve **WhatsApp API** için uyarı ayarları ve alıcı listeleri ayrıdır.
+</Note>
 
-## Cloud uyarılarını ayarlama
+*Ekran görüntülerinde uygulama bileşenleri, örnek amaçlı kurgusal adlar, e-posta adresleri ve telefon numaralarıyla gösterilir. Kontrol adları, ekran görüntüleriyle eşleşmesi için İngilizce bırakılmıştır.*
+
+## CC e-postalarıyla Cloud uyarılarını ayarlama
 
 <Steps>
-  <Step title="Cloud bağlantı kesilmesi uyarılarını açın">
-    [Eazybe ayarlarını](https://app.eazybe.com/settings) açın, **Disconnect Alerts** seçeneğini ve ardından **Cloud** sekmesini seçin.
+  <Step title="Cloud uyarılarını açın ve e-posta bildirimlerini etkinleştirin">
+    [Eazybe Settings](https://app.eazybe.com/settings) sayfasını açın, **Disconnect alerts** bölümünü seçin ve **Cloud (app numbers)** sekmesine geçin.
 
-    **Disconnect alerts** kartı, Cloud bağlantısı kesildiğinde e-posta gönderileceğini belirtir.
+    Alıcı seçeneklerini görüntülemek için **Email alerts** anahtarını açın. **Send to the disconnected user** seçeneğini seçin: bağlantısı kesilen kullanıcı uyarıyı alır; **CC** altındaki adreslere aynı e-postanın bir kopyası gönderilir.
+
+    Bu, varsayılan alıcı seçeneğidir. **Email alerts** anahtarının açık olduğundan emin olun; alıcı seçmek tek başına uyarıları etkinleştirmez.
+
+    ![Cloud uyarıları açık, bağlantısı kesilen kullanıcı seçili ve CC alanında örnek bir adres](/images/cloud-disconnect-alerts/cloud-cc-overview.jpg)
+  </Step>
+
+  <Step title="İsteğe bağlı CC e-postaları ekleyin">
+    **CC** altında **+ Add CC email** seçeneğini seçin. **FROM YOUR WORKSPACE** bölümünden bir ekip arkadaşı seçin veya bir e-posta adresi girip **Add** düğmesine basın. Çalışma alanı dışındaki adresleri de ekleyebilirsiniz.
+
+    Yönetici veya bağlantıyı yeniden kurmakla sorumlu ekip gibi, kopya alması gereken her kişi için işlemi tekrarlayın. Kaydedilen adresler etiket olarak görünür. En fazla 10 CC adresi ekleyebilirsiniz.
+
+    Değişiklikler otomatik kaydedilir. Sonraki değişikliği yapmadan önce kaydetme işleminin bitmesini bekleyin. Kaydetme başarısız olursa tekrar deneyin ve adresin listede göründüğünü kontrol edin.
+
+    ![E-posta alanı ve Add düğmesiyle alex.morgan@example.com adresini CC listesine ekleme](/images/cloud-disconnect-alerts/cloud-add-cc.jpg)
 
     <Note>
-    Alıcıları yönetmeden önce **Cloud** sekmesinin seçili olduğundan emin olun. **WABA** için ayrı bir sekme ve alıcı listesi bulunur.
+    CC isteğe bağlıdır. Liste boşsa *No one in CC. Only the disconnected user is notified.* mesajı görünür; bu, yalnızca bağlantısı kesilen kullanıcının bilgilendirildiği anlamına gelir. Kullanıcının adresini CC listesine eklemeniz gerekmez.
     </Note>
-
-    ![Disconnect Alerts ve Cloud sekmesi seçili ayarlar ekranı](/images/cloud-disconnect-alerts/open-cloud-simple.png)
   </Step>
 
-  <Step title="Uyarıların etkin olup olmadığını kontrol edin">
-    Kartta **Turn off** görünüyorsa Cloud bağlantı kesilmesi uyarıları etkindir. Açıklamanın altındaki e-posta etiketleri kayıtlı alıcıları gösterir.
+  <Step title="Gerekirse özel alıcıları seçin">
+    Uyarıları yalnızca belirli bir listeye göndermek için **Send to custom recipients** seçeneğini seçin. **Recipients** altında **+ Add email** seçeneğine basın, bir ekip arkadaşı seçin veya adres girin ve **Add** düğmesine basın. En fazla 10 alıcı ekleyebilirsiniz.
 
-    **Turn off** seçeneğini yalnızca bu bildirim e-postalarını durdurmak istediğinizde seçin.
+    Uyarıları kimin alacağını doğrulamak için önceden doldurulmuş yönetici adresleri dahil, görüntülenen adresleri kontrol edin.
 
-    ![Turn off ve kayıtlı alıcı gösterilen uyarı kartı](/images/cloud-disconnect-alerts/check-alerts-simple.png)
-  </Step>
+    ![Kurgusal bir alıcı ve örnek Cloud numaralarıyla özel alıcı seçeneği](/images/cloud-disconnect-alerts/cloud-custom-recipients.jpg)
 
-  <Step title="Bir e-posta alıcısı ekleyin">
-    **+ Add email** seçeneğini seçin. **FROM YOUR WORKSPACE** altında bir ekip arkadaşı seçebilir veya alana bir e-posta adresi yazıp **Add** düğmesini seçebilirsiniz.
-
-    Oklar e-posta alanını ve **Add** düğmesini gösterir. Alan boşken düğme devre dışıdır.
-
-    Cloud bağlantısını yeniden kurmaktan sorumlu kişilerin takip ettiği bir gelen kutusu kullanın. Bir alıcı ekledikten sonra karttaki e-posta etiketlerini kontrol edin.
-
-    ![E-posta alanı, Add düğmesi ve ekip arkadaşı önerileri](/images/cloud-disconnect-alerts/add-recipient-simple.png)
+    <Note>
+    Bu modda bağlantısı kesilen kullanıcı otomatik olarak bilgilendirilmez. Uyarıyı onun da alması gerekiyorsa adresini **Recipients** listesine ekleyin. CC yalnızca **Send to the disconnected user** seçeneğinde kullanılır.
+    </Note>
   </Step>
 </Steps>
 
-## Kesilen Cloud bağlantısını inceleme
+CC ve özel alıcı listeleri ayrı kaydedilir. Seçenek değiştirdiğinizde ilgili liste görüntülenir; adresler listeler arasında taşınmaz.
 
-Bildirim kartının altındaki **CONNECTED NUMBERS** bölümünü kontrol edin. Kayıtlarda **Disconnected** durumu, bir neden ve tarih-saat bilgisi gösterilebilir. Nedenler arasında **Logged out on the phone or the session failed** (telefonda oturum kapatıldı veya oturum başarısız oldu) ve **Connection lost** (bağlantı kesildi) bulunur.
+## Alıcıları yönetme veya uyarıları durdurma
 
-<Note>
-**CONNECTED NUMBERS** başlığı, listedeki tüm bağlantıların şu anda bağlı olduğu anlamına gelmez. Her kaydın yanındaki durum etiketini kontrol edin.
-</Note>
+Bir adresi kaldırmak için e-posta etiketinin yanındaki **×** simgesini kullanın. Gizli adresler varsa tüm listeyi görüntülemek ve aramak için **+N more** seçeneğine basın.
 
-![Disconnected durumları ve Reconnect bağlantıları gösterilen Cloud kayıtları](/images/cloud-disconnect-alerts/reconnect-simple.png)
+- **Send to the disconnected user** seçiliyken tüm CC adreslerini kaldırabilirsiniz. **Email alerts** açık olduğu sürece bağlantısı kesilen kullanıcı uyarıları almaya devam eder.
+- **Send to custom recipients** seçiliyken uyarılar açık olduğu sürece en az bir alıcı bırakın. Son alıcıyı kaldırmadan önce **Email alerts** anahtarını kapatın.
 
-Oklar durum etiketini ve **Reconnect** bağlantısını gösterir.
+Cloud bağlantı kesilme e-postalarını durdurmak için **Email alerts** anahtarını kapatın. Alıcı ayarları, uyarıları yeniden açtığınızda kullanılmak üzere saklanır. Bu seçenekleri düzenlerken **Cloud (app numbers)** sekmesini seçili tutun.
 
-Etkilenen bağlantının yanındaki **Reconnect** seçeneğiyle [Channels sayfasını](https://app.eazybe.com/numbers-connected) açın. İlgili numarayı bulun ve sunulan Cloud bağlantı adımlarını izleyin. **Reconnect**, Channels sayfasını açar; tek başına bağlantıyı yeniden kurmaz.
+## Bağlantısı kesilen numarayı kontrol etme ve yeniden bağlama
 
-## Alıcıları yönetme
+Uyarı ayarlarının altındaki tabloda ilgili numarayı bulun. **Status** sütununu kontrol edin: **Disconnected**, bağlantıyla ilgilenmeniz gerektiğini gösterir. Numaranın altında **Connection lost** (bağlantı kaybedildi) gibi bir neden görünebilir.
 
-Kayıtlı e-posta adresleri etiketler olarak gösterilir. Bir alıcıyı kaldırmak için adresinin yanındaki **×** simgesini, başka birini eklemek için **+ Add email** seçeneğini kullanın. Cloud uyarılarının alıcılarını düzenlerken **Cloud** sekmesini seçili tutun.
+[Channels sayfasını](https://app.eazybe.com/numbers-connected) açmak için numaranın yanındaki **Reconnect** düğmesine basın. İlgili numarayı bulup Cloud bağlantı adımlarını izleyin. **Reconnect**, Channels sayfasını açar; tek başına bağlantıyı yeniden kurmaz.
 
 ## Sık sorulan sorular
 
 <AccordionGroup>
-  <Accordion title="Neden Cloud uyarıları yerine WhatsApp Business API uyarılarını görüyorum?">
-    **Disconnect Alerts** bölümünün üst kısmında **WABA** sekmesinden **Cloud** sekmesine geçin.
+  <Accordion title="Yalnızca bağlantısı kesilen kullanıcıyı bilgilendirebilir miyim?">
+    Evet. **Email alerts** anahtarını açın, **Send to the disconnected user** seçeneğini seçin ve **CC** listesini boş bırakın. Tüm CC adreslerini kaldırmak uyarıları kapatmaz.
   </Accordion>
-
-  <Accordion title="Reconnect seçeneğini nerede bulabilirim?">
-    **CONNECTED NUMBERS** bölümünde **Disconnected** durumunu arayın. **Reconnect** bağlantısı, bağlantısı kesilmiş Cloud kayıtlarının yanında görünür.
+  <Accordion title="Neden kimse uyarı almadı?">
+    **Cloud (app numbers)** sekmesinde **Email alerts** anahtarının açık olduğunu doğrulayın. Seçilen alıcı seçeneğini kontrol edin: ilk modda ilgili kullanıcı ve CC adresleri, özel modda ise yalnızca **Recipients** listesindeki adresler e-posta alır. Değişikliklerin kaydedildiğini kontrol edin ve alıcıdan spam klasörüne bakmasını isteyin.
   </Accordion>
-
-  <Accordion title="Neden kimse bağlantı kesilmesi uyarısı almadı?">
-    Cloud kartında **Turn off** yazdığını doğrulayın; bu, uyarıların etkin olduğunu gösterir. İstenen e-posta adresinin listede olduğunu kontrol edin ve alıcıdan spam klasörünü kontrol etmesini isteyin.
+  <Accordion title="Alıcı seçeneklerini neden değiştiremiyorum?">
+    Bu ayarları yalnızca yöneticiler yönetebilir. **Admin only** görüyorsanız bir yöneticiden ayarları güncellemesini isteyin. Yöneticiyseniz seçenekleri görüntülemek için **Email alerts** anahtarını açın ve devam eden kaydetme işleminin bitmesini bekleyin.
+  </Accordion>
+  <Accordion title="Neden Cloud yerine API uyarılarını görüyorum?">
+    **Disconnect alerts** bölümünün üst kısmında **WhatsApp API** yerine **Cloud (app numbers)** sekmesini seçin. Ayarları birbirinden ayrıdır.
   </Accordion>
 </AccordionGroup>

@@ -1,76 +1,86 @@
 ---
 title: "Alertas de desconexión de Cloud"
-description: "Elige quién recibe un correo cuando Cloud se desconecta, revisa su estado y encuentra la opción para reconectarlo."
+description: "Envía alertas al usuario desconectado con correos opcionales en CC o elige destinatarios personalizados."
 ---
 
-Recibe un correo cuando una conexión de Cloud se desconecta. Gestiona las notificaciones y los destinatarios en **Settings → Disconnect Alerts → Cloud**.
+Notifica al usuario cuando su conexión de Cloud se desconecte y añade direcciones en CC para mantener informado al equipo. También puedes enviar las alertas a una lista personalizada desde **Settings → Disconnect alerts → Cloud (app numbers)**.
 
-*Las imágenes son capturas de la aplicación mejoradas con IA, con flechas que indican cada acción. Los nombres de los controles se mantienen en inglés para coincidir con las capturas.*
+<Note>
+Solo los administradores del espacio de trabajo pueden gestionar estas alertas. **Cloud (app numbers)** y **WhatsApp API** tienen configuraciones y listas de destinatarios independientes.
+</Note>
 
-## Configurar las alertas de Cloud
+*Las capturas muestran los componentes de la aplicación con nombres, correos y teléfonos ficticios. Los nombres de los controles se mantienen en inglés para coincidir con las capturas.*
+
+## Configurar alertas de Cloud con correos en CC
 
 <Steps>
-  <Step title="Abrir las alertas de desconexión de Cloud">
-    Abre [Settings de Eazybe](https://app.eazybe.com/settings), selecciona **Disconnect Alerts** y abre la pestaña **Cloud**.
+  <Step title="Abrir las alertas de Cloud y activar las notificaciones">
+    Abre [Settings de Eazybe](https://app.eazybe.com/settings), selecciona **Disconnect alerts** y elige **Cloud (app numbers)**.
 
-    La tarjeta **Disconnect alerts** indica que se enviará un correo cuando una conexión de Cloud se desconecte.
+    Activa **Email alerts** para mostrar las opciones de destinatarios. Selecciona **Send to the disconnected user**: el usuario cuya conexión se interrumpió recibe la alerta y las direcciones de **CC** reciben una copia del mismo correo.
+
+    Esta es la opción de destinatario predeterminada. Comprueba que **Email alerts** esté activado; elegir el destinatario no activa las alertas por sí solo.
+
+    ![Alertas de Cloud activadas con el usuario desconectado seleccionado y un correo de ejemplo en CC](/images/cloud-disconnect-alerts/cloud-cc-overview.jpg)
+  </Step>
+
+  <Step title="Añadir correos opcionales en CC">
+    En **CC**, selecciona **+ Add CC email**. Elige un compañero en **FROM YOUR WORKSPACE** o introduce un correo y selecciona **Add**. También puedes añadir direcciones externas al espacio de trabajo.
+
+    Repite el proceso para cada persona que necesite una copia, como un responsable o el equipo encargado de restablecer la conexión. Las direcciones guardadas aparecen como etiquetas. Puedes añadir hasta 10 direcciones en CC.
+
+    Los cambios se guardan automáticamente. Espera a que termine cada guardado antes de realizar el siguiente cambio. Si falla, inténtalo de nuevo y comprueba que la dirección aparezca en la lista.
+
+    ![Añadir alex.morgan@example.com en CC con el campo de correo y el botón Add](/images/cloud-disconnect-alerts/cloud-add-cc.jpg)
 
     <Note>
-    Comprueba que **Cloud** esté seleccionado antes de gestionar los destinatarios. **WABA** tiene su propia pestaña y lista de destinatarios.
+    CC es opcional. Si está vacío, aparece *No one in CC. Only the disconnected user is notified.* Esto significa que solo se notifica al usuario desconectado. No necesitas añadir su dirección a CC.
     </Note>
-
-    ![Configuración con Disconnect Alerts y la pestaña Cloud seleccionados](/images/cloud-disconnect-alerts/open-cloud-simple.png)
   </Step>
 
-  <Step title="Comprobar si las alertas están activadas">
-    Si la tarjeta muestra **Turn off**, las alertas de desconexión de Cloud están activadas. Las etiquetas de correo debajo de la descripción muestran los destinatarios guardados.
+  <Step title="Elegir destinatarios personalizados si lo necesitas">
+    Para enviar alertas solo a una lista concreta, selecciona **Send to custom recipients**. En **Recipients**, selecciona **+ Add email**, elige un compañero o introduce un correo y selecciona **Add**. Puedes añadir hasta 10 destinatarios.
 
-    Selecciona **Turn off** solo si quieres dejar de recibir estos correos de notificación.
+    Revisa las direcciones mostradas, incluida cualquier dirección de administrador añadida previamente, para confirmar quién recibirá las alertas.
 
-    ![Tarjeta de alertas con Turn off y un destinatario guardado](/images/cloud-disconnect-alerts/check-alerts-simple.png)
-  </Step>
+    ![Opción de destinatarios personalizados con un correo ficticio y números de Cloud de ejemplo](/images/cloud-disconnect-alerts/cloud-custom-recipients.jpg)
 
-  <Step title="Añadir un destinatario">
-    Selecciona **+ Add email**. Puedes elegir a un compañero en **FROM YOUR WORKSPACE** o introducir una dirección de correo y seleccionar **Add**.
-
-    Las flechas señalan el campo de correo y el botón **Add**. El botón está deshabilitado mientras el campo está vacío.
-
-    Usa una bandeja de entrada que revisen las personas responsables de restablecer la conexión de Cloud. Comprueba las etiquetas de correo después de añadir un destinatario.
-
-    ![Campo de correo, botón Add y sugerencias de compañeros](/images/cloud-disconnect-alerts/add-recipient-simple.png)
+    <Note>
+    En este modo, no se notifica automáticamente al usuario desconectado. Incluye su dirección en **Recipients** si también debe recibir la alerta. CC solo se aplica a **Send to the disconnected user**.
+    </Note>
   </Step>
 </Steps>
 
-## Revisar una conexión de Cloud desconectada
+Las listas de CC y de destinatarios personalizados se guardan por separado. Al cambiar de opción se muestra la lista correspondiente; las direcciones no se trasladan entre listas.
 
-Debajo de la tarjeta de notificaciones, revisa **CONNECTED NUMBERS**. Cada entrada puede mostrar la etiqueta **Disconnected**, un motivo y la fecha y hora. Los motivos incluyen **Logged out on the phone or the session failed** (se cerró la sesión en el teléfono o falló la sesión) y **Connection lost** (se perdió la conexión).
+## Gestionar destinatarios o detener las alertas
 
-<Note>
-El título **CONNECTED NUMBERS** no significa que todas las conexiones de la lista estén activas. Consulta el estado de cada entrada.
-</Note>
+Usa **×** junto a un correo para eliminarlo. Si hay direcciones ocultas, selecciona **+N more** para ver y buscar en la lista completa.
 
-![Conexiones de Cloud con estado Disconnected y enlaces Reconnect](/images/cloud-disconnect-alerts/reconnect-simple.png)
+- Con **Send to the disconnected user**, puedes eliminar todas las direcciones de CC. El usuario desconectado seguirá recibiendo alertas mientras **Email alerts** esté activado.
+- Con **Send to custom recipients**, conserva al menos un destinatario mientras las alertas estén activadas. Desactiva **Email alerts** antes de eliminar el último.
 
-Las flechas señalan el estado y el enlace **Reconnect**.
+Para detener los correos de desconexión de Cloud, desactiva **Email alerts**. La configuración de destinatarios se conserva para cuando vuelvas a activar las alertas. Mantén **Cloud (app numbers)** seleccionado al editar estas opciones.
 
-Selecciona **Reconnect** junto a la conexión afectada para abrir la [página Channels](https://app.eazybe.com/numbers-connected). Busca el número correspondiente y sigue el proceso de conexión de Cloud disponible. **Reconnect** abre Channels; por sí solo no restablece la conexión.
+## Revisar y reconectar un número desconectado
 
-## Gestionar los destinatarios
+Busca el número afectado en la tabla debajo de las alertas. Comprueba **Status**: **Disconnected** indica que la conexión necesita atención. Debajo del número puede aparecer un motivo, como **Connection lost** (conexión perdida).
 
-Las direcciones guardadas aparecen como etiquetas. Usa **×** junto a una dirección para eliminar ese destinatario, o **+ Add email** para añadir otro. Mantén seleccionada la pestaña **Cloud** al editar los destinatarios de estas alertas.
+Selecciona **Reconnect** junto al número para abrir la [página Channels](https://app.eazybe.com/numbers-connected). Busca el número correspondiente y sigue el proceso de conexión de Cloud. **Reconnect** abre Channels; por sí solo no restablece la conexión.
 
 ## Preguntas frecuentes
 
 <AccordionGroup>
-  <Accordion title="¿Por qué veo alertas de WhatsApp Business API en lugar de alertas de Cloud?">
-    Cambia de **WABA** a **Cloud** en la parte superior de **Disconnect Alerts**.
+  <Accordion title="¿Puedo notificar solo al usuario desconectado?">
+    Sí. Activa **Email alerts**, selecciona **Send to the disconnected user** y deja **CC** vacío. Eliminar todas las direcciones de CC no desactiva las alertas.
   </Accordion>
-
-  <Accordion title="¿Dónde encuentro la opción Reconnect?">
-    Busca la etiqueta **Disconnected** en **CONNECTED NUMBERS**. El enlace **Reconnect** aparece junto a las conexiones de Cloud desconectadas.
+  <Accordion title="¿Por qué nadie recibió una alerta?">
+    Confirma que **Email alerts** esté activado en **Cloud (app numbers)**. Comprueba la opción elegida: en el primer modo reciben el correo el usuario afectado y las direcciones de CC; en el modo personalizado, solo la lista **Recipients**. Comprueba que los cambios se hayan guardado y pide al destinatario que revise su carpeta de spam.
   </Accordion>
-
-  <Accordion title="¿Por qué nadie recibió una alerta de desconexión?">
-    Confirma que la tarjeta de Cloud muestre **Turn off**, lo que indica que las alertas están activadas. Comprueba que la dirección deseada esté en la lista y pide al destinatario que revise su carpeta de spam.
+  <Accordion title="¿Por qué no puedo cambiar los destinatarios?">
+    Solo los administradores pueden gestionar esta configuración. Si aparece **Admin only**, pide a un administrador que la actualice. Si eres administrador, activa **Email alerts** para mostrar las opciones y espera a que termine cualquier guardado en curso.
+  </Accordion>
+  <Accordion title="¿Por qué veo alertas de API en lugar de Cloud?">
+    Cambia de **WhatsApp API** a **Cloud (app numbers)** en la parte superior de **Disconnect alerts**. Sus configuraciones son independientes.
   </Accordion>
 </AccordionGroup>

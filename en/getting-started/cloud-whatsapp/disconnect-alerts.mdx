@@ -1,76 +1,86 @@
 ---
 title: "Cloud Disconnect Alerts"
-description: "Choose who receives an email when a Cloud connection disconnects, review its status, and find the reconnect action."
+description: "Send Cloud disconnect alerts to the disconnected user with optional CC emails, or choose custom recipients."
 ---
 
-Get an email when a Cloud connection loses its connection. Manage notifications and recipients from **Settings → Disconnect Alerts → Cloud**.
+Notify the user when their Cloud connection disconnects, and add CC email addresses to keep teammates informed. You can also send alerts to a custom recipient list from **Settings → Disconnect alerts → Cloud (app numbers)**.
 
-*Images are AI-enhanced versions of the app screenshots, with arrows added to guide each action.*
+<Note>
+Only workspace admins can manage disconnect alerts. **Cloud (app numbers)** and **WhatsApp API** have separate alert settings and recipient lists.
+</Note>
 
-## Set up Cloud alerts
+*Screenshots show the application's components with fictional names, email addresses, and phone numbers for illustration.*
+
+## Set up Cloud alerts with CC emails
 
 <Steps>
-  <Step title="Open Cloud disconnect alerts">
-    Open [Eazybe Settings](https://app.eazybe.com/settings), select **Disconnect Alerts**, and choose the **Cloud** tab.
+  <Step title="Open Cloud alerts and turn on email notifications">
+    Open [Eazybe Settings](https://app.eazybe.com/settings), select **Disconnect alerts**, and choose **Cloud (app numbers)**.
 
-    The **Disconnect alerts** card describes the notification: *Emailed when a Cloud connection loses its connection.*
+    Turn on the **Email alerts** switch to display the recipient options. Select **Send to the disconnected user**: the user whose connection dropped receives the alert, and addresses under **CC** receive a copy of the same email.
+
+    This is the default recipient option. Check that **Email alerts** is on; the recipient option alone does not enable alerts.
+
+    ![Cloud alerts enabled, with the disconnected user selected and a sample CC address](/images/cloud-disconnect-alerts/cloud-cc-overview.jpg)
+  </Step>
+
+  <Step title="Add optional CC emails">
+    Under **CC**, select **+ Add CC email**. Choose a teammate under **FROM YOUR WORKSPACE**, or enter an email address and select **Add**. Addresses outside your workspace are supported too.
+
+    Repeat for each person who needs a copy, such as a manager or the team responsible for restoring the connection. Saved addresses appear as chips. You can add up to 10 CC addresses.
+
+    Changes save automatically. Wait for each change to finish saving before making the next one. If a save fails, try again and check that the address appears in the list.
+
+    ![Adding alex.morgan@example.com to CC using the email field and Add button](/images/cloud-disconnect-alerts/cloud-add-cc.jpg)
 
     <Note>
-    Check that **Cloud** is selected before managing recipients. **WABA** has its own tab and recipient list.
+    CC is optional. With no CC addresses, you see *No one in CC. Only the disconnected user is notified.* You do not need to add the disconnected user's address to CC.
     </Note>
-
-    ![Settings with Disconnect Alerts selected and the Cloud tab open](/images/cloud-disconnect-alerts/open-cloud-simple.png)
   </Step>
 
-  <Step title="Check whether alerts are enabled">
-    If the card shows **Turn off**, Cloud disconnect alerts are currently on. The email chips beneath the description show the saved recipients.
+  <Step title="Choose custom recipients if needed">
+    To send alerts only to a specific list, select **Send to custom recipients**. Under **Recipients**, select **+ Add email**, choose a teammate or enter an email address, and select **Add**. You can add up to 10 recipients.
 
-    Select **Turn off** only when you want to stop these notification emails.
+    Review the displayed addresses, including any prefilled admin address, to confirm who will receive alerts.
 
-    ![Cloud Disconnect alerts card showing Turn off and a saved email recipient](/images/cloud-disconnect-alerts/check-alerts-simple.png)
-  </Step>
+    ![Custom recipient mode selected with a fictional recipient and sample Cloud numbers](/images/cloud-disconnect-alerts/cloud-custom-recipients.jpg)
 
-  <Step title="Add an email recipient">
-    Select **+ Add email**. You can choose a teammate under **FROM YOUR WORKSPACE**, or enter an email address in the recipient field and select **Add**.
-
-    The arrows point to the email field and **Add** button. The button is disabled while the field is empty.
-
-    Use an inbox monitored by the people responsible for restoring your Cloud connection. Review the email chips on the card after adding a recipient.
-
-    ![Add email field, Add button, and workspace teammate suggestions](/images/cloud-disconnect-alerts/add-recipient-simple.png)
+    <Note>
+    In this mode, the disconnected user is not automatically notified. Include their address in **Recipients** if they should receive the alert too. CC applies only to **Send to the disconnected user**.
+    </Note>
   </Step>
 </Steps>
 
-## Review a disconnected Cloud connection
+The CC and custom recipient lists are saved separately. Switching options displays the corresponding list; it does not move addresses between lists.
 
-Below the notifications card, check **CONNECTED NUMBERS**. Entries can show a **Disconnected** badge, a reason, and a timestamp. Reasons visible in this view include **Logged out on the phone or the session failed** and **Connection lost**.
+## Manage recipients or stop alerts
 
-<Note>
-The section title **CONNECTED NUMBERS** does not mean every listed connection is currently connected. Read the status badge beside the individual entry.
-</Note>
+Use **×** beside an email chip to remove it. If some addresses are hidden, select **+N more** to view and search the full list.
 
-![Cloud connection entries with Disconnected badges and Reconnect links](/images/cloud-disconnect-alerts/reconnect-simple.png)
+- With **Send to the disconnected user** selected, you can remove every CC address. The disconnected user still receives alerts while **Email alerts** is on.
+- With **Send to custom recipients** selected, keep at least one recipient while alerts are on. Turn **Email alerts** off before removing the last recipient.
 
-The arrows point to the status badge and **Reconnect** link.
+To stop Cloud disconnect emails, turn off **Email alerts**. Your recipient settings are saved for when you turn alerts on again. Keep **Cloud (app numbers)** selected while editing Cloud alerts.
 
-Select **Reconnect** beside the affected connection to open the [Channels page](https://app.eazybe.com/numbers-connected). Find the matching number there and follow the available Cloud connection flow. Opening **Reconnect** takes you to Channels; it does not by itself restore the connection.
+## Review and reconnect a disconnected number
 
-## Manage recipients
+Below the alert settings, find the affected number in the table. Check its **Status**: **Disconnected** means the connection needs attention. A reason, such as **Connection lost**, may appear beneath the number.
 
-Saved email addresses appear as chips. Use the **×** beside an address to remove that recipient, or **+ Add email** to add someone else. Keep the **Cloud** tab selected while editing Cloud alert recipients.
+Select **Reconnect** beside that number to open the [Channels page](https://app.eazybe.com/numbers-connected). Find the matching number and follow the Cloud connection flow. Opening **Reconnect** takes you to Channels; it does not by itself restore the connection.
 
 ## Frequently asked questions
 
 <AccordionGroup>
-  <Accordion title="Why am I seeing WhatsApp Business API alerts instead of Cloud alerts?">
-    Switch from **WABA** to **Cloud** at the top of **Disconnect Alerts**.
+  <Accordion title="Can I notify only the disconnected user?">
+    Yes. Turn on **Email alerts**, select **Send to the disconnected user**, and leave **CC** empty. Removing all CC addresses does not turn alerts off.
   </Accordion>
-
-  <Accordion title="Where can I find the Reconnect action?">
-    Look for the **Disconnected** badge in **CONNECTED NUMBERS**. The **Reconnect** link appears beside disconnected Cloud entries.
-  </Accordion>
-
   <Accordion title="Why did nobody receive a disconnect alert?">
-    Confirm that the Cloud card shows **Turn off**, which means alerts are enabled. Check that the intended email address is listed, and ask the recipient to check their spam folder.
+    Confirm that **Email alerts** is on in **Cloud (app numbers)**. Check the selected recipient option: the affected user and CC addresses receive the email in the first mode; only the **Recipients** list receives it in custom mode. Check that your changes saved, and ask the intended recipient to check their spam folder.
+  </Accordion>
+  <Accordion title="Why can't I change the recipient options?">
+    Only workspace admins can manage these settings. If you see **Admin only**, ask an admin to update them. If you are an admin, turn on **Email alerts** to display the options and wait for any current save to finish.
+  </Accordion>
+  <Accordion title="Why am I seeing API alerts instead of Cloud alerts?">
+    Switch from **WhatsApp API** to **Cloud (app numbers)** at the top of **Disconnect alerts**. Their settings are separate.
   </Accordion>
 </AccordionGroup>
