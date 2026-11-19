@@ -972,6 +972,7 @@
                 "pages": [
                   "es/voice-number/overview",
                   "es/voice-number/dialer",
+                  "es/voice-number/hubspot-dialer",
                   "es/voice-number/auto-dialer",
                   "es/voice-number/phone-numbers",
                   "es/voice-number/business-verification",
@@ -1754,6 +1755,7 @@
                 "pages": [
                   "pt/voice-number/overview",
                   "pt/voice-number/dialer",
+                  "pt/voice-number/hubspot-dialer",
                   "pt/voice-number/auto-dialer",
                   "pt/voice-number/phone-numbers",
                   "pt/voice-number/business-verification",
@@ -2544,6 +2546,7 @@
                 "pages": [
                   "tr/voice-number/overview",
                   "tr/voice-number/dialer",
+                  "tr/voice-number/hubspot-dialer",
                   "tr/voice-number/auto-dialer",
                   "tr/voice-number/phone-numbers",
                   "tr/voice-number/business-verification",
