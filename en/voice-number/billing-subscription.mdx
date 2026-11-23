@@ -3,6 +3,8 @@ title: "Voice Number Billing"
 description: "Understand voice-number rental, wallet deductions, and call and SMS usage charges."
 ---
 
+import { VoiceNumberPricing } from '/snippets/voice-number-pricing.jsx';
+
 Voice Number billing has two parts: the recurring charge for a purchased number and usage charges deducted from your wallet. Calls and SMS use the wallet separately from your Eazybe workspace plan.
 
 <Info>
@@ -13,13 +15,11 @@ The final usage amount depends on the call or message, provider cost, duration, 
 
 When you buy a Voice Number, Eazybe shows the amount due before you confirm the purchase. The number also has a recurring monthly rental charge.
 
-| Country | Monthly rental |
-| --- | ---: |
-| United States | **$6/month** |
-| Canada | **$9/month** |
-| Puerto Rico | **$12/month** |
+Monthly rental varies by the individual number and current availability. Use the rental checker to explore destinations and compare available numbers, instead of relying on a fixed country-wide price.
 
-The purchase screen is the source of truth for the number you select. It shows the one-time purchase or setup fee, the rental period, tax where applicable, and the next renewal date.
+<VoiceNumberPricing />
+
+The purchase screen is the source of truth for the number you select. It shows the amount due today, the rental period, tax where applicable, and the next renewal date. The provider's setup cost is included in the monthly rental; it is not shown as a separate setup fee.
 
 To review a purchased number, open **CALLS → Phone Numbers → Your numbers**. The table shows the number, monthly amount, purchase date, and renewal date.
 
@@ -75,7 +75,7 @@ The wallet is charged after the call or message cost is received and billing is 
 
 ### Does the wallet charge include the number rental?
 
-No. The monthly number rental and any purchase or setup fee are separate from call and SMS usage deductions.
+No. The monthly number rental is separate from call and SMS usage deductions.
 
 ### Why can I not start a call?
 
