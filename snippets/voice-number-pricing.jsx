@@ -1,6 +1,10 @@
 export const VoiceNumberPricing = ({ apiUrl = 'https://cerberus.eazybe.com/prod/api/v2/virtual-numbers/public/pricing' }) => {
   const [countries, setCountries] = useState([]);
   const [country, setCountry] = useState('US');
+  const [countryQuery, setCountryQuery] = useState('');
+  const [countryOpen, setCountryOpen] = useState(false);
+  const [highlightedCountry, setHighlightedCountry] = useState(0);
+  const countryList = useRef(null);
   const [result, setResult] = useState(null);
   const [status, setStatus] = useState('idle');
   const [error, setError] = useState('');
@@ -65,6 +69,16 @@ export const VoiceNumberPricing = ({ apiUrl = 'https://cerberus.eazybe.com/prod/
     } finally { clearTimeout(timeout); }
   };
   const name = countries.find(item => item.code === country)?.name || country;
+  const filteredCountries = countries.filter(item => `${item.name} ${item.code}`.toLocaleLowerCase().includes(countryQuery.trim().toLocaleLowerCase()));
+  const chooseCountry = code => {
+    reset();
+    setCountry(code);
+    setCountryOpen(false);
+    setCountryQuery('');
+  };
+  useEffect(() => {
+    if (countryOpen) countryList.current?.children[highlightedCountry]?.scrollIntoView({ block: 'nearest' });
+  }, [highlightedCountry, countryOpen]);
   const rentals = result?.numbers.map(row => row.monthly_price) || [];
   const minimum = rentals.length ? Math.min(...rentals) : 0;
   const maximum = rentals.length ? Math.max(...rentals) : 0;
@@ -83,15 +97,43 @@ export const VoiceNumberPricing = ({ apiUrl = 'https://cerberus.eazybe.com/prod/
           <p role="status" className="rounded-lg bg-zinc-50 p-4 text-sm text-zinc-600 dark:bg-zinc-800 dark:text-zinc-300">Check current rentals in <strong>CALLS → Phone Numbers → Buy a number</strong> in your Eazybe workspace. The public rental checker is not available yet.</p>
         ) : (
           <form onSubmit={search} className="space-y-4">
-            <label className="block text-sm font-medium text-zinc-800 dark:text-zinc-200">Choose a country
+            <div style={{ width: '100%', maxWidth: '360px' }}>
+              <label htmlFor="rental-country-search" className="block text-sm font-medium text-zinc-800 dark:text-zinc-200">Choose a country</label>
               <div className="relative">
-                <select value={country} onChange={event => { reset(); setCountry(event.target.value); }} disabled={!countries.length || status === 'loading-countries'} className={control} style={{ appearance: 'none', paddingRight: '3rem', cursor: 'pointer' }}>
-                  {!countries.length && <option value="US">{status === 'loading-countries' ? 'Loading countries…' : 'Countries unavailable'}</option>}
-                  {countries.map(item => <option key={item.code} value={item.code}>{item.name} ({item.code})</option>)}
-                </select>
-                <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-zinc-500 dark:text-zinc-300" style={{ position: 'absolute', right: '1rem', top: '50%', transform: 'translateY(-50%)', width: '20px', height: '20px', pointerEvents: 'none' }}><path d="m6 9 6 6 6-6" strokeLinecap="round" strokeLinejoin="round" /></svg>
+                <input id="rental-country-search" type="text" role="combobox" aria-autocomplete="list" aria-expanded={countryOpen} aria-controls="rental-country-options" aria-activedescendant={countryOpen && filteredCountries[highlightedCountry] ? `rental-country-${filteredCountries[highlightedCountry].code}` : undefined}
+                  value={countryOpen ? countryQuery : countries.length ? `${name} (${country})` : ''}
+                  placeholder={status === 'loading-countries' ? 'Loading countries…' : countries.length ? 'Search country name or code…' : 'Countries unavailable'}
+                  autoComplete="off" disabled={!countries.length || status === 'loading-countries'}
+                  onFocus={() => { setCountryOpen(true); setCountryQuery(''); setHighlightedCountry(0); }}
+                  onClick={() => { if (!countryOpen) { setCountryOpen(true); setCountryQuery(''); setHighlightedCountry(0); } }}
+                  onBlur={() => { setCountryOpen(false); setCountryQuery(''); }}
+                  onChange={event => { setCountryQuery(event.target.value); setCountryOpen(true); setHighlightedCountry(0); }}
+                  onKeyDown={event => {
+                    if (event.key === 'ArrowDown' || event.key === 'ArrowUp') {
+                      event.preventDefault();
+                      setCountryOpen(true);
+                      setHighlightedCountry(index => Math.max(0, Math.min(filteredCountries.length - 1, countryOpen ? index + (event.key === 'ArrowDown' ? 1 : -1) : 0)));
+                    } else if (event.key === 'Enter' && countryOpen) {
+                      event.preventDefault();
+                      if (filteredCountries[highlightedCountry]) chooseCountry(filteredCountries[highlightedCountry].code);
+                    } else if (event.key === 'Escape') {
+                      event.preventDefault(); setCountryOpen(false); setCountryQuery('');
+                    }
+                  }}
+                  className={control} style={{ paddingRight: '3rem' }} />
+                <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-zinc-500 dark:text-zinc-300" style={{ position: 'absolute', right: '1rem', top: '50%', transform: 'translateY(-50%)', width: '20px', height: '20px', pointerEvents: 'none' }}><circle cx="10.5" cy="10.5" r="6.5" /><path d="m16 16 4 4" strokeLinecap="round" /></svg>
               </div>
-            </label>
+              {countryOpen && <div className="mt-2 overflow-hidden rounded-lg border border-zinc-200 bg-white shadow-sm dark:border-zinc-700 dark:bg-zinc-900">
+                <ul id="rental-country-options" role="listbox" aria-label="Countries" ref={countryList} style={{ maxHeight: '224px', overflowY: 'auto', overscrollBehavior: 'contain', margin: 0, padding: '4px', listStyle: 'none' }}>
+                  {filteredCountries.map((item, index) => <li id={`rental-country-${item.code}`} key={item.code} role="option" aria-selected={country === item.code}
+                    onMouseDown={event => event.preventDefault()} onClick={() => chooseCountry(item.code)} onMouseEnter={() => setHighlightedCountry(index)}
+                    className={`flex cursor-pointer items-center justify-between rounded-md px-3 py-2.5 text-sm ${highlightedCountry === index ? 'bg-green-50 text-green-900 dark:bg-green-950 dark:text-green-100' : 'text-zinc-800 dark:text-zinc-200'}`}>
+                    <span>{item.name}</span><span className="ml-3 text-xs text-zinc-500">{item.code}{country === item.code ? ' ✓' : ''}</span>
+                  </li>)}
+                </ul>
+                {!filteredCountries.length && <p role="status" className="m-0 px-4 py-3 text-sm text-zinc-500">No countries found. Try another name or code.</p>}
+              </div>}
+            </div>
             <div className="flex flex-wrap items-center gap-3 sm:col-span-2">
               <button type="submit" disabled={!countries.length || status === 'loading'} className="rounded-lg bg-green-700 px-4 py-2.5 text-sm font-semibold text-white hover:bg-green-800 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 disabled:opacity-50">{status === 'loading' ? 'Checking rentals…' : result ? 'Refresh rentals' : 'Check monthly rentals'}</button>
             </div>
