@@ -107,17 +107,26 @@ Whether to create the group if it doesn’t exist. Defaults to `false`.
 
 #### `POST http://api.eazybe.com/v2/cloud/group`
 `Headers: 
+
+```json
 { 
   "Content-Type": "application/json; charset=UTF-8", 
   "Authorization": "Bearer {your-organization's-auth-token-here}" 
 }
+```
+
  
 Body: 
+
+```json
 { 
   "groupName": "VIP Customers", 
   "contacts": ["919911223344", "919922334455"], 
   "create": true 
-}`
+}
+```
+
+`
 ---
 
 #### Responses:

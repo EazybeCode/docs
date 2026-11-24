@@ -102,24 +102,37 @@ Whether to create the group if it doesn’t exist. Defaults to false.
 
 #### POST http://api.eazybe.com/v2/cloud/group
 Headers: 
+
+```json
 { 
   "Content-Type": "application/json; charset=UTF-8", 
   "Authorization": "Bearer {your-organization's-auth-token-here}" 
 }
+```
+
  
 Body: 
+
+```json
 { 
   "groupName": "VIP Customers", 
   "contacts": ["919911223344", "919922334455"], 
   "create": true 
 }
+```
+
 #### Responses:
 **Success Response (Group created or chat IDs added):**
 
+
+```json
 { 
   "status": true, 
   "message": "Group created and chat IDs added successfully." 
-}**Field**
+}
+```
+
+**Field**
 
 **Type**
 
@@ -145,37 +158,53 @@ Describes the success of the operation.
 
 Occurs when any required field is missing or the data types are incorrect.
 
+
+```json
 { 
   "status": false, 
   "message": "Invalid data provided." 
 }
+```
+
 - **404 Not Found: Group Not Found**
 
 
 Occurs when the group is not found and the create flag is set to false.
 
+
+```json
 { 
   "status": false, 
   "message": "Group not found" 
 }
+```
+
 - **500 Internal Server Error: Failed to Create Group**
 
 
 Occurs if there's an issue during group creation or adding chat IDs.
 
+
+```json
 { 
   "status": false, 
   "message": "Failed to create group and add chat IDs." 
 }
+```
+
 - **403 Forbidden: Cloud Session Inactive**
 
 
 Occurs when the cloud session is not active or functioning properly.
 
+
+```json
 { 
   "status": false, 
   "message": "Cloud session is not active or working." 
 }
+```
+
 #### Hygiene Practices:
 
 - Ensure that the Authorization header contains a valid Organization's Auth Token.

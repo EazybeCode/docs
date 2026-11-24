@@ -101,23 +101,36 @@ Si debe crear el grupo si no existe. Por defecto es false.
 
 
 Encabezados: 
+
+```json
 { 
   "Content-Type": "application/json; charset=UTF-8", 
   "Authorization": "Bearer {token-de-autenticación-de-tu-organización}" 
 }
+```
+
 Cuerpo:
+
+```json
 {
   "groupName": "Clientes VIP", 
   "contacts": ["919911223344", "919922334455"], 
   "create": true 
 }
+```
+
 #### Respuestas:
 **Respuesta de Éxito (Grupo creado o ID de chat agregados):**
 
+
+```json
 { 
   "status": true, 
   "message": "Grupo creado y ID de chat agregados exitosamente." 
-}**Campo**
+}
+```
+
+**Campo**
 
 **Tipo**
 
@@ -143,37 +156,53 @@ Describe el éxito de la operación.
 
 Ocurre cuando falta algún campo requerido o los tipos de datos son incorrectos.
 
+
+```json
 { 
   "status": false, 
   "message": "Datos proporcionados inválidos." 
 }
+```
+
 - **404 Not Found: Grupo No Encontrado**
 
 
 Ocurre cuando el grupo no se encuentra y la opción **create** está configurada como **false**.
 
+
+```json
 { 
   "status": false, 
   "message": "Grupo no encontrado." 
 }
+```
+
 - **500 Internal Server Error: Error al Crear el Grupo**
 
 
 Ocurre si hay un problema durante la creación del grupo o al agregar los ID de chat.
 
+
+```json
 { 
   "status": false, 
   "message": "No se pudo crear el grupo y agregar los ID de chat." 
 }
+```
+
 - **403 Forbidden: Sesión en la Nube Inactiva**
 
 
 Ocurre cuando la sesión en la nube no está activa o no funciona correctamente.
 
+
+```json
 { 
   "status": false, 
   "message": "La sesión en la nube no está activa o no funciona." 
 }
+```
+
 ### Prácticas de Higiene:
 
 - Asegúrate de que el encabezado de Autorización contenga un Token de Autenticación válido de la Organización.

@@ -102,17 +102,26 @@ Se deve criar o grupo, caso ele não exista. Padrão: false.
 
 ### `POST http://api.eazybe.com/v2/cloud/group`
 `Cabeçalhos: 
+
+```json
 { 
 "Content-Type": "application/json; charset=UTF-8", 
 "Authorization": "Bearer {token-de-autenticacao-da-sua-organizacao}" 
 }
+```
+
 
 Corpo: 
+
+```json
 { 
 "groupName": "Clientes VIP", 
 "contacts": ["919911223344", "919922334455"], 
 "create": true 
-}`
+}
+```
+
+`
 ---
 
 #### Respostas:

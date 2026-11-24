@@ -45,6 +45,8 @@ Scheduled time to send the message.
 
 
 #### Example Payload:
+
+```json
 { 
 "from": "hello@eazybe.com", 
 "to": "919876543210", 
@@ -52,7 +54,10 @@ Scheduled time to send the message.
 "name": "Vats", 
 "time": "2024-03-01T17:25:00.000Z" 
 }
+```
+
 #### Sample Request Code (Node.js with Axios):
+```javascript
 const axios = require('axios');
 let data = JSON.stringify({
   "from": "hello@eazybe.com",
@@ -80,6 +85,8 @@ axios.request(config)
 .catch((error) => {
   console.log(error);
 });
+```
+
 #### How to get Organization's Auth Token?
 You can obtain your Organization's Auth Token from the [EazyBe Workspace](https://workspace.eazybe.com/) by following these steps:
 

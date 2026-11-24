@@ -51,7 +51,7 @@ Especifica que el formato del cuerpo de la solicitud es JSON.
 
 **Authorization**
 
-Bearer {token}
+Bearer &#123;token&#125;
 
 Requerido. Se utiliza para autenticar la solicitud. El Token Bearer será el Token de Autenticación de la Organización específico de la organización.
 
@@ -83,6 +83,8 @@ Lista de contactos que se asociarán con la etiqueta.
 
 
 #### Ejemplo de Solicitud:
+
+```json
 { 
   "labelName": "Clientes Prioritarios", 
   "contacts": [
@@ -91,6 +93,8 @@ Lista de contactos que se asociarán con la etiqueta.
     "911234567893" 
   ] 
 }
+```
+
 #### Respuestas:
 **200 OK:**
 
@@ -99,6 +103,8 @@ Indica que la etiqueta se creó con éxito y los chats se asociaron con ella.
 
 **Ejemplo de Respuesta Exitosa:**
 
+
+```json
 { 
   "status": true, 
   "data": 
@@ -106,6 +112,8 @@ Indica que la etiqueta se creó con éxito y los chats se asociaron con ella.
     "message": "Contactos agregados exitosamente." 
   } 
 }
+```
+
 #### Hygiene Practices:
 
 - Asegúrate de que el encabezado de Autorización contenga un Token de Autenticación válido de la Organización.

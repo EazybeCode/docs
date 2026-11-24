@@ -83,14 +83,18 @@ Lista de contactos que se asociarán con la etiqueta.
 ---
 
 #### Ejemplo de Solicitud:
-`{ 
+
+```json
+{
   "labelName": "Clientes Prioritarios", 
   "contacts": [
     "911234567891", 
     "911234567892", 
     "911234567893" 
   ] 
-}`
+}
+```
+
 ---
 
 #### Respuestas:
@@ -100,13 +104,17 @@ Indica que la etiqueta se creó con éxito y los chats se asociaron con ella.
 
 **Ejemplo de Respuesta Exitosa:**
 
-`{ 
+
+```json
+{
   "status": true, 
   "data": 
   { 
     "message": "Contactos agregados exitosamente." 
   } 
-}`
+}
+```
+
 ---
 
 #### Hygiene Practices:

@@ -31,9 +31,13 @@ Bearer YOUR-BEARER-TOKEN
 
 
 ### **Example cURL Request:**
+```bash
 curl --location 'https://api.eazybe.com/v2/users/public/last-active' \
 --header 'Authorization: Bearer YOUR-BEARER-TOKEN'
+```
+
 ### **Sample Request Code (Node.js with Axios):**
+```javascript
 const axios = require('axios');
 let config = {
   method: 'get',
@@ -50,8 +54,14 @@ axios.request(config)
 .catch((error) => {
   console.error(error);
 });
+```
+
 ### **Example Response:**
+
+```json
 {"statusCode": 200,"status": "success","message": "Users fetched successfully","data": [{"id": 101001,"name": "John Doe","email": "john.doe@company.com","phone": "919812345678","last_active": "2025-10-10T04:28:16.000Z"},{"id": 101002,"name": "Jane Smith","email": "jane.smith@company.com","phone": "14155552671","last_active": "2025-10-10T07:32:16.000Z"},{"id": 101003,"name": "Robert Brown","email": "robert.brown@company.com","phone": "5511987654321","last_active": "2025-08-30T19:37:57.000Z"},{"id": 101004,"name": "Emily Davis","email": "emily.davis@company.com","phone": "442079460123","last_active": "2025-10-10T07:22:46.000Z"},{"id": 101005,"name": "Michael Johnson","email": "michael.johnson@company.com","phone": "16135551212","last_active": "2025-10-10T03:22:36.000Z"},{"id": 101006,"name": "Sarah Wilson","email": "sarah.wilson@company.com","phone": "8135556789","last_active": "2025-10-10T07:22:26.000Z"},{"id": 101007,"name": "David Thompson","email": "david.thompson@company.com","phone": "33123456789","last_active": "2025-10-10T07:22:25.000Z"}] }
+```
+
 ### **Response Fields:**
 Field
 

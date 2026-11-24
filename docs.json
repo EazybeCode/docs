@@ -483,8 +483,7 @@
                   "en/integrations/zoho/one-click-switch",
                   "en/integrations/zoho/dynamic-whatsapp-labels",
                   "en/integrations/zoho/troubleshoot-workflow",
-                  "integrations/zoho/admin-management",
-                  "integrations/zoho/troubleshooting",
+                  "en/integrations/zoho/troubleshooting-fix-whatsapp-syncing-issue-with-zoho",
                   {
                     "group": "FAQ",
                     "pages": [
@@ -2507,7 +2506,7 @@
                     "pages": [
                       "tr/getting-started/whatsapp-types",
                       "tr/getting-started/personal-vs-business-vs-api",
-                      "tr/getting-started/coexistence-mode"
+                      "tr/waba/coexistence"
                     ]
                   },
                   {
@@ -2668,9 +2667,6 @@
                 "group": "Verimlilik Araçları",
                 "icon": "bolt",
                 "pages": [
-                  "tr/productivity/quick-replies",
-                  "tr/productivity/scheduled-messages",
-                  "tr/productivity/bulk-messaging",
                   "tr/productivity/start-chat",
                   "tr/productivity/quick-reply",
                   "tr/productivity/setting-button",
@@ -2702,11 +2698,11 @@
                 "group": "Ayarlar",
                 "icon": "gear",
                 "pages": [
-                  "tr/settings/workspace",
+                  "tr/integrations/whatsapp-crm/workspace/workspace",
                   "tr/settings/team-management",
                   "tr/settings/roles-permissions",
                   "tr/settings/sla-alerts",
-                  "tr/settings/billing"
+                  "tr/billing/overview"
                 ]
               },
               {

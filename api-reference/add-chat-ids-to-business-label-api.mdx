@@ -55,7 +55,7 @@ Specifies that the request body format is JSON.
 
 **Authorization**
 
-Bearer {token}
+Bearer &#123;token&#125;
 
 **Required**. Used to authenticate the request. The Bearer Token will be the Organization Auth Token specific to an organization.
 
@@ -87,6 +87,8 @@ List of contacts to be associated with the label.
 
 
 #### Example Request:
+
+```json
 { 
   "labelName": "Priority Clients", 
   "contacts": [ 
@@ -95,17 +97,23 @@ List of contacts to be associated with the label.
     "911234567893" 
   ] 
 }
+```
+
 #### Responses:
 200 OK:Indicates the label was successfully created and the chats were associated with it.
 
 **Example Success Response**:
 
+
+```json
 { 
   "status": true, 
   "data": { 
     "message": "Contacts added successfully." 
   } 
 }
+```
+
 #### Hygiene Practices:
 
 - Ensure that the Authorization header contains a valid Organization's Auth token.

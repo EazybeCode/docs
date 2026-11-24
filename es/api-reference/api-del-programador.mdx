@@ -37,6 +37,8 @@ Hora programada para enviar el mensaje.
 
 
 #### Ejemplo de Payload:
+
+```json
 { 
 "from": "hello@eazybe.com", 
 "to": "919876543210", 
@@ -44,7 +46,10 @@ Hora programada para enviar el mensaje.
 "name": "Vats", 
 "time": "2024-03-01T17:25:00.000Z" 
 }
+```
+
 #### Código de Solicitud de Ejemplo (Node.js con Axios):
+```javascript
 const axios = require('axios');
 let data = JSON.stringify({
 "from": "hello@eazybe.com",
@@ -72,6 +77,8 @@ console.log(JSON.stringify(response.data));
 .catch((error) => {
 console.log(error);
 });
+```
+
 #### Respuesta:
 EstadoDescripción**Éxito**
 
