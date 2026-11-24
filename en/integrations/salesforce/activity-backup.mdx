@@ -1,0 +1,41 @@
+---
+title: "Backup in Activities"
+description: "Save WhatsApp 1:1 and group chats as completed tasks on Salesforce Contacts and Leads."
+---
+
+With **Back up in activities** enabled, Eazybe saves **1:1 and group conversations as completed Tasks** on the associated Salesforce **Contact or Lead**. Messages are appended to the conversation’s daily activity as backups run.
+
+## Enable activity backup
+
+1. Install the [Eazybe Team Inbox package](/en/integrations/salesforce/team-inbox) and connect your Salesforce account to Eazybe.
+2. In your Eazybe workspace, open **Integrations → Salesforce → General**.
+3. Under **What gets saved to Salesforce**, turn on **Back up in activities**. The setting confirms: **Conversations are being backed up as completed tasks.**
+
+<Note>
+Installing Team Inbox does not automatically turn on activity backup. Enable the setting separately; it applies from the next backup run.
+</Note>
+
+Administrators and managers change this setting for the organization’s Salesforce connections. Other users change it for their own connection.
+
+## Find a saved conversation in Salesforce
+
+1. Open the associated **Contact** or **Lead** record in Salesforce.
+2. Open **Activity** and find the **WhatsApp Chat by Eazybe** entry for the date you want.
+3. Open the completed Task and read the synced messages in **Description**.
+
+![WhatsApp chat activity on a Salesforce Lead](/images/salesforce-activity-backup/lead-activity.png)
+
+![WhatsApp chat activity on a Salesforce Contact](/images/salesforce-activity-backup/contact-activity.png)
+
+## How daily activities work
+
+- **1:1 chats:** Each conversation has a daily Task on the matching Contact or Lead. Different team members’ 1:1 conversations remain separate activities.
+- **Group chats:** Eazybe saves the group conversation on associated participant Contact or Lead records. Multiple team members backing up the same group append to the same daily Task for each associated record. Group backup must also be enabled.
+- **Updates:** Later backups append new messages to the existing daily Task. Long conversations can continue into additional Tasks.
+- **Date:** The activity date is the backup day in the supplied timezone. Messages retain their own timestamps, so an activity can contain messages sent on earlier dates.
+
+This is similar to [Zoho activity backup](/en/integrations/zoho/activity-backup): conversations are saved as completed Tasks. In Salesforce, find them in the record’s **Activity timeline**; Zoho lists them under **Closed Activities**.
+
+## When activity backup is off
+
+With this setting off, Eazybe uses the existing Salesforce backup route: the **WhatsApp Chats by Eazybe** custom object, plus **Notes & Attachments** for Contacts. Enabling activity backup sends subsequent chat backups to completed Tasks instead of that route.

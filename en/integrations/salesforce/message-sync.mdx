@@ -25,7 +25,15 @@ When you first integrate Salesforce with EazyBe, the system automatically provid
 
 ![Initial Backup](/images/1197995392.png)
 
-## Activity Logging
+## Backup in Activities
+
+With **Back up in activities** enabled, Eazybe saves **1:1 and group conversations as completed Tasks** on the associated Salesforce **Contact or Lead**. Messages are appended to the conversation’s daily activity as backups run.
+
+See the setup steps and examples in [Backup in Activities](/en/integrations/salesforce/activity-backup).
+
+## When activity backup is off
+
+With this setting off, Eazybe uses the existing Salesforce backup route: the **WhatsApp Chats by Eazybe** custom object, plus **Notes & Attachments** for Contacts. Enabling activity backup sends subsequent chat backups to completed Tasks instead of that route.
 
 WhatsApp chats are stored in two locations within Salesforce:
 
@@ -42,7 +50,7 @@ WhatsApp chats are stored in two locations within Salesforce:
   </Step>
 </Steps>
 
-## Attachments Backup
+### Attachments Backup
 
 <Tip>
   Attachments from WhatsApp conversations are stored in the **WhatsApp Chats by EazyBe** custom activity object for both Leads and Contacts pages.

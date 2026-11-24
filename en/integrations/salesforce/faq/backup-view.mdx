@@ -3,9 +3,25 @@ title: "Backup View"
 description: "Learn where to find your WhatsApp chat backups in Salesforce after syncing with Eazybe."
 ---
 
-You can access your WhatsApp chat backups in Salesforce through several areas.
+With **Back up in activities** enabled, Eazybe saves **1:1 and group conversations as completed Tasks** on the associated Salesforce **Contact or Lead**. Messages are appended to the conversation’s daily activity as backups run.
 
-## Salesforce Contact's Page
+## Find a saved conversation in Salesforce
+
+1. Open the associated **Contact** or **Lead** record in Salesforce.
+2. Open **Activity** and find the **WhatsApp Chat by Eazybe** entry for the date you want.
+3. Open the completed Task and read the synced messages in **Description**.
+
+See the setup steps and examples in [Backup in Activities](/en/integrations/salesforce/activity-backup).
+
+![WhatsApp chat activity on a Salesforce Lead](/images/salesforce-activity-backup/lead-activity.png)
+
+![WhatsApp chat activity on a Salesforce Contact](/images/salesforce-activity-backup/contact-activity.png)
+
+## When activity backup is off
+
+With this setting off, Eazybe uses the existing Salesforce backup route: the **WhatsApp Chats by Eazybe** custom object, plus **Notes & Attachments** for Contacts. Enabling activity backup sends subsequent chat backups to completed Tasks instead of that route.
+
+### Salesforce Contact's Page
 
 Synced WhatsApp conversations appear in two locations within respective Salesforce Contacts' Pages:
 
@@ -22,7 +38,7 @@ Synced WhatsApp conversations appear in two locations within respective Salesfor
 
 ![Contact Page - WhatsApp Chats Activity](/images/1196813635.png)
 
-## Salesforce Lead's Page
+### Salesforce Lead's Page
 
 Synced WhatsApp conversations display in the **"WhatsApp Chats by Eazybe"** custom activity object within respective Salesforce Leads' Pages.
 

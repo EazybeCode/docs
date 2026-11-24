@@ -3,9 +3,25 @@ title: "Visualizacao de Backup"
 description: "Saiba onde encontrar seus backups de conversas do WhatsApp no Salesforce após sincronizar com o Eazybe."
 ---
 
-Você pode acessar seus backups de conversas do WhatsApp no Salesforce através de várias áreas.
+Com **Back up in activities** ativado, o Eazybe salva **conversas individuais e em grupo como tarefas concluídas** no **Contato ou Lead** associado do Salesforce. As mensagens são adicionadas à atividade diária da conversa conforme os backups são executados.
 
-## Página de Contato do Salesforce
+## Encontrar uma conversa salva no Salesforce
+
+1. Abra o registro do **Contato** ou **Lead** associado no Salesforce.
+2. Abra **Atividade** (Activity) e localize a entrada **WhatsApp Chat by Eazybe** da data desejada.
+3. Abra a tarefa concluída e leia as mensagens sincronizadas em **Descrição** (Description).
+
+Confira as etapas e os exemplos em [Backup em atividades](/pt/integrations/salesforce/activity-backup).
+
+![Atividade de conversa do WhatsApp em um Lead do Salesforce](/images/salesforce-activity-backup/lead-activity.png)
+
+![Atividade de conversa do WhatsApp em um Contato do Salesforce](/images/salesforce-activity-backup/contact-activity.png)
+
+## Quando o backup em atividades está desativado
+
+Com essa opção desativada, o Eazybe usa o método de backup existente do Salesforce: o objeto personalizado **WhatsApp Chats by Eazybe** e, para Contatos, **Notas e anexos**. Ao ativar o backup em atividades, os próximos backups de conversas são salvos como tarefas concluídas em vez de usar esse método.
+
+### Página de Contato do Salesforce
 
 As conversas do WhatsApp sincronizadas aparecem em duas localizações nas respectivas páginas de Contatos do Salesforce:
 
@@ -22,7 +38,7 @@ As conversas do WhatsApp sincronizadas aparecem em duas localizações nas respe
 
 ![Página de Contato - Atividade de Chats do WhatsApp](/images/1196813635.png)
 
-## Página de Lead do Salesforce
+### Página de Lead do Salesforce
 
 As conversas do WhatsApp sincronizadas são exibidas no objeto de atividade personalizado **"WhatsApp Chats por Eazybe"** nas respectivas páginas de Leads do Salesforce.
 

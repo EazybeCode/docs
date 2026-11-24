@@ -57,7 +57,7 @@ A Salesforce **administrator** needs to complete the following steps once per or
   <Step title="Install the EazyBe Team Inbox package">
     Install the **EazyBe Team Inbox** managed package in your Salesforce org:
 
-    [Install the EazyBe Team Inbox package](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tdM000000cdzd&isdtp=p1)
+    [Install the EazyBe Team Inbox package](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tdM000000dUhN&isdtp=p1)
 
     When prompted, choose **Install for All Users**.
   </Step>
@@ -102,6 +102,17 @@ A Salesforce **administrator** needs to complete the following steps once per or
 <Note>
 The authorization and activation steps above are temporary. An upcoming package update will handle them automatically during installation, so users won't need to perform them manually.
 </Note>
+
+## Backup in Activities
+
+With **Back up in activities** enabled, Eazybe saves **1:1 and group conversations as completed Tasks** on the associated Salesforce **Contact or Lead**. Messages are appended to the conversation’s daily activity as backups run.
+
+1. In your Eazybe workspace, open **Integrations → Salesforce → General**.
+2. Under **What gets saved to Salesforce**, turn on **Back up in activities**. The setting confirms: **Conversations are being backed up as completed tasks.**
+
+Installing Team Inbox does not automatically turn on activity backup. Enable the setting separately; it applies from the next backup run.
+
+See the setup steps and examples in [Backup in Activities](/en/integrations/salesforce/activity-backup).
 
 ## Team Inbox on Contact, Lead, and Person Account
 
