@@ -23,13 +23,16 @@ not the page visit. Changing Telnyx costs appears on the next search after expir
 the page does not poll. Checkout remains authoritative for currency, tax, billing
 period, verification, availability, and the final charge.
 
-Both public GET routes use Nest's throttler: 10 requests per 60 seconds per route
-and `request.ip`, returning 429 and Retry-After when exceeded. The installed
-throttler uses process-local storage. Behind a reverse proxy, Express must resolve
-the trusted client IP correctly; without trusted-proxy configuration the proxy's
-IP shares the quota. Do not blindly trust user-supplied forwarding headers.
-Multiple replicas have separate quotas; enforce a shared edge limit if a
-deployment-wide quota is required.
+Both public GET routes share a Redis quota of 10 requests per client IP per
+60-second window across backend replicas. The 11th request returns 429 with
+Retry-After. Redis failures return a temporary 503; there is no local fallback.
+The backend's `PUBLIC_PRICING_TRUSTED_PROXIES` must list the actual proxy IPs/CIDRs
+before deploying behind a reverse proxy. It walks only those trusted hops and
+ignores spoofed forwarding headers from untrusted peers. With no configuration,
+only the socket peer is used (suitable for direct/local access). All replicas must
+use the same Redis and `PUBLIC_PRICING_RATE_LIMIT_NAMESPACE`; use separate
+namespaces for staging and production. See the backend's
+`docs/voice-number-public-pricing-rate-limit.md` for deployment and test details.
 
 Validation: backend pricing tests cover exact prices, cache expiry, country
 policy, empty stock, private error suppression, DTO validation, and the 11th
