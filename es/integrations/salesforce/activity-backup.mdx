@@ -1,0 +1,41 @@
+---
+title: "Respaldo en actividades"
+description: "Guarda chats individuales y grupales de WhatsApp como tareas completadas en Contactos y Leads de Salesforce."
+---
+
+Con **Back up in activities** activado, Eazybe guarda las **conversaciones individuales y grupales como tareas completadas** en el **Contacto o Lead** asociado de Salesforce. Los mensajes se añaden a la actividad diaria de la conversación a medida que se ejecutan los respaldos.
+
+## Activar el respaldo en actividades
+
+1. Instala el [paquete Eazybe Team Inbox](/es/integrations/salesforce/team-inbox) y conecta tu cuenta de Salesforce a Eazybe.
+2. En tu espacio de trabajo de Eazybe, abre **Integraciones → Salesforce → General**.
+3. En **What gets saved to Salesforce**, activa **Back up in activities**. El texto confirma que las conversaciones se están guardando como tareas completadas.
+
+<Note>
+Instalar Team Inbox no activa automáticamente el respaldo en actividades. Activa la opción por separado; se aplicará a partir del siguiente respaldo.
+</Note>
+
+Los administradores y gerentes cambian esta opción para las conexiones de Salesforce de la organización. Los demás usuarios la cambian para su propia conexión.
+
+## Encontrar una conversación guardada en Salesforce
+
+1. Abre el registro del **Contacto** o **Lead** asociado en Salesforce.
+2. Abre **Actividad** (Activity) y busca la entrada **WhatsApp Chat by Eazybe** de la fecha que quieras consultar.
+3. Abre la tarea completada y lee los mensajes sincronizados en **Descripción** (Description).
+
+![Actividad de chat de WhatsApp en un Lead de Salesforce](/images/salesforce-activity-backup/lead-activity.png)
+
+![Actividad de chat de WhatsApp en un Contacto de Salesforce](/images/salesforce-activity-backup/contact-activity.png)
+
+## Cómo funcionan las actividades diarias
+
+- **Chats individuales:** Cada conversación tiene una tarea diaria en el Contacto o Lead correspondiente. Las conversaciones individuales de distintos miembros del equipo se mantienen como actividades separadas.
+- **Chats grupales:** Eazybe guarda la conversación del grupo en los registros de Contacto o Lead de los participantes asociados. Si varios miembros del equipo respaldan el mismo grupo, los mensajes se añaden a la misma tarea diaria de cada registro asociado. El respaldo de grupos también debe estar activado.
+- **Actualizaciones:** Los respaldos posteriores añaden mensajes nuevos a la tarea diaria existente. Las conversaciones largas pueden continuar en tareas adicionales.
+- **Fecha:** La fecha de la actividad es el día del respaldo según la zona horaria proporcionada. Los mensajes conservan sus propias marcas de tiempo, por lo que una actividad puede incluir mensajes de días anteriores.
+
+Funciona de forma similar al [respaldo en actividades de Zoho](/es/integrations/zoho/activity-backup): las conversaciones se guardan como tareas completadas. En Salesforce aparecen en la **cronología de actividades** del registro; en Zoho, en **Actividades cerradas** (Closed Activities).
+
+## Cuando el respaldo en actividades está desactivado
+
+Con esta opción desactivada, Eazybe utiliza el respaldo existente de Salesforce: el objeto personalizado **WhatsApp Chats by Eazybe** y, para Contactos, **Notas y archivos adjuntos**. Al activar el respaldo en actividades, los siguientes respaldos de chats se guardan como tareas completadas en lugar de utilizar ese método.

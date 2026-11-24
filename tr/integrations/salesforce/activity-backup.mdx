@@ -1,0 +1,41 @@
+---
+title: "Etkinliklerde yedekleme"
+description: "WhatsApp birebir ve grup sohbetlerini Salesforce Kişi ve Aday Müşteri kayıtlarında tamamlanmış görevler olarak kaydedin."
+---
+
+**Back up in activities** açıkken Eazybe, **birebir ve grup görüşmelerini tamamlanmış görevler olarak** ilgili Salesforce **Kişi veya Aday Müşteri** kaydına kaydeder. Yedeklemeler çalıştıkça mesajlar görüşmenin günlük etkinliğine eklenir.
+
+## Etkinliklerde yedeklemeyi açma
+
+1. [Eazybe Team Inbox paketini](/tr/integrations/salesforce/team-inbox) yükleyin ve Salesforce hesabınızı Eazybe’ye bağlayın.
+2. Eazybe çalışma alanınızda **Entegrasyonlar → Salesforce → Genel** bölümünü açın.
+3. **What gets saved to Salesforce** bölümünde **Back up in activities** seçeneğini açın. Açıklama, görüşmelerin tamamlanmış görevler olarak yedeklendiğini doğrular.
+
+<Note>
+Team Inbox paketini yüklemek, etkinliklerde yedeklemeyi otomatik olarak açmaz. Seçeneği ayrıca açın; ayar bir sonraki yedeklemeden itibaren uygulanır.
+</Note>
+
+Yöneticiler bu ayarı kuruluşun Salesforce bağlantıları için değiştirir. Diğer kullanıcılar yalnızca kendi bağlantıları için değiştirir.
+
+## Salesforce’ta kaydedilmiş bir görüşmeyi bulma
+
+1. Salesforce’ta ilgili **Kişi** (Contact) veya **Aday Müşteri** (Lead) kaydını açın.
+2. **Etkinlik** (Activity) bölümünde istediğiniz tarihe ait **WhatsApp Chat by Eazybe** kaydını bulun.
+3. Tamamlanmış görevi açın ve eşitlenen mesajları **Açıklama** (Description) alanında okuyun.
+
+![Salesforce Aday Müşteri kaydında WhatsApp sohbet etkinliği](/images/salesforce-activity-backup/lead-activity.png)
+
+![Salesforce Kişi kaydında WhatsApp sohbet etkinliği](/images/salesforce-activity-backup/contact-activity.png)
+
+## Günlük etkinlikler nasıl çalışır?
+
+- **Birebir sohbetler:** Her görüşme için eşleşen Kişi veya Aday Müşteri kaydında günlük bir görev oluşturulur. Farklı ekip üyelerinin birebir görüşmeleri ayrı etkinlikler olarak tutulur.
+- **Grup sohbetleri:** Eazybe, grup görüşmesini ilgili katılımcıların Kişi veya Aday Müşteri kayıtlarına kaydeder. Birden fazla ekip üyesi aynı grubu yedeklediğinde, mesajlar ilgili her kayıt için aynı günlük göreve eklenir. Grup yedeklemesi de açık olmalıdır.
+- **Güncellemeler:** Sonraki yedeklemeler yeni mesajları mevcut günlük göreve ekler. Uzun görüşmeler ek görevlerde devam edebilir.
+- **Tarih:** Etkinlik tarihi, sağlanan saat dilimine göre yedeklemenin yapıldığı gündür. Mesajlar kendi zaman damgalarını korur; bu nedenle bir etkinlik önceki günlerde gönderilen mesajları içerebilir.
+
+Bu özellik [Zoho etkinlik yedeklemesine](/tr/integrations/zoho/activity-backup) benzer: görüşmeler tamamlanmış görevler olarak kaydedilir. Salesforce’ta kaydın **etkinlik zaman çizelgesinde**, Zoho’da ise **Kapatılan Etkinlikler** (Closed Activities) bölümünde görünürler.
+
+## Etkinliklerde yedekleme kapalıyken
+
+Bu seçenek kapalıyken Eazybe, Salesforce’un mevcut yedekleme yöntemini kullanır: **WhatsApp Chats by Eazybe** özel nesnesi ve Kişiler için **Notlar ve Ekler**. Etkinliklerde yedekleme açıldığında sonraki sohbet yedekleri bu yöntem yerine tamamlanmış görevlere kaydedilir.

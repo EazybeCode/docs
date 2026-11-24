@@ -25,7 +25,15 @@ Salesforce'u EazyBe ile ilk kez entegre ettiğinizde, sistem otomatik olarak **s
 
 ![İlk Yedekleme](/images/1197995392.png)
 
-## Aktivite Kaydı
+## Etkinliklerde yedekleme
+
+**Back up in activities** açıkken Eazybe, **birebir ve grup görüşmelerini tamamlanmış görevler olarak** ilgili Salesforce **Kişi veya Aday Müşteri** kaydına kaydeder. Yedeklemeler çalıştıkça mesajlar görüşmenin günlük etkinliğine eklenir.
+
+Kurulum adımları ve örnekler için [Etkinliklerde yedekleme](/tr/integrations/salesforce/activity-backup) kılavuzuna bakın.
+
+## Etkinliklerde yedekleme kapalıyken
+
+Bu seçenek kapalıyken Eazybe, Salesforce’un mevcut yedekleme yöntemini kullanır: **WhatsApp Chats by Eazybe** özel nesnesi ve Kişiler için **Notlar ve Ekler**. Etkinliklerde yedekleme açıldığında sonraki sohbet yedekleri bu yöntem yerine tamamlanmış görevlere kaydedilir.
 
 WhatsApp sohbetleri Salesforce içinde iki konumda saklanır:
 
@@ -42,7 +50,7 @@ WhatsApp sohbetleri Salesforce içinde iki konumda saklanır:
   </Step>
 </Steps>
 
-## Ek Dosyaları Yedekleme
+### Ek Dosyaları Yedekleme
 
 <Tip>
   WhatsApp konuşmalarından gelen ek dosyalar, hem Leadler hem de Kişiler sayfaları için **WhatsApp Chats by EazyBe** özel aktivite nesnesinde saklanır.
