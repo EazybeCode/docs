@@ -1051,7 +1051,6 @@
                 "group": "API de WhatsApp Business",
                 "icon": "whatsapp",
                 "pages": [
-                  "es/waba/overview",
                   "es/waba/getting-started",
                   "es/waba/phone-number-quality-rating",
                   "es/waba/improve-broadcast-deliverability",
@@ -1837,7 +1836,6 @@
                 "group": "API do WhatsApp Business",
                 "icon": "whatsapp",
                 "pages": [
-                  "pt/waba/overview",
                   "pt/waba/getting-started",
                   "pt/waba/phone-number-quality-rating",
                   "pt/waba/improve-broadcast-deliverability",
@@ -2631,7 +2629,6 @@
                 "group": "WhatsApp Business API’si",
                 "icon": "whatsapp",
                 "pages": [
-                  "tr/waba/overview",
                   "tr/waba/getting-started",
                   "tr/waba/phone-number-quality-rating",
                   "tr/waba/improve-broadcast-deliverability",
