@@ -1048,7 +1048,7 @@
                 ]
               },
               {
-                "group": "WhatsApp Business API",
+                "group": "API de WhatsApp Business",
                 "icon": "whatsapp",
                 "pages": [
                   "es/waba/overview",
@@ -1834,7 +1834,7 @@
                 ]
               },
               {
-                "group": "WhatsApp Business API",
+                "group": "API do WhatsApp Business",
                 "icon": "whatsapp",
                 "pages": [
                   "pt/waba/overview",
@@ -2628,7 +2628,7 @@
                 ]
               },
               {
-                "group": "WhatsApp Business API",
+                "group": "WhatsApp Business API’si",
                 "icon": "whatsapp",
                 "pages": [
                   "tr/waba/overview",
