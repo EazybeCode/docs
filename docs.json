@@ -229,6 +229,8 @@
                 "icon": "whatsapp",
                 "pages": [
                   "en/waba/getting-started",
+                  "en/waba/improve-broadcast-deliverability",
+                  "en/waba/phone-number-quality-rating",
                   "en/waba/connect-waba",
                   "en/waba/6-month-chat-backup",
                   "en/waba/waba-disconnect-alerts",
@@ -1052,11 +1054,12 @@
                 ]
               },
               {
-                "group": "WhatsApp Business API",
+                "group": "API de WhatsApp Business",
                 "icon": "whatsapp",
                 "pages": [
-                  "es/waba/overview",
                   "es/waba/getting-started",
+                  "es/waba/phone-number-quality-rating",
+                  "es/waba/improve-broadcast-deliverability",
                   "es/waba/connect-waba",
                   "es/waba/6-month-chat-backup",
                   "es/waba/waba-disconnect-alerts",
@@ -1842,11 +1845,12 @@
                 ]
               },
               {
-                "group": "WhatsApp Business API",
+                "group": "API do WhatsApp Business",
                 "icon": "whatsapp",
                 "pages": [
-                  "pt/waba/overview",
                   "pt/waba/getting-started",
+                  "pt/waba/phone-number-quality-rating",
+                  "pt/waba/improve-broadcast-deliverability",
                   "pt/waba/connect-waba",
                   "pt/waba/6-month-chat-backup",
                   "pt/waba/waba-disconnect-alerts",
@@ -2640,11 +2644,12 @@
                 ]
               },
               {
-                "group": "WhatsApp Business API",
+                "group": "WhatsApp Business API’si",
                 "icon": "whatsapp",
                 "pages": [
-                  "tr/waba/overview",
                   "tr/waba/getting-started",
+                  "tr/waba/phone-number-quality-rating",
+                  "tr/waba/improve-broadcast-deliverability",
                   "tr/waba/connect-waba",
                   "tr/waba/6-month-chat-backup",
                   "tr/waba/waba-disconnect-alerts",
