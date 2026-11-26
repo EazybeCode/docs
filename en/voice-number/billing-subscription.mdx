@@ -1,82 +1,61 @@
 ---
 title: "Voice Number Billing"
-description: "Understand voice-number rental, wallet deductions, and call and SMS usage charges."
+description: "Check calling rates, understand charges, and manage your wallet."
 ---
 
 import { VoiceNumberPricing } from '/snippets/voice-number-pricing.jsx';
+import { VoiceUsagePricing, VoiceUsageCountrySelect } from '/snippets/voice-usage-pricing.jsx';
 
-Voice Number billing has two parts: the recurring charge for a purchased number and usage charges deducted from your wallet. Calls and SMS use the wallet separately from your Eazybe workspace plan.
+Eazybe Voice Number lets you make and receive calls and receive SMS where supported. The prices shown here are Eazybe’s customer rates, separate from your workspace plan:
 
-<Info>
-The final usage amount depends on the call or message, provider cost, duration, destination, and the wallet currency. The exact amount is recorded after billing is processed.
-</Info>
+- **Number rental:** A recurring monthly charge for your Voice Number.
+- **Usage:** Calls and incoming SMS are deducted from your wallet.
 
-## Number rental and purchase charges
+## Monthly number rental
 
-When you buy a Voice Number, Eazybe shows the amount due before you confirm the purchase. The number also has a recurring monthly rental charge.
-
-Choose a country below to check its current monthly rental. If available numbers have different prices, the checker shows a rental range.
+- Choose a country below to check rental prices. A range means available numbers have different rentals.
+- Before buying, review the **amount due, applicable tax, and renewal date** on the purchase screen.
 
 <VoiceNumberPricing />
 
-The purchase screen is the source of truth for the number you select. It shows the amount due today, the rental period, tax where applicable, and the next renewal date. The provider's setup cost is included in the monthly rental; it is not shown as a separate setup fee.
+## Calling rates by country
 
-To review a purchased number, open **CALLS → Phone Numbers → Your numbers**. The table shows the number, monthly amount, purchase date, and renewal date.
+1. Search and select your **Voice Number country**.
+2. Select a **Destination country**, or check **Call within the same country** to fill it automatically.
+3. Select **Check rates**. Switch between **USD** and **INR** as needed.
 
-## Call billing
+<VoiceUsagePricing />
 
-Calls made from Dialer or Auto Dialer are charged to the wallet after the call ends. Both the agent side of the call and the customer side are included in the final total. A call can therefore have a charge even when the displayed duration or destination differs from another call.
+## How call charges work
 
-There is no single fixed price for every call. The final amount can vary with the destination, billed duration, and call features.
+- **Outgoing:** Rates depend on your number country and the destination.
+- **Incoming:** Rates apply to the country of your Voice Number.
+- **Final charge:** Deducted after the call ends and billing is processed. It includes both agent and customer call legs and depends on billed duration and call details.
+- **India:** Indian Voice Numbers can call India only.
 
-Eazybe deducts the final call amount from your wallet after the call ends. The amount is calculated for that call and shown in your wallet transaction in the wallet currency.
+<Note>
+The checker shows starting rates before tax. **Wallet history** shows the final amount charged in your wallet currency. An unavailable rate does not mean free usage.
+</Note>
 
-| Wallet currency | Amount deducted by Eazybe |
-| --- | --- |
-| USD | The exact final USD amount shown in the wallet transaction. |
-| INR | The exact final INR amount shown in the wallet transaction. |
+## Wallet balance and top-up
 
-There is no separate provider charge to pay. The amount shown in Eazybe wallet history is the complete amount deducted from your balance.
+- To start a call, keep at least **₹100 in an INR wallet** or **$1 in a USD wallet**.
+- This is the required minimum balance, not the price of a call. Number rental is separate.
 
-Before starting a call, the wallet must meet the minimum balance required by the workspace:
-
-- **INR wallet:** ₹100
-- **USD wallet:** $1
-
-This minimum is an eligibility check, not the price of a call. The actual total is deducted after billing is processed.
-
-## SMS billing
-
-Incoming and outgoing SMS, including verification-code messages received on your Voice Number, are charged from the wallet. Eazybe deducts the complete SMS amount from your wallet after the message is processed. The exact amount appears in wallet history in your wallet currency. SMS prices can vary by message and destination, so the wallet transaction is the final price charged by Eazybe.
-
-## Add wallet credits
+To add credits:
 
 1. Open **Settings → Billing → Credits**.
-2. Select an amount under **Add credits**.
-3. Review the new balance and complete payment.
+2. Choose an amount under **Add credits** and complete payment.
+3. Check **Wallet history** for the confirmed recharge.
 
-Use enough wallet credit to cover the calls and messages you plan to make. A successful recharge appears in **Wallet history** after the payment provider confirms it.
+## SMS charges
 
-## Review usage and charges
+- **Incoming SMS** is charged per message part, where supported. See the rate in the checker above.
+- Longer messages use multiple parts, each billed separately.
+- **Outgoing SMS** is not currently offered.
 
-- Open **Settings → Billing → Wallet history** to review wallet debits and credits.
-- Open **CALLS → Call History** to review individual calls.
-- Open **CALLS → Phone Numbers → Your numbers** to review number rental and renewal details.
+## Where to check your charges
 
-## Common questions
-
-### Why did two calls have different prices?
-
-The total changes with billed duration, destination, call details and wallet currency. The amount in wallet history is the final Eazybe charge.
-
-### When is the wallet charged?
-
-The wallet is charged after the call or message cost is received and billing is processed. The completed debit appears in wallet history.
-
-### Does the wallet charge include the number rental?
-
-No. The monthly number rental is separate from call and SMS usage deductions.
-
-### Why can I not start a call?
-
-Calling is blocked when the workspace does not have enough eligible wallet balance. Add credits, then try again.
+- **Wallet deductions and recharges:** Settings → Billing → Wallet history.
+- **Individual calls:** CALLS → Call History.
+- **Number rental and renewal:** CALLS → Phone Numbers → Your numbers.
