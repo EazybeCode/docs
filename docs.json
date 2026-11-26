@@ -755,6 +755,13 @@
                 "pages": [
                   "en/ai-agents/mcp-setup"
                 ]
+              },
+              {
+                "group": "Website Agent",
+                "icon": "globe",
+                "pages": [
+                  "en/ai-agents/website-agent"
+                ]
               }
             ]
           },
@@ -1563,6 +1570,13 @@
                 "pages": [
                   "es/ai-agents/mcp-setup"
                 ]
+              },
+              {
+                "group": "Agente de Sitio Web",
+                "icon": "globe",
+                "pages": [
+                  "es/ai-agents/website-agent"
+                ]
               }
             ]
           },
@@ -2359,6 +2373,13 @@
                 "pages": [
                   "pt/ai-agents/mcp-setup"
                 ]
+              },
+              {
+                "group": "Agente de Site",
+                "icon": "globe",
+                "pages": [
+                  "pt/ai-agents/website-agent"
+                ]
               }
             ]
           },
@@ -3154,6 +3175,13 @@
                 "icon": "plug",
                 "pages": [
                   "tr/ai-agents/mcp-setup"
+                ]
+              },
+               {
+                "group": "Web Sitesi Ajanı",
+                "icon": "globe",
+                "pages": [
+                  "tr/ai-agents/website-agent"
                 ]
               }
             ]
