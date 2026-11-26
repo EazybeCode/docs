@@ -232,7 +232,13 @@
                   "en/waba/connect-waba",
                   "en/waba/6-month-chat-backup",
                   "en/waba/waba-disconnect-alerts",
-                  "en/waba/facebook-business-verification",
+                  {
+                    "group": "WABA Essentials",
+                    "pages": [
+                      "en/waba/change-display-name",
+                      "en/waba/facebook-business-verification"
+                    ]
+                  },
                   {
                     "group": "Meta Pricing",
                     "pages": [
@@ -1054,7 +1060,13 @@
                   "es/waba/connect-waba",
                   "es/waba/6-month-chat-backup",
                   "es/waba/waba-disconnect-alerts",
-                  "es/waba/facebook-business-verification",
+                  {
+                    "group": "Conceptos esenciales de WABA",
+                    "pages": [
+                      "es/waba/change-display-name",
+                      "es/waba/facebook-business-verification"
+                    ]
+                  },
                   {
                     "group": "Plantillas de Mensajes",
                     "pages": [
@@ -1838,7 +1850,13 @@
                   "pt/waba/connect-waba",
                   "pt/waba/6-month-chat-backup",
                   "pt/waba/waba-disconnect-alerts",
-                  "pt/waba/facebook-business-verification",
+                  {
+                    "group": "Fundamentos do WABA",
+                    "pages": [
+                      "pt/waba/change-display-name",
+                      "pt/waba/facebook-business-verification"
+                    ]
+                  },
                   {
                     "group": "Modelos de Mensagens",
                     "pages": [
@@ -2630,7 +2648,13 @@
                   "tr/waba/connect-waba",
                   "tr/waba/6-month-chat-backup",
                   "tr/waba/waba-disconnect-alerts",
-                  "tr/waba/facebook-business-verification",
+                  {
+                    "group": "WABA Temel Bilgileri",
+                    "pages": [
+                      "tr/waba/change-display-name",
+                      "tr/waba/facebook-business-verification"
+                    ]
+                  },
                   {
                     "group": "Mesaj Şablonları",
                     "pages": [
