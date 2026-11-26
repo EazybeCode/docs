@@ -38,3 +38,41 @@ Validation: backend pricing tests cover exact prices, cache expiry, country
 policy, empty stock, private error suppression, DTO validation, and the 11th
 request returning 429. UI fixtures use reserved example numbers only and must
 never be committed as actual prices or as the production endpoint.
+
+## Call usage rate checker
+
+The same English billing page also embeds `snippets/voice-usage-pricing.jsx`.
+It reads number-country eligibility from `/countries`, then requests
+`/usage?from_country=US&to_country=GB` only when **Check rates** is submitted.
+The backend reference is `mk/feat/virtual-number/public-usage-pricing`.
+Search inside the country popover filters by name or ISO code without API
+requests. The dependency-free dropdown adapts shadcn combobox styling for
+Mintlify; it does not install shadcn/Radix packages (which require Mintlify
+Enterprise third-party libraries). It supports arrow keys, Enter, Escape,
+Tab dismissal, outside clicks, and selected-item checkmarks. Domestic calling is the default. Number and destination selectors stay visible
+side by side on wider screens and stack on mobile. The same-country checkbox
+auto-fills the destination and keeps it in sync when the number country changes.
+Choosing a different destination clears the checkbox. India is domestic-only, matching backend validation.
+Destination codes come from the backend's `libphonenumber-js.getCountries()`
+metadata, because a destination need not be a country where we sell numbers.
+Refresh that metadata when backend destination support changes; do not replace
+the number-country API with a static sales allowlist.
+
+The response identifies `from_country` and `to_country`. Each of
+`outgoing_call_per_minute`, `incoming_call_per_minute`,
+`recording_per_minute`, and `sms_incoming_per_part` is an object with `usd`
+and `inr` values (number or null). Display starting rates, preserve zero prices,
+and show null as unavailable, including when INR conversion is unavailable.
+Incoming prices depend on the number country, not the outgoing destination.
+Recording is already included in call prices. Its API field is retained but
+not displayed as a separate pricing row. Outgoing SMS is not offered. Prices exclude taxes.
+
+Usage responses include `updated_at` and `stale`. The service caches rates for
+24 hours and can serve last-known rates during provider failures until its
+seven-day stale window ends. Show the timestamp and a visible stale notice.
+This route shares the existing public pricing rate limit. Handle 429, provider
+failures, timeouts, invalid responses, and retries without inventing prices.
+Changing a route clears its previous result and cancels an in-flight request.
+Currency switching uses the response already loaded and makes no extra request.
+The optional `apiUrl` prop supports local fixtures and staging, as on the rental
+checker. Deploy the usage endpoint before publishing this page.

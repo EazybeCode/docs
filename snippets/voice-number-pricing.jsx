@@ -90,7 +90,7 @@ export const VoiceNumberPricing = ({ apiUrl = 'https://cerberus.eazybe.com/prod/
           <h3 className="m-0 text-lg font-semibold text-zinc-900 dark:text-white">Find your monthly rental</h3>
           <span className="rounded-full border border-green-200 bg-white px-3 py-1 text-xs font-medium text-green-800 dark:border-green-800 dark:bg-green-950 dark:text-green-200">Local numbers · USD</span>
         </div>
-        <p className="mb-0 mt-2 text-sm text-zinc-600 dark:text-zinc-300">Choose a country to see its current monthly rental.</p>
+        <p className="mb-0 mt-2 text-sm text-zinc-600 dark:text-zinc-300">Choose a country to see Eazybe’s current monthly rental.</p>
       </div>
       <div className="space-y-5 p-5">
         {!endpoint ? (
