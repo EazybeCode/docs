@@ -1232,6 +1232,7 @@
                   "es/integrations/hubspot/workflow-troubleshoot",
                   "es/integrations/hubspot/analytics-dashboard",
                   "es/integrations/hubspot/broadcast-reporting",
+                  "es/integrations/hubspot/broadcast-timeline",
                   {
                     "group": "Preguntas Frecuentes",
                     "pages": [
@@ -2035,6 +2036,7 @@
                   "pt/integrations/hubspot/workflow-troubleshoot",
                   "pt/integrations/hubspot/analytics-dashboard",
                   "pt/integrations/hubspot/broadcast-reporting",
+                  "pt/integrations/hubspot/broadcast-timeline",
                   {
                     "group": "Perguntas Frequentes",
                     "pages": [
@@ -2838,6 +2840,7 @@
                   "tr/integrations/hubspot/workflow-troubleshoot",
                   "tr/integrations/hubspot/analytics-dashboard",
                   "tr/integrations/hubspot/broadcast-reporting",
+                  "tr/integrations/hubspot/broadcast-timeline",
                   {
                     "group": "SSS",
                     "pages": [
